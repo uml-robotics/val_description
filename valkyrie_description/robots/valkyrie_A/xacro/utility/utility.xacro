@@ -10,7 +10,7 @@
     <xacro:v1_head_actuators name1="${name1}" type1="${type1}" name2="${name2}" type2="${type2}" name3="${name3}" type3="${type3}"/>
     <xacro:v1_head_transmissions actuator1="${name1}" actuator2="${name2}" actuator3="${name3}" />
     <xacro:v1_head_modes actuator1="${name1}" actuator2="${name2}" actuator3="${name3}" />
-    <xacro:v1_head_sensors/>
+    <!-- <xacro:v1_head_sensors/> @TODO: Updated head sensors and add this back in. Head sensors are in head.xacro. -->
   </xacro:macro>
 
   <xacro:macro name="make_arm_interface" params="prefix name1 type1 name2 type2 name3 type3 name4 type4 name5 type5 name6 type6 name7 type7">
