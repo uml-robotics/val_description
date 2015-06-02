@@ -1,0 +1,14 @@
+<package>
+  <description brief="common_xacro">
+
+     common_xacro
+
+  </description>
+  <author>Brett Sommers</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/common_xacro</url>
+
+</package>
+
+

@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="v1/webcam">
+
+  <xacro:property name="WebcamWidth" value="0.029"/>
+  <xacro:property name="WebcamHeight" value="0.029"/>
+  <xacro:property name="WebcamDepth" value="0.030"/>
+
+  <xacro:property name="WebcamMass" value="0.034"/>
+
+  <xacro:property name="WebcamImageWidth" value="1920"/>
+  <xacro:property name="WebcamImageHeight" value="1080"/>
+  <xacro:property name="WebcamFieldOfView" value="1.31"/>
+  <xacro:property name="WebcamMinDistance" value="0.1"/>
+  <xacro:property name="WebcamMaxDistance" value="100"/>
+
+  <xacro:macro name="webcam_camera" params="sensorName parentLink origin_xyz origin_rpy imageFormat frameRate">
+    <xacro:virtual_link name="${sensorName}_Frame" 
+                    origin_rpy="0 0 0" 
+                    origin_xyz="0 0 0"/>
+
+    <gazebo reference="${sensorName}_Frame">
+      <sensor name="${sensorName}" type="camera">
+        <camera>
+          <image>
+            <width>${WebcamImageWidth}</width>
+            <height>${WebcamImageHeight}</height>
+            <format>${imageFormat}</format>
+          </image>
+          <horizontal_fov>${WebcamFieldOfView}</horizontal_fov> 
+          <clip>
+            <near>${WebcamMinDistance}</near>
+            <far>${WebcamMaxDistance}</far>
+          </clip>
+        </camera>
+        <update_rate>${frameRate}</update_rate>
+        <plugin filename="libgazebo_ros_camera.so" name="${sensorName}_controller">
+          <frameName>${sensorName}_Frame</frameName>
+          <imageTopicName>image_raw</imageTopicName>
+          <cameraName>${sensorName}</cameraName>
+        </plugin>
+      </sensor>
+    </gazebo>
+
+    <xacro:fixed_joint jointName="${sensorName}_Offset"
+                       parent="${parentLink}" child="${sensorName}_Frame"
+                       origin_rpy="${origin_rpy}"
+                       origin_xyz="${origin_xyz}"/>
+  </xacro:macro>
+</robot>
