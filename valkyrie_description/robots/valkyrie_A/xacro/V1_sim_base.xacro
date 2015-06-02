@@ -3,14 +3,14 @@
     <!-- DO NOT MODIFY URDF BY HAND! YOU ARE A FOOL IF YOU DO! -->
     <!-- ======================================================= -->
     <xacro:include filename="$(find common_xacro)/xacro/generic_models.xacro" />
-    <xacro:include filename="$(find V1)/models/V1/xacro/plugins/gazebo_plugins.xacro"/>
+    <xacro:include filename="$(find valkyrie_description)/robots/valkyrie_A/xacro/plugins/gazebo_plugins.xacro"/>
 
     <xacro:include filename="$(find common_xacro)/xacro/common_properties.xacro" />
     <xacro:include filename="$(find common_xacro)/xacro/materials.xacro" />
-    <xacro:include filename="$(find V1)/models/V1/xacro/common/common_bodies.xacro" />
+    <xacro:include filename="$(find valkyrie_description)/robots/valkyrie_A/xacro/common/common_bodies.xacro" />
 
-    <xacro:include filename="$(find V1)/models/V1/xacro/utility/utility.xacro" />
-    <xacro:include filename="$(find V1)/models/V1/xacro/common/actuator_names.xacro" />
+    <xacro:include filename="$(find valkyrie_description)/robots/valkyrie_A/xacro/utility/utility.xacro" />
+    <xacro:include filename="$(find valkyrie_description)/robots/valkyrie_A/xacro/common/actuator_names.xacro" />
 
     <!-- ===== GAZEBO PLUGINS ===== -->
     <gazebo>
@@ -22,11 +22,11 @@
     </gazebo>
 
     <!-- ===== PUBLISH ODOMETRY DATA ==== -->
-    <xacro:include filename="$(find V1)/models/V1/xacro/sensors/pos3d.xacro" />
+    <xacro:include filename="$(find valkyrie_description)/robots/valkyrie_A/xacro/sensors/pos3d.xacro" />
     <xacro:v1_absolute_pose parentLink="/v1/Trunk" topicName="/v1/pose" origin_xyz="0 0 0" origin_rpy="0 0 0"/>
 
     <!-- ===== PUBLISH ODOMETRY DATA ==== -->
-    <xacro:include filename="$(find V1)/models/V1/xacro/sensors/pos3d.xacro" />
+    <xacro:include filename="$(find valkyrie_description)/robots/valkyrie_A/xacro/sensors/pos3d.xacro" />
     <xacro:v1_absolute_pose parentLink="/v1/Pelvis" topicName="/v1/Pelvis/pose" origin_xyz="0 0 0" origin_rpy="0 0 0"/>
 
     <!-- ===== PELVIS ===== -->

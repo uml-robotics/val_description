@@ -1,5 +1,6 @@
 
 @TODO
+# Make sure this stuff is on your ROS_PACKAGE_PATH
 
 # Generate URDF
 cd V1_description/V1/models/V1

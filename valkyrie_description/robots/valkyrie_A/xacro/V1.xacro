@@ -4,7 +4,7 @@
     <!-- ======================================================= -->
     <xacro:property name="mesh_root" value="package://V1/meshes/reduced_polygon_meshes"/>
     <xacro:include filename="$(find common_xacro)/xacro/mode_setup_hw.xacro" />
-    <xacro:include filename="$(find V1)/models/V1/xacro/common/hw_actuator_types.xacro"/>
-    <xacro:include filename="$(find V1)/models/V1/xacro/V1_sim_base.xacro"/>
+    <xacro:include filename="$(find valkyrie_description)/robots/valkyrie_A/xacro/common/hw_actuator_types.xacro"/>
+    <xacro:include filename="$(find valkyrie_description)/robots/valkyrie_A/xacro/V1_sim_base.xacro"/>
 
 </robot>
