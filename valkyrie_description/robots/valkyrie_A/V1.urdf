@@ -4188,60 +4188,11 @@
       <actuator data="modeCommand" name="/right_leg/j6"/>
     </translator>
   </mode>
-  <!-- May 2015: Made the Hokuyo 'more' massless to make easier inertia estimation-->
-  <link name="/v1/RightLegHokuyo_Frame">
-    <!-- Virtual Link -->
-    <inertial>
-      <mass value="1e-07"/>
-      <origin rpy="0 0 0" xyz="0 0 0"/>
-      <inertia ixx="3.33333333333e-22" ixy="0.0" ixz="0.0" iyy="3.33333333333e-22" iyz="0.0" izz="5e-22"/>
-    </inertial>
-  </link>
-  <gazebo reference="/v1/RightLegHokuyo_Frame">
-    <sensor name="/v1/RightLegHokuyo" type="ray">
-      <pose>0 0 0 0 0 0</pose>
-      <visualize>false</visualize>
-      <update_rate>40.0</update_rate>
-      <ray>
-        <scan>
-          <horizontal>
-            <samples>1080</samples>
-            <resolution>0.0043611</resolution>
-            <min_angle>-2.355</min_angle>
-            <max_angle>2.355</max_angle>
-          </horizontal>
-        </scan>
-        <range>
-          <min>0.1</min>
-          <max>30</max>
-          <resolution>0.03</resolution>
-        </range>
-        <!-- Noise data from DRCSIM -->
-        <noise>
-          <type>gaussian</type>
-          <!-- Noise parameters based on published spec for Hokuyo laser
-               achieving "+-30mm" accuracy at range < 10m.  A mean of 0.0m and
-               stddev of 0.01m will put 99.7% of samples within 0.03m of the true
-               reading. -->
-          <mean>0.0</mean>
-          <stddev>0.01</stddev>
-        </noise>
-      </ray>
-      <plugin filename="libgazebo_ros_laser.so" name="/v1/RightLegHokuyo_Controller">
-        <gaussianNoise>0.005</gaussianNoise>
-        <alwaysOn>true</alwaysOn>
-        <updateRate>40.0</updateRate>
-        <topicName>/v1/RightLegHokuyo/scan</topicName>
-        <frameName>/v1/RightLegHokuyo_Frame</frameName>
-      </plugin>
-    </sensor>
-  </gazebo>
-  <joint name="/v1/RightLegHokuyo_Offset" type="fixed">
-    <origin rpy="1.57079632679 0 -0.38394" xyz="0.350849 -0.098349 -0.036021"/>
-    <axis xyz="0 0 1"/>
-    <parent link="/v1/RightLeg"/>
-    <child link="/v1/RightLegHokuyo_Frame"/>
-  </joint>
+  <!-- HOKUYO IS NOT IN THE ROBOT ANYMORE -->
+  <!-- <xacro:hokuyo_sensor sensorName="/v1/${prefix}LegHokuyo"
+                         parentLink="${LJ3_Distal_Link}"
+                         origin_xyz="0.350849 -0.098349 ${reflect * -0.036021}"
+                         origin_rpy="${pi_2} 0 -0.38394"/> -->
   <!-- May 2015: Made the Camboard 'more' massless to make easier inertia estimation-->
   <link name="/v1/RightLegCamBoard_Frame">
     <!-- Virtual Link -->
@@ -4930,60 +4881,11 @@
       <actuator data="modeCommand" name="/left_leg/j6"/>
     </translator>
   </mode>
-  <!-- May 2015: Made the Hokuyo 'more' massless to make easier inertia estimation-->
-  <link name="/v1/LeftLegHokuyo_Frame">
-    <!-- Virtual Link -->
-    <inertial>
-      <mass value="1e-07"/>
-      <origin rpy="0 0 0" xyz="0 0 0"/>
-      <inertia ixx="3.33333333333e-22" ixy="0.0" ixz="0.0" iyy="3.33333333333e-22" iyz="0.0" izz="5e-22"/>
-    </inertial>
-  </link>
-  <gazebo reference="/v1/LeftLegHokuyo_Frame">
-    <sensor name="/v1/LeftLegHokuyo" type="ray">
-      <pose>0 0 0 0 0 0</pose>
-      <visualize>false</visualize>
-      <update_rate>40.0</update_rate>
-      <ray>
-        <scan>
-          <horizontal>
-            <samples>1080</samples>
-            <resolution>0.0043611</resolution>
-            <min_angle>-2.355</min_angle>
-            <max_angle>2.355</max_angle>
-          </horizontal>
-        </scan>
-        <range>
-          <min>0.1</min>
-          <max>30</max>
-          <resolution>0.03</resolution>
-        </range>
-        <!-- Noise data from DRCSIM -->
-        <noise>
-          <type>gaussian</type>
-          <!-- Noise parameters based on published spec for Hokuyo laser
-               achieving "+-30mm" accuracy at range < 10m.  A mean of 0.0m and
-               stddev of 0.01m will put 99.7% of samples within 0.03m of the true
-               reading. -->
-          <mean>0.0</mean>
-          <stddev>0.01</stddev>
-        </noise>
-      </ray>
-      <plugin filename="libgazebo_ros_laser.so" name="/v1/LeftLegHokuyo_Controller">
-        <gaussianNoise>0.005</gaussianNoise>
-        <alwaysOn>true</alwaysOn>
-        <updateRate>40.0</updateRate>
-        <topicName>/v1/LeftLegHokuyo/scan</topicName>
-        <frameName>/v1/LeftLegHokuyo_Frame</frameName>
-      </plugin>
-    </sensor>
-  </gazebo>
-  <joint name="/v1/LeftLegHokuyo_Offset" type="fixed">
-    <origin rpy="1.57079632679 0 -0.38394" xyz="0.350849 -0.098349 0.036021"/>
-    <axis xyz="0 0 1"/>
-    <parent link="/v1/LeftLeg"/>
-    <child link="/v1/LeftLegHokuyo_Frame"/>
-  </joint>
+  <!-- HOKUYO IS NOT IN THE ROBOT ANYMORE -->
+  <!-- <xacro:hokuyo_sensor sensorName="/v1/${prefix}LegHokuyo"
+                         parentLink="${LJ3_Distal_Link}"
+                         origin_xyz="0.350849 -0.098349 ${reflect * -0.036021}"
+                         origin_rpy="${pi_2} 0 -0.38394"/> -->
   <!-- May 2015: Made the Camboard 'more' massless to make easier inertia estimation-->
   <link name="/v1/LeftLegCamBoard_Frame">
     <!-- Virtual Link -->

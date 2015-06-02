@@ -374,10 +374,11 @@
 
   <!-- Sensors -->
   <xacro:macro name="v1_leg_sensors" params="prefix reflect">
-    <xacro:hokuyo_sensor sensorName="/v1/${prefix}LegHokuyo"
+    <!-- HOKUYO IS NOT IN THE ROBOT ANYMORE -->
+    <!-- <xacro:hokuyo_sensor sensorName="/v1/${prefix}LegHokuyo"
                          parentLink="${LJ3_Distal_Link}"
                          origin_xyz="0.350849 -0.098349 ${reflect * -0.036021}"
-                         origin_rpy="${pi_2} 0 -0.38394"/>
+                         origin_rpy="${pi_2} 0 -0.38394"/> -->
 
     <xacro:camboard_sensor sensorName="/v1/${prefix}LegCamBoard"
                        parentLink="${LJ4_Distal_Link_Box}"
