@@ -777,40 +777,9 @@
   <gazebo reference="WaistLateralExtensor">
     <provideFeedback>1</provideFeedback>
   </gazebo>
-  <actuator name="/pelvis/wj1" type="turbodriver_api/TurbodriverAPI_DRCv4"/>
-  <actuator name="/trunk/wj2" type="turbodriver_api/TurbodriverAPI_DRCv4_linear"/>
-  <actuator name="/trunk/wj3" type="turbodriver_api/TurbodriverAPI_DRCv4_linear"/>
+  <!-- <xacro:v1_waist_actuators name1="${waist_name1}" type1="${waist_type1}" name2="${waist_name2}" type2="${waist_type2}" name3="${waist_name3}" type3="${waist_type3}"/> -->
   <!-- <xacro:v1_waist_transmissions actuator1="${waist_name1}" actuator2="${waist_name2}" actuator3="${waist_name3}" /> -->
-  <mode name="WaistRotatorMode" type="mode_plugins/ModeInterface">
-    <translator name="WaistRotatorModeData" type="SimpleActuatorToJointMode">
-      <joint data="mode" name="WaistRotator"/>
-      <actuator data="mode" name="/pelvis/wj1"/>
-    </translator>
-    <translator name="WaistRotatorModeCommand" type="SimpleJointToActuatorMode">
-      <joint data="modeCommand" name="WaistRotator"/>
-      <actuator data="modeCommand" name="/pelvis/wj1"/>
-    </translator>
-  </mode>
-  <mode name="WaistExtensorMode" type="mode_plugins/ModeInterface">
-    <translator name="WaistExtensorModeData" type="SimpleActuatorToJointMode">
-      <joint data="mode" name="WaistExtensor"/>
-      <actuator data="mode" name="/trunk/wj2"/>
-    </translator>
-    <translator name="WaistExtensorModeCommand" type="SimpleJointToActuatorMode">
-      <joint data="modeCommand" name="WaistExtensor"/>
-      <actuator data="modeCommand" name="/trunk/wj2"/>
-    </translator>
-  </mode>
-  <mode name="WaistLateralExtensorMode" type="mode_plugins/ModeInterface">
-    <translator name="WaistLateralExtensorModeData" type="SimpleActuatorToJointMode">
-      <joint data="mode" name="WaistLateralExtensor"/>
-      <actuator data="mode" name="/trunk/wj3"/>
-    </translator>
-    <translator name="WaistLateralExtensorModeCommand" type="SimpleJointToActuatorMode">
-      <joint data="modeCommand" name="WaistLateralExtensor"/>
-      <actuator data="modeCommand" name="/trunk/wj3"/>
-    </translator>
-  </mode>
+  <!-- <xacro:v1_waist_modes actuator1="${waist_name1}" actuator2="${waist_name2}" actuator3="${waist_name3}" /> -->
   <!-- <xacro:v1_trunk_sensors/> -->
   <!-- ===== HEAD ===== -->
   <!-- LINKS -->
@@ -924,148 +893,9 @@
   <gazebo reference="UpperNeckExtensor">
     <provideFeedback>1</provideFeedback>
   </gazebo>
-  <actuator name="/neck/j1" type="turbodriver_api/TurbodriverAPI_DRCv3"/>
-  <actuator name="/neck/j2" type="turbodriver_api/TurbodriverAPI_DRCv3"/>
-  <actuator name="/neck/j3" type="turbodriver_api/TurbodriverAPI_DRCv3"/>
-  <transmission name="LowerNeckExtensorTransmission" type="loadable_transmissions/SimpleTransmission">
-    <mechanicalReduction>1</mechanicalReduction>
-    <jointOffset>0</jointOffset>
-    <interface type="ActuatorToJointStateInterface">
-      <joint data="data" name="LowerNeckExtensor"/>
-      <actuator data="data" name="/neck/j1"/>
-    </interface>
-    <interface type="JointToActuatorPositionInterface">
-      <joint data="positionCommand" name="LowerNeckExtensor"/>
-      <actuator data="positionCommand" name="/neck/j1"/>
-    </interface>
-    <interface type="JointToActuatorVelocityInterface">
-      <joint data="velocityCommand" name="LowerNeckExtensor"/>
-      <actuator data="velocityCommand" name="/neck/j1"/>
-    </interface>
-    <interface type="JointToActuatorEffortInterface">
-      <joint data="effortCommand" name="LowerNeckExtensor"/>
-      <actuator data="effortCommand" name="/neck/j1"/>
-    </interface>
-    <interface type="JointToActuatorStateInterface">
-      <joint data="data" name="LowerNeckExtensor"/>
-      <actuator data="data" name="/neck/j1"/>
-    </interface>
-    <interface type="ActuatorToJointPositionInterface">
-      <joint data="positionCommand" name="LowerNeckExtensor"/>
-      <actuator data="positionCommand" name="/neck/j1"/>
-    </interface>
-    <interface type="ActuatorToJointVelocityInterface">
-      <joint data="velocityCommand" name="LowerNeckExtensor"/>
-      <actuator data="velocityCommand" name="/neck/j1"/>
-    </interface>
-    <interface type="ActuatorToJointEffortInterface">
-      <joint data="effortCommand" name="LowerNeckExtensor"/>
-      <actuator data="effortCommand" name="/neck/j1"/>
-    </interface>
-  </transmission>
-  <transmission name="NeckRotatorTransmission" type="loadable_transmissions/SimpleTransmission">
-    <mechanicalReduction>1</mechanicalReduction>
-    <jointOffset>0</jointOffset>
-    <interface type="ActuatorToJointStateInterface">
-      <joint data="data" name="NeckRotator"/>
-      <actuator data="data" name="/neck/j2"/>
-    </interface>
-    <interface type="JointToActuatorPositionInterface">
-      <joint data="positionCommand" name="NeckRotator"/>
-      <actuator data="positionCommand" name="/neck/j2"/>
-    </interface>
-    <interface type="JointToActuatorVelocityInterface">
-      <joint data="velocityCommand" name="NeckRotator"/>
-      <actuator data="velocityCommand" name="/neck/j2"/>
-    </interface>
-    <interface type="JointToActuatorEffortInterface">
-      <joint data="effortCommand" name="NeckRotator"/>
-      <actuator data="effortCommand" name="/neck/j2"/>
-    </interface>
-    <interface type="JointToActuatorStateInterface">
-      <joint data="data" name="NeckRotator"/>
-      <actuator data="data" name="/neck/j2"/>
-    </interface>
-    <interface type="ActuatorToJointPositionInterface">
-      <joint data="positionCommand" name="NeckRotator"/>
-      <actuator data="positionCommand" name="/neck/j2"/>
-    </interface>
-    <interface type="ActuatorToJointVelocityInterface">
-      <joint data="velocityCommand" name="NeckRotator"/>
-      <actuator data="velocityCommand" name="/neck/j2"/>
-    </interface>
-    <interface type="ActuatorToJointEffortInterface">
-      <joint data="effortCommand" name="NeckRotator"/>
-      <actuator data="effortCommand" name="/neck/j2"/>
-    </interface>
-  </transmission>
-  <transmission name="UpperNeckExtensorTransmission" type="loadable_transmissions/SimpleTransmission">
-    <mechanicalReduction>1</mechanicalReduction>
-    <jointOffset>0</jointOffset>
-    <interface type="ActuatorToJointStateInterface">
-      <joint data="data" name="UpperNeckExtensor"/>
-      <actuator data="data" name="/neck/j3"/>
-    </interface>
-    <interface type="JointToActuatorPositionInterface">
-      <joint data="positionCommand" name="UpperNeckExtensor"/>
-      <actuator data="positionCommand" name="/neck/j3"/>
-    </interface>
-    <interface type="JointToActuatorVelocityInterface">
-      <joint data="velocityCommand" name="UpperNeckExtensor"/>
-      <actuator data="velocityCommand" name="/neck/j3"/>
-    </interface>
-    <interface type="JointToActuatorEffortInterface">
-      <joint data="effortCommand" name="UpperNeckExtensor"/>
-      <actuator data="effortCommand" name="/neck/j3"/>
-    </interface>
-    <interface type="JointToActuatorStateInterface">
-      <joint data="data" name="UpperNeckExtensor"/>
-      <actuator data="data" name="/neck/j3"/>
-    </interface>
-    <interface type="ActuatorToJointPositionInterface">
-      <joint data="positionCommand" name="UpperNeckExtensor"/>
-      <actuator data="positionCommand" name="/neck/j3"/>
-    </interface>
-    <interface type="ActuatorToJointVelocityInterface">
-      <joint data="velocityCommand" name="UpperNeckExtensor"/>
-      <actuator data="velocityCommand" name="/neck/j3"/>
-    </interface>
-    <interface type="ActuatorToJointEffortInterface">
-      <joint data="effortCommand" name="UpperNeckExtensor"/>
-      <actuator data="effortCommand" name="/neck/j3"/>
-    </interface>
-  </transmission>
-  <mode name="LowerNeckExtensorMode" type="mode_plugins/ModeInterface">
-    <translator name="LowerNeckExtensorModeData" type="SimpleActuatorToJointMode">
-      <joint data="mode" name="LowerNeckExtensor"/>
-      <actuator data="mode" name="/neck/j1"/>
-    </translator>
-    <translator name="LowerNeckExtensorModeCommand" type="SimpleJointToActuatorMode">
-      <joint data="modeCommand" name="LowerNeckExtensor"/>
-      <actuator data="modeCommand" name="/neck/j1"/>
-    </translator>
-  </mode>
-  <mode name="NeckRotatorMode" type="mode_plugins/ModeInterface">
-    <translator name="NeckRotatorModeData" type="SimpleActuatorToJointMode">
-      <joint data="mode" name="NeckRotator"/>
-      <actuator data="mode" name="/neck/j2"/>
-    </translator>
-    <translator name="NeckRotatorModeCommand" type="SimpleJointToActuatorMode">
-      <joint data="modeCommand" name="NeckRotator"/>
-      <actuator data="modeCommand" name="/neck/j2"/>
-    </translator>
-  </mode>
-  <mode name="UpperNeckExtensorMode" type="mode_plugins/ModeInterface">
-    <translator name="UpperNeckExtensorModeData" type="SimpleActuatorToJointMode">
-      <joint data="mode" name="UpperNeckExtensor"/>
-      <actuator data="mode" name="/neck/j3"/>
-    </translator>
-    <translator name="UpperNeckExtensorModeCommand" type="SimpleJointToActuatorMode">
-      <joint data="modeCommand" name="UpperNeckExtensor"/>
-      <actuator data="modeCommand" name="/neck/j3"/>
-    </translator>
-  </mode>
-  <!-- <xacro:v1_head_sensors/> @TODO: Updated head sensors and add this back in. Head sensors are in head.xacro. -->
+  <!-- <xacro:make_head_interface name1="/neck/j1" type1="${neck_type1}"
+                               name2="/neck/j2" type2="${neck_type2}"
+                               name3="/neck/j3" type3="${neck_type3}"/> -->
   <!-- ===== RIGHT ARM ===== -->
   <!-- LINKS -->
   <link name="/v1/RightShoulderExtensor">
@@ -1330,85 +1160,16 @@
   <gazebo reference="RightWrist">
     <provideFeedback>1</provideFeedback>
   </gazebo>
-  <actuator name="/trunk/raj1" type="turbodriver_api/TurbodriverAPI_DRCv4"/>
-  <actuator name="/right_arm/j2" type="turbodriver_api/TurbodriverAPI_DRCv4"/>
-  <actuator name="/right_arm/j3" type="turbodriver_api/TurbodriverAPI_DRCv4"/>
-  <actuator name="/right_arm/j4" type="turbodriver_api/TurbodriverAPI_DRCv4"/>
-  <actuator name="/right_arm/j5" type="turbodriver_api/TurbodriverAPI_DRCv3"/>
-  <actuator name="/right_arm/forearm_driver1/wrist_right" type="forearm_api/WristAPI_DRCv1"/>
-  <actuator name="/right_arm/forearm_driver1/wrist_left" type="forearm_api/WristAPI_DRCv1"/>
+  <!-- <xacro:v1_arm_actuators name1="${rightarm_name1}" type1="${arm_type1}"
+                            name2="${rightarm_name2}" type2="${arm_type2}"
+                            name3="${rightarm_name3}" type3="${arm_type3}"
+                            name4="${rightarm_name4}" type4="${arm_type4}"
+                            name5="${rightarm_name5}" type5="${arm_type5}"
+                            name6="${rightarm_name6}" type6="${arm_type6}"
+                            name7="${rightarm_name7}" type7="${arm_type7}"/> -->
   <!-- <xacro:v1_upper_arm_transmissions prefix="Right" actuator1="${rightarm_name1}" actuator2="${rightarm_name2}" actuator3="${rightarm_name3}" actuator4="${rightarm_name4}"/> -->
   <!-- <xacro:v1_lower_arm_transmissions prefix="Right" actuator1="${rightarm_name5}" actuator2="${rightarm_name6}" actuator3="${rightarm_name7}"/> -->
-  <mode name="RightShoulderExtensorMode" type="mode_plugins/ModeInterface">
-    <translator name="RightShoulderExtensorModeData" type="SimpleActuatorToJointMode">
-      <joint data="mode" name="RightShoulderExtensor"/>
-      <actuator data="mode" name="/trunk/raj1"/>
-    </translator>
-    <translator name="RightShoulderExtensorModeCommand" type="SimpleJointToActuatorMode">
-      <joint data="modeCommand" name="RightShoulderExtensor"/>
-      <actuator data="modeCommand" name="/trunk/raj1"/>
-    </translator>
-  </mode>
-  <mode name="RightShoulderAdductorMode" type="mode_plugins/ModeInterface">
-    <translator name="RightShoulderAdductorModeData" type="SimpleActuatorToJointMode">
-      <joint data="mode" name="RightShoulderAdductor"/>
-      <actuator data="mode" name="/right_arm/j2"/>
-    </translator>
-    <translator name="RightShoulderAdductorModeCommand" type="SimpleJointToActuatorMode">
-      <joint data="modeCommand" name="RightShoulderAdductor"/>
-      <actuator data="modeCommand" name="/right_arm/j2"/>
-    </translator>
-  </mode>
-  <mode name="RightShoulderSupinatorMode" type="mode_plugins/ModeInterface">
-    <translator name="RightShoulderSupinatorModeData" type="SimpleActuatorToJointMode">
-      <joint data="mode" name="RightShoulderSupinator"/>
-      <actuator data="mode" name="/right_arm/j3"/>
-    </translator>
-    <translator name="RightShoulderSupinatorModeCommand" type="SimpleJointToActuatorMode">
-      <joint data="modeCommand" name="RightShoulderSupinator"/>
-      <actuator data="modeCommand" name="/right_arm/j3"/>
-    </translator>
-  </mode>
-  <mode name="RightElbowExtensorMode" type="mode_plugins/ModeInterface">
-    <translator name="RightElbowExtensorModeData" type="SimpleActuatorToJointMode">
-      <joint data="mode" name="RightElbowExtensor"/>
-      <actuator data="mode" name="/right_arm/j4"/>
-    </translator>
-    <translator name="RightElbowExtensorModeCommand" type="SimpleJointToActuatorMode">
-      <joint data="modeCommand" name="RightElbowExtensor"/>
-      <actuator data="modeCommand" name="/right_arm/j4"/>
-    </translator>
-  </mode>
-  <mode name="RightForearmSupinatorMode" type="mode_plugins/ModeInterface">
-    <translator name="RightForearmSupinatorModeData" type="SimpleActuatorToJointMode">
-      <joint data="mode" name="RightForearmSupinator"/>
-      <actuator data="mode" name="/right_arm/j5"/>
-    </translator>
-    <translator name="RightForearmSupinatorModeCommand" type="SimpleJointToActuatorMode">
-      <joint data="modeCommand" name="RightForearmSupinator"/>
-      <actuator data="modeCommand" name="/right_arm/j5"/>
-    </translator>
-  </mode>
-  <mode name="RightWristExtensorMode" type="mode_plugins/ModeInterface">
-    <translator name="RightWristExtensorModeData" type="SimpleActuatorToJointMode">
-      <joint data="mode" name="RightWristExtensor"/>
-      <actuator data="mode" name="/right_arm/forearm_driver1/wrist_right"/>
-    </translator>
-    <translator name="RightWristExtensorModeCommand" type="SimpleJointToActuatorMode">
-      <joint data="modeCommand" name="RightWristExtensor"/>
-      <actuator data="modeCommand" name="/right_arm/forearm_driver1/wrist_right"/>
-    </translator>
-  </mode>
-  <mode name="RightWristMode" type="mode_plugins/ModeInterface">
-    <translator name="RightWristModeData" type="SimpleActuatorToJointMode">
-      <joint data="mode" name="RightWrist"/>
-      <actuator data="mode" name="/right_arm/forearm_driver1/wrist_left"/>
-    </translator>
-    <translator name="RightWristModeCommand" type="SimpleJointToActuatorMode">
-      <joint data="modeCommand" name="RightWrist"/>
-      <actuator data="modeCommand" name="/right_arm/forearm_driver1/wrist_left"/>
-    </translator>
-  </mode>
+  <!-- <xacro:v1_arm_modes prefix="Right" actuator1="${rightarm_name1}" actuator2="${rightarm_name2}" actuator3="${rightarm_name3}" actuator4="${rightarm_name4}" actuator5="${rightarm_name5}" actuator6="${rightarm_name6}" actuator7="${rightarm_name7}"/> -->
   <!-- Why is this not symmetric?? -->
   <!-- <xacro:v1_arm_sensors /> -->
   <!-- ===== RIGHT THUMB ===== -->
@@ -2167,85 +1928,16 @@
   <gazebo reference="LeftWrist">
     <provideFeedback>1</provideFeedback>
   </gazebo>
-  <actuator name="/trunk/laj1" type="turbodriver_api/TurbodriverAPI_DRCv4"/>
-  <actuator name="/left_arm/j2" type="turbodriver_api/TurbodriverAPI_DRCv4"/>
-  <actuator name="/left_arm/j3" type="turbodriver_api/TurbodriverAPI_DRCv4"/>
-  <actuator name="/left_arm/j4" type="turbodriver_api/TurbodriverAPI_DRCv4"/>
-  <actuator name="/left_arm/j5" type="turbodriver_api/TurbodriverAPI_DRCv3"/>
-  <actuator name="/left_arm/forearm_driver1/wrist_left" type="forearm_api/WristAPI_DRCv1"/>
-  <actuator name="/left_arm/forearm_driver1/wrist_right" type="forearm_api/WristAPI_DRCv1"/>
+  <!-- <xacro:v1_arm_actuators name1="${leftarm_name1}" type1="${arm_type1}"
+                            name2="${leftarm_name2}" type2="${arm_type2}"
+                            name3="${leftarm_name3}" type3="${arm_type3}"
+                            name4="${leftarm_name4}" type4="${arm_type4}"
+                            name5="${leftarm_name5}" type5="${arm_type5}"
+                            name6="${leftarm_name6}" type6="${arm_type6}"
+                            name7="${leftarm_name7}" type7="${arm_type7}"/> -->
   <!-- <xacro:v1_upper_arm_transmissions prefix="Left" actuator1="${leftarm_name1}" actuator2="${leftarm_name2}" actuator3="${leftarm_name3}" actuator4="${leftarm_name4}"/> -->
   <!-- <xacro:v1_lower_arm_transmissions prefix="Left" actuator1="${leftarm_name5}" actuator2="${leftarm_name6}" actuator3="${leftarm_name7}"/> -->
-  <mode name="LeftShoulderExtensorMode" type="mode_plugins/ModeInterface">
-    <translator name="LeftShoulderExtensorModeData" type="SimpleActuatorToJointMode">
-      <joint data="mode" name="LeftShoulderExtensor"/>
-      <actuator data="mode" name="/trunk/laj1"/>
-    </translator>
-    <translator name="LeftShoulderExtensorModeCommand" type="SimpleJointToActuatorMode">
-      <joint data="modeCommand" name="LeftShoulderExtensor"/>
-      <actuator data="modeCommand" name="/trunk/laj1"/>
-    </translator>
-  </mode>
-  <mode name="LeftShoulderAdductorMode" type="mode_plugins/ModeInterface">
-    <translator name="LeftShoulderAdductorModeData" type="SimpleActuatorToJointMode">
-      <joint data="mode" name="LeftShoulderAdductor"/>
-      <actuator data="mode" name="/left_arm/j2"/>
-    </translator>
-    <translator name="LeftShoulderAdductorModeCommand" type="SimpleJointToActuatorMode">
-      <joint data="modeCommand" name="LeftShoulderAdductor"/>
-      <actuator data="modeCommand" name="/left_arm/j2"/>
-    </translator>
-  </mode>
-  <mode name="LeftShoulderSupinatorMode" type="mode_plugins/ModeInterface">
-    <translator name="LeftShoulderSupinatorModeData" type="SimpleActuatorToJointMode">
-      <joint data="mode" name="LeftShoulderSupinator"/>
-      <actuator data="mode" name="/left_arm/j3"/>
-    </translator>
-    <translator name="LeftShoulderSupinatorModeCommand" type="SimpleJointToActuatorMode">
-      <joint data="modeCommand" name="LeftShoulderSupinator"/>
-      <actuator data="modeCommand" name="/left_arm/j3"/>
-    </translator>
-  </mode>
-  <mode name="LeftElbowExtensorMode" type="mode_plugins/ModeInterface">
-    <translator name="LeftElbowExtensorModeData" type="SimpleActuatorToJointMode">
-      <joint data="mode" name="LeftElbowExtensor"/>
-      <actuator data="mode" name="/left_arm/j4"/>
-    </translator>
-    <translator name="LeftElbowExtensorModeCommand" type="SimpleJointToActuatorMode">
-      <joint data="modeCommand" name="LeftElbowExtensor"/>
-      <actuator data="modeCommand" name="/left_arm/j4"/>
-    </translator>
-  </mode>
-  <mode name="LeftForearmSupinatorMode" type="mode_plugins/ModeInterface">
-    <translator name="LeftForearmSupinatorModeData" type="SimpleActuatorToJointMode">
-      <joint data="mode" name="LeftForearmSupinator"/>
-      <actuator data="mode" name="/left_arm/j5"/>
-    </translator>
-    <translator name="LeftForearmSupinatorModeCommand" type="SimpleJointToActuatorMode">
-      <joint data="modeCommand" name="LeftForearmSupinator"/>
-      <actuator data="modeCommand" name="/left_arm/j5"/>
-    </translator>
-  </mode>
-  <mode name="LeftWristExtensorMode" type="mode_plugins/ModeInterface">
-    <translator name="LeftWristExtensorModeData" type="SimpleActuatorToJointMode">
-      <joint data="mode" name="LeftWristExtensor"/>
-      <actuator data="mode" name="/left_arm/forearm_driver1/wrist_left"/>
-    </translator>
-    <translator name="LeftWristExtensorModeCommand" type="SimpleJointToActuatorMode">
-      <joint data="modeCommand" name="LeftWristExtensor"/>
-      <actuator data="modeCommand" name="/left_arm/forearm_driver1/wrist_left"/>
-    </translator>
-  </mode>
-  <mode name="LeftWristMode" type="mode_plugins/ModeInterface">
-    <translator name="LeftWristModeData" type="SimpleActuatorToJointMode">
-      <joint data="mode" name="LeftWrist"/>
-      <actuator data="mode" name="/left_arm/forearm_driver1/wrist_right"/>
-    </translator>
-    <translator name="LeftWristModeCommand" type="SimpleJointToActuatorMode">
-      <joint data="modeCommand" name="LeftWrist"/>
-      <actuator data="modeCommand" name="/left_arm/forearm_driver1/wrist_right"/>
-    </translator>
-  </mode>
+  <!-- <xacro:v1_arm_modes prefix="Left" actuator1="${leftarm_name1}" actuator2="${leftarm_name2}" actuator3="${leftarm_name3}" actuator4="${leftarm_name4}" actuator5="${leftarm_name5}" actuator6="${leftarm_name6}" actuator7="${leftarm_name7}"/> -->
   <!-- ===== LEFT THUMB ===== -->
   <!-- LINKS -->
   <link name="/v1/LeftThumbMetacarpal">
@@ -3046,12 +2738,12 @@
                        parent="${LJ6_Distal_Link}" child="v1/${prefix}_Foot_Segment6"
                        origin_rpy="0 0 0"
                        origin_xyz="0 0 0"/> -->
-  <actuator name="/pelvis/rj1" type="turbodriver_api/TurbodriverAPI_DRCv4"/>
-  <actuator name="/right_leg/j2" type="turbodriver_api/TurbodriverAPI_DRCv4"/>
-  <actuator name="/right_leg/j3" type="turbodriver_api/TurbodriverAPI_DRCv4"/>
-  <actuator name="/right_leg/j4" type="turbodriver_api/TurbodriverAPI_DRCv4"/>
-  <actuator name="/right_leg/j5" type="turbodriver_api/TurbodriverAPI_DRCv4_linear"/>
-  <actuator name="/right_leg/j6" type="turbodriver_api/TurbodriverAPI_DRCv4_linear"/>
+  <!-- <xacro:v1_leg_actuators name1="${rightleg_name1}" type1="${leg_type1}"
+                            name2="${rightleg_name2}" type2="${leg_type2}"
+                            name3="${rightleg_name3}" type3="${leg_type3}"
+                            name4="${rightleg_name4}" type4="${leg_type4}"
+                            name5="${rightleg_name5}" type5="${leg_type5}"
+                            name6="${rightleg_name6}" type6="${leg_type6}"/> -->
   <!-- <xacro:v1_leg_transmissions prefix="Right" reflect="1"
                                                actuator1="${rightleg_name1}"
                                                actuator2="${rightleg_name2}"
@@ -3059,66 +2751,12 @@
                                                actuator4="${rightleg_name4}"
                                                actuator5="${rightleg_name5}"
                                                actuator6="${rightleg_name6}" /> -->
-  <mode name="RightHipRotatorMode" type="mode_plugins/ModeInterface">
-    <translator name="RightHipRotatorModeData" type="SimpleActuatorToJointMode">
-      <joint data="mode" name="RightHipRotator"/>
-      <actuator data="mode" name="/pelvis/rj1"/>
-    </translator>
-    <translator name="RightHipRotatorModeCommand" type="SimpleJointToActuatorMode">
-      <joint data="modeCommand" name="RightHipRotator"/>
-      <actuator data="modeCommand" name="/pelvis/rj1"/>
-    </translator>
-  </mode>
-  <mode name="RightHipAdductorMode" type="mode_plugins/ModeInterface">
-    <translator name="RightHipAdductorModeData" type="SimpleActuatorToJointMode">
-      <joint data="mode" name="RightHipAdductor"/>
-      <actuator data="mode" name="/right_leg/j2"/>
-    </translator>
-    <translator name="RightHipAdductorModeCommand" type="SimpleJointToActuatorMode">
-      <joint data="modeCommand" name="RightHipAdductor"/>
-      <actuator data="modeCommand" name="/right_leg/j2"/>
-    </translator>
-  </mode>
-  <mode name="RightHipExtensorMode" type="mode_plugins/ModeInterface">
-    <translator name="RightHipExtensorModeData" type="SimpleActuatorToJointMode">
-      <joint data="mode" name="RightHipExtensor"/>
-      <actuator data="mode" name="/right_leg/j3"/>
-    </translator>
-    <translator name="RightHipExtensorModeCommand" type="SimpleJointToActuatorMode">
-      <joint data="modeCommand" name="RightHipExtensor"/>
-      <actuator data="modeCommand" name="/right_leg/j3"/>
-    </translator>
-  </mode>
-  <mode name="RightKneeExtensorMode" type="mode_plugins/ModeInterface">
-    <translator name="RightKneeExtensorModeData" type="SimpleActuatorToJointMode">
-      <joint data="mode" name="RightKneeExtensor"/>
-      <actuator data="mode" name="/right_leg/j4"/>
-    </translator>
-    <translator name="RightKneeExtensorModeCommand" type="SimpleJointToActuatorMode">
-      <joint data="modeCommand" name="RightKneeExtensor"/>
-      <actuator data="modeCommand" name="/right_leg/j4"/>
-    </translator>
-  </mode>
-  <mode name="RightAnkleExtensorMode" type="mode_plugins/ModeInterface">
-    <translator name="RightAnkleExtensorModeData" type="SimpleActuatorToJointMode">
-      <joint data="mode" name="RightAnkleExtensor"/>
-      <actuator data="mode" name="/right_leg/j5"/>
-    </translator>
-    <translator name="RightAnkleExtensorModeCommand" type="SimpleJointToActuatorMode">
-      <joint data="modeCommand" name="RightAnkleExtensor"/>
-      <actuator data="modeCommand" name="/right_leg/j5"/>
-    </translator>
-  </mode>
-  <mode name="RightAnkleMode" type="mode_plugins/ModeInterface">
-    <translator name="RightAnkleModeData" type="SimpleActuatorToJointMode">
-      <joint data="mode" name="RightAnkle"/>
-      <actuator data="mode" name="/right_leg/j6"/>
-    </translator>
-    <translator name="RightAnkleModeCommand" type="SimpleJointToActuatorMode">
-      <joint data="modeCommand" name="RightAnkle"/>
-      <actuator data="modeCommand" name="/right_leg/j6"/>
-    </translator>
-  </mode>
+  <!-- <xacro:v1_leg_modes prefix="Right" actuator1="${rightleg_name1}"
+                                       actuator2="${rightleg_name2}"
+                                       actuator3="${rightleg_name3}"
+                                       actuator4="${rightleg_name4}"
+                                       actuator5="${rightleg_name5}"
+                                       actuator6="${rightleg_name6}" /> -->
   <!-- <xacro:v1_leg_sensors prefix="Right" reflect="1" /> -->
   <!-- <xacro:v1_hw_sensors prefix="Right" hermes_node="${rightleg_hermes}" atidaq_node="${rightleg_ati}" mpu6000_node="${rightleg_mpu2000}" cop_node="${rightleg_cop}"/> -->
   <!-- ===== LEFT LEG ===== -->
@@ -3429,12 +3067,12 @@
                        parent="${LJ6_Distal_Link}" child="v1/${prefix}_Foot_Segment6"
                        origin_rpy="0 0 0"
                        origin_xyz="0 0 0"/> -->
-  <actuator name="/pelvis/lj1" type="turbodriver_api/TurbodriverAPI_DRCv4"/>
-  <actuator name="/left_leg/j2" type="turbodriver_api/TurbodriverAPI_DRCv4"/>
-  <actuator name="/left_leg/j3" type="turbodriver_api/TurbodriverAPI_DRCv4"/>
-  <actuator name="/left_leg/j4" type="turbodriver_api/TurbodriverAPI_DRCv4"/>
-  <actuator name="/left_leg/j5" type="turbodriver_api/TurbodriverAPI_DRCv4_linear"/>
-  <actuator name="/left_leg/j6" type="turbodriver_api/TurbodriverAPI_DRCv4_linear"/>
+  <!-- <xacro:v1_leg_actuators name1="${leftleg_name1}" type1="${leg_type1}"
+                            name2="${leftleg_name2}" type2="${leg_type2}"
+                            name3="${leftleg_name3}" type3="${leg_type3}"
+                            name4="${leftleg_name4}" type4="${leg_type4}"
+                            name5="${leftleg_name5}" type5="${leg_type5}"
+                            name6="${leftleg_name6}" type6="${leg_type6}"/> -->
   <!-- <xacro:v1_leg_transmissions prefix="Left" reflect="-1"
                                                actuator1="${leftleg_name1}"
                                                actuator2="${leftleg_name2}"
@@ -3442,66 +3080,12 @@
                                                actuator4="${leftleg_name4}"
                                                actuator5="${leftleg_name5}"
                                                actuator6="${leftleg_name6}" /> -->
-  <mode name="LeftHipRotatorMode" type="mode_plugins/ModeInterface">
-    <translator name="LeftHipRotatorModeData" type="SimpleActuatorToJointMode">
-      <joint data="mode" name="LeftHipRotator"/>
-      <actuator data="mode" name="/pelvis/lj1"/>
-    </translator>
-    <translator name="LeftHipRotatorModeCommand" type="SimpleJointToActuatorMode">
-      <joint data="modeCommand" name="LeftHipRotator"/>
-      <actuator data="modeCommand" name="/pelvis/lj1"/>
-    </translator>
-  </mode>
-  <mode name="LeftHipAdductorMode" type="mode_plugins/ModeInterface">
-    <translator name="LeftHipAdductorModeData" type="SimpleActuatorToJointMode">
-      <joint data="mode" name="LeftHipAdductor"/>
-      <actuator data="mode" name="/left_leg/j2"/>
-    </translator>
-    <translator name="LeftHipAdductorModeCommand" type="SimpleJointToActuatorMode">
-      <joint data="modeCommand" name="LeftHipAdductor"/>
-      <actuator data="modeCommand" name="/left_leg/j2"/>
-    </translator>
-  </mode>
-  <mode name="LeftHipExtensorMode" type="mode_plugins/ModeInterface">
-    <translator name="LeftHipExtensorModeData" type="SimpleActuatorToJointMode">
-      <joint data="mode" name="LeftHipExtensor"/>
-      <actuator data="mode" name="/left_leg/j3"/>
-    </translator>
-    <translator name="LeftHipExtensorModeCommand" type="SimpleJointToActuatorMode">
-      <joint data="modeCommand" name="LeftHipExtensor"/>
-      <actuator data="modeCommand" name="/left_leg/j3"/>
-    </translator>
-  </mode>
-  <mode name="LeftKneeExtensorMode" type="mode_plugins/ModeInterface">
-    <translator name="LeftKneeExtensorModeData" type="SimpleActuatorToJointMode">
-      <joint data="mode" name="LeftKneeExtensor"/>
-      <actuator data="mode" name="/left_leg/j4"/>
-    </translator>
-    <translator name="LeftKneeExtensorModeCommand" type="SimpleJointToActuatorMode">
-      <joint data="modeCommand" name="LeftKneeExtensor"/>
-      <actuator data="modeCommand" name="/left_leg/j4"/>
-    </translator>
-  </mode>
-  <mode name="LeftAnkleExtensorMode" type="mode_plugins/ModeInterface">
-    <translator name="LeftAnkleExtensorModeData" type="SimpleActuatorToJointMode">
-      <joint data="mode" name="LeftAnkleExtensor"/>
-      <actuator data="mode" name="/left_leg/j5"/>
-    </translator>
-    <translator name="LeftAnkleExtensorModeCommand" type="SimpleJointToActuatorMode">
-      <joint data="modeCommand" name="LeftAnkleExtensor"/>
-      <actuator data="modeCommand" name="/left_leg/j5"/>
-    </translator>
-  </mode>
-  <mode name="LeftAnkleMode" type="mode_plugins/ModeInterface">
-    <translator name="LeftAnkleModeData" type="SimpleActuatorToJointMode">
-      <joint data="mode" name="LeftAnkle"/>
-      <actuator data="mode" name="/left_leg/j6"/>
-    </translator>
-    <translator name="LeftAnkleModeCommand" type="SimpleJointToActuatorMode">
-      <joint data="modeCommand" name="LeftAnkle"/>
-      <actuator data="modeCommand" name="/left_leg/j6"/>
-    </translator>
-  </mode>
+  <!-- <xacro:v1_leg_modes prefix="Left" actuator1="${leftleg_name1}"
+                                       actuator2="${leftleg_name2}"
+                                       actuator3="${leftleg_name3}"
+                                       actuator4="${leftleg_name4}"
+                                       actuator5="${leftleg_name5}"
+                                       actuator6="${leftleg_name6}" /> -->
   <!-- <xacro:v1_leg_sensors prefix="Left" reflect="-1" /> -->
   <!-- <xacro:v1_hw_sensors prefix="Left" hermes_node="${leftleg_hermes}" atidaq_node="${leftleg_ati}" mpu6000_node="${leftleg_mpu2000}" cop_node="${leftleg_cop}"/> -->
 </robot>
