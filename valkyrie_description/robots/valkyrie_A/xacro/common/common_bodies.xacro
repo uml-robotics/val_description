@@ -1,7 +1,4 @@
 <robot xmlns:xacro="http://ros.orgt/wiki/xacro" name="v1/common_bodies">
-    <!-- ======================================================= -->
-    <!-- DO NOT MODIFY URDF BY HAND! YOU ARE A FOOL IF YOU DO! -->
-    <!-- ======================================================= -->
     <xacro:include filename="$(find valkyrie_description)/robots/valkyrie_A/xacro/pelvis/pelvis.xacro" />
     <xacro:include filename="$(find valkyrie_description)/robots/valkyrie_A/xacro/waist/waist.xacro" />
     <xacro:include filename="$(find valkyrie_description)/robots/valkyrie_A/xacro/head/head.xacro" />

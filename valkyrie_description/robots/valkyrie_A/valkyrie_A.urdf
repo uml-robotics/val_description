@@ -7,20 +7,11 @@
   <!-- ======================================================= -->
   <!-- DO NOT MODIFY URDF BY HAND! YOU ARE A FOOL IF YOU DO! -->
   <!-- ======================================================= -->
-  <!-- Cannot make into function because Xacro has psuedo lexical scoping -->
+  <!-- <xacro:include filename="$(find common_xacro)/xacro/mode_setup_hw.xacro" /> -->
+  <!-- <xacro:include filename="$(find valkyrie_description)/robots/valkyrie_A/xacro/common/hw_actuator_types.xacro"/> -->
   <!-- ======================================================= -->
   <!-- DO NOT MODIFY URDF BY HAND! YOU ARE A FOOL IF YOU DO! -->
   <!-- ======================================================= -->
-  <!-- ======================================================= -->
-  <!-- DO NOT MODIFY URDF BY HAND! YOU ARE A FOOL IF YOU DO! -->
-  <!-- ======================================================= -->
-  <!-- Its seems that zero mass links are not kosher. I can't find any solid data, only suggestions from people
-  as to what small but not too small should be for mass numbers.
-
-  Until better evidence/experience says otherwise, we will use a mass that is ~0.1% * total_mass, and
-  the inertia properties of a cylinder. Justification: Most of these virtual links are the rotor attached
-  to gearing and any attachment structure.
-   -->
   <!-- May 2015: However zero mass/inertials links are still useful. (And removed with gz sdf)
   This macro here was added to allow fixed links to have (almost) no effect on the output compound
   sdf mass and inertia
@@ -37,31 +28,7 @@
   <material name="Pink">
     <color rgba="0.8 0 0.45 1.0"/>
   </material>
-  <!-- ======================================================= -->
-  <!-- DO NOT MODIFY URDF BY HAND! YOU ARE A FOOL IF YOU DO! -->
-  <!-- ======================================================= -->
-  <!-- Mass updated - taken from Christopher McQuin's DRC Master Spreadsheet sept.xlsx, 10/7/13 -->
   <!-- Properties -->
-  <!--     
-    Joint_Offset (d): offset along previous z to the common normal
-    Joint_Angle (theta): angle about previous z, from old x to new x
-    Joint_Radius (a): length of the common normal. Assuming a revolute joint, this is the radius about previous z.
-    Joint_Twist (alpha): angle about common normal, from old z axis to new z axis
-  -->
-  <!-- WJ1 -->
-  <!-- DH Parameters -->
-  <!-- Derived -->
-  <!-- WJ2 -->
-  <!-- DH Parameters -->
-  <!-- Derived -->
-  <!-- WJ3 -->
-  <!-- DH Parameters -->
-  <!-- Derived -->
-  <!-- Below measured on 9/22/13-->
-  <!-- <xacro:property name="WJ3_Link_Mass" value="37" /> -->
-  <!-- <xacro:property name="WJ3_Link_Mass" value="39.8" /> -->
-  <!-- Battery + WJ3(no NJ1) -->
-  <!-- WJ3_Link_Mass_No_Battery_No_Neck + NJ1_Link_Mass -->
   <!--
   Microstrain
   -->
@@ -76,7 +43,6 @@
     http://ww2.ptgrey.com/USB3/Flea3
   -->
   <!-- <xacro:property name="FleaFrameRate" value="30"/> -->
-  <!-- TODO: Get waist approximation correct -->
   <!-- Actuators -->
   <!-- Transmissions -->
   <!-- Modes -->
@@ -91,57 +57,7 @@
                   width=".2" height="0.2" depth="0.2" mass="15.0"
                   origin_rpy="0 0 0"
                   origin_xyz="0 0 0" /> -->
-  <!--
-      Reference for kinematic and dynamic parameters comes from:
-
-          http://bender.jsc.nasa.gov/confluence/pages/viewpage.action?pageId=16417593
-  -->
   <!-- Properties -->
-  <!-- 
-    Reference for kinematic and dynamic parameters comes from:
-
-      http://bender.jsc.nasa.gov/confluence/pages/viewpage.action?pageId=16417593
-  -->
-  <!-- 
-    Reference for kinematic and dynamic parameters comes from:
-
-      http://bender.jsc.nasa.gov/confluence/pages/viewpage.action?pageId=16417593
-  -->
-  <!-- 
-    Reference for kinematic and dynamic parameters comes from:
-
-      http://bender.jsc.nasa.gov/confluence/pages/viewpage.action?pageId=16417593
-  -->
-  <!-- 
-    Reference for kinematic and dynamic parameters comes from:
-
-      http://bender.jsc.nasa.gov/confluence/pages/viewpage.action?pageId=16417593
-  -->
-  <!--     
-    Joint_Offset (d): offset along previous z to the common normal
-    Joint_Angle (theta): angle about previous z, from old x to new x
-    Joint_Radius (a): length of the common normal. Assuming a revolute joint, this is the radius about previous z.
-    Joint_Twist (alpha): angle about common normal, from old z axis to new z axis
-  -->
-  <!-- NJ1 -->
-  <!-- DH Parameters -->
-  <!-- Derived -->
-  <!-- NJ2 -->
-  <!-- DH Parameters -->
-  <!-- Derived -->
-  <!-- NJ3 -->
-  <!-- DH Parameters -->
-  <!-- Derived -->
-  <!-- 
-    Reference for kinematic and dynamic parameters comes from:
-
-      http://bender.jsc.nasa.gov/confluence/pages/viewpage.action?pageId=16417593
-  -->
-  <!--   <xacro:property name="NJ1_Link_Mass" value="1.08" />
-  <xacro:property name="NJ2_Link_Mass" value="1.08" />
-  <xacro:property name="NJ3_Link_Mass" value="4.34" /> -->
-  <!--  <xacro:property name="NJ3_Link_Mass" value="3.58" /> -->
-  <!-- The following were taken from Christopher McQuin's DRC Master Spreadsheet sept.xlsx, 10/7/13-->
   <!-- 
   CAMBOARD
     Specs from:
@@ -164,94 +80,6 @@
   <!-- Actuators -->
   <!-- Transmissions -->
   <!-- Modes -->
-  <!--
-        Reference for kinematic and dynamic parameters comes from:
-
-            http://bender.jsc.nasa.gov/confluence/pages/viewpage.action?pageId=16417593
-  -->
-  <!-- 
-    Reference for kinematic and dynamic parameters comes from:
-
-      http://bender.jsc.nasa.gov/confluence/pages/viewpage.action?pageId=16417593
-  -->
-  <!--
-    Reference for kinematic and dynamic parameters comes from:
-
-      http://bender.jsc.nasa.gov/confluence/pages/viewpage.action?pageId=16417593
-  -->
-  <!--
-    Reference for kinematic and dynamic parameters comes from:
-
-      http://bender.jsc.nasa.gov/confluence/pages/viewpage.action?pageId=16417593
-      Note: Some joint limits are set ~5 degrees smaller than the corresponding coeff
-  -->
-  <!--
-    Reference for kinematic and dynamic parameters comes from:
-
-      http://bender.jsc.nasa.gov/confluence/pages/viewpage.action?pageId=16417593
-  -->
-  <!--
-    Joint_Offset (d): offset along previous z to the common normal
-    Joint_Angle (theta): angle about previous z, from old x to new x
-    Joint_Radius (a): length of the common normal. Assuming a revolute joint, this is the radius about previous z.
-    Joint_Twist (alpha): angle about common normal, from old z axis to new z axis
-  -->
-  <!-- AJ1 -->
-  <!-- DH Parameters -->
-  <!-- Derived -->
-  <!-- AJ2 -->
-  <!-- DH Parameters -->
-  <!-- Derived -->
-  <!-- AJ3 -->
-  <!-- DH Parameters -->
-  <!-- Derived -->
-  <!-- AJ4 -->
-  <!-- DH Parameters -->
-  <!-- Derived -->
-  <!-- AJ5 -->
-  <!-- DH Parameters -->
-  <!-- Derived -->
-  <!-- AJ6 -->
-  <!-- DH Parameters -->
-  <!-- Derived -->
-  <!-- AJ7 -->
-  <!-- DH Parameters -->
-  <!-- Derived -->
-  <!-- 
-    Reference for kinematic and dynamic parameters comes from:
-
-      http://bender.jsc.nasa.gov/confluence/pages/viewpage.action?pageId=16417593
-  -->
-  <!-- AJ1 -->
-  <!--   <xacro:property name="AJ1_Link_Mass" value="2.65" />
-  <xacro:property name="AJ2_Link_Mass" value="3.5" />
-  <xacro:property name="AJ3_Link_Mass" value="2.3" /> -->
-  <!-- cdr -->
-  <!--
-  <xacro:property name="AJ4_Link_Mass" value="1.05" />
-  <xacro:property name="AJ5_Link_Mass" value="0.95" />
-  <xacro:property name="AJ6_Link_Mass" value="0.58" />
-  <xacro:property name="AJ7_Link_Mass" value="0.06" />
- -->
-  <!--    default xacro
- -->
-  <!--
-  <xacro:property name="AJ4_Link_Mass" value="2.3" />
-  <xacro:property name="AJ5_Link_Mass" value="2.95" />
-  <xacro:property name="AJ6_Link_Mass" value="0.73" />
-  <xacro:property name="AJ7_Link_Mass" value="0.06" /> -->
-  <!-- wiki -->
-  <!--  <xacro:property name="AJ4_Link_Mass" value="2.52" />
-  <xacro:property name="AJ5_Link_Mass" value="2.95" />
-  <xacro:property name="AJ6_Link_Mass" value="0.06" />
-  <xacro:property name="AJ7_Link_Mass" value="0.73" />
- -->
-  <!-- 
- <xacro:property name="AJ4_Link_Mass" value="1.05" />
-  <xacro:property name="AJ5_Link_Mass" value="2.95" />
-  <xacro:property name="AJ6_Link_Mass" value="0.06" />
-  <xacro:property name="AJ7_Link_Mass" value="0.73" /> -->
-  <!-- The following were taken from Christopher McQuin's DRC Master Spreadsheet sept.xlsx, 10/7/13-->
   <!-- 
   CAMBOARD
     Specs from:
@@ -263,66 +91,6 @@
   <!-- Actuators -->
   <!-- Transmissions -->
   <!-- Modes -->
-  <!-- 
-    Reference for kinematic and dynamic parameters comes from:
-
-      http://bender.jsc.nasa.gov/confluence/pages/viewpage.action?pageId=16417593
-  -->
-  <!-- 
-    Reference for kinematic and dynamic parameters comes from:
-
-      http://bender.jsc.nasa.gov/confluence/pages/viewpage.action?pageId=16417593
-  -->
-  <!-- 
-    Reference for kinematic and dynamic parameters comes from:
-
-      http://bender.jsc.nasa.gov/confluence/pages/viewpage.action?pageId=16417593
-  -->
-  <!-- 
-    Reference for kinematic and dynamic parameters comes from:
-
-      http://bender.jsc.nasa.gov/confluence/pages/viewpage.action?pageId=16417593
-  -->
-  <!--     
-    Joint_Offset (d): offset along previous z to the common normal
-    Joint_Angle (theta): angle about previous z, from old x to new x
-    Joint_Radius (a): length of the common normal. Assuming a revolute joint, this is the radius about previous z.
-    Joint_Twist (alpha): angle about common normal, from old z axis to new z axis
-  -->
-  <!-- LJ1 -->
-  <!-- DH Parameters -->
-  <!-- Derived -->
-  <!-- LJ2 -->
-  <!-- DH Parameters -->
-  <!-- Derived -->
-  <!-- LJ3 -->
-  <!-- DH Parameters -->
-  <!-- Derived -->
-  <!-- LJ4 -->
-  <!-- DH Parameters -->
-  <!-- Derived -->
-  <!-- LJ5 -->
-  <!-- DH Parameters -->
-  <!-- Derived -->
-  <!-- LJ6 -->
-  <!-- DH Parameters -->
-  <!-- Derived -->
-  <!--
-    Reference for kinematic and dynamic parameters comes from:
-
-      http://bender.jsc.nasa.gov/confluence/pages/viewpage.action?pageId=16417593
-  -->
-  <!--   <xacro:property name="LJ1_Link_Mass" value="2.65" />
-  <xacro:property name="LJ2_Link_Mass" value="3.5" />
-  <xacro:property name="LJ3_Link_Mass" value="2.3" />
-  <xacro:property name="LJ4_Link_Box_Mass" value="1" />
-  <xacro:property name="LJ4_Link_Cylinder_Mass" value="2.5" />
-  <xacro:property name="LJ5_Link_Mass" value="2.95" />
-  <xacro:property name="LJ6_Link_Mass" value="0.06" /> -->
-  <!-- The following were taken from Christopher McQuin's DRC Master Spreadsheet sept.xlsx, 10/7/13-->
-  <!-- <xacro:property name="LJ5_Link_Mass" value="0.105" /> -->
-  <!-- 0.29 kg added to ankle after replacing springs -->
-  <!-- To debug the ankle, we're simplifying the model to McQuin's original specification-->
   <!-- 
   CAMBOARD
     Specs from:
@@ -337,269 +105,29 @@
   <!-- <xacro:property name="HokuyoAngularResolution" value="${0.25 * DEG2RAD}"/> -->
   <!-- Using worse case (10-30m) standard deviation -->
   <!-- Link properties. -->
-  <!-- These values were used when the foot is split into segments-->
-  <!-- <xacro:property name="LJ6_Link_Width" value="0.082"/>
-  <xacro:property name="LJ6_Link_Height" value="0.058"/>
-  <xacro:property name="LJ6_Link_Length" value="0.100"/> -->
-  <!-- The following were taken from Christopher McQuin's e-mail on 07/07/2013-->
-  <!-- <xacro:property name="LJ6_Link_Box_Origin_X" value="0.018"/>
-  <xacro:property name="LJ6_Link_Box_Origin_Y" value="0"/>
-  <xacro:property name="LJ6_Link_Box_Origin_Z" value="0"/> -->
-  <!-- <xacro:property name="Foot_Segment_Width" value="0.075" />
-  <xacro:property name="Foot_Segment_Height" value="0.04" />
-  <xacro:property name="Foot_Segment_Depth" value="0.125" />
-
-  <xacro:property name="Foot_Segment_Mass" value="0.4" />
-  <xacro:property name="Foot_Segment_Origin_X" value="0.05" />
-
-  <xacro:property name="Foot_Segment1_Origin_X" value="${Foot_Segment_Origin_X}" />
-  <xacro:property name="Foot_Segment1_Origin_Y" value="-0.0375" />
-  <xacro:property name="Foot_Segment1_Origin_Z" value="0.125" />
-
-  <xacro:property name="Foot_Segment2_Origin_X" value="${Foot_Segment_Origin_X}" />
-  <xacro:property name="Foot_Segment2_Origin_Y" value="0.0375" />
-  <xacro:property name="Foot_Segment2_Origin_Z" value="0.125" />
-
-  <xacro:property name="Foot_Segment3_Origin_X" value="${Foot_Segment_Origin_X}" />
-  <xacro:property name="Foot_Segment3_Origin_Y" value="0" />
-  <xacro:property name="Foot_Segment3_Origin_Z" value="0.0613" /> -->
-  <!--   <xacro:property name="Foot_Segment4_Origin_X" value="0.1192" />
-  <xacro:property name="Foot_Segment4_Origin_Y" value="0.0375" />
-  <xacro:property name="Foot_Segment4_Origin_Z" value="-0.125" /> -->
-  <!-- <xacro:property name="Foot_Segment5_Origin_X" value="${Foot_Segment_Origin_X}" />
-  <xacro:property name="Foot_Segment5_Origin_Y" value="0.0375" />
-  <xacro:property name="Foot_Segment5_Origin_Z" value="0.0050" />
-
-  <xacro:property name="Foot_Segment6_Origin_X" value="${Foot_Segment_Origin_X}" />
-  <xacro:property name="Foot_Segment6_Origin_Y" value="-0.0375" />
-  <xacro:property name="Foot_Segment6_Origin_Z" value="0.0050" /> -->
   <!-- Sensors -->
   <!-- Actuators -->
   <!-- Transmissions -->
   <!-- Note that the transmission requires the convention of [roll, pitch] and [inner_shin_motor, outer_shin_motor] -->
   <!-- Modes -->
-  <!--
-        Reference for kinematic and dynamic parameters comes from:
-
-            http://bender.jsc.nasa.gov/confluence/pages/viewpage.action?pageId=16417593
-  -->
-  <!-- 
-    Reference for kinematic and dynamic parameters comes from:
-
-      http://bender.jsc.nasa.gov/confluence/pages/viewpage.action?pageId=16417593
-  -->
-  <!-- 
-    Reference for kinematic and dynamic parameters comes from:
-
-      http://bender.jsc.nasa.gov/confluence/pages/viewpage.action?pageId=16417593
-  -->
-  <!-- 
-    Reference for kinematic and dynamic parameters comes from:
-
-      http://bender.jsc.nasa.gov/confluence/pages/viewpage.action?pageId=16417593
-  -->
-  <!-- 
-    Reference for kinematic and dynamic parameters comes from:
-
-      http://bender.jsc.nasa.gov/confluence/pages/viewpage.action?pageId=16417593
-  -->
-  <!-- 
-    Reference for kinematic and dynamic parameters comes from:
-
-      http://bender.jsc.nasa.gov/confluence/pages/viewpage.action?pageId=16417593
-  -->
-  <!--     
-    Joint_Offset (d): offset along previous z to the common normal
-    Joint_Angle (theta): angle about previous z, from old x to new x
-    Joint_Radius (a): length of the common normal. Assuming a revolute joint, this is the radius about previous z.
-    Joint_Twist (alpha): angle about common normal, from old z axis to new z axis
-  -->
-  <!-- TJ1 -->
-  <!-- DH Parameters -->
-  <!-- Derived -->
-  <!-- TJ2 -->
-  <!-- DH Parameters -->
-  <!-- Derived -->
-  <!-- TJ3 -->
-  <!-- DH Parameters -->
-  <!-- Derived -->
-  <!-- TJ4 -->
-  <!-- DH Parameters -->
-  <!-- Derived -->
   <!-- Link properties. -->
   <!-- Actuators -->
   <!-- Transmissions -->
   <!-- Modes -->
   <!-- Complete interface -->
-  <!-- 
-        Reference for kinematic and dynamic parameters comes from:
-
-            http://bender.jsc.nasa.gov/confluence/pages/viewpage.action?pageId=16417593
-  -->
-  <!-- 
-    Reference for kinematic and dynamic parameters comes from:
-
-      http://bender.jsc.nasa.gov/confluence/pages/viewpage.action?pageId=16417593
-  -->
-  <!-- 
-    Reference for kinematic and dynamic parameters comes from:
-
-      http://bender.jsc.nasa.gov/confluence/pages/viewpage.action?pageId=16417593
-  -->
-  <!-- 
-    Reference for kinematic and dynamic parameters comes from:
-
-      http://bender.jsc.nasa.gov/confluence/pages/viewpage.action?pageId=16417593
-  -->
   <!-- /v1/${prefix}Palm -->
-  <!-- 
-    Reference for kinematic and dynamic parameters comes from:
-
-      http://bender.jsc.nasa.gov/confluence/pages/viewpage.action?pageId=16417593
-  -->
-  <!-- 
-    Reference for kinematic and dynamic parameters comes from:
-
-      http://bender.jsc.nasa.gov/confluence/pages/viewpage.action?pageId=16417593
-  -->
-  <!--     
-    Joint_Offset (d): offset along previous z to the common normal
-    Joint_Angle (theta): angle about previous z, from old x to new x
-    Joint_Radius (a): length of the common normal. Assuming a revolute joint, this is the radius about previous z.
-    Joint_Twist (alpha): angle about common normal, from old z axis to new z axis
-  -->
-  <!-- PFJ1 -->
-  <!-- DH Parameters -->
-  <!-- Derived -->
-  <!-- PFJ2 -->
-  <!-- DH Parameters -->
-  <!-- Derived -->
-  <!-- PFJ3 -->
-  <!-- DH Parameters -->
-  <!-- Derived -->
-  <!-- PFJ4 -->
-  <!-- DH Parameters -->
-  <!-- Derived -->
-  <!-- 
-    Reference for kinematic and dynamic parameters comes from:
-
-      http://bender.jsc.nasa.gov/confluence/pages/viewpage.action?pageId=16417593
-  -->
   <!-- Link properties. -->
   <!-- Actuators -->
   <!-- Transmissions -->
   <!-- Modes -->
   <!-- Complete interface -->
   <!-- Simple interface -->
-  <!-- 
-        Reference for kinematic and dynamic parameters comes from:
-
-            http://bender.jsc.nasa.gov/confluence/pages/viewpage.action?pageId=16417593
-  -->
-  <!-- 
-    Reference for kinematic and dynamic parameters comes from:
-
-      http://bender.jsc.nasa.gov/confluence/pages/viewpage.action?pageId=16417593
-  -->
-  <!-- 
-    Reference for kinematic and dynamic parameters comes from:
-
-      http://bender.jsc.nasa.gov/confluence/pages/viewpage.action?pageId=16417593
-  -->
-  <!-- 
-    Reference for kinematic and dynamic parameters comes from:
-
-      http://bender.jsc.nasa.gov/confluence/pages/viewpage.action?pageId=16417593
-  -->
-  <!-- 
-    Reference for kinematic and dynamic parameters comes from:
-
-      http://bender.jsc.nasa.gov/confluence/pages/viewpage.action?pageId=16417593
-  -->
-  <!-- 
-    Reference for kinematic and dynamic parameters comes from:
-
-      http://bender.jsc.nasa.gov/confluence/pages/viewpage.action?pageId=16417593
-  -->
-  <!--     
-    Joint_Offset (d): offset along previous z to the common normal
-    Joint_Angle (theta): angle about previous z, from old x to new x
-    Joint_Radius (a): length of the common normal. Assuming a revolute joint, this is the radius about previous z.
-    Joint_Twist (alpha): angle about common normal, from old z axis to new z axis
-  -->
-  <!-- MFJ1 -->
-  <!-- DH Parameters -->
-  <!-- Derived -->
-  <!-- MFJ2 -->
-  <!-- DH Parameters -->
-  <!-- Derived -->
-  <!-- MFJ3 -->
-  <!-- DH Parameters -->
-  <!-- Derived -->
-  <!-- 
-    Reference for kinematic and dynamic parameters comes from:
-
-      http://bender.jsc.nasa.gov/confluence/pages/viewpage.action?pageId=16417593
-  -->
   <!-- Link properties. -->
   <!-- Actuators -->
   <!-- Transmissions -->
   <!-- Modes -->
   <!-- Complete interface -->
   <!-- Simple interface -->
-  <!--
-        Reference for kinematic and dynamic parameters comes from:
-
-            http://bender.jsc.nasa.gov/confluence/pages/viewpage.action?pageId=16417593
-  -->
-  <!-- 
-    Reference for kinematic and dynamic parameters comes from:
-
-      http://bender.jsc.nasa.gov/confluence/pages/viewpage.action?pageId=16417593
-  -->
-  <!-- 
-    Reference for kinematic and dynamic parameters comes from:
-
-      http://bender.jsc.nasa.gov/confluence/pages/viewpage.action?pageId=16417593
-  -->
-  <!-- 
-    Reference for kinematic and dynamic parameters comes from:
-
-      http://bender.jsc.nasa.gov/confluence/pages/viewpage.action?pageId=16417593
-  -->
-  <!-- 
-    Reference for kinematic and dynamic parameters comes from:
-
-      http://bender.jsc.nasa.gov/confluence/pages/viewpage.action?pageId=16417593
-  -->
-  <!-- 
-    Reference for kinematic and dynamic parameters comes from:
-
-      http://bender.jsc.nasa.gov/confluence/pages/viewpage.action?pageId=16417593
-  -->
-  <!--     
-    Joint_Offset (d): offset along previous z to the common normal
-    Joint_Angle (theta): angle about previous z, from old x to new x
-    Joint_Radius (a): length of the common normal. Assuming a revolute joint, this is the radius about previous z.
-    Joint_Twist (alpha): angle about common normal, from old z axis to new z axis
-  -->
-  <!-- LFJ1 -->
-  <!-- DH Parameters -->
-  <!-- Derived -->
-  <!-- LFJ2 -->
-  <!-- DH Parameters -->
-  <!-- Derived -->
-  <!-- LFJ3 -->
-  <!-- DH Parameters -->
-  <!-- Derived -->
-  <!-- LFJ4 -->
-  <!-- DH Parameters -->
-  <!-- Derived -->
-  <!-- 
-    Reference for kinematic and dynamic parameters comes from:
-
-      http://bender.jsc.nasa.gov/confluence/pages/viewpage.action?pageId=16417593
-  -->
   <!-- Link properties. -->
   <!-- Actuators -->
   <!-- Transmissions -->
@@ -2532,15 +2060,6 @@
   <gazebo reference="/v1/RightShankStructure">
     <material>Gazebo/White</material>
   </gazebo>
-  <!-- <xacro:cylinder_link_no_mesh name="${LJ4_Distal_Link_Cylinder1}"
-                                 radius="${LJ4_Link_Cylinder_Radius}" length="${LJ4_Link_Cylinder_Length}" mass="${LJ4_Link_Cylinder_Mass}"
-                                 origin_xyz="${LJ4_Link_Cylinder_Origin_X} ${LJ4_Link_Cylinder_Origin_Y} ${LJ4_Link_Cylinder_Origin_Z}"
-                                 origin_rpy="0 ${pi_2} 0"/>
-
-    <xacro:cylinder_link_no_mesh name="${LJ4_Distal_Link_Cylinder2}"
-                                 radius="${LJ4_Link_Cylinder_Radius}" length="${LJ4_Link_Cylinder_Length}" mass="${LJ4_Link_Cylinder_Mass}"
-                                 origin_xyz="${LJ4_Link_Cylinder_Origin_X} ${LJ4_Link_Cylinder_Origin_Y} ${-1 * LJ4_Link_Cylinder_Origin_Z}"
-                                 origin_rpy="0 ${pi_2} 0"/> -->
   <link name="/v1/RightAnkleYoke">
     <inertial>
       <mass value="0.395"/>
@@ -2861,15 +2380,6 @@
   <gazebo reference="/v1/LeftShankStructure">
     <material>Gazebo/White</material>
   </gazebo>
-  <!-- <xacro:cylinder_link_no_mesh name="${LJ4_Distal_Link_Cylinder1}"
-                                 radius="${LJ4_Link_Cylinder_Radius}" length="${LJ4_Link_Cylinder_Length}" mass="${LJ4_Link_Cylinder_Mass}"
-                                 origin_xyz="${LJ4_Link_Cylinder_Origin_X} ${LJ4_Link_Cylinder_Origin_Y} ${LJ4_Link_Cylinder_Origin_Z}"
-                                 origin_rpy="0 ${pi_2} 0"/>
-
-    <xacro:cylinder_link_no_mesh name="${LJ4_Distal_Link_Cylinder2}"
-                                 radius="${LJ4_Link_Cylinder_Radius}" length="${LJ4_Link_Cylinder_Length}" mass="${LJ4_Link_Cylinder_Mass}"
-                                 origin_xyz="${LJ4_Link_Cylinder_Origin_X} ${LJ4_Link_Cylinder_Origin_Y} ${-1 * LJ4_Link_Cylinder_Origin_Z}"
-                                 origin_rpy="0 ${pi_2} 0"/> -->
   <link name="/v1/LeftAnkleYoke">
     <inertial>
       <mass value="0.395"/>
@@ -3086,6 +2596,4 @@
                                        actuator4="${leftleg_name4}"
                                        actuator5="${leftleg_name5}"
                                        actuator6="${leftleg_name6}" /> -->
-  <!-- <xacro:v1_leg_sensors prefix="Left" reflect="-1" /> -->
-  <!-- <xacro:v1_hw_sensors prefix="Left" hermes_node="${leftleg_hermes}" atidaq_node="${leftleg_ati}" mpu6000_node="${leftleg_mpu2000}" cop_node="${leftleg_cop}"/> -->
 </robot>

@@ -1,11 +1,6 @@
 <?xml version="1.0" ?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="v1/arm/joint_limits">
-  <!--
-    Reference for kinematic and dynamic parameters comes from:
-
-      http://bender.jsc.nasa.gov/confluence/pages/viewpage.action?pageId=16417593
-      Note: Some joint limits are set ~5 degrees smaller than the corresponding coeff
-  -->
+  
   <xacro:property name="AJ1_Torque_Limit" value="190" />
   <xacro:property name="AJ2_Torque_Limit" value="190" />
   <xacro:property name="AJ3_Torque_Limit" value="65" />

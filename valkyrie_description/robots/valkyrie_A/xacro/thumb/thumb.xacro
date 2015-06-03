@@ -1,10 +1,6 @@
 <?xml version="1.0" ?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="v1/thumb">
-  <!--
-        Reference for kinematic and dynamic parameters comes from:
-
-            http://bender.jsc.nasa.gov/confluence/pages/viewpage.action?pageId=16417593
-  -->
+  
   <xacro:include filename="$(find valkyrie_description)/robots/valkyrie_A/xacro/thumb/joint_names.xacro"/>
   <xacro:include filename="$(find valkyrie_description)/robots/valkyrie_A/xacro/thumb/actuator_names.xacro"/>
   <xacro:include filename="$(find valkyrie_description)/robots/valkyrie_A/xacro/thumb/link_names.xacro"/>

@@ -279,13 +279,6 @@
     </link>
   </xacro:macro>
 
-  <!-- Its seems that zero mass links are not kosher. I can't find any solid data, only suggestions from people
-  as to what small but not too small should be for mass numbers.
-
-  Until better evidence/experience says otherwise, we will use a mass that is ~0.1% * total_mass, and
-  the inertia properties of a cylinder. Justification: Most of these virtual links are the rotor attached
-  to gearing and any attachment structure.
-   -->
   <xacro:property name="virtual_link_mass" value="0.1"/>
   <xacro:property name="virtual_link_radius" value="0.05"/>
   <xacro:property name="virtual_link_height" value="0.05"/>

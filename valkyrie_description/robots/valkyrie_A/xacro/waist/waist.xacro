@@ -10,7 +10,6 @@
   <xacro:include filename="$(find valkyrie_description)/robots/valkyrie_A/xacro/sensors/virtual_sensor.xacro"/>
   <xacro:include filename="$(find valkyrie_description)/robots/valkyrie_A/xacro/sensors/flea.xacro"/>
 
-  <!-- TODO: Get waist approximation correct -->
   <xacro:property name="Trunk_Width" value="0.47605775481079287692"/>
   <xacro:property name="Trunk_Height" value="0.39817895332782154982"/>
   <xacro:property name="Trunk_Length" value="0.42203731228144558685"/>

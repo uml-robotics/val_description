@@ -1,10 +1,6 @@
 <?xml version="1.0" ?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="v1/primary_finger/joint_limits">
-  <!-- 
-    Reference for kinematic and dynamic parameters comes from:
 
-      http://bender.jsc.nasa.gov/confluence/pages/viewpage.action?pageId=16417593
-  -->
   <xacro:property name="PFJ1_Torque_Limit" value="10" />
   <xacro:property name="PFJ2_Torque_Limit" value="10" />
   <xacro:property name="PFJ3_Torque_Limit" value="10" />

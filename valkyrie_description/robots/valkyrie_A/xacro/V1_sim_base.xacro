@@ -1,7 +1,5 @@
 <robot xmlns:xacro="http://ros.org/wiki/xacro" name="valkyrie">
-    <!-- ======================================================= -->
-    <!-- DO NOT MODIFY URDF BY HAND! YOU ARE A FOOL IF YOU DO! -->
-    <!-- ======================================================= -->
+    
     <xacro:include filename="$(find common_xacro)/xacro/generic_models.xacro" />
     <xacro:include filename="$(find valkyrie_description)/robots/valkyrie_A/xacro/plugins/gazebo_plugins.xacro"/>
 
@@ -86,7 +84,7 @@
                             name5="${leftarm_name5}" type5="${arm_type5}"
                             name6="${leftarm_name6}" type6="${arm_type6}"
                             name7="${leftarm_name7}" type7="${arm_type7}"/> -->
-                            
+
     <!-- <xacro:v1_upper_arm_transmissions prefix="Left" actuator1="${leftarm_name1}" actuator2="${leftarm_name2}" actuator3="${leftarm_name3}" actuator4="${leftarm_name4}"/> -->
     <!-- <xacro:v1_lower_arm_transmissions prefix="Left" actuator1="${leftarm_name5}" actuator2="${leftarm_name6}" actuator3="${leftarm_name7}"/> -->
     <!-- <xacro:v1_arm_modes prefix="Left" actuator1="${leftarm_name1}" actuator2="${leftarm_name2}" actuator3="${leftarm_name3}" actuator4="${leftarm_name4}" actuator5="${leftarm_name5}" actuator6="${leftarm_name6}" actuator7="${leftarm_name7}"/> -->
@@ -153,6 +151,4 @@
                                        actuator4="${leftleg_name4}"
                                        actuator5="${leftleg_name5}"
                                        actuator6="${leftleg_name6}" /> -->
-    <!-- <xacro:v1_leg_sensors prefix="Left" reflect="-1" /> -->
-    <!-- <xacro:v1_hw_sensors prefix="Left" hermes_node="${leftleg_hermes}" atidaq_node="${leftleg_ati}" mpu6000_node="${leftleg_mpu2000}" cop_node="${leftleg_cop}"/> -->
 </robot>

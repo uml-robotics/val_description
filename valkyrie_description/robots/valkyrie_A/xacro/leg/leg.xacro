@@ -45,51 +45,13 @@
   <xacro:property name="LJ5_Link_Box_Origin_Y" value="2.0433211e-03"/>
   <xacro:property name="LJ5_Link_Box_Origin_Z" value="9.0424431e-05"/>
 
-  <!-- These values were used when the foot is split into segments-->
-  <!-- <xacro:property name="LJ6_Link_Width" value="0.082"/>
-  <xacro:property name="LJ6_Link_Height" value="0.058"/>
-  <xacro:property name="LJ6_Link_Length" value="0.100"/> -->
   <xacro:property name="LJ6_Link_Width" value="0.082"/>
   <xacro:property name="LJ6_Link_Height" value="0.128"/>
   <xacro:property name="LJ6_Link_Length" value="0.300"/>
-  <!-- The following were taken from Christopher McQuin's e-mail on 07/07/2013-->
+  
   <xacro:property name="LJ6_Link_Box_Origin_X" value="4.8263578e-02"/>
   <xacro:property name="LJ6_Link_Box_Origin_Y" value="-3.1591183e-05"/>
   <xacro:property name="LJ6_Link_Box_Origin_Z" value="7.7849126e-02"/>
-  <!-- <xacro:property name="LJ6_Link_Box_Origin_X" value="0.018"/>
-  <xacro:property name="LJ6_Link_Box_Origin_Y" value="0"/>
-  <xacro:property name="LJ6_Link_Box_Origin_Z" value="0"/> -->
-
-  <!-- <xacro:property name="Foot_Segment_Width" value="0.075" />
-  <xacro:property name="Foot_Segment_Height" value="0.04" />
-  <xacro:property name="Foot_Segment_Depth" value="0.125" />
-
-  <xacro:property name="Foot_Segment_Mass" value="0.4" />
-  <xacro:property name="Foot_Segment_Origin_X" value="0.05" />
-
-  <xacro:property name="Foot_Segment1_Origin_X" value="${Foot_Segment_Origin_X}" />
-  <xacro:property name="Foot_Segment1_Origin_Y" value="-0.0375" />
-  <xacro:property name="Foot_Segment1_Origin_Z" value="0.125" />
-
-  <xacro:property name="Foot_Segment2_Origin_X" value="${Foot_Segment_Origin_X}" />
-  <xacro:property name="Foot_Segment2_Origin_Y" value="0.0375" />
-  <xacro:property name="Foot_Segment2_Origin_Z" value="0.125" />
-
-  <xacro:property name="Foot_Segment3_Origin_X" value="${Foot_Segment_Origin_X}" />
-  <xacro:property name="Foot_Segment3_Origin_Y" value="0" />
-  <xacro:property name="Foot_Segment3_Origin_Z" value="0.0613" /> -->
-
-<!--   <xacro:property name="Foot_Segment4_Origin_X" value="0.1192" />
-  <xacro:property name="Foot_Segment4_Origin_Y" value="0.0375" />
-  <xacro:property name="Foot_Segment4_Origin_Z" value="-0.125" /> -->
-
-  <!-- <xacro:property name="Foot_Segment5_Origin_X" value="${Foot_Segment_Origin_X}" />
-  <xacro:property name="Foot_Segment5_Origin_Y" value="0.0375" />
-  <xacro:property name="Foot_Segment5_Origin_Z" value="0.0050" />
-
-  <xacro:property name="Foot_Segment6_Origin_X" value="${Foot_Segment_Origin_X}" />
-  <xacro:property name="Foot_Segment6_Origin_Y" value="-0.0375" />
-  <xacro:property name="Foot_Segment6_Origin_Z" value="0.0050" /> -->
 
   <xacro:macro name="make_leg_links" params="prefix reflect leg_root_link">
     <!-- LINKS -->
@@ -123,16 +85,6 @@
                     visual_mesh="${mesh_root}/lj4_${prefix}.stl"
                     material="White"
                     collision_mesh="${mesh_root}/lj4_${prefix}.stl"/>
-
-    <!-- <xacro:cylinder_link_no_mesh name="${LJ4_Distal_Link_Cylinder1}"
-                                 radius="${LJ4_Link_Cylinder_Radius}" length="${LJ4_Link_Cylinder_Length}" mass="${LJ4_Link_Cylinder_Mass}"
-                                 origin_xyz="${LJ4_Link_Cylinder_Origin_X} ${LJ4_Link_Cylinder_Origin_Y} ${LJ4_Link_Cylinder_Origin_Z}"
-                                 origin_rpy="0 ${pi_2} 0"/>
-
-    <xacro:cylinder_link_no_mesh name="${LJ4_Distal_Link_Cylinder2}"
-                                 radius="${LJ4_Link_Cylinder_Radius}" length="${LJ4_Link_Cylinder_Length}" mass="${LJ4_Link_Cylinder_Mass}"
-                                 origin_xyz="${LJ4_Link_Cylinder_Origin_X} ${LJ4_Link_Cylinder_Origin_Y} ${-1 * LJ4_Link_Cylinder_Origin_Z}"
-                                 origin_rpy="0 ${pi_2} 0"/> -->
 
     <xacro:box_link_no_mesh name="${LJ5_Distal_Link}"
                     width="${LJ5_Link_Width}" height="${LJ5_Link_Height}" depth="${LJ5_Link_Length}" mass="${LJ5_Link_Mass}"

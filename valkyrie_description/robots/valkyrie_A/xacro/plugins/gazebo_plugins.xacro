@@ -1,5 +1,5 @@
 <?xml version="1.0" ?>
-<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="nasa_drc_pluginss">
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="nasa_drc_plugins">
 
   <xacro:macro name="plugin_sm_interface" params="robot_description update_rate">
     <plugin filename="libSMInterface.so" name="SharedMemoryInterface">
