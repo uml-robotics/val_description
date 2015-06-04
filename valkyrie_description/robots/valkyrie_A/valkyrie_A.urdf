@@ -4,9 +4,6 @@
 <!-- |    EDITING THIS FILE BY HAND IS NOT RECOMMENDED                                 | -->
 <!-- =================================================================================== -->
 <robot name="valkyrie" xmlns:xacro="http://www.ros.org/wiki/xacro">
-  <!-- ======================================================= -->
-  <!-- DO NOT MODIFY URDF BY HAND! YOU ARE A FOOL IF YOU DO! -->
-  <!-- ======================================================= -->
   <!-- <xacro:include filename="$(find common_xacro)/xacro/mode_setup_hw.xacro" /> -->
   <!-- <xacro:include filename="$(find valkyrie_description)/robots/valkyrie_A/xacro/common/hw_actuator_types.xacro"/> -->
   <!-- May 2015: However zero mass/inertials links are still useful. (And removed with gz sdf)
