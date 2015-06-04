@@ -1,5 +1,5 @@
-<robot xmlns:xacro="http://ros.org/wiki/xacro" name="v1/Pelvis">
-    <xacro:property name="Pelvis_Link_Name" value="/v1/Pelvis" />
+<robot xmlns:xacro="http://ros.org/wiki/xacro" name="Pelvis">
+    <xacro:property name="Pelvis_Link_Name" value="Pelvis" />
 
     <xacro:macro name="make_pelvis">
         <xacro:box_link name="${Pelvis_Link_Name}"

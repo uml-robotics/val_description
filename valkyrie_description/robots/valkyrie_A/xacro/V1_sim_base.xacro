@@ -60,19 +60,19 @@
     <!-- <xacro:v1_arm_sensors /> -->
 
     <!-- ===== RIGHT THUMB ===== -->
-    <xacro:make_thumb_fixed prefix="Right" reflect="1" thumb_root_link="/v1/RightPalm"/>
+    <xacro:make_thumb_fixed prefix="Right" reflect="1" thumb_root_link="RightPalm"/>
     <!-- <xacro:make_right_thumb_interface api="${finger_api}"/> -->
 
     <!-- ===== RIGHT PRIMARY FINGER ===== -->
-    <xacro:make_primary_finger_fixed prefix="Right" reflect="1" primary_finger_root_link="/v1/RightPalm"/>
+    <xacro:make_primary_finger_fixed prefix="Right" reflect="1" primary_finger_root_link="RightPalm"/>
     <!-- <xacro:make_right_primary_finger_interface api="${finger_api}"/> -->
 
     <!-- ===== RIGHT MIDDLE FINGER ===== -->
-    <xacro:make_middle_finger_fixed prefix="Right" reflect="1" middle_finger_root_link="/v1/RightPalm"/>
+    <xacro:make_middle_finger_fixed prefix="Right" reflect="1" middle_finger_root_link="RightPalm"/>
     <!-- <xacro:make_right_middle_finger_interface api="${finger_api}"/> -->
 
     <!-- ===== RIGHT LITTLE FINGER ===== -->
-    <xacro:make_little_finger_fixed prefix="Right" reflect="1" little_finger_root_link="/v1/RightPalm"/>
+    <xacro:make_little_finger_fixed prefix="Right" reflect="1" little_finger_root_link="RightPalm"/>
     <!-- <xacro:make_right_little_finger_interface api="${finger_api}"/> -->
 
     <!-- ===== LEFT ARM ===== -->
@@ -90,19 +90,19 @@
     <!-- <xacro:v1_arm_modes prefix="Left" actuator1="${leftarm_name1}" actuator2="${leftarm_name2}" actuator3="${leftarm_name3}" actuator4="${leftarm_name4}" actuator5="${leftarm_name5}" actuator6="${leftarm_name6}" actuator7="${leftarm_name7}"/> -->
 
     <!-- ===== LEFT THUMB ===== -->
-    <xacro:make_thumb_fixed prefix="Left" reflect="-1" thumb_root_link="/v1/LeftPalm"/>
+    <xacro:make_thumb_fixed prefix="Left" reflect="-1" thumb_root_link="LeftPalm"/>
     <!-- <xacro:make_left_thumb_interface api="${finger_api}"/> -->
 
     <!-- ===== LEFT PRIMARY FINGER ===== -->
-    <xacro:make_primary_finger_fixed prefix="Left" reflect="-1" primary_finger_root_link="/v1/LeftPalm"/>
+    <xacro:make_primary_finger_fixed prefix="Left" reflect="-1" primary_finger_root_link="LeftPalm"/>
     <!-- <xacro:make_left_primary_finger_interface api="${finger_api}"/> -->
 
     <!-- ===== LEFT MIDDLE FINGER ===== -->
-    <xacro:make_middle_finger_fixed prefix="Left" reflect="-1" middle_finger_root_link="/v1/LeftPalm"/>
+    <xacro:make_middle_finger_fixed prefix="Left" reflect="-1" middle_finger_root_link="LeftPalm"/>
     <!-- <xacro:make_left_middle_finger_interface api="${finger_api}"/> -->
 
     <!-- ===== LEFT LITTLE FINGER ===== -->
-    <xacro:make_little_finger_fixed prefix="Left" reflect="-1" little_finger_root_link="/v1/LeftPalm"/>
+    <xacro:make_little_finger_fixed prefix="Left" reflect="-1" little_finger_root_link="LeftPalm"/>
     <!-- <xacro:make_left_little_finger_interface api="${finger_api}"/> -->
 
     <!-- ===== RIGHT LEG ===== -->
