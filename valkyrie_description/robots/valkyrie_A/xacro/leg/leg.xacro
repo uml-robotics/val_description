@@ -111,38 +111,6 @@
       <minDepth>0.00</minDepth>
     </gazebo>
 
-    <!-- <xacro:box_link_no_mesh name="v1/${prefix}_Foot_Segment1"
-                    width="${Foot_Segment_Width}" height="${Foot_Segment_Height}" depth="${Foot_Segment_Depth}" mass="${Foot_Segment_Mass}"
-                    origin_rpy="0 0 0"
-                    origin_xyz="${Foot_Segment1_Origin_X} ${reflect * Foot_Segment1_Origin_Y} ${reflect * Foot_Segment1_Origin_Z}"/>
-
-    <xacro:box_link_no_mesh name="v1/${prefix}_Foot_Segment2"
-                    width="${Foot_Segment_Width}" height="${Foot_Segment_Height}" depth="${Foot_Segment_Depth}" mass="${Foot_Segment_Mass}"
-                    origin_rpy="0 0 0"
-                    origin_xyz="${Foot_Segment2_Origin_X} ${reflect * Foot_Segment2_Origin_Y} ${reflect * Foot_Segment2_Origin_Z}"/>
-
-    <xacro:box_link_no_mesh name="v1/${prefix}_Foot_Segment3"
-                    width="${Foot_Segment_Width}" height="${Foot_Segment_Height}" depth="${Foot_Segment_Depth}" mass="${Foot_Segment_Mass}"
-                    origin_rpy="0 0 0"
-                    origin_xyz="${Foot_Segment3_Origin_X} ${reflect * Foot_Segment3_Origin_Y} ${reflect * Foot_Segment3_Origin_Z}"/> -->
-
-<!--     <xacro:box_link_no_mesh name="v1/${prefix}_Foot_Segment4"
-                    width="${Foot_Segment_Width}" height="${Foot_Segment_Height}" depth="${Foot_Segment_Depth}" mass="${Foot_Segment_Mass}"
-                    origin_rpy="0 0 0"
-                    origin_xyz="${Foot_Segment4_Origin_X} ${reflect * Foot_Segment4_Origin_Y} ${reflect * Foot_Segment4_Origin_Z}"/> -->
-
-    <!-- <xacro:box_link_no_mesh name="v1/${prefix}_Foot_Segment5"
-                    width="${Foot_Segment_Width}" height="${Foot_Segment_Height}" depth="${Foot_Segment_Depth}" mass="${Foot_Segment_Mass}"
-                    origin_rpy="0 0 0"
-                    origin_xyz="${Foot_Segment5_Origin_X} ${reflect * Foot_Segment5_Origin_Y} ${reflect * Foot_Segment5_Origin_Z}"/>
-
-    <xacro:box_link_no_mesh name="v1/${prefix}_Foot_Segment6"
-                    width="${Foot_Segment_Width}" height="${Foot_Segment_Height}" depth="${Foot_Segment_Depth}" mass="${Foot_Segment_Mass}"
-                    origin_rpy="0 0 0"
-                    origin_xyz="${Foot_Segment6_Origin_X} ${reflect * Foot_Segment6_Origin_Y} ${reflect * Foot_Segment6_Origin_Z}"/> -->
-
-
-
   </xacro:macro>
 
   <xacro:macro name="make_leg_joints" params="prefix reflect leg_root_link">
@@ -266,40 +234,6 @@
                           origin_xyz="${LJ6_Origin_X} ${LJ6_Origin_Y} ${LJ6_Origin_Z}"
                           origin_rpy="${LJ6_Orientation_Roll} ${LJ6_Orientation_Pitch} ${LJ6_Orientation_Yaw}">
     </xacro:fixed_joint>
-  </xacro:macro>
-
-  <xacro:macro name="make_foot_joints" params="prefix reflect leg_root_link">
-
-    <!-- JOINTS -->
-    <!-- <xacro:fixed_joint jointName="${prefix}FootSegment1Offset"
-                       parent="${LJ6_Distal_Link}" child="v1/${prefix}_Foot_Segment1"
-                       origin_rpy="0 0 0"
-                       origin_xyz="0 0 0"/>
-
-    <xacro:fixed_joint jointName="${prefix}FootSegment2Offset"
-                       parent="${LJ6_Distal_Link}" child="v1/${prefix}_Foot_Segment2"
-                       origin_rpy="0 0 0"
-                       origin_xyz="0 0 0"/>
-
-    <xacro:fixed_joint jointName="${prefix}FootSegment3Offset"
-                       parent="${LJ6_Distal_Link}" child="v1/${prefix}_Foot_Segment3"
-                       origin_rpy="0 0 0"
-                       origin_xyz="0 0 0"/> -->
-<!--
-    <xacro:fixed_joint jointName="${prefix}FootSegment4Offset"
-                       parent="${LJ6_Distal_Link}" child="v1/${prefix}_Foot_Segment4"
-                       origin_rpy="0 0 0"
-                       origin_xyz="0 0 0"/> -->
-
-    <!-- <xacro:fixed_joint jointName="${prefix}FootSegment5Offset"
-                       parent="${LJ6_Distal_Link}" child="v1/${prefix}_Foot_Segment5"
-                       origin_rpy="0 0 0"
-                       origin_xyz="0 0 0"/>
-
-    <xacro:fixed_joint jointName="${prefix}FootSegmen65Offset"
-                       parent="${LJ6_Distal_Link}" child="v1/${prefix}_Foot_Segment6"
-                       origin_rpy="0 0 0"
-                       origin_xyz="0 0 0"/> -->
   </xacro:macro>
 
   <xacro:macro name="make_leg" params="prefix reflect leg_root_link">

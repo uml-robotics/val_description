@@ -66,10 +66,8 @@
       <visual>
         <geometry>
           <mesh filename="${visual_mesh}"/>
-          <!-- <box size="${width} ${height} ${depth}"/> -->
         </geometry>
         <origin rpy="0 0 0" xyz="0 0 0"/>
-        <!-- <origin rpy="${origin_rpy}" xyz="${origin_xyz}"/> -->
         <material name="${material}"/>
       </visual>
       <collision>
@@ -96,10 +94,8 @@
       <visual>
         <geometry>
           <mesh filename="${visual_mesh}"/>
-          <!-- <box size="${width} ${height} ${depth}"/> -->
         </geometry>
         <origin rpy="${origin_offset_rpy}" xyz="${origin_offset_xyz}"/>
-        <!-- <origin rpy="${origin_rpy}" xyz="${origin_xyz}"/> -->
         <material name="${material}"/>
       </visual>
       <collision>
@@ -138,10 +134,8 @@
       <visual>
         <geometry>
           <mesh filename="${visual_mesh}" scale="${visual_mesh_scale}"/>
-          <!-- <box size="${width} ${height} ${depth}"/> -->
         </geometry>
         <origin rpy="0 0 0" xyz="0 0 0"/>
-        <!-- <origin rpy="${origin_rpy}" xyz="${origin_xyz}"/> -->
         <material name="${material}"/>
       </visual>
       <collision>
@@ -219,7 +213,6 @@
       <visual>
         <geometry>
           <mesh filename="${visual_mesh}"/>
-          <!-- <box size="${width} ${height} ${depth}"/> -->
         </geometry>
         <origin rpy="0 0 0" xyz="0 0 0"/>
         <material name="${material}"/>
@@ -241,10 +234,8 @@
       </inertial>
       <visual>
         <origin rpy="0 0 0" xyz="0 0 0"/>
-        <!-- <origin rpy="${origin_rpy}" xyz="${origin_xyz}"/> -->
         <geometry>
           <mesh filename="${visual_mesh}"/>
-          <!-- <sphere radius="${radius}"/> -->
         </geometry>
         <material name="${material}"/>
       </visual>

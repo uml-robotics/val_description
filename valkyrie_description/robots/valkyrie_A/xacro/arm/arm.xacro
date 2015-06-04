@@ -8,7 +8,6 @@
   <xacro:include filename="$(find valkyrie_description)/robots/valkyrie_A/xacro/arm/mass_parameters.xacro"/>
   <xacro:include filename="$(find valkyrie_description)/robots/valkyrie_A/xacro/sensors/camboard.xacro"/>
 
-  <!-- Link properties. -->
   <xacro:property name="AJ1_Link_Width" value="0.162"/>
   <xacro:property name="AJ1_Link_Height" value="0.202"/>
   <xacro:property name="AJ1_Link_Length" value="0.146"/>
@@ -280,7 +279,6 @@
                                 joint1="${AJ6_Joint_Name}" joint2="${AJ7_Joint_Name}"
                                 actuator1="${actuator2}"   actuator2="${actuator3}"
                                 reflect="1"/>
-                                <!-- because of the hardware configuration, wrist and waist transmissions should always have reflection=1 -->
   </xacro:macro>
 
   <xacro:macro name="v1_lower_arm_transmissions_simple" params="prefix actuator1 actuator2 actuator3">
