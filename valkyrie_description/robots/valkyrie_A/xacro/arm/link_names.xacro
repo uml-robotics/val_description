@@ -1,25 +1,20 @@
 <?xml version="1.0" ?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="v1/arm/link_names">
 
-  <xacro:property name="AJ1_Proximal_Link" value="${arm_root_link}" />
-  <xacro:property name="AJ1_Distal_Link" value="${prefix}ShoulderPitch" />
+  <xacro:property name="ShoulderPitchParentLink" value="${arm_root_link}" />
+  <xacro:property name="ShoulderPitchLink" value="${prefix}ShoulderPitchLink" />
 
-  <xacro:property name="AJ2_Proximal_Link" value="${prefix}ShoulderPitch" />
-  <xacro:property name="AJ2_Distal_Link" value="${prefix}ShoulderRoll" />
+  <xacro:property name="ShoulderRollLink" value="${prefix}ShoulderRollLink" />
 
-  <xacro:property name="AJ3_Proximal_Link" value="${prefix}ShoulderRoll" />
-  <xacro:property name="AJ3_Distal_Link" value="${prefix}ShoulderYaw" />
+  <xacro:property name="ShoulderYawLink" value="${prefix}ShoulderYawLink" />
 
-  <xacro:property name="AJ4_Proximal_Link" value="${prefix}ShoulderYaw" />
-  <xacro:property name="AJ4_Distal_Link" value="${prefix}ElbowPitch" />
+  <xacro:property name="ElbowPitchLink" value="${prefix}ElbowPitchLink" />
 
-  <xacro:property name="AJ5_Proximal_Link" value="${prefix}ElbowPitch" />
-  <xacro:property name="AJ5_Distal_Link" value="${prefix}Forearm" />
+  <xacro:property name="ElbowPitchLink" value="${prefix}ElbowPitchLink" />
+  <xacro:property name="ForearmLinkName" value="${prefix}ForearmLink" />
 
-  <xacro:property name="AJ6_Proximal_Link" value="${prefix}Forearm" />
-  <xacro:property name="AJ6_Distal_Link" value="${prefix}WristPitch" />
+  <xacro:property name="WristRollLinkName" value="${prefix}WristRollLink" />
 
-  <xacro:property name="AJ7_Proximal_Link" value="${prefix}WristPitch" />
-  <xacro:property name="AJ7_Distal_Link" value="${prefix}Palm" />
+  <xacro:property name="WristPitchLinkName" value="${prefix}PalmLink" />
 
 </robot>
