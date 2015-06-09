@@ -74,7 +74,7 @@
                           origin_xyz="${ShoulderPitchFrameOrigin_X} ${ShoulderPitchFrameOrigin_Y} ${ShoulderPitchFrameOrigin_Z}"
                           origin_rpy="${ShoulderPitchFrameOrientation_Roll} ${ShoulderPitchFrameOrientation_Pitch} ${ShoulderPitchFrameOrientation_Yaw}"
                           damping="1.0" friction="0.0">
-        <limit effort="${ShoulderPitchTorqueLimit}" lower="${AJ1_Lower_Limit}" upper="${AJ1_Upper_Limit}" velocity="${AJ1_Speed_Limit}"/>
+        <limit effort="${ShoulderPitchTorqueLimit}" lower="${ShoulderPitchPositionLimit_Lower}" upper="${AJ1_Upper_Limit}" velocity="${AJ1_Speed_Limit}"/>
         <controller_gains Kp="20000" Kd="400"/>
     </xacro:revolute_joint_ex>
 
@@ -84,7 +84,7 @@
                           origin_xyz="${ShoulderRollFrameOrigin_X} ${ShoulderRollFrameOrigin_Y} ${ShoulderRollFrameOrigin_Z}"
                           origin_rpy="${ShoulderRollFrameOrientation_Roll} ${ShoulderRollFrameOrientation_Pitch} ${ShoulderRollFrameOrientation_Yaw}"
                           damping="1.0" friction="0.0">
-        <limit effort="${ShoulderRollTorqueLimit}" lower="${AJ2_Lower_Limit}" upper="${AJ2_Upper_Limit}" velocity="${AJ2_Speed_Limit}"/>
+        <limit effort="${ShoulderRollTorqueLimit}" lower="${ShoulderRollPositionLimit_Lower}" upper="${AJ2_Upper_Limit}" velocity="${AJ2_Speed_Limit}"/>
         <controller_gains Kp="20000" Kd="400"/>
     </xacro:revolute_joint_ex>
 
@@ -94,7 +94,7 @@
                           origin_xyz="${ShoulderYawFrameOrigin_X} ${ShoulderYawFrameOrigin_Y} ${ShoulderYawFrameOrigin_Z}"
                           origin_rpy="${ShoulderYawFrameOrientation_Roll} ${ShoulderYawFrameOrientation_Pitch} ${ShoulderYawFrameOrientation_Yaw}"
                           damping="1.0" friction="0.0">
-        <limit effort="${ShoulderYawTorqueLimit}" lower="${AJ3_Lower_Limit}" upper="${AJ3_Upper_Limit}" velocity="${AJ3_Speed_Limit}"/>
+        <limit effort="${ShoulderYawTorqueLimit}" lower="${ShoulderYawPositionLimit_Lower}" upper="${AJ3_Upper_Limit}" velocity="${AJ3_Speed_Limit}"/>
         <controller_gains Kp="20000" Kd="400"/>
     </xacro:revolute_joint_ex>
 
@@ -104,7 +104,7 @@
                           origin_xyz="${ElbowPitchFrameOrigin_X} ${ElbowPitchFrameOrigin_Y} ${ElbowPitchFrameOrigin_Z}"
                           origin_rpy="${ElbowPitchFrameOrientation_Roll} ${ElbowPitchFrameOrientation_Pitch} ${ElbowPitchFrameOrientation_Yaw}"
                           damping="1.0" friction="0.0">
-        <limit effort="${ElbowPitchTorqueLimit}" lower="${AJ4_Lower_Limit}" upper="${AJ4_Upper_Limit}" velocity="${AJ4_Speed_Limit}"/>
+        <limit effort="${ElbowPitchTorqueLimit}" lower="${ElbowPitchPositionLimit_Lower}" upper="${AJ4_Upper_Limit}" velocity="${AJ4_Speed_Limit}"/>
         <controller_gains Kp="20000" Kd="400"/>
     </xacro:revolute_joint_ex>
   </xacro:macro>
@@ -139,7 +139,7 @@
                           origin_xyz="${ForearmYawFrameOrigin_X} ${ForearmYawFrameOrigin_Y} ${ForearmYawFrameOrigin_Z}"
                           origin_rpy="${ForearmYawFrameOrientation_Roll} ${ForearmYawFrameOrientation_Pitch} ${ForearmYawFrameOrientation_Yaw}"
                           damping="1.0" friction="0.0">
-        <limit effort="${ForearmYawTorqueLimit}" lower="${AJ5_Lower_Limit}" upper="${AJ5_Upper_Limit}" velocity="${AJ5_Speed_Limit}"/>
+        <limit effort="${ForearmYawTorqueLimit}" lower="${ForearmYawPositionLimit_Lower}" upper="${AJ5_Upper_Limit}" velocity="${AJ5_Speed_Limit}"/>
         <controller_gains Kp="20000" Kd="0"/>
     </xacro:revolute_joint_ex>
 
@@ -149,7 +149,7 @@
                           origin_xyz="${WristRollFrameOrigin_X} ${WristRollFrameOrigin_Y} ${WristRollFrameOrigin_Z}"
                           origin_rpy="${WristRollFrameOrientation_Roll} ${WristRollFrameOrientation_Pitch} ${WristRollFrameOrientation_Yaw}"
                           damping="1.0" friction="0.0">
-        <limit effort="${WristRollTorqueLimit}" lower="${AJ6_Lower_Limit}" upper="${AJ6_Upper_Limit}" velocity="${AJ6_Speed_Limit}"/>
+        <limit effort="${WristRollTorqueLimit}" lower="${WristRollPositionLimit_Lower}" upper="${AJ6_Upper_Limit}" velocity="${AJ6_Speed_Limit}"/>
         <controller_gains Kp="20000" Kd="400"/>
     </xacro:revolute_joint_ex>
 
@@ -159,7 +159,7 @@
                           origin_xyz="${WristPitchFrameOrigin_X} ${WristPitchFrameOrigin_Y} ${WristPitchFrameOrigin_Z}"
                           origin_rpy="${WristPitchFrameOrientation_Roll} ${WristPitchFrameOrientation_Pitch} ${WristPitchFrameOrientation_Yaw}"
                           damping="1.0" friction="0.0">
-        <limit effort="${WristPitchTorqueLimit}" lower="${AJ7_Lower_Limit}" upper="${AJ7_Upper_Limit}" velocity="${AJ7_Speed_Limit}"/>
+        <limit effort="${WristPitchTorqueLimit}" lower="${WristPitchPositionLimit_Lower}" upper="${AJ7_Upper_Limit}" velocity="${AJ7_Speed_Limit}"/>
         <controller_gains Kp="20000" Kd="400"/>
     </xacro:revolute_joint_ex>
   </xacro:macro>
@@ -200,7 +200,7 @@
                           parent="${lower_arm_root_link}" child="${AJ5_Distal_Link}"
                           origin_xyz="${ForearmYawFrameOrigin_X} ${ForearmYawFrameOrigin_Y} ${ForearmYawFrameOrigin_Z}"
                           origin_rpy="${ForearmYawFrameOrientation_Roll} ${ForearmYawFrameOrientation_Pitch} ${ForearmYawFrameOrientation_Yaw}">
-        <limit effort="${ForearmYawTorqueLimit}" lower="${AJ5_Lower_Limit}" upper="${AJ5_Upper_Limit}" velocity="${AJ5_Speed_Limit}"/>
+        <limit effort="${ForearmYawTorqueLimit}" lower="${ForearmYawPositionLimit_Lower}" upper="${AJ5_Upper_Limit}" velocity="${AJ5_Speed_Limit}"/>
     </xacro:fixed_joint>
 
     <!-- AJ6 -->
@@ -208,7 +208,7 @@
                           parent="${AJ6_Proximal_Link}" child="${AJ6_Distal_Link}"
                           origin_xyz="${WristRollFrameOrigin_X} ${WristRollFrameOrigin_Y} ${WristRollFrameOrigin_Z}"
                           origin_rpy="${WristRollFrameOrientation_Roll} ${WristRollFrameOrientation_Pitch} ${WristRollFrameOrientation_Yaw}">
-        <limit effort="${WristRollTorqueLimit}" lower="${AJ6_Lower_Limit}" upper="${AJ6_Upper_Limit}" velocity="${AJ6_Speed_Limit}"/>
+        <limit effort="${WristRollTorqueLimit}" lower="${WristRollPositionLimit_Lower}" upper="${AJ6_Upper_Limit}" velocity="${AJ6_Speed_Limit}"/>
     </xacro:fixed_joint>
 
     <!-- AJ7 -->
@@ -216,7 +216,7 @@
                           parent="${AJ7_Proximal_Link}" child="${AJ7_Distal_Link}"
                           origin_xyz="${WristPitchFrameOrigin_X} ${WristPitchFrameOrigin_Y} ${WristPitchFrameOrigin_Z}"
                           origin_rpy="${WristPitchFrameOrientation_Roll} ${WristPitchFrameOrientation_Pitch} ${WristPitchFrameOrientation_Yaw}">
-        <limit effort="${WristPitchTorqueLimit}" lower="${AJ7_Lower_Limit}" upper="${AJ7_Upper_Limit}" velocity="${AJ7_Speed_Limit}"/>
+        <limit effort="${WristPitchTorqueLimit}" lower="${WristPitchPositionLimit_Lower}" upper="${AJ7_Upper_Limit}" velocity="${AJ7_Speed_Limit}"/>
     </xacro:fixed_joint>
   </xacro:macro>
 
