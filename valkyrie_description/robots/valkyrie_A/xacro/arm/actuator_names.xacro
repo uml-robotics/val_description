@@ -6,8 +6,4 @@
   <xacro:property name="ShoulderYawActuatorName" value="/${prefix}Arm/Actuator3" />
   <xacro:property name="ElbowPitchActuatorName" value="/${prefix}Arm/Actuator4" />
   <xacro:property name="ForearmYawActuatorName" value="/${prefix}Arm/Actuator5" />
-  <xacro:property name="RAJ6_Actuator_Name" value="/RightArm/ForearmDriver1/RightWristActuator" />
-  <xacro:property name="RAJ7_Actuator_Name" value="/RightArm/ForearmDriver1/LeftWristActuator" />
-  <xacro:property name="LAJ6_Actuator_Name" value="/LeftArm/ForearmDriver1/LeftWristActuator" />
-  <xacro:property name="LAJ7_Actuator_Name" value="/LeftArm/ForearmDriver1/RightWristActuator" />
 </robot>
