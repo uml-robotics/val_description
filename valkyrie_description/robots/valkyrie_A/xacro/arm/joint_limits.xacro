@@ -17,13 +17,13 @@
   <xacro:property name="WristRollPositionLimit_Lower" value="-0.873" />
   <xacro:property name="WristPitchPositionLimit_Lower" value="-0.524" />
 
-  <xacro:property name="AJ1_Upper_Limit" value="${180 * DEG2RAD}" />
-  <xacro:property name="AJ2_Upper_Limit" value="-0.155" />
-  <xacro:property name="AJ3_Upper_Limit" value="1.7" />
-  <xacro:property name="AJ4_Upper_Limit" value="${-5 * DEG2RAD}" />
-  <xacro:property name="AJ5_Upper_Limit" value="${135 * DEG2RAD}" />
-  <xacro:property name="AJ6_Upper_Limit" value="${40 * DEG2RAD}" />
-  <xacro:property name="AJ7_Upper_Limit" value="${25 * DEG2RAD}" />
+  <xacro:property name="ShoulderPitchPositionLimit_Upper" value="3.14" />
+  <xacro:property name="ShoulderRollPositionLimit_Upper" value="-0.155" />
+  <xacro:property name="ShoulderYawPositionLimit_Upper" value="1.7" />
+  <xacro:property name="ElbowPitchPositionLimit_Upper" value="0.087" />
+  <xacro:property name="ForearmYawPositionLimit_Upper" value="2.356" />
+  <xacro:property name="WristRollPositionLimit_Upper" value="0.698" />
+  <xacro:property name="WristPitchPositionLimit_Upper" value="0.436" />
 
   <xacro:property name="AJ1_Speed_Limit" value="5.89" />
   <xacro:property name="AJ2_Speed_Limit" value="5.89" />
