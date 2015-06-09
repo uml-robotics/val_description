@@ -25,11 +25,11 @@
   <xacro:property name="WristRollPositionLimit_Upper" value="0.698" />
   <xacro:property name="WristPitchPositionLimit_Upper" value="0.436" />
 
-  <xacro:property name="AJ1_Speed_Limit" value="5.89" />
-  <xacro:property name="AJ2_Speed_Limit" value="5.89" />
-  <xacro:property name="AJ3_Speed_Limit" value="11.5" />
-  <xacro:property name="AJ4_Speed_Limit" value="11.5" />
-  <xacro:property name="AJ5_Speed_Limit" value="5" />
-  <xacro:property name="AJ6_Speed_Limit" value="1" />
-  <xacro:property name="AJ7_Speed_Limit" value="1" />
+  <xacro:property name="ShoulderPitchVelocityLimit" value="5.89" />
+  <xacro:property name="ShoulderRollVelocityLimit" value="5.89" />
+  <xacro:property name="ShoulderYawVelocityLimit" value="11.5" />
+  <xacro:property name="ElbowPitchVelocityLimit" value="11.5" />
+  <xacro:property name="ForearmYawVelocityLimit" value="5" />
+  <xacro:property name="WristRollVelocityLimit" value="1" />
+  <xacro:property name="WristPitchVelocityLimit" value="1" />
 </robot>
