@@ -3,7 +3,6 @@
     <xacro:include filename="$(find common_xacro)/xacro/generic_models.xacro" />
     <xacro:include filename="$(find valkyrie_description)/robots/valkyrie_A/xacro/plugins/gazebo_plugins.xacro"/>
 
-    <xacro:include filename="$(find common_xacro)/xacro/common_properties.xacro" />
     <xacro:include filename="$(find common_xacro)/xacro/materials.xacro" />
     <xacro:include filename="$(find valkyrie_description)/robots/valkyrie_A/xacro/common/common_bodies.xacro" />
 

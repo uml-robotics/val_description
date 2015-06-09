@@ -9,7 +9,7 @@
 
   <xacro:property name="CamBoardImageWidth" value="160"/>
   <xacro:property name="CamBoardImageHeight" value="120"/>
-  <xacro:property name="CamBoardFieldOfView" value="${pi_2}"/>
+  <xacro:property name="CamBoardFieldOfView" value="1.57"/>
   <xacro:property name="CamBoardMinDistance" value="0.01"/>
   <xacro:property name="CamBoardMaxDistance" value="1"/>
   <xacro:property name="CamBoardFrameRate" value="30"/>

@@ -60,7 +60,7 @@
 
     <xacro:fixed_joint jointName="${sensorName}IR_Offset"
                        parent="${sensorName}_Frame" child="${sensorName}IR_Frame"
-                       origin_rpy="-${pi_2} 0 -${pi_2}"
+                       origin_rpy="-1.57 0 -1.57"
                        origin_xyz="0 0 0"/>
   </xacro:macro>
 </robot>

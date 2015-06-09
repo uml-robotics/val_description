@@ -4,18 +4,18 @@
   <xacro:property name="LFJ1_Joint_Offset" value="$​{reflect * -0.007747}" />
   <xacro:property name="LFJ1_Joint_Angle" value="0.690626785" />
   <xacro:property name="LFJ1_Joint_Radius" value="0.055403" />
-  <xacro:property name="LFJ1_Joint_Twist" value="${reflect * -1 * pi_2}" />
+  <xacro:property name="LFJ1_Joint_Twist" value="${reflect * -1 * 1.57}" />
 
  <xacro:property name="LFJ1_Origin_X" value="0.0427072303336"/>
   <xacro:property name="LFJ1_Origin_Y" value="0.0352928446888"/>
   <xacro:property name="LFJ1_Origin_Z" value="${reflect * -0.007747}"/>
 
-  <xacro:property name="LFJ1_Orientation_Roll" value="${reflect * -1 * pi_2}"/>
+  <xacro:property name="LFJ1_Orientation_Roll" value="${reflect * -1 * 1.57}"/>
   <xacro:property name="LFJ1_Orientation_Pitch" value="0"/>
   <xacro:property name="LFJ1_Orientation_Yaw" value="0.690626785"/>
 
   <xacro:property name="LFJ2_Joint_Offset" value="${reflect * -0.071327}" />
-  <xacro:property name="LFJ2_Joint_Angle" value="${reflect * -1 * pi_2}" />
+  <xacro:property name="LFJ2_Joint_Angle" value="${reflect * -1 * 1.57}" />
   <xacro:property name="LFJ2_Joint_Radius" value="{reflect * 0.010287}" />
   <xacro:property name="LFJ2_Joint_Twist" value="-0.690626785" />
 
@@ -25,10 +25,10 @@
 
   <xacro:property name="LFJ2_Orientation_Roll" value="-0.690626785"/>
   <xacro:property name="LFJ2_Orientation_Pitch" value="0"/>
-  <xacro:property name="LFJ2_Orientation_Yaw" value="${reflect * -1 * pi_2}"/>
+  <xacro:property name="LFJ2_Orientation_Yaw" value="${reflect * -1 * 1.57}"/>
   
   <xacro:property name="LFJ3_Joint_Offset" value="${reflect * 0.050169}" />
-  <xacro:property name="LFJ3_Joint_Angle" value="${reflect * pi_2}" />
+  <xacro:property name="LFJ3_Joint_Angle" value="${reflect * 1.57}" />
   <xacro:property name="LFJ3_Joint_Radius" value="0.0381" />
   <xacro:property name="LFJ3_Joint_Twist" value="0" />
 
@@ -38,7 +38,7 @@
 
   <xacro:property name="LFJ3_Orientation_Roll" value="0"/>
   <xacro:property name="LFJ3_Orientation_Pitch" value="0"/>
-  <xacro:property name="LFJ3_Orientation_Yaw" value="${reflect * pi_2}"/>
+  <xacro:property name="LFJ3_Orientation_Yaw" value="${reflect * 1.57}"/>
   
   <xacro:property name="LFJ4_Joint_Offset" value="0" />
   <xacro:property name="LFJ4_Joint_Angle" value="0" />

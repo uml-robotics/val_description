@@ -203,12 +203,12 @@
     <xacro:microstrain_sensor sensorName="/v1/RightIMU"
                               parentLink="${WJ3_Distal_Link}"
                               origin_xyz="0.363038 0.134239 -0.0468630"
-                              origin_rpy="-${pi_2} ${pi_2} 0" />
+                              origin_rpy="-1.57 1.57 0" />
 
     <xacro:microstrain_sensor sensorName="/v1/LeftIMU"
                               parentLink="${WJ3_Distal_Link}"
                               origin_xyz="0.363038 -0.134239  -0.0468630"
-                              origin_rpy="${pi_2} ${pi_2} 0" />
+                              origin_rpy="1.57 1.57 0" />
 
     <xacro:flea3_camera sensorName="/v1/RightHazardCamera"
                         parentLink="${WJ3_Distal_Link}"

@@ -14,11 +14,11 @@
         <xacro:microstrain_sensor sensorName="/v1/RightPelvisIMU"
                                   parentLink="${Pelvis_Link_Name}"
                                   origin_xyz=".0459 -.1219 -.0423"
-                                  origin_rpy="-${pi_2} 0 1.275" />
+                                  origin_rpy="-1.57 0 1.275" />
 
         <xacro:microstrain_sensor sensorName="/v1/LeftPelvisIMU"
                                   parentLink="${Pelvis_Link_Name}"
                                   origin_xyz=".0459 .1219 -.0423"
-                                  origin_rpy="${pi_2} 0 -1.275" />
+                                  origin_rpy="1.57 0 -1.275" />
     </xacro:macro>
 </robot>

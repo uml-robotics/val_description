@@ -1,52 +1,52 @@
 <?xml version="1.0" ?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="v1/leg/dh_parameters">
 
-  <xacro:property name="LJ1_Origin_X" value="0"/>
-  <xacro:property name="LJ1_Origin_Y" value="${reflect * -0.1016}"/>
-  <xacro:property name="LJ1_Origin_Z" value="-0.183"/>
+  <xacro:property name="HipYawFrameOrigin_X" value="0.0"/>
+  <xacro:property name="HipYawFrameOrigin_Y" value="${reflect * -0.1016}"/>
+  <xacro:property name="HipYawFrameOrigin_Z" value="-0.183"/>
 
-  <xacro:property name="LJ1_Orientation_Roll" value="${pi * ((1 - reflect)/2)}"/>
-  <xacro:property name="LJ1_Orientation_Pitch" value="0"/>
-  <xacro:property name="LJ1_Orientation_Yaw" value="${reflect * -1 * pi_2}"/>
+  <xacro:property name="HipYawFrameOrientation_Roll" value="0.0"/>
+  <xacro:property name="HipYawFrameOrientation_Pitch" value="0.0"/>
+  <xacro:property name="HipYawFrameOrientation_Yaw" value="0.0"/>
 
-  <xacro:property name="LJ2_Origin_X" value="0"/>
-  <xacro:property name="LJ2_Origin_Y" value="0"/>
-  <xacro:property name="LJ2_Origin_Z" value="0"/>
+  <xacro:property name="HipRollFrameOrigin_X" value="0.0"/>
+  <xacro:property name="HipRollFrameOrigin_Y" value="0.0"/>
+  <xacro:property name="HipRollFrameOrigin_Z" value="0.0"/>
 
-  <xacro:property name="LJ2_Orientation_Roll" value="${reflect * -1 * pi_2}"/>
-  <xacro:property name="LJ2_Orientation_Pitch" value="0"/>
-  <xacro:property name="LJ2_Orientation_Yaw" value="0"/>
+  <xacro:property name="HipRollFrameOrientation_Roll" value="0.0"/>
+  <xacro:property name="HipRollFrameOrientation_Pitch" value="0.0"/>
+  <xacro:property name="HipRollFrameOrientation_Yaw" value="0.0"/>
 
-  <xacro:property name="LJ3_Origin_X" value="0"/>
-  <xacro:property name="LJ3_Origin_Y" value="0.061"/>
-  <xacro:property name="LJ3_Origin_Z" value="0"/>
+  <xacro:property name="HipPitchFrameOrigin_X" value="0"/>
+  <xacro:property name="HipPitchFrameOrigin_Y" value="0.061"/>
+  <xacro:property name="HipPitchFrameOrigin_Z" value="0"/>
 
-  <xacro:property name="LJ3_Orientation_Roll" value="${reflect * -1 * pi_2}"/>
-  <xacro:property name="LJ3_Orientation_Pitch" value="0"/>
-  <xacro:property name="LJ3_Orientation_Yaw" value="${pi_2}"/>
+  <xacro:property name="HipPitchFrameOrientation_Roll" value="0.0"/>
+  <xacro:property name="HipPitchFrameOrientation_Pitch" value="0.0"/>
+  <xacro:property name="HipPitchFrameOrientation_Yaw" value="0.0"/>
 
-  <xacro:property name="LJ4_Origin_X" value="0.431"/>
-  <xacro:property name="LJ4_Origin_Y" value="0"/>
-  <xacro:property name="LJ4_Origin_Z" value="${reflect * -1 * 0.0374}"/>
+  <xacro:property name="KneePitchFrameOrigin_X" value="0.431"/>
+  <xacro:property name="KneePitchFrameOrigin_Y" value="0.0"/>
+  <xacro:property name="KneePitchFrameOrigin_Z" value="${reflect * -1 * 0.0374}"/>
 
-  <xacro:property name="LJ4_Orientation_Roll" value="${pi}"/>
-  <xacro:property name="LJ4_Orientation_Pitch" value="0"/>
-  <xacro:property name="LJ4_Orientation_Yaw" value="0"/>
+  <xacro:property name="KneePitchFrameOrientation_Roll" value="0.0"/>
+  <xacro:property name="KneePitchFrameOrientation_Pitch" value="0.0"/>
+  <xacro:property name="KneePitchFrameOrientation_Yaw" value="0.0"/>
 
-  <xacro:property name="LJ5_Origin_X" value="0.406"/>
-  <xacro:property name="LJ5_Origin_Y" value="0"/>
-  <xacro:property name="LJ5_Origin_Z" value="0"/>
+  <xacro:property name="AnklePitchFrameOrigin_X" value="0.406"/>
+  <xacro:property name="AnklePitchFrameOrigin_Y" value="0.0"/>
+  <xacro:property name="AnklePitchFrameOrigin_Z" value="0.0"/>
 
-  <xacro:property name="LJ5_Orientation_Roll" value="${pi}"/>
-  <xacro:property name="LJ5_Orientation_Pitch" value="0"/>
-  <xacro:property name="LJ5_Orientation_Yaw" value="0"/>
+  <xacro:property name="AnklePitchFrameOrientation_Roll" value="0.0"/>
+  <xacro:property name="AnklePitchFrameOrientation_Pitch" value="0.0"/>
+  <xacro:property name="AnklePitchFrameOrientation_Yaw" value="0.0"/>
 
-  <xacro:property name="LJ6_Origin_X" value="0.0127"/>
-  <xacro:property name="LJ6_Origin_Y" value="0"/>
-  <xacro:property name="LJ6_Origin_Z" value="0"/>
+  <xacro:property name="AnkleRollFrameOrigin_X" value="0.0127"/>
+  <xacro:property name="AnkleRollFrameOrigin_Y" value="0.0"/>
+  <xacro:property name="AnkleRollFrameOrigin_Z" value="0.0"/>
 
-  <xacro:property name="LJ6_Orientation_Roll" value="${reflect * pi_2}"/>
-  <xacro:property name="LJ6_Orientation_Pitch" value="0"/>
-  <xacro:property name="LJ6_Orientation_Yaw" value="-0.13"/>
+  <xacro:property name="AnkleRollFrameOrientation_Roll" value="0.0"/>
+  <xacro:property name="AnkleRollFrameOrientation_Pitch" value="0.0"/>
+  <xacro:property name="AnkleRollFrameOrientation_Yaw" value="-0.13"/>
 
 </robot>

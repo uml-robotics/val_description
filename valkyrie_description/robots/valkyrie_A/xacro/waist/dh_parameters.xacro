@@ -17,27 +17,27 @@
   <xacro:property name="WJ2_Joint_Offset" value="0" />
   <xacro:property name="WJ2_Joint_Angle" value="0" />
   <xacro:property name="WJ2_Joint_Radius" value="0.04191" />
-  <xacro:property name="WJ2_Joint_Twist" value="${pi_2}" />
+  <xacro:property name="WJ2_Joint_Twist" value="1.57" />
 
   <xacro:property name="WJ2_Origin_X" value="0.04191"/>
   <xacro:property name="WJ2_Origin_Y" value="0"/>
   <xacro:property name="WJ2_Origin_Z" value="0"/>
 
-  <xacro:property name="WJ2_Orientation_Roll" value="${pi_2}"/>
+  <xacro:property name="WJ2_Orientation_Roll" value="1.57"/>
   <xacro:property name="WJ2_Orientation_Pitch" value="0"/>
   <xacro:property name="WJ2_Orientation_Yaw" value="0"/>
 
   <xacro:property name="WJ3_Joint_Offset" value="0" />
-  <xacro:property name="WJ3_Joint_Angle" value="${pi_2}" />
+  <xacro:property name="WJ3_Joint_Angle" value="1.57" />
   <xacro:property name="WJ3_Joint_Radius" value="0.020352" />
-  <xacro:property name="WJ3_Joint_Twist" value="${pi_2}" />
+  <xacro:property name="WJ3_Joint_Twist" value="1.57" />
 
   <xacro:property name="WJ3_Origin_X" value="0"/>
   <xacro:property name="WJ3_Origin_Y" value="0.020352"/>
   <xacro:property name="WJ3_Origin_Z" value="0"/>
 
-  <xacro:property name="WJ3_Orientation_Roll" value="${pi_2}"/>
+  <xacro:property name="WJ3_Orientation_Roll" value="1.57"/>
   <xacro:property name="WJ3_Orientation_Pitch" value="0"/>
-  <xacro:property name="WJ3_Orientation_Yaw" value="${pi_2}"/>
+  <xacro:property name="WJ3_Orientation_Yaw" value="1.57"/>
 
 </robot>

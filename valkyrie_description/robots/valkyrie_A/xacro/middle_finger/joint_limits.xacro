@@ -5,13 +5,13 @@
   <xacro:property name="MFJ2_Torque_Limit" value="10" />
   <xacro:property name="MFJ3_Torque_Limit" value="10" />
   
-  <xacro:property name="MFJ1_Lower_Limit" value="${-95 * DEG2RAD}" />
-  <xacro:property name="MFJ2_Lower_Limit" value="${-110 * DEG2RAD}" />
-  <xacro:property name="MFJ3_Lower_Limit" value="${-90 * DEG2RAD}" />
+  <xacro:property name="MFJ1_Lower_Limit" value="-1.658" />
+  <xacro:property name="MFJ2_Lower_Limit" value="-1.920" />
+  <xacro:property name="MFJ3_Lower_Limit" value="-1.57" />
   
-  <xacro:property name="MFJ1_Upper_Limit" value="${10 * DEG2RAD}" />
+  <xacro:property name="MFJ1_Upper_Limit" value="0.175" />
   <xacro:property name="MFJ2_Upper_Limit" value="0" />
-  <xacro:property name="MFJ3_Upper_Limit" value="${10 * DEG2RAD}" />
+  <xacro:property name="MFJ3_Upper_Limit" value="0.175" />
   
   <xacro:property name="MFJ1_Speed_Limit" value="1" />
   <xacro:property name="MFJ2_Speed_Limit" value="1" />

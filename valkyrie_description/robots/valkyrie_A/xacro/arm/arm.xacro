@@ -230,14 +230,14 @@
     <xacro:camboard_sensor sensorName="/v1/RightCamBoard"
                            parentLink="/v1/RightForearm"
                            origin_xyz="0.049237 0.006877 -0.250708"
-                           origin_rpy="${pi} ${pi_2} ${pi}"/>
+                           origin_rpy="3.14 1.57 3.14"/>
   </xacro:macro>
 
   <xacro:macro name="v1_left_arm_sensor">
     <xacro:camboard_sensor sensorName="/v1/LeftCamBoard"
                            parentLink="/v1/LeftForearm"
                            origin_xyz="0.045536 -0.0085 0.250708"
-                           origin_rpy="${pi} -${pi_2} 0"/>
+                           origin_rpy="3.14 -1.57 0"/>
   </xacro:macro>
 
   <xacro:macro name="v1_arm_sensors">

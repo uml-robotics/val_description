@@ -6,15 +6,15 @@
   <xacro:property name="TJ3_Torque_Limit" value="10" />
   <xacro:property name="TJ4_Torque_Limit" value="10" />
   
-  <xacro:property name="TJ1_Lower_Limit" value="${-5 * DEG2RAD}" />
-  <xacro:property name="TJ2_Lower_Limit" value="${-95 * DEG2RAD}" />
-  <xacro:property name="TJ3_Lower_Limit" value="${-110 * DEG2RAD}" />
-  <xacro:property name="TJ4_Lower_Limit" value="${-90 * DEG2RAD}" />
+  <xacro:property name="TJ1_Lower_Limit" value="-0.087" />
+  <xacro:property name="TJ2_Lower_Limit" value="-1.658" />
+  <xacro:property name="TJ3_Lower_Limit" value="-1.920" />
+  <xacro:property name="TJ4_Lower_Limit" value="-1.57" />
   
-  <xacro:property name="TJ1_Upper_Limit" value="${135 * DEG2RAD}" />
-  <xacro:property name="TJ2_Upper_Limit" value="${10 * DEG2RAD}" />
-  <xacro:property name="TJ3_Upper_Limit" value="0" />
-  <xacro:property name="TJ4_Upper_Limit" value="${10 * DEG2RAD}" />
+  <xacro:property name="TJ1_Upper_Limit" value="2.356" />
+  <xacro:property name="TJ2_Upper_Limit" value="0.175" />
+  <xacro:property name="TJ3_Upper_Limit" value="0.0" />
+  <xacro:property name="TJ4_Upper_Limit" value="0.175" />
   
   <xacro:property name="TJ1_Speed_Limit" value="1" />
   <xacro:property name="TJ2_Speed_Limit" value="1" />

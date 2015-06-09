@@ -1,23 +1,13 @@
 <?xml version="1.0" ?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="v1/middle_finger/dh_parameters">
 
-  <xacro:property name="MFJ1_Joint_Offset" value="{reflect * 0.00254}" />
-  <xacro:property name="MFJ1_Joint_Angle" value="0" />
-  <xacro:property name="MFJ1_Joint_Radius" value="0.09767" />
-  <xacro:property name="MFJ1_Joint_Twist" value="${reflect * -1 * pi_2}" />
-
   <xacro:property name="MFJ1_Origin_X" value="0.09767"/>
   <xacro:property name="MFJ1_Origin_Y" value="0"/>
   <xacro:property name="MFJ1_Origin_Z" value="${reflect * 0.00254}"/>
 
-  <xacro:property name="MFJ1_Orientation_Roll" value="${reflect * -1 * pi_2}"/>
+  <xacro:property name="MFJ1_Orientation_Roll" value="${reflect * -1 * 1.57}"/>
   <xacro:property name="MFJ1_Orientation_Pitch" value="0"/>
   <xacro:property name="MFJ1_Orientation_Yaw" value="0"/>
-
-  <xacro:property name="MFJ2_Joint_Offset" value="0" />
-  <xacro:property name="MFJ2_Joint_Angle" value="0" />
-  <xacro:property name="MFJ2_Joint_Radius" value="0.0381" />
-  <xacro:property name="MFJ2_Joint_Twist" value="0" />
 
   <xacro:property name="MFJ2_Origin_X" value="0.0381"/>
   <xacro:property name="MFJ2_Origin_Y" value="0"/>
@@ -26,11 +16,6 @@
   <xacro:property name="MFJ2_Orientation_Roll" value="0"/>
   <xacro:property name="MFJ2_Orientation_Pitch" value="0"/>
   <xacro:property name="MFJ2_Orientation_Yaw" value="0"/>
-
-  <xacro:property name="MFJ3_Joint_Offset" value="0" />
-  <xacro:property name="MFJ3_Joint_Angle" value="0" />
-  <xacro:property name="MFJ3_Joint_Radius" value="0.02286" />
-  <xacro:property name="MFJ3_Joint_Twist" value="0" />
 
   <xacro:property name="MFJ3_Origin_X" value="0.02286"/>
   <xacro:property name="MFJ3_Origin_Y" value="0"/>
