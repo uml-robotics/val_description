@@ -1,13 +1,13 @@
 <?xml version="1.0" ?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="v1/arm/joint_limits">
   
-  <xacro:property name="AJ1_Torque_Limit" value="190" />
-  <xacro:property name="AJ2_Torque_Limit" value="190" />
-  <xacro:property name="AJ3_Torque_Limit" value="65" />
-  <xacro:property name="AJ4_Torque_Limit" value="65" />
-  <xacro:property name="AJ5_Torque_Limit" value="26" />
-  <xacro:property name="AJ6_Torque_Limit" value="14" />
-  <xacro:property name="AJ7_Torque_Limit" value="14" />
+  <xacro:property name="ShoulderPitchTorqueLimit" value="190" />
+  <xacro:property name="ShoulderRollTorqueLimit" value="190" />
+  <xacro:property name="ShoulderYawTorqueLimit" value="65" />
+  <xacro:property name="ElbowPitchTorqueLimit" value="65" />
+  <xacro:property name="ForearmYawTorqueLimit" value="26" />
+  <xacro:property name="WristRollTorqueLimit" value="14" />
+  <xacro:property name="WristPitchTorqueLimit" value="14" />
 
   <xacro:property name="AJ1_Lower_Limit" value="${-180 * DEG2RAD}" />
   <xacro:property name="AJ2_Lower_Limit" value="${-175 * DEG2RAD}" />
