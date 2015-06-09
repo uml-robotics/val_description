@@ -15,6 +15,6 @@
 
   <xacro:property name="WristRollLinkName" value="${prefix}WristRollLink" />
 
-  <xacro:property name="WristPitchLinkName" value="${prefix}PalmLink" />
+  <xacro:property name="WristPitchLinkName" value="${prefix}Palm" />
 
 </robot>
