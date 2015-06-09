@@ -54,14 +54,14 @@
 
   <xacro:macro name="make_leg_links" params="prefix reflect leg_root_link">
     <xacro:box_link name="${HipYawLinkName}"
-                    width="${LJ1_Link_Width}" height="${LJ1_Link_Height}" depth="${LJ1_Link_Length}" mass="${LJ1_Link_Mass}"
+                    width="${LJ1_Link_Width}" height="${LJ1_Link_Height}" depth="${LJ1_Link_Length}" mass="${HipYawLinkMass}"
                     origin_xyz="${LJ1_Link_Origin_X} ${LJ1_Link_Origin_Y} ${reflect * LJ1_Link_Origin_Z}" origin_rpy="0 0 0"
                     visual_mesh="${mesh_root}/lj1_${prefix}.stl"
                     material="Gold"
                     collision_mesh="${mesh_root}/lj1_${prefix}.stl"/>
 
     <xacro:box_link name="${HipRollLinkName}"
-                    width="${LJ2_Link_Width}" height="${LJ2_Link_Height}" depth="${LJ2_Link_Length}" mass="${LJ2_Link_Mass}"
+                    width="${LJ2_Link_Width}" height="${LJ2_Link_Height}" depth="${LJ2_Link_Length}" mass="${HipRollLinkMass}"
                     origin_rpy="0 0 0"
                     origin_xyz="${LJ2_Link_Origin_X} ${LJ2_Link_Origin_Y} ${LJ2_Link_Origin_Z}"
                     visual_mesh="${mesh_root}/lj2.stl"
@@ -69,7 +69,7 @@
                     collision_mesh="${mesh_root}/lj2.stl"/>
 
     <xacro:box_link name="${HipPitchLinkName}"
-                    width="${LJ3_Link_Width}" height="${LJ3_Link_Height}" depth="${LJ3_Link_Length}" mass="${LJ3_Link_Mass}"
+                    width="${LJ3_Link_Width}" height="${LJ3_Link_Height}" depth="${LJ3_Link_Length}" mass="${HipPitchLinkMass}"
                     origin_rpy="0 0 0"
                     origin_xyz="${LJ3_Link_Origin_X} ${LJ3_Link_Origin_Y} ${reflect * LJ3_Link_Origin_Z}"
                     visual_mesh="${mesh_root}/lj3_${prefix}.stl"
@@ -77,7 +77,7 @@
                     collision_mesh="${mesh_root}/lj3_${prefix}.stl"/>
 
     <xacro:box_link name="${KneePitchLinkName}"
-                    width="${LJ4_Link_Box_Width}" height="${LJ4_Link_Box_Height}" depth="${LJ4_Link_Box_Length}" mass="${LJ4_Link_Box_Mass}"
+                    width="${LJ4_Link_Box_Width}" height="${LJ4_Link_Box_Height}" depth="${LJ4_Link_Box_Length}" mass="${KneePitchLinkMass}"
                     origin_rpy="0 0 0"
                     origin_xyz="${LJ4_Link_Box_Origin_X} ${LJ4_Link_Box_Origin_Y} ${reflect * LJ4_Link_Box_Origin_Z}"
                     visual_mesh="${mesh_root}/lj4_${prefix}.stl"
@@ -85,12 +85,12 @@
                     collision_mesh="${mesh_root}/lj4_${prefix}.stl"/>
 
     <xacro:box_link_no_mesh name="${AnklePitchLinkName}"
-                    width="${LJ5_Link_Width}" height="${LJ5_Link_Height}" depth="${LJ5_Link_Length}" mass="${LJ5_Link_Mass}"
+                    width="${LJ5_Link_Width}" height="${LJ5_Link_Height}" depth="${LJ5_Link_Length}" mass="${AnklePitchLinkMass}"
                     origin_rpy="0 0 0"
                     origin_xyz="${LJ5_Link_Box_Origin_X} ${LJ5_Link_Box_Origin_Y} ${LJ5_Link_Box_Origin_Z}"/>
 
     <xacro:box_link_primitive_collision_origin_offset name="${AnkleRollLinkName}"
-                    width="${LJ6_Link_Width}" height="${LJ6_Link_Height}" depth="${LJ6_Link_Length}" mass="${LJ6_Link_Mass}"
+                    width="${LJ6_Link_Width}" height="${LJ6_Link_Height}" depth="${LJ6_Link_Length}" mass="${FootMass}"
                     origin_rpy="0 ${reflect * 0.13} 0"
                     origin_xyz="${LJ6_Link_Box_Origin_X} ${LJ6_Link_Box_Origin_Y} ${reflect * LJ6_Link_Box_Origin_Z}"
                     visual_mesh="${mesh_root}/lj6_${prefix}.stl"

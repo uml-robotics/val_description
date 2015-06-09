@@ -1,13 +1,13 @@
 <?xml version="1.0" ?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="v1/leg/mass_parameters">
  
-  <xacro:property name="LJ1_Link_Mass" value="2.39" />
-  <xacro:property name="LJ2_Link_Mass" value="5.95" />
-  <xacro:property name="LJ3_Link_Mass" value="10.3" />
+  <xacro:property name="HipYawLinkMass" value="2.39" />
+  <xacro:property name="HipRollLinkMass" value="5.95" />
+  <xacro:property name="HipPitchLinkMass" value="10.3" />
 
-  <xacro:property name="LJ4_Link_Box_Mass" value="7.4" />
-  <xacro:property name="LJ5_Link_Mass" value="0.395" />
+  <xacro:property name="KneePitchLinkMass" value="7.4" />
+  <xacro:property name="AnklePitchLinkMass" value="0.395" />
 
-  <xacro:property name="LJ6_Link_Mass" value="1.888" />
+  <xacro:property name="FootMass" value="1.888" />
 
 </robot>
