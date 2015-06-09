@@ -310,7 +310,7 @@
     <axis xyz="0 0 1"/>
     <parent link="TorsoRoll"/>
     <child link="LowerNeckPitchLink"/>
-    <limit effort="26" lower="-1.5707963259" upper="0" velocity="5"/>
+    <limit effort="26" lower="-1.57" upper="0" velocity="5"/>
     <controller_gains Kd="0" Kp="20000"/>
     <dynamics damping="1.0" friction="0.0"/>
   </joint>
@@ -323,7 +323,7 @@
     <axis xyz="0 0 1"/>
     <parent link="LowerNeckPitchLink"/>
     <child link="NeckYawLink"/>
-    <limit effort="26" lower="-1.5707963259" upper="1.5707963259" velocity="5"/>
+    <limit effort="26" lower="-1.57" upper="1.57" velocity="5"/>
     <controller_gains Kd="0" Kp="20000"/>
     <dynamics damping="1.0" friction="0.0"/>
   </joint>
@@ -336,7 +336,7 @@
     <axis xyz="0 0 1"/>
     <parent link="NeckYawLink"/>
     <child link="Head"/>
-    <limit effort="26" lower="-0.08726646255" upper="0.78539816295" velocity="5"/>
+    <limit effort="26" lower="-0.087" upper="0.785" velocity="5"/>
     <controller_gains Kd="0" Kp="20000"/>
     <dynamics damping="1.0" friction="0.0"/>
   </joint>
