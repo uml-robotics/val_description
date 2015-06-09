@@ -1,12 +1,12 @@
 <?xml version="1.0" ?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="v1/arm/mass_parameters">
 
-  <xacro:property name="AJ1_Link_Mass" value="2.65" />
-  <xacro:property name="AJ2_Link_Mass" value="2.87" />
-  <xacro:property name="AJ3_Link_Mass" value="2.575" />
-  <xacro:property name="AJ4_Link_Mass" value="2.367" />
-  <xacro:property name="AJ5_Link_Mass" value="2.903" />
-  <xacro:property name="AJ6_Link_Mass" value="0.1" />
-  <xacro:property name="AJ7_Link_Mass" value="0.712" />
+  <xacro:property name="ShoulderPitchLinkMass" value="2.65" />
+  <xacro:property name="ShoulderRollLinkMass" value="2.87" />
+  <xacro:property name="ShoulderYawLinkMass" value="2.575" />
+  <xacro:property name="ElbowPitchLinkMass" value="2.367" />
+  <xacro:property name="ForearmYawLinkMass" value="2.903" />
+  <xacro:property name="WristRollLinkMass" value="0.1" />
+  <xacro:property name="PalmMass" value="0.712" />
 
 </robot>

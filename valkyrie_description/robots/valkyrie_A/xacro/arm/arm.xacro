@@ -40,28 +40,28 @@
   <xacro:macro name="make_upper_arm" params="prefix reflect upper_arm_root_link">
     <!-- LINKS -->
     <xacro:box_link name="${ShoulderPitchLink}"
-                    width="${AJ1_Link_Width}" height="${AJ1_Link_Height}" depth="${AJ1_Link_Length}" mass="${AJ1_Link_Mass}"
+                    width="${AJ1_Link_Width}" height="${AJ1_Link_Height}" depth="${AJ1_Link_Length}" mass="${ShoulderPitchLinkMass}"
                     origin_xyz="0 -0.01204 ${reflect * -0.251}" origin_rpy="0 0 0"
                     visual_mesh="${mesh_root}/aj1_${prefix}.stl"
                     material="Gold"
                     collision_mesh="${mesh_root}/aj1_${prefix}.stl" />
 
     <xacro:box_link name="${ShoulderRollLink}"
-                    width="${AJ2_Link_Width}" height="${AJ2_Link_Height}" depth="${AJ2_Link_Length}" mass="${AJ2_Link_Mass}"
+                    width="${AJ2_Link_Width}" height="${AJ2_Link_Height}" depth="${AJ2_Link_Length}" mass="${ShoulderRollLinkMass}"
                     origin_xyz="0.04 0.005 ${reflect * -0.02}" origin_rpy="0 0 0"
                     visual_mesh="${mesh_root}/aj2.stl"
                     material="White"
                     collision_mesh="${mesh_root}/aj2.stl" />
 
     <xacro:box_link name="${ShoulderYawLink}"
-                    width="${AJ3_Link_Width}" height="${AJ3_Link_Height}" depth="${AJ3_Link_Length}" mass="${AJ3_Link_Mass}"
+                    width="${AJ3_Link_Width}" height="${AJ3_Link_Height}" depth="${AJ3_Link_Length}" mass="${ShoulderYawLinkMass}"
                     origin_xyz="${reflect * 0.02} ${reflect * -0.004} ${reflect * -0.273}" origin_rpy="0 0 0"
                     visual_mesh="${mesh_root}/aj3_${prefix}.stl"
                     material="White"
                     collision_mesh="${mesh_root}/aj3_${prefix}.stl" />
 
     <xacro:box_link name="${ElbowPitchLink}"
-                    width="${AJ4_Link_Width}" height="${AJ4_Link_Height}" depth="${AJ4_Link_Length}" mass="${AJ4_Link_Mass}"
+                    width="${AJ4_Link_Width}" height="${AJ4_Link_Height}" depth="${AJ4_Link_Length}" mass="${ElbowPitchLinkMass}"
                     origin_rpy="0 0 0"
                     origin_xyz="0.0270 -0.0802 0"
                     visual_mesh="${mesh_root}/aj4.stl"
@@ -113,7 +113,7 @@
   <xacro:macro name="make_lower_arm" params="prefix reflect lower_arm_root_link">
     <!-- LINKS -->
     <xacro:box_link name="${ForearmLinkName}"
-                    width="${AJ5_Link_Width}" height="${AJ5_Link_Height}" depth="${AJ5_Link_Length}" mass="${AJ5_Link_Mass}"
+                    width="${AJ5_Link_Width}" height="${AJ5_Link_Height}" depth="${AJ5_Link_Length}" mass="${ForearmYawLinkMass}"
                     origin_rpy="0 0 0"
                     origin_xyz="0.015 ${reflect * 0.02} ${reflect * -0.11}"
                     visual_mesh="${mesh_root}/aj5_${prefix}.stl"
@@ -121,12 +121,12 @@
                     collision_mesh="${mesh_root}/aj5_${prefix}.stl" />
 
     <xacro:box_link_no_mesh name="${WristRollLinkName}"
-                    width="${AJ6_Link_Width}" height="${AJ6_Link_Height}" depth="${AJ6_Link_Length}" mass="${AJ6_Link_Mass}"
+                    width="${AJ6_Link_Width}" height="${AJ6_Link_Height}" depth="${AJ6_Link_Length}" mass="${WristRollLinkMass}"
                     origin_rpy="0 0 0"
                     origin_xyz="0 0 0"/>
 
     <xacro:box_link name="${WristPitchLinkName}"
-                    width="${AJ7_Link_Width}" height="${AJ7_Link_Height}" depth="${AJ7_Link_Length}" mass="${AJ7_Link_Mass}"
+                    width="${AJ7_Link_Width}" height="${AJ7_Link_Height}" depth="${AJ7_Link_Length}" mass="${PalmMass}"
                     origin_rpy="0 0 0"
                     origin_xyz="${AJ7_Link_Width/2} 0 0"
                     visual_mesh="${mesh_root}/palm_${prefix}.stl"
@@ -167,7 +167,7 @@
   <xacro:macro name="make_lower_arm_fixed" params="prefix reflect lower_arm_root_link">
     <!-- LINKS -->
     <xacro:box_link name="${ForearmLinkName}"
-                    width="${AJ5_Link_Width}" height="${AJ5_Link_Height}" depth="${AJ5_Link_Length}" mass="${AJ5_Link_Mass}"
+                    width="${AJ5_Link_Width}" height="${AJ5_Link_Height}" depth="${AJ5_Link_Length}" mass="${ForearmYawLinkMass}"
                     origin_rpy="0 0 0"
                     origin_xyz="0 ${reflect * 0.0006} ${reflect * -0.14}"
                     visual_mesh="${mesh_root}/aj5_${prefix}.stl"
@@ -175,7 +175,7 @@
                     collision_mesh="${mesh_root}/aj5_${prefix}.stl" />
 
 <!--     <xacro:box_link name="${ForearmLinkName}"
-                    width="${AJ5_Link_Width}" height="${AJ5_Link_Height}" depth="${AJ5_Link_Length}" mass="${AJ5_Link_Mass}"
+                    width="${AJ5_Link_Width}" height="${AJ5_Link_Height}" depth="${AJ5_Link_Length}" mass="${ForearmYawLinkMass}"
                     origin_rpy="0 0 0"
                     origin_xyz="0 ${reflect * 0.0006} ${reflect * -0.176}"
                     visual_mesh="${mesh_root}/aj5_${prefix}.stl"
@@ -183,12 +183,12 @@
                     collision_mesh="${mesh_root}/aj5_${prefix}.stl" />
 
  -->    <xacro:box_link_no_mesh name="${WristRollLinkName}"
-                    width="${AJ6_Link_Width}" height="${AJ6_Link_Height}" depth="${AJ6_Link_Length}" mass="${AJ6_Link_Mass}"
+                    width="${AJ6_Link_Width}" height="${AJ6_Link_Height}" depth="${AJ6_Link_Length}" mass="${WristRollLinkMass}"
                     origin_rpy="0 0 0"
                     origin_xyz="0 0 0"/>
 
     <xacro:box_link name="${WristPitchLinkName}"
-                    width="${AJ7_Link_Width}" height="${AJ7_Link_Height}" depth="${AJ7_Link_Length}" mass="${AJ7_Link_Mass}"
+                    width="${AJ7_Link_Width}" height="${AJ7_Link_Height}" depth="${AJ7_Link_Length}" mass="${PalmMass}"
                     origin_rpy="0 0 0"
                     origin_xyz="${AJ7_Link_Width/2} 0 0"
                     visual_mesh="${mesh_root}/palm_${prefix}.stl"

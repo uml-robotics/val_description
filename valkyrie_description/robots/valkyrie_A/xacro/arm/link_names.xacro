@@ -3,18 +3,12 @@
 
   <xacro:property name="ShoulderPitchParentLink" value="${arm_root_link}" />
   <xacro:property name="ShoulderPitchLink" value="${prefix}ShoulderPitchLink" />
-
   <xacro:property name="ShoulderRollLink" value="${prefix}ShoulderRollLink" />
-
   <xacro:property name="ShoulderYawLink" value="${prefix}ShoulderYawLink" />
-
   <xacro:property name="ElbowPitchLink" value="${prefix}ElbowPitchLink" />
-
   <xacro:property name="ElbowPitchLink" value="${prefix}ElbowPitchLink" />
   <xacro:property name="ForearmLinkName" value="${prefix}ForearmLink" />
-
   <xacro:property name="WristRollLinkName" value="${prefix}WristRollLink" />
-
   <xacro:property name="WristPitchLinkName" value="${prefix}Palm" />
 
 </robot>
