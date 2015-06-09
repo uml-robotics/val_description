@@ -71,7 +71,7 @@
     <!-- AJ1 -->
     <xacro:revolute_joint_ex jointName="${AJ1_Joint_Name}"
                           parent="${upper_arm_root_link}" child="${AJ1_Distal_Link}"
-                          origin_xyz="${AJ1_Origin_X} ${AJ1_Origin_Y} ${AJ1_Origin_Z}"
+                          origin_xyz="${ArmPitchFrameOrigin_X} ${AJ1_Origin_Y} ${AJ1_Origin_Z}"
                           origin_rpy="${AJ1_Orientation_Roll} ${AJ1_Orientation_Pitch} ${AJ1_Orientation_Yaw}"
                           damping="1.0" friction="0.0">
         <limit effort="${AJ1_Torque_Limit}" lower="${AJ1_Lower_Limit}" upper="${AJ1_Upper_Limit}" velocity="${AJ1_Speed_Limit}"/>
