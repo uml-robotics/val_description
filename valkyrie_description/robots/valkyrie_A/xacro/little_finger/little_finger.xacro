@@ -8,7 +8,6 @@
   <xacro:include filename="$(find valkyrie_description)/robots/valkyrie_A/xacro/little_finger/dh_parameters.xacro"/>
   <xacro:include filename="$(find valkyrie_description)/robots/valkyrie_A/xacro/little_finger/mass_parameters.xacro"/>
 
-  <!-- Link properties. -->
   <xacro:property name="LFJ1_Link_Width" value="0.010"/>
   <xacro:property name="LFJ1_Link_Height" value="0.010"/>
   <xacro:property name="LFJ1_Link_Length" value="0.010"/>
@@ -149,7 +148,6 @@
     <xacro:v1_actuator name="${LLFA_Actuator_Name}" api="${api}" />
   </xacro:macro>
 
-  <!-- Transmissions -->
   <xacro:macro name="v1_right_little_finger_transmissions" params="prefix">
     <xacro:finger4_transmission tranName="${prefix}LittleFingerTransmission" 
                                 joint1="${LFJ1_Joint_Name}"

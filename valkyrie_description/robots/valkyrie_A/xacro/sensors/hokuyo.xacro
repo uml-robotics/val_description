@@ -1,11 +1,6 @@
 <?xml version="1.0" ?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="v1/hokuyo">
 
-  <!-- 
-  HOKUYO
-    Specs from:
-    http://bender.jsc.nasa.gov/confluence/download/attachments/13074784/UTM-30LX-EW_Specification.pdf?version=1&modificationDate=1354299754000&api=v2 
-  -->
   <xacro:property name="HokuyoWidth" value="0.063"/>
   <xacro:property name="HokuyoDepth" value="0.087"/>
   <xacro:property name="HokuyoHeight" value="0.063"/>
@@ -14,16 +9,12 @@
 
   <xacro:property name="HokuyoMinRange" value="0.1"/>
   <xacro:property name="HokuyoMaxRange" value="30"/>
-  <!-- <xacro:property name="HokuyoScanAngle" value="${270 * DEG2RAD}"/> -->
   <xacro:property name="HokuyoScanAngle" value="4.71"/>
-  <!-- <xacro:property name="HokuyoAngularResolution" value="${0.25 * DEG2RAD}"/> -->
   <xacro:property name="HokuyoAngularResolution" value="0.0043611"/>
   <xacro:property name="HokuyoScanRate" value="${1/0.025}"/>
-  <!-- Using worse case (10-30m) standard deviation -->
   <xacro:property name="HokuyoMeasurementResolution" value="0.03"/>
 
   <xacro:macro name="hokuyo_sensor" params="sensorName parentLink origin_xyz origin_rpy">
-    <!-- May 2015: Made the Hokuyo 'more' massless to make easier inertia estimation-->
     <xacro:massless_virtual_link name="${sensorName}_Frame"
                     origin_rpy="0 0 0" 
                     origin_xyz="0 0 0"/>
@@ -47,13 +38,8 @@
             <max>${HokuyoMaxRange}</max>
             <resolution>${HokuyoMeasurementResolution}</resolution>
           </range>
-          <!-- Noise data from DRCSIM -->
           <noise>
             <type>gaussian</type>
-            <!-- Noise parameters based on published spec for Hokuyo laser
-               achieving "+-30mm" accuracy at range < 10m.  A mean of 0.0m and
-               stddev of 0.01m will put 99.7% of samples within 0.03m of the true
-               reading. -->
             <mean>0.0</mean>
             <stddev>0.01</stddev>
           </noise>

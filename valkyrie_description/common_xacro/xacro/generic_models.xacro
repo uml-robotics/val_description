@@ -5,6 +5,34 @@
     <actuator name="${name}" type="${api}"/>
   </xacro:macro>
 
+  <xacro:macro name="standard_link" params="name mass origin_rpy origin_xyz ixx ixy ixz iyy iyz izz visual_mesh material collision_mesh">
+    <link name="${name}">
+      <inertial>
+        <mass value="${mass}"/>
+        <origin rpy="${origin_rpy}" xyz="${origin_xyz}"/>
+        <inertia ixx="${ixx}" ixy="${ixy}" ixz="${ixz}" 
+                 iyy="${iyy}" iyz="${iyz}"
+                 izz="${izz}" />
+        </inertial>  
+        <visual>
+          <geometry>
+            <mesh filename="${visual_mesh}"/>
+          </geometry>
+          <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+          <material name="${material}"/>
+        </visual>
+        <collision>
+        <geometry>
+          <mesh filename="${collision_mesh}"/>
+        </geometry>
+        <origin rpy="0 0 0" xyz="0 0 0"/>
+      </collision>
+    </link>
+    <gazebo reference="${name}">
+      <material>Gazebo/${material}</material>
+    </gazebo>
+  </xacro:macro>
+
   <xacro:macro name="cylinder_link" params="name radius length mass origin_xyz origin_rpy visual_mesh material collision_mesh">
     <link name="${name}">
       <inertial>

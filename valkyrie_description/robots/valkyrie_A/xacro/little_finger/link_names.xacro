@@ -2,15 +2,15 @@
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="v1/little_finger/dh_parameters">
   
   <xacro:property name="LFJ1_Proximal_Link" value="${little_finger_root_link}" />
-  <xacro:property name="LFJ1_Distal_Link" value="/v1/${prefix}PinkyPitch1" />
+  <xacro:property name="LFJ1_Distal_Link" value="${prefix}PinkyPitch1" />
 
-  <xacro:property name="LFJ2_Proximal_Link" value="/v1/${prefix}PinkyPitch1" />
-  <xacro:property name="LFJ2_Distal_Link" value="/v1/${prefix}PinkyPitch2" />
+  <xacro:property name="LFJ2_Proximal_Link" value="${prefix}PinkyPitch1" />
+  <xacro:property name="LFJ2_Distal_Link" value="${prefix}PinkyPitch2" />
 
-  <xacro:property name="LFJ3_Proximal_Link" value="/v1/${prefix}PinkyPitch2" />
-  <xacro:property name="LFJ3_Distal_Link" value="/v1/${prefix}PinkyPitch3" />
+  <xacro:property name="LFJ3_Proximal_Link" value="${prefix}PinkyPitch2" />
+  <xacro:property name="LFJ3_Distal_Link" value="${prefix}PinkyPitch3" />
 
-  <xacro:property name="LFJ4_Proximal_Link" value="/v1/${prefix}PinkyPitch4" />
-  <xacro:property name="LFJ4_Distal_Link" value="/v1/${prefix}PinkyPitch5" />
+  <xacro:property name="LFJ4_Proximal_Link" value="${prefix}PinkyPitch3" />
+  <xacro:property name="LFJ4_Distal_Link" value="${prefix}PinkyPitch4" />
   
 </robot>

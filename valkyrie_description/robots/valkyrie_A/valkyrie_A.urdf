@@ -23,20 +23,6 @@
     <color rgba="0.8 0 0.45 1.0"/>
   </material>
   <!-- Properties -->
-  <!--
-  Microstrain
-  -->
-  <!-- May 2015: mass made tiny to match with output inertias to IHMC's values -->
-  <!--  <xacro:property name="MicrostrainMass" value="0.018"/> -->
-  <!--
-  Vritual sensor frame
-  -->
-  <!-- 
-  FLEA3: FL3-U3-13Y3M-C & FL3-U3-13E4C-C
-    Specs from:
-    http://ww2.ptgrey.com/USB3/Flea3
-  -->
-  <!-- <xacro:property name="FleaFrameRate" value="30"/> -->
   <!-- Actuators -->
   <!-- Transmissions -->
   <!-- Modes -->
@@ -52,63 +38,18 @@
                   origin_rpy="0 0 0"
                   origin_xyz="0 0 0" /> -->
   <!-- Properties -->
-  <!-- 
-  CAMBOARD
-    Specs from:
-    http://www.pmdtec.com/products_services/reference_design.php
-  -->
-  <!-- 
-  FLEA3: FL3-U3-13Y3M-C & FL3-U3-13E4C-C
-    Specs from:
-    http://ww2.ptgrey.com/USB3/Flea3
-  -->
-  <!-- <xacro:property name="FleaFrameRate" value="30"/> -->
-  <!-- 
-  IBEO LUX 8L
-    Specs from:
-    http://www.ibeo-as.com/index.php/en/sensorsv
-  -->
-  <!-- <xacro:include filename="$(find valkyrie_description)/models/V1/xacro/sensors/asus.xacro"/> -->
   <!-- Link properties. -->
   <!-- Sensors -->
   <!-- Actuators -->
-  <!-- Transmissions -->
-  <!-- Modes -->
-  <!-- 
-  CAMBOARD
-    Specs from:
-    http://www.pmdtec.com/products_services/reference_design.php
-  -->
-  <!-- Sensors -->
-  <!-- Why is this not symmetric?? -->
-  <!-- Actuators -->
-  <!-- Transmissions -->
-  <!-- Modes -->
-  <!-- 
-  CAMBOARD
-    Specs from:
-    http://www.pmdtec.com/products_services/reference_design.php
-  -->
-  <!-- 
-  HOKUYO
-    Specs from:
-    http://bender.jsc.nasa.gov/confluence/download/attachments/13074784/UTM-30LX-EW_Specification.pdf?version=1&modificationDate=1354299754000&api=v2 
-  -->
-  <!-- <xacro:property name="HokuyoScanAngle" value="${270 * DEG2RAD}"/> -->
-  <!-- <xacro:property name="HokuyoAngularResolution" value="${0.25 * DEG2RAD}"/> -->
-  <!-- Using worse case (10-30m) standard deviation -->
-  <!-- Link properties. -->
   <!-- Sensors -->
   <!-- Actuators -->
-  <!-- Transmissions -->
-  <!-- Note that the transmission requires the convention of [roll, pitch] and [inner_shin_motor, outer_shin_motor] -->
-  <!-- Modes -->
+  <!-- Sensors -->
   <!-- Link properties. -->
   <!-- Actuators -->
   <!-- Transmissions -->
   <!-- Modes -->
   <!-- Complete interface -->
-  <!-- /v1/${prefix}Palm -->
+  <!-- ${prefix}Palm -->
   <!-- Link properties. -->
   <!-- Actuators -->
   <!-- Transmissions -->
@@ -121,9 +62,7 @@
   <!-- Modes -->
   <!-- Complete interface -->
   <!-- Simple interface -->
-  <!-- Link properties. -->
   <!-- Actuators -->
-  <!-- Transmissions -->
   <!-- Modes -->
   <!-- Complete interface -->
   <!-- Simple interface -->
@@ -164,7 +103,6 @@
     </plugin>
   </gazebo>
   <!-- ===== PUBLISH ODOMETRY DATA ==== -->
-  <!-- Gazebo ROS P3D xacro -->
   <gazebo>
     <plugin filename="libgazebo_ros_p3d.so" name="pos_plugin_ros">
       <alwaysOn>true</alwaysOn>
@@ -177,7 +115,6 @@
     </plugin>
   </gazebo>
   <!-- ===== PUBLISH ODOMETRY DATA ==== -->
-  <!-- Gazebo ROS P3D xacro -->
   <gazebo>
     <plugin filename="libgazebo_ros_p3d.so" name="pos_plugin_ros">
       <alwaysOn>true</alwaysOn>
@@ -295,12 +232,10 @@
     <provideFeedback>1</provideFeedback>
   </gazebo>
   <!-- <xacro:v1_waist_actuators name1="${waist_name1}" type1="${waist_type1}" name2="${waist_name2}" type2="${waist_type2}" name3="${waist_name3}" type3="${waist_type3}"/> -->
-  <!-- <xacro:v1_waist_transmissions actuator1="${waist_name1}" actuator2="${waist_name2}" actuator3="${waist_name3}" /> -->
-  <!-- <xacro:v1_waist_modes actuator1="${waist_name1}" actuator2="${waist_name2}" actuator3="${waist_name3}" /> -->
   <!-- <xacro:v1_trunk_sensors/> -->
   <!-- ===== HEAD ===== -->
   <!-- LINKS -->
-  <link name="LowerNeckPitch">
+  <link name="LowerNeckPitchLink">
     <!-- Virtual Link -->
     <inertial>
       <mass value="0.1"/>
@@ -323,7 +258,7 @@
       </geometry>
     </collision>
   </link>
-  <link name="NeckYaw">
+  <link name="NeckYawLink">
     <!-- Virtual Link -->
     <inertial>
       <mass value="0.1"/>
@@ -371,10 +306,10 @@
   </gazebo>
   <!-- NJ1 -->
   <joint name="LowerNeckPitch" type="revolute">
-    <origin rpy="-1.57079632679 0 0" xyz="0.3383 0 0.0519"/>
+    <origin rpy="0.0 0.0 0.0" xyz="0.3383 0 0.0519"/>
     <axis xyz="0 0 1"/>
     <parent link="TorsoRoll"/>
-    <child link="LowerNeckPitch"/>
+    <child link="LowerNeckPitchLink"/>
     <limit effort="26" lower="-1.5707963259" upper="0" velocity="5"/>
     <controller_gains Kd="0" Kp="20000"/>
     <dynamics damping="1.0" friction="0.0"/>
@@ -384,10 +319,10 @@
   </gazebo>
   <!-- NJ2 -->
   <joint name="NeckYaw" type="revolute">
-    <origin rpy="1.57079632679 0 1.57079632679" xyz="0 0.0519 0"/>
+    <origin rpy="0.0 0.0 0.0" xyz="0 0.0519 0"/>
     <axis xyz="0 0 1"/>
-    <parent link="LowerNeckPitch"/>
-    <child link="NeckYaw"/>
+    <parent link="LowerNeckPitchLink"/>
+    <child link="NeckYawLink"/>
     <limit effort="26" lower="-1.5707963259" upper="1.5707963259" velocity="5"/>
     <controller_gains Kd="0" Kp="20000"/>
     <dynamics damping="1.0" friction="0.0"/>
@@ -397,9 +332,9 @@
   </gazebo>
   <!-- NJ3 -->
   <joint name="UpperNeckPitch" type="revolute">
-    <origin rpy="-1.57079632679 0 0" xyz="0.06 0 0.196"/>
+    <origin rpy="0.0 0.0 0.0" xyz="0.06 0 0.196"/>
     <axis xyz="0 0 1"/>
-    <parent link="NeckYaw"/>
+    <parent link="NeckYawLink"/>
     <child link="Head"/>
     <limit effort="26" lower="-0.08726646255" upper="0.78539816295" velocity="5"/>
     <controller_gains Kd="0" Kp="20000"/>
@@ -670,14 +605,10 @@
                             name5="${rightarm_name5}" type5="${arm_type5}"
                             name6="${rightarm_name6}" type6="${arm_type6}"
                             name7="${rightarm_name7}" type7="${arm_type7}"/> -->
-  <!-- <xacro:v1_upper_arm_transmissions prefix="Right" actuator1="${rightarm_name1}" actuator2="${rightarm_name2}" actuator3="${rightarm_name3}" actuator4="${rightarm_name4}"/> -->
-  <!-- <xacro:v1_lower_arm_transmissions prefix="Right" actuator1="${rightarm_name5}" actuator2="${rightarm_name6}" actuator3="${rightarm_name7}"/> -->
-  <!-- <xacro:v1_arm_modes prefix="Right" actuator1="${rightarm_name1}" actuator2="${rightarm_name2}" actuator3="${rightarm_name3}" actuator4="${rightarm_name4}" actuator5="${rightarm_name5}" actuator6="${rightarm_name6}" actuator7="${rightarm_name7}"/> -->
-  <!-- Why is this not symmetric?? -->
   <!-- <xacro:v1_arm_sensors /> -->
   <!-- ===== RIGHT THUMB ===== -->
   <!-- LINKS -->
-  <link name="/v1/RightThumbMetacarpal">
+  <link name="RightThumbPitch1">
     <inertial>
       <mass value="0.017"/>
       <origin rpy="0 0 0" xyz="0 0 0"/>
@@ -697,10 +628,10 @@
       <origin rpy="0 0 0" xyz="0 0 0"/>
     </collision>
   </link>
-  <gazebo reference="/v1/RightThumbMetacarpal">
+  <gazebo reference="RightThumbPitch1">
     <material>Gazebo/Gold</material>
   </gazebo>
-  <link name="/v1/RightThumbProximalPhalanx">
+  <link name="RightThumbPitch2">
     <inertial>
       <mass value="0.02"/>
       <origin rpy="0 0 0" xyz="0.017 0 0"/>
@@ -720,10 +651,10 @@
       <origin rpy="0 0 0" xyz="0 0 0"/>
     </collision>
   </link>
-  <gazebo reference="/v1/RightThumbProximalPhalanx">
+  <gazebo reference="RightThumbPitch2">
     <material>Gazebo/Gold</material>
   </gazebo>
-  <link name="/v1/RightThumbMedialPhalanx">
+  <link name="RightThumbPitch3">
     <inertial>
       <mass value="0.013"/>
       <origin rpy="0 0 0" xyz="0.011 0 0"/>
@@ -743,10 +674,10 @@
       <origin rpy="0 0 0" xyz="0 0 0"/>
     </collision>
   </link>
-  <gazebo reference="/v1/RightThumbMedialPhalanx">
+  <gazebo reference="RightThumbPitch3">
     <material>Gazebo/Gold</material>
   </gazebo>
-  <link name="/v1/RightThumbDistalPhalanx">
+  <link name="RightThumbPitch4">
     <inertial>
       <mass value="0.006"/>
       <origin rpy="0 0 0" xyz="0.0086 0 0"/>
@@ -766,41 +697,40 @@
       <origin rpy="0 0 0" xyz="0 0 0"/>
     </collision>
   </link>
-  <gazebo reference="/v1/RightThumbDistalPhalanx">
+  <gazebo reference="RightThumbPitch4">
     <material>Gazebo/Gold</material>
   </gazebo>
   <!-- TJ1 -->
-  <joint name="RightThumbMPYaw" type="fixed">
+  <joint name="RightThumbRoll" type="fixed">
     <origin rpy="1.57079632679 0 -1.34390352" xyz="0.00748367180673 -0.0324153432851 0.005182"/>
     <axis xyz="0 0 1"/>
     <parent link="RightPalm"/>
-    <child link="/v1/RightThumbMetacarpal"/>
+    <child link="RightThumbPitch1"/>
   </joint>
   <!-- TJ2 -->
-  <joint name="RightThumbMPExtensor" type="fixed">
+  <joint name="RightThumbPitch1" type="fixed">
     <origin rpy="1.57079632679 0 0" xyz="0.02286 0 -0.025091"/>
     <axis xyz="0 0 1"/>
-    <parent link="/v1/RightThumbMetacarpal"/>
-    <child link="/v1/RightThumbProximalPhalanx"/>
+    <parent link="RightThumbPitch1"/>
+    <child link="RightThumbPitch2"/>
   </joint>
   <!-- TJ3 -->
-  <joint name="RightThumbPIPExtensor" type="fixed">
+  <joint name="RightThumbPitch2" type="fixed">
     <origin rpy="0 0 0" xyz="0.0381 0 0"/>
     <axis xyz="0 0 1"/>
-    <parent link="/v1/RightThumbProximalPhalanx"/>
-    <child link="/v1/RightThumbMedialPhalanx"/>
+    <parent link="RightThumbPitch2"/>
+    <child link="RightThumbPitch3"/>
   </joint>
   <!-- TJ4 -->
-  <joint name="RightThumbDIPExtensor" type="fixed">
+  <joint name="RightThumbPitch3" type="fixed">
     <origin rpy="0 0 0" xyz="0.02794 0 0"/>
     <axis xyz="0 0 1"/>
-    <parent link="/v1/RightThumbMedialPhalanx"/>
-    <child link="/v1/RightThumbDistalPhalanx"/>
+    <parent link="RightThumbPitch3"/>
+    <child link="RightThumbPitch4"/>
   </joint>
-  <!-- <xacro:make_right_thumb_interface api="${finger_api}"/> -->
   <!-- ===== RIGHT PRIMARY FINGER ===== -->
   <!-- LINKS -->
-  <link name="/v1/RightPrimaryMetacarpal">
+  <link name="RightIndexFingerPitch1">
     <inertial>
       <mass value="0.006"/>
       <origin rpy="0 0 0" xyz="-0.0048 0 0"/>
@@ -820,10 +750,10 @@
       <origin rpy="0 0 0" xyz="0 0 0"/>
     </collision>
   </link>
-  <gazebo reference="/v1/RightPrimaryMetacarpal">
+  <gazebo reference="RightIndexFingerPitch1">
     <material>Gazebo/Gold</material>
   </gazebo>
-  <link name="/v1/RightPrimaryProximalPhalanx">
+  <link name="RightIndexFingerPitch2">
     <inertial>
       <mass value="0.018"/>
       <origin rpy="0 0 0" xyz="0.0175 0 0"/>
@@ -843,10 +773,10 @@
       <origin rpy="0 0 0" xyz="0 0 0"/>
     </collision>
   </link>
-  <gazebo reference="/v1/RightPrimaryProximalPhalanx">
+  <gazebo reference="RightIndexFingerPitch2">
     <material>Gazebo/Gold</material>
   </gazebo>
-  <link name="/v1/RightPrimaryMedialPhalanx">
+  <link name="RightIndexFingerPitch3">
     <inertial>
       <mass value="0.01"/>
       <origin rpy="0 0 0" xyz="0.0108 -0.0003 0"/>
@@ -866,10 +796,10 @@
       <origin rpy="0 0 0" xyz="0 0 0"/>
     </collision>
   </link>
-  <gazebo reference="/v1/RightPrimaryMedialPhalanx">
+  <gazebo reference="RightIndexFingerPitch3">
     <material>Gazebo/Gold</material>
   </gazebo>
-  <link name="/v1/RightPrimaryDistalPhalanx">
+  <link name="RightIndexFingerPitch4">
     <inertial>
       <mass value="0.005"/>
       <origin rpy="0 0 0" xyz="0.00857 -0.000696 0"/>
@@ -889,7 +819,7 @@
       <origin rpy="0 0 0" xyz="0 0 0"/>
     </collision>
   </link>
-  <gazebo reference="/v1/RightPrimaryDistalPhalanx">
+  <gazebo reference="RightIndexFingerPitch4">
     <material>Gazebo/Gold</material>
   </gazebo>
   <!-- PFJ1 -->
@@ -897,33 +827,32 @@
     <origin rpy="0.0 0 -0.366519143" xyz="0.0776738914821 -0.0298162134085 0.00254"/>
     <axis xyz="0 0 1"/>
     <parent link="RightPalm"/>
-    <child link="/v1/RightPrimaryMetacarpal"/>
+    <child link="RightIndexFingerPitch1"/>
   </joint>
   <!-- PFJ2 -->
   <joint name="RightPrimaryMPExtensor" type="fixed">
     <origin rpy="-1.57079632679 0 0.0568977336" xyz="0.0169724899301 0.000966739661347 0"/>
     <axis xyz="0 0 1"/>
-    <parent link="/v1/RightPrimaryMetacarpal"/>
-    <child link="/v1/RightPrimaryProximalPhalanx"/>
+    <parent link="RightIndexFingerPitch1"/>
+    <child link="RightIndexFingerPitch2"/>
   </joint>
   <!-- PFJ3 -->
   <joint name="RightPrimaryPIPExtensor" type="fixed">
     <origin rpy="0 0 0" xyz="0.0381 0 0"/>
     <axis xyz="0 0 1"/>
-    <parent link="/v1/RightPrimaryProximalPhalanx"/>
-    <child link="/v1/RightPrimaryMedialPhalanx"/>
+    <parent link="RightIndexFingerPitch2"/>
+    <child link="RightIndexFingerPitch3"/>
   </joint>
   <!-- PFJ4 -->
   <joint name="RightPrimaryDIPExtensor" type="fixed">
     <origin rpy="0 0 0" xyz="0.02286 0 0"/>
     <axis xyz="0 0 1"/>
-    <parent link="/v1/RightPrimaryMedialPhalanx"/>
-    <child link="/v1/RightPrimaryDistalPhalanx"/>
+    <parent link="RightIndexFingerPitch3"/>
+    <child link="RightIndexFingerPitch4"/>
   </joint>
-  <!-- <xacro:make_right_primary_finger_interface api="${finger_api}"/> -->
   <!-- ===== RIGHT MIDDLE FINGER ===== -->
   <!-- LINKS -->
-  <link name="/v1/RightMiddleProximalPhalanx">
+  <link name="RightMiddleFingerPitch1">
     <inertial>
       <mass value="0.02"/>
       <origin rpy="0 0 0" xyz="0.017 0 0"/>
@@ -943,10 +872,10 @@
       <origin rpy="0 0 0" xyz="0 0 0"/>
     </collision>
   </link>
-  <gazebo reference="/v1/RightMiddleProximalPhalanx">
+  <gazebo reference="RightMiddleFingerPitch1">
     <material>Gazebo/Gold</material>
   </gazebo>
-  <link name="/v1/RightMiddleMedialPhalanx">
+  <link name="RightMiddleFingerPitch2">
     <inertial>
       <mass value="0.011"/>
       <origin rpy="0 0 0" xyz="0.011 0 0"/>
@@ -966,10 +895,10 @@
       <origin rpy="0 0 0" xyz="0 0 0"/>
     </collision>
   </link>
-  <gazebo reference="/v1/RightMiddleMedialPhalanx">
+  <gazebo reference="RightMiddleFingerPitch2">
     <material>Gazebo/Gold</material>
   </gazebo>
-  <link name="/v1/RightMiddleDistalPhalanx">
+  <link name="RightMiddleFingerPitch3">
     <inertial>
       <mass value="0.006"/>
       <origin rpy="0 0 0" xyz="0.0086 0 0"/>
@@ -989,34 +918,33 @@
       <origin rpy="0 0 0" xyz="0 0 0"/>
     </collision>
   </link>
-  <gazebo reference="/v1/RightMiddleDistalPhalanx">
+  <gazebo reference="RightMiddleFingerPitch3">
     <material>Gazebo/Gold</material>
   </gazebo>
   <!-- MFJ1 -->
-  <joint name="RightMiddleMPExtensor" type="fixed">
+  <joint name="RightMiddleFingerPitch1" type="fixed">
     <origin rpy="-1.57079632679 0 0" xyz="0.09767 0 0.00254"/>
     <axis xyz="0 0 1"/>
     <parent link="RightPalm"/>
-    <child link="/v1/RightMiddleProximalPhalanx"/>
+    <child link="RightMiddleFingerPitch1"/>
   </joint>
   <!-- MFJ2 -->
-  <joint name="RightMiddlePIPExtensor" type="fixed">
+  <joint name="RightMiddleFingerPitch2" type="fixed">
     <origin rpy="0 0 0" xyz="0.0381 0 0"/>
     <axis xyz="0 0 1"/>
-    <parent link="/v1/RightMiddleProximalPhalanx"/>
-    <child link="/v1/RightMiddleMedialPhalanx"/>
+    <parent link="RightMiddleFingerPitch1"/>
+    <child link="RightMiddleFingerPitch2"/>
   </joint>
   <!-- MFJ3 -->
-  <joint name="RightMiddleDIPExtensor" type="fixed">
+  <joint name="RightMiddleFingerPitch3" type="fixed">
     <origin rpy="0 0 0" xyz="0.02286 0 0"/>
     <axis xyz="0 0 1"/>
-    <parent link="/v1/RightMiddleMedialPhalanx"/>
-    <child link="/v1/RightMiddleDistalPhalanx"/>
+    <parent link="RightMiddleFingerPitch2"/>
+    <child link="RightMiddleFingerPitch3"/>
   </joint>
-  <!-- <xacro:make_right_middle_finger_interface api="${finger_api}"/> -->
   <!-- ===== RIGHT LITTLE FINGER ===== -->
   <!-- LINKS -->
-  <link name="/v1/RightPinkyPitch1">
+  <link name="RightPinkyPitch1">
     <inertial>
       <mass value="0.047"/>
       <origin rpy="0 0 0" xyz="0 0 0"/>
@@ -1036,10 +964,10 @@
       <origin rpy="0 0 0" xyz="0 0 0"/>
     </collision>
   </link>
-  <gazebo reference="/v1/RightPinkyPitch1">
+  <gazebo reference="RightPinkyPitch1">
     <material>Gazebo/Gold</material>
   </gazebo>
-  <link name="/v1/RightPinkyPitch2">
+  <link name="RightPinkyPitch2">
     <inertial>
       <mass value="0.02"/>
       <origin rpy="0 0 0" xyz="0 0.017 0.050169"/>
@@ -1059,10 +987,10 @@
       <origin rpy="0 0 0" xyz="0 0 0"/>
     </collision>
   </link>
-  <gazebo reference="/v1/RightPinkyPitch2">
+  <gazebo reference="RightPinkyPitch2">
     <material>Gazebo/Gold</material>
   </gazebo>
-  <link name="/v1/RightPinkyPitch3">
+  <link name="RightPinkyPitch3">
     <inertial>
       <mass value="0.011"/>
       <origin rpy="0 0 0" xyz="0.011 0 0"/>
@@ -1082,7 +1010,7 @@
       <origin rpy="0 0 0" xyz="0 0 0"/>
     </collision>
   </link>
-  <gazebo reference="/v1/RightPinkyPitch3">
+  <gazebo reference="RightPinkyPitch3">
     <material>Gazebo/Gold</material>
   </gazebo>
   <!-- LFJ1 -->
@@ -1090,23 +1018,22 @@
     <origin rpy="-1.57079632679 0 0.690626785" xyz="0.0427072303336 0.0352928446888 -0.007747"/>
     <axis xyz="0 0 1"/>
     <parent link="RightPalm"/>
-    <child link="/v1/RightPinkyPitch1"/>
+    <child link="RightPinkyPitch1"/>
   </joint>
   <!-- LFJ2 -->
   <joint name="RightPinkyPitch2" type="fixed">
     <origin rpy="-0.690626785 0 -1.57079632679" xyz="0 -0.010287 -0.071327"/>
     <axis xyz="0 0 1"/>
-    <parent link="/v1/RightPinkyPitch1"/>
-    <child link="/v1/RightPinkyPitch2"/>
+    <parent link="RightPinkyPitch1"/>
+    <child link="RightPinkyPitch2"/>
   </joint>
   <!-- LFJ3 -->
   <joint name="RightPinkyPitch3" type="fixed">
     <origin rpy="0 0 1.57079632679" xyz="0 0.0381 0.050169"/>
     <axis xyz="0 0 1"/>
-    <parent link="/v1/RightPinkyPitch2"/>
-    <child link="/v1/RightPinkyPitch3"/>
+    <parent link="RightPinkyPitch2"/>
+    <child link="RightPinkyPitch3"/>
   </joint>
-  <!-- <xacro:make_right_little_finger_interface api="${finger_api}"/> -->
   <!-- ===== LEFT ARM ===== -->
   <!-- LINKS -->
   <link name="LeftShoulderPitch">
@@ -1366,12 +1293,9 @@
                             name5="${leftarm_name5}" type5="${arm_type5}"
                             name6="${leftarm_name6}" type6="${arm_type6}"
                             name7="${leftarm_name7}" type7="${arm_type7}"/> -->
-  <!-- <xacro:v1_upper_arm_transmissions prefix="Left" actuator1="${leftarm_name1}" actuator2="${leftarm_name2}" actuator3="${leftarm_name3}" actuator4="${leftarm_name4}"/> -->
-  <!-- <xacro:v1_lower_arm_transmissions prefix="Left" actuator1="${leftarm_name5}" actuator2="${leftarm_name6}" actuator3="${leftarm_name7}"/> -->
-  <!-- <xacro:v1_arm_modes prefix="Left" actuator1="${leftarm_name1}" actuator2="${leftarm_name2}" actuator3="${leftarm_name3}" actuator4="${leftarm_name4}" actuator5="${leftarm_name5}" actuator6="${leftarm_name6}" actuator7="${leftarm_name7}"/> -->
   <!-- ===== LEFT THUMB ===== -->
   <!-- LINKS -->
-  <link name="/v1/LeftThumbMetacarpal">
+  <link name="LeftThumbPitch1">
     <inertial>
       <mass value="0.017"/>
       <origin rpy="0 0 0" xyz="0 0 0"/>
@@ -1391,10 +1315,10 @@
       <origin rpy="0 0 0" xyz="0 0 0"/>
     </collision>
   </link>
-  <gazebo reference="/v1/LeftThumbMetacarpal">
+  <gazebo reference="LeftThumbPitch1">
     <material>Gazebo/Gold</material>
   </gazebo>
-  <link name="/v1/LeftThumbProximalPhalanx">
+  <link name="LeftThumbPitch2">
     <inertial>
       <mass value="0.02"/>
       <origin rpy="0 0 0" xyz="0.017 0 0"/>
@@ -1414,10 +1338,10 @@
       <origin rpy="0 0 0" xyz="0 0 0"/>
     </collision>
   </link>
-  <gazebo reference="/v1/LeftThumbProximalPhalanx">
+  <gazebo reference="LeftThumbPitch2">
     <material>Gazebo/Gold</material>
   </gazebo>
-  <link name="/v1/LeftThumbMedialPhalanx">
+  <link name="LeftThumbPitch3">
     <inertial>
       <mass value="0.013"/>
       <origin rpy="0 0 0" xyz="0.011 0 0"/>
@@ -1437,10 +1361,10 @@
       <origin rpy="0 0 0" xyz="0 0 0"/>
     </collision>
   </link>
-  <gazebo reference="/v1/LeftThumbMedialPhalanx">
+  <gazebo reference="LeftThumbPitch3">
     <material>Gazebo/Gold</material>
   </gazebo>
-  <link name="/v1/LeftThumbDistalPhalanx">
+  <link name="LeftThumbPitch4">
     <inertial>
       <mass value="0.006"/>
       <origin rpy="0 0 0" xyz="0.0086 0 0"/>
@@ -1460,41 +1384,40 @@
       <origin rpy="0 0 0" xyz="0 0 0"/>
     </collision>
   </link>
-  <gazebo reference="/v1/LeftThumbDistalPhalanx">
+  <gazebo reference="LeftThumbPitch4">
     <material>Gazebo/Gold</material>
   </gazebo>
   <!-- TJ1 -->
-  <joint name="LeftThumbMPYaw" type="fixed">
+  <joint name="LeftThumbRoll" type="fixed">
     <origin rpy="-1.57079632679 0 -1.34390352" xyz="0.00748367180673 -0.0324153432851 -0.005182"/>
     <axis xyz="0 0 1"/>
     <parent link="LeftPalm"/>
-    <child link="/v1/LeftThumbMetacarpal"/>
+    <child link="LeftThumbPitch1"/>
   </joint>
   <!-- TJ2 -->
-  <joint name="LeftThumbMPExtensor" type="fixed">
+  <joint name="LeftThumbPitch1" type="fixed">
     <origin rpy="-1.57079632679 0 0" xyz="0.02286 0 0.025091"/>
     <axis xyz="0 0 1"/>
-    <parent link="/v1/LeftThumbMetacarpal"/>
-    <child link="/v1/LeftThumbProximalPhalanx"/>
+    <parent link="LeftThumbPitch1"/>
+    <child link="LeftThumbPitch2"/>
   </joint>
   <!-- TJ3 -->
-  <joint name="LeftThumbPIPExtensor" type="fixed">
+  <joint name="LeftThumbPitch2" type="fixed">
     <origin rpy="0 0 0" xyz="0.0381 0 0"/>
     <axis xyz="0 0 1"/>
-    <parent link="/v1/LeftThumbProximalPhalanx"/>
-    <child link="/v1/LeftThumbMedialPhalanx"/>
+    <parent link="LeftThumbPitch2"/>
+    <child link="LeftThumbPitch3"/>
   </joint>
   <!-- TJ4 -->
-  <joint name="LeftThumbDIPExtensor" type="fixed">
+  <joint name="LeftThumbPitch3" type="fixed">
     <origin rpy="0 0 0" xyz="0.02794 0 0"/>
     <axis xyz="0 0 1"/>
-    <parent link="/v1/LeftThumbMedialPhalanx"/>
-    <child link="/v1/LeftThumbDistalPhalanx"/>
+    <parent link="LeftThumbPitch3"/>
+    <child link="LeftThumbPitch4"/>
   </joint>
-  <!-- <xacro:make_left_thumb_interface api="${finger_api}"/> -->
   <!-- ===== LEFT PRIMARY FINGER ===== -->
   <!-- LINKS -->
-  <link name="/v1/LeftPrimaryMetacarpal">
+  <link name="LeftIndexFingerPitch1">
     <inertial>
       <mass value="0.006"/>
       <origin rpy="0 0 0" xyz="-0.0048 0 0"/>
@@ -1514,10 +1437,10 @@
       <origin rpy="0 0 0" xyz="0 0 0"/>
     </collision>
   </link>
-  <gazebo reference="/v1/LeftPrimaryMetacarpal">
+  <gazebo reference="LeftIndexFingerPitch1">
     <material>Gazebo/Gold</material>
   </gazebo>
-  <link name="/v1/LeftPrimaryProximalPhalanx">
+  <link name="LeftIndexFingerPitch2">
     <inertial>
       <mass value="0.018"/>
       <origin rpy="0 0 0" xyz="0.0175 0 0"/>
@@ -1537,10 +1460,10 @@
       <origin rpy="0 0 0" xyz="0 0 0"/>
     </collision>
   </link>
-  <gazebo reference="/v1/LeftPrimaryProximalPhalanx">
+  <gazebo reference="LeftIndexFingerPitch2">
     <material>Gazebo/Gold</material>
   </gazebo>
-  <link name="/v1/LeftPrimaryMedialPhalanx">
+  <link name="LeftIndexFingerPitch3">
     <inertial>
       <mass value="0.01"/>
       <origin rpy="0 0 0" xyz="0.0108 -0.0003 0"/>
@@ -1560,10 +1483,10 @@
       <origin rpy="0 0 0" xyz="0 0 0"/>
     </collision>
   </link>
-  <gazebo reference="/v1/LeftPrimaryMedialPhalanx">
+  <gazebo reference="LeftIndexFingerPitch3">
     <material>Gazebo/Gold</material>
   </gazebo>
-  <link name="/v1/LeftPrimaryDistalPhalanx">
+  <link name="LeftIndexFingerPitch4">
     <inertial>
       <mass value="0.005"/>
       <origin rpy="0 0 0" xyz="0.00857 -0.000696 0"/>
@@ -1583,7 +1506,7 @@
       <origin rpy="0 0 0" xyz="0 0 0"/>
     </collision>
   </link>
-  <gazebo reference="/v1/LeftPrimaryDistalPhalanx">
+  <gazebo reference="LeftIndexFingerPitch4">
     <material>Gazebo/Gold</material>
   </gazebo>
   <!-- PFJ1 -->
@@ -1591,33 +1514,32 @@
     <origin rpy="-3.14159265359 0 -0.366519143" xyz="0.0776738914821 -0.0298162134085 -0.00254"/>
     <axis xyz="0 0 1"/>
     <parent link="LeftPalm"/>
-    <child link="/v1/LeftPrimaryMetacarpal"/>
+    <child link="LeftIndexFingerPitch1"/>
   </joint>
   <!-- PFJ2 -->
   <joint name="LeftPrimaryMPExtensor" type="fixed">
     <origin rpy="-1.57079632679 0 0.0568977336" xyz="0.0169724899301 0.000966739661347 0"/>
     <axis xyz="0 0 1"/>
-    <parent link="/v1/LeftPrimaryMetacarpal"/>
-    <child link="/v1/LeftPrimaryProximalPhalanx"/>
+    <parent link="LeftIndexFingerPitch1"/>
+    <child link="LeftIndexFingerPitch2"/>
   </joint>
   <!-- PFJ3 -->
   <joint name="LeftPrimaryPIPExtensor" type="fixed">
     <origin rpy="0 0 0" xyz="0.0381 0 0"/>
     <axis xyz="0 0 1"/>
-    <parent link="/v1/LeftPrimaryProximalPhalanx"/>
-    <child link="/v1/LeftPrimaryMedialPhalanx"/>
+    <parent link="LeftIndexFingerPitch2"/>
+    <child link="LeftIndexFingerPitch3"/>
   </joint>
   <!-- PFJ4 -->
   <joint name="LeftPrimaryDIPExtensor" type="fixed">
     <origin rpy="0 0 0" xyz="0.02286 0 0"/>
     <axis xyz="0 0 1"/>
-    <parent link="/v1/LeftPrimaryMedialPhalanx"/>
-    <child link="/v1/LeftPrimaryDistalPhalanx"/>
+    <parent link="LeftIndexFingerPitch3"/>
+    <child link="LeftIndexFingerPitch4"/>
   </joint>
-  <!-- <xacro:make_left_primary_finger_interface api="${finger_api}"/> -->
   <!-- ===== LEFT MIDDLE FINGER ===== -->
   <!-- LINKS -->
-  <link name="/v1/LeftMiddleProximalPhalanx">
+  <link name="LeftMiddleFingerPitch1">
     <inertial>
       <mass value="0.02"/>
       <origin rpy="0 0 0" xyz="0.017 0 0"/>
@@ -1637,10 +1559,10 @@
       <origin rpy="0 0 0" xyz="0 0 0"/>
     </collision>
   </link>
-  <gazebo reference="/v1/LeftMiddleProximalPhalanx">
+  <gazebo reference="LeftMiddleFingerPitch1">
     <material>Gazebo/Gold</material>
   </gazebo>
-  <link name="/v1/LeftMiddleMedialPhalanx">
+  <link name="LeftMiddleFingerPitch2">
     <inertial>
       <mass value="0.011"/>
       <origin rpy="0 0 0" xyz="0.011 0 0"/>
@@ -1660,10 +1582,10 @@
       <origin rpy="0 0 0" xyz="0 0 0"/>
     </collision>
   </link>
-  <gazebo reference="/v1/LeftMiddleMedialPhalanx">
+  <gazebo reference="LeftMiddleFingerPitch2">
     <material>Gazebo/Gold</material>
   </gazebo>
-  <link name="/v1/LeftMiddleDistalPhalanx">
+  <link name="LeftMiddleFingerPitch3">
     <inertial>
       <mass value="0.006"/>
       <origin rpy="0 0 0" xyz="0.0086 0 0"/>
@@ -1683,34 +1605,33 @@
       <origin rpy="0 0 0" xyz="0 0 0"/>
     </collision>
   </link>
-  <gazebo reference="/v1/LeftMiddleDistalPhalanx">
+  <gazebo reference="LeftMiddleFingerPitch3">
     <material>Gazebo/Gold</material>
   </gazebo>
   <!-- MFJ1 -->
-  <joint name="LeftMiddleMPExtensor" type="fixed">
+  <joint name="LeftMiddleFingerPitch1" type="fixed">
     <origin rpy="1.57079632679 0 0" xyz="0.09767 0 -0.00254"/>
     <axis xyz="0 0 1"/>
     <parent link="LeftPalm"/>
-    <child link="/v1/LeftMiddleProximalPhalanx"/>
+    <child link="LeftMiddleFingerPitch1"/>
   </joint>
   <!-- MFJ2 -->
-  <joint name="LeftMiddlePIPExtensor" type="fixed">
+  <joint name="LeftMiddleFingerPitch2" type="fixed">
     <origin rpy="0 0 0" xyz="0.0381 0 0"/>
     <axis xyz="0 0 1"/>
-    <parent link="/v1/LeftMiddleProximalPhalanx"/>
-    <child link="/v1/LeftMiddleMedialPhalanx"/>
+    <parent link="LeftMiddleFingerPitch1"/>
+    <child link="LeftMiddleFingerPitch2"/>
   </joint>
   <!-- MFJ3 -->
-  <joint name="LeftMiddleDIPExtensor" type="fixed">
+  <joint name="LeftMiddleFingerPitch3" type="fixed">
     <origin rpy="0 0 0" xyz="0.02286 0 0"/>
     <axis xyz="0 0 1"/>
-    <parent link="/v1/LeftMiddleMedialPhalanx"/>
-    <child link="/v1/LeftMiddleDistalPhalanx"/>
+    <parent link="LeftMiddleFingerPitch2"/>
+    <child link="LeftMiddleFingerPitch3"/>
   </joint>
-  <!-- <xacro:make_left_middle_finger_interface api="${finger_api}"/> -->
   <!-- ===== LEFT LITTLE FINGER ===== -->
   <!-- LINKS -->
-  <link name="/v1/LeftPinkyPitch1">
+  <link name="LeftPinkyPitch1">
     <inertial>
       <mass value="0.047"/>
       <origin rpy="0 0 0" xyz="0 0 0"/>
@@ -1730,10 +1651,10 @@
       <origin rpy="0 0 0" xyz="0 0 0"/>
     </collision>
   </link>
-  <gazebo reference="/v1/LeftPinkyPitch1">
+  <gazebo reference="LeftPinkyPitch1">
     <material>Gazebo/Gold</material>
   </gazebo>
-  <link name="/v1/LeftPinkyPitch2">
+  <link name="LeftPinkyPitch2">
     <inertial>
       <mass value="0.02"/>
       <origin rpy="0 0 0" xyz="0 -0.017 -0.050169"/>
@@ -1753,10 +1674,10 @@
       <origin rpy="0 0 0" xyz="0 0 0"/>
     </collision>
   </link>
-  <gazebo reference="/v1/LeftPinkyPitch2">
+  <gazebo reference="LeftPinkyPitch2">
     <material>Gazebo/Gold</material>
   </gazebo>
-  <link name="/v1/LeftPinkyPitch3">
+  <link name="LeftPinkyPitch3">
     <inertial>
       <mass value="0.011"/>
       <origin rpy="0 0 0" xyz="0.011 0 0"/>
@@ -1776,7 +1697,7 @@
       <origin rpy="0 0 0" xyz="0 0 0"/>
     </collision>
   </link>
-  <gazebo reference="/v1/LeftPinkyPitch3">
+  <gazebo reference="LeftPinkyPitch3">
     <material>Gazebo/Gold</material>
   </gazebo>
   <!-- LFJ1 -->
@@ -1784,25 +1705,23 @@
     <origin rpy="1.57079632679 0 0.690626785" xyz="0.0427072303336 0.0352928446888 0.007747"/>
     <axis xyz="0 0 1"/>
     <parent link="LeftPalm"/>
-    <child link="/v1/LeftPinkyPitch1"/>
+    <child link="LeftPinkyPitch1"/>
   </joint>
   <!-- LFJ2 -->
   <joint name="LeftPinkyPitch2" type="fixed">
     <origin rpy="-0.690626785 0 1.57079632679" xyz="0 -0.010287 0.071327"/>
     <axis xyz="0 0 1"/>
-    <parent link="/v1/LeftPinkyPitch1"/>
-    <child link="/v1/LeftPinkyPitch2"/>
+    <parent link="LeftPinkyPitch1"/>
+    <child link="LeftPinkyPitch2"/>
   </joint>
   <!-- LFJ3 -->
   <joint name="LeftPinkyPitch3" type="fixed">
     <origin rpy="0 0 -1.57079632679" xyz="0 -0.0381 -0.050169"/>
     <axis xyz="0 0 1"/>
-    <parent link="/v1/LeftPinkyPitch2"/>
-    <child link="/v1/LeftPinkyPitch3"/>
+    <parent link="LeftPinkyPitch2"/>
+    <child link="LeftPinkyPitch3"/>
   </joint>
-  <!-- <xacro:make_left_little_finger_interface api="${finger_api}"/> -->
   <!-- ===== RIGHT LEG ===== -->
-  <!-- LINKS -->
   <link name="RightHipYaw">
     <inertial>
       <mass value="2.39"/>
@@ -1938,7 +1857,6 @@
   <gazebo reference="RightFoot">
     <material>Gazebo/White</material>
   </gazebo>
-  <!-- From Atlas URDF -->
   <gazebo reference="RightFoot">
     <kp>100000.0</kp>
     <kd>1000.0</kd>
@@ -1961,7 +1879,6 @@
   <gazebo reference="RightHipYaw">
     <provideFeedback>1</provideFeedback>
   </gazebo>
-  <!-- LJ2 -->
   <joint name="RightHipRoll" type="revolute">
     <origin rpy="-1.57079632679 0 0" xyz="0 0 0"/>
     <axis xyz="0 0 1"/>
@@ -1974,7 +1891,6 @@
   <gazebo reference="RightHipRoll">
     <provideFeedback>1</provideFeedback>
   </gazebo>
-  <!-- LJ3 -->
   <joint name="RightHipPitch" type="revolute">
     <origin rpy="-1.57079632679 0 1.57079632679" xyz="0 0.061 0"/>
     <axis xyz="0 0 1"/>
@@ -1987,7 +1903,6 @@
   <gazebo reference="RightHipPitch">
     <provideFeedback>1</provideFeedback>
   </gazebo>
-  <!-- LJ4 -->
   <joint name="RightKneePitch" type="revolute">
     <origin rpy="3.14159265359 0 0" xyz="0.431 0 -0.0374"/>
     <axis xyz="0 0 1"/>
@@ -2008,7 +1923,6 @@
                        parent="${LJ4_Distal_Link_Box}" child="${LJ4_Distal_Link_Cylinder2}"
                        origin_xyz="0 0 0"
                        origin_rpy="0 0 0"/> -->
-  <!-- LJ5 -->
   <joint name="RightAnklePitch" type="revolute">
     <origin rpy="3.14159265359 0 0" xyz="0.406 0 0"/>
     <axis xyz="0 0 1"/>
@@ -2021,7 +1935,6 @@
   <gazebo reference="RightAnklePitch">
     <provideFeedback>1</provideFeedback>
   </gazebo>
-  <!-- LJ6 -->
   <joint name="RightAnkleRoll" type="revolute">
     <origin rpy="1.57079632679 0 -0.13" xyz="0.0127 0 0"/>
     <axis xyz="0 0 1"/>
@@ -2057,7 +1970,6 @@
   <!-- <xacro:v1_leg_sensors prefix="Right" reflect="1" /> -->
   <!-- <xacro:v1_hw_sensors prefix="Right" hermes_node="${rightleg_hermes}" atidaq_node="${rightleg_ati}" mpu6000_node="${rightleg_mpu2000}" cop_node="${rightleg_cop}"/> -->
   <!-- ===== LEFT LEG ===== -->
-  <!-- LINKS -->
   <link name="LeftHipYaw">
     <inertial>
       <mass value="2.39"/>
@@ -2193,7 +2105,6 @@
   <gazebo reference="LeftFoot">
     <material>Gazebo/White</material>
   </gazebo>
-  <!-- From Atlas URDF -->
   <gazebo reference="LeftFoot">
     <kp>100000.0</kp>
     <kd>1000.0</kd>
@@ -2216,7 +2127,6 @@
   <gazebo reference="LeftHipYaw">
     <provideFeedback>1</provideFeedback>
   </gazebo>
-  <!-- LJ2 -->
   <joint name="LeftHipRoll" type="revolute">
     <origin rpy="1.57079632679 0 0" xyz="0 0 0"/>
     <axis xyz="0 0 1"/>
@@ -2229,7 +2139,6 @@
   <gazebo reference="LeftHipRoll">
     <provideFeedback>1</provideFeedback>
   </gazebo>
-  <!-- LJ3 -->
   <joint name="LeftHipPitch" type="revolute">
     <origin rpy="1.57079632679 0 1.57079632679" xyz="0 0.061 0"/>
     <axis xyz="0 0 1"/>
@@ -2242,7 +2151,6 @@
   <gazebo reference="LeftHipPitch">
     <provideFeedback>1</provideFeedback>
   </gazebo>
-  <!-- LJ4 -->
   <joint name="LeftKneePitch" type="revolute">
     <origin rpy="3.14159265359 0 0" xyz="0.431 0 0.0374"/>
     <axis xyz="0 0 1"/>
@@ -2263,7 +2171,6 @@
                        parent="${LJ4_Distal_Link_Box}" child="${LJ4_Distal_Link_Cylinder2}"
                        origin_xyz="0 0 0"
                        origin_rpy="0 0 0"/> -->
-  <!-- LJ5 -->
   <joint name="LeftAnklePitch" type="revolute">
     <origin rpy="3.14159265359 0 0" xyz="0.406 0 0"/>
     <axis xyz="0 0 1"/>
@@ -2276,7 +2183,6 @@
   <gazebo reference="LeftAnklePitch">
     <provideFeedback>1</provideFeedback>
   </gazebo>
-  <!-- LJ6 -->
   <joint name="LeftAnkleRoll" type="revolute">
     <origin rpy="-1.57079632679 0 -0.13" xyz="0.0127 0 0"/>
     <axis xyz="0 0 1"/>
@@ -2296,17 +2202,4 @@
                             name4="${leftleg_name4}" type4="${leg_type4}"
                             name5="${leftleg_name5}" type5="${leg_type5}"
                             name6="${leftleg_name6}" type6="${leg_type6}"/> -->
-  <!-- <xacro:v1_leg_transmissions prefix="Left" reflect="-1"
-                                               actuator1="${leftleg_name1}"
-                                               actuator2="${leftleg_name2}"
-                                               actuator3="${leftleg_name3}"
-                                               actuator4="${leftleg_name4}"
-                                               actuator5="${leftleg_name5}"
-                                               actuator6="${leftleg_name6}" /> -->
-  <!-- <xacro:v1_leg_modes prefix="Left" actuator1="${leftleg_name1}"
-                                       actuator2="${leftleg_name2}"
-                                       actuator3="${leftleg_name3}"
-                                       actuator4="${leftleg_name4}"
-                                       actuator5="${leftleg_name5}"
-                                       actuator6="${leftleg_name6}" /> -->
 </robot>

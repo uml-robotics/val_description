@@ -1,11 +1,6 @@
 <?xml version="1.0"?>
 
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="v1/flea">
-  <!-- 
-  FLEA3: FL3-U3-13Y3M-C & FL3-U3-13E4C-C
-    Specs from:
-    http://ww2.ptgrey.com/USB3/Flea3
-  -->
 
   <xacro:property name="FleaWidth" value="0.029"/>
   <xacro:property name="FleaHeight" value="0.029"/>
@@ -18,7 +13,6 @@
   <xacro:property name="FleaFieldOfView" value="1.378"/>
   <xacro:property name="FleaMinDistance" value="0.1"/>
   <xacro:property name="FleaMaxDistance" value="100"/>
-  <!-- <xacro:property name="FleaFrameRate" value="30"/> -->
 
   <xacro:macro name="flea3_camera" params="sensorName parentLink origin_xyz origin_rpy imageFormat frameRate">
     <xacro:massless_virtual_link name="${sensorName}_Frame"

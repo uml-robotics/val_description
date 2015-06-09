@@ -1,10 +1,6 @@
 <?xml version="1.0" ?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="v1/camboard">
-  <!-- 
-  CAMBOARD
-    Specs from:
-    http://www.pmdtec.com/products_services/reference_design.php
-  -->
+
   <xacro:property name="CamBoardWidth" value="0.037"/>
   <xacro:property name="CamBoardHeight" value="0.030"/>
   <xacro:property name="CamBoardDepth" value="0.025"/>
@@ -19,7 +15,6 @@
   <xacro:property name="CamBoardFrameRate" value="30"/>
   
   <xacro:macro name="camboard_sensor" params="sensorName parentLink origin_xyz origin_rpy">
-    <!-- May 2015: Made the Camboard 'more' massless to make easier inertia estimation-->
     <xacro:massless_virtual_link name="${sensorName}_Frame"
                     origin_rpy="0 0 0" 
                     origin_xyz="0 0 0"/>

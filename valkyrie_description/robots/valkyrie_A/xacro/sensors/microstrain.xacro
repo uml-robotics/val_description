@@ -1,15 +1,10 @@
 <?xml version="1.0" ?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="v1/microstrain">
 
-  <!--
-  Microstrain
-  -->
   <xacro:property name="MicrostrainWidth" value="0.024"/>
   <xacro:property name="MicrostrainHeight" value="0.044"/>
   <xacro:property name="MicrostrainDepth" value="0.011"/>
 
-<!-- May 2015: mass made tiny to match with output inertias to IHMC's values -->
-<!--  <xacro:property name="MicrostrainMass" value="0.018"/> -->
   <xacro:property name="MicrostrainMass" value="0.0000001"/>
 
   <xacro:macro name="microstrain_sensor" params="sensorName parentLink origin_xyz origin_rpy">

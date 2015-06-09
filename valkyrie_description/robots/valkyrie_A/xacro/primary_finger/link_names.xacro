@@ -1,17 +1,17 @@
 <?xml version="1.0" ?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="v1/primary_finger/dh_parameters">
 
-  <!-- /v1/${prefix}Palm -->
+  <!-- ${prefix}Palm -->
   <xacro:property name="PFJ1_Proximal_Link" value="${primary_finger_root_link}" />
-  <xacro:property name="PFJ1_Distal_Link" value="/v1/${prefix}PrimaryMetacarpal" />
+  <xacro:property name="PFJ1_Distal_Link" value="${prefix}IndexFingerPitch1" />
 
-  <xacro:property name="PFJ2_Proximal_Link" value="/v1/${prefix}PrimaryMetacarpal" />
-  <xacro:property name="PFJ2_Distal_Link" value="/v1/${prefix}PrimaryProximalPhalanx" />
+  <xacro:property name="PFJ2_Proximal_Link" value="${prefix}IndexFingerPitch1" />
+  <xacro:property name="PFJ2_Distal_Link" value="${prefix}IndexFingerPitch2" />
 
-  <xacro:property name="PFJ3_Proximal_Link" value="/v1/${prefix}PrimaryProximalPhalanx" />
-  <xacro:property name="PFJ3_Distal_Link" value="/v1/${prefix}PrimaryMedialPhalanx" />
+  <xacro:property name="PFJ3_Proximal_Link" value="${prefix}IndexFingerPitch2" />
+  <xacro:property name="PFJ3_Distal_Link" value="${prefix}IndexFingerPitch3" />
 
-  <xacro:property name="PFJ4_Proximal_Link" value="/v1/${prefix}PrimaryMedialPhalanx" />
-  <xacro:property name="PFJ4_Distal_Link" value="/v1/${prefix}PrimaryDistalPhalanx" />
+  <xacro:property name="PFJ4_Proximal_Link" value="${prefix}IndexFingerPitch3" />
+  <xacro:property name="PFJ4_Distal_Link" value="${prefix}IndexFingerPitch4" />
   
 </robot>

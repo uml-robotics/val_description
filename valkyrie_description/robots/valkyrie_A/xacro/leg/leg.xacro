@@ -9,7 +9,6 @@
   <xacro:include filename="$(find valkyrie_description)/robots/valkyrie_A/xacro/sensors/hokuyo.xacro"/>
   <xacro:include filename="$(find valkyrie_description)/robots/valkyrie_A/xacro/sensors/hw_sensors.xacro"/>
 
-  <!-- Link properties. -->
   <xacro:property name="LJ1_Link_Width" value="0.149"/>
   <xacro:property name="LJ1_Link_Height" value="0.185"/>
   <xacro:property name="LJ1_Link_Length" value="0.229"/>
@@ -54,7 +53,6 @@
   <xacro:property name="LJ6_Link_Box_Origin_Z" value="7.7849126e-02"/>
 
   <xacro:macro name="make_leg_links" params="prefix reflect leg_root_link">
-    <!-- LINKS -->
     <xacro:box_link name="${LJ1_Distal_Link}"
                     width="${LJ1_Link_Width}" height="${LJ1_Link_Height}" depth="${LJ1_Link_Length}" mass="${LJ1_Link_Mass}"
                     origin_xyz="${LJ1_Link_Origin_X} ${LJ1_Link_Origin_Y} ${reflect * LJ1_Link_Origin_Z}" origin_rpy="0 0 0"
@@ -100,7 +98,7 @@
                     origin_offset_xyz="0 0 0"
                     origin_offset_rpy="0 ${reflect * 0.13} 0"/>
 
-    <!-- From Atlas URDF -->
+    
     <gazebo reference="${LJ6_Distal_Link}">
       <kp>100000.0</kp>
       <kd>1000.0</kd>
@@ -124,7 +122,6 @@
         <controller_gains Kp="15000" Kd="500"/>
     </xacro:revolute_joint_ex>
 
-    <!-- LJ2 -->
     <xacro:revolute_joint_ex jointName="${LJ2_Joint_Name}"
                           parent="${LJ2_Proximal_Link}" child="${LJ2_Distal_Link}"
                           origin_xyz="${LJ2_Origin_X} ${LJ2_Origin_Y} ${LJ2_Origin_Z}"
@@ -134,7 +131,6 @@
         <controller_gains Kp="15000" Kd="500"/>
     </xacro:revolute_joint_ex>
 
-    <!-- LJ3 -->
     <xacro:revolute_joint_ex jointName="${LJ3_Joint_Name}"
                           parent="${LJ3_Proximal_Link}" child="${LJ3_Distal_Link}"
                           origin_xyz="${LJ3_Origin_X} ${LJ3_Origin_Y} ${LJ3_Origin_Z}"
@@ -144,7 +140,6 @@
         <controller_gains Kp="15000" Kd="500"/>
     </xacro:revolute_joint_ex>
 
-    <!-- LJ4 -->
     <xacro:revolute_joint_ex jointName="${LJ4_Joint_Name}"
                           parent="${LJ4_Proximal_Link}" child="${LJ4_Distal_Link_Box}"
                           origin_xyz="${LJ4_Origin_X} ${LJ4_Origin_Y} ${LJ4_Origin_Z}"
@@ -156,7 +151,6 @@
   </xacro:macro>
 
   <xacro:macro name="make_leg_joints_fixed" params="prefix reflect leg_root_link">
-    <!-- LJ1 -->
     <xacro:fixed_joint jointName="${LJ1_Joint_Name}"
                           parent="${LJ1_Proximal_Link}" child="${LJ1_Distal_Link}"
                           origin_xyz="${LJ1_Origin_X} ${LJ1_Origin_Y} ${LJ1_Origin_Z}"
@@ -164,7 +158,6 @@
         <limit effort="${LJ1_Torque_Limit}" lower="${LJ1_Lower_Limit}" upper="${LJ1_Upper_Limit}" velocity="${LJ1_Speed_Limit}"/>
     </xacro:fixed_joint>
 
-    <!-- LJ2 -->
     <xacro:fixed_joint jointName="${LJ2_Joint_Name}"
                           parent="${LJ2_Proximal_Link}" child="${LJ2_Distal_Link}"
                           origin_xyz="${LJ2_Origin_X} ${LJ2_Origin_Y} ${LJ2_Origin_Z}"
@@ -172,7 +165,6 @@
         <limit effort="${LJ2_Torque_Limit}" lower="${LJ2_Lower_Limit}" upper="${LJ2_Upper_Limit}" velocity="${LJ2_Speed_Limit}"/>
     </xacro:fixed_joint>
 
-    <!-- LJ3 -->
     <xacro:fixed_joint jointName="${LJ3_Joint_Name}"
                           parent="${LJ3_Proximal_Link}" child="${LJ3_Distal_Link}"
                           origin_xyz="${LJ3_Origin_X} ${LJ3_Origin_Y} ${LJ3_Origin_Z}"
@@ -180,7 +172,6 @@
         <limit effort="${LJ3_Torque_Limit}" lower="${LJ3_Lower_Limit}" upper="${LJ3_Upper_Limit}" velocity="${LJ3_Speed_Limit}"/>
     </xacro:fixed_joint>
 
-    <!-- LJ4 -->
     <xacro:fixed_joint jointName="${LJ4_Joint_Name}"
                           parent="${LJ4_Proximal_Link}" child="${LJ4_Distal_Link_Box}"
                           origin_xyz="${LJ4_Origin_X} ${LJ4_Origin_Y} ${LJ4_Origin_Z}"
@@ -199,7 +190,6 @@
                        origin_xyz="0 0 0"
                        origin_rpy="0 0 0"/> -->
 
-    <!-- LJ5 -->
     <xacro:revolute_joint_ex jointName="${LJ5_Joint_Name}"
                           parent="${LJ5_Proximal_Link}" child="${LJ5_Distal_Link}"
                           origin_xyz="${LJ5_Origin_X} ${LJ5_Origin_Y} ${LJ5_Origin_Z}"
@@ -209,7 +199,6 @@
         <controller_gains Kp="15000" Kd="400"/>
     </xacro:revolute_joint_ex>
 
-    <!-- LJ6 -->
     <xacro:revolute_joint_ex jointName="${LJ6_Joint_Name}"
                           parent="${LJ6_Proximal_Link}" child="${LJ6_Distal_Link}"
                           origin_xyz="${LJ6_Origin_X} ${LJ6_Origin_Y} ${LJ6_Origin_Z}"
@@ -260,11 +249,6 @@
 
   <!-- Sensors -->
   <xacro:macro name="v1_leg_sensors" params="prefix reflect">
-    <!-- HOKUYO IS NOT IN THE ROBOT ANYMORE -->
-    <!-- <xacro:hokuyo_sensor sensorName="/v1/${prefix}LegHokuyo"
-                         parentLink="${LJ3_Distal_Link}"
-                         origin_xyz="0.350849 -0.098349 ${reflect * -0.036021}"
-                         origin_rpy="${pi_2} 0 -0.38394"/> -->
 
     <xacro:camboard_sensor sensorName="/v1/${prefix}LegCamBoard"
                        parentLink="${LJ4_Distal_Link_Box}"
@@ -299,7 +283,6 @@
     <xacro:imu_sensor sensorName="/v1/${prefix}MPU6000" nodePath="${mpu6000_node}" type="IMUSensorMPU6000"/>
   </xacro:macro>
 
-  <!-- Actuators -->
   <xacro:macro name="v1_leg_actuators" params="name1 type1 name2 type2 name3 type3 name4 type4 name5 type5 name6 type6">
     <actuator name="${name1}" type="${type1}"/>
     <actuator name="${name2}" type="${type2}"/>
@@ -319,69 +302,6 @@
   <xacro:macro name="v1_ankle_actuators" params="name5 type5 name6 type6">
     <actuator name="${name5}" type="${type5}"/>
     <actuator name="${name6}" type="${type6}"/>
-  </xacro:macro>
-
-  <!-- Transmissions -->
-  <!-- Note that the transmission requires the convention of [roll, pitch] and [inner_shin_motor, outer_shin_motor] -->
-  <xacro:macro name="v1_leg_transmissions" params="prefix reflect actuator1 actuator2 actuator3 actuator4 actuator5 actuator6">
-    <xacro:simple_transmission jointName="${LJ1_Joint_Name}" actuatorName="${actuator1}" reduction="1" offset="0"/>
-    <xacro:simple_transmission jointName="${LJ2_Joint_Name}" actuatorName="${actuator2}" reduction="1" offset="0"/>
-    <xacro:simple_transmission jointName="${LJ3_Joint_Name}" actuatorName="${actuator3}" reduction="1" offset="0"/>
-    <xacro:simple_transmission jointName="${LJ4_Joint_Name}" actuatorName="${actuator4}" reduction="1" offset="0"/>
-    <xacro:pushrod_transmission tranName="${prefix}_Ankle" namespace="v1_ankle"
-                                joint1="${LJ5_Joint_Name}" joint2="${LJ6_Joint_Name}"
-                                actuator1="${actuator5}"   actuator2="${actuator6}"
-                                reflect="${reflect}"/>
-  </xacro:macro>
-
-  <xacro:macro name="v1_leg_transmissions_simple" params="prefix actuator1 actuator2 actuator3 actuator4 actuator5 actuator6">
-    <xacro:simple_transmission jointName="${LJ1_Joint_Name}" actuatorName="${actuator1}" reduction="1" offset="0"/>
-    <xacro:simple_transmission jointName="${LJ2_Joint_Name}" actuatorName="${actuator2}" reduction="1" offset="0"/>
-    <xacro:simple_transmission jointName="${LJ3_Joint_Name}" actuatorName="${actuator3}" reduction="1" offset="0"/>
-    <xacro:simple_transmission jointName="${LJ4_Joint_Name}" actuatorName="${actuator4}" reduction="1" offset="0"/>
-    <xacro:simple_transmission jointName="${LJ5_Joint_Name}" actuatorName="${actuator5}" reduction="1" offset="0"/>
-    <xacro:simple_transmission jointName="${LJ6_Joint_Name}" actuatorName="${actuator6}" reduction="1" offset="0"/>
-  </xacro:macro>
-
-  <xacro:macro name="v1_upper_leg_transmissions" params="prefix actuator1 actuator2 actuator3 actuator4">
-    <xacro:simple_transmission jointName="${LJ1_Joint_Name}" actuatorName="${actuator1}" reduction="1" offset="0"/>
-    <xacro:simple_transmission jointName="${LJ2_Joint_Name}" actuatorName="${actuator2}" reduction="1" offset="0"/>
-    <xacro:simple_transmission jointName="${LJ3_Joint_Name}" actuatorName="${actuator3}" reduction="1" offset="0"/>
-    <xacro:simple_transmission jointName="${LJ4_Joint_Name}" actuatorName="${actuator4}" reduction="1" offset="0"/>
-  </xacro:macro>
-
-  <xacro:macro name="v1_ankle_transmissions" params="prefix reflect actuator5 actuator6">
-    <xacro:pushrod_transmission tranName="${prefix}_Ankle" namespace="v1_ankle"
-                                joint1="${LJ5_Joint_Name}" joint2="${LJ6_Joint_Name}"
-                                actuator1="${actuator5}"   actuator2="${actuator6}"
-                                reflect="${reflect}" />
-  </xacro:macro>
-
-  <xacro:macro name="v1_ankle_transmissions_simple" params="prefix actuator5 actuator6">
-    <xacro:simple_transmission jointName="${LJ5_Joint_Name}" actuatorName="${actuator5}" reduction="1" offset="0"/>
-    <xacro:simple_transmission jointName="${LJ6_Joint_Name}" actuatorName="${actuator6}" reduction="1" offset="0"/>
-  </xacro:macro>
-
-  <!-- Modes -->
-  <xacro:macro name="v1_leg_modes" params="prefix actuator1 actuator2 actuator3 actuator4 actuator5 actuator6">
-    <xacro:v1_modes jointName="${LJ1_Joint_Name}" actuatorName="${actuator1}"/>
-    <xacro:v1_modes jointName="${LJ2_Joint_Name}" actuatorName="${actuator2}"/>
-    <xacro:v1_modes jointName="${LJ3_Joint_Name}" actuatorName="${actuator3}"/>
-    <xacro:v1_modes jointName="${LJ4_Joint_Name}" actuatorName="${actuator4}"/>
-    <xacro:v1_modes jointName="${LJ5_Joint_Name}" actuatorName="${actuator5}"/>
-    <xacro:v1_modes jointName="${LJ6_Joint_Name}" actuatorName="${actuator6}"/>
-  </xacro:macro>
-
-  <xacro:macro name="v1_leg_modes_no_ankle" params="prefix actuator1 actuator2 actuator3 actuator4">
-    <xacro:v1_modes jointName="${LJ1_Joint_Name}" actuatorName="${actuator1}"/>
-    <xacro:v1_modes jointName="${LJ2_Joint_Name}" actuatorName="${actuator2}"/>
-    <xacro:v1_modes jointName="${LJ3_Joint_Name}" actuatorName="${actuator3}"/>
-    <xacro:v1_modes jointName="${LJ4_Joint_Name}" actuatorName="${actuator4}"/>
-  </xacro:macro>
-
-  <xacro:macro name="v1_ankle_modes" params="prefix actuator5 actuator6">
-    <xacro:v1_modes jointName="${LJ5_Joint_Name}" actuatorName="${actuator5}"/>
-    <xacro:v1_modes jointName="${LJ6_Joint_Name}" actuatorName="${actuator6}"/>
   </xacro:macro>
 
 </robot>

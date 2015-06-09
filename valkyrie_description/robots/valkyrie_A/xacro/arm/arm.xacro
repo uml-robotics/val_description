@@ -226,7 +226,6 @@
   </xacro:macro>
 
   <!-- Sensors -->
-  <!-- Why is this not symmetric?? -->
   <xacro:macro name="v1_right_arm_sensor">
     <xacro:camboard_sensor sensorName="/v1/RightCamBoard"
                            parentLink="/v1/RightForearm"
@@ -264,51 +263,4 @@
     <xacro:v1_upper_arm_actuators name1="${name1}" type1="${type1}" name2="${name2}" type2="${type2}" name3="${name3}" type3="${type3}" name4="${name4}" type4="${type4}"/>
     <xacro:v1_lower_arm_actuators name1="${name5}" type1="${type5}" name2="${name6}" type2="${type6}" name3="${name7}" type3="${type7}" />
   </xacro:macro>
-
-  <!-- Transmissions -->
-  <xacro:macro name="v1_upper_arm_transmissions" params="prefix actuator1 actuator2 actuator3 actuator4">
-    <xacro:simple_transmission jointName="${AJ1_Joint_Name}" actuatorName="${actuator1}" reduction="1" offset="0"/>
-    <xacro:simple_transmission jointName="${AJ2_Joint_Name}" actuatorName="${actuator2}" reduction="1" offset="0"/>
-    <xacro:simple_transmission jointName="${AJ3_Joint_Name}" actuatorName="${actuator3}" reduction="1" offset="0"/>
-    <xacro:simple_transmission jointName="${AJ4_Joint_Name}" actuatorName="${actuator4}" reduction="1" offset="0"/>
-  </xacro:macro>
-
-  <xacro:macro name="v1_lower_arm_transmissions" params="prefix actuator1 actuator2 actuator3">
-    <xacro:simple_transmission jointName="${AJ5_Joint_Name}" actuatorName="${actuator1}" reduction="1" offset="0"/>
-    <xacro:pushrod_transmission tranName="${prefix}_Wrist" namespace="v1_wrist"
-                                joint1="${AJ6_Joint_Name}" joint2="${AJ7_Joint_Name}"
-                                actuator1="${actuator2}"   actuator2="${actuator3}"
-                                reflect="1"/>
-  </xacro:macro>
-
-  <xacro:macro name="v1_lower_arm_transmissions_simple" params="prefix actuator1 actuator2 actuator3">
-    <xacro:simple_transmission jointName="${AJ5_Joint_Name}" actuatorName="${actuator1}" reduction="1" offset="0"/>
-    <xacro:simple_transmission jointName="${AJ6_Joint_Name}" actuatorName="${actuator2}" reduction="1" offset="0"/>
-    <xacro:simple_transmission jointName="${AJ7_Joint_Name}" actuatorName="${actuator3}" reduction="1" offset="0"/>
-  </xacro:macro>
-
-  <xacro:macro name="v1_arm_transmissions" params="prefix actuator1 actuator2 actuator3 actuator4 actuator5 actuator6 actuator7">
-    <xacro:v1_upper_arm_transmissions prefix="${prefix}" actuator1="${actuator1}" actuator2="${actuator2}" actuator3="${actuator3}" actuator4="${actuator4}"/>
-    <xacro:v1_lower_arm_transmissions prefix="${prefix}" actuator1="${actuator5}" actuator2="${actuator6}" actuator3="${actuator7}"/>
-  </xacro:macro>
-
-  <!-- Modes -->
-  <xacro:macro name="v1_upper_arm_modes" params="prefix actuator1 actuator2 actuator3 actuator4">
-    <xacro:v1_modes jointName="${AJ1_Joint_Name}" actuatorName="${actuator1}" />
-    <xacro:v1_modes jointName="${AJ2_Joint_Name}" actuatorName="${actuator2}" />
-    <xacro:v1_modes jointName="${AJ3_Joint_Name}" actuatorName="${actuator3}" />
-    <xacro:v1_modes jointName="${AJ4_Joint_Name}" actuatorName="${actuator4}" />
-  </xacro:macro>
-
-  <xacro:macro name="v1_lower_arm_modes" params="prefix actuator1 actuator2 actuator3">
-    <xacro:v1_modes jointName="${AJ5_Joint_Name}" actuatorName="${actuator1}" />
-    <xacro:v1_modes jointName="${AJ6_Joint_Name}" actuatorName="${actuator2}" />
-    <xacro:v1_modes jointName="${AJ7_Joint_Name}" actuatorName="${actuator3}" />
-  </xacro:macro>
-
-  <xacro:macro name="v1_arm_modes" params="prefix actuator1 actuator2 actuator3 actuator4 actuator5 actuator6 actuator7">
-    <xacro:v1_upper_arm_modes prefix="${prefix}" actuator1="${actuator1}" actuator2="${actuator2}" actuator3="${actuator3}" actuator4="${actuator4}"/>
-    <xacro:v1_lower_arm_modes prefix="${prefix}" actuator1="${actuator5}" actuator2="${actuator6}" actuator3="${actuator7}"/>
-  </xacro:macro>
-
 </robot>
