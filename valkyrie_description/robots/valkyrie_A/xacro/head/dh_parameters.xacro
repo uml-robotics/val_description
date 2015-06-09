@@ -9,9 +9,9 @@
   <xacro:property name="LowerNeckPitchFrameOrientation_Pitch" value="0.0"/>
   <xacro:property name="LowerNeckPitchFrameOrientation_Yaw" value="0.0"/>
 
-  <xacro:property name="NeckYawFrameOrigin_X" value="0"/>
-  <xacro:property name="NeckYawFrameOrigin_Y" value="0.0519"/>
-  <xacro:property name="NeckYawFrameOrigin_Z" value="0"/>
+  <xacro:property name="NeckShoulderYawFrameOrigin_X" value="0"/>
+  <xacro:property name="NeckShoulderYawFrameOrigin_Y" value="0.0519"/>
+  <xacro:property name="NeckShoulderYawFrameOrigin_Z" value="0"/>
 
   <xacro:property name="NeckYawFrameOrientation_Roll" value="0.0"/>
   <xacro:property name="NeckYawFrameOrientation_Pitch" value="0.0"/>

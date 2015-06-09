@@ -51,7 +51,7 @@
     <!-- NJ2 -->
     <xacro:revolute_joint_ex jointName="${NeckYawJointName}"
                           parent="${LowerNeckPitchLinkName}" child="${NeckYawLinkName}"
-                          origin_xyz="${NeckYawFrameOrigin_X} ${NeckYawFrameOrigin_Y} ${NeckYawFrameOrigin_Z}"
+                          origin_xyz="${NeckShoulderYawFrameOrigin_X} ${NeckShoulderYawFrameOrigin_Y} ${NeckShoulderYawFrameOrigin_Z}"
                           origin_rpy="${NeckYawFrameOrientation_Roll} ${NeckYawFrameOrientation_Pitch} ${NeckYawFrameOrientation_Yaw}"
                           damping="1.0" friction="0.0">
       <limit effort="${NeckYawTorqueLimit}" lower="${NeckYawPositionLimit_Lower}" upper="${NeckYawPositionLimit_Upper}" velocity="${NeckYawVelocityLimit}"/>
@@ -99,7 +99,7 @@
     <!-- NJ2 -->
     <xacro:fixed_joint jointName="${NeckYawJointName}"
                           parent="${LowerNeckPitchLinkName}" child="${NeckYawLinkName}"
-                          origin_xyz="${NeckYawFrameOrigin_X} ${NeckYawFrameOrigin_Y} ${NeckYawFrameOrigin_Z}"
+                          origin_xyz="${NeckShoulderYawFrameOrigin_X} ${NeckShoulderYawFrameOrigin_Y} ${NeckShoulderYawFrameOrigin_Z}"
                           origin_rpy="${NeckYawFrameOrientation_Roll} ${NeckYawFrameOrientation_Pitch} ${NeckYawFrameOrientation_Yaw}">
       <limit effort="${NeckYawTorqueLimit}" lower="${NeckYawPositionLimit_Lower}" upper="${NeckYawPositionLimit_Upper}" velocity="${NeckYawVelocityLimit}"/>
     </xacro:fixed_joint>
