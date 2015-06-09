@@ -69,7 +69,7 @@
                     collision_mesh="${mesh_root}/aj4.stl" />
 
     <!-- AJ1 -->
-    <xacro:revolute_joint_ex jointName="${AJ1_Joint_Name}"
+    <xacro:revolute_joint_ex jointName="${ShoulderPitchJointName}"
                           parent="${upper_arm_root_link}" child="${AJ1_Distal_Link}"
                           origin_xyz="${ShoulderPitchFrameOrigin_X} ${ShoulderPitchFrameOrigin_Y} ${ShoulderPitchFrameOrigin_Z}"
                           origin_rpy="${ShoulderPitchFrameOrientation_Roll} ${ShoulderPitchFrameOrientation_Pitch} ${ShoulderPitchFrameOrientation_Yaw}"
@@ -79,7 +79,7 @@
     </xacro:revolute_joint_ex>
 
     <!-- AJ2 -->
-    <xacro:revolute_joint_ex jointName="${AJ2_Joint_Name}"
+    <xacro:revolute_joint_ex jointName="${ShoulderRollJointName}"
                           parent="${AJ2_Proximal_Link}" child="${AJ2_Distal_Link}"
                           origin_xyz="${ShoulderRollFrameOrigin_X} ${ShoulderRollFrameOrigin_Y} ${ShoulderRollFrameOrigin_Z}"
                           origin_rpy="${ShoulderRollFrameOrientation_Roll} ${ShoulderRollFrameOrientation_Pitch} ${ShoulderRollFrameOrientation_Yaw}"
@@ -89,7 +89,7 @@
     </xacro:revolute_joint_ex>
 
     <!-- AJ3 -->
-    <xacro:revolute_joint_ex jointName="${AJ3_Joint_Name}"
+    <xacro:revolute_joint_ex jointName="${ShoulderYawJointName}"
                           parent="${AJ3_Proximal_Link}" child="${AJ3_Distal_Link}"
                           origin_xyz="${ShoulderYawFrameOrigin_X} ${ShoulderYawFrameOrigin_Y} ${ShoulderYawFrameOrigin_Z}"
                           origin_rpy="${ShoulderYawFrameOrientation_Roll} ${ShoulderYawFrameOrientation_Pitch} ${ShoulderYawFrameOrientation_Yaw}"
@@ -99,7 +99,7 @@
     </xacro:revolute_joint_ex>
 
     <!-- AJ4 -->
-    <xacro:revolute_joint_ex jointName="${AJ4_Joint_Name}"
+    <xacro:revolute_joint_ex jointName="${ElbowPitchJointName}"
                           parent="${AJ4_Proximal_Link}" child="${AJ4_Distal_Link}"
                           origin_xyz="${ElbowPitchFrameOrigin_X} ${ElbowPitchFrameOrigin_Y} ${ElbowPitchFrameOrigin_Z}"
                           origin_rpy="${ElbowPitchFrameOrientation_Roll} ${ElbowPitchFrameOrientation_Pitch} ${ElbowPitchFrameOrientation_Yaw}"
@@ -134,7 +134,7 @@
                     collision_mesh="${mesh_root}/palm_${prefix}.stl"/>
 
     <!-- AJ5 -->
-    <xacro:revolute_joint_ex jointName="${AJ5_Joint_Name}"
+    <xacro:revolute_joint_ex jointName="${ForearmYawJointName}"
                           parent="${lower_arm_root_link}" child="${AJ5_Distal_Link}"
                           origin_xyz="${ForearmYawFrameOrigin_X} ${ForearmYawFrameOrigin_Y} ${ForearmYawFrameOrigin_Z}"
                           origin_rpy="${ForearmYawFrameOrientation_Roll} ${ForearmYawFrameOrientation_Pitch} ${ForearmYawFrameOrientation_Yaw}"
@@ -144,7 +144,7 @@
     </xacro:revolute_joint_ex>
 
     <!-- AJ6 -->
-    <xacro:revolute_joint_ex jointName="${AJ6_Joint_Name}"
+    <xacro:revolute_joint_ex jointName="${WristRollJointName}"
                           parent="${AJ6_Proximal_Link}" child="${AJ6_Distal_Link}"
                           origin_xyz="${WristRollFrameOrigin_X} ${WristRollFrameOrigin_Y} ${WristRollFrameOrigin_Z}"
                           origin_rpy="${WristRollFrameOrientation_Roll} ${WristRollFrameOrientation_Pitch} ${WristRollFrameOrientation_Yaw}"
@@ -154,7 +154,7 @@
     </xacro:revolute_joint_ex>
 
     <!-- AJ7 -->
-    <xacro:revolute_joint_ex jointName="${AJ7_Joint_Name}"
+    <xacro:revolute_joint_ex jointName="${WristPitchJointName}"
                           parent="${AJ7_Proximal_Link}" child="${AJ7_Distal_Link}"
                           origin_xyz="${WristPitchFrameOrigin_X} ${WristPitchFrameOrigin_Y} ${WristPitchFrameOrigin_Z}"
                           origin_rpy="${WristPitchFrameOrientation_Roll} ${WristPitchFrameOrientation_Pitch} ${WristPitchFrameOrientation_Yaw}"
@@ -196,7 +196,7 @@
                     collision_mesh="${mesh_root}/palm_${prefix}.stl"/>
 
     <!-- AJ5 -->
-    <xacro:fixed_joint jointName="${AJ5_Joint_Name}"
+    <xacro:fixed_joint jointName="${ForearmYawJointName}"
                           parent="${lower_arm_root_link}" child="${AJ5_Distal_Link}"
                           origin_xyz="${ForearmYawFrameOrigin_X} ${ForearmYawFrameOrigin_Y} ${ForearmYawFrameOrigin_Z}"
                           origin_rpy="${ForearmYawFrameOrientation_Roll} ${ForearmYawFrameOrientation_Pitch} ${ForearmYawFrameOrientation_Yaw}">
@@ -204,7 +204,7 @@
     </xacro:fixed_joint>
 
     <!-- AJ6 -->
-    <xacro:fixed_joint jointName="${AJ6_Joint_Name}"
+    <xacro:fixed_joint jointName="${WristRollJointName}"
                           parent="${AJ6_Proximal_Link}" child="${AJ6_Distal_Link}"
                           origin_xyz="${WristRollFrameOrigin_X} ${WristRollFrameOrigin_Y} ${WristRollFrameOrigin_Z}"
                           origin_rpy="${WristRollFrameOrientation_Roll} ${WristRollFrameOrientation_Pitch} ${WristRollFrameOrientation_Yaw}">
@@ -212,7 +212,7 @@
     </xacro:fixed_joint>
 
     <!-- AJ7 -->
-    <xacro:fixed_joint jointName="${AJ7_Joint_Name}"
+    <xacro:fixed_joint jointName="${WristPitchJointName}"
                           parent="${AJ7_Proximal_Link}" child="${AJ7_Distal_Link}"
                           origin_xyz="${WristPitchFrameOrigin_X} ${WristPitchFrameOrigin_Y} ${WristPitchFrameOrigin_Z}"
                           origin_rpy="${WristPitchFrameOrientation_Roll} ${WristPitchFrameOrientation_Pitch} ${WristPitchFrameOrientation_Yaw}">
