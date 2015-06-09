@@ -1,24 +1,16 @@
 <?xml version="1.0" ?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="v1/leg/link_names">
   
-  <xacro:property name="LJ1_Proximal_Link" value="${leg_root_link}" />
-  <xacro:property name="LJ1_Distal_Link" value="${prefix}HipYaw" />
+  <xacro:property name="HipYawParentLinkName" value="${leg_root_link}" />
+  <xacro:property name="HipYawLinkName" value="${prefix}HipYawLink" />
+  <xacro:property name="HipRollLinkName" value="${prefix}HipRollLink" />
+  <xacro:property name="HipPitchLinkName" value="${prefix}HipPitchLink" />
+  <xacro:property name="KneePitchLinkName" value="${prefix}KneePitchLink" />
 
-  <xacro:property name="LJ2_Proximal_Link" value="${prefix}HipYaw" />
-  <xacro:property name="LJ2_Distal_Link" value="${prefix}HipRoll" />
-
-  <xacro:property name="LJ3_Proximal_Link" value="${prefix}HipRoll" />
-  <xacro:property name="LJ3_Distal_Link" value="${prefix}HipPitch" />
-
-  <xacro:property name="LJ4_Proximal_Link" value="${prefix}HipPitch" />
-  <xacro:property name="LJ4_Distal_Link_Box" value="${prefix}KneePitch" />
   <xacro:property name="LJ4_Distal_Link_Cylinder1" value="${prefix}MedialAnkleActuator" />
   <xacro:property name="LJ4_Distal_Link_Cylinder2" value="${prefix}LateralAnkleActuator" />
 
-  <xacro:property name="LJ5_Proximal_Link" value="${prefix}KneePitch" />
-  <xacro:property name="LJ5_Distal_Link" value="${prefix}AnkleRoll" />
-
-  <xacro:property name="LJ6_Proximal_Link" value="${prefix}AnkleRoll" />
-  <xacro:property name="LJ6_Distal_Link" value="${prefix}Foot" />
+  <xacro:property name="AnklePitchLinkName" value="${prefix}AnklePitchLink" />
+  <xacro:property name="AnkleRollLinkName" value="${prefix}Foot" />
 
 </robot>
