@@ -71,24 +71,24 @@
     <!-- LFJ1 -->
     <xacro:revolute_joint jointName="${LFJ1_Joint_Name}"
                           parent="${LFJ1_Proximal_Link}" child="${LFJ1_Distal_Link}"
-                          origin_xyz="${LFJ1_Origin_X} ${LFJ1_Origin_Y} ${LFJ1_Origin_Z}"
-                          origin_rpy="${LFJ1_Orientation_Roll} ${LFJ1_Orientation_Pitch} ${LFJ1_Orientation_Yaw}">
+                          origin_xyz="${PinkyPitch1FrameOrigin_X} ${PinkyPitch1FrameOrigin_Y} ${PinkyPitch1FrameOrigin_Z}"
+                          origin_rpy="${PinkyPitch1FrameOrientation_Roll} ${PinkyPitch1FrameOrientation_Pitch} ${PinkyPitch1FrameOrientation_Yaw}">
         <limit effort="${LFJ1_Torque_Limit}" lower="${LFJ1_Lower_Limit}" upper="${LFJ1_Upper_Limit}" velocity="${LFJ1_Speed_Limit}"/>
     </xacro:revolute_joint>
 
     <!-- LFJ2 -->
     <xacro:revolute_joint jointName="${LFJ2_Joint_Name}"
                           parent="${LFJ2_Proximal_Link}" child="${LFJ2_Distal_Link}"
-                          origin_xyz="${LFJ2_Origin_X} ${LFJ2_Origin_Y} ${LFJ2_Origin_Z}"
-                          origin_rpy="${LFJ2_Orientation_Roll} ${LFJ2_Orientation_Pitch} ${LFJ2_Orientation_Yaw}">
+                          origin_xyz="${PinkyPitch2FrameOrigin_X} ${PinkyPitch2FrameOrigin_Y} ${PinkyPitch2FrameOrigin_Z}"
+                          origin_rpy="${PinkyPitch2FrameOrientation_Roll} ${PinkyPitch2FrameOrientation_Pitch} ${PinkyPitch2FrameOrientation_Yaw}">
         <limit effort="${LFJ2_Torque_Limit}" lower="${LFJ2_Lower_Limit}" upper="${LFJ2_Upper_Limit}" velocity="${LFJ2_Speed_Limit}"/>
     </xacro:revolute_joint>
 
     <!-- LFJ3 -->
     <xacro:revolute_joint jointName="${LFJ3_Joint_Name}"
                           parent="${LFJ3_Proximal_Link}" child="${LFJ3_Distal_Link}"
-                          origin_xyz="${LFJ3_Origin_X} ${LFJ3_Origin_Y} ${LFJ3_Origin_Z}"
-                          origin_rpy="${LFJ3_Orientation_Roll} ${LFJ3_Orientation_Pitch} ${LFJ3_Orientation_Yaw}">
+                          origin_xyz="${PinkyPitch3FrameOrigin_X} ${PinkyPitch3FrameOrigin_Y} ${PinkyPitch3FrameOrigin_Z}"
+                          origin_rpy="${PinkyPitch3FrameOrientation_Roll} ${PinkyPitch3FrameOrientation_Pitch} ${PinkyPitch3FrameOrientation_Yaw}">
         <limit effort="${LFJ3_Torque_Limit}" lower="${LFJ3_Lower_Limit}" upper="${LFJ3_Upper_Limit}" velocity="${LFJ3_Speed_Limit}"/>
     </xacro:revolute_joint>
 
@@ -123,20 +123,20 @@
     <!-- LFJ1 -->
     <xacro:fixed_joint jointName="${LFJ1_Joint_Name}"
                        parent="${LFJ1_Proximal_Link}" child="${LFJ1_Distal_Link}"
-                       origin_xyz="${LFJ1_Origin_X} ${LFJ1_Origin_Y} ${LFJ1_Origin_Z}"
-                       origin_rpy="${LFJ1_Orientation_Roll} ${LFJ1_Orientation_Pitch} ${LFJ1_Orientation_Yaw}"/>
+                       origin_xyz="${PinkyPitch1FrameOrigin_X} ${PinkyPitch1FrameOrigin_Y} ${PinkyPitch1FrameOrigin_Z}"
+                       origin_rpy="${PinkyPitch1FrameOrientation_Roll} ${PinkyPitch1FrameOrientation_Pitch} ${PinkyPitch1FrameOrientation_Yaw}"/>
 
     <!-- LFJ2 -->
     <xacro:fixed_joint jointName="${LFJ2_Joint_Name}"
                           parent="${LFJ2_Proximal_Link}" child="${LFJ2_Distal_Link}"
-                          origin_xyz="${LFJ2_Origin_X} ${LFJ2_Origin_Y} ${LFJ2_Origin_Z}"
-                          origin_rpy="${LFJ2_Orientation_Roll} ${LFJ2_Orientation_Pitch} ${LFJ2_Orientation_Yaw}"/>
+                          origin_xyz="${PinkyPitch2FrameOrigin_X} ${PinkyPitch2FrameOrigin_Y} ${PinkyPitch2FrameOrigin_Z}"
+                          origin_rpy="${PinkyPitch2FrameOrientation_Roll} ${PinkyPitch2FrameOrientation_Pitch} ${PinkyPitch2FrameOrientation_Yaw}"/>
 
     <!-- LFJ3 -->
     <xacro:fixed_joint jointName="${LFJ3_Joint_Name}"
                           parent="${LFJ3_Proximal_Link}" child="${LFJ3_Distal_Link}"
-                          origin_xyz="${LFJ3_Origin_X} ${LFJ3_Origin_Y} ${LFJ3_Origin_Z}"
-                          origin_rpy="${LFJ3_Orientation_Roll} ${LFJ3_Orientation_Pitch} ${LFJ3_Orientation_Yaw}"/>
+                          origin_xyz="${PinkyPitch3FrameOrigin_X} ${PinkyPitch3FrameOrigin_Y} ${PinkyPitch3FrameOrigin_Z}"
+                          origin_rpy="${PinkyPitch3FrameOrientation_Roll} ${PinkyPitch3FrameOrientation_Pitch} ${PinkyPitch3FrameOrientation_Yaw}"/>
   </xacro:macro>
 
   <!-- Actuators -->
