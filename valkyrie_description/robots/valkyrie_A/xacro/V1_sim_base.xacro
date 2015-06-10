@@ -20,17 +20,15 @@
 
     <!-- ===== PUBLISH ODOMETRY DATA ==== -->
     <xacro:include filename="$(find valkyrie_description)/robots/valkyrie_A/xacro/sensors/pos3d.xacro" />
-    <xacro:v1_absolute_pose parentLink="/v1/Trunk" topicName="/v1/pose" origin_xyz="0 0 0" origin_rpy="0 0 0"/>
+    <xacro:v1_absolute_pose parentLink="Torso" topicName="/v1/pose" origin_xyz="0 0 0" origin_rpy="0 0 0"/>
 
     <!-- ===== PUBLISH ODOMETRY DATA ==== -->
     <xacro:include filename="$(find valkyrie_description)/robots/valkyrie_A/xacro/sensors/pos3d.xacro" />
-    <xacro:v1_absolute_pose parentLink="/v1/Pelvis" topicName="/v1/Pelvis/pose" origin_xyz="0 0 0" origin_rpy="0 0 0"/>
+    <xacro:v1_absolute_pose parentLink="Pelvis" topicName="Pelvis/pose" origin_xyz="0 0 0" origin_rpy="0 0 0"/>
 
-    <!-- ===== PELVIS ===== -->
     <xacro:make_pelvis />
     <!-- <xacro:v1_pelvis_sensors/> -->
 
-   <!-- ===== TRUNK ===== -->
     <xacro:make_waist waist_root_link="${Pelvis_Link_Name}" />
     <!-- <xacro:v1_waist_actuators name1="${waist_name1}" type1="${waist_type1}" name2="${waist_name2}" type2="${waist_type2}" name3="${waist_name3}" type3="${waist_type3}"/> -->
     <!-- <xacro:v1_trunk_sensors/> -->
@@ -41,8 +39,7 @@
                                name2="/neck/j2" type2="${neck_type2}"
                                name3="/neck/j3" type3="${neck_type3}"/> -->
 
-    <!-- ===== RIGHT ARM ===== -->
-    <xacro:make_arm prefix="Right" reflect="1" arm_root_link="${TorsoRollLinkName}" />
+    <xacro:make_arm prefix="Right" reflect="-1" arm_root_link="${TorsoRollLinkName}" />
     <!-- <xacro:v1_arm_actuators name1="${rightarm_name1}" type1="${arm_type1}"
                             name2="${rightarm_name2}" type2="${arm_type2}"
                             name3="${rightarm_name3}" type3="${arm_type3}"
@@ -52,20 +49,15 @@
                             name7="${rightarm_name7}" type7="${arm_type7}"/> -->
     <!-- <xacro:v1_arm_sensors /> -->
 
-    <!-- ===== RIGHT THUMB ===== -->
-    <xacro:make_thumb_fixed prefix="Right" reflect="1" thumb_root_link="RightPalm"/>
+    <xacro:make_thumb_fixed prefix="Right" reflect="-1" thumb_root_link="RightPalm"/>
 
-    <!-- ===== RIGHT PRIMARY FINGER ===== -->
-    <xacro:make_index_finger_fixed prefix="Right" reflect="1" index_finger_root_link="RightPalm"/>
+    <xacro:make_index_finger_fixed prefix="Right" reflect="-1" index_finger_root_link="RightPalm"/>
 
-    <!-- ===== RIGHT MIDDLE FINGER ===== -->
-    <xacro:make_middle_finger_fixed prefix="Right" reflect="1" middle_finger_root_link="RightPalm"/>
+    <xacro:make_middle_finger_fixed prefix="Right" reflect="-1" middle_finger_root_link="RightPalm"/>
 
-    <!-- ===== RIGHT LITTLE FINGER ===== -->
-    <xacro:make_little_finger_fixed prefix="Right" reflect="1" little_finger_root_link="RightPalm"/>
+    <xacro:make_pinky_finger_fixed prefix="Right" reflect="-1" pinky_finger_root_link="RightPalm"/>
 
-    <!-- ===== LEFT ARM ===== -->
-    <xacro:make_arm prefix="Left" reflect="-1" arm_root_link="${TorsoRollLinkName}" />
+    <xacro:make_arm prefix="Left" reflect="1" arm_root_link="${TorsoRollLinkName}" />
     <!-- <xacro:v1_arm_actuators name1="${leftarm_name1}" type1="${arm_type1}"
                             name2="${leftarm_name2}" type2="${arm_type2}"
                             name3="${leftarm_name3}" type3="${arm_type3}"
@@ -74,44 +66,25 @@
                             name6="${leftarm_name6}" type6="${arm_type6}"
                             name7="${leftarm_name7}" type7="${arm_type7}"/> -->
 
-    <!-- ===== LEFT THUMB ===== -->
-    <xacro:make_thumb_fixed prefix="Left" reflect="-1" thumb_root_link="LeftPalm"/>
+    <xacro:make_thumb_fixed prefix="Left" reflect="1" thumb_root_link="LeftPalm"/>
 
-    <!-- ===== LEFT PRIMARY FINGER ===== -->
-    <xacro:make_index_finger_fixed prefix="Left" reflect="-1" index_finger_root_link="LeftPalm"/>
+    <xacro:make_index_finger_fixed prefix="Left" reflect="1" index_finger_root_link="LeftPalm"/>
 
-    <!-- ===== LEFT MIDDLE FINGER ===== -->
-    <xacro:make_middle_finger_fixed prefix="Left" reflect="-1" middle_finger_root_link="LeftPalm"/>
+    <xacro:make_middle_finger_fixed prefix="Left" reflect="1" middle_finger_root_link="LeftPalm"/>
 
-    <!-- ===== LEFT LITTLE FINGER ===== -->
-    <xacro:make_little_finger_fixed prefix="Left" reflect="-1" little_finger_root_link="LeftPalm"/>
+    <xacro:make_pinky_finger_fixed prefix="Left" reflect="1" pinky_finger_root_link="LeftPalm"/>
 
-    <!-- ===== RIGHT LEG ===== -->
-    <xacro:make_leg prefix="Right" reflect="1" leg_root_link="${Pelvis_Link_Name}" />
+    <xacro:make_leg prefix="Right" reflect="-1" leg_root_link="${Pelvis_Link_Name}" />
     <!-- <xacro:v1_leg_actuators name1="${rightleg_name1}" type1="${leg_type1}"
                             name2="${rightleg_name2}" type2="${leg_type2}"
                             name3="${rightleg_name3}" type3="${leg_type3}"
                             name4="${rightleg_name4}" type4="${leg_type4}"
                             name5="${rightleg_name5}" type5="${leg_type5}"
                             name6="${rightleg_name6}" type6="${leg_type6}"/> -->
-    <!-- <xacro:v1_leg_transmissions prefix="Right" reflect="1"
-                                               actuator1="${rightleg_name1}"
-                                               actuator2="${rightleg_name2}"
-                                               actuator3="${rightleg_name3}"
-                                               actuator4="${rightleg_name4}"
-                                               actuator5="${rightleg_name5}"
-                                               actuator6="${rightleg_name6}" /> -->
-    <!-- <xacro:v1_leg_modes prefix="Right" actuator1="${rightleg_name1}"
-                                       actuator2="${rightleg_name2}"
-                                       actuator3="${rightleg_name3}"
-                                       actuator4="${rightleg_name4}"
-                                       actuator5="${rightleg_name5}"
-                                       actuator6="${rightleg_name6}" /> -->
     <!-- <xacro:v1_leg_sensors prefix="Right" reflect="1" /> -->
     <!-- <xacro:v1_hw_sensors prefix="Right" hermes_node="${rightleg_hermes}" atidaq_node="${rightleg_ati}" mpu6000_node="${rightleg_mpu2000}" cop_node="${rightleg_cop}"/> -->
 
-    <!-- ===== LEFT LEG ===== -->
-    <xacro:make_leg prefix="Left" reflect="-1" leg_root_link="${Pelvis_Link_Name}" />
+    <xacro:make_leg prefix="Left" reflect="1" leg_root_link="${Pelvis_Link_Name}" />
     <!-- <xacro:v1_leg_actuators name1="${leftleg_name1}" type1="${leg_type1}"
                             name2="${leftleg_name2}" type2="${leg_type2}"
                             name3="${leftleg_name3}" type3="${leg_type3}"

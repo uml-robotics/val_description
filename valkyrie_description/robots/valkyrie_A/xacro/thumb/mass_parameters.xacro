@@ -1,7 +1,6 @@
 <?xml version="1.0" ?>
-<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="v1/little_finger/mass_parameters">
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="v1/thumb/mass_parameters">
 
-  
   <xacro:property name="ThumbRollLinkMass" value="0.017" />
   <xacro:property name="ThumbPitch1LinkMass" value="0.02" />
   <xacro:property name="ThumbPitch2LinkMass" value="0.013" />

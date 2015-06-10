@@ -7,5 +7,5 @@
     <xacro:include filename="$(find valkyrie_description)/robots/valkyrie_A/xacro/thumb/thumb.xacro" />
     <xacro:include filename="$(find valkyrie_description)/robots/valkyrie_A/xacro/index_finger/index_finger.xacro" />
     <xacro:include filename="$(find valkyrie_description)/robots/valkyrie_A/xacro/middle_finger/middle_finger.xacro" />
-    <xacro:include filename="$(find valkyrie_description)/robots/valkyrie_A/xacro/little_finger/little_finger.xacro" />
+    <xacro:include filename="$(find valkyrie_description)/robots/valkyrie_A/xacro/pinky_finger/pinky_finger.xacro" />
 </robot>

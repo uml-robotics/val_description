@@ -1,12 +1,12 @@
 <?xml version="1.0" ?>
-<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="v1/little_finger">
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="v1/pinky_finger">
 
-  <xacro:include filename="$(find valkyrie_description)/robots/valkyrie_A/xacro/little_finger/joint_names.xacro"/>
-  <xacro:include filename="$(find valkyrie_description)/robots/valkyrie_A/xacro/little_finger/actuator_names.xacro"/>
-  <xacro:include filename="$(find valkyrie_description)/robots/valkyrie_A/xacro/little_finger/link_names.xacro"/>
-  <xacro:include filename="$(find valkyrie_description)/robots/valkyrie_A/xacro/little_finger/joint_limits.xacro"/>
-  <xacro:include filename="$(find valkyrie_description)/robots/valkyrie_A/xacro/little_finger/frame_parameters.xacro"/>
-  <xacro:include filename="$(find valkyrie_description)/robots/valkyrie_A/xacro/little_finger/mass_parameters.xacro"/>
+  <xacro:include filename="$(find valkyrie_description)/robots/valkyrie_A/xacro/pinky_finger/joint_names.xacro"/>
+  <xacro:include filename="$(find valkyrie_description)/robots/valkyrie_A/xacro/pinky_finger/actuator_names.xacro"/>
+  <xacro:include filename="$(find valkyrie_description)/robots/valkyrie_A/xacro/pinky_finger/link_names.xacro"/>
+  <xacro:include filename="$(find valkyrie_description)/robots/valkyrie_A/xacro/pinky_finger/joint_limits.xacro"/>
+  <xacro:include filename="$(find valkyrie_description)/robots/valkyrie_A/xacro/pinky_finger/frame_parameters.xacro"/>
+  <xacro:include filename="$(find valkyrie_description)/robots/valkyrie_A/xacro/pinky_finger/mass_parameters.xacro"/>
 
   <xacro:property name="LFJ1_Link_Width" value="0.010"/>
   <xacro:property name="LFJ1_Link_Height" value="0.010"/>
@@ -34,7 +34,7 @@
   <xacro:property name="LFJ3_Link_Origin_Y" value="0"/>
   <xacro:property name="LFJ3_Link_Origin_Z" value="0"/>
 
-  <xacro:macro name="make_little_finger" params="prefix reflect little_finger_root_link">
+  <xacro:macro name="make_pinky_finger" params="prefix reflect pinky_finger_root_link">
 
     <xacro:box_link name="${PinkyPitch1LinkName}"
                     width="${LFJ1_Link_Width}" height="${LFJ1_Link_Height}" depth="${LFJ1_Link_Length}" mass="${PinkyPitch1LinkMass}"
@@ -83,7 +83,7 @@
 
   </xacro:macro>
 
-  <xacro:macro name="make_little_finger_fixed" params="prefix reflect little_finger_root_link">
+  <xacro:macro name="make_pinky_finger_fixed" params="prefix reflect pinky_finger_root_link">
 
     <xacro:box_link name="${PinkyPitch1LinkName}"
                     width="${LFJ1_Link_Width}" height="${LFJ1_Link_Height}" depth="${LFJ1_Link_Length}" mass="${PinkyPitch1LinkMass}"
@@ -126,75 +126,12 @@
   </xacro:macro>
 
   <!-- Actuators -->
-  <xacro:macro name="v1_right_little_finger_actuators" params="prefix api">
+  <xacro:macro name="v1_right_pinky_finger_actuators" params="prefix api">
     <xacro:v1_actuator name="${RLFA_Actuator_Name}" api="${api}" />
   </xacro:macro>
 
-  <xacro:macro name="v1_left_little_finger_actuators" params="prefix api">
+  <xacro:macro name="v1_left_pinky_finger_actuators" params="prefix api">
     <xacro:v1_actuator name="${LLFA_Actuator_Name}" api="${api}" />
   </xacro:macro>
-
-  <xacro:macro name="v1_right_little_finger_transmissions" params="prefix">
-    <xacro:finger4_transmission tranName="${prefix}LittleFingerTransmission" 
-                                joint1="${PinkyPitch1JointName}"
-                                joint2="${PinkyPitch2JointName}"
-                                joint3="${PinkyPitch3JointName}"
-                                actuator="${RLFA_Actuator_Name}" />
-  </xacro:macro>
-
-  <xacro:macro name="v1_left_little_finger_transmissions" params="prefix">
-    <xacro:finger4_transmission tranName="${prefix}LittleFingerTransmission" 
-                                joint1="${PinkyPitch1JointName}"
-                                joint2="${PinkyPitch2JointName}"
-                                joint3="${PinkyPitch3JointName}"
-                                actuator="${LLFA_Actuator_Name}" />
-  </xacro:macro>
-
-  <xacro:macro name="v1_right_little_finger_transmissions_simple" params="prefix">
-    <xacro:simple_transmission jointName="${PinkyPitch2JointName}" actuatorName="${RLFA_Actuator_Name}" reduction="1" offset="0"/>
-  </xacro:macro>
-
-  <xacro:macro name="v1_left_little_finger_transmissions_simple" params="prefix">
-    <xacro:simple_transmission jointName="${PinkyPitch2JointName}" actuatorName="${LLFA_Actuator_Name}" reduction="1" offset="0"/>
-  </xacro:macro>
-
-  <!-- Modes -->
-  <xacro:macro name="v1_right_little_finger_modes" params="prefix">
-    <xacro:v1_modes jointName="${PinkyPitch1JointName}" actuatorName="${RLFA_Actuator_Name}" />
-    <xacro:v1_modes jointName="${PinkyPitch2JointName}" actuatorName="${RLFA_Actuator_Name}" />
-    <xacro:v1_modes jointName="${PinkyPitch3JointName}" actuatorName="${RLFA_Actuator_Name}" />
-  </xacro:macro>
-
-  <xacro:macro name="v1_left_little_finger_modes" params="prefix">
-    <xacro:v1_modes jointName="${PinkyPitch1JointName}" actuatorName="${LLFA_Actuator_Name}" />
-    <xacro:v1_modes jointName="${PinkyPitch2JointName}" actuatorName="${LLFA_Actuator_Name}" />
-    <xacro:v1_modes jointName="${PinkyPitch3JointName}" actuatorName="${LLFA_Actuator_Name}" />
-  </xacro:macro>
-
-  <!-- Complete interface -->
-  <xacro:macro name="make_right_little_finger_interface" params="api">
-    <xacro:v1_right_little_finger_actuators prefix="Right" api="${api}" />
-    <xacro:v1_right_little_finger_transmissions prefix="Right" />
-    <xacro:v1_right_little_finger_modes prefix="Right" />
-  </xacro:macro>
-
-  <xacro:macro name="make_left_little_finger_interface" params="api">
-    <xacro:v1_left_little_finger_actuators prefix="Left" api="${api}" />
-    <xacro:v1_left_little_finger_transmissions prefix="Left" />
-    <xacro:v1_left_little_finger_modes prefix="Left" />
-  </xacro:macro>
-
-  <!-- Simple interface -->
-  <xacro:macro name="make_right_little_finger_interface_simple" params="api">
-    <xacro:v1_right_little_finger_actuators prefix="Right" api="${api}" />
-    <xacro:v1_right_little_finger_transmissions_simple prefix="Right" />
-    <xacro:v1_right_little_finger_modes prefix="Right" />
-  </xacro:macro>
-
-  <xacro:macro name="make_left_little_finger_interface_simple" params="api">
-    <xacro:v1_left_little_finger_actuators prefix="Left" api="${api}" />
-    <xacro:v1_left_little_finger_transmissions_simple prefix="Left" />
-    <xacro:v1_left_little_finger_modes prefix="Left" />
-  </xacro:macro>
-
+  
 </robot>

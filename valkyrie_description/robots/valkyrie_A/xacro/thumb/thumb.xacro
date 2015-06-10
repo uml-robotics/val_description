@@ -8,7 +8,6 @@
   <xacro:include filename="$(find valkyrie_description)/robots/valkyrie_A/xacro/thumb/frame_parameters.xacro"/>
   <xacro:include filename="$(find valkyrie_description)/robots/valkyrie_A/xacro/thumb/mass_parameters.xacro"/>
 
-  <!-- Link properties. -->
   <xacro:property name="TJ1_Link_Width" value="0.010"/>
   <xacro:property name="TJ1_Link_Height" value="0.010"/>
   <xacro:property name="TJ1_Link_Length" value="0.010"/>
@@ -45,7 +44,6 @@
   <xacro:property name="TJ4_Link_Origin_Z" value="0"/>
 
   <xacro:macro name="make_thumb" params="prefix reflect thumb_root_link">
-    <!-- LINKS -->
     <xacro:box_link name="${ThumbRollLinkName}"
                     width="${TJ1_Link_Width}" height="${TJ1_Link_Height}" depth="${TJ1_Link_Length}" mass="${ThumbRollLinkMass}"
                     origin_rpy="0 0 0"
@@ -78,7 +76,6 @@
                     material="Gold"
                     collision_mesh="${mesh_root}/tf4.stl"/>
 
-    <!-- TJ1 -->
     <xacro:revolute_joint jointName="${ThumbRollJointName}"
                           parent="${ThumbRollParentLinkName}" child="${ThumbRollLinkName}"
                           origin_xyz="${ThumbRollFrameOrigin_X} ${ThumbRollFrameOrigin_Y} ${ThumbRollFrameOrigin_Z}"
@@ -86,7 +83,6 @@
         <limit effort="${ThumbRollTorqueLimit}" lower="${ThumbRollPositionLimit_Lower}" upper="${ThumbRollPositionLimit_Upper}" velocity="${ThumbRollVelocityLimit}"/>
     </xacro:revolute_joint>
 
-    <!-- TJ2 -->
     <xacro:revolute_joint jointName="${ThumbPitch1JointName}"
                           parent="${ThumbRollLinkName}" child="${ThumbPitch1LinkName}"
                           origin_xyz="${ThumbPitch1FrameOrigin_X} ${ThumbPitch1FrameOrigin_Y} ${ThumbPitch1FrameOrigin_Z}"
@@ -94,7 +90,6 @@
         <limit effort="${ThumbPitch1TorqueLimit}" lower="${ThumbPitch1PositionLimit_Lower}" upper="${ThumbPitch1PositionLimit_Upper}" velocity="${ThumbPitch1VelocityLimit}"/>
     </xacro:revolute_joint>
 
-    <!-- TJ3 -->
     <xacro:revolute_joint jointName="${ThumbPitch2JointName}"
                           parent="${ThumbPitch1LinkName}" child="${ThumbPitch2LinkName}"
                           origin_xyz="${ThumbPitch2FrameOrigin_X} ${ThumbPitch2FrameOrigin_Y} ${ThumbPitch2FrameOrigin_Z}"
@@ -102,7 +97,6 @@
         <limit effort="${ThumbPitch2TorqueLimit}" lower="${ThumbPitch2PositionLimit_Lower}" upper="${ThumbPitch2PositionLimit_Upper}" velocity="${ThumbPitch2VelocityLimit}"/>
     </xacro:revolute_joint>
 
-    <!-- TJ4 -->
     <xacro:revolute_joint jointName="${ThumbPitch3JointName}"
                           parent="${ThumbPitch2LinkName}" child="${ThumbPitch3LinkName}"
                           origin_xyz="${ThumbPitch3FrameOrigin_X} ${ThumbPitch3FrameOrigin_Y} ${ThumbPitch3FrameOrigin_Z}"
@@ -165,7 +159,6 @@
                           origin_rpy="${ThumbPitch3FrameOrientation_Roll} ${ThumbPitch3FrameOrientation_Pitch} ${ThumbPitch3FrameOrientation_Yaw}"/>
   </xacro:macro>
 
-  <!-- Actuators -->
   <xacro:macro name="v1_right_thumb_actuators" params="prefix api">
     <xacro:v1_actuator name="${RTA1_Actuator_Name}" api="${api}" />
     <xacro:v1_actuator name="${RTA2_Actuator_Name}" api="${api}" />
@@ -176,77 +169,6 @@
     <xacro:v1_actuator name="${LTA1_Actuator_Name}" api="${api}" />
     <xacro:v1_actuator name="${LTA2_Actuator_Name}" api="${api}" />
     <xacro:v1_actuator name="${LTA3_Actuator_Name}" api="${api}" />
-  </xacro:macro>
-
-  <!-- Transmissions -->
-  <xacro:macro name="v1_right_thumb_transmissions" params="prefix">
-    <xacro:simple_transmission jointName="${ThumbRollJointName}" actuatorName="${RTA1_Actuator_Name}" reduction="1" offset="0"/>
-    <xacro:simple_transmission jointName="${ThumbPitch1JointName}" actuatorName="${RTA2_Actuator_Name}" reduction="1" offset="0"/>
-    <xacro:finger2_transmission tranName="${prefix}ThumbTransmission" 
-                                joint1="${ThumbPitch2JointName}"
-                                joint2="${ThumbPitch3JointName}"
-                                actuator="${RTA3_Actuator_Name}" />
-  </xacro:macro>
-
-  <xacro:macro name="v1_left_thumb_transmissions" params="prefix">
-    <xacro:simple_transmission jointName="${ThumbRollJointName}" actuatorName="${LTA1_Actuator_Name}" reduction="1" offset="0"/>
-    <xacro:simple_transmission jointName="${ThumbPitch1JointName}" actuatorName="${LTA2_Actuator_Name}" reduction="1" offset="0"/>
-    <xacro:finger2_transmission tranName="${prefix}ThumbTransmission" 
-                                joint1="${ThumbPitch2JointName}"
-                                joint2="${ThumbPitch3JointName}"
-                                actuator="${LTA3_Actuator_Name}" />
-  </xacro:macro>
-
-  <xacro:macro name="v1_right_thumb_transmissions_simple" params="prefix">
-    <xacro:simple_transmission jointName="${ThumbRollJointName}" actuatorName="${RTA1_Actuator_Name}" reduction="1" offset="0"/>
-    <xacro:simple_transmission jointName="${ThumbPitch1JointName}" actuatorName="${RTA2_Actuator_Name}" reduction="1" offset="0"/>
-    <xacro:simple_transmission jointName="${ThumbPitch2JointName}" actuatorName="${RTA3_Actuator_Name}" reduction="1" offset="0"/>
-  </xacro:macro>
-
-  <xacro:macro name="v1_left_thumb_transmissions_simple" params="prefix">
-    <xacro:simple_transmission jointName="${ThumbRollJointName}" actuatorName="${LTA1_Actuator_Name}" reduction="1" offset="0"/>
-    <xacro:simple_transmission jointName="${ThumbPitch1JointName}" actuatorName="${LTA2_Actuator_Name}" reduction="1" offset="0"/>
-    <xacro:simple_transmission jointName="${ThumbPitch2JointName}" actuatorName="${LTA3_Actuator_Name}" reduction="1" offset="0"/>
-  </xacro:macro>
-  
-  <!-- Modes -->
-  <xacro:macro name="v1_right_thumb_modes" params="prefix">
-    <xacro:v1_modes jointName="${ThumbRollJointName}" actuatorName="${RTA1_Actuator_Name}" />
-    <xacro:v1_modes jointName="${ThumbPitch1JointName}" actuatorName="${RTA2_Actuator_Name}" />
-    <xacro:v1_modes jointName="${ThumbPitch2JointName}" actuatorName="${RTA3_Actuator_Name}" />
-    <xacro:v1_modes jointName="${ThumbPitch3JointName}" actuatorName="${RTA3_Actuator_Name}" />
-  </xacro:macro>
-
-  <xacro:macro name="v1_left_thumb_modes" params="prefix">
-    <xacro:v1_modes jointName="${ThumbRollJointName}" actuatorName="${LTA1_Actuator_Name}" />
-    <xacro:v1_modes jointName="${ThumbPitch1JointName}" actuatorName="${LTA2_Actuator_Name}" />
-    <xacro:v1_modes jointName="${ThumbPitch2JointName}" actuatorName="${LTA3_Actuator_Name}" />
-    <xacro:v1_modes jointName="${ThumbPitch3JointName}" actuatorName="${LTA3_Actuator_Name}" />
-  </xacro:macro>
-
-  <!-- Complete interface -->
-  <xacro:macro name="make_right_thumb_interface" params="api">
-    <xacro:v1_right_thumb_actuators prefix="Right" api="${api}" />
-    <xacro:v1_right_thumb_transmissions prefix="Right" />
-    <xacro:v1_right_thumb_modes prefix="Right" />
-  </xacro:macro>
-
-  <xacro:macro name="make_left_thumb_interface" params="api">
-    <xacro:v1_left_thumb_actuators prefix="Left" api="${api}" />
-    <xacro:v1_left_thumb_transmissions prefix="Left" />
-    <xacro:v1_left_thumb_modes prefix="Left" />
-  </xacro:macro>
-
-  <xacro:macro name="make_right_thumb_interface_simple" params="api">
-    <xacro:v1_right_thumb_actuators prefix="Right" api="${api}" />
-    <xacro:v1_right_thumb_transmissions_simple prefix="Right" />
-    <xacro:v1_right_thumb_modes prefix="Right" />
-  </xacro:macro>
-
-  <xacro:macro name="make_left_thumb_interface_simple" params="api">
-    <xacro:v1_left_thumb_actuators prefix="Left" api="${api}" />
-    <xacro:v1_left_thumb_transmissions_simple prefix="Left" />
-    <xacro:v1_left_thumb_modes prefix="Left" />
   </xacro:macro>
 
 </robot>

@@ -15,12 +15,11 @@
   <xacro:property name="Trunk_Length" value="0.42203731228144558685"/>
 
   <xacro:macro name="make_waist_common" params="waist_root_link">
-    <!-- Links -->
+
     <xacro:virtual_link name="${TorsoYawLinkName}" origin_xyz="0 0 0" origin_rpy="0 0 0"/>
 
     <xacro:virtual_link name="${TorsoPitchLinkName}" origin_xyz="0 0 0" origin_rpy="0 0 0"/>
 
-    <!-- WJ1 -->
     <xacro:revolute_joint_ex jointName="${TorsoYawJointName}"
                           parent="${TorsoYawParentLinkName}" child="${TorsoYawLinkName}"
                           origin_xyz="${TorsoYawFrameOrigin_X} ${TorsoYawFrameOrigin_Y} ${TorsoYawFrameOrigin_Z}"
@@ -30,7 +29,6 @@
         <controller_gains Kp="20000" Kd="400"/>
     </xacro:revolute_joint_ex>
 
-    <!-- WJ2 -->
     <xacro:revolute_joint_ex jointName="${TorsoPitchJointName}"
                           parent="${TorsoYawLinkName}" child="${TorsoPitchLinkName}"
                           origin_xyz="${TorsoPitchFrameOrigin_X} ${TorsoPitchFrameOrigin_Y} ${TorsoPitchFrameOrigin_Z}"
@@ -41,7 +39,6 @@
     </xacro:revolute_joint_ex>
 
 
-    <!-- WJ3 -->
     <xacro:revolute_joint_ex jointName="${TorsoRollJointName}"
                           parent="${TorsoPitchLinkName}" child="${TorsoRollLinkName}"
                           origin_xyz="${TorsoRollFrameOrigin_X} ${TorsoRollFrameOrigin_Y} ${TorsoRollFrameOrigin_Z}"
@@ -64,7 +61,7 @@
   </xacro:macro>
 
   <xacro:macro name="make_fixed_waist" params="waist_root_link">
-    <!-- Links -->
+
     <xacro:virtual_link name="${TorsoYawLinkName}" origin_xyz="0 0 0" origin_rpy="0 0 0"/>
 
     <xacro:virtual_link name="${TorsoPitchLinkName}" origin_xyz="0 0 0" origin_rpy="0 0 0"/>
@@ -77,7 +74,6 @@
                     material="White"
                     collision_mesh="${mesh_root}/wj3.stl" />
 
-    <!-- WJ1 -->
     <xacro:fixed_joint jointName="${TorsoYawJointName}"
                           parent="${TorsoYawParentLinkName}" child="${TorsoYawLinkName}"
                           origin_xyz="${TorsoYawFrameOrigin_X} ${TorsoYawFrameOrigin_Y} ${TorsoYawFrameOrigin_Z}"
@@ -85,7 +81,6 @@
         <limit effort="${TorsoYawTorqueLimit}" lower="${TorsoYawPositionLimit_Lower}" upper="${TorsoYawPositionLimit_Upper}" velocity="${TorsoYawVelocityLimit}"/>
     </xacro:fixed_joint>
 
-    <!-- WJ2 -->
     <xacro:fixed_joint jointName="${TorsoPitchJointName}"
                           parent="${TorsoYawLinkName}" child="${TorsoPitchLinkName}"
                           origin_xyz="${TorsoPitchFrameOrigin_X} ${TorsoPitchFrameOrigin_Y} ${TorsoPitchFrameOrigin_Z}"
@@ -93,8 +88,6 @@
         <limit effort="${TorsoPitchTorqueLimit}" lower="${TorsoPitchPositionLimit_Lower}" upper="${TorsoPitchPositionLimit_Upper}" velocity="${TorsoPitchVelocityLimit}"/>
     </xacro:fixed_joint>
 
-
-    <!-- WJ3 -->
     <xacro:fixed_joint jointName="${TorsoRollJointName}"
                           parent="${TorsoPitchLinkName}" child="${TorsoRollLinkName}"
                           origin_xyz="${TorsoRollFrameOrigin_X} ${TorsoRollFrameOrigin_Y} ${TorsoRollFrameOrigin_Z}"
@@ -104,7 +97,7 @@
   </xacro:macro>
 
   <xacro:macro name="make_no_waist">
-    <!-- Links -->
+
     <xacro:box_link name="${TorsoRollLinkName}"
                     width="${Trunk_Width}" height="${Trunk_Height}" depth="${Trunk_Length}" mass="${TorsoRollLinkMass}"
                     origin_rpy="0 0 0"
@@ -115,9 +108,6 @@
   </xacro:macro>
 
   <xacro:macro name="make_waist_fixed_wj2_wj3" params="waist_root_link">
-    <!-- Links -->
-    <!-- <xacro:virtual_link name="${TorsoYawLinkName}" origin_xyz="0 0 0" origin_rpy="0 0 0"/> -->
-    <!--NOTE : This is for lower body testbed setup-->
     <xacro:link_no_mesh
       name="${TorsoYawLinkName}"
       width="0.01" height="0.01" depth="0.01"
@@ -134,7 +124,6 @@
 
     <xacro:virtual_link name="${TorsoRollLinkName}" origin_rpy="0 0 0" origin_xyz="0.226 0 -0.078" />
 
-    <!-- WJ1 -->
     <xacro:revolute_joint_ex jointName="${TorsoYawJointName}"
                           parent="${TorsoYawParentLinkName}" child="${TorsoYawLinkName}"
                           origin_xyz="${TorsoYawFrameOrigin_X} ${TorsoYawFrameOrigin_Y} ${TorsoYawFrameOrigin_Z}"
@@ -144,7 +133,6 @@
         <controller_gains Kp="20000" Kd="400"/>
     </xacro:revolute_joint_ex>
 
-    <!-- WJ2 -->
     <xacro:fixed_joint jointName="${TorsoPitchJointName}"
                           parent="${TorsoYawLinkName}" child="${TorsoPitchLinkName}"
                           origin_xyz="${TorsoPitchFrameOrigin_X} ${TorsoPitchFrameOrigin_Y} ${TorsoPitchFrameOrigin_Z}"
@@ -152,8 +140,6 @@
         <limit effort="${TorsoPitchTorqueLimit}" lower="${TorsoPitchPositionLimit_Lower}" upper="${TorsoPitchPositionLimit_Upper}" velocity="${TorsoPitchVelocityLimit}"/>
     </xacro:fixed_joint>
 
-
-    <!-- WJ3 -->
     <xacro:fixed_joint jointName="${TorsoRollJointName}"
                           parent="${TorsoPitchLinkName}" child="${TorsoRollLinkName}"
                           origin_xyz="${TorsoRollFrameOrigin_X} ${TorsoRollFrameOrigin_Y} ${TorsoRollFrameOrigin_Z}"
@@ -170,65 +156,33 @@
   </xacro:macro>
 
   <xacro:macro name="v1_trunk_sensors">
-    <!-- Note: The RPY values, particularly the yaw values do NOT reflect the mounting axes shown on the sensor!
-    This is because some knuckle-head (one Chad Rockey [chadrockey@gmail.com]) decided that all IMU sensors
-    shall be mounted on robots in a certain way. So the ROS package/driver we are using (that he wrote)
-    applies a fixed transform to the orientation data from the sensor. Therefore we counter-act his silliness
-    here in the xacro file.
-
-      http://wiki.ros.org/microstrain_3dmgx2_imu
-     -->
-    <xacro:microstrain_sensor sensorName="/v1/RightIMU"
+    <xacro:microstrain_sensor sensorName="RightIMU"
                               parentLink="${TorsoRollLinkName}"
                               origin_xyz="0.363038 0.134239 -0.0468630"
                               origin_rpy="-1.57 1.57 0" />
 
-    <xacro:microstrain_sensor sensorName="/v1/LeftIMU"
+    <xacro:microstrain_sensor sensorName="LeftIMU"
                               parentLink="${TorsoRollLinkName}"
                               origin_xyz="0.363038 -0.134239  -0.0468630"
                               origin_rpy="1.57 1.57 0" />
 
-    <xacro:flea3_camera sensorName="/v1/RightHazardCamera"
+    <xacro:flea3_camera sensorName="RightHazardCamera"
                         parentLink="${TorsoRollLinkName}"
                         origin_xyz="0.0446987 0.0406146 0.0182674"
                         origin_rpy="0 0 0"
                         imageFormat="R8G8B8"
                         frameRate="60"/>
 
-    <xacro:flea3_camera sensorName="/v1/LeftHazardCamera"
+    <xacro:flea3_camera sensorName="LeftHazardCamera"
                         parentLink="${TorsoRollLinkName}"
                         origin_xyz="0.0446987 -0.0406146 0.0182674"
                         origin_rpy="0 0 0"
                         imageFormat="R8G8B8"
                         frameRate="60"/>
 
-    <xacro:massless_virtual_sensor sensorName="/v1/StereoHazardCamera"
+    <xacro:massless_virtual_sensor sensorName="StereoHazardCamera"
                           parentLink="${TorsoRollLinkName}"
                           origin_xyz=".1723 -0.04535 0.0344"
                           origin_rpy="0 0 1.57" />
    </xacro:macro>
-
-
-  <!-- Transmissions -->
-  <xacro:macro name="v1_waist_transmissions" params="actuator1 actuator2 actuator3">
-    <xacro:simple_transmission jointName="${TorsoYawJointName}" actuatorName="${actuator1}" reduction="1" offset="0"/>
-    <xacro:pushrod_transmission tranName="Waist" namespace="v1_waist"
-                                joint1="${TorsoPitchJointName}" joint2="${TorsoRollJointName}"
-                                actuator1="${actuator2}"   actuator2="${actuator3}"
-                                reflect="1"/>
-                                <!-- because of the hardware configuration, wrist and waist transmissions should always have reflection=1 -->
-  </xacro:macro>
-
-  <xacro:macro name="v1_waist_transmissions_simple" params="actuator1 actuator2 actuator3">
-    <xacro:simple_transmission jointName="${TorsoYawJointName}" actuatorName="${actuator1}" reduction="1" offset="0"/>
-    <xacro:simple_transmission jointName="${TorsoPitchJointName}" actuatorName="${actuator2}" reduction="1" offset="0"/>
-    <xacro:simple_transmission jointName="${TorsoRollJointName}" actuatorName="${actuator3}" reduction="1" offset="0"/>
-  </xacro:macro>
-
-  <!-- Modes -->
-  <xacro:macro name="v1_waist_modes" params="actuator1 actuator2 actuator3">
-    <xacro:v1_modes jointName="${TorsoYawJointName}" actuatorName="${actuator1}" />
-    <xacro:v1_modes jointName="${TorsoPitchJointName}" actuatorName="${actuator2}" />
-    <xacro:v1_modes jointName="${TorsoRollJointName}" actuatorName="${actuator3}" />
-  </xacro:macro>
 </robot>

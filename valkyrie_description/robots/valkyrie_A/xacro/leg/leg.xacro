@@ -181,14 +181,6 @@
   </xacro:macro>
 
   <xacro:macro name="make_ankle_joints" params="prefix reflect leg_root_link">
-    <!--     <xacro:fixed_joint jointName="${prefix}MedialAnkleActuatorOffset"
-                       parent="${KneePitchLinkName}" child="${LJ4_Distal_Link_Cylinder1}"
-                       origin_xyz="0 0 0"
-                       origin_rpy="0 0 0"/><controller_gains Kp="15000" Kd="2<controller_gains Kp="15000" Kd="500"/>
-    <xacro:fixed_joint jointName="${prefix}LateralAnkleActuatorOffset"
-                       parent="${KneePitchLinkName}" child="${LJ4_Distal_Link_Cylinder2}"
-                       origin_xyz="0 0 0"
-                       origin_rpy="0 0 0"/> -->
 
     <xacro:revolute_joint_ex jointName="${AnklePitchJointName}"
                           parent="${KneePitchLinkName}" child="${AnklePitchLinkName}"
