@@ -1,9 +1,9 @@
 <?xml version="1.0" ?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="v1/little_finger/mass_parameters">
   
-  <xacro:property name="LFJ1_Joint_Name" value="${prefix}PinkyPitch1" />
-  <xacro:property name="LFJ2_Joint_Name" value="${prefix}PinkyPitch2" />
-  <xacro:property name="LFJ3_Joint_Name" value="${prefix}PinkyPitch3" />
-  <xacro:property name="LFJ4_Joint_Name" value="${prefix}PinkyPitch4" />
+  <xacro:property name="PinkyPitch1JointName" value="${prefix}PinkyPitch1" />
+  <xacro:property name="PinkyPitch2JointName" value="${prefix}PinkyPitch2" />
+  <xacro:property name="PinkyPitch3JointName" value="${prefix}PinkyPitch3" />
+  <xacro:property name="PinkyPitch4JointName" value="${prefix}PinkyPitch4" />
 
 </robot>

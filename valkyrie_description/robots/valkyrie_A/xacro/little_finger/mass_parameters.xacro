@@ -1,9 +1,9 @@
 <?xml version="1.0" ?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="v1/little_finger/mass_parameters">
   
-  <xacro:property name="LFJ1_Link_Mass" value="0.047" />
-  <xacro:property name="LFJ2_Link_Mass" value="0.02" />
-  <xacro:property name="LFJ3_Link_Mass" value="0.011" />
-  <xacro:property name="LFJ4_Link_Mass" value="0.006" />
+  <xacro:property name="PinkyPitch1LinkMass" value="0.047" />
+  <xacro:property name="PinkyPitch2LinkMass" value="0.02" />
+  <xacro:property name="PinkyPitch3LinkMass" value="0.011" />
+  <xacro:property name="PinkyPitch4LinkMass" value="0.006" />
   
 </robot>

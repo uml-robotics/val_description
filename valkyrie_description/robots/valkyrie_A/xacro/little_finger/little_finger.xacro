@@ -36,32 +36,32 @@
 
   <xacro:macro name="make_little_finger" params="prefix reflect little_finger_root_link">
     <!-- LINKS -->
-    <xacro:box_link name="${LFJ1_Distal_Link}"
-                    width="${LFJ1_Link_Width}" height="${LFJ1_Link_Height}" depth="${LFJ1_Link_Length}" mass="${LFJ1_Link_Mass}"
+    <xacro:box_link name="${PinkyPitch1LinkName}"
+                    width="${LFJ1_Link_Width}" height="${LFJ1_Link_Height}" depth="${LFJ1_Link_Length}" mass="${PinkyPitch1LinkMass}"
                     origin_rpy="0 0 0"
                     origin_xyz="${LFJ1_Link_Origin_X} ${LFJ1_Link_Origin_Y} ${LFJ1_Link_Origin_Z}"
                     visual_mesh="${mesh_root}/ssf1_${prefix}.stl"
                     material="Gold"
                     collision_mesh="${mesh_root}/ssf1_${prefix}.stl"/>
 
-    <xacro:box_link name="${LFJ2_Distal_Link}"
-                    width="${LFJ2_Link_Width}" height="${LFJ2_Link_Height}" depth="${LFJ2_Link_Length}" mass="${LFJ2_Link_Mass}"
+    <xacro:box_link name="${PinkyPitch2LinkName}"
+                    width="${LFJ2_Link_Width}" height="${LFJ2_Link_Height}" depth="${LFJ2_Link_Length}" mass="${PinkyPitch2LinkMass}"
                     origin_rpy="0 0 0"
                     origin_xyz="${LFJ2_Link_Origin_X} ${LFJ2_Link_Origin_Y} ${LFJ2_Link_Origin_Z}"
                     visual_mesh="${mesh_root}/ssf2_${prefix}.stl"
                     material="Gold"
                     collision_mesh="${mesh_root}/ssf2_${prefix}.stl"/>
 
-    <xacro:box_link name="${LFJ3_Distal_Link}"
-                    width="${LFJ3_Link_Width}" height="${LFJ3_Link_Height}" depth="${LFJ3_Link_Length}" mass="${LFJ3_Link_Mass}"
+    <xacro:box_link name="${PinkyPitch3LinkName}"
+                    width="${LFJ3_Link_Width}" height="${LFJ3_Link_Height}" depth="${LFJ3_Link_Length}" mass="${PinkyPitch3LinkMass}"
                     origin_rpy="0 0 0"
                     origin_xyz="${LFJ3_Link_Origin_X} ${LFJ3_Link_Origin_Y} ${LFJ3_Link_Origin_Z}"
                     visual_mesh="${mesh_root}/sf2_ssf3.stl"
                     material="Gold"
                     collision_mesh="${mesh_root}/sf2_ssf3.stl"/>
 
-    <xacro:box_link name="${LFJ4_Distal_Link}"
-                    width="${LFJ4_Link_Width}" height="${LFJ4_Link_Height}" depth="${LFJ4_Link_Length}" mass="${LFJ4_Link_Mass}"
+    <xacro:box_link name="${PinkyPitch4LinkName}"
+                    width="${LFJ4_Link_Width}" height="${LFJ4_Link_Height}" depth="${LFJ4_Link_Length}" mass="${PinkyPitch4LinkMass}"
                     origin_rpy="0 0 0"
                     origin_xyz="${LFJ4_Link_Origin_X} ${LFJ4_Link_Origin_Y} ${LFJ4_Link_Origin_Z}"
                     visual_mesh="${mesh_root}/sf3_ssf4.stl"
@@ -69,51 +69,51 @@
                     collision_mesh="${mesh_root}/sf3_ssf4.stl"/>
 
     <!-- LFJ1 -->
-    <xacro:revolute_joint jointName="${LFJ1_Joint_Name}"
-                          parent="${LFJ1_Proximal_Link}" child="${LFJ1_Distal_Link}"
+    <xacro:revolute_joint jointName="${PinkyPitch1JointName}"
+                          parent="${PinkyPitch1ParentLinkName}" child="${PinkyPitch1LinkName}"
                           origin_xyz="${PinkyPitch1FrameOrigin_X} ${PinkyPitch1FrameOrigin_Y} ${PinkyPitch1FrameOrigin_Z}"
                           origin_rpy="${PinkyPitch1FrameOrientation_Roll} ${PinkyPitch1FrameOrientation_Pitch} ${PinkyPitch1FrameOrientation_Yaw}">
-        <limit effort="${LFJ1_Torque_Limit}" lower="${LFJ1_Lower_Limit}" upper="${LFJ1_Upper_Limit}" velocity="${LFJ1_Speed_Limit}"/>
+        <limit effort="${PinkyPitch1TorqueLimit}" lower="${PinkyPitch1PositionLimit_Lower}" upper="${PinkyPitch1PositionLimit_Upper}" velocity="${PinkyPitch1VelocityLimit}"/>
     </xacro:revolute_joint>
 
     <!-- LFJ2 -->
-    <xacro:revolute_joint jointName="${LFJ2_Joint_Name}"
-                          parent="${LFJ2_Proximal_Link}" child="${LFJ2_Distal_Link}"
+    <xacro:revolute_joint jointName="${PinkyPitch2JointName}"
+                          parent="${PinkyPitch1LinkName}" child="${PinkyPitch2LinkName}"
                           origin_xyz="${PinkyPitch2FrameOrigin_X} ${PinkyPitch2FrameOrigin_Y} ${PinkyPitch2FrameOrigin_Z}"
                           origin_rpy="${PinkyPitch2FrameOrientation_Roll} ${PinkyPitch2FrameOrientation_Pitch} ${PinkyPitch2FrameOrientation_Yaw}">
-        <limit effort="${LFJ2_Torque_Limit}" lower="${LFJ2_Lower_Limit}" upper="${LFJ2_Upper_Limit}" velocity="${LFJ2_Speed_Limit}"/>
+        <limit effort="${PinkyPitch2TorqueLimit}" lower="${PinkyPitch2PositionLimit_Lower}" upper="${PinkyPitch2PositionLimit_Upper}" velocity="${PinkyPitch2VelocityLimit}"/>
     </xacro:revolute_joint>
 
     <!-- LFJ3 -->
-    <xacro:revolute_joint jointName="${LFJ3_Joint_Name}"
-                          parent="${LFJ3_Proximal_Link}" child="${LFJ3_Distal_Link}"
+    <xacro:revolute_joint jointName="${PinkyPitch3JointName}"
+                          parent="${PinkyPitch2LinkName}" child="${PinkyPitch3LinkName}"
                           origin_xyz="${PinkyPitch3FrameOrigin_X} ${PinkyPitch3FrameOrigin_Y} ${PinkyPitch3FrameOrigin_Z}"
                           origin_rpy="${PinkyPitch3FrameOrientation_Roll} ${PinkyPitch3FrameOrientation_Pitch} ${PinkyPitch3FrameOrientation_Yaw}">
-        <limit effort="${LFJ3_Torque_Limit}" lower="${LFJ3_Lower_Limit}" upper="${LFJ3_Upper_Limit}" velocity="${LFJ3_Speed_Limit}"/>
+        <limit effort="${PinkyPitch3TorqueLimit}" lower="${PinkyPitch3PositionLimit_Lower}" upper="${PinkyPitch3PositionLimit_Upper}" velocity="${PinkyPitch3VelocityLimit}"/>
     </xacro:revolute_joint>
 
   </xacro:macro>
 
   <xacro:macro name="make_little_finger_fixed" params="prefix reflect little_finger_root_link">
     <!-- LINKS -->
-    <xacro:box_link name="${LFJ1_Distal_Link}"
-                    width="${LFJ1_Link_Width}" height="${LFJ1_Link_Height}" depth="${LFJ1_Link_Length}" mass="${LFJ1_Link_Mass}"
+    <xacro:box_link name="${PinkyPitch1LinkName}"
+                    width="${LFJ1_Link_Width}" height="${LFJ1_Link_Height}" depth="${LFJ1_Link_Length}" mass="${PinkyPitch1LinkMass}"
                     origin_rpy="0 0 0"
                     origin_xyz="${LFJ1_Link_Origin_X} ${LFJ1_Link_Origin_Y} ${LFJ1_Link_Origin_Z}"
                     visual_mesh="${mesh_root}/ssf1_${prefix}.stl"
                     material="Gold"
                     collision_mesh="${mesh_root}/ssf1_${prefix}.stl"/>
 
-    <xacro:box_link name="${LFJ2_Distal_Link}"
-                    width="${LFJ2_Link_Width}" height="${LFJ2_Link_Height}" depth="${LFJ2_Link_Length}" mass="${LFJ2_Link_Mass}"
+    <xacro:box_link name="${PinkyPitch2LinkName}"
+                    width="${LFJ2_Link_Width}" height="${LFJ2_Link_Height}" depth="${LFJ2_Link_Length}" mass="${PinkyPitch2LinkMass}"
                     origin_rpy="0 0 0"
                     origin_xyz="${LFJ2_Link_Origin_X} ${LFJ2_Link_Origin_Y} ${LFJ2_Link_Origin_Z}"
                     visual_mesh="${mesh_root}/ssf2_${prefix}.stl"
                     material="Gold"
                     collision_mesh="${mesh_root}/ssf2_${prefix}.stl"/>
 
-    <xacro:box_link name="${LFJ3_Distal_Link}"
-                    width="${LFJ3_Link_Width}" height="${LFJ3_Link_Height}" depth="${LFJ3_Link_Length}" mass="${LFJ3_Link_Mass}"
+    <xacro:box_link name="${PinkyPitch3LinkName}"
+                    width="${LFJ3_Link_Width}" height="${LFJ3_Link_Height}" depth="${LFJ3_Link_Length}" mass="${PinkyPitch3LinkMass}"
                     origin_rpy="0 0 0"
                     origin_xyz="${LFJ3_Link_Origin_X} ${LFJ3_Link_Origin_Y} ${LFJ3_Link_Origin_Z}"
                     visual_mesh="${mesh_root}/sf2_ssf3.stl"
@@ -121,20 +121,20 @@
                     collision_mesh="${mesh_root}/sf2_ssf3.stl"/>
 
     <!-- LFJ1 -->
-    <xacro:fixed_joint jointName="${LFJ1_Joint_Name}"
-                       parent="${LFJ1_Proximal_Link}" child="${LFJ1_Distal_Link}"
+    <xacro:fixed_joint jointName="${PinkyPitch1JointName}"
+                       parent="${PinkyPitch1ParentLinkName}" child="${PinkyPitch1LinkName}"
                        origin_xyz="${PinkyPitch1FrameOrigin_X} ${PinkyPitch1FrameOrigin_Y} ${PinkyPitch1FrameOrigin_Z}"
                        origin_rpy="${PinkyPitch1FrameOrientation_Roll} ${PinkyPitch1FrameOrientation_Pitch} ${PinkyPitch1FrameOrientation_Yaw}"/>
 
     <!-- LFJ2 -->
-    <xacro:fixed_joint jointName="${LFJ2_Joint_Name}"
-                          parent="${LFJ2_Proximal_Link}" child="${LFJ2_Distal_Link}"
+    <xacro:fixed_joint jointName="${PinkyPitch2JointName}"
+                          parent="${PinkyPitch1LinkName}" child="${PinkyPitch2LinkName}"
                           origin_xyz="${PinkyPitch2FrameOrigin_X} ${PinkyPitch2FrameOrigin_Y} ${PinkyPitch2FrameOrigin_Z}"
                           origin_rpy="${PinkyPitch2FrameOrientation_Roll} ${PinkyPitch2FrameOrientation_Pitch} ${PinkyPitch2FrameOrientation_Yaw}"/>
 
     <!-- LFJ3 -->
-    <xacro:fixed_joint jointName="${LFJ3_Joint_Name}"
-                          parent="${LFJ3_Proximal_Link}" child="${LFJ3_Distal_Link}"
+    <xacro:fixed_joint jointName="${PinkyPitch3JointName}"
+                          parent="${PinkyPitch2LinkName}" child="${PinkyPitch3LinkName}"
                           origin_xyz="${PinkyPitch3FrameOrigin_X} ${PinkyPitch3FrameOrigin_Y} ${PinkyPitch3FrameOrigin_Z}"
                           origin_rpy="${PinkyPitch3FrameOrientation_Roll} ${PinkyPitch3FrameOrientation_Pitch} ${PinkyPitch3FrameOrientation_Yaw}"/>
   </xacro:macro>
@@ -150,39 +150,39 @@
 
   <xacro:macro name="v1_right_little_finger_transmissions" params="prefix">
     <xacro:finger4_transmission tranName="${prefix}LittleFingerTransmission" 
-                                joint1="${LFJ1_Joint_Name}"
-                                joint2="${LFJ2_Joint_Name}"
-                                joint3="${LFJ3_Joint_Name}"
+                                joint1="${PinkyPitch1JointName}"
+                                joint2="${PinkyPitch2JointName}"
+                                joint3="${PinkyPitch3JointName}"
                                 actuator="${RLFA_Actuator_Name}" />
   </xacro:macro>
 
   <xacro:macro name="v1_left_little_finger_transmissions" params="prefix">
     <xacro:finger4_transmission tranName="${prefix}LittleFingerTransmission" 
-                                joint1="${LFJ1_Joint_Name}"
-                                joint2="${LFJ2_Joint_Name}"
-                                joint3="${LFJ3_Joint_Name}"
+                                joint1="${PinkyPitch1JointName}"
+                                joint2="${PinkyPitch2JointName}"
+                                joint3="${PinkyPitch3JointName}"
                                 actuator="${LLFA_Actuator_Name}" />
   </xacro:macro>
 
   <xacro:macro name="v1_right_little_finger_transmissions_simple" params="prefix">
-    <xacro:simple_transmission jointName="${LFJ2_Joint_Name}" actuatorName="${RLFA_Actuator_Name}" reduction="1" offset="0"/>
+    <xacro:simple_transmission jointName="${PinkyPitch2JointName}" actuatorName="${RLFA_Actuator_Name}" reduction="1" offset="0"/>
   </xacro:macro>
 
   <xacro:macro name="v1_left_little_finger_transmissions_simple" params="prefix">
-    <xacro:simple_transmission jointName="${LFJ2_Joint_Name}" actuatorName="${LLFA_Actuator_Name}" reduction="1" offset="0"/>
+    <xacro:simple_transmission jointName="${PinkyPitch2JointName}" actuatorName="${LLFA_Actuator_Name}" reduction="1" offset="0"/>
   </xacro:macro>
 
   <!-- Modes -->
   <xacro:macro name="v1_right_little_finger_modes" params="prefix">
-    <xacro:v1_modes jointName="${LFJ1_Joint_Name}" actuatorName="${RLFA_Actuator_Name}" />
-    <xacro:v1_modes jointName="${LFJ2_Joint_Name}" actuatorName="${RLFA_Actuator_Name}" />
-    <xacro:v1_modes jointName="${LFJ3_Joint_Name}" actuatorName="${RLFA_Actuator_Name}" />
+    <xacro:v1_modes jointName="${PinkyPitch1JointName}" actuatorName="${RLFA_Actuator_Name}" />
+    <xacro:v1_modes jointName="${PinkyPitch2JointName}" actuatorName="${RLFA_Actuator_Name}" />
+    <xacro:v1_modes jointName="${PinkyPitch3JointName}" actuatorName="${RLFA_Actuator_Name}" />
   </xacro:macro>
 
   <xacro:macro name="v1_left_little_finger_modes" params="prefix">
-    <xacro:v1_modes jointName="${LFJ1_Joint_Name}" actuatorName="${LLFA_Actuator_Name}" />
-    <xacro:v1_modes jointName="${LFJ2_Joint_Name}" actuatorName="${LLFA_Actuator_Name}" />
-    <xacro:v1_modes jointName="${LFJ3_Joint_Name}" actuatorName="${LLFA_Actuator_Name}" />
+    <xacro:v1_modes jointName="${PinkyPitch1JointName}" actuatorName="${LLFA_Actuator_Name}" />
+    <xacro:v1_modes jointName="${PinkyPitch2JointName}" actuatorName="${LLFA_Actuator_Name}" />
+    <xacro:v1_modes jointName="${PinkyPitch3JointName}" actuatorName="${LLFA_Actuator_Name}" />
   </xacro:macro>
 
   <!-- Complete interface -->
