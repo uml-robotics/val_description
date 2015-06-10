@@ -1,8 +1,8 @@
 <?xml version="1.0" ?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="v1/waist/mass_parameters">
   
-  <xacro:property name="WJ1_Joint_Name" value="TorsoYaw" />
-  <xacro:property name="WJ2_Joint_Name" value="TorsoPitch" />
-  <xacro:property name="WJ3_Joint_Name" value="TorsoRoll" />
+  <xacro:property name="TorsoYawJointName" value="TorsoYaw" />
+  <xacro:property name="TorsoPitchJointName" value="TorsoPitch" />
+  <xacro:property name="TorsoRollJointName" value="TorsoRoll" />
 
 </robot>

@@ -36,13 +36,13 @@
     <!-- <xacro:v1_trunk_sensors/> -->
 
     <!-- ===== HEAD ===== -->
-    <xacro:make_head head_root_link="${WJ3_Distal_Link}" />
+    <xacro:make_head head_root_link="${TorsoRollLinkName}" />
     <!-- <xacro:make_head_interface name1="/neck/j1" type1="${neck_type1}"
                                name2="/neck/j2" type2="${neck_type2}"
                                name3="/neck/j3" type3="${neck_type3}"/> -->
 
     <!-- ===== RIGHT ARM ===== -->
-    <xacro:make_arm prefix="Right" reflect="1" arm_root_link="${WJ3_Distal_Link}" />
+    <xacro:make_arm prefix="Right" reflect="1" arm_root_link="${TorsoRollLinkName}" />
     <!-- <xacro:v1_arm_actuators name1="${rightarm_name1}" type1="${arm_type1}"
                             name2="${rightarm_name2}" type2="${arm_type2}"
                             name3="${rightarm_name3}" type3="${arm_type3}"
@@ -65,7 +65,7 @@
     <xacro:make_little_finger_fixed prefix="Right" reflect="1" little_finger_root_link="RightPalm"/>
 
     <!-- ===== LEFT ARM ===== -->
-    <xacro:make_arm prefix="Left" reflect="-1" arm_root_link="${WJ3_Distal_Link}" />
+    <xacro:make_arm prefix="Left" reflect="-1" arm_root_link="${TorsoRollLinkName}" />
     <!-- <xacro:v1_arm_actuators name1="${leftarm_name1}" type1="${arm_type1}"
                             name2="${leftarm_name2}" type2="${arm_type2}"
                             name3="${leftarm_name3}" type3="${arm_type3}"
