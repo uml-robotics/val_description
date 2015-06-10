@@ -1,16 +1,10 @@
 <?xml version="1.0" ?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="v1/thumb/dh_parameters">
   
-  <xacro:property name="TJ1_Proximal_Link" value="${thumb_root_link}" />
-  <xacro:property name="TJ1_Distal_Link" value="${prefix}ThumbPitch1" />
-
-  <xacro:property name="TJ2_Proximal_Link" value="${prefix}ThumbPitch1" />
-  <xacro:property name="TJ2_Distal_Link" value="${prefix}ThumbPitch2" />
-
-  <xacro:property name="TJ3_Proximal_Link" value="${prefix}ThumbPitch2" />
-  <xacro:property name="TJ3_Distal_Link" value="${prefix}ThumbPitch3" />
-
-  <xacro:property name="TJ4_Proximal_Link" value="${prefix}ThumbPitch3" />
-  <xacro:property name="TJ4_Distal_Link" value="${prefix}ThumbPitch4" />
+  <xacro:property name="ThumbRollParentLinkName" value="${thumb_root_link}" />
+  <xacro:property name="ThumbRollLinkName" value="${prefix}ThumbRollLink" />
+  <xacro:property name="ThumbPitch1LinkName" value="${prefix}ThumbPitch1Link" />
+  <xacro:property name="ThumbPitch2LinkName" value="${prefix}ThumbPitch2Link" />
+  <xacro:property name="ThumbPitch3LinkName" value="${prefix}ThumbPitch3Link" />
   
 </robot>

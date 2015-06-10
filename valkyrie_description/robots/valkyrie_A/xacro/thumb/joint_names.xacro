@@ -1,9 +1,9 @@
 <?xml version="1.0" ?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="v1/thumb/mass_parameters">
   
-  <xacro:property name="TJ1_Joint_Name" value="${prefix}ThumbRoll" />
-  <xacro:property name="TJ2_Joint_Name" value="${prefix}ThumbPitch1" />
-  <xacro:property name="TJ3_Joint_Name" value="${prefix}ThumbPitch2" />
-  <xacro:property name="TJ4_Joint_Name" value="${prefix}ThumbPitch3" />
+  <xacro:property name="ThumbRollJointName" value="${prefix}ThumbRoll" />
+  <xacro:property name="ThumbPitch1JointName" value="${prefix}ThumbPitch1" />
+  <xacro:property name="ThumbPitch2JointName" value="${prefix}ThumbPitch2" />
+  <xacro:property name="ThumbPitch3JointName" value="${prefix}ThumbPitch3" />
 
 </robot>

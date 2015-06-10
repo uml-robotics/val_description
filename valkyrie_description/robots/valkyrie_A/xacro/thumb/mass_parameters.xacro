@@ -2,9 +2,9 @@
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="v1/little_finger/mass_parameters">
 
   
-  <xacro:property name="TJ1_Link_Mass" value="0.017" />
-  <xacro:property name="TJ2_Link_Mass" value="0.02" />
-  <xacro:property name="TJ3_Link_Mass" value="0.013" />
-  <xacro:property name="TJ4_Link_Mass" value="0.006" />
+  <xacro:property name="ThumbRollLinkMass" value="0.017" />
+  <xacro:property name="ThumbPitch1LinkMass" value="0.02" />
+  <xacro:property name="ThumbPitch2LinkMass" value="0.013" />
+  <xacro:property name="ThumbPitch3LinkMass" value="0.006" />
   
 </robot>

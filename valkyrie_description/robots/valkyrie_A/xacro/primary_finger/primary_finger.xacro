@@ -46,32 +46,32 @@
 
   <xacro:macro name="make_primary_finger" params="prefix reflect primary_finger_root_link">
     <!-- LINKS -->
-    <xacro:box_link name="${PFJ1_Distal_Link}" 
-                    width="${PFJ1_Link_Width}" height="${PFJ1_Link_Height}" depth="${PFJ1_Link_Length}" mass="${PFJ1_Link_Mass}" 
+    <xacro:box_link name="${IndexFingerPitch1LinkName}" 
+                    width="${PFJ1_Link_Width}" height="${PFJ1_Link_Height}" depth="${PFJ1_Link_Length}" mass="${IndexFingerPitch1LinkMass}" 
                     origin_rpy="0 0 0" 
                     origin_xyz="${PFJ1_Link_Origin_X} ${PFJ1_Link_Origin_Y} ${PFJ1_Link_Origin_Z}"
                     visual_mesh="${mesh_root}/pf1.stl"
                     material="Gold"
                     collision_mesh="${mesh_root}/pf1.stl"/>
 
-    <xacro:box_link name="${PFJ2_Distal_Link}" 
-                    width="${PFJ2_Link_Width}" height="${PFJ2_Link_Height}" depth="${PFJ2_Link_Length}" mass="${PFJ2_Link_Mass}" 
+    <xacro:box_link name="${IndexFingerPitch2LinkName}" 
+                    width="${PFJ2_Link_Width}" height="${PFJ2_Link_Height}" depth="${PFJ2_Link_Length}" mass="${IndexFingerPitch2LinkMass}" 
                     origin_rpy="0 0 0" 
                     origin_xyz="${PFJ2_Link_Origin_X} ${PFJ2_Link_Origin_Y} ${PFJ2_Link_Origin_Z}"
                     visual_mesh="${mesh_root}/pf2.stl"
                     material="Gold"
                     collision_mesh="${mesh_root}/pf2.stl"/>
 
-    <xacro:box_link name="${PFJ3_Distal_Link}" 
-                    width="${PFJ3_Link_Width}" height="${PFJ3_Link_Height}" depth="${PFJ3_Link_Length}" mass="${PFJ3_Link_Mass}" 
+    <xacro:box_link name="${IndexFingerPitch3LinkName}" 
+                    width="${PFJ3_Link_Width}" height="${PFJ3_Link_Height}" depth="${PFJ3_Link_Length}" mass="${IndexFingerPitch3LinkMass}" 
                     origin_rpy="0 0 0" 
                     origin_xyz="${PFJ3_Link_Origin_X} ${PFJ3_Link_Origin_Y} ${PFJ3_Link_Origin_Z}"
                     visual_mesh="${mesh_root}/pf3.stl"
                     material="Gold"
                     collision_mesh="${mesh_root}/pf3.stl"/>
 
-    <xacro:box_link name="${PFJ4_Distal_Link}" 
-                    width="${PFJ4_Link_Width}" height="${PFJ4_Link_Height}" depth="${PFJ4_Link_Length}" mass="${PFJ4_Link_Mass}" 
+    <xacro:box_link name="${IndexFingerPitch4LinkName}" 
+                    width="${PFJ4_Link_Width}" height="${PFJ4_Link_Height}" depth="${PFJ4_Link_Length}" mass="${IndexFingerPitch4LinkMass}" 
                     origin_rpy="0 0 0" 
                     origin_xyz="${PFJ4_Link_Origin_X} ${PFJ4_Link_Origin_Y} ${PFJ4_Link_Origin_Z}"
                     visual_mesh="${mesh_root}/pf4.stl"
@@ -79,66 +79,66 @@
                     collision_mesh="${mesh_root}/pf4.stl"/>
 
     <!-- PFJ1 -->
-    <xacro:revolute_joint jointName="${PFJ1_Joint_Name}" 
-                          parent="${PFJ1_Proximal_Link}" child="${PFJ1_Distal_Link}"
-                          origin_xyz="${PFJ1_Origin_X} ${PFJ1_Origin_Y} ${PFJ1_Origin_Z}" 
-                          origin_rpy="${PFJ1_Orientation_Roll} ${PFJ1_Orientation_Pitch} ${PFJ1_Orientation_Yaw}">
-        <limit effort="${PFJ1_Torque_Limit}" lower="${PFJ1_Lower_Limit}" upper="${PFJ1_Upper_Limit}" velocity="${PFJ1_Speed_Limit}"/>
+    <xacro:revolute_joint jointName="${IndexFingerPitch1JointName}" 
+                          parent="${IndexFingerPitch1ParentLinkName}" child="${IndexFingerPitch1LinkName}"
+                          origin_xyz="${IndexFingerPitch1FrameOrigin_X} ${IndexFingerPitch1FrameOrigin_Y} ${IndexFingerPitch1FrameOrigin_Z}" 
+                          origin_rpy="${IndexFingerPitch1FrameOrientation_Roll} ${IndexFingerPitch1FrameOrientation_Pitch} ${IndexFingerPitch1FrameOrientation_Yaw}">
+        <limit effort="${IndexFingerPitch1TorqueLimit}" lower="${IndexFingerPitch1PositionLimit_Lower}" upper="${IndexFingerPitch1PositionLimit_Upper}" velocity="${IndexFingerPitch1VelocityLimit}"/>
     </xacro:revolute_joint>
     
     <!-- PFJ2 -->
-    <xacro:revolute_joint jointName="${PFJ2_Joint_Name}" 
-                          parent="${PFJ2_Proximal_Link}" child="${PFJ2_Distal_Link}"
-                          origin_xyz="${PFJ2_Origin_X} ${PFJ2_Origin_Y} ${PFJ2_Origin_Z}" 
-                          origin_rpy="${PFJ2_Orientation_Roll} ${PFJ2_Orientation_Pitch} ${PFJ2_Orientation_Yaw}">
-        <limit effort="${PFJ2_Torque_Limit}" lower="${PFJ2_Lower_Limit}" upper="${PFJ2_Upper_Limit}" velocity="${PFJ2_Speed_Limit}"/>
+    <xacro:revolute_joint jointName="${IndexFingerPitch2JointName}" 
+                          parent="${IndexFingerPitch1LinkName}" child="${IndexFingerPitch2LinkName}"
+                          origin_xyz="${IndexFingerPitch2FrameOrigin_X} ${IndexFingerPitch2FrameOrigin_Y} ${IndexFingerPitch2FrameOrigin_Z}" 
+                          origin_rpy="${IndexFingerPitch2FrameOrientation_Roll} ${IndexFingerPitch2FrameOrientation_Pitch} ${IndexFingerPitch2FrameOrientation_Yaw}">
+        <limit effort="${IndexFingerPitch2TorqueLimit}" lower="${IndexFingerPitch2PositionLimit_Lower}" upper="${IndexFingerPitch2PositionLimit_Upper}" velocity="${IndexFingerPitch2VelocityLimit}"/>
     </xacro:revolute_joint>
 
     <!-- PFJ3 -->
-    <xacro:revolute_joint jointName="${PFJ3_Joint_Name}" 
-                          parent="${PFJ3_Proximal_Link}" child="${PFJ3_Distal_Link}"
-                          origin_xyz="${PFJ3_Origin_X} ${PFJ3_Origin_Y} ${PFJ3_Origin_Z}" 
-                          origin_rpy="${PFJ3_Orientation_Roll} ${PFJ3_Orientation_Pitch} ${PFJ3_Orientation_Yaw}">
-        <limit effort="${PFJ3_Torque_Limit}" lower="${PFJ3_Lower_Limit}" upper="${PFJ3_Upper_Limit}" velocity="${PFJ3_Speed_Limit}"/>
+    <xacro:revolute_joint jointName="${IndexFingerPitch3JointName}" 
+                          parent="${IndexFingerPitch2LinkName}" child="${IndexFingerPitch3LinkName}"
+                          origin_xyz="${IndexFingerPitch3FrameOrigin_X} ${IndexFingerPitch3FrameOrigin_Y} ${IndexFingerPitch3FrameOrigin_Z}" 
+                          origin_rpy="${IndexFingerPitch3FrameOrientation_Roll} ${IndexFingerPitch3FrameOrientation_Pitch} ${IndexFingerPitch3FrameOrientation_Yaw}">
+        <limit effort="${IndexFingerPitch3TorqueLimit}" lower="${IndexFingerPitch3PositionLimit_Lower}" upper="${IndexFingerPitch3PositionLimit_Upper}" velocity="${IndexFingerPitch3VelocityLimit}"/>
     </xacro:revolute_joint>
 
     <!-- PFJ4 -->
-    <xacro:revolute_joint jointName="${PFJ4_Joint_Name}" 
-                          parent="${PFJ4_Proximal_Link}" child="${PFJ4_Distal_Link}"
-                          origin_xyz="${PFJ4_Origin_X} ${PFJ4_Origin_Y} ${PFJ4_Origin_Z}" 
-                          origin_rpy="${PFJ4_Orientation_Roll} ${PFJ4_Orientation_Pitch} ${PFJ4_Orientation_Yaw}">
-        <limit effort="${PFJ4_Torque_Limit}" lower="${PFJ4_Lower_Limit}" upper="${PFJ4_Upper_Limit}" velocity="${PFJ4_Speed_Limit}"/>
+    <xacro:revolute_joint jointName="${IndexFingerPitch4JointName}" 
+                          parent="${IndexFingerPitch3LinkName}" child="${IndexFingerPitch4LinkName}"
+                          origin_xyz="${IndexFingerPitch4FrameOrigin_X} ${IndexFingerPitch4FrameOrigin_Y} ${IndexFingerPitch4FrameOrigin_Z}" 
+                          origin_rpy="${IndexFingerPitch4FrameOrientation_Roll} ${IndexFingerPitch4FrameOrientation_Pitch} ${IndexFingerPitch4FrameOrientation_Yaw}">
+        <limit effort="${IndexFingerPitch4TorqueLimit}" lower="${IndexFingerPitch4PositionLimit_Lower}" upper="${IndexFingerPitch4PositionLimit_Upper}" velocity="${IndexFingerPitch4VelocityLimit}"/>
     </xacro:revolute_joint>
   </xacro:macro>
 
   <xacro:macro name="make_primary_finger_fixed" params="prefix reflect primary_finger_root_link">
     <!-- LINKS -->
-    <xacro:box_link name="${PFJ1_Distal_Link}" 
-                    width="${PFJ1_Link_Width}" height="${PFJ1_Link_Height}" depth="${PFJ1_Link_Length}" mass="${PFJ1_Link_Mass}" 
+    <xacro:box_link name="${IndexFingerPitch1LinkName}" 
+                    width="${PFJ1_Link_Width}" height="${PFJ1_Link_Height}" depth="${PFJ1_Link_Length}" mass="${IndexFingerPitch1LinkMass}" 
                     origin_rpy="0 0 0" 
                     origin_xyz="${PFJ1_Link_Origin_X} ${PFJ1_Link_Origin_Y} ${PFJ1_Link_Origin_Z}"
                     visual_mesh="${mesh_root}/pf1.stl"
                     material="Gold"
                     collision_mesh="${mesh_root}/pf1.stl"/>
 
-    <xacro:box_link name="${PFJ2_Distal_Link}" 
-                    width="${PFJ2_Link_Width}" height="${PFJ2_Link_Height}" depth="${PFJ2_Link_Length}" mass="${PFJ2_Link_Mass}" 
+    <xacro:box_link name="${IndexFingerPitch2LinkName}" 
+                    width="${PFJ2_Link_Width}" height="${PFJ2_Link_Height}" depth="${PFJ2_Link_Length}" mass="${IndexFingerPitch2LinkMass}" 
                     origin_rpy="0 0 0" 
                     origin_xyz="${PFJ2_Link_Origin_X} ${PFJ2_Link_Origin_Y} ${PFJ2_Link_Origin_Z}"
                     visual_mesh="${mesh_root}/pf2.stl"
                     material="Gold"
                     collision_mesh="${mesh_root}/pf2.stl"/>
 
-    <xacro:box_link name="${PFJ3_Distal_Link}" 
-                    width="${PFJ3_Link_Width}" height="${PFJ3_Link_Height}" depth="${PFJ3_Link_Length}" mass="${PFJ3_Link_Mass}" 
+    <xacro:box_link name="${IndexFingerPitch3LinkName}" 
+                    width="${PFJ3_Link_Width}" height="${PFJ3_Link_Height}" depth="${PFJ3_Link_Length}" mass="${IndexFingerPitch3LinkMass}" 
                     origin_rpy="0 0 0" 
                     origin_xyz="${PFJ3_Link_Origin_X} ${PFJ3_Link_Origin_Y} ${PFJ3_Link_Origin_Z}"
                     visual_mesh="${mesh_root}/pf3.stl"
                     material="Gold"
                     collision_mesh="${mesh_root}/pf3.stl"/>
 
-    <xacro:box_link name="${PFJ4_Distal_Link}" 
-                    width="${PFJ4_Link_Width}" height="${PFJ4_Link_Height}" depth="${PFJ4_Link_Length}" mass="${PFJ4_Link_Mass}" 
+    <xacro:box_link name="${IndexFingerPitch4LinkName}" 
+                    width="${PFJ4_Link_Width}" height="${PFJ4_Link_Height}" depth="${PFJ4_Link_Length}" mass="${IndexFingerPitch4LinkMass}" 
                     origin_rpy="0 0 0" 
                     origin_xyz="${PFJ4_Link_Origin_X} ${PFJ4_Link_Origin_Y} ${PFJ4_Link_Origin_Z}"
                     visual_mesh="${mesh_root}/pf4.stl"
@@ -146,28 +146,28 @@
                     collision_mesh="${mesh_root}/pf4.stl"/>
 
     <!-- PFJ1 -->
-    <xacro:fixed_joint jointName="${PFJ1_Joint_Name}" 
-                          parent="${PFJ1_Proximal_Link}" child="${PFJ1_Distal_Link}"
-                          origin_xyz="${PFJ1_Origin_X} ${PFJ1_Origin_Y} ${PFJ1_Origin_Z}" 
-                          origin_rpy="${PFJ1_Orientation_Roll} ${PFJ1_Orientation_Pitch} ${PFJ1_Orientation_Yaw}"/>
+    <xacro:fixed_joint jointName="${IndexFingerPitch1JointName}" 
+                          parent="${IndexFingerPitch1ParentLinkName}" child="${IndexFingerPitch1LinkName}"
+                          origin_xyz="${IndexFingerPitch1FrameOrigin_X} ${IndexFingerPitch1FrameOrigin_Y} ${IndexFingerPitch1FrameOrigin_Z}" 
+                          origin_rpy="${IndexFingerPitch1FrameOrientation_Roll} ${IndexFingerPitch1FrameOrientation_Pitch} ${IndexFingerPitch1FrameOrientation_Yaw}"/>
     
     <!-- PFJ2 -->
-    <xacro:fixed_joint jointName="${PFJ2_Joint_Name}" 
-                          parent="${PFJ2_Proximal_Link}" child="${PFJ2_Distal_Link}"
-                          origin_xyz="${PFJ2_Origin_X} ${PFJ2_Origin_Y} ${PFJ2_Origin_Z}" 
-                          origin_rpy="${PFJ2_Orientation_Roll} ${PFJ2_Orientation_Pitch} ${PFJ2_Orientation_Yaw}"/>
+    <xacro:fixed_joint jointName="${IndexFingerPitch2JointName}" 
+                          parent="${IndexFingerPitch1LinkName}" child="${IndexFingerPitch2LinkName}"
+                          origin_xyz="${IndexFingerPitch2FrameOrigin_X} ${IndexFingerPitch2FrameOrigin_Y} ${IndexFingerPitch2FrameOrigin_Z}" 
+                          origin_rpy="${IndexFingerPitch2FrameOrientation_Roll} ${IndexFingerPitch2FrameOrientation_Pitch} ${IndexFingerPitch2FrameOrientation_Yaw}"/>
 
     <!-- PFJ3 -->
-    <xacro:fixed_joint jointName="${PFJ3_Joint_Name}" 
-                          parent="${PFJ3_Proximal_Link}" child="${PFJ3_Distal_Link}"
-                          origin_xyz="${PFJ3_Origin_X} ${PFJ3_Origin_Y} ${PFJ3_Origin_Z}" 
-                          origin_rpy="${PFJ3_Orientation_Roll} ${PFJ3_Orientation_Pitch} ${PFJ3_Orientation_Yaw}"/>
+    <xacro:fixed_joint jointName="${IndexFingerPitch3JointName}" 
+                          parent="${IndexFingerPitch2LinkName}" child="${IndexFingerPitch3LinkName}"
+                          origin_xyz="${IndexFingerPitch3FrameOrigin_X} ${IndexFingerPitch3FrameOrigin_Y} ${IndexFingerPitch3FrameOrigin_Z}" 
+                          origin_rpy="${IndexFingerPitch3FrameOrientation_Roll} ${IndexFingerPitch3FrameOrientation_Pitch} ${IndexFingerPitch3FrameOrientation_Yaw}"/>
 
     <!-- PFJ4 -->
-    <xacro:fixed_joint jointName="${PFJ4_Joint_Name}" 
-                          parent="${PFJ4_Proximal_Link}" child="${PFJ4_Distal_Link}"
-                          origin_xyz="${PFJ4_Origin_X} ${PFJ4_Origin_Y} ${PFJ4_Origin_Z}" 
-                          origin_rpy="${PFJ4_Orientation_Roll} ${PFJ4_Orientation_Pitch} ${PFJ4_Orientation_Yaw}"/>
+    <xacro:fixed_joint jointName="${IndexFingerPitch4JointName}" 
+                          parent="${IndexFingerPitch3LinkName}" child="${IndexFingerPitch4LinkName}"
+                          origin_xyz="${IndexFingerPitch4FrameOrigin_X} ${IndexFingerPitch4FrameOrigin_Y} ${IndexFingerPitch4FrameOrigin_Z}" 
+                          origin_rpy="${IndexFingerPitch4FrameOrientation_Roll} ${IndexFingerPitch4FrameOrientation_Pitch} ${IndexFingerPitch4FrameOrientation_Yaw}"/>
   </xacro:macro>
 
   <!-- Actuators -->
@@ -182,39 +182,39 @@
   <!-- Transmissions -->
   <xacro:macro name="v1_right_primary_finger_transmissions" params="prefix">
     <xacro:finger3_transmission tranName="${prefix}PrimaryFingerTransmission" 
-                                joint1="${PFJ1_Joint_Name}"
-                                joint2="${PFJ2_Joint_Name}"
-                                joint3="${PFJ3_Joint_Name}"
+                                joint1="${IndexFingerPitch1JointName}"
+                                joint2="${IndexFingerPitch2JointName}"
+                                joint3="${IndexFingerPitch3JointName}"
                                 actuator="${RPFA_Actuator_Name}" />
   </xacro:macro>
 
   <xacro:macro name="v1_left_primary_finger_transmissions" params="prefix">
     <xacro:finger3_transmission tranName="${prefix}PrimaryFingerTransmission" 
-                                joint1="${PFJ1_Joint_Name}"
-                                joint2="${PFJ2_Joint_Name}"
-                                joint3="${PFJ3_Joint_Name}"
+                                joint1="${IndexFingerPitch1JointName}"
+                                joint2="${IndexFingerPitch2JointName}"
+                                joint3="${IndexFingerPitch3JointName}"
                                 actuator="${LPFA_Actuator_Name}" />
   </xacro:macro>
 
   <xacro:macro name="v1_right_primary_finger_transmissions_simple" params="prefix">
-    <xacro:simple_transmission jointName="${PFJ2_Joint_Name}" actuatorName="${RPFA_Actuator_Name}" reduction="1" offset="0"/>
+    <xacro:simple_transmission jointName="${IndexFingerPitch2JointName}" actuatorName="${RPFA_Actuator_Name}" reduction="1" offset="0"/>
   </xacro:macro>
 
   <xacro:macro name="v1_left_primary_finger_transmissions_simple" params="prefix">
-    <xacro:simple_transmission jointName="${PFJ2_Joint_Name}" actuatorName="${LPFA_Actuator_Name}" reduction="1" offset="0"/>
+    <xacro:simple_transmission jointName="${IndexFingerPitch2JointName}" actuatorName="${LPFA_Actuator_Name}" reduction="1" offset="0"/>
   </xacro:macro>
 
   <!-- Modes -->
   <xacro:macro name="v1_right_primary_finger_modes" params="prefix">
-    <xacro:v1_modes jointName="${PFJ1_Joint_Name}" actuatorName="${RPFA_Actuator_Name}" />
-    <xacro:v1_modes jointName="${PFJ2_Joint_Name}" actuatorName="${RPFA_Actuator_Name}" />
-    <xacro:v1_modes jointName="${PFJ3_Joint_Name}" actuatorName="${RPFA_Actuator_Name}" />
+    <xacro:v1_modes jointName="${IndexFingerPitch1JointName}" actuatorName="${RPFA_Actuator_Name}" />
+    <xacro:v1_modes jointName="${IndexFingerPitch2JointName}" actuatorName="${RPFA_Actuator_Name}" />
+    <xacro:v1_modes jointName="${IndexFingerPitch3JointName}" actuatorName="${RPFA_Actuator_Name}" />
   </xacro:macro>
 
   <xacro:macro name="v1_left_primary_finger_modes" params="prefix">
-    <xacro:v1_modes jointName="${PFJ1_Joint_Name}" actuatorName="${LPFA_Actuator_Name}" />
-    <xacro:v1_modes jointName="${PFJ2_Joint_Name}" actuatorName="${LPFA_Actuator_Name}" />
-    <xacro:v1_modes jointName="${PFJ3_Joint_Name}" actuatorName="${LPFA_Actuator_Name}" />
+    <xacro:v1_modes jointName="${IndexFingerPitch1JointName}" actuatorName="${LPFA_Actuator_Name}" />
+    <xacro:v1_modes jointName="${IndexFingerPitch2JointName}" actuatorName="${LPFA_Actuator_Name}" />
+    <xacro:v1_modes jointName="${IndexFingerPitch3JointName}" actuatorName="${LPFA_Actuator_Name}" />
   </xacro:macro>
 
   <!-- Complete interface -->

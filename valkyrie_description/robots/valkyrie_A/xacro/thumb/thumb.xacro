@@ -5,7 +5,7 @@
   <xacro:include filename="$(find valkyrie_description)/robots/valkyrie_A/xacro/thumb/actuator_names.xacro"/>
   <xacro:include filename="$(find valkyrie_description)/robots/valkyrie_A/xacro/thumb/link_names.xacro"/>
   <xacro:include filename="$(find valkyrie_description)/robots/valkyrie_A/xacro/thumb/joint_limits.xacro"/>
-  <xacro:include filename="$(find valkyrie_description)/robots/valkyrie_A/xacro/thumb/dh_parameters.xacro"/>
+  <xacro:include filename="$(find valkyrie_description)/robots/valkyrie_A/xacro/thumb/frame_parameters.xacro"/>
   <xacro:include filename="$(find valkyrie_description)/robots/valkyrie_A/xacro/thumb/mass_parameters.xacro"/>
 
   <!-- Link properties. -->
@@ -46,32 +46,32 @@
 
   <xacro:macro name="make_thumb" params="prefix reflect thumb_root_link">
     <!-- LINKS -->
-    <xacro:box_link name="${TJ1_Distal_Link}"
-                    width="${TJ1_Link_Width}" height="${TJ1_Link_Height}" depth="${TJ1_Link_Length}" mass="${TJ1_Link_Mass}"
+    <xacro:box_link name="${ThumbRollLinkName}"
+                    width="${TJ1_Link_Width}" height="${TJ1_Link_Height}" depth="${TJ1_Link_Length}" mass="${ThumbRollLinkMass}"
                     origin_rpy="0 0 0"
                     origin_xyz="${TJ1_Link_Origin_X} ${TJ1_Link_Origin_Y} ${TJ1_Link_Origin_Z}"
                     visual_mesh="${mesh_root}/tf1_${prefix}.stl"
                     material="Gold"
                     collision_mesh="${mesh_root}/tf1_${prefix}.stl"/>
 
-    <xacro:box_link name="${TJ2_Distal_Link}"
-                    width="${TJ2_Link_Width}" height="${TJ2_Link_Height}" depth="${TJ2_Link_Length}" mass="${TJ2_Link_Mass}"
+    <xacro:box_link name="${ThumbPitch1LinkName}"
+                    width="${TJ2_Link_Width}" height="${TJ2_Link_Height}" depth="${TJ2_Link_Length}" mass="${ThumbPitch1LinkMass}"
                     origin_rpy="0 0 0"
                     origin_xyz="${TJ2_Link_Origin_X} ${TJ2_Link_Origin_Y} ${TJ2_Link_Origin_Z}"
                     visual_mesh="${mesh_root}/tf2.stl"
                     material="Gold"
                     collision_mesh="${mesh_root}/tf2.stl"/>
 
-    <xacro:box_link name="${TJ3_Distal_Link}"
-                    width="${TJ3_Link_Width}" height="${TJ3_Link_Height}" depth="${TJ3_Link_Length}" mass="${TJ3_Link_Mass}"
+    <xacro:box_link name="${ThumbPitch2LinkName}"
+                    width="${TJ3_Link_Width}" height="${TJ3_Link_Height}" depth="${TJ3_Link_Length}" mass="${ThumbPitch2LinkMass}"
                     origin_rpy="0 0 0"
                     origin_xyz="${TJ3_Link_Origin_X} ${TJ3_Link_Origin_Y} ${TJ3_Link_Origin_Z}"
                     visual_mesh="${mesh_root}/tf3.stl"
                     material="Gold"
                     collision_mesh="${mesh_root}/tf3.stl"/>
 
-    <xacro:box_link name="${TJ4_Distal_Link}"
-                    width="${TJ4_Link_Width}" height="${TJ4_Link_Height}" depth="${TJ4_Link_Length}" mass="${TJ4_Link_Mass}"
+    <xacro:box_link name="${ThumbPitch3LinkName}"
+                    width="${TJ4_Link_Width}" height="${TJ4_Link_Height}" depth="${TJ4_Link_Length}" mass="${ThumbPitch3LinkMass}"
                     origin_rpy="0 0 0"
                     origin_xyz="${TJ4_Link_Origin_X} ${TJ4_Link_Origin_Y} ${TJ4_Link_Origin_Z}"
                     visual_mesh="${mesh_root}/tf4.stl"
@@ -79,95 +79,90 @@
                     collision_mesh="${mesh_root}/tf4.stl"/>
 
     <!-- TJ1 -->
-    <xacro:revolute_joint jointName="${TJ1_Joint_Name}"
-                          parent="${TJ1_Proximal_Link}" child="${TJ1_Distal_Link}"
-                          origin_xyz="${TJ1_Origin_X} ${TJ1_Origin_Y} ${TJ1_Origin_Z}"
-                          origin_rpy="${TJ1_Orientation_Roll} ${TJ1_Orientation_Pitch} ${TJ1_Orientation_Yaw}">
-        <limit effort="${TJ1_Torque_Limit}" lower="${TJ1_Lower_Limit}" upper="${TJ1_Upper_Limit}" velocity="${TJ1_Speed_Limit}"/>
+    <xacro:revolute_joint jointName="${ThumbRollJointName}"
+                          parent="${ThumbRollParentLinkName}" child="${ThumbRollLinkName}"
+                          origin_xyz="${ThumbRollFrameOrigin_X} ${ThumbRollFrameOrigin_Y} ${ThumbRollFrameOrigin_Z}"
+                          origin_rpy="${ThumbRollFrameOrientation_Roll} ${ThumbRollFrameOrientation_Pitch} ${ThumbRollFrameOrientation_Yaw}">
+        <limit effort="${ThumbRollTorqueLimit}" lower="${ThumbRollPositionLimit_Lower}" upper="${ThumbRollPositionLimit_Upper}" velocity="${ThumbRollVelocityLimit}"/>
     </xacro:revolute_joint>
 
     <!-- TJ2 -->
-    <xacro:revolute_joint jointName="${TJ2_Joint_Name}"
-                          parent="${TJ2_Proximal_Link}" child="${TJ2_Distal_Link}"
-                          origin_xyz="${TJ2_Origin_X} ${TJ2_Origin_Y} ${TJ2_Origin_Z}"
-                          origin_rpy="${TJ2_Orientation_Roll} ${TJ2_Orientation_Pitch} ${TJ2_Orientation_Yaw}">
-        <limit effort="${TJ2_Torque_Limit}" lower="${TJ2_Lower_Limit}" upper="${TJ2_Upper_Limit}" velocity="${TJ2_Speed_Limit}"/>
+    <xacro:revolute_joint jointName="${ThumbPitch1JointName}"
+                          parent="${ThumbRollLinkName}" child="${ThumbPitch1LinkName}"
+                          origin_xyz="${ThumbPitch1FrameOrigin_X} ${ThumbPitch1FrameOrigin_Y} ${ThumbPitch1FrameOrigin_Z}"
+                          origin_rpy="${ThumbPitch1FrameOrientation_Roll} ${ThumbPitch1FrameOrientation_Pitch} ${ThumbPitch1FrameOrientation_Yaw}">
+        <limit effort="${ThumbPitch1TorqueLimit}" lower="${ThumbPitch1PositionLimit_Lower}" upper="${ThumbPitch1PositionLimit_Upper}" velocity="${ThumbPitch1VelocityLimit}"/>
     </xacro:revolute_joint>
 
     <!-- TJ3 -->
-    <xacro:revolute_joint jointName="${TJ3_Joint_Name}"
-                          parent="${TJ3_Proximal_Link}" child="${TJ3_Distal_Link}"
-                          origin_xyz="${TJ3_Origin_X} ${TJ3_Origin_Y} ${TJ3_Origin_Z}"
-                          origin_rpy="${TJ3_Orientation_Roll} ${TJ3_Orientation_Pitch} ${TJ3_Orientation_Yaw}">
-        <limit effort="${TJ3_Torque_Limit}" lower="${TJ3_Lower_Limit}" upper="${TJ3_Upper_Limit}" velocity="${TJ3_Speed_Limit}"/>
+    <xacro:revolute_joint jointName="${ThumbPitch2JointName}"
+                          parent="${ThumbPitch1LinkName}" child="${ThumbPitch2LinkName}"
+                          origin_xyz="${ThumbPitch2FrameOrigin_X} ${ThumbPitch2FrameOrigin_Y} ${ThumbPitch2FrameOrigin_Z}"
+                          origin_rpy="${ThumbPitch2FrameOrientation_Roll} ${ThumbPitch2FrameOrientation_Pitch} ${ThumbPitch2FrameOrientation_Yaw}">
+        <limit effort="${ThumbPitch2TorqueLimit}" lower="${ThumbPitch2PositionLimit_Lower}" upper="${ThumbPitch2PositionLimit_Upper}" velocity="${ThumbPitch2VelocityLimit}"/>
     </xacro:revolute_joint>
 
     <!-- TJ4 -->
-    <xacro:revolute_joint jointName="${TJ4_Joint_Name}"
-                          parent="${TJ4_Proximal_Link}" child="${TJ4_Distal_Link}"
-                          origin_xyz="${TJ4_Origin_X} ${TJ4_Origin_Y} ${TJ4_Origin_Z}"
-                          origin_rpy="${TJ4_Orientation_Roll} ${TJ4_Orientation_Pitch} ${TJ4_Orientation_Yaw}">
-        <limit effort="${TJ4_Torque_Limit}" lower="${TJ4_Lower_Limit}" upper="${TJ4_Upper_Limit}" velocity="${TJ4_Speed_Limit}"/>
+    <xacro:revolute_joint jointName="${ThumbPitch3JointName}"
+                          parent="${ThumbPitch2LinkName}" child="${ThumbPitch3LinkName}"
+                          origin_xyz="${ThumbPitch3FrameOrigin_X} ${ThumbPitch3FrameOrigin_Y} ${ThumbPitch3FrameOrigin_Z}"
+                          origin_rpy="${ThumbPitch3FrameOrientation_Roll} ${ThumbPitch3FrameOrientation_Pitch} ${ThumbPitch3FrameOrientation_Yaw}">
+        <limit effort="${ThumbPitch3TorqueLimit}" lower="${ThumbPitch3PositionLimit_Lower}" upper="${ThumbPitch3PositionLimit_Upper}" velocity="${ThumbPitch3VelocityLimit}"/>
     </xacro:revolute_joint>
   </xacro:macro>
 
   <xacro:macro name="make_thumb_fixed" params="prefix reflect thumb_root_link">
-    <!-- LINKS -->
-    <xacro:box_link name="${TJ1_Distal_Link}"
-                    width="${TJ1_Link_Width}" height="${TJ1_Link_Height}" depth="${TJ1_Link_Length}" mass="${TJ1_Link_Mass}"
+    <xacro:box_link name="${ThumbRollLinkName}"
+                    width="${TJ1_Link_Width}" height="${TJ1_Link_Height}" depth="${TJ1_Link_Length}" mass="${ThumbRollLinkMass}"
                     origin_rpy="0 0 0"
                     origin_xyz="${TJ1_Link_Origin_X} ${TJ1_Link_Origin_Y} ${TJ1_Link_Origin_Z}"
                     visual_mesh="${mesh_root}/tf1_${prefix}.stl"
                     material="Gold"
                     collision_mesh="${mesh_root}/tf1_${prefix}.stl"/>
 
-    <xacro:box_link name="${TJ2_Distal_Link}"
-                    width="${TJ2_Link_Width}" height="${TJ2_Link_Height}" depth="${TJ2_Link_Length}" mass="${TJ2_Link_Mass}"
+    <xacro:box_link name="${ThumbPitch1LinkName}"
+                    width="${TJ2_Link_Width}" height="${TJ2_Link_Height}" depth="${TJ2_Link_Length}" mass="${ThumbPitch1LinkMass}"
                     origin_rpy="0 0 0"
                     origin_xyz="${TJ2_Link_Origin_X} ${TJ2_Link_Origin_Y} ${TJ2_Link_Origin_Z}"
                     visual_mesh="${mesh_root}/tf2.stl"
                     material="Gold"
                     collision_mesh="${mesh_root}/tf2.stl"/>
 
-    <xacro:box_link name="${TJ3_Distal_Link}"
-                    width="${TJ3_Link_Width}" height="${TJ3_Link_Height}" depth="${TJ3_Link_Length}" mass="${TJ3_Link_Mass}"
+    <xacro:box_link name="${ThumbPitch2LinkName}"
+                    width="${TJ3_Link_Width}" height="${TJ3_Link_Height}" depth="${TJ3_Link_Length}" mass="${ThumbPitch2LinkMass}"
                     origin_rpy="0 0 0"
                     origin_xyz="${TJ3_Link_Origin_X} ${TJ3_Link_Origin_Y} ${TJ3_Link_Origin_Z}"
                     visual_mesh="${mesh_root}/tf3.stl"
                     material="Gold"
                     collision_mesh="${mesh_root}/tf3.stl"/>
 
-    <xacro:box_link name="${TJ4_Distal_Link}"
-                    width="${TJ4_Link_Width}" height="${TJ4_Link_Height}" depth="${TJ4_Link_Length}" mass="${TJ4_Link_Mass}"
+    <xacro:box_link name="${ThumbPitch3LinkName}"
+                    width="${TJ4_Link_Width}" height="${TJ4_Link_Height}" depth="${TJ4_Link_Length}" mass="${ThumbPitch3LinkMass}"
                     origin_rpy="0 0 0"
                     origin_xyz="${TJ4_Link_Origin_X} ${TJ4_Link_Origin_Y} ${TJ4_Link_Origin_Z}"
                     visual_mesh="${mesh_root}/tf4.stl"
                     material="Gold"
                     collision_mesh="${mesh_root}/tf4.stl"/>
 
-    <!-- TJ1 -->
-    <xacro:fixed_joint jointName="${TJ1_Joint_Name}"
-                          parent="${TJ1_Proximal_Link}" child="${TJ1_Distal_Link}"
-                          origin_xyz="${TJ1_Origin_X} ${TJ1_Origin_Y} ${TJ1_Origin_Z}"
-                          origin_rpy="${TJ1_Orientation_Roll} ${TJ1_Orientation_Pitch} ${TJ1_Orientation_Yaw}"/>
+    <xacro:fixed_joint jointName="${ThumbRollJointName}"
+                          parent="${ThumbRollParentLinkName}" child="${ThumbRollLinkName}"
+                          origin_xyz="${ThumbRollFrameOrigin_X} ${ThumbRollFrameOrigin_Y} ${ThumbRollFrameOrigin_Z}"
+                          origin_rpy="${ThumbRollFrameOrientation_Roll} ${ThumbRollFrameOrientation_Pitch} ${ThumbRollFrameOrientation_Yaw}"/>
 
-    <!-- TJ2 -->
-    <xacro:fixed_joint jointName="${TJ2_Joint_Name}"
-                          parent="${TJ2_Proximal_Link}" child="${TJ2_Distal_Link}"
-                          origin_xyz="${TJ2_Origin_X} ${TJ2_Origin_Y} ${TJ2_Origin_Z}"
-                          origin_rpy="${TJ2_Orientation_Roll} ${TJ2_Orientation_Pitch} ${TJ2_Orientation_Yaw}"/>
+    <xacro:fixed_joint jointName="${ThumbPitch1JointName}"
+                          parent="${ThumbRollLinkName}" child="${ThumbPitch1LinkName}"
+                          origin_xyz="${ThumbPitch1FrameOrigin_X} ${ThumbPitch1FrameOrigin_Y} ${ThumbPitch1FrameOrigin_Z}"
+                          origin_rpy="${ThumbPitch1FrameOrientation_Roll} ${ThumbPitch1FrameOrientation_Pitch} ${ThumbPitch1FrameOrientation_Yaw}"/>
 
-    <!-- TJ3 -->
-    <xacro:fixed_joint jointName="${TJ3_Joint_Name}"
-                          parent="${TJ3_Proximal_Link}" child="${TJ3_Distal_Link}"
-                          origin_xyz="${TJ3_Origin_X} ${TJ3_Origin_Y} ${TJ3_Origin_Z}"
-                          origin_rpy="${TJ3_Orientation_Roll} ${TJ3_Orientation_Pitch} ${TJ3_Orientation_Yaw}"/>
+    <xacro:fixed_joint jointName="${ThumbPitch2JointName}"
+                          parent="${ThumbPitch1LinkName}" child="${ThumbPitch2LinkName}"
+                          origin_xyz="${ThumbPitch2FrameOrigin_X} ${ThumbPitch2FrameOrigin_Y} ${ThumbPitch2FrameOrigin_Z}"
+                          origin_rpy="${ThumbPitch2FrameOrientation_Roll} ${ThumbPitch2FrameOrientation_Pitch} ${ThumbPitch2FrameOrientation_Yaw}"/>
 
-    <!-- TJ4 -->
-    <xacro:fixed_joint jointName="${TJ4_Joint_Name}"
-                          parent="${TJ4_Proximal_Link}" child="${TJ4_Distal_Link}"
-                          origin_xyz="${TJ4_Origin_X} ${TJ4_Origin_Y} ${TJ4_Origin_Z}"
-                          origin_rpy="${TJ4_Orientation_Roll} ${TJ4_Orientation_Pitch} ${TJ4_Orientation_Yaw}"/>
+    <xacro:fixed_joint jointName="${ThumbPitch3JointName}"
+                          parent="${ThumbPitch2LinkName}" child="${ThumbPitch3LinkName}"
+                          origin_xyz="${ThumbPitch3FrameOrigin_X} ${ThumbPitch3FrameOrigin_Y} ${ThumbPitch3FrameOrigin_Z}"
+                          origin_rpy="${ThumbPitch3FrameOrientation_Roll} ${ThumbPitch3FrameOrientation_Pitch} ${ThumbPitch3FrameOrientation_Yaw}"/>
   </xacro:macro>
 
   <!-- Actuators -->
@@ -185,48 +180,48 @@
 
   <!-- Transmissions -->
   <xacro:macro name="v1_right_thumb_transmissions" params="prefix">
-    <xacro:simple_transmission jointName="${TJ1_Joint_Name}" actuatorName="${RTA1_Actuator_Name}" reduction="1" offset="0"/>
-    <xacro:simple_transmission jointName="${TJ2_Joint_Name}" actuatorName="${RTA2_Actuator_Name}" reduction="1" offset="0"/>
+    <xacro:simple_transmission jointName="${ThumbRollJointName}" actuatorName="${RTA1_Actuator_Name}" reduction="1" offset="0"/>
+    <xacro:simple_transmission jointName="${ThumbPitch1JointName}" actuatorName="${RTA2_Actuator_Name}" reduction="1" offset="0"/>
     <xacro:finger2_transmission tranName="${prefix}ThumbTransmission" 
-                                joint1="${TJ3_Joint_Name}"
-                                joint2="${TJ4_Joint_Name}"
+                                joint1="${ThumbPitch2JointName}"
+                                joint2="${ThumbPitch3JointName}"
                                 actuator="${RTA3_Actuator_Name}" />
   </xacro:macro>
 
   <xacro:macro name="v1_left_thumb_transmissions" params="prefix">
-    <xacro:simple_transmission jointName="${TJ1_Joint_Name}" actuatorName="${LTA1_Actuator_Name}" reduction="1" offset="0"/>
-    <xacro:simple_transmission jointName="${TJ2_Joint_Name}" actuatorName="${LTA2_Actuator_Name}" reduction="1" offset="0"/>
+    <xacro:simple_transmission jointName="${ThumbRollJointName}" actuatorName="${LTA1_Actuator_Name}" reduction="1" offset="0"/>
+    <xacro:simple_transmission jointName="${ThumbPitch1JointName}" actuatorName="${LTA2_Actuator_Name}" reduction="1" offset="0"/>
     <xacro:finger2_transmission tranName="${prefix}ThumbTransmission" 
-                                joint1="${TJ3_Joint_Name}"
-                                joint2="${TJ4_Joint_Name}"
+                                joint1="${ThumbPitch2JointName}"
+                                joint2="${ThumbPitch3JointName}"
                                 actuator="${LTA3_Actuator_Name}" />
   </xacro:macro>
 
   <xacro:macro name="v1_right_thumb_transmissions_simple" params="prefix">
-    <xacro:simple_transmission jointName="${TJ1_Joint_Name}" actuatorName="${RTA1_Actuator_Name}" reduction="1" offset="0"/>
-    <xacro:simple_transmission jointName="${TJ2_Joint_Name}" actuatorName="${RTA2_Actuator_Name}" reduction="1" offset="0"/>
-    <xacro:simple_transmission jointName="${TJ3_Joint_Name}" actuatorName="${RTA3_Actuator_Name}" reduction="1" offset="0"/>
+    <xacro:simple_transmission jointName="${ThumbRollJointName}" actuatorName="${RTA1_Actuator_Name}" reduction="1" offset="0"/>
+    <xacro:simple_transmission jointName="${ThumbPitch1JointName}" actuatorName="${RTA2_Actuator_Name}" reduction="1" offset="0"/>
+    <xacro:simple_transmission jointName="${ThumbPitch2JointName}" actuatorName="${RTA3_Actuator_Name}" reduction="1" offset="0"/>
   </xacro:macro>
 
   <xacro:macro name="v1_left_thumb_transmissions_simple" params="prefix">
-    <xacro:simple_transmission jointName="${TJ1_Joint_Name}" actuatorName="${LTA1_Actuator_Name}" reduction="1" offset="0"/>
-    <xacro:simple_transmission jointName="${TJ2_Joint_Name}" actuatorName="${LTA2_Actuator_Name}" reduction="1" offset="0"/>
-    <xacro:simple_transmission jointName="${TJ3_Joint_Name}" actuatorName="${LTA3_Actuator_Name}" reduction="1" offset="0"/>
+    <xacro:simple_transmission jointName="${ThumbRollJointName}" actuatorName="${LTA1_Actuator_Name}" reduction="1" offset="0"/>
+    <xacro:simple_transmission jointName="${ThumbPitch1JointName}" actuatorName="${LTA2_Actuator_Name}" reduction="1" offset="0"/>
+    <xacro:simple_transmission jointName="${ThumbPitch2JointName}" actuatorName="${LTA3_Actuator_Name}" reduction="1" offset="0"/>
   </xacro:macro>
   
   <!-- Modes -->
   <xacro:macro name="v1_right_thumb_modes" params="prefix">
-    <xacro:v1_modes jointName="${TJ1_Joint_Name}" actuatorName="${RTA1_Actuator_Name}" />
-    <xacro:v1_modes jointName="${TJ2_Joint_Name}" actuatorName="${RTA2_Actuator_Name}" />
-    <xacro:v1_modes jointName="${TJ3_Joint_Name}" actuatorName="${RTA3_Actuator_Name}" />
-    <xacro:v1_modes jointName="${TJ4_Joint_Name}" actuatorName="${RTA3_Actuator_Name}" />
+    <xacro:v1_modes jointName="${ThumbRollJointName}" actuatorName="${RTA1_Actuator_Name}" />
+    <xacro:v1_modes jointName="${ThumbPitch1JointName}" actuatorName="${RTA2_Actuator_Name}" />
+    <xacro:v1_modes jointName="${ThumbPitch2JointName}" actuatorName="${RTA3_Actuator_Name}" />
+    <xacro:v1_modes jointName="${ThumbPitch3JointName}" actuatorName="${RTA3_Actuator_Name}" />
   </xacro:macro>
 
   <xacro:macro name="v1_left_thumb_modes" params="prefix">
-    <xacro:v1_modes jointName="${TJ1_Joint_Name}" actuatorName="${LTA1_Actuator_Name}" />
-    <xacro:v1_modes jointName="${TJ2_Joint_Name}" actuatorName="${LTA2_Actuator_Name}" />
-    <xacro:v1_modes jointName="${TJ3_Joint_Name}" actuatorName="${LTA3_Actuator_Name}" />
-    <xacro:v1_modes jointName="${TJ4_Joint_Name}" actuatorName="${LTA3_Actuator_Name}" />
+    <xacro:v1_modes jointName="${ThumbRollJointName}" actuatorName="${LTA1_Actuator_Name}" />
+    <xacro:v1_modes jointName="${ThumbPitch1JointName}" actuatorName="${LTA2_Actuator_Name}" />
+    <xacro:v1_modes jointName="${ThumbPitch2JointName}" actuatorName="${LTA3_Actuator_Name}" />
+    <xacro:v1_modes jointName="${ThumbPitch3JointName}" actuatorName="${LTA3_Actuator_Name}" />
   </xacro:macro>
 
   <!-- Complete interface -->

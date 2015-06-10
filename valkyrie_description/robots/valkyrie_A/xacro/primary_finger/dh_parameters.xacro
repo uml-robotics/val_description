@@ -1,36 +1,36 @@
 <?xml version="1.0" ?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="v1/primary_finger/dh_parameters">
 
-  <xacro:property name="PFJ1_Origin_X" value="0.0776738914821"/>
-  <xacro:property name="PFJ1_Origin_Y" value="-0.0298162134085"/>
-  <xacro:property name="PFJ1_Origin_Z" value="${reflect * 0.00254}"/>
+  <xacro:property name="IndexFingerPitch1FrameOrigin_X" value="0.0776738914821"/>
+  <xacro:property name="IndexFingerPitch1FrameOrigin_Y" value="-0.0298162134085"/>
+  <xacro:property name="IndexFingerPitch1FrameOrigin_Z" value="${reflect * 0.00254}"/>
 
-  <xacro:property name="PFJ1_Orientation_Roll" value="${((reflect - 1)/2) * 3.14}"/>
-  <xacro:property name="PFJ1_Orientation_Pitch" value="0"/>
-  <xacro:property name="PFJ1_Orientation_Yaw" value="-0.366519143"/>
+  <xacro:property name="IndexFingerPitch1FrameOrientation_Roll" value="0.0"/>
+  <xacro:property name="IndexFingerPitch1FrameOrientation_Pitch" value="0.0"/>
+  <xacro:property name="IndexFingerPitch1FrameOrientation_Yaw" value="0.0"/>
 
-  <xacro:property name="PFJ2_Origin_X" value="0.0169724899301"/>
-  <xacro:property name="PFJ2_Origin_Y" value="0.000966739661347"/>
-  <xacro:property name="PFJ2_Origin_Z" value="0"/>
+  <xacro:property name="IndexFingerPitch2FrameOrigin_X" value="0.0169724899301"/>
+  <xacro:property name="IndexFingerPitch2FrameOrigin_Y" value="0.000966739661347"/>
+  <xacro:property name="IndexFingerPitch2FrameOrigin_Z" value="0"/>
 
-  <xacro:property name="PFJ2_Orientation_Roll" value="${-1 * 1.57}"/>
-  <xacro:property name="PFJ2_Orientation_Pitch" value="0"/>
-  <xacro:property name="PFJ2_Orientation_Yaw" value="0.0568977336"/>
+  <xacro:property name="IndexFingerPitch2FrameOrientation_Roll" value="0.0"/>
+  <xacro:property name="IndexFingerPitch2FrameOrientation_Pitch" value="0.0"/>
+  <xacro:property name="IndexFingerPitch2FrameOrientation_Yaw" value="0.0"/>
 
-  <xacro:property name="PFJ3_Origin_X" value="0.0381"/>
-  <xacro:property name="PFJ3_Origin_Y" value="0"/>
-  <xacro:property name="PFJ3_Origin_Z" value="0"/>
+  <xacro:property name="IndexFingerPitch3FrameOrigin_X" value="0.0381"/>
+  <xacro:property name="IndexFingerPitch3FrameOrigin_Y" value="0"/>
+  <xacro:property name="IndexFingerPitch3FrameOrigin_Z" value="0"/>
 
-  <xacro:property name="PFJ3_Orientation_Roll" value="0"/>
-  <xacro:property name="PFJ3_Orientation_Pitch" value="0"/>
-  <xacro:property name="PFJ3_Orientation_Yaw" value="0"/>
+  <xacro:property name="IndexFingerPitch3FrameOrientation_Roll" value="0.0"/>
+  <xacro:property name="IndexFingerPitch3FrameOrientation_Pitch" value="0.0"/>
+  <xacro:property name="IndexFingerPitch3FrameOrientation_Yaw" value="0.0"/>
 
-  <xacro:property name="PFJ4_Origin_X" value="0.02286"/>
-  <xacro:property name="PFJ4_Origin_Y" value="0"/>
-  <xacro:property name="PFJ4_Origin_Z" value="0"/>
+  <xacro:property name="IndexFingerPitch4FrameOrigin_X" value="0.02286"/>
+  <xacro:property name="IndexFingerPitch4FrameOrigin_Y" value="0"/>
+  <xacro:property name="IndexFingerPitch4FrameOrigin_Z" value="0"/>
 
-  <xacro:property name="PFJ4_Orientation_Roll" value="0"/>
-  <xacro:property name="PFJ4_Orientation_Pitch" value="0"/>
-  <xacro:property name="PFJ4_Orientation_Yaw" value="0"/>
+  <xacro:property name="IndexFingerPitch4FrameOrientation_Roll" value="0.0"/>
+  <xacro:property name="IndexFingerPitch4FrameOrientation_Pitch" value="0.0"/>
+  <xacro:property name="IndexFingerPitch4FrameOrientation_Yaw" value="0.0"/>
 
 </robot>
