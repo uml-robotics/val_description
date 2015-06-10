@@ -35,7 +35,7 @@
   <xacro:property name="LFJ3_Link_Origin_Z" value="0"/>
 
   <xacro:macro name="make_little_finger" params="prefix reflect little_finger_root_link">
-    <!-- LINKS -->
+
     <xacro:box_link name="${PinkyPitch1LinkName}"
                     width="${LFJ1_Link_Width}" height="${LFJ1_Link_Height}" depth="${LFJ1_Link_Length}" mass="${PinkyPitch1LinkMass}"
                     origin_rpy="0 0 0"
@@ -60,15 +60,6 @@
                     material="Gold"
                     collision_mesh="${mesh_root}/sf2_ssf3.stl"/>
 
-    <xacro:box_link name="${PinkyPitch4LinkName}"
-                    width="${LFJ4_Link_Width}" height="${LFJ4_Link_Height}" depth="${LFJ4_Link_Length}" mass="${PinkyPitch4LinkMass}"
-                    origin_rpy="0 0 0"
-                    origin_xyz="${LFJ4_Link_Origin_X} ${LFJ4_Link_Origin_Y} ${LFJ4_Link_Origin_Z}"
-                    visual_mesh="${mesh_root}/sf3_ssf4.stl"
-                    material="Gold"
-                    collision_mesh="${mesh_root}/sf3_ssf4.stl"/>
-
-    <!-- LFJ1 -->
     <xacro:revolute_joint jointName="${PinkyPitch1JointName}"
                           parent="${PinkyPitch1ParentLinkName}" child="${PinkyPitch1LinkName}"
                           origin_xyz="${PinkyPitch1FrameOrigin_X} ${PinkyPitch1FrameOrigin_Y} ${PinkyPitch1FrameOrigin_Z}"
@@ -76,7 +67,6 @@
         <limit effort="${PinkyPitch1TorqueLimit}" lower="${PinkyPitch1PositionLimit_Lower}" upper="${PinkyPitch1PositionLimit_Upper}" velocity="${PinkyPitch1VelocityLimit}"/>
     </xacro:revolute_joint>
 
-    <!-- LFJ2 -->
     <xacro:revolute_joint jointName="${PinkyPitch2JointName}"
                           parent="${PinkyPitch1LinkName}" child="${PinkyPitch2LinkName}"
                           origin_xyz="${PinkyPitch2FrameOrigin_X} ${PinkyPitch2FrameOrigin_Y} ${PinkyPitch2FrameOrigin_Z}"
@@ -84,7 +74,6 @@
         <limit effort="${PinkyPitch2TorqueLimit}" lower="${PinkyPitch2PositionLimit_Lower}" upper="${PinkyPitch2PositionLimit_Upper}" velocity="${PinkyPitch2VelocityLimit}"/>
     </xacro:revolute_joint>
 
-    <!-- LFJ3 -->
     <xacro:revolute_joint jointName="${PinkyPitch3JointName}"
                           parent="${PinkyPitch2LinkName}" child="${PinkyPitch3LinkName}"
                           origin_xyz="${PinkyPitch3FrameOrigin_X} ${PinkyPitch3FrameOrigin_Y} ${PinkyPitch3FrameOrigin_Z}"
@@ -95,7 +84,7 @@
   </xacro:macro>
 
   <xacro:macro name="make_little_finger_fixed" params="prefix reflect little_finger_root_link">
-    <!-- LINKS -->
+
     <xacro:box_link name="${PinkyPitch1LinkName}"
                     width="${LFJ1_Link_Width}" height="${LFJ1_Link_Height}" depth="${LFJ1_Link_Length}" mass="${PinkyPitch1LinkMass}"
                     origin_rpy="0 0 0"
@@ -120,19 +109,16 @@
                     material="Gold"
                     collision_mesh="${mesh_root}/sf2_ssf3.stl"/>
 
-    <!-- LFJ1 -->
     <xacro:fixed_joint jointName="${PinkyPitch1JointName}"
                        parent="${PinkyPitch1ParentLinkName}" child="${PinkyPitch1LinkName}"
                        origin_xyz="${PinkyPitch1FrameOrigin_X} ${PinkyPitch1FrameOrigin_Y} ${PinkyPitch1FrameOrigin_Z}"
                        origin_rpy="${PinkyPitch1FrameOrientation_Roll} ${PinkyPitch1FrameOrientation_Pitch} ${PinkyPitch1FrameOrientation_Yaw}"/>
 
-    <!-- LFJ2 -->
     <xacro:fixed_joint jointName="${PinkyPitch2JointName}"
                           parent="${PinkyPitch1LinkName}" child="${PinkyPitch2LinkName}"
                           origin_xyz="${PinkyPitch2FrameOrigin_X} ${PinkyPitch2FrameOrigin_Y} ${PinkyPitch2FrameOrigin_Z}"
                           origin_rpy="${PinkyPitch2FrameOrientation_Roll} ${PinkyPitch2FrameOrientation_Pitch} ${PinkyPitch2FrameOrientation_Yaw}"/>
 
-    <!-- LFJ3 -->
     <xacro:fixed_joint jointName="${PinkyPitch3JointName}"
                           parent="${PinkyPitch2LinkName}" child="${PinkyPitch3LinkName}"
                           origin_xyz="${PinkyPitch3FrameOrigin_X} ${PinkyPitch3FrameOrigin_Y} ${PinkyPitch3FrameOrigin_Z}"
