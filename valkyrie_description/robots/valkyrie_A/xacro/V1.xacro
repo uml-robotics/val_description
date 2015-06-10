@@ -1,5 +1,5 @@
 <robot xmlns:xacro="http://ros.org/wiki/xacro" name="valkyrie">
-    <xacro:property name="mesh_root" value="package://valkyrie_description/meshes/reduced_polygon_meshes"/>
+    <xacro:property name="mesh_root" value="package://valkyrie_description/meshes"/>
     <!-- <xacro:include filename="$(find valkyrie_description)/robots/valkyrie_A/xacro/common/hw_actuator_types.xacro"/> -->
     <xacro:include filename="$(find valkyrie_description)/robots/valkyrie_A/xacro/V1_sim_base.xacro"/>
 
