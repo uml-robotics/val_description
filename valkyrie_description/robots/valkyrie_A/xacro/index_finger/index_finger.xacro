@@ -1,12 +1,12 @@
 <?xml version="1.0" ?>
-<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="v1/primary_finger">
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="v1/index_finger">
 
-  <xacro:include filename="$(find valkyrie_description)/robots/valkyrie_A/xacro/primary_finger/joint_names.xacro"/>
-  <xacro:include filename="$(find valkyrie_description)/robots/valkyrie_A/xacro/primary_finger/actuator_names.xacro"/>
-  <xacro:include filename="$(find valkyrie_description)/robots/valkyrie_A/xacro/primary_finger/link_names.xacro"/>
-  <xacro:include filename="$(find valkyrie_description)/robots/valkyrie_A/xacro/primary_finger/joint_limits.xacro"/>
-  <xacro:include filename="$(find valkyrie_description)/robots/valkyrie_A/xacro/primary_finger/frame_parameters.xacro"/>
-  <xacro:include filename="$(find valkyrie_description)/robots/valkyrie_A/xacro/primary_finger/mass_parameters.xacro"/>
+  <xacro:include filename="$(find valkyrie_description)/robots/valkyrie_A/xacro/index_finger/joint_names.xacro"/>
+  <xacro:include filename="$(find valkyrie_description)/robots/valkyrie_A/xacro/index_finger/actuator_names.xacro"/>
+  <xacro:include filename="$(find valkyrie_description)/robots/valkyrie_A/xacro/index_finger/link_names.xacro"/>
+  <xacro:include filename="$(find valkyrie_description)/robots/valkyrie_A/xacro/index_finger/joint_limits.xacro"/>
+  <xacro:include filename="$(find valkyrie_description)/robots/valkyrie_A/xacro/index_finger/frame_parameters.xacro"/>
+  <xacro:include filename="$(find valkyrie_description)/robots/valkyrie_A/xacro/index_finger/mass_parameters.xacro"/>
   
   <xacro:property name="PFJ1_Link_Width" value="0.029"/>
   <xacro:property name="PFJ1_Link_Height" value="0.019"/>
@@ -43,7 +43,7 @@
   <xacro:property name="PFJ4_Link_Origin_Y" value="-0.000696"/>
   <xacro:property name="PFJ4_Link_Origin_Z" value="0"/>
 
-  <xacro:macro name="make_primary_finger" params="prefix reflect primary_finger_root_link">
+  <xacro:macro name="make_index_finger" params="prefix reflect index_finger_root_link">
     
     <xacro:box_link name="${IndexFingerPitch1LinkName}" 
                     width="${PFJ1_Link_Width}" height="${PFJ1_Link_Height}" depth="${PFJ1_Link_Length}" mass="${IndexFingerPitch1LinkMass}" 
@@ -106,7 +106,7 @@
     </xacro:revolute_joint>
   </xacro:macro>
 
-  <xacro:macro name="make_primary_finger_fixed" params="prefix reflect primary_finger_root_link">
+  <xacro:macro name="make_index_finger_fixed" params="prefix reflect index_finger_root_link">
     
     <xacro:box_link name="${IndexFingerPitch1LinkName}" 
                     width="${PFJ1_Link_Width}" height="${PFJ1_Link_Height}" depth="${PFJ1_Link_Length}" mass="${IndexFingerPitch1LinkMass}" 
@@ -161,73 +161,73 @@
                           origin_rpy="${IndexFingerPitch4FrameOrientation_Roll} ${IndexFingerPitch4FrameOrientation_Pitch} ${IndexFingerPitch4FrameOrientation_Yaw}"/>
   </xacro:macro>
 
-  <xacro:macro name="v1_right_primary_finger_actuators" params="prefix api">
+  <xacro:macro name="v1_right_index_finger_actuators" params="prefix api">
     <xacro:v1_actuator name="${RPFA_Actuator_Name}" api="${api}" />
   </xacro:macro>
 
-  <xacro:macro name="v1_left_primary_finger_actuators" params="prefix api">
+  <xacro:macro name="v1_left_index_finger_actuators" params="prefix api">
     <xacro:v1_actuator name="${LPFA_Actuator_Name}" api="${api}" />
   </xacro:macro>
 
-  <xacro:macro name="v1_right_primary_finger_transmissions" params="prefix">
-    <xacro:finger3_transmission tranName="${prefix}PrimaryFingerTransmission" 
+  <xacro:macro name="v1_right_index_finger_transmissions" params="prefix">
+    <xacro:finger3_transmission tranName="${prefix}indexFingerTransmission" 
                                 joint1="${IndexFingerPitch1JointName}"
                                 joint2="${IndexFingerPitch2JointName}"
                                 joint3="${IndexFingerPitch3JointName}"
                                 actuator="${RPFA_Actuator_Name}" />
   </xacro:macro>
 
-  <xacro:macro name="v1_left_primary_finger_transmissions" params="prefix">
-    <xacro:finger3_transmission tranName="${prefix}PrimaryFingerTransmission" 
+  <xacro:macro name="v1_left_index_finger_transmissions" params="prefix">
+    <xacro:finger3_transmission tranName="${prefix}indexFingerTransmission" 
                                 joint1="${IndexFingerPitch1JointName}"
                                 joint2="${IndexFingerPitch2JointName}"
                                 joint3="${IndexFingerPitch3JointName}"
                                 actuator="${LPFA_Actuator_Name}" />
   </xacro:macro>
 
-  <xacro:macro name="v1_right_primary_finger_transmissions_simple" params="prefix">
+  <xacro:macro name="v1_right_index_finger_transmissions_simple" params="prefix">
     <xacro:simple_transmission jointName="${IndexFingerPitch2JointName}" actuatorName="${RPFA_Actuator_Name}" reduction="1" offset="0"/>
   </xacro:macro>
 
-  <xacro:macro name="v1_left_primary_finger_transmissions_simple" params="prefix">
+  <xacro:macro name="v1_left_index_finger_transmissions_simple" params="prefix">
     <xacro:simple_transmission jointName="${IndexFingerPitch2JointName}" actuatorName="${LPFA_Actuator_Name}" reduction="1" offset="0"/>
   </xacro:macro>
 
-  <xacro:macro name="v1_right_primary_finger_modes" params="prefix">
+  <xacro:macro name="v1_right_index_finger_modes" params="prefix">
     <xacro:v1_modes jointName="${IndexFingerPitch1JointName}" actuatorName="${RPFA_Actuator_Name}" />
     <xacro:v1_modes jointName="${IndexFingerPitch2JointName}" actuatorName="${RPFA_Actuator_Name}" />
     <xacro:v1_modes jointName="${IndexFingerPitch3JointName}" actuatorName="${RPFA_Actuator_Name}" />
   </xacro:macro>
 
-  <xacro:macro name="v1_left_primary_finger_modes" params="prefix">
+  <xacro:macro name="v1_left_index_finger_modes" params="prefix">
     <xacro:v1_modes jointName="${IndexFingerPitch1JointName}" actuatorName="${LPFA_Actuator_Name}" />
     <xacro:v1_modes jointName="${IndexFingerPitch2JointName}" actuatorName="${LPFA_Actuator_Name}" />
     <xacro:v1_modes jointName="${IndexFingerPitch3JointName}" actuatorName="${LPFA_Actuator_Name}" />
   </xacro:macro>
 
-  <xacro:macro name="make_right_primary_finger_interface" params="api">
-    <xacro:v1_right_primary_finger_actuators prefix="Right" api="${api}" />
-    <xacro:v1_right_primary_finger_transmissions prefix="Right" />
-    <xacro:v1_right_primary_finger_modes prefix="Right" />
+  <xacro:macro name="make_right_index_finger_interface" params="api">
+    <xacro:v1_right_index_finger_actuators prefix="Right" api="${api}" />
+    <xacro:v1_right_index_finger_transmissions prefix="Right" />
+    <xacro:v1_right_index_finger_modes prefix="Right" />
   </xacro:macro>
 
-  <xacro:macro name="make_left_primary_finger_interface" params="api">
-    <xacro:v1_left_primary_finger_actuators prefix="Left" api="${api}" />
-    <xacro:v1_left_primary_finger_transmissions prefix="Left" />
-    <xacro:v1_left_primary_finger_modes prefix="Left" />
+  <xacro:macro name="make_left_index_finger_interface" params="api">
+    <xacro:v1_left_index_finger_actuators prefix="Left" api="${api}" />
+    <xacro:v1_left_index_finger_transmissions prefix="Left" />
+    <xacro:v1_left_index_finger_modes prefix="Left" />
   </xacro:macro>
 
   <!-- Simple interface -->
-  <xacro:macro name="make_right_primary_finger_interface_simple" params="api">
-    <xacro:v1_right_primary_finger_actuators prefix="Right" api="${api}" />
-    <xacro:v1_right_primary_finger_transmissions_simple prefix="Right" />
-    <xacro:v1_right_primary_finger_modes prefix="Right" />
+  <xacro:macro name="make_right_index_finger_interface_simple" params="api">
+    <xacro:v1_right_index_finger_actuators prefix="Right" api="${api}" />
+    <xacro:v1_right_index_finger_transmissions_simple prefix="Right" />
+    <xacro:v1_right_index_finger_modes prefix="Right" />
   </xacro:macro>
 
-  <xacro:macro name="make_left_primary_finger_interface_simple" params="api">
-    <xacro:v1_left_primary_finger_actuators prefix="Left" api="${api}" />
-    <xacro:v1_left_primary_finger_transmissions_simple prefix="Left" />
-    <xacro:v1_left_primary_finger_modes prefix="Left" />
+  <xacro:macro name="make_left_index_finger_interface_simple" params="api">
+    <xacro:v1_left_index_finger_actuators prefix="Left" api="${api}" />
+    <xacro:v1_left_index_finger_transmissions_simple prefix="Left" />
+    <xacro:v1_left_index_finger_modes prefix="Left" />
   </xacro:macro>
 
 </robot>

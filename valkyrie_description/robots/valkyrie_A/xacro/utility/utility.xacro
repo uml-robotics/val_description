@@ -31,10 +31,10 @@
        <xacro:v1_thumb_modes prefix="${prefix}" channel="${channel}" />
        </xacro:macro>
   -->
-  <!-- 	<xacro:macro name="make_primary_finger_interface" params="prefix channel">
-       <xacro:v1_primary_finger_actuators channel="${channel}" />
-       <xacro:v1_primary_finger_transmissions prefix="${prefix}" channel="${channel}" />
-       <xacro:v1_primary_finger_modes prefix="${prefix}" channel="${channel}" />
+  <!-- 	<xacro:macro name="make_index_finger_interface" params="prefix channel">
+       <xacro:v1_index_finger_actuators channel="${channel}" />
+       <xacro:v1_index_finger_transmissions prefix="${prefix}" channel="${channel}" />
+       <xacro:v1_index_finger_modes prefix="${prefix}" channel="${channel}" />
        </xacro:macro> -->
 
   <!-- 	<xacro:macro name="make_middle_finger_interface" params="prefix channel">

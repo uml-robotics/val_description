@@ -56,7 +56,7 @@
     <xacro:make_thumb_fixed prefix="Right" reflect="1" thumb_root_link="RightPalm"/>
 
     <!-- ===== RIGHT PRIMARY FINGER ===== -->
-    <xacro:make_primary_finger_fixed prefix="Right" reflect="1" primary_finger_root_link="RightPalm"/>
+    <xacro:make_index_finger_fixed prefix="Right" reflect="1" index_finger_root_link="RightPalm"/>
 
     <!-- ===== RIGHT MIDDLE FINGER ===== -->
     <xacro:make_middle_finger_fixed prefix="Right" reflect="1" middle_finger_root_link="RightPalm"/>
@@ -78,7 +78,7 @@
     <xacro:make_thumb_fixed prefix="Left" reflect="-1" thumb_root_link="LeftPalm"/>
 
     <!-- ===== LEFT PRIMARY FINGER ===== -->
-    <xacro:make_primary_finger_fixed prefix="Left" reflect="-1" primary_finger_root_link="LeftPalm"/>
+    <xacro:make_index_finger_fixed prefix="Left" reflect="-1" index_finger_root_link="LeftPalm"/>
 
     <!-- ===== LEFT MIDDLE FINGER ===== -->
     <xacro:make_middle_finger_fixed prefix="Left" reflect="-1" middle_finger_root_link="LeftPalm"/>
