@@ -5,7 +5,7 @@
   <xacro:include filename="$(find valkyrie_description)/robots/valkyrie_A/xacro/little_finger/actuator_names.xacro"/>
   <xacro:include filename="$(find valkyrie_description)/robots/valkyrie_A/xacro/little_finger/link_names.xacro"/>
   <xacro:include filename="$(find valkyrie_description)/robots/valkyrie_A/xacro/little_finger/joint_limits.xacro"/>
-  <xacro:include filename="$(find valkyrie_description)/robots/valkyrie_A/xacro/little_finger/dh_parameters.xacro"/>
+  <xacro:include filename="$(find valkyrie_description)/robots/valkyrie_A/xacro/little_finger/frame_parameters.xacro"/>
   <xacro:include filename="$(find valkyrie_description)/robots/valkyrie_A/xacro/little_finger/mass_parameters.xacro"/>
 
   <xacro:property name="LFJ1_Link_Width" value="0.010"/>
