@@ -1,13 +1,9 @@
 <?xml version="1.0" ?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="v1/middle_finger/dh_parameters">
   
-  <xacro:property name="MFJ1_Proximal_Link" value="${middle_finger_root_link}" />
-  <xacro:property name="MFJ1_Distal_Link" value="${prefix}MiddleFingerPitch1" />
-
-  <xacro:property name="MFJ2_Proximal_Link" value="${prefix}MiddleFingerPitch1" />
-  <xacro:property name="MFJ2_Distal_Link" value="${prefix}MiddleFingerPitch2" />
-
-  <xacro:property name="MFJ3_Proximal_Link" value="${prefix}MiddleFingerPitch2" />
-  <xacro:property name="MFJ3_Distal_Link" value="${prefix}MiddleFingerPitch3" />
+  <xacro:property name="MiddleFingerPitch1ParentLinkName" value="${middle_finger_root_link}" />
+  <xacro:property name="MiddleFingerPitch1LinkName" value="${prefix}MiddleFingerPitch1" />
+  <xacro:property name="MiddleFingerPitch2LinkName" value="${prefix}MiddleFingerPitch2" />
+  <xacro:property name="MiddleFingerPitch3LinkName" value="${prefix}MiddleFingerPitch3" />
 
 </robot>

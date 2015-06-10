@@ -38,7 +38,7 @@
 
   <xacro:macro name="make_middle_finger" params="prefix reflect middle_finger_root_link">
     <!-- LINKS -->
-    <xacro:box_link name="${MFJ1_Distal_Link}" 
+    <xacro:box_link name="${MiddleFingerPitch1LinkName}" 
                     width="${MFJ1_Link_Width}" height="${MFJ1_Link_Height}" depth="${MFJ1_Link_Length}" mass="${MFJ1_Link_Mass}" 
                     origin_rpy="0 0 0" 
                     origin_xyz="${MFJ1_Link_Origin_X} ${MFJ1_Link_Origin_Y} ${MFJ1_Link_Origin_Z}"
@@ -46,7 +46,7 @@
                     material="Gold"
                     collision_mesh="${mesh_root}/sf1.stl"/>
 
-    <xacro:box_link name="${MFJ2_Distal_Link}" 
+    <xacro:box_link name="${MiddleFingerPitch2LinkName}" 
                     width="${MFJ2_Link_Width}" height="${MFJ2_Link_Height}" depth="${MFJ2_Link_Length}" mass="${MFJ2_Link_Mass}" 
                     origin_rpy="0 0 0" 
                     origin_xyz="${MFJ2_Link_Origin_X} ${MFJ2_Link_Origin_Y} ${MFJ2_Link_Origin_Z}"
@@ -54,7 +54,7 @@
                     material="Gold"
                     collision_mesh="${mesh_root}/sf2_ssf3.stl"/>
 
-    <xacro:box_link name="${MFJ3_Distal_Link}" 
+    <xacro:box_link name="${MiddleFingerPitch3LinkName}" 
                     width="${MFJ3_Link_Width}" height="${MFJ3_Link_Height}" depth="${MFJ3_Link_Length}" mass="${MFJ3_Link_Mass}" 
                     origin_rpy="0 0 0" 
                     origin_xyz="${MFJ3_Link_Origin_X} ${MFJ3_Link_Origin_Y} ${MFJ3_Link_Origin_Z}"
@@ -63,33 +63,33 @@
                     collision_mesh="${mesh_root}/sf3_ssf4.stl"/>
 
     <!-- MFJ1 -->
-    <xacro:revolute_joint jointName="${MFJ1_Joint_Name}" 
-                          parent="${MFJ1_Proximal_Link}" child="${MFJ1_Distal_Link}"
-                          origin_xyz="${MFJ1_Origin_X} ${MFJ1_Origin_Y} ${MFJ1_Origin_Z}" 
-                          origin_rpy="${MFJ1_Orientation_Roll} ${MFJ1_Orientation_Pitch} ${MFJ1_Orientation_Yaw}">
-        <limit effort="${MFJ1_Torque_Limit}" lower="${MFJ1_Lower_Limit}" upper="${MFJ1_Upper_Limit}" velocity="${MFJ1_Speed_Limit}"/>
+    <xacro:revolute_joint jointName="${MiddleFingerPitch1JointName}" 
+                          parent="${MiddleFingerPitch1ParentLinkName}" child="${MiddleFingerPitch1LinkName}"
+                          origin_xyz="${MiddleFingerPitch1FrameOrigin_X} ${MiddleFingerPitch1FrameOrigin_Y} ${MiddleFingerPitch1FrameOrigin_Z}" 
+                          origin_rpy="${MiddleFingerPitch1FrameOrientation_Roll} ${MiddleFingerPitch1FrameOrientation_Pitch} ${MiddleFingerPitch1FrameOrientation_Yaw}">
+        <limit effort="${MiddleFingerPitch1TorqueLimit}" lower="${MiddleFingerPitch1PositionLimit_Lower}" upper="${MiddleFingerPitch1PositionLimit_Upper}" velocity="${MiddleFingerPitch1VelocityLimit}"/>
     </xacro:revolute_joint>
     
     <!-- MFJ2 -->
-    <xacro:revolute_joint jointName="${MFJ2_Joint_Name}" 
-                          parent="${MFJ2_Proximal_Link}" child="${MFJ2_Distal_Link}"
-                          origin_xyz="${MFJ2_Origin_X} ${MFJ2_Origin_Y} ${MFJ2_Origin_Z}" 
-                          origin_rpy="${MFJ2_Orientation_Roll} ${MFJ2_Orientation_Pitch} ${MFJ2_Orientation_Yaw}">
-        <limit effort="${MFJ2_Torque_Limit}" lower="${MFJ2_Lower_Limit}" upper="${MFJ2_Upper_Limit}" velocity="${MFJ2_Speed_Limit}"/>
+    <xacro:revolute_joint jointName="${MiddleFingerPitch2JointName}" 
+                          parent="${MiddleFingerPitch1LinkName}" child="${MiddleFingerPitch2LinkName}"
+                          origin_xyz="${MiddleFingerPitch2FrameOrigin_X} ${MiddleFingerPitch2FrameOrigin_Y} ${MiddleFingerPitch2FrameOrigin_Z}" 
+                          origin_rpy="${MiddleFingerPitch2FrameOrientation_Roll} ${MiddleFingerPitch2FrameOrientation_Pitch} ${MiddleFingerPitch2FrameOrientation_Yaw}">
+        <limit effort="${MiddleFingerPitch2TorqueLimit}" lower="${MiddleFingerPitch2PositionLimit_Lower}" upper="${MiddleFingerPitch2PositionLimit_Upper}" velocity="${MiddleFingerPitch2VelocityLimit}"/>
     </xacro:revolute_joint>
 
     <!-- MFJ3 -->
-    <xacro:revolute_joint jointName="${MFJ3_Joint_Name}" 
-                          parent="${MFJ3_Proximal_Link}" child="${MFJ3_Distal_Link}"
-                          origin_xyz="${MFJ3_Origin_X} ${MFJ3_Origin_Y} ${MFJ3_Origin_Z}" 
-                          origin_rpy="${MFJ3_Orientation_Roll} ${MFJ3_Orientation_Pitch} ${MFJ3_Orientation_Yaw}">
-        <limit effort="${MFJ3_Torque_Limit}" lower="${MFJ3_Lower_Limit}" upper="${MFJ3_Upper_Limit}" velocity="${MFJ3_Speed_Limit}"/>
+    <xacro:revolute_joint jointName="${MiddleFingerPitch3JointName}" 
+                          parent="${MiddleFingerPitch2LinkName}" child="${MiddleFingerPitch3LinkName}"
+                          origin_xyz="${MiddleFingerPitch3FrameOrigin_X} ${MiddleFingerPitch3FrameOrigin_Y} ${MiddleFingerPitch3FrameOrigin_Z}" 
+                          origin_rpy="${MiddleFingerPitch3FrameOrientation_Roll} ${MiddleFingerPitch3FrameOrientation_Pitch} ${MiddleFingerPitch3FrameOrientation_Yaw}">
+        <limit effort="${MiddleFingerPitch3TorqueLimit}" lower="${MiddleFingerPitch3PositionLimit_Lower}" upper="${MiddleFingerPitch3PositionLimit_Upper}" velocity="${MiddleFingerPitch3VelocityLimit}"/>
     </xacro:revolute_joint>
   </xacro:macro>
 
   <xacro:macro name="make_middle_finger_fixed" params="prefix reflect middle_finger_root_link">
     <!-- LINKS -->
-    <xacro:box_link name="${MFJ1_Distal_Link}" 
+    <xacro:box_link name="${MiddleFingerPitch1LinkName}" 
                     width="${MFJ1_Link_Width}" height="${MFJ1_Link_Height}" depth="${MFJ1_Link_Length}" mass="${MFJ1_Link_Mass}" 
                     origin_rpy="0 0 0" 
                     origin_xyz="${MFJ1_Link_Origin_X} ${MFJ1_Link_Origin_Y} ${MFJ1_Link_Origin_Z}"
@@ -97,7 +97,7 @@
                     material="Gold"
                     collision_mesh="${mesh_root}/sf1.stl"/>
 
-    <xacro:box_link name="${MFJ2_Distal_Link}" 
+    <xacro:box_link name="${MiddleFingerPitch2LinkName}" 
                     width="${MFJ2_Link_Width}" height="${MFJ2_Link_Height}" depth="${MFJ2_Link_Length}" mass="${MFJ2_Link_Mass}" 
                     origin_rpy="0 0 0" 
                     origin_xyz="${MFJ2_Link_Origin_X} ${MFJ2_Link_Origin_Y} ${MFJ2_Link_Origin_Z}"
@@ -105,7 +105,7 @@
                     material="Gold"
                     collision_mesh="${mesh_root}/sf2_ssf3.stl"/>
 
-    <xacro:box_link name="${MFJ3_Distal_Link}" 
+    <xacro:box_link name="${MiddleFingerPitch3LinkName}" 
                     width="${MFJ3_Link_Width}" height="${MFJ3_Link_Height}" depth="${MFJ3_Link_Length}" mass="${MFJ3_Link_Mass}" 
                     origin_rpy="0 0 0" 
                     origin_xyz="${MFJ3_Link_Origin_X} ${MFJ3_Link_Origin_Y} ${MFJ3_Link_Origin_Z}"
@@ -114,22 +114,22 @@
                     collision_mesh="${mesh_root}/sf3_ssf4.stl"/>
 
     <!-- MFJ1 -->
-    <xacro:fixed_joint jointName="${MFJ1_Joint_Name}" 
-                          parent="${MFJ1_Proximal_Link}" child="${MFJ1_Distal_Link}"
-                          origin_xyz="${MFJ1_Origin_X} ${MFJ1_Origin_Y} ${MFJ1_Origin_Z}" 
-                          origin_rpy="${MFJ1_Orientation_Roll} ${MFJ1_Orientation_Pitch} ${MFJ1_Orientation_Yaw}"/>
+    <xacro:fixed_joint jointName="${MiddleFingerPitch1JointName}" 
+                          parent="${MiddleFingerPitch1ParentLinkName}" child="${MiddleFingerPitch1LinkName}"
+                          origin_xyz="${MiddleFingerPitch1FrameOrigin_X} ${MiddleFingerPitch1FrameOrigin_Y} ${MiddleFingerPitch1FrameOrigin_Z}" 
+                          origin_rpy="${MiddleFingerPitch1FrameOrientation_Roll} ${MiddleFingerPitch1FrameOrientation_Pitch} ${MiddleFingerPitch1FrameOrientation_Yaw}"/>
     
     <!-- MFJ2 -->
-    <xacro:fixed_joint jointName="${MFJ2_Joint_Name}" 
-                          parent="${MFJ2_Proximal_Link}" child="${MFJ2_Distal_Link}"
-                          origin_xyz="${MFJ2_Origin_X} ${MFJ2_Origin_Y} ${MFJ2_Origin_Z}" 
-                          origin_rpy="${MFJ2_Orientation_Roll} ${MFJ2_Orientation_Pitch} ${MFJ2_Orientation_Yaw}"/>
+    <xacro:fixed_joint jointName="${MiddleFingerPitch2JointName}" 
+                          parent="${MiddleFingerPitch1LinkName}" child="${MiddleFingerPitch2LinkName}"
+                          origin_xyz="${MiddleFingerPitch2FrameOrigin_X} ${MiddleFingerPitch2FrameOrigin_Y} ${MiddleFingerPitch2FrameOrigin_Z}" 
+                          origin_rpy="${MiddleFingerPitch2FrameOrientation_Roll} ${MiddleFingerPitch2FrameOrientation_Pitch} ${MiddleFingerPitch2FrameOrientation_Yaw}"/>
 
     <!-- MFJ3 -->
-    <xacro:fixed_joint jointName="${MFJ3_Joint_Name}" 
-                          parent="${MFJ3_Proximal_Link}" child="${MFJ3_Distal_Link}"
-                          origin_xyz="${MFJ3_Origin_X} ${MFJ3_Origin_Y} ${MFJ3_Origin_Z}" 
-                          origin_rpy="${MFJ3_Orientation_Roll} ${MFJ3_Orientation_Pitch} ${MFJ3_Orientation_Yaw}"/>
+    <xacro:fixed_joint jointName="${MiddleFingerPitch3JointName}" 
+                          parent="${MiddleFingerPitch2LinkName}" child="${MiddleFingerPitch3LinkName}"
+                          origin_xyz="${MiddleFingerPitch3FrameOrigin_X} ${MiddleFingerPitch3FrameOrigin_Y} ${MiddleFingerPitch3FrameOrigin_Z}" 
+                          origin_rpy="${MiddleFingerPitch3FrameOrientation_Roll} ${MiddleFingerPitch3FrameOrientation_Pitch} ${MiddleFingerPitch3FrameOrientation_Yaw}"/>
   </xacro:macro>
 
   <!-- Actuators -->
@@ -144,39 +144,39 @@
   <!-- Transmissions -->
   <xacro:macro name="v1_right_middle_finger_transmissions" params="prefix">
     <xacro:finger3_transmission tranName="${prefix}MiddleFingerTransmission" 
-                                joint1="${MFJ1_Joint_Name}"
-                                joint2="${MFJ2_Joint_Name}"
-                                joint3="${MFJ3_Joint_Name}"
+                                joint1="${MiddleFingerPitch1JointName}"
+                                joint2="${MiddleFingerPitch2JointName}"
+                                joint3="${MiddleFingerPitch3JointName}"
                                 actuator="${RMFA_Actuator_Name}" />
   </xacro:macro>
 
   <xacro:macro name="v1_left_middle_finger_transmissions" params="prefix">
     <xacro:finger3_transmission tranName="${prefix}MiddleFingerTransmission" 
-                                joint1="${MFJ1_Joint_Name}"
-                                joint2="${MFJ2_Joint_Name}"
-                                joint3="${MFJ3_Joint_Name}"
+                                joint1="${MiddleFingerPitch1JointName}"
+                                joint2="${MiddleFingerPitch2JointName}"
+                                joint3="${MiddleFingerPitch3JointName}"
                                 actuator="${LMFA_Actuator_Name}" />
   </xacro:macro>
 
   <xacro:macro name="v1_right_middle_finger_transmissions_simple" params="prefix">
-    <xacro:simple_transmission jointName="${MFJ1_Joint_Name}" actuatorName="${RMFA_Actuator_Name}" reduction="1" offset="0"/>
+    <xacro:simple_transmission jointName="${MiddleFingerPitch1JointName}" actuatorName="${RMFA_Actuator_Name}" reduction="1" offset="0"/>
   </xacro:macro>
 
   <xacro:macro name="v1_left_middle_finger_transmissions_simple" params="prefix">
-    <xacro:simple_transmission jointName="${MFJ1_Joint_Name}" actuatorName="${LMFA_Actuator_Name}" reduction="1" offset="0"/>
+    <xacro:simple_transmission jointName="${MiddleFingerPitch1JointName}" actuatorName="${LMFA_Actuator_Name}" reduction="1" offset="0"/>
   </xacro:macro>
 
   <!-- Modes -->
   <xacro:macro name="v1_right_middle_finger_modes" params="prefix">
-    <xacro:v1_modes jointName="${MFJ1_Joint_Name}" actuatorName="${RMFA_Actuator_Name}" />
-    <xacro:v1_modes jointName="${MFJ2_Joint_Name}" actuatorName="${RMFA_Actuator_Name}" />
-    <xacro:v1_modes jointName="${MFJ3_Joint_Name}" actuatorName="${RMFA_Actuator_Name}" />
+    <xacro:v1_modes jointName="${MiddleFingerPitch1JointName}" actuatorName="${RMFA_Actuator_Name}" />
+    <xacro:v1_modes jointName="${MiddleFingerPitch2JointName}" actuatorName="${RMFA_Actuator_Name}" />
+    <xacro:v1_modes jointName="${MiddleFingerPitch3JointName}" actuatorName="${RMFA_Actuator_Name}" />
   </xacro:macro>
 
   <xacro:macro name="v1_left_middle_finger_modes" params="prefix">
-    <xacro:v1_modes jointName="${MFJ1_Joint_Name}" actuatorName="${LMFA_Actuator_Name}" />
-    <xacro:v1_modes jointName="${MFJ2_Joint_Name}" actuatorName="${LMFA_Actuator_Name}" />
-    <xacro:v1_modes jointName="${MFJ3_Joint_Name}" actuatorName="${LMFA_Actuator_Name}" />
+    <xacro:v1_modes jointName="${MiddleFingerPitch1JointName}" actuatorName="${LMFA_Actuator_Name}" />
+    <xacro:v1_modes jointName="${MiddleFingerPitch2JointName}" actuatorName="${LMFA_Actuator_Name}" />
+    <xacro:v1_modes jointName="${MiddleFingerPitch3JointName}" actuatorName="${LMFA_Actuator_Name}" />
   </xacro:macro>
 
   <!-- Complete interface -->

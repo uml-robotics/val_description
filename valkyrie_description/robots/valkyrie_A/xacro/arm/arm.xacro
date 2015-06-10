@@ -39,28 +39,28 @@
 
   <xacro:macro name="make_upper_arm" params="prefix reflect upper_arm_root_link">
     <!-- LINKS -->
-    <xacro:box_link name="${ShoulderPitchLink}"
+    <xacro:box_link name="${ShoulderPitchLinkName}"
                     width="${AJ1_Link_Width}" height="${AJ1_Link_Height}" depth="${AJ1_Link_Length}" mass="${ShoulderPitchLinkMass}"
                     origin_xyz="0 -0.01204 ${reflect * -0.251}" origin_rpy="0 0 0"
                     visual_mesh="${mesh_root}/aj1_${prefix}.stl"
                     material="Gold"
                     collision_mesh="${mesh_root}/aj1_${prefix}.stl" />
 
-    <xacro:box_link name="${ShoulderRollLink}"
+    <xacro:box_link name="${ShoulderRollLinkName}"
                     width="${AJ2_Link_Width}" height="${AJ2_Link_Height}" depth="${AJ2_Link_Length}" mass="${ShoulderRollLinkMass}"
                     origin_xyz="0.04 0.005 ${reflect * -0.02}" origin_rpy="0 0 0"
                     visual_mesh="${mesh_root}/aj2.stl"
                     material="White"
                     collision_mesh="${mesh_root}/aj2.stl" />
 
-    <xacro:box_link name="${ShoulderYawLink}"
+    <xacro:box_link name="${ShoulderYawLinkName}"
                     width="${AJ3_Link_Width}" height="${AJ3_Link_Height}" depth="${AJ3_Link_Length}" mass="${ShoulderYawLinkMass}"
                     origin_xyz="${reflect * 0.02} ${reflect * -0.004} ${reflect * -0.273}" origin_rpy="0 0 0"
                     visual_mesh="${mesh_root}/aj3_${prefix}.stl"
                     material="White"
                     collision_mesh="${mesh_root}/aj3_${prefix}.stl" />
 
-    <xacro:box_link name="${ElbowPitchLink}"
+    <xacro:box_link name="${ElbowPitchLinkName}"
                     width="${AJ4_Link_Width}" height="${AJ4_Link_Height}" depth="${AJ4_Link_Length}" mass="${ElbowPitchLinkMass}"
                     origin_rpy="0 0 0"
                     origin_xyz="0.0270 -0.0802 0"
@@ -70,7 +70,7 @@
 
     <!-- AJ1 -->
     <xacro:revolute_joint_ex jointName="${ShoulderPitchJointName}"
-                          parent="${upper_arm_root_link}" child="${ShoulderPitchLink}"
+                          parent="${upper_arm_root_link}" child="${ShoulderPitchLinkName}"
                           origin_xyz="${ShoulderPitchFrameOrigin_X} ${ShoulderPitchFrameOrigin_Y} ${ShoulderPitchFrameOrigin_Z}"
                           origin_rpy="${ShoulderPitchFrameOrientation_Roll} ${ShoulderPitchFrameOrientation_Pitch} ${ShoulderPitchFrameOrientation_Yaw}"
                           damping="1.0" friction="0.0">
@@ -80,7 +80,7 @@
 
     <!-- AJ2 -->
     <xacro:revolute_joint_ex jointName="${ShoulderRollJointName}"
-                          parent="${ShoulderPitchLink}" child="${ShoulderRollLink}"
+                          parent="${ShoulderPitchLinkName}" child="${ShoulderRollLinkName}"
                           origin_xyz="${ShoulderRollFrameOrigin_X} ${ShoulderRollFrameOrigin_Y} ${ShoulderRollFrameOrigin_Z}"
                           origin_rpy="${ShoulderRollFrameOrientation_Roll} ${ShoulderRollFrameOrientation_Pitch} ${ShoulderRollFrameOrientation_Yaw}"
                           damping="1.0" friction="0.0">
@@ -90,7 +90,7 @@
 
     <!-- AJ3 -->
     <xacro:revolute_joint_ex jointName="${ShoulderYawJointName}"
-                          parent="${ShoulderRollLink}" child="${ShoulderYawLink}"
+                          parent="${ShoulderRollLinkName}" child="${ShoulderYawLinkName}"
                           origin_xyz="${ShoulderYawFrameOrigin_X} ${ShoulderYawFrameOrigin_Y} ${ShoulderYawFrameOrigin_Z}"
                           origin_rpy="${ShoulderYawFrameOrientation_Roll} ${ShoulderYawFrameOrientation_Pitch} ${ShoulderYawFrameOrientation_Yaw}"
                           damping="1.0" friction="0.0">
@@ -100,7 +100,7 @@
 
     <!-- AJ4 -->
     <xacro:revolute_joint_ex jointName="${ElbowPitchJointName}"
-                          parent="${ShoulderYawLink}" child="${ElbowPitchLink}"
+                          parent="${ShoulderYawLinkName}" child="${ElbowPitchLinkName}"
                           origin_xyz="${ElbowPitchFrameOrigin_X} ${ElbowPitchFrameOrigin_Y} ${ElbowPitchFrameOrigin_Z}"
                           origin_rpy="${ElbowPitchFrameOrientation_Roll} ${ElbowPitchFrameOrientation_Pitch} ${ElbowPitchFrameOrientation_Yaw}"
                           damping="1.0" friction="0.0">
@@ -222,7 +222,7 @@
 
   <xacro:macro name="make_arm" params="prefix reflect arm_root_link">
     <xacro:make_upper_arm prefix="${prefix}" reflect="${reflect}" upper_arm_root_link="${arm_root_link}" />
-    <xacro:make_lower_arm prefix="${prefix}" reflect="${reflect}" lower_arm_root_link="${ElbowPitchLink}" />
+    <xacro:make_lower_arm prefix="${prefix}" reflect="${reflect}" lower_arm_root_link="${ElbowPitchLinkName}" />
   </xacro:macro>
 
   <!-- Sensors -->

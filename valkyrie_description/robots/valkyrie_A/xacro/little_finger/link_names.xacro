@@ -2,9 +2,9 @@
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="v1/little_finger/dh_parameters">
   
   <xacro:property name="PinkyPitch1ParentLinkName" value="${little_finger_root_link}" />
-  <xacro:property name="PinkyPitch1LinkName" value="${prefix}PinkyPitch1" />
-  <xacro:property name="PinkyPitch2LinkName" value="${prefix}PinkyPitch2" />
-  <xacro:property name="PinkyPitch3LinkName" value="${prefix}PinkyPitch3" />
-  <xacro:property name="PinkyPitch4LinkName" value="${prefix}PinkyPitch4" />
+  <xacro:property name="PinkyPitch1LinkName" value="${prefix}PinkyPitch1Link" />
+  <xacro:property name="PinkyPitch2LinkName" value="${prefix}PinkyPitch2Link" />
+  <xacro:property name="PinkyPitch3LinkName" value="${prefix}PinkyPitch3Link" />
+  <xacro:property name="PinkyPitch4LinkName" value="${prefix}PinkyPitch4Link" />
   
 </robot>
