@@ -1,8 +1,8 @@
 <?xml version="1.0" ?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="v1/middle_finger/mass_parameters">
   
-  <xacro:property name="MFJ1_Link_Mass" value="0.02" />
-  <xacro:property name="MFJ2_Link_Mass" value="0.011" />
-  <xacro:property name="MFJ3_Link_Mass" value="0.006" />
+  <xacro:property name="MiddleFingerPitch1LinkMass" value="0.02" />
+  <xacro:property name="MiddleFingerPitch2LinkMass" value="0.011" />
+  <xacro:property name="MiddleFingerPitch3LinkMass" value="0.006" />
   
 </robot>

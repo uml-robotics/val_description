@@ -39,7 +39,7 @@
   <xacro:macro name="make_middle_finger" params="prefix reflect middle_finger_root_link">
     <!-- LINKS -->
     <xacro:box_link name="${MiddleFingerPitch1LinkName}" 
-                    width="${MFJ1_Link_Width}" height="${MFJ1_Link_Height}" depth="${MFJ1_Link_Length}" mass="${MFJ1_Link_Mass}" 
+                    width="${MFJ1_Link_Width}" height="${MFJ1_Link_Height}" depth="${MFJ1_Link_Length}" mass="${MiddleFingerPitch1LinkMass}" 
                     origin_rpy="0 0 0" 
                     origin_xyz="${MFJ1_Link_Origin_X} ${MFJ1_Link_Origin_Y} ${MFJ1_Link_Origin_Z}"
                     visual_mesh="${mesh_root}/sf1.stl"
@@ -47,7 +47,7 @@
                     collision_mesh="${mesh_root}/sf1.stl"/>
 
     <xacro:box_link name="${MiddleFingerPitch2LinkName}" 
-                    width="${MFJ2_Link_Width}" height="${MFJ2_Link_Height}" depth="${MFJ2_Link_Length}" mass="${MFJ2_Link_Mass}" 
+                    width="${MFJ2_Link_Width}" height="${MFJ2_Link_Height}" depth="${MFJ2_Link_Length}" mass="${MiddleFingerPitch2LinkMass}" 
                     origin_rpy="0 0 0" 
                     origin_xyz="${MFJ2_Link_Origin_X} ${MFJ2_Link_Origin_Y} ${MFJ2_Link_Origin_Z}"
                     visual_mesh="${mesh_root}/sf2_ssf3.stl"
@@ -55,7 +55,7 @@
                     collision_mesh="${mesh_root}/sf2_ssf3.stl"/>
 
     <xacro:box_link name="${MiddleFingerPitch3LinkName}" 
-                    width="${MFJ3_Link_Width}" height="${MFJ3_Link_Height}" depth="${MFJ3_Link_Length}" mass="${MFJ3_Link_Mass}" 
+                    width="${MFJ3_Link_Width}" height="${MFJ3_Link_Height}" depth="${MFJ3_Link_Length}" mass="${MiddleFingerPitch3LinkMass}" 
                     origin_rpy="0 0 0" 
                     origin_xyz="${MFJ3_Link_Origin_X} ${MFJ3_Link_Origin_Y} ${MFJ3_Link_Origin_Z}"
                     visual_mesh="${mesh_root}/sf3_ssf4.stl"
@@ -90,7 +90,7 @@
   <xacro:macro name="make_middle_finger_fixed" params="prefix reflect middle_finger_root_link">
     <!-- LINKS -->
     <xacro:box_link name="${MiddleFingerPitch1LinkName}" 
-                    width="${MFJ1_Link_Width}" height="${MFJ1_Link_Height}" depth="${MFJ1_Link_Length}" mass="${MFJ1_Link_Mass}" 
+                    width="${MFJ1_Link_Width}" height="${MFJ1_Link_Height}" depth="${MFJ1_Link_Length}" mass="${MiddleFingerPitch1LinkMass}" 
                     origin_rpy="0 0 0" 
                     origin_xyz="${MFJ1_Link_Origin_X} ${MFJ1_Link_Origin_Y} ${MFJ1_Link_Origin_Z}"
                     visual_mesh="${mesh_root}/sf1.stl"
@@ -98,7 +98,7 @@
                     collision_mesh="${mesh_root}/sf1.stl"/>
 
     <xacro:box_link name="${MiddleFingerPitch2LinkName}" 
-                    width="${MFJ2_Link_Width}" height="${MFJ2_Link_Height}" depth="${MFJ2_Link_Length}" mass="${MFJ2_Link_Mass}" 
+                    width="${MFJ2_Link_Width}" height="${MFJ2_Link_Height}" depth="${MFJ2_Link_Length}" mass="${MiddleFingerPitch2LinkMass}" 
                     origin_rpy="0 0 0" 
                     origin_xyz="${MFJ2_Link_Origin_X} ${MFJ2_Link_Origin_Y} ${MFJ2_Link_Origin_Z}"
                     visual_mesh="${mesh_root}/sf2_ssf3.stl"
@@ -106,7 +106,7 @@
                     collision_mesh="${mesh_root}/sf2_ssf3.stl"/>
 
     <xacro:box_link name="${MiddleFingerPitch3LinkName}" 
-                    width="${MFJ3_Link_Width}" height="${MFJ3_Link_Height}" depth="${MFJ3_Link_Length}" mass="${MFJ3_Link_Mass}" 
+                    width="${MFJ3_Link_Width}" height="${MFJ3_Link_Height}" depth="${MFJ3_Link_Length}" mass="${MiddleFingerPitch3LinkMass}" 
                     origin_rpy="0 0 0" 
                     origin_xyz="${MFJ3_Link_Origin_X} ${MFJ3_Link_Origin_Y} ${MFJ3_Link_Origin_Z}"
                     visual_mesh="${mesh_root}/sf3_ssf4.stl"
