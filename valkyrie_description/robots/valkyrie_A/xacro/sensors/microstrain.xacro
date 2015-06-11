@@ -8,19 +8,9 @@
   <xacro:property name="MicrostrainMass" value="0.0000001"/>
 
   <xacro:macro name="microstrain_sensor" params="sensorName parentLink origin_xyz origin_rpy">
-    <xacro:box_link_no_mesh name="${sensorName}_Frame"
-                    width="${MicrostrainWidth}" height="${MicrostrainDepth}" depth="${MicrostrainHeight}" mass="${MicrostrainMass}"
+    <xacro:massless_virtual_link name="${sensorName}_Frame"
                     origin_rpy="0 0 0"
                     origin_xyz="0 0 0"/>
-
-    <gazebo>
-      <plugin filename="libgazebo_ros_imu.so" name="imu_plugin_ros">
-        <alwaysOn>true</alwaysOn>
-        <bodyName>${parentLink}</bodyName>
-        <topicName>${sensorName}/imu</topicName>
-        <serviceName>${sensorName}/imu_service</serviceName>
-      </plugin>
-    </gazebo>
 
     <xacro:fixed_joint jointName="${sensorName}_Offset"
                        parent="${parentLink}" child="${sensorName}_Frame"

@@ -35,6 +35,7 @@
 
     <!-- ===== HEAD ===== -->
     <xacro:make_head head_root_link="${TorsoRollLinkName}" />
+    <xacro:v1_head_sensors />
     <!-- <xacro:make_head_interface name1="/neck/j1" type1="${neck_type1}"
                                name2="/neck/j2" type2="${neck_type2}"
                                name3="/neck/j3" type3="${neck_type3}"/> -->

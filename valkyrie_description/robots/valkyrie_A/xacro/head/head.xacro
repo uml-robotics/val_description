@@ -116,31 +116,20 @@
   <!-- Sensors -->
   <xacro:macro name="v1_head_sensors">
 
-    <xacro:camboard_sensor sensorName="/v1/HeadCamBoard"
-                           parentLink="${UpperNeckPitchLinkName}"
-                           origin_xyz="-0.186861111 0.085358875 -0.008499998"
-                           origin_rpy="1.57 3.14 -.61"/>
-
-    <xacro:ibeo_sensor sensorName="/v1/Ibeo"
-                       parentLink="${UpperNeckPitchLinkName}"
-                       origin_xyz="-0.133 0.0065 -0.02325"
-                       origin_rpy="-1.57 0 -3.14"/>
-
-
-    <xacro:ensenso_sensor sensorName="/v1/Ensenso"
+    <xacro:ensenso_sensor sensorName="Ensenso"
                         parentLink="${UpperNeckPitchLinkName}"
-                        origin_xyz="-.1836 -.0645 -.00311"
-                        origin_rpy="0 -1.57 0"/>
+                        origin_xyz="0.1781 0.0 0.062"
+                        origin_rpy="1.57 -2.88 0"/>
 
-    <xacro:microstrain_sensor sensorName="/v1/HeadIMU"
+    <xacro:microstrain_sensor sensorName="HeadIMU"
                               parentLink="${UpperNeckPitchLinkName}"
-                              origin_xyz="-0.103 -0.05239 0.00022730"
-                              origin_rpy="-1.57 0  0" />
+                              origin_xyz="0.098 0.0 0.052"
+                              origin_rpy="-1.57 1.57 0.0" />
 
-    <xacro:webcam_camera sensorName="/v1/HeadWebcam"
+    <xacro:webcam_camera sensorName="HeadWebcam"
                         parentLink="${UpperNeckPitchLinkName}"
-                        origin_xyz="-0.180139 -0.10168 0.00"
-                        origin_rpy="1.57 3.14 -0.2618"
+                        origin_xyz="0.1801 0.0 0.102"
+                        origin_rpy="1.57 -2.88 0.0"
                         imageFormat="R8G8B8"
                         frameRate="60"/>
   </xacro:macro>

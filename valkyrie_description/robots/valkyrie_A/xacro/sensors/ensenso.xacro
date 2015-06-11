@@ -16,45 +16,13 @@
   <xacro:property name="EnsenoFrameRate" value="30"/>
   
   <xacro:macro name="ensenso_sensor" params="sensorName parentLink origin_xyz origin_rpy">
-    <xacro:virtual_link name="${sensorName}_Frame" 
+    <xacro:massless_virtual_link name="${sensorName}_Frame" 
                     origin_rpy="0 0 0" 
                     origin_xyz="0 0 0"/>
-
-    <gazebo reference="${sensorName}_Frame">
-      <sensor name="${sensorName}" type="camera">
-        <camera>
-          <image>
-            <width>${EnsensoImageWidth}</width>
-            <height>${EnsensoImageHeight}</height>
-            <format>${EnsenoImageFormat}</format>
-          </image>
-          <horizontal_fov>${EnsensoFieldOfView}</horizontal_fov> 
-          <clip>
-            <near>${EnsensoMinDistance}</near>
-            <far>${EnsensoMaxDistance}</far>
-          </clip>
-        </camera>
-        <update_rate>${EnsenoFrameRate}</update_rate>
-        <plugin filename="libgazebo_ros_camera.so" name="${sensorName}_controller">
-          <frameName>${sensorName}_Frame</frameName>
-          <imageTopicName>image_raw</imageTopicName>
-          <cameraName>${sensorName}</cameraName>
-        </plugin>
-      </sensor>
-    </gazebo>
 
     <xacro:fixed_joint jointName="${sensorName}_Offset"
                        parent="${parentLink}" child="${sensorName}_Frame"
                        origin_rpy="${origin_rpy}"
                        origin_xyz="${origin_xyz}"/>
-
-    <xacro:virtual_link name="${sensorName}IR_Frame"
-                    origin_rpy="0 0 0"
-                    origin_xyz="0 0 0"/>              
-
-    <xacro:fixed_joint jointName="${sensorName}IR_Offset"
-                       parent="${sensorName}_Frame" child="${sensorName}IR_Frame"
-                       origin_rpy="-0.31182 0.0562965 -0.0034575"
-                       origin_xyz="0.0 0.006939 0.014954"/>
   </xacro:macro>
 </robot>

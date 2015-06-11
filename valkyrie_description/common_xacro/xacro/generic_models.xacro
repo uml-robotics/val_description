@@ -303,7 +303,6 @@
   <xacro:property name="virtual_link_height" value="0.05"/>
   <xacro:macro name="virtual_link" params="name origin_xyz origin_rpy">
     <link name="${name}">
-      <!-- Virtual Link -->
       <inertial>
         <mass value="${virtual_link_mass}" />
         <origin rpy="${origin_rpy}" xyz="${origin_xyz}"/>

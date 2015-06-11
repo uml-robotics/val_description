@@ -19,29 +19,6 @@
                     origin_rpy="0 0 0" 
                     origin_xyz="0 0 0"/>
 
-    <gazebo reference="${sensorName}_Frame">
-      <sensor name="${sensorName}" type="camera">
-        <camera>
-          <image>
-            <width>${WebcamImageWidth}</width>
-            <height>${WebcamImageHeight}</height>
-            <format>${imageFormat}</format>
-          </image>
-          <horizontal_fov>${WebcamFieldOfView}</horizontal_fov> 
-          <clip>
-            <near>${WebcamMinDistance}</near>
-            <far>${WebcamMaxDistance}</far>
-          </clip>
-        </camera>
-        <update_rate>${frameRate}</update_rate>
-        <plugin filename="libgazebo_ros_camera.so" name="${sensorName}_controller">
-          <frameName>${sensorName}_Frame</frameName>
-          <imageTopicName>image_raw</imageTopicName>
-          <cameraName>${sensorName}</cameraName>
-        </plugin>
-      </sensor>
-    </gazebo>
-
     <xacro:fixed_joint jointName="${sensorName}_Offset"
                        parent="${parentLink}" child="${sensorName}_Frame"
                        origin_rpy="${origin_rpy}"
