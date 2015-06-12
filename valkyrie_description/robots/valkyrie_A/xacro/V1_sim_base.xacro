@@ -30,7 +30,7 @@
 
     <xacro:make_waist waist_root_link="${Pelvis_Link_Name}" />
     <!-- <xacro:v1_waist_actuators name1="${waist_name1}" type1="${waist_type1}" name2="${waist_name2}" type2="${waist_type2}" name3="${waist_name3}" type3="${waist_type3}"/> -->
-    <!-- <xacro:v1_trunk_sensors/> -->
+    <xacro:v1_trunk_sensors/>
 
     <!-- ===== HEAD ===== -->
     <xacro:make_head head_root_link="${TorsoRollLinkName}" />
