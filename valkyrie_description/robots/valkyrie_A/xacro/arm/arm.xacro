@@ -73,7 +73,7 @@
                           parent="${upper_arm_root_link}" child="${ShoulderPitchLinkName}"
                           origin_xyz="${ShoulderPitchFrameOrigin_X} ${ShoulderPitchFrameOrigin_Y} ${ShoulderPitchFrameOrigin_Z}"
                           origin_rpy="${ShoulderPitchFrameOrientation_Roll} ${ShoulderPitchFrameOrientation_Pitch} ${ShoulderPitchFrameOrientation_Yaw}"
-                          damping="1.0" friction="0.0">
+                          damping="0.1" friction="0.0">
         <limit effort="${ShoulderPitchTorqueLimit}" lower="${ShoulderPitchPositionLimit_Lower}" upper="${ShoulderPitchPositionLimit_Upper}" velocity="${ShoulderPitchVelocityLimit}"/>
         <controller_gains Kp="20000" Kd="400"/>
     </xacro:revolute_joint_ex>
@@ -83,7 +83,7 @@
                           parent="${ShoulderPitchLinkName}" child="${ShoulderRollLinkName}"
                           origin_xyz="${ShoulderRollFrameOrigin_X} ${ShoulderRollFrameOrigin_Y} ${ShoulderRollFrameOrigin_Z}"
                           origin_rpy="${ShoulderRollFrameOrientation_Roll} ${ShoulderRollFrameOrientation_Pitch} ${ShoulderRollFrameOrientation_Yaw}"
-                          damping="1.0" friction="0.0">
+                          damping="0.1" friction="0.0">
         <limit effort="${ShoulderRollTorqueLimit}" lower="${ShoulderRollPositionLimit_Lower}" upper="${ShoulderRollPositionLimit_Upper}" velocity="${ShoulderRollVelocityLimit}"/>
         <controller_gains Kp="20000" Kd="400"/>
     </xacro:revolute_joint_ex>
@@ -93,7 +93,7 @@
                           parent="${ShoulderRollLinkName}" child="${ShoulderYawLinkName}"
                           origin_xyz="${ShoulderYawFrameOrigin_X} ${ShoulderYawFrameOrigin_Y} ${ShoulderYawFrameOrigin_Z}"
                           origin_rpy="${ShoulderYawFrameOrientation_Roll} ${ShoulderYawFrameOrientation_Pitch} ${ShoulderYawFrameOrientation_Yaw}"
-                          damping="1.0" friction="0.0">
+                          damping="0.1" friction="0.0">
         <limit effort="${ShoulderYawTorqueLimit}" lower="${ShoulderYawPositionLimit_Lower}" upper="${ShoulderYawPositionLimit_Upper}" velocity="${ShoulderYawVelocityLimit}"/>
         <controller_gains Kp="20000" Kd="400"/>
     </xacro:revolute_joint_ex>
@@ -103,7 +103,7 @@
                           parent="${ShoulderYawLinkName}" child="${ElbowPitchLinkName}"
                           origin_xyz="${ElbowPitchFrameOrigin_X} ${ElbowPitchFrameOrigin_Y} ${ElbowPitchFrameOrigin_Z}"
                           origin_rpy="${ElbowPitchFrameOrientation_Roll} ${ElbowPitchFrameOrientation_Pitch} ${ElbowPitchFrameOrientation_Yaw}"
-                          damping="1.0" friction="0.0">
+                          damping="0.1" friction="0.0">
         <limit effort="${ElbowPitchTorqueLimit}" lower="${ElbowPitchPositionLimit_Lower}" upper="${ElbowPitchPositionLimit_Upper}" velocity="${ElbowPitchVelocityLimit}"/>
         <controller_gains Kp="20000" Kd="400"/>
     </xacro:revolute_joint_ex>
@@ -138,7 +138,7 @@
                           parent="${lower_arm_root_link}" child="${ForearmLinkName}"
                           origin_xyz="${ForearmYawFrameOrigin_X} ${ForearmYawFrameOrigin_Y} ${ForearmYawFrameOrigin_Z}"
                           origin_rpy="${ForearmYawFrameOrientation_Roll} ${ForearmYawFrameOrientation_Pitch} ${ForearmYawFrameOrientation_Yaw}"
-                          damping="1.0" friction="0.0">
+                          damping="0.1" friction="0.0">
         <limit effort="${ForearmYawTorqueLimit}" lower="${ForearmYawPositionLimit_Lower}" upper="${ForearmYawPositionLimit_Upper}" velocity="${ForearmYawVelocityLimit}"/>
         <controller_gains Kp="20000" Kd="0"/>
     </xacro:revolute_joint_ex>
@@ -148,7 +148,7 @@
                           parent="${ForearmLinkName}" child="${WristRollLinkName}"
                           origin_xyz="${WristRollFrameOrigin_X} ${WristRollFrameOrigin_Y} ${WristRollFrameOrigin_Z}"
                           origin_rpy="${WristRollFrameOrientation_Roll} ${WristRollFrameOrientation_Pitch} ${WristRollFrameOrientation_Yaw}"
-                          damping="1.0" friction="0.0">
+                          damping="0.1" friction="0.0">
         <limit effort="${WristRollTorqueLimit}" lower="${WristRollPositionLimit_Lower}" upper="${WristRollPositionLimit_Upper}" velocity="${WristRollVelocityLimit}"/>
         <controller_gains Kp="20000" Kd="400"/>
     </xacro:revolute_joint_ex>
@@ -158,7 +158,7 @@
                           parent="${WristRollLinkName}" child="${WristPitchLinkName}"
                           origin_xyz="${WristPitchFrameOrigin_X} ${WristPitchFrameOrigin_Y} ${WristPitchFrameOrigin_Z}"
                           origin_rpy="${WristPitchFrameOrientation_Roll} ${WristPitchFrameOrientation_Pitch} ${WristPitchFrameOrientation_Yaw}"
-                          damping="1.0" friction="0.0">
+                          damping="0.1" friction="0.0">
         <limit effort="${WristPitchTorqueLimit}" lower="${WristPitchPositionLimit_Lower}" upper="${WristPitchPositionLimit_Upper}" velocity="${WristPitchVelocityLimit}"/>
         <controller_gains Kp="20000" Kd="400"/>
     </xacro:revolute_joint_ex>

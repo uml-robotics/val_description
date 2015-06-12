@@ -24,7 +24,7 @@
                           parent="${TorsoYawParentLinkName}" child="${TorsoYawLinkName}"
                           origin_xyz="${TorsoYawFrameOrigin_X} ${TorsoYawFrameOrigin_Y} ${TorsoYawFrameOrigin_Z}"
                           origin_rpy="${TorsoYawFrameOrientation_Roll} ${TorsoYawFrameOrientation_Pitch} ${TorsoYawFrameOrientation_Yaw}"
-                          damping="1.0" friction="0.0">
+                          damping="0.1" friction="0.0">
         <limit effort="${TorsoYawTorqueLimit}" lower="${TorsoYawPositionLimit_Lower}" upper="${TorsoYawPositionLimit_Upper}" velocity="${TorsoYawVelocityLimit}"/>
         <controller_gains Kp="20000" Kd="400"/>
     </xacro:revolute_joint_ex>
@@ -33,7 +33,7 @@
                           parent="${TorsoYawLinkName}" child="${TorsoPitchLinkName}"
                           origin_xyz="${TorsoPitchFrameOrigin_X} ${TorsoPitchFrameOrigin_Y} ${TorsoPitchFrameOrigin_Z}"
                           origin_rpy="${TorsoPitchFrameOrientation_Roll} ${TorsoPitchFrameOrientation_Pitch} ${TorsoPitchFrameOrientation_Yaw}"
-                          damping="1.0" friction="0.0">
+                          damping="0.1" friction="0.0">
         <limit effort="${TorsoPitchTorqueLimit}" lower="${TorsoPitchPositionLimit_Lower}" upper="${TorsoPitchPositionLimit_Upper}" velocity="${TorsoPitchVelocityLimit}"/>
         <controller_gains Kp="20000" Kd="400"/>
     </xacro:revolute_joint_ex>
@@ -43,7 +43,7 @@
                           parent="${TorsoPitchLinkName}" child="${TorsoRollLinkName}"
                           origin_xyz="${TorsoRollFrameOrigin_X} ${TorsoRollFrameOrigin_Y} ${TorsoRollFrameOrigin_Z}"
                           origin_rpy="${TorsoRollFrameOrientation_Roll} ${TorsoRollFrameOrientation_Pitch} ${TorsoRollFrameOrientation_Yaw}"
-                          damping="1.0" friction="0.0">
+                          damping="0.1" friction="0.0">
         <limit effort="${TorsoRollTorqueLimit}" lower="${TorsoRollPositionLimit_Lower}" upper="${TorsoRollPositionLimit_Upper}" velocity="${TorsoRollVelocityLimit}"/>
         <controller_gains Kp="20000" Kd="400"/>
     </xacro:revolute_joint_ex>
@@ -128,7 +128,7 @@
                           parent="${TorsoYawParentLinkName}" child="${TorsoYawLinkName}"
                           origin_xyz="${TorsoYawFrameOrigin_X} ${TorsoYawFrameOrigin_Y} ${TorsoYawFrameOrigin_Z}"
                           origin_rpy="${TorsoYawFrameOrientation_Roll} ${TorsoYawFrameOrientation_Pitch} ${TorsoYawFrameOrientation_Yaw}"
-                          damping="1.0" friction="0.0">
+                          damping="0.1" friction="0.0">
         <limit effort="${TorsoYawTorqueLimit}" lower="${TorsoYawPositionLimit_Lower}" upper="${TorsoYawPositionLimit_Upper}" velocity="${TorsoYawVelocityLimit}"/>
         <controller_gains Kp="20000" Kd="400"/>
     </xacro:revolute_joint_ex>
