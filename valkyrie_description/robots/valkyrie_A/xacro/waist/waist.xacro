@@ -158,31 +158,26 @@
   <xacro:macro name="v1_trunk_sensors">
     <xacro:microstrain_sensor sensorName="RightIMU"
                               parentLink="${TorsoRollLinkName}"
-                              origin_xyz="0.363038 0.134239 -0.0468630"
-                              origin_rpy="-1.57 1.57 0" />
+                              origin_xyz="-0.047 -0.134 0.363"
+                              origin_rpy="-1.57 0.0 3.14" />
 
     <xacro:microstrain_sensor sensorName="LeftIMU"
                               parentLink="${TorsoRollLinkName}"
-                              origin_xyz="0.363038 -0.134239  -0.0468630"
-                              origin_rpy="1.57 1.57 0" />
+                              origin_xyz="-0.047 0.134 0.363"
+                              origin_rpy="1.57 0.0 3.14" />
 
     <xacro:flea3_camera sensorName="RightHazardCamera"
                         parentLink="${TorsoRollLinkName}"
-                        origin_xyz="0.0446987 0.0406146 0.0182674"
-                        origin_rpy="0 0 0"
+                        origin_xyz="0.0345 -0.0406 0.1135"
+                        origin_rpy="1.57 0.0 1.57"
                         imageFormat="R8G8B8"
                         frameRate="60"/>
 
     <xacro:flea3_camera sensorName="LeftHazardCamera"
                         parentLink="${TorsoRollLinkName}"
-                        origin_xyz="0.0446987 -0.0406146 0.0182674"
-                        origin_rpy="0 0 0"
+                        origin_xyz="0.0345 0.0406 0.1135"
+                        origin_rpy="1.57 0.0 1.57"
                         imageFormat="R8G8B8"
                         frameRate="60"/>
-
-    <xacro:massless_virtual_sensor sensorName="StereoHazardCamera"
-                          parentLink="${TorsoRollLinkName}"
-                          origin_xyz=".1723 -0.04535 0.0344"
-                          origin_rpy="0 0 1.57" />
    </xacro:macro>
 </robot>
