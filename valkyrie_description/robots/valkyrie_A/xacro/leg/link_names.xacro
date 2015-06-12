@@ -6,10 +6,6 @@
   <xacro:property name="HipRollLinkName" value="${prefix}HipRollLink" />
   <xacro:property name="HipPitchLinkName" value="${prefix}HipPitchLink" />
   <xacro:property name="KneePitchLinkName" value="${prefix}KneePitchLink" />
-
-  <xacro:property name="LJ4_Distal_Link_Cylinder1" value="${prefix}MedialAnkleActuator" />
-  <xacro:property name="LJ4_Distal_Link_Cylinder2" value="${prefix}LateralAnkleActuator" />
-
   <xacro:property name="AnklePitchLinkName" value="${prefix}AnklePitchLink" />
   <xacro:property name="AnkleRollLinkName" value="${prefix}Foot" />
 

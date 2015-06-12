@@ -6,7 +6,6 @@
     <xacro:include filename="$(find common_xacro)/xacro/materials.xacro" />
     <xacro:include filename="$(find valkyrie_description)/robots/valkyrie_A/xacro/common/common_bodies.xacro" />
 
-    <xacro:include filename="$(find valkyrie_description)/robots/valkyrie_A/xacro/utility/utility.xacro" />
     <xacro:include filename="$(find valkyrie_description)/robots/valkyrie_A/xacro/common/actuator_names.xacro" />
 
     <!-- ===== GAZEBO PLUGINS ===== -->

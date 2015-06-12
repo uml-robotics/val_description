@@ -5,9 +5,6 @@
   <xacro:include filename="$(find valkyrie_description)/robots/valkyrie_A/xacro/leg/joint_limits.xacro"/>
   <xacro:include filename="$(find valkyrie_description)/robots/valkyrie_A/xacro/leg/frame_parameters.xacro"/>
   <xacro:include filename="$(find valkyrie_description)/robots/valkyrie_A/xacro/leg/mass_parameters.xacro"/>
-  <xacro:include filename="$(find valkyrie_description)/robots/valkyrie_A/xacro/sensors/camboard.xacro"/>
-  <xacro:include filename="$(find valkyrie_description)/robots/valkyrie_A/xacro/sensors/hokuyo.xacro"/>
-  <xacro:include filename="$(find valkyrie_description)/robots/valkyrie_A/xacro/sensors/hw_sensors.xacro"/>
   <xacro:include filename="$(find valkyrie_description)/robots/valkyrie_A/xacro/sensors/ati_force_torque.xacro"/>
 
   <xacro:property name="LJ1_Link_Width" value="0.149"/>
@@ -248,15 +245,10 @@
                        origin_xyz="0.0189 0.0 -0.0783"
                        origin_rpy="0.0 0.13 0.0"/>
 
-    <xacro:ati_force_torque_sensor sensorName="${prefix}Leg6Axis"
+    <xacro:ati_force_torque_sensor sensorName="${prefix}LegSixAxis"
                         parentLink="${AnkleRollLinkName}"
                         origin_xyz="0.022 0.0 -0.059"
                         origin_rpy="3.14 0.0 -1.047"/>
-  </xacro:macro>
-
-  <xacro:macro name="v1_hw_sensors" params="prefix cop_node hermes_node atidaq_node">
-    <xacro:cop_sensor sensorName="${prefix}ValkyrieCOP" nodePath="${cop_node}" type="ValkyrieCOPSensor"/>
-    <xacro:cop_sensor sensorName="/v1/${prefix}Leg6Axis" nodePath="${atidaq_node}" type="COPSensorAti"/> -->
   </xacro:macro>
 
   <xacro:macro name="v1_leg_actuators" params="name1 type1 name2 type2 name3 type3 name4 type4 name5 type5 name6 type6">
