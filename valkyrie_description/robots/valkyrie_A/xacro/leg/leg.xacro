@@ -8,6 +8,7 @@
   <xacro:include filename="$(find valkyrie_description)/robots/valkyrie_A/xacro/sensors/camboard.xacro"/>
   <xacro:include filename="$(find valkyrie_description)/robots/valkyrie_A/xacro/sensors/hokuyo.xacro"/>
   <xacro:include filename="$(find valkyrie_description)/robots/valkyrie_A/xacro/sensors/hw_sensors.xacro"/>
+  <xacro:include filename="$(find valkyrie_description)/robots/valkyrie_A/xacro/sensors/ati_force_torque.xacro"/>
 
   <xacro:property name="LJ1_Link_Width" value="0.149"/>
   <xacro:property name="LJ1_Link_Height" value="0.185"/>
@@ -242,37 +243,20 @@
   <!-- Sensors -->
   <xacro:macro name="v1_leg_sensors" params="prefix reflect">
 
-    <xacro:camboard_sensor sensorName="/v1/${prefix}LegCamBoard"
-                       parentLink="${KneePitchLinkName}"
-                       origin_xyz="0.344887 0.069118 ${reflect * -0.008500}"
-                       origin_rpy="-1.57 0 1.3"/>
-
-    <xacro:virtual_fixed_frame_offset name="/v1/${prefix}COP"
+    <xacro:virtual_fixed_frame_offset name="${prefix}COP"
                        parentLink="${AnkleRollLinkName}"
-                       origin_xyz="0.0845 0 0"
-                       origin_rpy="${1.57 + reflect * -1.57} ${reflect * -1.57} 0"/>
+                       origin_xyz="0.0189 0.0 -0.0783"
+                       origin_rpy="0.0 0.13 0.0"/>
 
-    <xacro:virtual_fixed_frame_offset name="/v1/${prefix}Leg6Axis"
-                       parentLink="${AnkleRollLinkName}"
-                       origin_xyz="0.058547 0 ${reflect * 0.0215}"
-                       origin_rpy="0 0 0"/>
-
-    <xacro:virtual_fixed_frame_offset name="/v1/${prefix}LegHermes"
-                       parentLink="${AnkleRollLinkName}"
-                       origin_xyz="0.0845 0 0"
-                       origin_rpy="${1.57 + reflect * -1.57} ${reflect * -1.57} 0"/>
-
-    <xacro:virtual_fixed_frame_offset name="/v1/${prefix}MPU6000"
-                       parentLink="${AnkleRollLinkName}"
-                       origin_xyz="0.0471 ${reflect * 0.00722} ${reflect * 0.0843}"
-                       origin_rpy="0 ${reflect * 1.57 - 0.13} ${1.57 + reflect * 1.57}"/>
+    <xacro:ati_force_torque_sensor sensorName="${prefix}Leg6Axis"
+                        parentLink="${AnkleRollLinkName}"
+                        origin_xyz="0.022 0.0 -0.059"
+                        origin_rpy="3.14 0.0 -1.047"/>
   </xacro:macro>
 
-  <xacro:macro name="v1_hw_sensors" params="prefix cop_node hermes_node atidaq_node mpu6000_node">
-    <xacro:cop_sensor sensorName="/v1/${prefix}ValkyrieCOP" nodePath="${cop_node}" type="ValkyrieCOPSensor"/>
-<!--     <xacro:cop_sensor sensorName="/v1/${prefix}LegHermes" nodePath="${hermes_node}" type="COPSensorHermes"/>
+  <xacro:macro name="v1_hw_sensors" params="prefix cop_node hermes_node atidaq_node">
+    <xacro:cop_sensor sensorName="${prefix}ValkyrieCOP" nodePath="${cop_node}" type="ValkyrieCOPSensor"/>
     <xacro:cop_sensor sensorName="/v1/${prefix}Leg6Axis" nodePath="${atidaq_node}" type="COPSensorAti"/> -->
-    <xacro:imu_sensor sensorName="/v1/${prefix}MPU6000" nodePath="${mpu6000_node}" type="IMUSensorMPU6000"/>
   </xacro:macro>
 
   <xacro:macro name="v1_leg_actuators" params="name1 type1 name2 type2 name3 type3 name4 type4 name5 type5 name6 type6">

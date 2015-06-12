@@ -82,10 +82,11 @@
                             name4="${rightleg_name4}" type4="${leg_type4}"
                             name5="${rightleg_name5}" type5="${leg_type5}"
                             name6="${rightleg_name6}" type6="${leg_type6}"/> -->
-    <!-- <xacro:v1_leg_sensors prefix="Right" reflect="1" /> -->
+    <xacro:v1_leg_sensors prefix="Right" reflect="-1" />
     <!-- <xacro:v1_hw_sensors prefix="Right" hermes_node="${rightleg_hermes}" atidaq_node="${rightleg_ati}" mpu6000_node="${rightleg_mpu2000}" cop_node="${rightleg_cop}"/> -->
 
     <xacro:make_leg prefix="Left" reflect="1" leg_root_link="${Pelvis_Link_Name}" />
+    <xacro:v1_leg_sensors prefix="Left" reflect="1" />
     <!-- <xacro:v1_leg_actuators name1="${leftleg_name1}" type1="${leg_type1}"
                             name2="${leftleg_name2}" type2="${leg_type2}"
                             name3="${leftleg_name3}" type3="${leg_type3}"

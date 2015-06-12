@@ -1,6 +1,6 @@
 <?xml version="1.0" ?>
-<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="v1/asus">
-  <xacro:macro name="ensenso_sensor" params="sensorName parentLink origin_xyz origin_rpy">
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="ati_force_torque_sensor">
+  <xacro:macro name="ati_force_torque_sensor" params="sensorName parentLink origin_xyz origin_rpy">
     <xacro:massless_virtual_link name="${sensorName}_Frame" 
                     origin_rpy="0 0 0" 
                     origin_xyz="0 0 0"/>
