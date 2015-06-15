@@ -34,11 +34,6 @@
           </clip>
         </camera>
         <update_rate>${frameRate}</update_rate>
-        <plugin filename="libgazebo_ros_camera.so" name="${sensorName}_controller">
-          <frameName>${sensorName}_Frame</frameName>
-          <imageTopicName>image_raw</imageTopicName>
-          <cameraName>${sensorName}</cameraName>
-        </plugin>
       </sensor>
     </gazebo>
 

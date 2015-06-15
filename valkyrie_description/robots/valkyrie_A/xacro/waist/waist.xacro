@@ -53,9 +53,9 @@
                     width="${Trunk_Width}" height="${Trunk_Height}" depth="${Trunk_Length}" mass="${TorsoRollLinkMass}"
                     origin_rpy="0 0 0"
                     origin_xyz="0.219 0.03 -0.104"
-                    visual_mesh="${mesh_root}/wj3.stl"
+                    visual_mesh="${mesh_root}/torso.stl"
                     material="White"
-                    collision_mesh="${mesh_root}/wj3.stl" />
+                    collision_mesh="${mesh_root}/torso.stl" />
     <xacro:make_waist_common waist_root_link="${waist_root_link}"/>
   </xacro:macro>
 
