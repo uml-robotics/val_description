@@ -361,10 +361,10 @@
     </link>
   </xacro:macro>
 
-  <xacro:macro name="revolute_joint" params="jointName parent child origin_xyz origin_rpy *limits">
+  <xacro:macro name="revolute_joint" params="jointName parent child origin_xyz origin_rpy axis *limits">
     <joint name="${jointName}" type="revolute">
       <origin rpy="${origin_rpy}" xyz="${origin_xyz}"/>
-      <axis xyz="0 0 1"/>
+      <axis xyz="${axis}"/>
       <parent link="${parent}"/>
       <child link="${child}"/>
       <xacro:insert_block name="limits" />
@@ -375,10 +375,10 @@
     </gazebo>
   </xacro:macro>
 
-  <xacro:macro name="revolute_joint_damped" params="jointName parent child origin_xyz origin_rpy damping friction *limits">
+  <xacro:macro name="revolute_joint_damped" params="jointName parent child origin_xyz origin_rpy axis damping friction *limits">
     <joint name="${jointName}" type="revolute">
       <origin rpy="${origin_rpy}" xyz="${origin_xyz}"/>
-      <axis xyz="0 0 1"/>
+      <axis xyz="${axis}"/>
       <parent link="${parent}"/>
       <child link="${child}"/>
       <dynamics damping="${damping}" friction="${friction}"/>
@@ -389,10 +389,10 @@
     </gazebo>
   </xacro:macro>
 
-  <xacro:macro name="revolute_joint_ex" params="jointName parent child origin_xyz origin_rpy damping friction *limits *controller_gains">
+  <xacro:macro name="revolute_joint_ex" params="jointName parent child origin_xyz origin_rpy axis damping friction *limits *controller_gains">
     <joint name="${jointName}" type="revolute">
       <origin rpy="${origin_rpy}" xyz="${origin_xyz}"/>
-      <axis xyz="0 0 1"/>
+      <axis xyz="${axis}"/>
       <parent link="${parent}"/>
       <child link="${child}"/>
       <xacro:insert_block name="limits" />

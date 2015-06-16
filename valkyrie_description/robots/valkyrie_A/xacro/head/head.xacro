@@ -2,6 +2,7 @@
 
   <!-- Properties -->
   <xacro:include filename="$(find valkyrie_description)/robots/valkyrie_A/xacro/head/joint_names.xacro"/>
+  <xacro:include filename="$(find valkyrie_description)/robots/valkyrie_A/xacro/head/joint_axes.xacro"/>
   <xacro:include filename="$(find valkyrie_description)/robots/valkyrie_A/xacro/head/link_names.xacro"/>
   <xacro:include filename="$(find valkyrie_description)/robots/valkyrie_A/xacro/head/joint_limits.xacro"/>
   <xacro:include filename="$(find valkyrie_description)/robots/valkyrie_A/xacro/head/frame_parameters.xacro"/>
@@ -12,7 +13,6 @@
   <xacro:property name="NJ3_Link_Radius" value="0.139"/>
 
   <xacro:macro name="include_head" params="lower_neck_pitch_root_link">
-    <!-- "name mass origin_rpy origin_xyz ixx ixy ixz iyy iyz izz visual_mesh material collision_mesh" -->
     <!-- <xacro:standard_link name="${LowerNeckPitchLinkName}" "${LowerNeckPitchLinkMass" > -->
   </xacro:macro>
 
@@ -39,7 +39,8 @@
     <xacro:revolute_joint_ex jointName="${LowerNeckPitchJointName}"
                           parent="${LowerNeckPitchParentLinkName}" child="${LowerNeckPitchLinkName}"
                           origin_xyz="${LowerNeckPitchFrameOrigin_X} ${LowerNeckPitchFrameOrigin_Y} ${LowerNeckPitchFrameOrigin_Z}"
-                          origin_rpy="${LowerNeckPitchFrameOrientation_Roll} ${LowerNeckPitchFrameOrientation_Roll} ${LowerNeckPitchFrameOrientation_Yaw}"
+                          origin_rpy="${LowerNeckPitchFrameOrientation_Roll} ${LowerNeckPitchFrameOrientation_Roll} ${LowerNeckPitchFrameOrientation_Yaw}" 
+                          axis="${LowerNeckPitchRotationAxis}"
                           damping="0.1" friction="0.0">
       <limit effort="${LowerNeckPitchTorqueLimit}" lower="${LowerNeckPitchPositionLimit_Lower}" upper="${LowerNeckPitchPositionLimit_Upper}" velocity="${LowerNeckPitchVelocityLimit}"/>
       <controller_gains Kp="20000" Kd="0"/>
@@ -49,7 +50,8 @@
     <xacro:revolute_joint_ex jointName="${NeckYawJointName}"
                           parent="${LowerNeckPitchLinkName}" child="${NeckYawLinkName}"
                           origin_xyz="${NeckYawFrameOrigin_X} ${NeckYawFrameOrigin_Y} ${NeckYawFrameOrigin_Z}"
-                          origin_rpy="${NeckYawFrameOrientation_Roll} ${NeckYawFrameOrientation_Pitch} ${NeckYawFrameOrientation_Yaw}"
+                          origin_rpy="${NeckYawFrameOrientation_Roll} ${NeckYawFrameOrientation_Pitch} ${NeckYawFrameOrientation_Yaw}" 
+                          axis="${NeckYawRotationAxis}"
                           damping="0.1" friction="0.0">
       <limit effort="${NeckYawTorqueLimit}" lower="${NeckYawPositionLimit_Lower}" upper="${NeckYawPositionLimit_Upper}" velocity="${NeckYawVelocityLimit}"/>
       <controller_gains Kp="20000" Kd="0"/>
@@ -59,55 +61,12 @@
     <xacro:revolute_joint_ex jointName="${UpperNeckPitchJointName}"
                           parent="${NeckYawLinkName}" child="${UpperNeckPitchLinkName}"
                           origin_xyz="${UpperNeckPitchFrameOrigin_X} ${UpperNeckPitchFrameOrigin_Y} ${UpperNeckPitchFrameOrigin_Z}"
-                          origin_rpy="${UpperNeckPitchFrameOrientation_Roll} ${UpperNeckPitchFrameOrientation_Pitch} ${UpperNeckPitchFrameOrientation_Yaw}"
+                          origin_rpy="${UpperNeckPitchFrameOrientation_Roll} ${UpperNeckPitchFrameOrientation_Pitch} ${UpperNeckPitchFrameOrientation_Yaw}" 
+                          axis="${UpperNeckPitchRotationAxis}"
                           damping="0.1" friction="0.0">
       <limit effort="${UpperNeckPitchTorqueLimit}" lower="${UpperNeckPitchPositionLimit_Lower}" upper="${UpperNeckPitchPositionLimit_Upper}" velocity="${UpperNeckPitchVelocityLimit}"/>
       <controller_gains Kp="20000" Kd="0"/>
     </xacro:revolute_joint_ex>
-  </xacro:macro>
-
-  <xacro:macro name="make_head_fixed" params="head_root_link">
-    <!-- LINKS -->
-    <xacro:virtual_link_with_visual name="${LowerNeckPitchLinkName}"
-                                    origin_xyz="0 0 0"
-                                    origin_rpy="0 0 0"
-                                    mesh_filename="${mesh_root}/nj1.stl"/>
-
-    <xacro:virtual_link_with_visual name="${NeckYawLinkName}"
-                                    origin_xyz="0 0 0"
-                                    origin_rpy="0 0 0"
-                                    mesh_filename="${mesh_root}/nj2.stl"/>
-
-    <xacro:sphere_link name="${UpperNeckPitchLinkName}"
-                       radius="${NJ3_Link_Radius}" mass="${UpperNeckPitchLinkMass}"
-                       origin_xyz="-0.08380066 0.01114801 -0.00038569" origin_rpy="0 0 0"
-                       visual_mesh="${mesh_root}/head.stl"
-                       material="White"
-                       collision_mesh="${mesh_root}/head.stl"/>
-
-    <!-- NJ1 -->
-    <xacro:fixed_joint jointName="${LowerNeckPitchJointName}"
-                          parent="${LowerNeckPitchParentLinkName}" child="${LowerNeckPitchLinkName}"
-                          origin_xyz="${LowerNeckPitchFrameOrigin_X} ${LowerNeckPitchFrameOrigin_Y} ${LowerNeckPitchFrameOrigin_Z}"
-                          origin_rpy="${LowerNeckPitchFrameOrientation_Roll} ${LowerNeckPitchFrameOrientation_Roll} ${LowerNeckPitchFrameOrientation_Yaw}">
-      <limit effort="${LowerNeckPitchTorqueLimit}" lower="${LowerNeckPitchPositionLimit_Lower}" upper="${LowerNeckPitchPositionLimit_Upper}" velocity="${LowerNeckPitchVelocityLimit}"/>
-    </xacro:fixed_joint>
-
-    <!-- NJ2 -->
-    <xacro:fixed_joint jointName="${NeckYawJointName}"
-                          parent="${LowerNeckPitchLinkName}" child="${NeckYawLinkName}"
-                          origin_xyz="${NeckYawFrameOrigin_X} ${NeckYawFrameOrigin_Y} ${NeckYawFrameOrigin_Z}"
-                          origin_rpy="${NeckYawFrameOrientation_Roll} ${NeckYawFrameOrientation_Pitch} ${NeckYawFrameOrientation_Yaw}">
-      <limit effort="${NeckYawTorqueLimit}" lower="${NeckYawPositionLimit_Lower}" upper="${NeckYawPositionLimit_Upper}" velocity="${NeckYawVelocityLimit}"/>
-    </xacro:fixed_joint>
-
-    <!-- NJ3 -->
-    <xacro:fixed_joint jointName="${UpperNeckPitchJointName}"
-                          parent="${NeckYawLinkName}" child="${UpperNeckPitchLinkName}"
-                          origin_xyz="${UpperNeckPitchFrameOrigin_X} ${UpperNeckPitchFrameOrigin_Y} ${UpperNeckPitchFrameOrigin_Z}"
-                          origin_rpy="${UpperNeckPitchFrameOrientation_Roll} ${UpperNeckPitchFrameOrientation_Pitch} ${UpperNeckPitchFrameOrientation_Yaw}">
-      <limit effort="${UpperNeckPitchTorqueLimit}" lower="${UpperNeckPitchPositionLimit_Lower}" upper="${UpperNeckPitchPositionLimit_Upper}" velocity="${UpperNeckPitchVelocityLimit}"/>
-    </xacro:fixed_joint>
   </xacro:macro>
 
   <!-- Sensors -->

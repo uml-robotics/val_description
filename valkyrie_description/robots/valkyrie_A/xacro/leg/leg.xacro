@@ -1,6 +1,7 @@
 <?xml version="1.0" ?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="v1/leg">
   <xacro:include filename="$(find valkyrie_description)/robots/valkyrie_A/xacro/leg/joint_names.xacro"/>
+  <xacro:include filename="$(find valkyrie_description)/robots/valkyrie_A/xacro/leg/joint_axes.xacro"/>
   <xacro:include filename="$(find valkyrie_description)/robots/valkyrie_A/xacro/leg/link_names.xacro"/>
   <xacro:include filename="$(find valkyrie_description)/robots/valkyrie_A/xacro/leg/joint_limits.xacro"/>
   <xacro:include filename="$(find valkyrie_description)/robots/valkyrie_A/xacro/leg/frame_parameters.xacro"/>
@@ -53,7 +54,7 @@
   <xacro:macro name="make_leg_links" params="prefix reflect leg_root_link">
     <xacro:box_link name="${HipYawLinkName}"
                     width="${LJ1_Link_Width}" height="${LJ1_Link_Height}" depth="${LJ1_Link_Length}" mass="${HipYawLinkMass}"
-                    origin_xyz="${LJ1_Link_Origin_X} ${LJ1_Link_Origin_Y} ${reflect * LJ1_Link_Origin_Z}" origin_rpy="0 0 0"
+                    origin_xyz="${LJ1_Link_Origin_X} ${LJ1_Link_Origin_Y} ${reflect * LJ1_Link_Origin_Z}" origin_rpy="0 0 0" 
                     visual_mesh="${mesh_root}/lj1_${prefix}.stl"
                     material="Gold"
                     collision_mesh="${mesh_root}/lj1_${prefix}.stl"/>
@@ -116,7 +117,8 @@
     <xacro:revolute_joint_ex jointName="${HipYawJointName}"
                           parent="${HipYawParentLinkName}" child="${HipYawLinkName}"
                           origin_xyz="${HipYawFrameOrigin_X} ${HipYawFrameOrigin_Y} ${HipYawFrameOrigin_Z}"
-                          origin_rpy="${HipYawFrameOrientation_Roll} ${HipYawFrameOrientation_Pitch} ${HipYawFrameOrientation_Yaw}"
+                          origin_rpy="${HipYawFrameOrientation_Roll} ${HipYawFrameOrientation_Pitch} ${HipYawFrameOrientation_Yaw}" 
+                          axis="${HipYawRotationAxis}"
                           damping="0.1" friction="0.0">
         <limit effort="${HipYawTorqueLimit}" lower="${HipYawPositionLimit_Lower}" upper="${HipYawPositionLimit_Upper}" velocity="${HipYawVelocityLimit}"/>
         <controller_gains Kp="15000" Kd="500"/>
@@ -125,7 +127,8 @@
     <xacro:revolute_joint_ex jointName="${HipRollJointName}"
                           parent="${HipYawLinkName}" child="${HipRollLinkName}"
                           origin_xyz="${HipRollFrameOrigin_X} ${HipRollFrameOrigin_Y} ${HipRollFrameOrigin_Z}"
-                          origin_rpy="${HipRollFrameOrientation_Roll} ${HipRollFrameOrientation_Pitch} ${HipRollFrameOrientation_Yaw}"
+                          origin_rpy="${HipRollFrameOrientation_Roll} ${HipRollFrameOrientation_Pitch} ${HipRollFrameOrientation_Yaw}" 
+                          axis="${HipRollRotationAxis}"
                           damping="0.1" friction="0.0">
         <limit effort="${HipRollTorqueLimit}" lower="${HipRollPositionLimit_Lower}" upper="${HipRollPositionLimit_Upper}" velocity="${HipRollVelocityLimit}"/>
         <controller_gains Kp="15000" Kd="500"/>
@@ -134,7 +137,8 @@
     <xacro:revolute_joint_ex jointName="${HipPitchJointName}"
                           parent="${HipRollLinkName}" child="${HipPitchLinkName}"
                           origin_xyz="${HipPitchFrameOrigin_X} ${HipPitchFrameOrigin_Y} ${HipPitchFrameOrigin_Z}"
-                          origin_rpy="${HipPitchFrameOrientation_Roll} ${HipPitchFrameOrientation_Pitch} ${HipPitchFrameOrientation_Yaw}"
+                          origin_rpy="${HipPitchFrameOrientation_Roll} ${HipPitchFrameOrientation_Pitch} ${HipPitchFrameOrientation_Yaw}" 
+                          axis="${HipPitchRotationAxis}"
                           damping="0.1" friction="0.0">
         <limit effort="${HipPitchTorqueLimit}" lower="${HipPitchPositionLimit_Lower}" upper="${HipPitchPositionLimit_Upper}" velocity="${HipPitchVelocityLimit}"/>
         <controller_gains Kp="15000" Kd="500"/>
@@ -143,41 +147,12 @@
     <xacro:revolute_joint_ex jointName="${KneePitchJointName}"
                           parent="${HipPitchLinkName}" child="${KneePitchLinkName}"
                           origin_xyz="${KneePitchFrameOrigin_X} ${KneePitchFrameOrigin_Y} ${KneePitchFrameOrigin_Z}"
-                          origin_rpy="${KneePitchFrameOrientation_Roll} ${KneePitchFrameOrientation_Pitch} ${KneePitchFrameOrientation_Yaw}"
+                          origin_rpy="${KneePitchFrameOrientation_Roll} ${KneePitchFrameOrientation_Pitch} ${KneePitchFrameOrientation_Yaw}" 
+                          axis="${KneePitchRotationAxis}"
                           damping="0.1" friction="0.0">
         <limit effort="${KneePitchTorqueLimit}" lower="${KneePitchPositionLimit_Lower}" upper="${KneePitchPositionLimit_Upper}" velocity="${KneePitchVelocityLimit}"/>
         <controller_gains Kp="15000" Kd="500"/>
     </xacro:revolute_joint_ex>
-  </xacro:macro>
-
-  <xacro:macro name="make_leg_joints_fixed" params="prefix reflect leg_root_link">
-    <xacro:fixed_joint jointName="${HipYawJointName}"
-                          parent="${HipYawParentLinkName}" child="${HipYawLinkName}"
-                          origin_xyz="${HipYawFrameOrigin_X} ${HipYawFrameOrigin_Y} ${HipYawFrameOrigin_Z}"
-                          origin_rpy="${HipYawFrameOrientation_Roll} ${HipYawFrameOrientation_Pitch} ${HipYawFrameOrientation_Yaw}">
-        <limit effort="${HipYawTorqueLimit}" lower="${HipYawPositionLimit_Lower}" upper="${HipYawPositionLimit_Upper}" velocity="${HipYawVelocityLimit}"/>
-    </xacro:fixed_joint>
-
-    <xacro:fixed_joint jointName="${HipRollJointName}"
-                          parent="${HipYawLinkName}" child="${HipRollLinkName}"
-                          origin_xyz="${HipRollFrameOrigin_X} ${HipRollFrameOrigin_Y} ${HipRollFrameOrigin_Z}"
-                          origin_rpy="${HipRollFrameOrientation_Roll} ${HipRollFrameOrientation_Pitch} ${HipRollFrameOrientation_Yaw}">
-        <limit effort="${HipRollTorqueLimit}" lower="${HipRollPositionLimit_Lower}" upper="${HipRollPositionLimit_Upper}" velocity="${HipRollVelocityLimit}"/>
-    </xacro:fixed_joint>
-
-    <xacro:fixed_joint jointName="${HipPitchJointName}"
-                          parent="${HipRollLinkName}" child="${HipPitchLinkName}"
-                          origin_xyz="${HipPitchFrameOrigin_X} ${HipPitchFrameOrigin_Y} ${HipPitchFrameOrigin_Z}"
-                          origin_rpy="${HipPitchFrameOrientation_Roll} ${HipPitchFrameOrientation_Pitch} ${HipPitchFrameOrientation_Yaw}">
-        <limit effort="${HipPitchTorqueLimit}" lower="${HipPitchPositionLimit_Lower}" upper="${HipPitchPositionLimit_Upper}" velocity="${HipPitchVelocityLimit}"/>
-    </xacro:fixed_joint>
-
-    <xacro:fixed_joint jointName="${KneePitchJointName}"
-                          parent="${HipPitchLinkName}" child="${KneePitchLinkName}"
-                          origin_xyz="${KneePitchFrameOrigin_X} ${KneePitchFrameOrigin_Y} ${KneePitchFrameOrigin_Z}"
-                          origin_rpy="${KneePitchFrameOrientation_Roll} ${KneePitchFrameOrientation_Pitch} ${KneePitchFrameOrientation_Yaw}">
-        <limit effort="${KneePitchTorqueLimit}" lower="${KneePitchPositionLimit_Lower}" upper="${KneePitchPositionLimit_Upper}" velocity="${KneePitchVelocityLimit}"/>
-    </xacro:fixed_joint>
   </xacro:macro>
 
   <xacro:macro name="make_ankle_joints" params="prefix reflect leg_root_link">
@@ -185,7 +160,8 @@
     <xacro:revolute_joint_ex jointName="${AnklePitchJointName}"
                           parent="${KneePitchLinkName}" child="${AnklePitchLinkName}"
                           origin_xyz="${AnklePitchFrameOrigin_X} ${AnklePitchFrameOrigin_Y} ${AnklePitchFrameOrigin_Z}"
-                          origin_rpy="${AnklePitchFrameOrientation_Roll} ${AnklePitchFrameOrientation_Pitch} ${AnklePitchFrameOrientation_Yaw}"
+                          origin_rpy="${AnklePitchFrameOrientation_Roll} ${AnklePitchFrameOrientation_Pitch} ${AnklePitchFrameOrientation_Yaw}" 
+                          axis="${AnklePitchRotationAxis}"
                           damping="0.1" friction="0.0">
         <limit effort="${AnklePitchTorqueLimit}" lower="${AnklePitchPositionLimit_Lower}" upper="${AnklePitchPositionLimit_Upper}" velocity="${AnklePitchVelocityLimit}"/>
         <controller_gains Kp="15000" Kd="400"/>
@@ -194,27 +170,12 @@
     <xacro:revolute_joint_ex jointName="${AnkleRollJointName}"
                           parent="${AnklePitchLinkName}" child="${AnkleRollLinkName}"
                           origin_xyz="${AnkleRollFrameOrigin_X} ${AnkleRollFrameOrigin_Y} ${AnkleRollFrameOrigin_Z}"
-                          origin_rpy="${AnkleRollFrameOrientation_Roll} ${AnkleRollFrameOrientation_Pitch} ${AnkleRollFrameOrientation_Yaw}"
+                          origin_rpy="${AnkleRollFrameOrientation_Roll} ${AnkleRollFrameOrientation_Pitch} ${AnkleRollFrameOrientation_Yaw}" 
+                          axis="${HipRollRotationAxis}"
                           damping="0.3" friction="0.0">
         <limit effort="${AnkleRollTorqueLimit}" lower="${AnkleRollPositionLimit_Lower}" upper="${AnkleRollPositionLimit_Upper}" velocity="${AnkleRollVelocityLimit}"/>
         <controller_gains Kp="15000" Kd="400"/>
     </xacro:revolute_joint_ex>
-  </xacro:macro>
-
-  <xacro:macro name="make_ankle_joints_fixed" params="prefix reflect leg_root_link">
-    <!-- LJ5 -->
-    <xacro:fixed_joint jointName="${AnklePitchJointName}"
-                       parent="${KneePitchLinkName}" child="${AnklePitchLinkName}"
-                       origin_xyz="${AnklePitchFrameOrigin_X} ${AnklePitchFrameOrigin_Y} ${AnklePitchFrameOrigin_Z}"
-                       origin_rpy="${AnklePitchFrameOrientation_Roll} ${AnklePitchFrameOrientation_Pitch} ${AnklePitchFrameOrientation_Yaw}">
-    </xacro:fixed_joint>
-
-    <!-- LJ6 -->
-    <xacro:fixed_joint jointName="${AnkleRollJointName}"
-                          parent="${AnklePitchLinkName}" child="${AnkleRollLinkName}"
-                          origin_xyz="${AnkleRollFrameOrigin_X} ${AnkleRollFrameOrigin_Y} ${AnkleRollFrameOrigin_Z}"
-                          origin_rpy="${AnkleRollFrameOrientation_Roll} ${AnkleRollFrameOrientation_Pitch} ${AnkleRollFrameOrientation_Yaw}">
-    </xacro:fixed_joint>
   </xacro:macro>
 
   <xacro:macro name="make_leg" params="prefix reflect leg_root_link">

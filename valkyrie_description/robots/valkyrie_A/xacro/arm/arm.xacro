@@ -2,6 +2,7 @@
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="v1/arm">
 
   <xacro:include filename="$(find valkyrie_description)/robots/valkyrie_A/xacro/arm/joint_names.xacro"/>
+  <xacro:include filename="$(find valkyrie_description)/robots/valkyrie_A/xacro/arm/joint_axes.xacro"/>
   <xacro:include filename="$(find valkyrie_description)/robots/valkyrie_A/xacro/arm/link_names.xacro"/>
   <xacro:include filename="$(find valkyrie_description)/robots/valkyrie_A/xacro/arm/joint_limits.xacro"/>
   <xacro:include filename="$(find valkyrie_description)/robots/valkyrie_A/xacro/arm/frame_parameters.xacro"/>
@@ -72,7 +73,8 @@
     <xacro:revolute_joint_ex jointName="${ShoulderPitchJointName}"
                           parent="${upper_arm_root_link}" child="${ShoulderPitchLinkName}"
                           origin_xyz="${ShoulderPitchFrameOrigin_X} ${ShoulderPitchFrameOrigin_Y} ${ShoulderPitchFrameOrigin_Z}"
-                          origin_rpy="${ShoulderPitchFrameOrientation_Roll} ${ShoulderPitchFrameOrientation_Pitch} ${ShoulderPitchFrameOrientation_Yaw}"
+                          origin_rpy="${ShoulderPitchFrameOrientation_Roll} ${ShoulderPitchFrameOrientation_Pitch} ${ShoulderPitchFrameOrientation_Yaw}" 
+                          axis="${ShoulderPitchRotationAxis}"
                           damping="0.1" friction="0.0">
         <limit effort="${ShoulderPitchTorqueLimit}" lower="${ShoulderPitchPositionLimit_Lower}" upper="${ShoulderPitchPositionLimit_Upper}" velocity="${ShoulderPitchVelocityLimit}"/>
         <controller_gains Kp="20000" Kd="400"/>
@@ -82,7 +84,8 @@
     <xacro:revolute_joint_ex jointName="${ShoulderRollJointName}"
                           parent="${ShoulderPitchLinkName}" child="${ShoulderRollLinkName}"
                           origin_xyz="${ShoulderRollFrameOrigin_X} ${ShoulderRollFrameOrigin_Y} ${ShoulderRollFrameOrigin_Z}"
-                          origin_rpy="${ShoulderRollFrameOrientation_Roll} ${ShoulderRollFrameOrientation_Pitch} ${ShoulderRollFrameOrientation_Yaw}"
+                          origin_rpy="${ShoulderRollFrameOrientation_Roll} ${ShoulderRollFrameOrientation_Pitch} ${ShoulderRollFrameOrientation_Yaw}" 
+                          axis="${ShoulderRollRotationAxis}"
                           damping="0.1" friction="0.0">
         <limit effort="${ShoulderRollTorqueLimit}" lower="${ShoulderRollPositionLimit_Lower}" upper="${ShoulderRollPositionLimit_Upper}" velocity="${ShoulderRollVelocityLimit}"/>
         <controller_gains Kp="20000" Kd="400"/>
@@ -92,7 +95,8 @@
     <xacro:revolute_joint_ex jointName="${ShoulderYawJointName}"
                           parent="${ShoulderRollLinkName}" child="${ShoulderYawLinkName}"
                           origin_xyz="${ShoulderYawFrameOrigin_X} ${ShoulderYawFrameOrigin_Y} ${ShoulderYawFrameOrigin_Z}"
-                          origin_rpy="${ShoulderYawFrameOrientation_Roll} ${ShoulderYawFrameOrientation_Pitch} ${ShoulderYawFrameOrientation_Yaw}"
+                          origin_rpy="${ShoulderYawFrameOrientation_Roll} ${ShoulderYawFrameOrientation_Pitch} ${ShoulderYawFrameOrientation_Yaw}" 
+                          axis="${ShoulderYawRotationAxis}"
                           damping="0.1" friction="0.0">
         <limit effort="${ShoulderYawTorqueLimit}" lower="${ShoulderYawPositionLimit_Lower}" upper="${ShoulderYawPositionLimit_Upper}" velocity="${ShoulderYawVelocityLimit}"/>
         <controller_gains Kp="20000" Kd="400"/>
@@ -102,7 +106,8 @@
     <xacro:revolute_joint_ex jointName="${ElbowPitchJointName}"
                           parent="${ShoulderYawLinkName}" child="${ElbowPitchLinkName}"
                           origin_xyz="${ElbowPitchFrameOrigin_X} ${ElbowPitchFrameOrigin_Y} ${ElbowPitchFrameOrigin_Z}"
-                          origin_rpy="${ElbowPitchFrameOrientation_Roll} ${ElbowPitchFrameOrientation_Pitch} ${ElbowPitchFrameOrientation_Yaw}"
+                          origin_rpy="${ElbowPitchFrameOrientation_Roll} ${ElbowPitchFrameOrientation_Pitch} ${ElbowPitchFrameOrientation_Yaw}" 
+                          axis="${ShoulderYawRotationAxis}"
                           damping="0.1" friction="0.0">
         <limit effort="${ElbowPitchTorqueLimit}" lower="${ElbowPitchPositionLimit_Lower}" upper="${ElbowPitchPositionLimit_Upper}" velocity="${ElbowPitchVelocityLimit}"/>
         <controller_gains Kp="20000" Kd="400"/>
@@ -140,7 +145,8 @@
     <xacro:revolute_joint_ex jointName="${ForearmYawJointName}"
                           parent="${lower_arm_root_link}" child="${ForearmLinkName}"
                           origin_xyz="${ForearmYawFrameOrigin_X} ${ForearmYawFrameOrigin_Y} ${ForearmYawFrameOrigin_Z}"
-                          origin_rpy="${ForearmYawFrameOrientation_Roll} ${ForearmYawFrameOrientation_Pitch} ${ForearmYawFrameOrientation_Yaw}"
+                          origin_rpy="${ForearmYawFrameOrientation_Roll} ${ForearmYawFrameOrientation_Pitch} ${ForearmYawFrameOrientation_Yaw}" 
+                          axis="${ForearmYawRotationAxis}"
                           damping="0.1" friction="0.0">
         <limit effort="${ForearmYawTorqueLimit}" lower="${ForearmYawPositionLimit_Lower}" upper="${ForearmYawPositionLimit_Upper}" velocity="${ForearmYawVelocityLimit}"/>
         <controller_gains Kp="20000" Kd="0"/>
@@ -150,7 +156,8 @@
     <xacro:revolute_joint_ex jointName="${WristRollJointName}"
                           parent="${ForearmLinkName}" child="${WristRollLinkName}"
                           origin_xyz="${WristRollFrameOrigin_X} ${WristRollFrameOrigin_Y} ${WristRollFrameOrigin_Z}"
-                          origin_rpy="${WristRollFrameOrientation_Roll} ${WristRollFrameOrientation_Pitch} ${WristRollFrameOrientation_Yaw}"
+                          origin_rpy="${WristRollFrameOrientation_Roll} ${WristRollFrameOrientation_Pitch} ${WristRollFrameOrientation_Yaw}" 
+                          axis="${WristRollRotationAxis}"
                           damping="0.1" friction="0.0">
         <limit effort="${WristRollTorqueLimit}" lower="${WristRollPositionLimit_Lower}" upper="${WristRollPositionLimit_Upper}" velocity="${WristRollVelocityLimit}"/>
         <controller_gains Kp="20000" Kd="400"/>
@@ -160,67 +167,12 @@
     <xacro:revolute_joint_ex jointName="${WristPitchJointName}"
                           parent="${WristRollLinkName}" child="${WristPitchLinkName}"
                           origin_xyz="${WristPitchFrameOrigin_X} ${WristPitchFrameOrigin_Y} ${WristPitchFrameOrigin_Z}"
-                          origin_rpy="${WristPitchFrameOrientation_Roll} ${WristPitchFrameOrientation_Pitch} ${WristPitchFrameOrientation_Yaw}"
+                          origin_rpy="${WristPitchFrameOrientation_Roll} ${WristPitchFrameOrientation_Pitch} ${WristPitchFrameOrientation_Yaw}" 
+                          axis="${WristPitchRotationAxis}"
                           damping="0.1" friction="0.0">
         <limit effort="${WristPitchTorqueLimit}" lower="${WristPitchPositionLimit_Lower}" upper="${WristPitchPositionLimit_Upper}" velocity="${WristPitchVelocityLimit}"/>
         <controller_gains Kp="20000" Kd="400"/>
     </xacro:revolute_joint_ex>
-  </xacro:macro>
-
-  <xacro:macro name="make_lower_arm_fixed" params="prefix reflect lower_arm_root_link">
-    <!-- LINKS -->
-    <xacro:box_link name="${ForearmLinkName}"
-                    width="${AJ5_Link_Width}" height="${AJ5_Link_Height}" depth="${AJ5_Link_Length}" mass="${ForearmYawLinkMass}"
-                    origin_rpy="0 0 0"
-                    origin_xyz="0 ${reflect * 0.0006} ${reflect * -0.14}"
-                    visual_mesh="${mesh_root}/aj5_${prefix}.stl"
-                    material="White"
-                    collision_mesh="${mesh_root}/aj5_${prefix}.stl" />
-
-<!--     <xacro:box_link name="${ForearmLinkName}"
-                    width="${AJ5_Link_Width}" height="${AJ5_Link_Height}" depth="${AJ5_Link_Length}" mass="${ForearmYawLinkMass}"
-                    origin_rpy="0 0 0"
-                    origin_xyz="0 ${reflect * 0.0006} ${reflect * -0.176}"
-                    visual_mesh="${mesh_root}/aj5_${prefix}.stl"
-                    material="White"
-                    collision_mesh="${mesh_root}/aj5_${prefix}.stl" />
-
- -->    <xacro:box_link_no_mesh name="${WristRollLinkName}"
-                    width="${AJ6_Link_Width}" height="${AJ6_Link_Height}" depth="${AJ6_Link_Length}" mass="${WristRollLinkMass}"
-                    origin_rpy="0 0 0"
-                    origin_xyz="0 0 0"/>
-
-    <xacro:box_link name="${WristPitchLinkName}"
-                    width="${AJ7_Link_Width}" height="${AJ7_Link_Height}" depth="${AJ7_Link_Length}" mass="${PalmMass}"
-                    origin_rpy="0 0 0"
-                    origin_xyz="${AJ7_Link_Width/2} 0 0"
-                    visual_mesh="${mesh_root}/palm_${prefix}.stl"
-                    material="Gold"
-                    collision_mesh="${mesh_root}/palm_${prefix}.stl"/>
-
-    <!-- AJ5 -->
-    <xacro:fixed_joint jointName="${ForearmYawJointName}"
-                          parent="${lower_arm_root_link}" child="${ForearmLinkName}"
-                          origin_xyz="${ForearmYawFrameOrigin_X} ${ForearmYawFrameOrigin_Y} ${ForearmYawFrameOrigin_Z}"
-                          origin_rpy="${ForearmYawFrameOrientation_Roll} ${ForearmYawFrameOrientation_Pitch} ${ForearmYawFrameOrientation_Yaw}">
-        <limit effort="${ForearmYawTorqueLimit}" lower="${ForearmYawPositionLimit_Lower}" upper="${ForearmYawPositionLimit_Upper}" velocity="${ForearmYawVelocityLimit}"/>
-    </xacro:fixed_joint>
-
-    <!-- AJ6 -->
-    <xacro:fixed_joint jointName="${WristRollJointName}"
-                          parent="${ForearmLinkName}" child="${WristRollLinkName}"
-                          origin_xyz="${WristRollFrameOrigin_X} ${WristRollFrameOrigin_Y} ${WristRollFrameOrigin_Z}"
-                          origin_rpy="${WristRollFrameOrientation_Roll} ${WristRollFrameOrientation_Pitch} ${WristRollFrameOrientation_Yaw}">
-        <limit effort="${WristRollTorqueLimit}" lower="${WristRollPositionLimit_Lower}" upper="${WristRollPositionLimit_Upper}" velocity="${WristRollVelocityLimit}"/>
-    </xacro:fixed_joint>
-
-    <!-- AJ7 -->
-    <xacro:fixed_joint jointName="${WristPitchJointName}"
-                          parent="${WristRollLinkName}" child="${WristPitchLinkName}"
-                          origin_xyz="${WristPitchFrameOrigin_X} ${WristPitchFrameOrigin_Y} ${WristPitchFrameOrigin_Z}"
-                          origin_rpy="${WristPitchFrameOrientation_Roll} ${WristPitchFrameOrientation_Pitch} ${WristPitchFrameOrientation_Yaw}">
-        <limit effort="${WristPitchTorqueLimit}" lower="${WristPitchPositionLimit_Lower}" upper="${WristPitchPositionLimit_Upper}" velocity="${WristPitchVelocityLimit}"/>
-    </xacro:fixed_joint>
   </xacro:macro>
 
   <xacro:macro name="make_arm" params="prefix reflect arm_root_link">

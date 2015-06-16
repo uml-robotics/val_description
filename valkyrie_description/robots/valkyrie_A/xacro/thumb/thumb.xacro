@@ -2,6 +2,7 @@
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="v1/thumb">
   
   <xacro:include filename="$(find valkyrie_description)/robots/valkyrie_A/xacro/thumb/joint_names.xacro"/>
+  <xacro:include filename="$(find valkyrie_description)/robots/valkyrie_A/xacro/thumb/joint_axes.xacro"/>
   <xacro:include filename="$(find valkyrie_description)/robots/valkyrie_A/xacro/thumb/actuator_names.xacro"/>
   <xacro:include filename="$(find valkyrie_description)/robots/valkyrie_A/xacro/thumb/link_names.xacro"/>
   <xacro:include filename="$(find valkyrie_description)/robots/valkyrie_A/xacro/thumb/joint_limits.xacro"/>
@@ -79,28 +80,32 @@
     <xacro:revolute_joint jointName="${ThumbRollJointName}"
                           parent="${ThumbRollParentLinkName}" child="${ThumbRollLinkName}"
                           origin_xyz="${ThumbRollFrameOrigin_X} ${ThumbRollFrameOrigin_Y} ${ThumbRollFrameOrigin_Z}"
-                          origin_rpy="${ThumbRollFrameOrientation_Roll} ${ThumbRollFrameOrientation_Pitch} ${ThumbRollFrameOrientation_Yaw}">
+                          origin_rpy="${ThumbRollFrameOrientation_Roll} ${ThumbRollFrameOrientation_Pitch} ${ThumbRollFrameOrientation_Yaw}"
+                          axis="${ThumbRollRotationAxis}">
         <limit effort="${ThumbRollTorqueLimit}" lower="${ThumbRollPositionLimit_Lower}" upper="${ThumbRollPositionLimit_Upper}" velocity="${ThumbRollVelocityLimit}"/>
     </xacro:revolute_joint>
 
     <xacro:revolute_joint jointName="${ThumbPitch1JointName}"
                           parent="${ThumbRollLinkName}" child="${ThumbPitch1LinkName}"
                           origin_xyz="${ThumbPitch1FrameOrigin_X} ${ThumbPitch1FrameOrigin_Y} ${ThumbPitch1FrameOrigin_Z}"
-                          origin_rpy="${ThumbPitch1FrameOrientation_Roll} ${ThumbPitch1FrameOrientation_Pitch} ${ThumbPitch1FrameOrientation_Yaw}">
+                          origin_rpy="${ThumbPitch1FrameOrientation_Roll} ${ThumbPitch1FrameOrientation_Pitch} ${ThumbPitch1FrameOrientation_Yaw}"
+                          axis="${ThumbPitch1RotationAxis}">
         <limit effort="${ThumbPitch1TorqueLimit}" lower="${ThumbPitch1PositionLimit_Lower}" upper="${ThumbPitch1PositionLimit_Upper}" velocity="${ThumbPitch1VelocityLimit}"/>
     </xacro:revolute_joint>
 
     <xacro:revolute_joint jointName="${ThumbPitch2JointName}"
                           parent="${ThumbPitch1LinkName}" child="${ThumbPitch2LinkName}"
                           origin_xyz="${ThumbPitch2FrameOrigin_X} ${ThumbPitch2FrameOrigin_Y} ${ThumbPitch2FrameOrigin_Z}"
-                          origin_rpy="${ThumbPitch2FrameOrientation_Roll} ${ThumbPitch2FrameOrientation_Pitch} ${ThumbPitch2FrameOrientation_Yaw}">
+                          origin_rpy="${ThumbPitch2FrameOrientation_Roll} ${ThumbPitch2FrameOrientation_Pitch} ${ThumbPitch2FrameOrientation_Yaw}"
+                          axis="${ThumbPitch2RotationAxis}">
         <limit effort="${ThumbPitch2TorqueLimit}" lower="${ThumbPitch2PositionLimit_Lower}" upper="${ThumbPitch2PositionLimit_Upper}" velocity="${ThumbPitch2VelocityLimit}"/>
     </xacro:revolute_joint>
 
     <xacro:revolute_joint jointName="${ThumbPitch3JointName}"
                           parent="${ThumbPitch2LinkName}" child="${ThumbPitch3LinkName}"
                           origin_xyz="${ThumbPitch3FrameOrigin_X} ${ThumbPitch3FrameOrigin_Y} ${ThumbPitch3FrameOrigin_Z}"
-                          origin_rpy="${ThumbPitch3FrameOrientation_Roll} ${ThumbPitch3FrameOrientation_Pitch} ${ThumbPitch3FrameOrientation_Yaw}">
+                          origin_rpy="${ThumbPitch3FrameOrientation_Roll} ${ThumbPitch3FrameOrientation_Pitch} ${ThumbPitch3FrameOrientation_Yaw}"
+                          axis="${ThumbPitch3RotationAxis}">
         <limit effort="${ThumbPitch3TorqueLimit}" lower="${ThumbPitch3PositionLimit_Lower}" upper="${ThumbPitch3PositionLimit_Upper}" velocity="${ThumbPitch3VelocityLimit}"/>
     </xacro:revolute_joint>
   </xacro:macro>
