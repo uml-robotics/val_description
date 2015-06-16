@@ -40,25 +40,25 @@
                     width="${PFJ1_Link_Width}" height="${PFJ1_Link_Height}" depth="${PFJ1_Link_Length}" mass="${IndexFingerPitch1LinkMass}" 
                     origin_rpy="0 0 0" 
                     origin_xyz="${PFJ1_Link_Origin_X} ${PFJ1_Link_Origin_Y} ${PFJ1_Link_Origin_Z}"
-                    visual_mesh="${mesh_root}/pf1.stl"
+                    visual_mesh="${mesh_root}/indexj1_${prefix}.stl"
                     material="Gold"
-                    collision_mesh="${mesh_root}/pf1.stl"/>
+                    collision_mesh="${mesh_root}/indexj1_${prefix}.stl"/>
 
     <xacro:box_link name="${IndexFingerPitch2LinkName}" 
                     width="${PFJ2_Link_Width}" height="${PFJ2_Link_Height}" depth="${PFJ2_Link_Length}" mass="${IndexFingerPitch2LinkMass}" 
                     origin_rpy="0 0 0" 
                     origin_xyz="${PFJ2_Link_Origin_X} ${PFJ2_Link_Origin_Y} ${PFJ2_Link_Origin_Z}"
-                    visual_mesh="${mesh_root}/pf2.stl"
+                    visual_mesh="${mesh_root}/indexj2_${prefix}.stl"
                     material="Gold"
-                    collision_mesh="${mesh_root}/pf2.stl"/>
+                    collision_mesh="${mesh_root}/indexj2_${prefix}.stl"/>
 
     <xacro:box_link name="${IndexFingerPitch3LinkName}" 
                     width="${PFJ3_Link_Width}" height="${PFJ3_Link_Height}" depth="${PFJ3_Link_Length}" mass="${IndexFingerPitch3LinkMass}" 
                     origin_rpy="0 0 0" 
                     origin_xyz="${PFJ3_Link_Origin_X} ${PFJ3_Link_Origin_Y} ${PFJ3_Link_Origin_Z}"
-                    visual_mesh="${mesh_root}/pf3.stl"
+                    visual_mesh="${mesh_root}/indexj3_${prefix}.stl"
                     material="Gold"
-                    collision_mesh="${mesh_root}/pf3.stl"/>
+                    collision_mesh="${mesh_root}/indexj3_${prefix}.stl"/>
 
     <xacro:revolute_joint jointName="${IndexFingerPitch1JointName}" 
                           parent="${IndexFingerPitch1ParentLinkName}" child="${IndexFingerPitch1LinkName}"

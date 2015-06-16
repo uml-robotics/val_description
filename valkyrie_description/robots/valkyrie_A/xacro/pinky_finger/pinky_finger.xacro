@@ -56,9 +56,9 @@
                     width="${LFJ3_Link_Width}" height="${LFJ3_Link_Height}" depth="${LFJ3_Link_Length}" mass="${PinkyPitch3LinkMass}"
                     origin_rpy="0 0 0"
                     origin_xyz="${LFJ3_Link_Origin_X} ${LFJ3_Link_Origin_Y} ${LFJ3_Link_Origin_Z}"
-                    visual_mesh="${mesh_root}/pinkyj3.stl"
+                    visual_mesh="${mesh_root}/pinkyj3_${prefix}.stl"
                     material="Gold"
-                    collision_mesh="${mesh_root}/pinkyj3.stl"/>
+                    collision_mesh="${mesh_root}/pinkyj3_${prefix}.stl"/>
 
     <xacro:revolute_joint jointName="${PinkyPitch1JointName}"
                           parent="${PinkyPitch1ParentLinkName}" child="${PinkyPitch1LinkName}"

@@ -41,25 +41,25 @@
                     width="${MFJ1_Link_Width}" height="${MFJ1_Link_Height}" depth="${MFJ1_Link_Length}" mass="${MiddleFingerPitch1LinkMass}" 
                     origin_rpy="0 0 0" 
                     origin_xyz="${MFJ1_Link_Origin_X} ${MFJ1_Link_Origin_Y} ${MFJ1_Link_Origin_Z}"
-                    visual_mesh="${mesh_root}/sf1.stl"
+                    visual_mesh="${mesh_root}/middlej1_${prefix}.stl"
                     material="Gold"
-                    collision_mesh="${mesh_root}/sf1.stl"/>
+                    collision_mesh="${mesh_root}/middlej1_${prefix}.stl"/>
 
     <xacro:box_link name="${MiddleFingerPitch2LinkName}" 
                     width="${MFJ2_Link_Width}" height="${MFJ2_Link_Height}" depth="${MFJ2_Link_Length}" mass="${MiddleFingerPitch2LinkMass}" 
                     origin_rpy="0 0 0" 
                     origin_xyz="${MFJ2_Link_Origin_X} ${MFJ2_Link_Origin_Y} ${MFJ2_Link_Origin_Z}"
-                    visual_mesh="${mesh_root}/sf2_ssf3.stl"
+                    visual_mesh="${mesh_root}/middlej2_${prefix}.stl"
                     material="Gold"
-                    collision_mesh="${mesh_root}/sf2_ssf3.stl"/>
+                    collision_mesh="${mesh_root}/middlej2_${prefix}.stl"/>
 
     <xacro:box_link name="${MiddleFingerPitch3LinkName}" 
                     width="${MFJ3_Link_Width}" height="${MFJ3_Link_Height}" depth="${MFJ3_Link_Length}" mass="${MiddleFingerPitch3LinkMass}" 
                     origin_rpy="0 0 0" 
                     origin_xyz="${MFJ3_Link_Origin_X} ${MFJ3_Link_Origin_Y} ${MFJ3_Link_Origin_Z}"
-                    visual_mesh="${mesh_root}/sf3_ssf4.stl"
+                    visual_mesh="${mesh_root}/middlej3_${prefix}.stl"
                     material="Gold"
-                    collision_mesh="${mesh_root}/sf3_ssf4.stl"/>
+                    collision_mesh="${mesh_root}/middlej3_${prefix}.stl"/>
 
     <xacro:revolute_joint jointName="${MiddleFingerPitch1JointName}" 
                           parent="${MiddleFingerPitch1ParentLinkName}" child="${MiddleFingerPitch1LinkName}"

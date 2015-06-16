@@ -32,13 +32,13 @@
                             name7="${rightarm_name7}" type7="${arm_type7}"/> -->
     <!-- <xacro:v1_arm_sensors /> -->
 
-    <xacro:make_thumb_fixed prefix="Right" reflect="-1" thumb_root_link="RightPalm"/>
+    <xacro:make_thumb prefix="Right" reflect="-1" thumb_root_link="RightPalm"/>
 
-    <xacro:make_index_finger_fixed prefix="Right" reflect="-1" index_finger_root_link="RightPalm"/>
+    <xacro:make_index_finger prefix="Right" reflect="-1" index_finger_root_link="RightPalm"/>
 
-    <xacro:make_middle_finger_fixed prefix="Right" reflect="-1" middle_finger_root_link="RightPalm"/>
+    <xacro:make_middle_finger prefix="Right" reflect="-1" middle_finger_root_link="RightPalm"/>
 
-    <xacro:make_pinky_finger_fixed prefix="Right" reflect="-1" pinky_finger_root_link="RightPalm"/>
+    <xacro:make_pinky_finger prefix="Right" reflect="-1" pinky_finger_root_link="RightPalm"/>
 
     <xacro:make_arm prefix="Left" reflect="1" arm_root_link="${TorsoRollLinkName}" />
     <!-- <xacro:v1_arm_actuators name1="${leftarm_name1}" type1="${arm_type1}"
@@ -49,13 +49,13 @@
                             name6="${leftarm_name6}" type6="${arm_type6}"
                             name7="${leftarm_name7}" type7="${arm_type7}"/> -->
 
-    <xacro:make_thumb_fixed prefix="Left" reflect="1" thumb_root_link="LeftPalm"/>
+    <xacro:make_thumb prefix="Left" reflect="1" thumb_root_link="LeftPalm"/>
 
-    <xacro:make_index_finger_fixed prefix="Left" reflect="1" index_finger_root_link="LeftPalm"/>
+    <xacro:make_index_finger prefix="Left" reflect="1" index_finger_root_link="LeftPalm"/>
 
-    <xacro:make_middle_finger_fixed prefix="Left" reflect="1" middle_finger_root_link="LeftPalm"/>
+    <xacro:make_middle_finger prefix="Left" reflect="1" middle_finger_root_link="LeftPalm"/>
 
-    <xacro:make_pinky_finger_fixed prefix="Left" reflect="1" pinky_finger_root_link="LeftPalm"/>
+    <xacro:make_pinky_finger prefix="Left" reflect="1" pinky_finger_root_link="LeftPalm"/>
 
     <xacro:make_leg prefix="Right" reflect="-1" leg_root_link="${Pelvis_Link_Name}" />
     <!-- <xacro:v1_leg_actuators name1="${rightleg_name1}" type1="${leg_type1}"
