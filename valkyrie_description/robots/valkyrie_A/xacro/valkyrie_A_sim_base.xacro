@@ -8,23 +8,6 @@
 
     <xacro:include filename="$(find valkyrie_description)/robots/valkyrie_A/xacro/common/actuator_names.xacro" />
 
-    <!-- ===== GAZEBO PLUGINS ===== -->
-    <gazebo>
-        <xacro:plugin_sm_interface robot_description="/robot_description_sim" update_rate="1000" />
-        <xacro:plugin_joint_state_publisher update_rate="100" />
-        <plugin filename="libPinPlugin.so" name="PinPlugin">
-            <node>/pin_plugin</node>
-        </plugin>
-    </gazebo>
-
-    <!-- ===== PUBLISH ODOMETRY DATA ==== -->
-    <xacro:include filename="$(find valkyrie_description)/robots/valkyrie_A/xacro/sensors/pos3d.xacro" />
-    <xacro:v1_absolute_pose parentLink="Torso" topicName="/v1/pose" origin_xyz="0 0 0" origin_rpy="0 0 0"/>
-
-    <!-- ===== PUBLISH ODOMETRY DATA ==== -->
-    <xacro:include filename="$(find valkyrie_description)/robots/valkyrie_A/xacro/sensors/pos3d.xacro" />
-    <xacro:v1_absolute_pose parentLink="Pelvis" topicName="Pelvis/pose" origin_xyz="0 0 0" origin_rpy="0 0 0"/>
-
     <xacro:make_pelvis />
     <xacro:v1_pelvis_sensors/>
 

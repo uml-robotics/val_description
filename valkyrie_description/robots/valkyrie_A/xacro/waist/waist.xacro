@@ -15,10 +15,6 @@
 
   <xacro:macro name="make_waist_common" params="waist_root_link">
 
-    <xacro:virtual_link name="${TorsoYawLinkName}" origin_xyz="0 0 0" origin_rpy="0 0 0"/>
-
-    <xacro:virtual_link name="${TorsoPitchLinkName}" origin_xyz="0 0 0" origin_rpy="0 0 0"/>
-
     <xacro:revolute_joint_ex jointName="${TorsoYawJointName}"
                           parent="${TorsoYawParentLinkName}" child="${TorsoYawLinkName}"
                           origin_xyz="${TorsoYawFrameOrigin_X} ${TorsoYawFrameOrigin_Y} ${TorsoYawFrameOrigin_Z}"
@@ -49,13 +45,30 @@
   </xacro:macro>
 
   <xacro:macro name="make_waist" params="waist_root_link">
+    <xacro:box_link name="${TorsoYawLinkName}"
+                    width="0.0001" height="0.0001" depth="0.0001" mass="0.00001"
+                    origin_rpy="0 0 0"
+                    origin_xyz="0 0 0"
+                    visual_mesh="${mesh_root}/torsoyaw.stl"
+                    material="White"
+                    collision_mesh="${mesh_root}/torsoyaw.stl" />
+
+    <xacro:box_link name="${TorsoPitchLinkName}"
+                    width="0.0001" height="0.0001" depth="0.0001" mass="0.00001"
+                    origin_rpy="0 0 0"
+                    origin_xyz="0 0 0"
+                    visual_mesh="${mesh_root}/torsopitch.stl"
+                    material="White"
+                    collision_mesh="${mesh_root}/torsopitch.stl" />
+
     <xacro:box_link name="${TorsoRollLinkName}"
                     width="${Trunk_Width}" height="${Trunk_Height}" depth="${Trunk_Length}" mass="${TorsoRollLinkMass}"
                     origin_rpy="0 0 0"
                     origin_xyz="0.219 0.03 -0.104"
                     visual_mesh="${mesh_root}/torso.stl"
                     material="White"
-                    collision_mesh="${mesh_root}/torso.stl" />
+                    collision_mesh="${mesh_root}/torso.stl" />                    
+
     <xacro:make_waist_common waist_root_link="${waist_root_link}"/>
   </xacro:macro>
 
