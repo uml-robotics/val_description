@@ -3,5 +3,5 @@
   <include file="$(find gazebo_ros)/launch/empty_world.launch">
     <arg name="world_name" value="$(find valkyrie_description)/test/EmptyWorldWithValkyrie.world"/>
   </include>
-  <node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model" args="-file $(find valkyrie_description)/robots/valkyrie_A/valkyrie_A.urdf -urdf -z 2 -model valkyrie" />
+  <node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model" args="-file $(find valkyrie_description)/robots/valkyrie_A/valkyrie_A.urdf -urdf -z 1.5 -model valkyrie" />
 </launch>

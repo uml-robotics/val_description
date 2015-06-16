@@ -49,9 +49,9 @@
     <xacro:box_link name="${ShoulderRollLinkName}"
                     width="${AJ2_Link_Width}" height="${AJ2_Link_Height}" depth="${AJ2_Link_Length}" mass="${ShoulderRollLinkMass}"
                     origin_xyz="0.04 0.005 ${reflect * -0.02}" origin_rpy="0 0 0"
-                    visual_mesh="${mesh_root}/aj2.stl"
+                    visual_mesh="${mesh_root}/aj2_${prefix}.stl"
                     material="White"
-                    collision_mesh="${mesh_root}/aj2.stl" />
+                    collision_mesh="${mesh_root}/aj2_${prefix}.stl" />
 
     <xacro:box_link name="${ShoulderYawLinkName}"
                     width="${AJ3_Link_Width}" height="${AJ3_Link_Height}" depth="${AJ3_Link_Length}" mass="${ShoulderYawLinkMass}"
@@ -64,9 +64,9 @@
                     width="${AJ4_Link_Width}" height="${AJ4_Link_Height}" depth="${AJ4_Link_Length}" mass="${ElbowPitchLinkMass}"
                     origin_rpy="0 0 0"
                     origin_xyz="0.0270 -0.0802 0"
-                    visual_mesh="${mesh_root}/aj4.stl"
+                    visual_mesh="${mesh_root}/aj4_${prefix}.stl"
                     material="Gold"
-                    collision_mesh="${mesh_root}/aj4.stl" />
+                    collision_mesh="${mesh_root}/aj4_${prefix}.stl" />
 
     <!-- AJ1 -->
     <xacro:revolute_joint_ex jointName="${ShoulderPitchJointName}"
@@ -120,10 +120,13 @@
                     material="White"
                     collision_mesh="${mesh_root}/aj5_${prefix}.stl" />
 
-    <xacro:box_link_no_mesh name="${WristRollLinkName}"
+    <xacro:box_link name="${WristRollLinkName}"
                     width="${AJ6_Link_Width}" height="${AJ6_Link_Height}" depth="${AJ6_Link_Length}" mass="${WristRollLinkMass}"
                     origin_rpy="0 0 0"
-                    origin_xyz="0 0 0"/>
+                    origin_xyz="0 0 0"
+                    visual_mesh="${mesh_root}/aj6_${prefix}.stl"
+                    material="White"
+                    collision_mesh="${mesh_root}/aj6_${prefix}.stl" />/>
 
     <xacro:box_link name="${WristPitchLinkName}"
                     width="${AJ7_Link_Width}" height="${AJ7_Link_Height}" depth="${AJ7_Link_Length}" mass="${PalmMass}"
