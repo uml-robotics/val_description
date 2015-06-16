@@ -14,7 +14,7 @@
         <xacro:microstrain_sensor sensorName="RightPelvisIMU"
                                   parentLink="${Pelvis_Link_Name}"
                                   origin_xyz="0.0515 -0.115 -0.042"
-                                  origin_rpy="-1.57 -1.274 0.0" />
+                                  origin_rpy="-1.57 0.0 1.274" />
 
         <xacro:microstrain_sensor sensorName="LeftPelvisIMU"
                                   parentLink="${Pelvis_Link_Name}"

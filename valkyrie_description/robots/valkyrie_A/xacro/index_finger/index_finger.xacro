@@ -84,7 +84,7 @@
                           axis="${IndexFingerPitch3RotationAxis}">
         <limit effort="${IndexFingerPitch3TorqueLimit}" lower="${IndexFingerPitch3PositionLimit_Lower}" upper="${IndexFingerPitch3PositionLimit_Upper}" velocity="${IndexFingerPitch3VelocityLimit}"/>
     </xacro:revolute_joint>
-  </xacro:macro>]
+  </xacro:macro>
 
   <xacro:macro name="v1_right_index_finger_actuators" params="prefix api">
     <xacro:v1_actuator name="${RPFA_Actuator_Name}" api="${api}" />
