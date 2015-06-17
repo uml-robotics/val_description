@@ -11,90 +11,77 @@
   <xacro:property name="LJ1_Link_Width" value="0.149"/>
   <xacro:property name="LJ1_Link_Height" value="0.185"/>
   <xacro:property name="LJ1_Link_Length" value="0.229"/>
-  <xacro:property name="LJ1_Link_Origin_X" value="1.3078570e-03"/>
+  <xacro:property name="LJ1_Link_Origin_X" value="0.02176"/>
+  <xacro:property name="LJ1_Link_Origin_Y" value="0.0013"/>
+  <xacro:property name="LJ1_Link_Origin_Z" value="0.03867"/>
+  <!-- <xacro:property name="LJ1_Link_Origin_X" value="1.3078570e-03"/>
   <xacro:property name="LJ1_Link_Origin_Y" value="2.1764163e-02"/>
-  <xacro:property name="LJ1_Link_Origin_Z" value="3.8670367e-02"/>
+  <xacro:property name="LJ1_Link_Origin_Z" value="3.8670367e-02"/> -->
 
   <xacro:property name="LJ2_Link_Width" value="0.131"/>
   <xacro:property name="LJ2_Link_Height" value="0.185"/>
   <xacro:property name="LJ2_Link_Length" value="0.123"/>
-  <xacro:property name="LJ2_Link_Origin_X" value="2.4260044e-02"/>
-  <xacro:property name="LJ2_Link_Origin_Y" value="1.9261751e-02"/>
-  <xacro:property name="LJ2_Link_Origin_Z" value="-1.8458616e-03"/>
 
   <xacro:property name="LJ3_Link_Width" value="0.55419965909040602714"/>
   <xacro:property name="LJ3_Link_Height" value="0.24253719562602335524"/>
   <xacro:property name="LJ3_Link_Length" value="0.18520578950459243295"/>
-  <xacro:property name="LJ3_Link_Origin_X" value="0.220"/>
-  <xacro:property name="LJ3_Link_Origin_Y" value="0"/>
-  <xacro:property name="LJ3_Link_Origin_Z" value="-0.05"/>
 
   <xacro:property name="LJ4_Link_Box_Width" value="0.44528684954574881960"/>
   <xacro:property name="LJ4_Link_Box_Height" value="0.20288766696230062236"/>
   <xacro:property name="LJ4_Link_Box_Length" value="0.20551228016178813007"/>
-  <xacro:property name="LJ4_Link_Box_Origin_X" value="0.185"/>
-  <xacro:property name="LJ4_Link_Box_Origin_Y" value="0.0"/>
-  <xacro:property name="LJ4_Link_Box_Origin_Z" value="0.045"/>
 
   <xacro:property name="LJ5_Link_Width" value="0.033"/>
   <xacro:property name="LJ5_Link_Height" value="0.076"/>
   <xacro:property name="LJ5_Link_Length" value="0.025"/>
-  <xacro:property name="LJ5_Link_Box_Origin_X" value="5.7963439e-03"/>
-  <xacro:property name="LJ5_Link_Box_Origin_Y" value="2.0433211e-03"/>
-  <xacro:property name="LJ5_Link_Box_Origin_Z" value="9.0424431e-05"/>
 
   <xacro:property name="LJ6_Link_Width" value="0.082"/>
   <xacro:property name="LJ6_Link_Height" value="0.128"/>
   <xacro:property name="LJ6_Link_Length" value="0.300"/>
-  
-  <xacro:property name="LJ6_Link_Box_Origin_X" value="4.8263578e-02"/>
-  <xacro:property name="LJ6_Link_Box_Origin_Y" value="-3.1591183e-05"/>
-  <xacro:property name="LJ6_Link_Box_Origin_Z" value="7.7849126e-02"/>
 
   <xacro:macro name="make_leg_links" params="prefix reflect leg_root_link">
     <xacro:box_link name="${HipYawLinkName}"
                     width="${LJ1_Link_Width}" height="${LJ1_Link_Height}" depth="${LJ1_Link_Length}" mass="${HipYawLinkMass}"
-                    origin_xyz="${LJ1_Link_Origin_X} ${LJ1_Link_Origin_Y} ${reflect * LJ1_Link_Origin_Z}" origin_rpy="0 0 0" 
+                    origin_xyz="${HipYawLinkComPosition}" origin_rpy="0 0 0" 
                     visual_mesh="${mesh_root}/lj1_${prefix}.stl"
                     material="Gold"
                     collision_mesh="${mesh_root}/lj1_${prefix}.stl"/>
 
     <xacro:box_link name="${HipRollLinkName}"
                     width="${LJ2_Link_Width}" height="${LJ2_Link_Height}" depth="${LJ2_Link_Length}" mass="${HipRollLinkMass}"
+                    origin_xyz="${HipRollLinkComPosition}"
                     origin_rpy="0 0 0"
-                    origin_xyz="${LJ2_Link_Origin_X} ${LJ2_Link_Origin_Y} ${LJ2_Link_Origin_Z}"
                     visual_mesh="${mesh_root}/lj2_${prefix}.stl"
                     material="White"
                     collision_mesh="${mesh_root}/lj2_${prefix}.stl"/>
 
     <xacro:box_link name="${HipPitchLinkName}"
                     width="${LJ3_Link_Width}" height="${LJ3_Link_Height}" depth="${LJ3_Link_Length}" mass="${HipPitchLinkMass}"
+                    origin_xyz="${HipPitchLinkComPosition}"
                     origin_rpy="0 0 0"
-                    origin_xyz="${LJ3_Link_Origin_X} ${LJ3_Link_Origin_Y} ${reflect * LJ3_Link_Origin_Z}"
                     visual_mesh="${mesh_root}/lj3_${prefix}.stl"
                     material="White"
                     collision_mesh="${mesh_root}/lj3_${prefix}.stl"/>
 
     <xacro:box_link name="${KneePitchLinkName}"
                     width="${LJ4_Link_Box_Width}" height="${LJ4_Link_Box_Height}" depth="${LJ4_Link_Box_Length}" mass="${KneePitchLinkMass}"
+                    origin_xyz="${KneePitchLinkComPosition}"
                     origin_rpy="0 0 0"
-                    origin_xyz="${LJ4_Link_Box_Origin_X} ${LJ4_Link_Box_Origin_Y} ${reflect * LJ4_Link_Box_Origin_Z}"
                     visual_mesh="${mesh_root}/lj4_${prefix}.stl"
                     material="White"
                     collision_mesh="${mesh_root}/lj4_${prefix}.stl"/>
 
     <xacro:box_link name="${AnklePitchLinkName}"
                     width="${LJ5_Link_Width}" height="${LJ5_Link_Height}" depth="${LJ5_Link_Length}" mass="${AnklePitchLinkMass}"
+                    origin_xyz="${AnklePitchLinkComPosition}"
                     origin_rpy="0 0 0"
-                    origin_xyz="${LJ5_Link_Box_Origin_X} ${LJ5_Link_Box_Origin_Y} ${LJ5_Link_Box_Origin_Z}"
                     visual_mesh="${mesh_root}/lj5.stl"
                     material="White"
                     collision_mesh="${mesh_root}/lj5.stl"/>
 
     <xacro:box_link name="${AnkleRollLinkName}"
                     width="${LJ6_Link_Width}" height="${LJ6_Link_Height}" depth="${LJ6_Link_Length}" mass="${FootMass}"
+                    origin_xyz="${FootComPosition}"
                     origin_rpy="0 0 0"
-                    origin_xyz="${LJ6_Link_Box_Origin_X} ${LJ6_Link_Box_Origin_Y} ${reflect * LJ6_Link_Box_Origin_Z}"
                     visual_mesh="${mesh_root}/foot_${prefix}.stl"
                     material="White"
                     collision_mesh="${mesh_root}/foot_${prefix}.stl" />
