@@ -107,7 +107,7 @@
                           parent="${ShoulderYawLinkName}" child="${ElbowPitchLinkName}"
                           origin_xyz="${ElbowPitchFrameOrigin_X} ${ElbowPitchFrameOrigin_Y} ${ElbowPitchFrameOrigin_Z}"
                           origin_rpy="${ElbowPitchFrameOrientation_Roll} ${ElbowPitchFrameOrientation_Pitch} ${ElbowPitchFrameOrientation_Yaw}" 
-                          axis="${ShoulderYawRotationAxis}"
+                          axis="${ElbowPitchRotationAxis}"
                           damping="0.1" friction="0.0">
         <limit effort="${ElbowPitchTorqueLimit}" lower="${ElbowPitchPositionLimit_Lower}" upper="${ElbowPitchPositionLimit_Upper}" velocity="${ElbowPitchVelocityLimit}"/>
         <controller_gains Kp="20000" Kd="400"/>
