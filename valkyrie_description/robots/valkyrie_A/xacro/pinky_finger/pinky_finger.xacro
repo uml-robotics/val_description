@@ -13,50 +13,36 @@
   <xacro:property name="LFJ1_Link_Height" value="0.010"/>
   <xacro:property name="LFJ1_Link_Length" value="0.010"/>
 
-  <xacro:property name="LFJ1_Link_Origin_X" value="0"/>
-  <xacro:property name="LFJ1_Link_Origin_Y" value="0"/>
-  <xacro:property name="LFJ1_Link_Origin_Z" value="0"/>
-
-
   <xacro:property name="LFJ2_Link_Width" value="0.019"/>
   <xacro:property name="LFJ2_Link_Height" value="0.054"/>
   <xacro:property name="LFJ2_Link_Length" value="0.026"/>
-
-  <xacro:property name="LFJ2_Link_Origin_X" value="0"/>
-  <xacro:property name="LFJ2_Link_Origin_Y" value="${reflect * 0.017}"/>
-  <xacro:property name="LFJ2_Link_Origin_Z" value="${reflect * 0.050169}"/>
-
 
   <xacro:property name="LFJ3_Link_Width" value="0.034"/>
   <xacro:property name="LFJ3_Link_Height" value="0.013"/>
   <xacro:property name="LFJ3_Link_Length" value="0.022"/>
 
-  <xacro:property name="LFJ3_Link_Origin_X" value="0.011"/>
-  <xacro:property name="LFJ3_Link_Origin_Y" value="0"/>
-  <xacro:property name="LFJ3_Link_Origin_Z" value="0"/>
-
   <xacro:macro name="make_pinky_finger" params="prefix reflect pinky_finger_root_link">
 
     <xacro:box_link name="${PinkyPitch1LinkName}"
                     width="${LFJ1_Link_Width}" height="${LFJ1_Link_Height}" depth="${LFJ1_Link_Length}" mass="${PinkyPitch1LinkMass}"
+                    origin_xyz="${PinkyFingerPitch1ComPosition}"
                     origin_rpy="0 0 0"
-                    origin_xyz="${LFJ1_Link_Origin_X} ${LFJ1_Link_Origin_Y} ${LFJ1_Link_Origin_Z}"
                     visual_mesh="${mesh_root}/pinkyj1_${prefix}.stl"
                     material="Gold"
                     collision_mesh="${mesh_root}/pinkyj1_${prefix}.stl"/>
 
     <xacro:box_link name="${PinkyPitch2LinkName}"
                     width="${LFJ2_Link_Width}" height="${LFJ2_Link_Height}" depth="${LFJ2_Link_Length}" mass="${PinkyPitch2LinkMass}"
+                    origin_xyz="${PinkyFingerPitch2ComPosition}"
                     origin_rpy="0 0 0"
-                    origin_xyz="${LFJ2_Link_Origin_X} ${LFJ2_Link_Origin_Y} ${LFJ2_Link_Origin_Z}"
                     visual_mesh="${mesh_root}/pinkyj2_${prefix}.stl"
                     material="Gold"
                     collision_mesh="${mesh_root}/pinkyj2_${prefix}.stl"/>
 
     <xacro:box_link name="${PinkyPitch3LinkName}"
                     width="${LFJ3_Link_Width}" height="${LFJ3_Link_Height}" depth="${LFJ3_Link_Length}" mass="${PinkyPitch3LinkMass}"
+                    origin_xyz="${PinkyFingerPitch3ComPosition}"
                     origin_rpy="0 0 0"
-                    origin_xyz="${LFJ3_Link_Origin_X} ${LFJ3_Link_Origin_Y} ${LFJ3_Link_Origin_Z}"
                     visual_mesh="${mesh_root}/pinkyj3_${prefix}.stl"
                     material="Gold"
                     collision_mesh="${mesh_root}/pinkyj3_${prefix}.stl"/>
@@ -87,7 +73,6 @@
 
   </xacro:macro>
 
-  <!-- Actuators -->
   <xacro:macro name="v1_right_pinky_finger_actuators" params="prefix api">
     <xacro:v1_actuator name="${RLFA_Actuator_Name}" api="${api}" />
   </xacro:macro>
