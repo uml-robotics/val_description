@@ -4,7 +4,7 @@
 cd valkyrie_description/robots/valkyrie_A
 rosrun xacro xacro.py xacro/valkyrie_A.xacro -o valkyrie_A.urdf
 
-# Generate SDF
+# Generate SDF then copy to file
 gzsdf print valkyrie_A.urdf
 
 # Check out the frames in Rviz by running the following command and setting /map to Pelvis
