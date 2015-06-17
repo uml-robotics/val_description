@@ -42,29 +42,29 @@
     <!-- LINKS -->
     <xacro:box_link name="${ShoulderPitchLinkName}"
                     width="${AJ1_Link_Width}" height="${AJ1_Link_Height}" depth="${AJ1_Link_Length}" mass="${ShoulderPitchLinkMass}"
-                    origin_xyz="0 -0.01204 ${reflect * -0.251}" origin_rpy="0 0 0"
+                    origin_xyz="${ShoulderPitchLinkComPosition}" origin_rpy="0 0 0"
                     visual_mesh="${mesh_root}/aj1_${prefix}.stl"
                     material="Gold"
                     collision_mesh="${mesh_root}/aj1_${prefix}.stl" />
 
     <xacro:box_link name="${ShoulderRollLinkName}"
                     width="${AJ2_Link_Width}" height="${AJ2_Link_Height}" depth="${AJ2_Link_Length}" mass="${ShoulderRollLinkMass}"
-                    origin_xyz="0.04 0.005 ${reflect * -0.02}" origin_rpy="0 0 0"
+                    origin_xyz="${ShoulderRollLinkComPosition}" origin_rpy="0 0 0"
                     visual_mesh="${mesh_root}/aj2_${prefix}.stl"
                     material="White"
                     collision_mesh="${mesh_root}/aj2_${prefix}.stl" />
 
     <xacro:box_link name="${ShoulderYawLinkName}"
                     width="${AJ3_Link_Width}" height="${AJ3_Link_Height}" depth="${AJ3_Link_Length}" mass="${ShoulderYawLinkMass}"
-                    origin_xyz="${reflect * 0.02} ${reflect * -0.004} ${reflect * -0.273}" origin_rpy="0 0 0"
+                    origin_xyz="${ShoulderYawLinkComPosition}" origin_rpy="0 0 0"
                     visual_mesh="${mesh_root}/aj3_${prefix}.stl"
                     material="White"
                     collision_mesh="${mesh_root}/aj3_${prefix}.stl" />
 
     <xacro:box_link name="${ElbowPitchLinkName}"
                     width="${AJ4_Link_Width}" height="${AJ4_Link_Height}" depth="${AJ4_Link_Length}" mass="${ElbowPitchLinkMass}"
+                    origin_xyz="${ElbowPitchLinkComPosition}"
                     origin_rpy="0 0 0"
-                    origin_xyz="0.0270 -0.0802 0"
                     visual_mesh="${mesh_root}/aj4_${prefix}.stl"
                     material="Gold"
                     collision_mesh="${mesh_root}/aj4_${prefix}.stl" />
@@ -119,24 +119,24 @@
     <!-- LINKS -->
     <xacro:box_link name="${ForearmLinkName}"
                     width="${AJ5_Link_Width}" height="${AJ5_Link_Height}" depth="${AJ5_Link_Length}" mass="${ForearmYawLinkMass}"
+                    origin_xyz="${ForearmYawLinkComPosition}"
                     origin_rpy="0 0 0"
-                    origin_xyz="0.015 ${reflect * 0.02} ${reflect * -0.11}"
                     visual_mesh="${mesh_root}/aj5_${prefix}.stl"
                     material="White"
                     collision_mesh="${mesh_root}/aj5_${prefix}.stl" />
 
     <xacro:box_link name="${WristRollLinkName}"
                     width="${AJ6_Link_Width}" height="${AJ6_Link_Height}" depth="${AJ6_Link_Length}" mass="${WristRollLinkMass}"
+                    origin_xyz="${WristRollLinkComPosition}"
                     origin_rpy="0 0 0"
-                    origin_xyz="0 0 0"
                     visual_mesh="${mesh_root}/aj6_${prefix}.stl"
                     material="White"
                     collision_mesh="${mesh_root}/aj6_${prefix}.stl" />/>
 
     <xacro:box_link name="${WristPitchLinkName}"
                     width="${AJ7_Link_Width}" height="${AJ7_Link_Height}" depth="${AJ7_Link_Length}" mass="${PalmMass}"
+                    origin_xyz="${PalmComPosition}"
                     origin_rpy="0 0 0"
-                    origin_xyz="${AJ7_Link_Width/2} 0 0"
                     visual_mesh="${mesh_root}/palm_${prefix}.stl"
                     material="Gold"
                     collision_mesh="${mesh_root}/palm_${prefix}.stl"/>
