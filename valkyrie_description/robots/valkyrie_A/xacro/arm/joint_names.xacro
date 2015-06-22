@@ -6,6 +6,6 @@
   <xacro:property name="ShoulderYawJointName" value="${prefix}ShoulderYaw" />
   <xacro:property name="ElbowPitchJointName" value="${prefix}ElbowPitch" />
   <xacro:property name="ForearmYawJointName" value="${prefix}ForearmYaw" />
-  <xacro:property name="WristRollJointName" value="${prefix}WristPitch" />
-  <xacro:property name="WristPitchJointName" value="${prefix}WristRoll" />
+  <xacro:property name="WristRollJointName" value="${prefix}WristRoll" />
+  <xacro:property name="WristPitchJointName" value="${prefix}WristPitch" />
 </robot>
