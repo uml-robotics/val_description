@@ -9,8 +9,10 @@ gzsdf print valkyrie_A.urdf
 
 # Check out the frames in Rviz by running the following command and setting /map to Pelvis
 cd test
+
 roslaunch VisualizeFramesInRviz.launch
 
 # Check out Valkyrie in Gazebo
 cd test
+
 roslaunch ValkyrieInEmptyWorld.launch
