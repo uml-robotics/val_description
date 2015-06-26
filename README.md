@@ -1,7 +1,7 @@
-# Make sure valkyrie_description and valkyrie_description/common_xacro are in ROS_PACKAGE_PATH
+# Make sure val_description and val_description/common_xacro are in ROS_PACKAGE_PATH
 
 # Generate URDF
-cd valkyrie_description/robots/valkyrie_A
+cd val_description/robots/valkyrie_A
 rosrun xacro xacro.py xacro/valkyrie_A.xacro -o valkyrie_A.urdf
 
 # Generate SDF then copy to file

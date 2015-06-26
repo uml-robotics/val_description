@@ -1,13 +1,13 @@
 <?xml version="1.0" ?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="v1/middle_finger">
 
-  <xacro:include filename="$(find valkyrie_description)/robots/valkyrie_A/xacro/middle_finger/joint_names.xacro"/>
-  <xacro:include filename="$(find valkyrie_description)/robots/valkyrie_A/xacro/middle_finger/joint_axes.xacro"/>
-  <xacro:include filename="$(find valkyrie_description)/robots/valkyrie_A/xacro/middle_finger/actuator_names.xacro"/>
-  <xacro:include filename="$(find valkyrie_description)/robots/valkyrie_A/xacro/middle_finger/link_names.xacro"/>
-  <xacro:include filename="$(find valkyrie_description)/robots/valkyrie_A/xacro/middle_finger/joint_limits.xacro"/>
-  <xacro:include filename="$(find valkyrie_description)/robots/valkyrie_A/xacro/middle_finger/frame_parameters.xacro"/>
-  <xacro:include filename="$(find valkyrie_description)/robots/valkyrie_A/xacro/middle_finger/mass_parameters.xacro"/>
+  <xacro:include filename="$(find val_description)/robots/valkyrie_A/xacro/middle_finger/joint_names.xacro"/>
+  <xacro:include filename="$(find val_description)/robots/valkyrie_A/xacro/middle_finger/joint_axes.xacro"/>
+  <xacro:include filename="$(find val_description)/robots/valkyrie_A/xacro/middle_finger/actuator_names.xacro"/>
+  <xacro:include filename="$(find val_description)/robots/valkyrie_A/xacro/middle_finger/link_names.xacro"/>
+  <xacro:include filename="$(find val_description)/robots/valkyrie_A/xacro/middle_finger/joint_limits.xacro"/>
+  <xacro:include filename="$(find val_description)/robots/valkyrie_A/xacro/middle_finger/frame_parameters.xacro"/>
+  <xacro:include filename="$(find val_description)/robots/valkyrie_A/xacro/middle_finger/mass_parameters.xacro"/>
   
   <xacro:property name="MFJ1_Link_Width" value="0.054"/>
   <xacro:property name="MFJ1_Link_Height" value="0.019"/>

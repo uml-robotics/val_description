@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 2.8.3)
-project(valkyrie_description)
+project(val_description)
 
 ## Find catkin macros and libraries
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
@@ -79,7 +79,7 @@ find_package(catkin REQUIRED COMPONENTS
 ## DEPENDS: system dependencies of this project that dependent projects also need
 catkin_package(
 #  INCLUDE_DIRS include
-#  LIBRARIES valkyrie_description
+#  LIBRARIES val_description
 #  CATKIN_DEPENDS xacro
 #  DEPENDS system_lib
 )
@@ -96,19 +96,19 @@ include_directories(
 )
 
 ## Declare a cpp library
-# add_library(valkyrie_description
-#   src/${PROJECT_NAME}/valkyrie_description.cpp
+# add_library(val_description
+#   src/${PROJECT_NAME}/val_description.cpp
 # )
 
 ## Declare a cpp executable
-# add_executable(valkyrie_description_node src/valkyrie_description_node.cpp)
+# add_executable(val_description_node src/val_description_node.cpp)
 
 ## Add cmake target dependencies of the executable/library
 ## as an example, message headers may need to be generated before nodes
-# add_dependencies(valkyrie_description_node valkyrie_description_generate_messages_cpp)
+# add_dependencies(val_description_node val_description_generate_messages_cpp)
 
 ## Specify libraries to link a library or executable target against
-# target_link_libraries(valkyrie_description_node
+# target_link_libraries(val_description_node
 #   ${catkin_LIBRARIES}
 # )
 
@@ -127,7 +127,7 @@ include_directories(
 # )
 
 ## Mark executables and/or libraries for installation
-# install(TARGETS valkyrie_description valkyrie_description_node
+# install(TARGETS val_description val_description_node
 #   ARCHIVE DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
 #   LIBRARY DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
 #   RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
@@ -152,7 +152,7 @@ include_directories(
 #############
 
 ## Add gtest based cpp test target and link libraries
-# catkin_add_gtest(${PROJECT_NAME}-test test/test_valkyrie_description.cpp)
+# catkin_add_gtest(${PROJECT_NAME}-test test/test_val_description.cpp)
 # if(TARGET ${PROJECT_NAME}-test)
 #   target_link_libraries(${PROJECT_NAME}-test ${PROJECT_NAME})
 # endif()

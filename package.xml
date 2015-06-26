@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <package>
-  <name>valkyrie_description</name>
+  <name>val_description</name>
   <version>0.0.0</version>
-  <description>The valkyrie_description package</description>
+  <description>The val_description package</description>
 
   <maintainer email="jordan.t.lack@nasa.gov">jordan</maintainer>
 

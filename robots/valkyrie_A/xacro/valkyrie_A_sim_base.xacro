@@ -1,12 +1,12 @@
 <robot xmlns:xacro="http://ros.org/wiki/xacro" name="valkyrie">
 
     <xacro:include filename="$(find common_xacro)/xacro/generic_models.xacro" />
-    <xacro:include filename="$(find valkyrie_description)/robots/valkyrie_A/xacro/plugins/gazebo_plugins.xacro"/>
+    <xacro:include filename="$(find val_description)/robots/valkyrie_A/xacro/plugins/gazebo_plugins.xacro"/>
 
     <xacro:include filename="$(find common_xacro)/xacro/materials.xacro" />
-    <xacro:include filename="$(find valkyrie_description)/robots/valkyrie_A/xacro/common/common_bodies.xacro" />
+    <xacro:include filename="$(find val_description)/robots/valkyrie_A/xacro/common/common_bodies.xacro" />
 
-    <xacro:include filename="$(find valkyrie_description)/robots/valkyrie_A/xacro/common/actuator_names.xacro" />
+    <xacro:include filename="$(find val_description)/robots/valkyrie_A/xacro/common/actuator_names.xacro" />
 
     <xacro:make_pelvis />
     <xacro:v1_pelvis_sensors/>
