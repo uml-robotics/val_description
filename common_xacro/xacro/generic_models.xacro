@@ -375,6 +375,15 @@
     </gazebo>
   </xacro:macro>
 
+  <xacro:macro name="continuous_joint" params="jointName parent child origin_xyz origin_rpy axis">
+    <joint name="${jointName}" type="continuous">
+      <origin rpy="${origin_rpy}" xyz="${origin_xyz}"/>
+      <axis xyz="${axis}"/>
+      <parent link="${parent}"/>
+      <child link="${child}"/>
+    </joint>
+  </xacro:macro>
+
   <xacro:macro name="revolute_joint_damped" params="jointName parent child origin_xyz origin_rpy axis damping friction *limits">
     <joint name="${jointName}" type="revolute">
       <origin rpy="${origin_rpy}" xyz="${origin_xyz}"/>

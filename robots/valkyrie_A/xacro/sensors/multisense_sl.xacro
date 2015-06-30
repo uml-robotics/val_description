@@ -1,0 +1,20 @@
+<?xml version="1.0" ?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="multisense_sl">
+  <xacro:macro name="multisense_sl" params="parentLink joint_axis joint_origin_xyz joint_origin_rpy com_origin_xyz com_origin_rpy mass visual_mesh material collision_mesh">
+
+    	 <xacro:standard_link name="HokuyoLink"
+    	  mass="${mass}" origin_xyz="${com_origin_xyz}" origin_rpy="${com_origin_rpy}" ixx="3.7174E-05" ixy="4.9927E-08" ixz="1.1015E-05" iyy=".2412E-05" iyz="-9.8165E-09" izz="4.167E-05"
+    	  visual_mesh="${visual_mesh}"
+    	  material="${material}"
+    	  collision_mesh="${collision_mesh}"
+    	  />
+    	 	<!-- params="name mass origin_rpy origin_xyz ixx ixy ixz iyy iyz izz visual_mesh material collision_mesh" -->
+
+    	 <xacro:continuous_joint jointName="MultisenseSLSpinnyJoint"
+                          parent="${parentLink}" child="HokuyoLink"
+                          origin_xyz="${joint_origin_xyz}"
+                          origin_rpy="${joint_origin_rpy}" 
+                          axis="${joint_axis}"/>
+
+  </xacro:macro>
+</robot>
