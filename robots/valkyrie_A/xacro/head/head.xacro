@@ -30,7 +30,7 @@
                        origin_xyz="${UpperNeckPitchLinkComPosition}" origin_rpy="0 0 0"
                        visual_mesh="${mesh_root}/head_multisense_no_visor.stl"
                        material="White"
-                       collision_mesh="${mesh_root}/head.stl"/>
+                       collision_mesh="${mesh_root}/head_multisense_no_visor.stl"/>
 
     <xacro:revolute_joint_ex jointName="${LowerNeckPitchJointName}"
                           parent="${LowerNeckPitchParentLinkName}" child="${LowerNeckPitchLinkName}"
