@@ -25,4 +25,12 @@
   <xacro:property name="UpperNeckPitchFrameOrientation_Pitch" value="0.0"/>
   <xacro:property name="UpperNeckPitchFrameOrientation_Yaw" value="0.0"/>
 
+  <xacro:property name="HokuyoFrameOrigin_X" value="0.001654"/>
+  <xacro:property name="HokuyoFrameOrigin_Y" value="0.0"/>
+  <xacro:property name="HokuyoFrameOrigin_Z" value="0.012564"/>
+
+  <xacro:property name="HokuyoFrameOrientation_Roll" value="0.0"/>
+  <xacro:property name="HokuyoFrameOrientation_Pitch" value="0.1309"/>
+  <xacro:property name="HokuyoFrameOrientation_Yaw" value="0.0"/>
+
 </robot>

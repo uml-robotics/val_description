@@ -10,4 +10,7 @@
   <xacro:property name="UpperNeckPitchLinkMass" value="4.06" />
   <xacro:property name="UpperNeckPitchLinkComPosition" value="0.091874 0.001012 -0.005277" />
 
+  <xacro:property name="HokuyoLinkMass" value="0.057664"/>
+  <xacro:property name="HokuyoLinkComPosition" value="0.14793 0.0 0.01"/>
+
 </robot>

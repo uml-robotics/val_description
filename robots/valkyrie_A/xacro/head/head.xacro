@@ -6,8 +6,7 @@
   <xacro:include filename="$(find val_description)/robots/valkyrie_A/xacro/head/joint_limits.xacro"/>
   <xacro:include filename="$(find val_description)/robots/valkyrie_A/xacro/head/frame_parameters.xacro"/>
   <xacro:include filename="$(find val_description)/robots/valkyrie_A/xacro/head/mass_parameters.xacro"/>
-  <xacro:include filename="$(find val_description)/robots/valkyrie_A/xacro/sensors/ensenso.xacro"/>
-  <xacro:include filename="$(find val_description)/robots/valkyrie_A/xacro/sensors/webcam.xacro"/>
+  <xacro:include filename="$(find val_description)/robots/valkyrie_A/xacro/sensors/multisense_sl.xacro"/>
   
   <xacro:property name="NJ3_Link_Radius" value="0.139"/>
 
@@ -29,9 +28,9 @@
     <xacro:sphere_link name="${UpperNeckPitchLinkName}"
                        radius="${NJ3_Link_Radius}" mass="${UpperNeckPitchLinkMass}"
                        origin_xyz="${UpperNeckPitchLinkComPosition}" origin_rpy="0 0 0"
-                       visual_mesh="${mesh_root}/head.stl"
+                       visual_mesh="${mesh_root}/head_multisense_no_visor.stl"
                        material="White"
-                       collision_mesh="${mesh_root}/head.stl"/>
+                       collision_mesh="${mesh_root}/head_multisense_no_visor.stl"/>
 
     <xacro:revolute_joint_ex jointName="${LowerNeckPitchJointName}"
                           parent="${LowerNeckPitchParentLinkName}" child="${LowerNeckPitchLinkName}"
@@ -66,22 +65,21 @@
 
   <xacro:macro name="v1_head_sensors">
 
-    <xacro:ensenso_sensor sensorName="Ensenso"
-                        parentLink="${UpperNeckPitchLinkName}"
-                        origin_xyz="0.1781 0.0 0.062"
-                        origin_rpy="1.57 -2.88 0"/>
-
-    <xacro:microstrain_sensor sensorName="HeadIMU"
+<!-- <xacro:microstrain_sensor sensorName="HeadIMU"
                               parentLink="${UpperNeckPitchLinkName}"
                               origin_xyz="0.098 0.0 0.052"
                               origin_rpy="-1.57 1.57 0.0" />
-
-    <xacro:webcam_camera sensorName="HeadWebcam"
-                        parentLink="${UpperNeckPitchLinkName}"
-                        origin_xyz="0.1801 0.0 0.102"
-                        origin_rpy="1.57 -2.88 0.0"
-                        imageFormat="R8G8B8"
-                        frameRate="60"/>
+-->
+    <xacro:multisense_sl parentLink="${UpperNeckPitchLinkName}" 
+                  joint_axis="1 0 0"
+                  joint_origin_xyz="${HokuyoFrameOrigin_X} ${HokuyoFrameOrigin_Y} ${HokuyoFrameOrigin_Z}"
+                  joint_origin_rpy="${HokuyoFrameOrientation_Roll} ${HokuyoFrameOrientation_Pitch} ${HokuyoFrameOrientation_Yaw}"
+                  com_origin_xyz="${HokuyoLinkComPosition}"
+                  com_origin_rpy="0 0 0" 
+                  mass="${HokuyoLinkMass}"
+                  visual_mesh="${mesh_root}/multisense_hokuyo.stl"
+                  material="White"
+                  collision_mesh="${mesh_root}/multisense_hokuyo.stl" />
   </xacro:macro>
 
   <xacro:macro name="v1_head_actuators" params="name1 type1 name2 type2 name3 type3">
