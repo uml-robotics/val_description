@@ -87,7 +87,12 @@
                           origin_rpy="${ShoulderRollFrameOrientation_Roll} ${ShoulderRollFrameOrientation_Pitch} ${ShoulderRollFrameOrientation_Yaw}" 
                           axis="${ShoulderRollRotationAxis}"
                           damping="0.1" friction="0.0">
+        <xacro:if value="${(reflect+1)/2}">
         <limit effort="${ShoulderRollTorqueLimit}" lower="${ShoulderRollPositionLimit_Lower}" upper="${ShoulderRollPositionLimit_Upper}" velocity="${ShoulderRollVelocityLimit}"/>
+        </xacro:if>
+        <xacro:if value="${(-reflect+1)/2}">
+        <limit effort="${ShoulderRollTorqueLimit}" lower="${reflect * ShoulderRollPositionLimit_Upper}" upper="${reflect * ShoulderRollPositionLimit_Lower}" velocity="${ShoulderRollVelocityLimit}"/>
+        </xacro:if>
         <controller_gains Kp="20000" Kd="400"/>
     </xacro:revolute_joint_ex>
 
@@ -109,7 +114,12 @@
                           origin_rpy="${ElbowPitchFrameOrientation_Roll} ${ElbowPitchFrameOrientation_Pitch} ${ElbowPitchFrameOrientation_Yaw}" 
                           axis="${ElbowPitchRotationAxis}"
                           damping="0.1" friction="0.0">
+        <xacro:if value="${(reflect+1)/2}">
         <limit effort="${ElbowPitchTorqueLimit}" lower="${ElbowPitchPositionLimit_Lower}" upper="${ElbowPitchPositionLimit_Upper}" velocity="${ElbowPitchVelocityLimit}"/>
+        </xacro:if>
+        <xacro:if value="${(-reflect+1)/2}">
+        <limit effort="${ElbowPitchTorqueLimit}" lower="${reflect * ElbowPitchPositionLimit_Upper}" upper="${reflect * ElbowPitchPositionLimit_Lower}" velocity="${ElbowPitchVelocityLimit}"/>
+        </xacro:if>
         <controller_gains Kp="20000" Kd="400"/>
     </xacro:revolute_joint_ex>
   </xacro:macro>
@@ -159,7 +169,12 @@
                           origin_rpy="${WristRollFrameOrientation_Roll} ${WristRollFrameOrientation_Pitch} ${WristRollFrameOrientation_Yaw}" 
                           axis="${WristRollRotationAxis}"
                           damping="0.1" friction="0.0">
+        <xacro:if value="${(reflect+1)/2}">
         <limit effort="${WristRollTorqueLimit}" lower="${WristRollPositionLimit_Lower}" upper="${WristRollPositionLimit_Upper}" velocity="${WristRollVelocityLimit}"/>
+        </xacro:if>
+        <xacro:if value="${(-reflect+1)/2}">
+        <limit effort="${WristRollTorqueLimit}" lower="${reflect * WristRollPositionLimit_Upper}" upper="${reflect * WristRollPositionLimit_Lower}" velocity="${WristRollVelocityLimit}"/>
+        </xacro:if>
         <controller_gains Kp="20000" Kd="400"/>
     </xacro:revolute_joint_ex>
 
@@ -170,7 +185,12 @@
                           origin_rpy="${WristPitchFrameOrientation_Roll} ${WristPitchFrameOrientation_Pitch} ${WristPitchFrameOrientation_Yaw}" 
                           axis="${WristPitchRotationAxis}"
                           damping="0.1" friction="0.0">
+        <xacro:if value="${(reflect+1)/2}">
         <limit effort="${WristPitchTorqueLimit}" lower="${WristPitchPositionLimit_Lower}" upper="${WristPitchPositionLimit_Upper}" velocity="${WristPitchVelocityLimit}"/>
+        </xacro:if>
+        <xacro:if value="${(-reflect+1)/2}">
+        <limit effort="${WristRollTorqueLimit}" lower="${reflect * WristPitchPositionLimit_Upper}" upper="${reflect * WristPitchPositionLimit_Lower}" velocity="${WristRollVelocityLimit}"/>
+        </xacro:if>
         <controller_gains Kp="20000" Kd="400"/>
     </xacro:revolute_joint_ex>
   </xacro:macro>
