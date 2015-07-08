@@ -107,7 +107,12 @@
                           origin_rpy="${HipYawFrameOrientation_Roll} ${HipYawFrameOrientation_Pitch} ${HipYawFrameOrientation_Yaw}" 
                           axis="${HipYawRotationAxis}"
                           damping="0.1" friction="0.0">
+        <xacro:if value="${(reflect+1)/2}">
+        <limit effort="${HipYawTorqueLimit}" lower="${-reflect * HipYawPositionLimit_Upper}" upper="${-reflect * HipYawPositionLimit_Lower}" velocity="${HipYawVelocityLimit}"/>
+        </xacro:if>
+        <xacro:if value="${(-reflect+1)/2}">
         <limit effort="${HipYawTorqueLimit}" lower="${HipYawPositionLimit_Lower}" upper="${HipYawPositionLimit_Upper}" velocity="${HipYawVelocityLimit}"/>
+        </xacro:if>
         <controller_gains Kp="15000" Kd="500"/>
     </xacro:revolute_joint_ex>
 
@@ -117,7 +122,12 @@
                           origin_rpy="${HipRollFrameOrientation_Roll} ${HipRollFrameOrientation_Pitch} ${HipRollFrameOrientation_Yaw}" 
                           axis="${HipRollRotationAxis}"
                           damping="0.1" friction="0.0">
+        <xacro:if value="${(reflect+1)/2}">
+        <limit effort="${HipRollTorqueLimit}" lower="${-reflect * HipRollPositionLimit_Upper}" upper="${-reflect * HipRollPositionLimit_Lower}" velocity="${HipRollVelocityLimit}"/>
+        </xacro:if>
+        <xacro:if value="${(-reflect+1)/2}">
         <limit effort="${HipRollTorqueLimit}" lower="${HipRollPositionLimit_Lower}" upper="${HipRollPositionLimit_Upper}" velocity="${HipRollVelocityLimit}"/>
+        </xacro:if>
         <controller_gains Kp="15000" Kd="500"/>
     </xacro:revolute_joint_ex>
 
