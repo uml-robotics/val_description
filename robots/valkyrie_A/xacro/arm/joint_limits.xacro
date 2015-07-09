@@ -20,7 +20,7 @@
   <xacro:property name="ShoulderPitchPositionLimit_Upper" value="3.14" />
   <xacro:property name="ShoulderRollPositionLimit_Upper" value="1.4835" />
   <xacro:property name="ShoulderYawPositionLimit_Upper" value="1.5707" />
-  <xacro:property name="ElbowPitchPositionLimit_Upper" value="-0.087" />
+  <xacro:property name="ElbowPitchPositionLimit_Upper" value="0.0" />
   <xacro:property name="ForearmYawPositionLimit_Upper" value="3.9269" />
   <xacro:property name="WristRollPositionLimit_Upper" value="0.524" />
   <xacro:property name="WristPitchPositionLimit_Upper" value="0.698" />

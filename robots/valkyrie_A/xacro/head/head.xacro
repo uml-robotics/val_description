@@ -1,4 +1,4 @@
-<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="v1/head">
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="head">
 
   <xacro:include filename="$(find val_description)/robots/valkyrie_A/xacro/head/joint_names.xacro"/>
   <xacro:include filename="$(find val_description)/robots/valkyrie_A/xacro/head/joint_axes.xacro"/>
@@ -18,19 +18,19 @@
     <xacro:virtual_link_with_visual name="${LowerNeckPitchLinkName}"
                                     origin_xyz="${LowerNeckPitchLinkComPosition}"
                                     origin_rpy="0 0 0"
-                                    mesh_filename="${mesh_root}/neckj1.stl"/>
+                                    mesh_filename="${mesh_root}/head/neckj1.stl"/>
 
     <xacro:virtual_link_with_visual name="${NeckYawLinkName}"
                                     origin_xyz="${NeckYawLinkComPosition}"
                                     origin_rpy="0 0 0"
-                                    mesh_filename="${mesh_root}/neckj2.stl"/>
+                                    mesh_filename="${mesh_root}/head/neckj2.stl"/>
 
     <xacro:sphere_link name="${UpperNeckPitchLinkName}"
                        radius="${NJ3_Link_Radius}" mass="${UpperNeckPitchLinkMass}"
                        origin_xyz="${UpperNeckPitchLinkComPosition}" origin_rpy="0 0 0"
-                       visual_mesh="${mesh_root}/head_multisense_no_visor.stl"
+                       visual_mesh="${mesh_root}/head/head_multisense_no_visor.stl"
                        material="White"
-                       collision_mesh="${mesh_root}/head_multisense_no_visor.stl"/>
+                       collision_mesh="${mesh_root}/head/head_multisense_no_visor.stl"/>
 
     <xacro:revolute_joint_ex jointName="${LowerNeckPitchJointName}"
                           parent="${LowerNeckPitchParentLinkName}" child="${LowerNeckPitchLinkName}"
@@ -77,9 +77,9 @@
                   com_origin_xyz="${HokuyoLinkComPosition}"
                   com_origin_rpy="0 0 0" 
                   mass="${HokuyoLinkMass}"
-                  visual_mesh="${mesh_root}/multisense_hokuyo.stl"
+                  visual_mesh="${mesh_root}/head/multisense_hokuyo.stl"
                   material="White"
-                  collision_mesh="${mesh_root}/multisense_hokuyo.stl" />
+                  collision_mesh="${mesh_root}/head/multisense_hokuyo.stl" />
   </xacro:macro>
 
   <xacro:macro name="v1_head_actuators" params="name1 type1 name2 type2 name3 type3">
