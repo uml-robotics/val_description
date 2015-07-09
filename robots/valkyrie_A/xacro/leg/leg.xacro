@@ -42,49 +42,49 @@
     <xacro:box_link name="${HipYawLinkName}"
                     width="${LJ1_Link_Width}" height="${LJ1_Link_Height}" depth="${LJ1_Link_Length}" mass="${HipYawLinkMass}"
                     origin_xyz="${HipYawLinkComPosition}" origin_rpy="0 0 0" 
-                    visual_mesh="${mesh_root}/lj1_${prefix}.stl"
+                    visual_mesh="${mesh_root}/legs/lj1_${prefix}.stl"
                     material="Gold"
-                    collision_mesh="${mesh_root}/lj1_${prefix}.stl"/>
+                    collision_mesh="${mesh_root}/legs/lj1_${prefix}.stl"/>
 
     <xacro:box_link name="${HipRollLinkName}"
                     width="${LJ2_Link_Width}" height="${LJ2_Link_Height}" depth="${LJ2_Link_Length}" mass="${HipRollLinkMass}"
                     origin_xyz="${HipRollLinkComPosition}"
                     origin_rpy="0 0 0"
-                    visual_mesh="${mesh_root}/lj2_${prefix}.stl"
+                    visual_mesh="${mesh_root}/legs/lj2_${prefix}.stl"
                     material="White"
-                    collision_mesh="${mesh_root}/lj2_${prefix}.stl"/>
+                    collision_mesh="${mesh_root}/legs/lj2_${prefix}.stl"/>
 
     <xacro:box_link name="${HipPitchLinkName}"
                     width="${LJ3_Link_Width}" height="${LJ3_Link_Height}" depth="${LJ3_Link_Length}" mass="${HipPitchLinkMass}"
                     origin_xyz="${HipPitchLinkComPosition}"
                     origin_rpy="0 0 0"
-                    visual_mesh="${mesh_root}/lj3_${prefix}.stl"
+                    visual_mesh="${mesh_root}/legs/lj3_${prefix}.stl"
                     material="White"
-                    collision_mesh="${mesh_root}/lj3_${prefix}.stl"/>
+                    collision_mesh="${mesh_root}/legs/lj3_${prefix}.stl"/>
 
     <xacro:box_link name="${KneePitchLinkName}"
                     width="${LJ4_Link_Box_Width}" height="${LJ4_Link_Box_Height}" depth="${LJ4_Link_Box_Length}" mass="${KneePitchLinkMass}"
                     origin_xyz="${KneePitchLinkComPosition}"
                     origin_rpy="0 0 0"
-                    visual_mesh="${mesh_root}/lj4_${prefix}.stl"
+                    visual_mesh="${mesh_root}/legs/lj4_${prefix}.stl"
                     material="White"
-                    collision_mesh="${mesh_root}/lj4_${prefix}.stl"/>
+                    collision_mesh="${mesh_root}/legs/lj4_${prefix}.stl"/>
 
     <xacro:box_link name="${AnklePitchLinkName}"
                     width="${LJ5_Link_Width}" height="${LJ5_Link_Height}" depth="${LJ5_Link_Length}" mass="${AnklePitchLinkMass}"
                     origin_xyz="${AnklePitchLinkComPosition}"
                     origin_rpy="0 0 0"
-                    visual_mesh="${mesh_root}/lj5.stl"
+                    visual_mesh="${mesh_root}/legs/lj5.stl"
                     material="White"
-                    collision_mesh="${mesh_root}/lj5.stl"/>
+                    collision_mesh="${mesh_root}/legs/lj5.stl"/>
 
     <xacro:box_link name="${AnkleRollLinkName}"
                     width="${LJ6_Link_Width}" height="${LJ6_Link_Height}" depth="${LJ6_Link_Length}" mass="${FootMass}"
                     origin_xyz="${FootComPosition}"
                     origin_rpy="0 0 0"
-                    visual_mesh="${mesh_root}/foot_${prefix}.stl"
+                    visual_mesh="${mesh_root}/legs/foot_${prefix}.stl"
                     material="White"
-                    collision_mesh="${mesh_root}/foot_${prefix}.stl" />
+                    collision_mesh="${mesh_root}/legs/foot_${prefix}.stl" />
 
     
     <gazebo reference="${AnkleRollLinkName}">

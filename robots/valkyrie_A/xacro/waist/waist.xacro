@@ -54,25 +54,25 @@
                     width="0.0001" height="0.0001" depth="0.0001" mass="0.00001"
                     origin_rpy="0 0 0"
                     origin_xyz="0 0 0"
-                    visual_mesh="${mesh_root}/torsoyaw.stl"
+                    visual_mesh="${mesh_root}/torso/torsoyaw.stl"
                     material="White"
-                    collision_mesh="${mesh_root}/torsoyaw.stl" />
+                    collision_mesh="${mesh_root}/torso/torsoyaw.stl" />
 
     <xacro:box_link name="${TorsoPitchLinkName}"
                     width="0.0001" height="0.0001" depth="0.0001" mass="0.00001"
                     origin_rpy="0 0 0"
                     origin_xyz="0 0 0"
-                    visual_mesh="${mesh_root}/torsopitch.stl"
+                    visual_mesh="${mesh_root}/torso/torsopitch.stl"
                     material="White"
-                    collision_mesh="${mesh_root}/torsopitch.stl" />
+                    collision_mesh="${mesh_root}/torso/torsopitch.stl" />
 
     <xacro:box_link name="${TorsoRollLinkName}"
                     width="${Trunk_Width}" height="${Trunk_Height}" depth="${Trunk_Length}" mass="${TorsoRollLinkMass}"
                     origin_rpy="0 0 0"
                     origin_xyz="0.219 0.03 -0.104"
-                    visual_mesh="${mesh_root}/torso.stl"
+                    visual_mesh="${mesh_root}/torso/torso.stl"
                     material="White"
-                    collision_mesh="${mesh_root}/torso.stl" />                    
+                    collision_mesh="${mesh_root}/torso/torso.stl" />                    
 
     <xacro:make_waist_common waist_root_link="${waist_root_link}"/>
   </xacro:macro>
@@ -83,9 +83,9 @@
                     width="${Trunk_Width}" height="${Trunk_Height}" depth="${Trunk_Length}" mass="${TorsoRollLinkMass}"
                     origin_rpy="0 0 0"
                     origin_xyz="0 0 0"
-                    visual_mesh="${mesh_root}/wj3.stl"
+                    visual_mesh="${mesh_root}/torso/wj3.stl"
                     material="White"
-                    collision_mesh="${mesh_root}/wj3.stl" />
+                    collision_mesh="${mesh_root}/torso/wj3.stl" />
   </xacro:macro>
 
   <!-- Actuators -->
