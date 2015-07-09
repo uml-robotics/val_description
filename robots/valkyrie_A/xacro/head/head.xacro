@@ -1,4 +1,4 @@
-<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="v1/head">
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="head">
 
   <xacro:include filename="$(find val_description)/robots/valkyrie_A/xacro/head/joint_names.xacro"/>
   <xacro:include filename="$(find val_description)/robots/valkyrie_A/xacro/head/joint_axes.xacro"/>

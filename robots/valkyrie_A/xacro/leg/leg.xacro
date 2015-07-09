@@ -1,5 +1,5 @@
 <?xml version="1.0" ?>
-<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="v1/leg">
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="leg">
   <xacro:include filename="$(find val_description)/robots/valkyrie_A/xacro/leg/joint_names.xacro"/>
   <xacro:include filename="$(find val_description)/robots/valkyrie_A/xacro/leg/joint_axes.xacro"/>
   <xacro:include filename="$(find val_description)/robots/valkyrie_A/xacro/leg/link_names.xacro"/>
