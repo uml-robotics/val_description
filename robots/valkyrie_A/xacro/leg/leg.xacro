@@ -78,9 +78,11 @@
                     material="White"
                     collision_mesh="${mesh_root}/legs/lj5.stl"/>
 
-    <xacro:box_link name="${AnkleRollLinkName}"
-                    width="${LJ6_Link_Width}" height="${LJ6_Link_Height}" depth="${LJ6_Link_Length}" mass="${FootMass}"
-                    origin_xyz="${FootComPosition}"
+    <xacro:standard_link name="${AnkleRollLinkName}"
+                    mass="${FootMass}"
+                    origin_xyz="${FootComPosition}" 
+                    ixx="${FootInertia_IXX}" ixy="${FootInertia_IXY}" ixz="${FootInertia_IXZ}" 
+                    iyy="${FootInertia_IYY}" iyz="${FootInertia_IYZ}" izz="${FootInertia_IZZ}"
                     origin_rpy="0 0 0"
                     visual_mesh="${mesh_root}/legs/foot_${prefix}.stl"
                     material="White"
