@@ -179,21 +179,6 @@
     <xacro:make_leg_links prefix="${prefix}" reflect="${reflect}" leg_root_link="${leg_root_link}" />
     <xacro:make_leg_joints prefix="${prefix}" reflect="${reflect}" leg_root_link="${leg_root_link}" />
     <xacro:make_ankle_joints prefix="${prefix}" reflect="${reflect}" leg_root_link="${leg_root_link}" />
-    <xacro:make_foot_joints prefix="${prefix}" reflect="${reflect}" leg_root_link="${leg_root_link}" />
-  </xacro:macro>
-
-  <xacro:macro name="make_leg_fixed_ankle" params="prefix reflect leg_root_link">
-    <xacro:make_leg_links prefix="${prefix}" reflect="${reflect}" leg_root_link="${leg_root_link}" />
-    <xacro:make_leg_joints prefix="${prefix}" reflect="${reflect}" leg_root_link="${leg_root_link}" />
-    <xacro:make_ankle_joints_fixed prefix="${prefix}" reflect="${reflect}" leg_root_link="${leg_root_link}" />
-    <xacro:make_foot_joints prefix="${prefix}" reflect="${reflect}" leg_root_link="${leg_root_link}" />
-  </xacro:macro>
-
-  <xacro:macro name="make_leg_fixed_upper_leg" params="prefix reflect leg_root_link">
-    <xacro:make_leg_links prefix="${prefix}" reflect="${reflect}" leg_root_link="${leg_root_link}" />
-    <xacro:make_leg_joints_fixed prefix="${prefix}" reflect="${reflect}" leg_root_link="${leg_root_link}" />
-    <xacro:make_ankle_joints prefix="${prefix}" reflect="${reflect}" leg_root_link="${leg_root_link}" />
-    <xacro:make_foot_joints prefix="${prefix}" reflect="${reflect}" leg_root_link="${leg_root_link}" />
   </xacro:macro>
 
 
