@@ -10,11 +10,13 @@
                        parent="${parentLink}" child="${sensorName}_Frame"
                        origin_rpy="${origin_rpy}"
                        origin_xyz="${origin_xyz}"/>
-                         	
-    <sensor name="${sensorName}" type="force_torque">
-      <parent link="${parentLink}"/>
-      <origin rpy="${origin_rpy}" xyz="${origin_xyz}"/>
-  	</sensor>
+             
+    <gazebo reference="${sensorName}_Frame">            	
+      <sensor name="${sensorName}" type="force_torque">
+        <parent link="${parentLink}"/>
+        <pose>${origin_xyz} ${origin_rpy} </pose>
+    	</sensor>
+    </gazebo>
 
     
   </xacro:macro>
