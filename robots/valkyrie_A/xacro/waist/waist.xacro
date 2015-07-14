@@ -11,9 +11,9 @@
   <xacro:include filename="$(find val_description)/robots/valkyrie_A/xacro/sensors/microstrain.xacro"/>
   <xacro:include filename="$(find val_description)/robots/valkyrie_A/xacro/sensors/flea.xacro"/>
 
-  <xacro:property name="Trunk_Width" value="0.47605775481079287692"/>
+  <xacro:property name="Trunk_Width" value="0.42203731228144558685"/>
   <xacro:property name="Trunk_Height" value="0.39817895332782154982"/>
-  <xacro:property name="Trunk_Length" value="0.42203731228144558685"/>
+  <xacro:property name="Trunk_Length" value="0.47605775481079287692"/>
 
   <xacro:macro name="make_waist_common" params="waist_root_link">
 
