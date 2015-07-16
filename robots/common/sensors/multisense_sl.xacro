@@ -1,9 +1,7 @@
 <?xml version="1.0" ?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="multisense_sl">
   <xacro:macro name="multisense_sl" params="parentLink joint_axis joint_origin_xyz joint_origin_rpy com_origin_xyz com_origin_rpy mass visual_mesh material collision_mesh">
-
-    	 	<!-- params="name mass origin_rpy origin_xyz ixx ixy ixz iyy iyz izz visual_mesh material collision_mesh" -->
-
+    
     	<xacro:continuous_joint jointName="MultisenseSLSpinnyJointFrame"
                           parent="${parentLink}" child="hokuyo_link"
                           origin_xyz="${joint_origin_xyz}"
@@ -17,9 +15,18 @@
 		    	  collision_mesh="${collision_mesh}"
 		    	  />
 
-      <gazebo reference="hokuyo_link">
+		  <xacro:fixed_joint jointName="head_hokuyo_frame_joint"
+	           parent="hokuyo_link" child="head_hokuyo_frame_offset"
+	           origin_rpy="3.14 0.0 0.0"
+	           origin_xyz="0.16018 0.0 -0.015"/>
+
+      <xacro:massless_virtual_link name="head_hokuyo_frame_offset" 
+                    origin_rpy="0 0 0" 
+                    origin_xyz="0 0 0"/>
+
+      <gazebo reference="head_hokuyo_frame_offset">
         <sensor type="ray" name="head_hokuyo_sensor">
-          <parent>hokuyo_link</parent>
+          <parent>head_hokuyo_frame_offset</parent>
           <pose>0 0 0 0 0 0</pose>
           <visualize>false</visualize>
           <update_rate>40</update_rate>
@@ -46,32 +53,39 @@
         </sensor>
       </gazebo>
 
-	    <xacro:massless_virtual_link name="head_hokuyo_frame_offset" 
-                    origin_rpy="0 0 0" 
-                    origin_xyz="0 0 0"/>
-
-		  <xacro:fixed_joint jointName="head_hokuyo_frame_joint"
-	           parent="hokuyo_link" child="head_hokuyo_frame_offset"
-	           origin_rpy="3.14 0.0 0.0"
-	           origin_xyz="0.16018 0.0 -0.015"/>
-
-      <xacro:massless_virtual_link name="left_camera_frame_offset" 
-                    origin_rpy="0 0 0" 
-                    origin_xyz="0 0 0"/>
-
       <xacro:fixed_joint jointName="left_camera_frame_joint"
          parent="${parentLink}" child="left_camera_frame_offset"
          origin_rpy="-3.14 0.1309 0.0"
        	 origin_xyz="0.18335 0.035 0.0774"/>
 
+      <xacro:massless_virtual_link name="left_camera_frame_offset" 
+                    origin_rpy="0 0 0" 
+                    origin_xyz="0 0 0"/>
+
+      <gazebo reference="left_camera_frame_offset">
+        <sensor type="camera" name="multisense_left_camera">
+          <parent>left_camera_frame_offset</parent>
+          <pose>0 0 0 0 0 0</pose>
+          <visualize>false</visualize>
+        </sensor>
+      </gazebo>
+
+      <xacro:fixed_joint jointName="right_camera_frame_joint"
+         parent="${parentLink}" child="right_camera_frame_offset"
+         origin_rpy="-3.14 0.1309 0.0"
+         origin_xyz="0.18335 -0.035 0.0774"/>
+
      	<xacro:massless_virtual_link name="right_camera_frame_offset" 
                     origin_rpy="0 0 0" 
                     origin_xyz="0 0 0"/>
 
-       	<xacro:fixed_joint jointName="right_camera_frame_joint"
-         parent="${parentLink}" child="right_camera_frame_offset"
-         origin_rpy="-3.14 0.1309 0.0"
-         origin_xyz="0.18335 -0.035 0.0774"/>
+      <gazebo reference="right_camera_frame_offset">
+        <sensor type="camera" name="multisense_right_camera">
+          <parent>right_camera_frame_offset</parent>
+          <pose>0 0 0 0 0 0</pose>
+          <visualize>false</visualize>
+        </sensor>
+      </gazebo>
 
   </xacro:macro>
 </robot>

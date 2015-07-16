@@ -6,7 +6,7 @@
   <xacro:include filename="$(find val_description)/robots/valkyrie_A/xacro/head/joint_limits.xacro"/>
   <xacro:include filename="$(find val_description)/robots/valkyrie_A/xacro/head/frame_parameters.xacro"/>
   <xacro:include filename="$(find val_description)/robots/valkyrie_A/xacro/head/mass_parameters.xacro"/>
-  <xacro:include filename="$(find val_description)/robots/valkyrie_A/xacro/sensors/multisense_sl.xacro"/>
+  <xacro:include filename="$(find val_description)/robots/common/sensors/multisense_sl.xacro"/>
   
   <xacro:property name="NJ3_Link_Radius" value="0.139"/>
 

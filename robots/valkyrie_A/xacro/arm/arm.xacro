@@ -7,7 +7,6 @@
   <xacro:include filename="$(find val_description)/robots/valkyrie_A/xacro/arm/joint_limits.xacro"/>
   <xacro:include filename="$(find val_description)/robots/valkyrie_A/xacro/arm/frame_parameters.xacro"/>
   <xacro:include filename="$(find val_description)/robots/valkyrie_A/xacro/arm/mass_parameters.xacro"/>
-  <xacro:include filename="$(find val_description)/robots/valkyrie_A/xacro/sensors/camboard.xacro"/>
 
   <xacro:property name="AJ1_Link_Width" value="0.162"/>
   <xacro:property name="AJ1_Link_Height" value="0.202"/>
@@ -198,26 +197,6 @@
   <xacro:macro name="make_arm" params="prefix reflect arm_root_link">
     <xacro:make_upper_arm prefix="${prefix}" reflect="${reflect}" upper_arm_root_link="${arm_root_link}" />
     <xacro:make_lower_arm prefix="${prefix}" reflect="${reflect}" lower_arm_root_link="${ElbowPitchLinkName}" />
-  </xacro:macro>
-
-  <!-- Sensors -->
-  <xacro:macro name="v1_right_arm_sensor">
-    <xacro:camboard_sensor sensorName="/v1/RightCamBoard"
-                           parentLink="/v1/RightForearm"
-                           origin_xyz="0.049237 0.006877 -0.250708"
-                           origin_rpy="3.14 1.57 3.14"/>
-  </xacro:macro>
-
-  <xacro:macro name="v1_left_arm_sensor">
-    <xacro:camboard_sensor sensorName="/v1/LeftCamBoard"
-                           parentLink="/v1/LeftForearm"
-                           origin_xyz="0.045536 -0.0085 0.250708"
-                           origin_rpy="3.14 -1.57 0"/>
-  </xacro:macro>
-
-  <xacro:macro name="v1_arm_sensors">
-    <xacro:v1_right_arm_sensor />
-    <xacro:v1_left_arm_sensor />
   </xacro:macro>
 
   <!-- Actuators -->

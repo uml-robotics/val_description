@@ -6,7 +6,7 @@
   <xacro:include filename="$(find val_description)/robots/valkyrie_A/xacro/leg/joint_limits.xacro"/>
   <xacro:include filename="$(find val_description)/robots/valkyrie_A/xacro/leg/frame_parameters.xacro"/>
   <xacro:include filename="$(find val_description)/robots/valkyrie_A/xacro/leg/mass_parameters.xacro"/>
-  <xacro:include filename="$(find val_description)/robots/valkyrie_A/xacro/sensors/ati_force_torque.xacro"/>
+  <xacro:include filename="$(find val_description)/robots/common/sensors/ati_force_torque.xacro"/>
 
   <xacro:property name="LJ1_Link_Width" value="0.149"/>
   <xacro:property name="LJ1_Link_Height" value="0.185"/>
