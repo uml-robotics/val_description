@@ -1,4 +1,4 @@
-<robot xmlns:xacro="http://ros.orgt/wiki/xacro" name="v1/common_bodies">
+<robot xmlns:xacro="http://ros.orgt/wiki/xacro" name="common_bodies">
     <xacro:include filename="$(find val_description)/robots/valkyrie_A/xacro/pelvis/pelvis.xacro" />
     <xacro:include filename="$(find val_description)/robots/valkyrie_A/xacro/waist/waist.xacro" />
     <xacro:include filename="$(find val_description)/robots/valkyrie_A/xacro/head/head.xacro" />

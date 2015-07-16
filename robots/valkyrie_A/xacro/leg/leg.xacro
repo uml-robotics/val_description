@@ -6,7 +6,7 @@
   <xacro:include filename="$(find val_description)/robots/valkyrie_A/xacro/leg/joint_limits.xacro"/>
   <xacro:include filename="$(find val_description)/robots/valkyrie_A/xacro/leg/frame_parameters.xacro"/>
   <xacro:include filename="$(find val_description)/robots/valkyrie_A/xacro/leg/mass_parameters.xacro"/>
-  <xacro:include filename="$(find val_description)/robots/valkyrie_A/xacro/sensors/ati_force_torque.xacro"/>
+  <xacro:include filename="$(find val_description)/robots/common/sensors/ati_force_torque.xacro"/>
 
   <xacro:property name="LJ1_Link_Width" value="0.149"/>
   <xacro:property name="LJ1_Link_Height" value="0.185"/>
@@ -190,9 +190,9 @@
                        origin_xyz="0.0189 0.0 -0.0783"
                        origin_rpy="0.0 0.13 0.0"/>
 
-    <xacro:ati_force_torque_sensor sensorName="${prefix}LegSixAxis"
+    <xacro:ati_force_torque_sensor sensorName="${prefix}FootSixAxis"
                         parentLink="${AnkleRollLinkName}"
-                        origin_xyz="0.022 0.0 -0.059"
+                        origin_xyz="0.0215594 0.0 -0.0585488"
                         origin_rpy="3.14 0.0 -1.047"/>
   </xacro:macro>
 

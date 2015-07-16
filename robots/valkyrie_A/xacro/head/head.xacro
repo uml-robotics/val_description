@@ -6,7 +6,7 @@
   <xacro:include filename="$(find val_description)/robots/valkyrie_A/xacro/head/joint_limits.xacro"/>
   <xacro:include filename="$(find val_description)/robots/valkyrie_A/xacro/head/frame_parameters.xacro"/>
   <xacro:include filename="$(find val_description)/robots/valkyrie_A/xacro/head/mass_parameters.xacro"/>
-  <xacro:include filename="$(find val_description)/robots/valkyrie_A/xacro/sensors/multisense_sl.xacro"/>
+  <xacro:include filename="$(find val_description)/robots/common/sensors/multisense_sl.xacro"/>
   
   <xacro:property name="NJ3_Link_Radius" value="0.139"/>
 
@@ -65,11 +65,6 @@
 
   <xacro:macro name="v1_head_sensors">
 
-<!-- <xacro:microstrain_sensor sensorName="HeadIMU"
-                              parentLink="${UpperNeckPitchLinkName}"
-                              origin_xyz="0.098 0.0 0.052"
-                              origin_rpy="-1.57 1.57 0.0" />
--->
     <xacro:multisense_sl parentLink="${UpperNeckPitchLinkName}" 
                   joint_axis="1 0 0"
                   joint_origin_xyz="${HokuyoFrameOrigin_X} ${HokuyoFrameOrigin_Y} ${HokuyoFrameOrigin_Z}"
