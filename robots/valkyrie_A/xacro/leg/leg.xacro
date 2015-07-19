@@ -14,29 +14,6 @@
   <xacro:property name="LJ1_Link_Origin_X" value="0.02176"/>
   <xacro:property name="LJ1_Link_Origin_Y" value="0.0013"/>
   <xacro:property name="LJ1_Link_Origin_Z" value="0.03867"/>
-  <!-- <xacro:property name="LJ1_Link_Origin_X" value="1.3078570e-03"/>
-  <xacro:property name="LJ1_Link_Origin_Y" value="2.1764163e-02"/>
-  <xacro:property name="LJ1_Link_Origin_Z" value="3.8670367e-02"/> -->
-
-  <xacro:property name="LJ2_Link_Width" value="0.131"/>
-  <xacro:property name="LJ2_Link_Height" value="0.185"/>
-  <xacro:property name="LJ2_Link_Length" value="0.123"/>
-
-  <xacro:property name="LJ3_Link_Width" value="0.55419965909040602714"/>
-  <xacro:property name="LJ3_Link_Height" value="0.24253719562602335524"/>
-  <xacro:property name="LJ3_Link_Length" value="0.18520578950459243295"/>
-
-  <xacro:property name="LJ4_Link_Box_Width" value="0.44528684954574881960"/>
-  <xacro:property name="LJ4_Link_Box_Height" value="0.20288766696230062236"/>
-  <xacro:property name="LJ4_Link_Box_Length" value="0.20551228016178813007"/>
-
-  <xacro:property name="LJ5_Link_Width" value="0.033"/>
-  <xacro:property name="LJ5_Link_Height" value="0.076"/>
-  <xacro:property name="LJ5_Link_Length" value="0.025"/>
-
-  <xacro:property name="LJ6_Link_Width" value="0.082"/>
-  <xacro:property name="LJ6_Link_Height" value="0.128"/>
-  <xacro:property name="LJ6_Link_Length" value="0.300"/>
 
   <xacro:macro name="make_leg_links" params="prefix reflect leg_root_link">
     <xacro:box_link name="${HipYawLinkName}"
@@ -47,7 +24,7 @@
                     collision_mesh="${mesh_root}/legs/lj1_${prefix}.stl"/>
 
     <xacro:standard_link name="${HipRollLinkName}"
-                    width="${LJ2_Link_Width}" height="${LJ2_Link_Height}" depth="${LJ2_Link_Length}" mass="${HipRollLinkMass}"
+                    mass="${HipRollLinkMass}"
                     origin_xyz="${HipRollLinkComPosition}"
                     ixx="${HipRollLinkInertia_IXX}" ixy="${HipRollLinkInertia_IXY}" ixz="${HipRollLinkInertia_IXZ}"
                     iyy="${HipRollLinkInertia_IYY}" iyz="${HipRollLinkInertia_IYZ}" izz="${HipRollLinkInertia_IZZ}"
@@ -57,7 +34,7 @@
                     collision_mesh="${mesh_root}/legs/lj2_${prefix}.stl"/>
 
     <xacro:standard_link name="${HipPitchLinkName}"
-                    width="${LJ3_Link_Width}" height="${LJ3_Link_Height}" depth="${LJ3_Link_Length}" mass="${HipPitchLinkMass}"
+                    mass="${HipPitchLinkMass}"
                     origin_xyz="${HipPitchLinkComPosition}"
                     ixx="${HipPitchLinkInertia_IXX}" ixy="${HipPitchLinkInertia_IXY}" ixz="${HipPitchLinkInertia_IXZ}"
                     iyy="${HipPitchLinkInertia_IYY}" iyz="${HipPitchLinkInertia_IYZ}" izz="${HipPitchLinkInertia_IZZ}"
@@ -67,7 +44,7 @@
                     collision_mesh="${mesh_root}/legs/lj3_${prefix}.stl"/>
 
     <xacro:standard_link name="${KneePitchLinkName}"
-                    width="${LJ4_Link_Box_Width}" height="${LJ4_Link_Box_Height}" depth="${LJ4_Link_Box_Length}" mass="${KneePitchLinkMass}"
+                    mass="${KneePitchLinkMass}"
                     origin_xyz="${KneePitchLinkComPosition}"
                     ixx="${KneePitchLinkInertia_IXX}" ixy="${KneePitchLinkInertia_IXY}" ixz="${KneePitchLinkInertia_IXZ}"
                     iyy="${KneePitchLinkInertia_IYY}" iyz="${KneePitchLinkInertia_IYZ}" izz="${KneePitchLinkInertia_IZZ}"
@@ -77,7 +54,7 @@
                     collision_mesh="${mesh_root}/legs/lj4_${prefix}.stl"/>
 
     <xacro:standard_link name="${AnklePitchLinkName}"
-                    width="${LJ5_Link_Width}" height="${LJ5_Link_Height}" depth="${LJ5_Link_Length}" mass="${AnklePitchLinkMass}"
+                    mass="${AnklePitchLinkMass}"
                     origin_xyz="${AnklePitchLinkComPosition}"
                     ixx="${AnklePitchLinkInertia_IXX}" ixy="${AnklePitchLinkInertia_IXY}" ixz="${AnklePitchLinkInertia_IXZ}"
                     iyy="${AnklePitchLinkInertia_IYY}" iyz="${AnklePitchLinkInertia_IYZ}" izz="${AnklePitchLinkInertia_IZZ}"
