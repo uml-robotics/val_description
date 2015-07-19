@@ -4,19 +4,19 @@
   <xacro:property name="HipYawLinkMass" value="2.39" />
   <xacro:property name="HipYawLinkComPosition" value="0.02176 ${reflect*-0.00131} 0.03867" />
 
-  <xacro:property name="HipRollLinkMass" value="5.95" />
-  <xacro:property name="HipRollLinkComPosition" value="-0.00185 ${reflect*0.02426} -0.019260" />
+  <xacro:property name="HipRollLinkMass" value="3.665000" />
+  <xacro:property name="HipRollLinkComPosition" value="0.012959 ${reflect*-0.007550} -0.015950" />
 
-  <xacro:property name="HipPitchLinkMass" value="10.3" />
-  <xacro:property name="HipPitchLinkComPosition" value="0.000057 ${reflect*0.050000} -0.220000" />
+  <xacro:property name="HipPitchLinkMass" value="10.20" />
+  <xacro:property name="HipPitchLinkComPosition" value="0.016691 ${reflect*-0.091397} -0.207875" />
 
-  <xacro:property name="KneePitchLinkMass" value="7.4" />
-  <xacro:property name="KneePitchLinkComPosition" value="-0.004670 ${reflect*0.045000} -0.184940" />
+  <xacro:property name="KneePitchLinkMass" value="6.600000" />
+  <xacro:property name="KneePitchLinkComPosition" value="0.002425 ${reflect*-0.001543} -0.189511" />
 
-  <xacro:property name="AnklePitchLinkMass" value="0.395" />
-  <xacro:property name="AnklePitchLinkComPosition" value="-0.001270 ${reflect*0.000000} -0.006010" />
+  <xacro:property name="AnklePitchLinkMass" value="0.06" />
+  <xacro:property name="AnklePitchLinkComPosition" value="-0.001269 ${reflect*0.00009} -0.006013" />
 
-  <xacro:property name="FootMass" value="3.2549999" />
+  <xacro:property name="FootMass" value="3.2550" />
   <xacro:property name="FootComPosition" value="0.040004 ${reflect*-0.00381} -0.049558" />
   <xacro:property name="FootInertia_IXX" value="0.008966273" />
   <xacro:property name="FootInertia_IXY" value="-0.000086029" />
