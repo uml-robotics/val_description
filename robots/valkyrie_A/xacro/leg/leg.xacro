@@ -46,33 +46,41 @@
                     material="Gold"
                     collision_mesh="${mesh_root}/legs/lj1_${prefix}.stl"/>
 
-    <xacro:box_link name="${HipRollLinkName}"
+    <xacro:standard_link name="${HipRollLinkName}"
                     width="${LJ2_Link_Width}" height="${LJ2_Link_Height}" depth="${LJ2_Link_Length}" mass="${HipRollLinkMass}"
                     origin_xyz="${HipRollLinkComPosition}"
+                    ixx="${HipRollLinkInertia_IXX}" ixy="${HipRollLinkInertia_IXY}" ixz="${HipRollLinkInertia_IXZ}"
+                    iyy="${HipRollLinkInertia_IYY}" iyz="${HipRollLinkInertia_IYZ}" izz="${HipRollLinkInertia_IZZ}"
                     origin_rpy="0 0 0"
                     visual_mesh="${mesh_root}/legs/lj2_${prefix}.stl"
                     material="White"
                     collision_mesh="${mesh_root}/legs/lj2_${prefix}.stl"/>
 
-    <xacro:box_link name="${HipPitchLinkName}"
+    <xacro:standard_link name="${HipPitchLinkName}"
                     width="${LJ3_Link_Width}" height="${LJ3_Link_Height}" depth="${LJ3_Link_Length}" mass="${HipPitchLinkMass}"
                     origin_xyz="${HipPitchLinkComPosition}"
+                    ixx="${HipPitchLinkInertia_IXX}" ixy="${HipPitchLinkInertia_IXY}" ixz="${HipPitchLinkInertia_IXZ}"
+                    iyy="${HipPitchLinkInertia_IYY}" iyz="${HipPitchLinkInertia_IYZ}" izz="${HipPitchLinkInertia_IZZ}"
                     origin_rpy="0 0 0"
                     visual_mesh="${mesh_root}/legs/lj3_${prefix}.stl"
                     material="White"
                     collision_mesh="${mesh_root}/legs/lj3_${prefix}.stl"/>
 
-    <xacro:box_link name="${KneePitchLinkName}"
+    <xacro:standard_link name="${KneePitchLinkName}"
                     width="${LJ4_Link_Box_Width}" height="${LJ4_Link_Box_Height}" depth="${LJ4_Link_Box_Length}" mass="${KneePitchLinkMass}"
                     origin_xyz="${KneePitchLinkComPosition}"
+                    ixx="${KneePitchLinkInertia_IXX}" ixy="${KneePitchLinkInertia_IXY}" ixz="${KneePitchLinkInertia_IXZ}"
+                    iyy="${KneePitchLinkInertia_IYY}" iyz="${KneePitchLinkInertia_IYZ}" izz="${KneePitchLinkInertia_IZZ}"
                     origin_rpy="0 0 0"
                     visual_mesh="${mesh_root}/legs/lj4_${prefix}.stl"
                     material="White"
                     collision_mesh="${mesh_root}/legs/lj4_${prefix}.stl"/>
 
-    <xacro:box_link name="${AnklePitchLinkName}"
+    <xacro:standard_link name="${AnklePitchLinkName}"
                     width="${LJ5_Link_Width}" height="${LJ5_Link_Height}" depth="${LJ5_Link_Length}" mass="${AnklePitchLinkMass}"
                     origin_xyz="${AnklePitchLinkComPosition}"
+                    ixx="${AnklePitchLinkInertia_IXX}" ixy="${AnklePitchLinkInertia_IXY}" ixz="${AnklePitchLinkInertia_IXZ}"
+                    iyy="${AnklePitchLinkInertia_IYY}" iyz="${AnklePitchLinkInertia_IYZ}" izz="${AnklePitchLinkInertia_IZZ}"
                     origin_rpy="0 0 0"
                     visual_mesh="${mesh_root}/legs/lj5.stl"
                     material="White"
