@@ -26,7 +26,6 @@
 
       <gazebo reference="head_hokuyo_frame_offset">
         <sensor type="ray" name="head_hokuyo_sensor">
-          <parent>head_hokuyo_frame_offset</parent>
           <pose>0 0 0 0 0 0</pose>
           <visualize>false</visualize>
           <update_rate>40</update_rate>
@@ -64,7 +63,6 @@
 
       <gazebo reference="left_camera_frame_offset">
         <sensor type="camera" name="multisense_left_camera">
-          <parent>left_camera_frame_offset</parent>
           <pose>0 0 0 0 0 0</pose>
           <visualize>false</visualize>
         </sensor>
@@ -81,7 +79,6 @@
 
       <gazebo reference="right_camera_frame_offset">
         <sensor type="camera" name="multisense_right_camera">
-          <parent>right_camera_frame_offset</parent>
           <pose>0 0 0 0 0 0</pose>
           <visualize>false</visualize>
         </sensor>

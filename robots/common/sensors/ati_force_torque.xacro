@@ -11,9 +11,9 @@
                        origin_rpy="${origin_rpy}"
                        origin_xyz="${origin_xyz}"/>
              
-    <gazebo reference="${sensorName}_Frame">            	
+    <gazebo reference="${sensorName}_Offset">          	
       <sensor name="${sensorName}" type="force_torque">
-        <pose>${origin_xyz} ${origin_rpy} </pose>
+        <frame>child</frame>  
     	</sensor>
     </gazebo>
 
