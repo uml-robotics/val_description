@@ -13,7 +13,6 @@
              
     <gazebo reference="${sensorName}_Frame">            	
       <sensor name="${sensorName}" type="force_torque">
-        <parent link="${parentLink}"/>
         <pose>${origin_xyz} ${origin_rpy} </pose>
     	</sensor>
     </gazebo>

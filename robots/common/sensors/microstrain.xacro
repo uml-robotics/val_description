@@ -20,7 +20,6 @@
 
     <gazebo reference="${sensorName}_Frame">
       <sensor name="${sensorName}" type="imu">
-        <parent link="${parentLink}"/>
         <pose>${origin_xyz} ${origin_rpy} </pose>
         <imu>
            <noise>
