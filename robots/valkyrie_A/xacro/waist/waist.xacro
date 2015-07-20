@@ -67,7 +67,7 @@
                     ixx="${TorsoRollLinkInertia_IXX}" ixy="${TorsoRollLinkInertia_IXY}" ixz="${TorsoRollLinkInertia_IXZ}"
                     iyy="${TorsoRollLinkInertia_IYY}" iyz="${TorsoRollLinkInertia_IYZ}" izz="${TorsoRollLinkInertia_IZZ}"
                     origin_rpy="0 0 0"
-                    origin_xyz="${TorsoRollLinkComPosition_X} ${TorsoRollLinkComPosition_Y} ${TorsoRollLinkComPosition_Z}"
+                    origin_xyz="${TorsoRollLinkComPosition}"
                     visual_mesh="${mesh_root}/torso/torso.stl"
                     material="White"
                     collision_mesh="${mesh_root}/torso/torso.stl" />                    
