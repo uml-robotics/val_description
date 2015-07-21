@@ -7,19 +7,19 @@
   <xacro:property name="HipRollLinkMass" value="3.665000" />
   <xacro:property name="HipRollLinkComPosition" value="0.012959 ${reflect*0.007550} -0.015950" />
   <xacro:property name="HipRollLinkInertia_IXX" value="0.005978962" />
-  <xacro:property name="HipRollLinkInertia_IXY" value="${reflect*0.000234823}" />
+  <xacro:property name="HipRollLinkInertia_IXY" value="${reflect*-0.000234823}" />
   <xacro:property name="HipRollLinkInertia_IXZ" value="0.000553962" />
   <xacro:property name="HipRollLinkInertia_IYY" value="0.009372646" />
-  <xacro:property name="HipRollLinkInertia_IYZ" value="${reflect*-0.000778956}" />
+  <xacro:property name="HipRollLinkInertia_IYZ" value="${reflect*0.000778956}" />
   <xacro:property name="HipRollLinkInertia_IZZ" value="0.008193117" />
 
   <xacro:property name="HipPitchLinkMass" value="10.20" />
   <xacro:property name="HipPitchLinkComPosition" value="0.016691 ${reflect*0.091397} -0.207875" />
   <xacro:property name="HipPitchLinkInertia_IXX" value="0.240834130" />
-  <xacro:property name="HipPitchLinkInertia_IXY" value="${reflect*-0.000035915}" />
+  <xacro:property name="HipPitchLinkInertia_IXY" value="${reflect*0.000035915}" />
   <xacro:property name="HipPitchLinkInertia_IXZ" value="0.003699383" />
   <xacro:property name="HipPitchLinkInertia_IYY" value="0.256897050" />
-  <xacro:property name="HipPitchLinkInertia_IYZ" value="${reflect*0.001333005}" />
+  <xacro:property name="HipPitchLinkInertia_IYZ" value="${reflect*-0.001333005}" />
   <xacro:property name="HipPitchLinkInertia_IZZ" value="0.023276352" />
 
   <xacro:property name="KneePitchLinkMass" value="6.600000" />
