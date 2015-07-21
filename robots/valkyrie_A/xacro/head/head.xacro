@@ -25,9 +25,12 @@
                                     origin_rpy="0 0 0"
                                     mesh_filename="${mesh_root}/head/neckj2.stl"/>
 
-    <xacro:sphere_link name="${UpperNeckPitchLinkName}"
-                       radius="${NJ3_Link_Radius}" mass="${UpperNeckPitchLinkMass}"
-                       origin_xyz="${UpperNeckPitchLinkComPosition}" origin_rpy="0 0 0"
+    <xacro:standard_link name="${UpperNeckPitchLinkName}"
+                       mass="${UpperNeckPitchLinkMass}"
+                       origin_xyz="${UpperNeckPitchLinkComPosition}"
+                       ixx="${UpperNeckPitchLinkInertia_IXX}" ixy="${UpperNeckPitchLinkInertia_IXY}" ixz="${UpperNeckPitchLinkInertia_IXZ}"
+                       iyy="${UpperNeckPitchLinkInertia_IYY}" iyz="${UpperNeckPitchLinkInertia_IYZ}" izz="${UpperNeckPitchLinkInertia_IZZ}"
+                       origin_rpy="0 0 0"
                        visual_mesh="${mesh_root}/head/head_multisense_no_visor.stl"
                        material="White"
                        collision_mesh="${mesh_root}/head/head_multisense_no_visor.stl"/>
@@ -65,11 +68,6 @@
 
   <xacro:macro name="v1_head_sensors">
 
-<!-- <xacro:microstrain_sensor sensorName="HeadIMU"
-                              parentLink="${UpperNeckPitchLinkName}"
-                              origin_xyz="0.098 0.0 0.052"
-                              origin_rpy="-1.57 1.57 0.0" />
--->
     <xacro:multisense_sl parentLink="${UpperNeckPitchLinkName}" 
                   joint_axis="1 0 0"
                   joint_origin_xyz="${HokuyoFrameOrigin_X} ${HokuyoFrameOrigin_Y} ${HokuyoFrameOrigin_Z}"
