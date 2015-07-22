@@ -1,0 +1,32 @@
+<robot xmlns:xacro="http://ros.org/wiki/xacro" name="hw_actuator_types">
+    <!-- ======================================================= -->
+    <!-- DO NOT MODIFY URDF BY HAND! YOU ARE A FOOL IF YOU DO! -->
+    <!-- ======================================================= -->
+    <xacro:property name="arm_j1_type" value="turbodriver_api/TurbodriverAPI_DRCv4"/>
+    <xacro:property name="arm_j2_type" value="turbodriver_api/TurbodriverAPI_DRCv4"/>
+    <xacro:property name="arm_j3_type" value="turbodriver_api/TurbodriverAPI_DRCv4"/>
+    <xacro:property name="arm_j4_type" value="turbodriver_api/TurbodriverAPI_DRCv4"/>
+    <xacro:property name="arm_j5_type" value="turbodriver_api/TurbodriverAPI_DRCv3"/>
+    <xacro:property name="arm_j6_type" value="forearm_api/WristAPI_DRCv1"/>
+    <xacro:property name="arm_j7_type" value="forearm_api/WristAPI_DRCv1"/>
+
+    <xacro:property name="leg_j1_type" value="turbodriver_api/TurbodriverAPI_DRCv4"/>
+    <xacro:property name="leg_j2_type" value="turbodriver_api/TurbodriverAPI_DRCv4"/>
+    <xacro:property name="leg_j3_type" value="turbodriver_api/TurbodriverAPI_DRCv4"/>
+    <xacro:property name="leg_j4_type" value="turbodriver_api/TurbodriverAPI_DRCv4"/>
+    <xacro:property name="leg_j5_type" value="turbodriver_api/TurbodriverAPI_DRCv4_linear"/>
+    <xacro:property name="leg_j6_type" value="turbodriver_api/TurbodriverAPI_DRCv4_linear"/>
+    
+    <xacro:property name="finger_api" value="forearm_api/FingerAPI_DRCv1"/>
+
+    <xacro:property name="neck_j1_type" value="turbodriver_api/TurbodriverAPI_DRCv3"/>
+    <xacro:property name="neck_j2_type" value="turbodriver_api/TurbodriverAPI_DRCv3"/>
+    <xacro:property name="neck_j3_type" value="turbodriver_api/TurbodriverAPI_DRCv3"/>
+
+    <xacro:property name="waist_j1_type" value="turbodriver_api/TurbodriverAPI_DRCv4"/>
+    <xacro:property name="waist_j2_type" value="turbodriver_api/TurbodriverAPI_DRCv4_linear"/>
+    <xacro:property name="waist_j3_type" value="turbodriver_api/TurbodriverAPI_DRCv4_linear"/>
+
+</robot>
+
+    
