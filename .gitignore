@@ -1,5 +1,6 @@
 *~
 *.md~
-valkyrie*.urdf
+*.urdf
+*.xml
 valkyrie*.sdf
 *.bak
