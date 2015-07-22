@@ -6,7 +6,6 @@ project(val_description)
 ## is used, also find other catkin packages
 find_package(catkin REQUIRED COMPONENTS
   xacro 
-  multisense_ros
 )
 
 set(urdf_files "")

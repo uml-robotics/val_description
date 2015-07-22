@@ -13,7 +13,7 @@
     <xacro:v1_trunk_sensors/>
 
     <xacro:make_head head_root_link="${TorsoRollLinkName}" />
-    <xacro:v1_head_sensors />
+    <!-- <xacro:v1_head_sensors /> -->
 
     <xacro:make_arm prefix="Right" reflect="-1" arm_root_link="${TorsoRollLinkName}" />
 

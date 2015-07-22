@@ -1,5 +1,7 @@
 <robot xmlns:xacro="http://ros.org/wiki/xacro" name="valkyrie">
+
     <xacro:property name="mesh_root" value="package://val_description/meshes"/>
     <xacro:include filename="$(find val_description)/robots/common/valkyrie_base.xacro"/>
+    <xacro:include filename="$(find val_description)/urdf/multisense_sl.urdf" />
 
 </robot>
