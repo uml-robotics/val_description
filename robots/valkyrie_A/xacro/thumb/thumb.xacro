@@ -160,13 +160,13 @@
                           origin_rpy="${ThumbPitch3FrameOrientation_Roll} ${ThumbPitch3FrameOrientation_Pitch} ${ThumbPitch3FrameOrientation_Yaw}"/>
   </xacro:macro>
 
-  <xacro:macro name="v1_right_thumb_actuators" params="prefix api">
+  <xacro:macro name="right_thumb_actuators" params="prefix api">
     <xacro:v1_actuator name="${RTA1_Actuator_Name}" api="${api}" />
     <xacro:v1_actuator name="${RTA2_Actuator_Name}" api="${api}" />
     <xacro:v1_actuator name="${RTA3_Actuator_Name}" api="${api}" />
   </xacro:macro>
 
-  <xacro:macro name="v1_left_thumb_actuators" params="prefix api">
+  <xacro:macro name="left_thumb_actuators" params="prefix api">
     <xacro:v1_actuator name="${LTA1_Actuator_Name}" api="${api}" />
     <xacro:v1_actuator name="${LTA2_Actuator_Name}" api="${api}" />
     <xacro:v1_actuator name="${LTA3_Actuator_Name}" api="${api}" />
