@@ -38,7 +38,7 @@
 
 
   <xacro:macro name="make_upper_arm" params="prefix reflect upper_arm_root_link">
-    <!-- LINKS -->
+
     <xacro:box_link name="${ShoulderPitchLinkName}"
                     width="${AJ1_Link_Width}" height="${AJ1_Link_Height}" depth="${AJ1_Link_Length}" mass="${ShoulderPitchLinkMass}"
                     origin_xyz="${ShoulderPitchLinkComPosition}" origin_rpy="0 0 0"
@@ -68,7 +68,6 @@
                     material="Gold"
                     collision_mesh="${mesh_root}/arms/aj4_${prefix}.dae" />
 
-    <!-- AJ1 -->
     <xacro:revolute_joint_ex jointName="${ShoulderPitchJointName}"
                           parent="${upper_arm_root_link}" child="${ShoulderPitchLinkName}"
                           origin_xyz="${ShoulderPitchFrameOrigin_X} ${ShoulderPitchFrameOrigin_Y} ${ShoulderPitchFrameOrigin_Z}"
@@ -79,7 +78,6 @@
         <controller_gains Kp="20000" Kd="400"/>
     </xacro:revolute_joint_ex>
 
-    <!-- AJ2 -->
     <xacro:revolute_joint_ex jointName="${ShoulderRollJointName}"
                           parent="${ShoulderPitchLinkName}" child="${ShoulderRollLinkName}"
                           origin_xyz="${ShoulderRollFrameOrigin_X} ${ShoulderRollFrameOrigin_Y} ${ShoulderRollFrameOrigin_Z}"
@@ -95,7 +93,6 @@
         <controller_gains Kp="20000" Kd="400"/>
     </xacro:revolute_joint_ex>
 
-    <!-- AJ3 -->
     <xacro:revolute_joint_ex jointName="${ShoulderYawJointName}"
                           parent="${ShoulderRollLinkName}" child="${ShoulderYawLinkName}"
                           origin_xyz="${ShoulderYawFrameOrigin_X} ${ShoulderYawFrameOrigin_Y} ${ShoulderYawFrameOrigin_Z}"
@@ -106,7 +103,6 @@
         <controller_gains Kp="20000" Kd="400"/>
     </xacro:revolute_joint_ex>
 
-    <!-- AJ4 -->
     <xacro:revolute_joint_ex jointName="${ElbowPitchJointName}"
                           parent="${ShoulderYawLinkName}" child="${ElbowPitchLinkName}"
                           origin_xyz="${ElbowPitchFrameOrigin_X} ${ElbowPitchFrameOrigin_Y} ${ElbowPitchFrameOrigin_Z}"
@@ -125,7 +121,7 @@
 
 
   <xacro:macro name="make_lower_arm" params="prefix reflect lower_arm_root_link">
-    <!-- LINKS -->
+
     <xacro:box_link name="${ForearmLinkName}"
                     width="${AJ5_Link_Width}" height="${AJ5_Link_Height}" depth="${AJ5_Link_Length}" mass="${ForearmYawLinkMass}"
                     origin_xyz="${ForearmYawLinkComPosition}"
@@ -150,7 +146,6 @@
                     material="Gold"
                     collision_mesh="${mesh_root}/arms/palm_${prefix}.dae"/>
 
-    <!-- AJ5 -->
     <xacro:revolute_joint_ex jointName="${ForearmYawJointName}"
                           parent="${lower_arm_root_link}" child="${ForearmLinkName}"
                           origin_xyz="${ForearmYawFrameOrigin_X} ${ForearmYawFrameOrigin_Y} ${ForearmYawFrameOrigin_Z}"
@@ -161,7 +156,6 @@
         <controller_gains Kp="20000" Kd="0"/>
     </xacro:revolute_joint_ex>
 
-    <!-- AJ6 -->
     <xacro:revolute_joint_ex jointName="${WristRollJointName}"
                           parent="${ForearmLinkName}" child="${WristRollLinkName}"
                           origin_xyz="${WristRollFrameOrigin_X} ${WristRollFrameOrigin_Y} ${WristRollFrameOrigin_Z}"
@@ -177,7 +171,6 @@
         <controller_gains Kp="20000" Kd="400"/>
     </xacro:revolute_joint_ex>
 
-    <!-- AJ7 -->
     <xacro:revolute_joint_ex jointName="${WristPitchJointName}"
                           parent="${WristRollLinkName}" child="${WristPitchLinkName}"
                           origin_xyz="${WristPitchFrameOrigin_X} ${WristPitchFrameOrigin_Y} ${WristPitchFrameOrigin_Z}"
@@ -199,7 +192,6 @@
     <xacro:make_lower_arm prefix="${prefix}" reflect="${reflect}" lower_arm_root_link="${ElbowPitchLinkName}" />
   </xacro:macro>
 
-  <!-- Actuators -->
   <xacro:macro name="upper_arm_actuators" params="name1 type1 name2 type2 name3 type3 name4 type4">
     <actuator name="${name1}" type="${type1}"/>
     <actuator name="${name2}" type="${type2}"/>
