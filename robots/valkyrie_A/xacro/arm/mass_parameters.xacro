@@ -37,7 +37,7 @@
   <xacro:property name="WristRollLinkMass" value="0.14" />
   <xacro:property name="WristRollLinkComPosition" value="0 ${reflect*0} 0" />
 
-  <xacro:property name="PalmMass" value="0.712" /> <!--Need to update -->
+  <xacro:property name="PalmMass" value="0.712" />
   <xacro:property name="PalmComPosition" value="0.002954 ${reflect*0.052034} -0.000236" />
 
 </robot>

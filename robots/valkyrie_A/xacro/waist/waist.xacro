@@ -1,5 +1,6 @@
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="v1/waist">
 
+  <!-- Properties -->
   <xacro:include filename="$(find val_description)/robots/valkyrie_A/xacro/waist/joint_names.xacro"/>
   <xacro:include filename="$(find val_description)/robots/valkyrie_A/xacro/waist/joint_axes.xacro"/>
   <xacro:include filename="$(find val_description)/robots/valkyrie_A/xacro/waist/joint_axes.xacro"/>
@@ -7,8 +8,8 @@
   <xacro:include filename="$(find val_description)/robots/valkyrie_A/xacro/waist/joint_limits.xacro"/>
   <xacro:include filename="$(find val_description)/robots/valkyrie_A/xacro/waist/frame_parameters.xacro"/>
   <xacro:include filename="$(find val_description)/robots/valkyrie_A/xacro/waist/mass_parameters.xacro"/>
-  <xacro:include filename="$(find val_description)/robots/valkyrie_A/xacro/sensors/microstrain.xacro"/>
-  <xacro:include filename="$(find val_description)/robots/valkyrie_A/xacro/sensors/flea.xacro"/>
+  <xacro:include filename="$(find val_description)/robots/common/sensors/microstrain.xacro"/>
+  <xacro:include filename="$(find val_description)/robots/common/sensors/flea.xacro"/>
 
   <xacro:macro name="make_waist_common" params="waist_root_link">
 
@@ -49,17 +50,17 @@
                     width="0.0001" height="0.0001" depth="0.0001" mass="0.00001"
                     origin_rpy="0 0 0"
                     origin_xyz="0 0 0"
-                    visual_mesh="${mesh_root}/torso/torsoyaw.stl"
+                    visual_mesh="${mesh_root}/torso/torsoyaw.dae"
                     material="White"
-                    collision_mesh="${mesh_root}/torso/torsoyaw.stl" />
+                    collision_mesh="${mesh_root}/torso/torsoyaw.dae" />
 
     <xacro:box_link name="${TorsoPitchLinkName}"
                     width="0.0001" height="0.0001" depth="0.0001" mass="0.00001"
                     origin_rpy="0 0 0"
                     origin_xyz="0 0 0"
-                    visual_mesh="${mesh_root}/torso/torsopitch.stl"
+                    visual_mesh="${mesh_root}/torso/torsopitch.dae"
                     material="White"
-                    collision_mesh="${mesh_root}/torso/torsopitch.stl" />
+                    collision_mesh="${mesh_root}/torso/torsopitch.dae" />
 
     <xacro:standard_link name="${TorsoRollLinkName}"
                     mass="${TorsoRollLinkMass}"
@@ -67,9 +68,9 @@
                     iyy="${TorsoRollLinkInertia_IYY}" iyz="${TorsoRollLinkInertia_IYZ}" izz="${TorsoRollLinkInertia_IZZ}"
                     origin_rpy="0 0 0"
                     origin_xyz="${TorsoRollLinkComPosition}"
-                    visual_mesh="${mesh_root}/torso/torso.stl"
+                    visual_mesh="${mesh_root}/torso/torso.dae"
                     material="White"
-                    collision_mesh="${mesh_root}/torso/torso.stl" />                    
+                    collision_mesh="${mesh_root}/torso/torso.dae" />
 
     <xacro:make_waist_common waist_root_link="${waist_root_link}"/>
   </xacro:macro>
@@ -80,24 +81,24 @@
                     width="${Trunk_Width}" height="${Trunk_Height}" depth="${Trunk_Length}" mass="${TorsoRollLinkMass}"
                     origin_rpy="0 0 0"
                     origin_xyz="0 0 0"
-                    visual_mesh="${mesh_root}/torso/wj3.stl"
+                    visual_mesh="${mesh_root}/torso/wj3.dae"
                     material="White"
-                    collision_mesh="${mesh_root}/torso/wj3.stl" />
+                    collision_mesh="${mesh_root}/torso/wj3.dae" />
   </xacro:macro>
 
-  <xacro:macro name="v1_waist_actuators"  params="name1 type1 name2 type2 name3 type3">
+  <xacro:macro name="waist_actuators"  params="name1 type1 name2 type2 name3 type3">
     <actuator name="${name1}" type="${type1}"/>
     <actuator name="${name2}" type="${type2}"/>
     <actuator name="${name3}" type="${type3}"/>
   </xacro:macro>
 
   <xacro:macro name="v1_trunk_sensors">
-    <xacro:microstrain_sensor sensorName="RightIMU"
+    <xacro:microstrain_sensor sensorName="RightTorsoIMU"
                               parentLink="${TorsoRollLinkName}"
                               origin_xyz="-0.047 -0.134 0.363"
                               origin_rpy="-1.57 0.0 3.14" />
 
-    <xacro:microstrain_sensor sensorName="LeftIMU"
+    <xacro:microstrain_sensor sensorName="LeftTorsoIMU"
                               parentLink="${TorsoRollLinkName}"
                               origin_xyz="-0.047 0.134 0.363"
                               origin_rpy="1.57 0.0 3.14" />
