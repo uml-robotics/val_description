@@ -87,7 +87,6 @@
   </xacro:macro>
 
   <xacro:macro name="make_leg_joints" params="prefix reflect leg_root_link">
-    <!-- LJ1 -->
     <xacro:revolute_joint_ex jointName="${HipYawJointName}"
                           parent="${HipYawParentLinkName}" child="${HipYawLinkName}"
                           origin_xyz="${HipYawFrameOrigin_X} ${HipYawFrameOrigin_Y} ${HipYawFrameOrigin_Z}"
@@ -168,7 +167,6 @@
     <xacro:make_ankle_joints prefix="${prefix}" reflect="${reflect}" leg_root_link="${leg_root_link}" />
   </xacro:macro>
 
-  <!-- Sensors -->
   <xacro:macro name="v1_leg_sensors" params="prefix reflect">
 
     <xacro:virtual_fixed_frame_offset name="${prefix}COP"
