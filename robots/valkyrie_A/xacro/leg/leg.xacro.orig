@@ -14,6 +14,29 @@
   <xacro:property name="LJ1_Link_Origin_X" value="0.02176"/>
   <xacro:property name="LJ1_Link_Origin_Y" value="0.0013"/>
   <xacro:property name="LJ1_Link_Origin_Z" value="0.03867"/>
+<<<<<<< HEAD
+
+  <xacro:property name="LJ2_Link_Width" value="0.123"/>
+  <xacro:property name="LJ2_Link_Height" value="0.131"/>
+  <xacro:property name="LJ2_Link_Length" value="0.185"/>
+
+  <xacro:property name="LJ3_Link_Width" value="0.24253719562602335524"/>
+  <xacro:property name="LJ3_Link_Height" value="0.18520578950459243295"/>
+  <xacro:property name="LJ3_Link_Length" value="0.55419965909040602714"/>
+
+  <xacro:property name="LJ4_Link_Box_Width" value="0.20288766696230062236"/>
+  <xacro:property name="LJ4_Link_Box_Height" value="0.20551228016178813007"/>
+  <xacro:property name="LJ4_Link_Box_Length" value="0.44528684954574881960"/>
+
+  <xacro:property name="LJ5_Link_Width" value="0.033"/>
+  <xacro:property name="LJ5_Link_Height" value="0.076"/>
+  <xacro:property name="LJ5_Link_Length" value="0.025"/>
+
+  <xacro:property name="LJ6_Link_Width" value="0.300"/>
+  <xacro:property name="LJ6_Link_Height" value="0.128"/>
+  <xacro:property name="LJ6_Link_Length" value="0.082"/>
+=======
+>>>>>>> feature/VDEV-389
 
   <xacro:macro name="make_leg_links" params="prefix reflect leg_root_link">
     <xacro:box_link name="${HipYawLinkName}"

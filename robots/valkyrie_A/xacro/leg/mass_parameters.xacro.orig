@@ -50,6 +50,20 @@
   <xacro:property name="FootInertia_IYZ" value="0.000105218" />
   <xacro:property name="FootInertia_IZZ" value="0.028128777" />
 
+<<<<<<< HEAD
+  <xacro:property name="HipPitchLinkMass" value="10.3" />
+  <xacro:property name="HipPitchLinkComPosition" value="0.000057 ${reflect*0.050000} -0.220000" />
+
+  <xacro:property name="KneePitchLinkMass" value="7.4" />
+  <xacro:property name="KneePitchLinkComPosition" value="-0.004670 ${reflect*0.0050000} -0.184940" />
+
+  <xacro:property name="AnklePitchLinkMass" value="0.395" />
+  <xacro:property name="AnklePitchLinkComPosition" value="-0.001270 ${reflect*0.000000} -0.006010" />
+
+  <xacro:property name="FootMass" value="1.888" />
+  <xacro:property name="FootComPosition" value="0.068860 ${reflect*-0.000285} -0.051830" />
+=======
+>>>>>>> feature/VDEV-389
 
 
 

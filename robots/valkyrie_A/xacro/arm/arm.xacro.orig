@@ -8,21 +8,31 @@
   <xacro:include filename="$(find val_description)/robots/valkyrie_A/xacro/arm/frame_parameters.xacro"/>
   <xacro:include filename="$(find val_description)/robots/valkyrie_A/xacro/arm/mass_parameters.xacro"/>
 
-  <xacro:property name="AJ1_Link_Width" value="0.162"/>
-  <xacro:property name="AJ1_Link_Height" value="0.202"/>
+  <xacro:property name="AJ1_Link_Width" value="0.202"/>
+  <xacro:property name="AJ1_Link_Height" value="0.162"/>
   <xacro:property name="AJ1_Link_Length" value="0.146"/>
 
+<<<<<<< HEAD
+  <xacro:property name="AJ2_Link_Width" value="0.22179303376297454520"/>
+  <xacro:property name="AJ2_Link_Height" value="0.16373203016010165478"/>
+  <xacro:property name="AJ2_Link_Length" value="0.15560348965569942292"/>
+
+  <xacro:property name="AJ3_Link_Width" value="0.158"/>
+  <xacro:property name="AJ3_Link_Height" value="0.285"/>
+  <xacro:property name="AJ3_Link_Length" value="0.136"/>
+=======
   <xacro:property name="AJ3_Link_Width" value="0.136"/>
   <xacro:property name="AJ3_Link_Height" value="0.158"/>
   <xacro:property name="AJ3_Link_Length" value="0.285"/>
+>>>>>>> feature/VDEV-389
 
   <xacro:property name="AJ4_Link_Width" value="0.11323257841518076516"/>
   <xacro:property name="AJ4_Link_Height" value="0.11855222975004402197"/>
   <xacro:property name="AJ4_Link_Length" value="0.10487312631734664603"/>
 
   <xacro:property name="AJ5_Link_Width" value="0.13557189311158912570"/>
-  <xacro:property name="AJ5_Link_Height" value="0.11439484172804967321"/>
-  <xacro:property name="AJ5_Link_Length" value="0.25365181285234167374"/>
+  <xacro:property name="AJ5_Link_Height" value="0.25365181285234167374"/>
+  <xacro:property name="AJ5_Link_Length" value="0.11439484172804967321"/>
 
   <xacro:property name="AJ6_Link_Width" value="0.03"/>
   <xacro:property name="AJ6_Link_Height" value="0.01"/>
@@ -42,13 +52,20 @@
                     material="Gold"
                     collision_mesh="${mesh_root}/arms/aj1_${prefix}.dae" />
 
+<<<<<<< HEAD
+    <xacro:box_link name="${ShoulderRollLinkName}"
+                    width="${AJ2_Link_Width}" height="${AJ2_Link_Height}" depth="${AJ2_Link_Length}" mass="${ShoulderRollLinkMass}"
+                    origin_xyz="${ShoulderRollLinkComPosition}" origin_rpy="0 0 0"
+                    visual_mesh="${mesh_root}/arms/aj2_${prefix}.dae"
+=======
     <xacro:standard_link name="${ShoulderRollLinkName}"
                     mass="${ShoulderRollLinkMass}"
                     origin_xyz="${ShoulderRollLinkComPosition}" 
                     ixx="${ShoulderRollLinkInertia_IXX}" ixy="${ShoulderRollLinkInertia_IXY}" ixz="${ShoulderRollLinkInertia_IXZ}"
                     iyy="${ShoulderRollLinkInertia_IYY}" iyz="${ShoulderRollLinkInertia_IYZ}" izz="${ShoulderRollLinkInertia_IZZ}"
                     origin_rpy="0 0 0"
-                    visual_mesh="${mesh_root}/arms/aj2_${prefix}.dae"
+                    visual_mesh="${mesh_root}/arms/aj2_${prefix}.stl"
+>>>>>>> feature/VDEV-389
                     material="White"
                     collision_mesh="${mesh_root}/arms/aj2_${prefix}.dae" />
 
@@ -120,6 +137,10 @@
 
 
   <xacro:macro name="make_lower_arm" params="prefix reflect lower_arm_root_link">
+<<<<<<< HEAD
+
+=======
+>>>>>>> feature/VDEV-389
     <xacro:box_link name="${ForearmLinkName}"
                     width="${AJ5_Link_Width}" height="${AJ5_Link_Height}" depth="${AJ5_Link_Length}" mass="${ForearmYawLinkMass}"
                     origin_xyz="${ForearmYawLinkComPosition}"
@@ -190,7 +211,11 @@
     <xacro:make_lower_arm prefix="${prefix}" reflect="${reflect}" lower_arm_root_link="${ElbowPitchLinkName}" />
   </xacro:macro>
 
+<<<<<<< HEAD
   <xacro:macro name="upper_arm_actuators" params="name1 type1 name2 type2 name3 type3 name4 type4">
+=======
+  <xacro:macro name="v1_upper_arm_actuators" params="name1 type1 name2 type2 name3 type3 name4 type4">
+>>>>>>> feature/VDEV-389
     <actuator name="${name1}" type="${type1}"/>
     <actuator name="${name2}" type="${type2}"/>
     <actuator name="${name3}" type="${type3}"/>

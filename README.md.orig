@@ -30,8 +30,11 @@ roslaunch ValkyrieInEmptyWorld.launch
 
 #Credits
 Johnson Space Center - ER4 - Valkyrie Team
+<<<<<<< HEAD
+=======
 IHMC humanoids group
 Maurice Fallon and his group
+>>>>>>> feature/VDEV-389
 
 #License
 NASA 1.3
