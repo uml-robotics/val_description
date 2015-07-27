@@ -32,12 +32,30 @@
   <xacro:property name="ElbowPitchLinkInertia_IZZ" value="0.007469454" />
 
   <xacro:property name="ForearmYawLinkMass" value="2.476" />
-  <xacro:property name="ForearmYawLinkComPosition" value="0.015000	${reflect*0.110000} 0.019564" />
+  <xacro:property name="ForearmYawLinkComPosition" value="0.015000	${reflect*0.13} 0.019564" />
+  <xacro:property name="ForearmYawLinkInertia_IXX" value="0.015011" />
+  <xacro:property name="ForearmYawLinkInertia_IXY" value="${reflect*0.001300853}" />
+  <xacro:property name="ForearmYawLinkInertia_IXZ" value="${reflect*0.000727141}" />
+  <xacro:property name="ForearmYawLinkInertia_IYY" value="0.005071567" />
+  <xacro:property name="ForearmYawLinkInertia_IYZ" value="-0.001695416" />
+  <xacro:property name="ForearmYawLinkInertia_IZZ" value="0.011365657" />
 
   <xacro:property name="WristRollLinkMass" value="0.14" />
   <xacro:property name="WristRollLinkComPosition" value="0 ${reflect*0} 0" />
+  <xacro:property name="WristRollLinkInertia_IXX" value="0.000030251" />
+  <xacro:property name="WristRollLinkInertia_IXY" value="${reflect*0.000000125}" />
+  <xacro:property name="WristRollLinkInertia_IXZ" value="${reflect*0.000000036}" />
+  <xacro:property name="WristRollLinkInertia_IYY" value="0.000037720" />
+  <xacro:property name="WristRollLinkInertia_IYZ" value="0.0" />
+  <xacro:property name="WristRollLinkInertia_IZZ" value="0.000009395" />
 
   <xacro:property name="PalmMass" value="0.712" />
   <xacro:property name="PalmComPosition" value="0.002954 ${reflect*0.052034} -0.000236" />
+  <xacro:property name="PalmInertia_IXX" value="0.000943493" />
+  <xacro:property name="PalmInertia_IXY" value="0.000034393" />
+  <xacro:property name="PalmInertia_IXZ" value="${reflect*0.000038828}" />
+  <xacro:property name="PalmInertia_IYY" value="0.000711024" />
+  <xacro:property name="PalmInertia_IYZ" value="${reflect*-0.000023429}" />
+  <xacro:property name="PalmInertia_IZZ" value="0.000610199" />
 
 </robot>
