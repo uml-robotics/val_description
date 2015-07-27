@@ -3,3 +3,5 @@
 val*.urdf
 valkyrie*.sdf
 *.bak
+*.pdf
+*.gv
