@@ -9,50 +9,42 @@
   <xacro:include filename="$(find val_description)/robots/valkyrie_A/xacro/thumb/frame_parameters.xacro"/>
   <xacro:include filename="$(find val_description)/robots/valkyrie_A/xacro/thumb/mass_parameters.xacro"/>
 
-  <xacro:property name="TJ1_Link_Width" value="0.010"/>
-  <xacro:property name="TJ1_Link_Height" value="0.010"/>
-  <xacro:property name="TJ1_Link_Length" value="0.010"/>
-
-  <xacro:property name="TJ2_Link_Width" value="0.054"/>
-  <xacro:property name="TJ2_Link_Height" value="0.019"/>
-  <xacro:property name="TJ2_Link_Length" value="0.026"/>
-
-  <xacro:property name="TJ3_Link_Width" value="0.034"/>
-  <xacro:property name="TJ3_Link_Height" value="0.013"/>
-  <xacro:property name="TJ3_Link_Length" value="0.022"/>
-
-  <xacro:property name="TJ4_Link_Width" value="0.027"/>
-  <xacro:property name="TJ4_Link_Height" value="0.012"/>
-  <xacro:property name="TJ4_Link_Length" value="0.019"/>
-
   <xacro:macro name="make_thumb" params="prefix reflect thumb_root_link">
-    <xacro:box_link name="${ThumbRollLinkName}"
-                    width="${TJ1_Link_Width}" height="${TJ1_Link_Height}" depth="${TJ1_Link_Length}" mass="${ThumbRollLinkMass}"
+    <xacro:standard_link name="${ThumbRollLinkName}"
+                    mass="${ThumbRollLinkMass}"
                     origin_xyz="${ThumbRollLinkComPosition}"
+                    ixx="${ThumbRollLinkInertia_IXX}" ixy="${ThumbRollLinkInertia_IXY}" ixz="${ThumbRollLinkInertia_IXZ}"
+                    iyy="${ThumbRollLinkInertia_IYY}" iyz="${ThumbRollLinkInertia_IYZ}" izz="${ThumbRollLinkInertia_IZZ}"
                     origin_rpy="0 0 0"
                     visual_mesh="${mesh_root}/fingers/thumbj1_${prefix}.dae"
                     material="Gold"
                     collision_mesh="${mesh_root}/fingers/thumbj1_${prefix}.dae"/>
 
-    <xacro:box_link name="${ThumbPitch1LinkName}"
-                    width="${TJ2_Link_Width}" height="${TJ2_Link_Height}" depth="${TJ2_Link_Length}" mass="${ThumbPitch1LinkMass}"
+    <xacro:standard_link name="${ThumbPitch1LinkName}"
+                    mass="${ThumbPitch1LinkMass}"
                     origin_xyz="${ThumbPitch1LinkComPosition}"
+                    ixx="${ThumbPitch1LinkInertia_IXX}" ixy="${ThumbPitch1LinkInertia_IXY}" ixz="${ThumbPitch1LinkInertia_IXZ}"
+                    iyy="${ThumbPitch1LinkInertia_IYY}" iyz="${ThumbPitch1LinkInertia_IYZ}" izz="${ThumbPitch1LinkInertia_IZZ}"
                     origin_rpy="0 0 0"
                     visual_mesh="${mesh_root}/fingers/thumbj2_${prefix}.dae"
                     material="Gold"
                     collision_mesh="${mesh_root}/fingers/thumbj2_${prefix}.dae"/>
 
-    <xacro:box_link name="${ThumbPitch2LinkName}"
-                    width="${TJ3_Link_Width}" height="${TJ3_Link_Height}" depth="${TJ3_Link_Length}" mass="${ThumbPitch2LinkMass}"
+    <xacro:standard_link name="${ThumbPitch2LinkName}"
+                    mass="${ThumbPitch2LinkMass}"
                     origin_xyz="${ThumbPitch2LinkComPosition}"
+                    ixx="${ThumbPitch2LinkInertia_IXX}" ixy="${ThumbPitch2LinkInertia_IXY}" ixz="${ThumbPitch2LinkInertia_IXZ}"
+                    iyy="${ThumbPitch2LinkInertia_IYY}" iyz="${ThumbPitch2LinkInertia_IYZ}" izz="${ThumbPitch2LinkInertia_IZZ}"
                     origin_rpy="0 0 0"
                     visual_mesh="${mesh_root}/fingers/thumbj3_${prefix}.dae"
                     material="Gold"
                     collision_mesh="${mesh_root}/fingers/thumbj3_${prefix}.dae"/>
 
-    <xacro:box_link name="${ThumbPitch3LinkName}"
-                    width="${TJ4_Link_Width}" height="${TJ4_Link_Height}" depth="${TJ4_Link_Length}" mass="${ThumbPitch3LinkMass}"
+    <xacro:standard_link name="${ThumbPitch3LinkName}"
+                    mass="${ThumbPitch3LinkMass}"
                     origin_xyz="${ThumbPitch3LinkComPosition}"
+                    ixx="${ThumbPitch3LinkInertia_IXX}" ixy="${ThumbPitch3LinkInertia_IXY}" ixz="${ThumbPitch3LinkInertia_IXZ}"
+                    iyy="${ThumbPitch3LinkInertia_IYY}" iyz="${ThumbPitch3LinkInertia_IYZ}" izz="${ThumbPitch3LinkInertia_IZZ}"
                     origin_rpy="0 0 0"
                     visual_mesh="${mesh_root}/fingers/thumbj4_${prefix}.dae"
                     material="Gold"
