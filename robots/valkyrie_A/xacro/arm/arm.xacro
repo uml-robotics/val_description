@@ -8,24 +8,13 @@
   <xacro:include filename="$(find val_description)/robots/valkyrie_A/xacro/arm/frame_parameters.xacro"/>
   <xacro:include filename="$(find val_description)/robots/valkyrie_A/xacro/arm/mass_parameters.xacro"/>
 
-  <xacro:property name="AJ1_Link_Width" value="0.162"/>
-  <xacro:property name="AJ1_Link_Height" value="0.202"/>
-  <xacro:property name="AJ1_Link_Length" value="0.146"/>
-
-  <xacro:property name="AJ6_Link_Width" value="0.03"/>
-  <xacro:property name="AJ6_Link_Height" value="0.01"/>
-  <xacro:property name="AJ6_Link_Length" value="0.051"/>
-
-  <xacro:property name="AJ7_Link_Width" value="0.085"/>
-  <xacro:property name="AJ7_Link_Height" value="0.1"/>
-  <xacro:property name="AJ7_Link_Length" value="0.038"/>
-
-
   <xacro:macro name="make_upper_arm" params="prefix reflect upper_arm_root_link">
 
-    <xacro:box_link name="${ShoulderPitchLinkName}"
-                    width="${AJ1_Link_Width}" height="${AJ1_Link_Height}" depth="${AJ1_Link_Length}" mass="${ShoulderPitchLinkMass}"
+    <xacro:standard_link name="${ShoulderPitchLinkName}"
+                    mass="${ShoulderPitchLinkMass}"
                     origin_xyz="${ShoulderPitchLinkComPosition}" origin_rpy="0 0 0"
+                    ixx="${ShoulderPitchLinkInertia_IXX}" ixy="${ShoulderPitchLinkInertia_IXY}" ixz="${ShoulderPitchLinkInertia_IXZ}"
+                    iyy="${ShoulderPitchLinkInertia_IYY}" iyz="${ShoulderPitchLinkInertia_IYZ}" izz="${ShoulderPitchLinkInertia_IZZ}"
                     visual_mesh="${mesh_root}/arms/aj1_${prefix}.dae"
                     material="Gold"
                     collision_mesh="${mesh_root}/arms/aj1_${prefix}.dae" />
