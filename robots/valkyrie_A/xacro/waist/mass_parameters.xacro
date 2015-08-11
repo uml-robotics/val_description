@@ -21,11 +21,11 @@
 
   <xacro:property name="TorsoRollLinkMass" value="39.470000" />
   <xacro:property name="TorsoRollLinkComPosition" value="-0.095548 -0.003337 0.243098" />
-  <xacro:property name="TorsoRollLinkInertia_IXX" value="0.874514000" />
-  <xacro:property name="TorsoRollLinkInertia_IXY" value="0.039067696" />
-  <xacro:property name="TorsoRollLinkInertia_IXZ" value="0.088824164" />
-  <xacro:property name="TorsoRollLinkInertia_IYY" value="1.271005200" />
-  <xacro:property name="TorsoRollLinkInertia_IYZ" value="-0.004025467" />
-  <xacro:property name="TorsoRollLinkInertia_IZZ" value="1.056875300" />
+  <xacro:property name="TorsoRollLinkInertia_IXX" value="0.87326933" />
+  <xacro:property name="TorsoRollLinkInertia_IXY" value="0.000099563" />
+  <xacro:property name="TorsoRollLinkInertia_IXZ" value="0.061345211" />
+  <xacro:property name="TorsoRollLinkInertia_IYY" value="1.0108485" />
+  <xacro:property name="TorsoRollLinkInertia_IYZ" value="0.001818490" />
+  <xacro:property name="TorsoRollLinkInertia_IZZ" value="0.77839801" />
 
 </robot>
