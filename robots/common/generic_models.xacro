@@ -194,6 +194,7 @@
     </joint>
     <gazebo reference="${jointName}">
       <provideFeedback>1</provideFeedback>
+      <implicitSpringDamper>1</implicitSpringDamper>
     </gazebo>
   </xacro:macro>
 
@@ -204,6 +205,9 @@
       <parent link="${parent}"/>
       <child link="${child}"/>
     </joint>
+    <gazebo reference="${jointName}">
+      <implicitSpringDamper>1</implicitSpringDamper>
+    </gazebo>
   </xacro:macro>
 
   <xacro:macro name="revolute_joint_damped" params="jointName parent child origin_xyz origin_rpy axis damping friction *limits">
@@ -217,6 +221,7 @@
     </joint>
     <gazebo reference="${jointName}">
       <provideFeedback>1</provideFeedback>
+      <implicitSpringDamper>1</implicitSpringDamper>
     </gazebo>
   </xacro:macro>
 
@@ -232,6 +237,7 @@
     </joint>
     <gazebo reference="${jointName}">
       <provideFeedback>1</provideFeedback>
+      <implicitSpringDamper>1</implicitSpringDamper>
     </gazebo>
   </xacro:macro>
 
@@ -242,6 +248,9 @@
       <parent link="${parent}"/>
       <child link="${child}"/>
     </joint>
+    <gazebo reference="${jointName}">
+      <implicitSpringDamper>1</implicitSpringDamper>
+    </gazebo>
   </xacro:macro>
 
   <xacro:macro name="prismatic_joint_axis" params="jointName parent child origin_xyz origin_rpy axis *limits">
@@ -253,6 +262,9 @@
       <dynamics damping="1.0" friction="0.0"/>
       <xacro:insert_block name="limits" />
     </joint>
+    <gazebo reference="${jointName}">
+      <implicitSpringDamper>1</implicitSpringDamper>
+    </gazebo>
   </xacro:macro>
 
   <xacro:macro name="revolute_joint_axis" params="jointName parent child origin_xyz origin_rpy axis *limits">
@@ -266,6 +278,7 @@
     </joint>
     <gazebo reference="${jointName}">
       <provideFeedback>1</provideFeedback>
+      <implicitSpringDamper>1</implicitSpringDamper>
     </gazebo>
   </xacro:macro>
 
@@ -276,6 +289,9 @@
       <parent link="${parent}"/>
       <child link="${child}"/>
     </joint>
+    <gazebo reference="${jointName}">
+      <implicitSpringDamper>1</implicitSpringDamper>
+    </gazebo>
   </xacro:macro>
 
   <xacro:macro name="virtual_fixed_frame_offset" params="name parentLink origin_xyz origin_rpy">
