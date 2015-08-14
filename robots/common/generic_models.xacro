@@ -28,56 +28,6 @@
         <origin rpy="0 0 0" xyz="0 0 0"/>
       </collision>
     </link>
-<!--    <gazebo reference="${name}">
-      <material>Gazebo/${material}</material>
-    </gazebo> -->
-  </xacro:macro>
-
-  <xacro:macro name="cylinder_link" params="name radius length mass origin_xyz origin_rpy visual_mesh material collision_mesh">
-    <link name="${name}">
-      <inertial>
-        <mass value="${mass}" />
-        <origin rpy="${origin_rpy}" xyz="${origin_xyz}"/>
-        <inertia ixx="${mass*(3*radius*radius + length*length)/12}" ixy="0.0" ixz="0.0"
-                 iyy="${mass*(3*radius*radius + length*length)/12}" iyz="0.0"
-                 izz="${0.5*mass*radius*radius}" />
-      </inertial>
-      <visual>
-        <geometry>
-          <mesh filename="${visual_mesh}"/>
-        </geometry>
-        <origin rpy="0 0 0" xyz="0 0 0"/>
-        <material name="${material}"/>
-      </visual>
-      <collision>
-        <geometry>
-          <mesh filename="${collision_mesh}"/>
-        </geometry>
-        <origin rpy="0 0 0" xyz="0 0 0"/>
-      </collision>
-    </link>
-    <gazebo reference="${name}">
-      <material>Gazebo/${material}</material>
-    </gazebo>
-  </xacro:macro>
-
-  <xacro:macro name="cylinder_link_no_mesh" params="name radius length mass origin_xyz origin_rpy">
-    <link name="${name}">
-      <inertial>
-        <mass value="${mass}" />
-        <origin rpy="${origin_rpy}" xyz="${origin_xyz}"/>
-        <inertia ixx="${mass*(3*radius*radius + length*length)/12}" ixy="0.0" ixz="0.0"
-                 iyy="${mass*(3*radius*radius + length*length)/12}" iyz="0.0"
-                 izz="${0.5*mass*radius*radius}" />
-      </inertial>
-      <visual>
-        <geometry>
-          <cylinder radius="${radius}" length="${length}"/>
-        </geometry>
-        <origin rpy="${origin_rpy}" xyz="${origin_xyz}"/>
-        <material name="Gray"/>
-      </visual>
-    </link>
   </xacro:macro>
 
   <xacro:macro name="link_no_mesh" params="name width height depth mass origin_xyz origin_rpy ixx ixy ixz iyy iyz izz">
@@ -102,25 +52,6 @@
         </geometry>
         <origin rpy="${origin_rpy}" xyz="${origin_xyz}"/>
       </collision>
-    </link>
-  </xacro:macro>
-
-  <xacro:macro name="virtual_link_sphere" params="name radius mass origin_xyz origin_rpy">
-    <link name="${name}">
-      <inertial>
-        <mass value="${mass}" />
-        <origin rpy="${origin_rpy}" xyz="${origin_xyz}"/>
-        <inertia ixx="${2*mass*radius*radius/5}" ixy="0.0" ixz="0.0"
-                 iyy="${2*mass*radius*radius/5}" iyz="0.0"
-                 izz="${2*mass*radius*radius/5}" />
-      </inertial>
-      <visual>
-        <origin rpy="0 0 0" xyz="0 0 0"/>
-        <geometry>
-          <sphere radius="${radius}"/>
-        </geometry>
-        <material name="Gray"/>
-      </visual>
     </link>
   </xacro:macro>
 
@@ -249,35 +180,6 @@
       <child link="${child}"/>
     </joint>
     <gazebo reference="${jointName}">
-      <implicitSpringDamper>1</implicitSpringDamper>
-    </gazebo>
-  </xacro:macro>
-
-  <xacro:macro name="prismatic_joint_axis" params="jointName parent child origin_xyz origin_rpy axis *limits">
-    <joint name="${jointName}" type="prismatic">
-      <origin rpy="${origin_rpy}" xyz="${origin_xyz}"/>
-      <axis xyz="${axis}"/>
-      <parent link="${parent}"/>
-      <child link="${child}"/>
-      <dynamics damping="1.0" friction="0.0"/>
-      <xacro:insert_block name="limits" />
-    </joint>
-    <gazebo reference="${jointName}">
-      <implicitSpringDamper>1</implicitSpringDamper>
-    </gazebo>
-  </xacro:macro>
-
-  <xacro:macro name="revolute_joint_axis" params="jointName parent child origin_xyz origin_rpy axis *limits">
-    <joint name="${jointName}" type="revolute">
-      <origin rpy="${origin_rpy}" xyz="${origin_xyz}"/>
-      <axis xyz="${axis}"/>
-      <parent link="${parent}"/>
-      <child link="${child}"/>
-      <xacro:insert_block name="limits" />
-      <dynamics damping="1.0" friction="0.0"/>
-    </joint>
-    <gazebo reference="${jointName}">
-      <provideFeedback>1</provideFeedback>
       <implicitSpringDamper>1</implicitSpringDamper>
     </gazebo>
   </xacro:macro>

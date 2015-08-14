@@ -20,6 +20,7 @@
 
     <gazebo reference="${sensorName}_Frame">
       <sensor name="${sensorName}" type="imu">
+        <always_on>true</always_on>
         <pose>${origin_xyz} ${origin_rpy} </pose>
         <imu>
            <noise>
