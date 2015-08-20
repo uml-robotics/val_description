@@ -1,14 +1,13 @@
-<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="v1/waist">
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="waist">
 
-  <!-- Properties -->
-  <xacro:include filename="$(find val_description)/robots/valkyrie_A/xacro/waist/joint_names.xacro"/>
-  <xacro:include filename="$(find val_description)/robots/valkyrie_A/xacro/waist/actuator_names.xacro"/>
-  <xacro:include filename="$(find val_description)/robots/valkyrie_A/xacro/waist/joint_axes.xacro"/>
-  <xacro:include filename="$(find val_description)/robots/valkyrie_A/xacro/waist/joint_axes.xacro"/>
-  <xacro:include filename="$(find val_description)/robots/valkyrie_A/xacro/waist/link_names.xacro"/>
-  <xacro:include filename="$(find val_description)/robots/valkyrie_A/xacro/waist/joint_limits.xacro"/>
-  <xacro:include filename="$(find val_description)/robots/valkyrie_A/xacro/waist/frame_parameters.xacro"/>
-  <xacro:include filename="$(find val_description)/robots/valkyrie_A/xacro/waist/mass_parameters.xacro"/>
+  <xacro:include filename="$(find val_description)/robots/common/waist/joint_names.xacro"/>
+  <xacro:include filename="$(find val_description)/robots/common/waist/actuator_names.xacro"/>
+  <xacro:include filename="$(find val_description)/robots/common/waist/joint_axes.xacro"/>
+  <xacro:include filename="$(find val_description)/robots/common/waist/joint_axes.xacro"/>
+  <xacro:include filename="$(find val_description)/robots/common/waist/link_names.xacro"/>
+  <xacro:include filename="$(find val_description)/robots/common/waist/joint_limits.xacro"/>
+  <xacro:include filename="$(find val_description)/robots/common/waist/frame_parameters.xacro"/>
+  <xacro:include filename="$(find val_description)/robots/common/waist/mass_parameters.xacro"/>
   <xacro:include filename="$(find val_description)/robots/common/sensors/microstrain.xacro"/>
   <xacro:include filename="$(find val_description)/robots/common/sensors/flea.xacro"/>
 

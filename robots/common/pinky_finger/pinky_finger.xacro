@@ -1,13 +1,13 @@
 <?xml version="1.0" ?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="pinky_finger">
 
-  <xacro:include filename="$(find val_description)/robots/valkyrie_A/xacro/pinky_finger/joint_names.xacro"/>
-  <xacro:include filename="$(find val_description)/robots/valkyrie_A/xacro/pinky_finger/joint_axes.xacro"/>
-  <xacro:include filename="$(find val_description)/robots/valkyrie_A/xacro/pinky_finger/actuator_names.xacro"/>
-  <xacro:include filename="$(find val_description)/robots/valkyrie_A/xacro/pinky_finger/link_names.xacro"/>
-  <xacro:include filename="$(find val_description)/robots/valkyrie_A/xacro/pinky_finger/joint_limits.xacro"/>
-  <xacro:include filename="$(find val_description)/robots/valkyrie_A/xacro/pinky_finger/frame_parameters.xacro"/>
-  <xacro:include filename="$(find val_description)/robots/valkyrie_A/xacro/pinky_finger/mass_parameters.xacro"/>
+  <xacro:include filename="$(find val_description)/robots/common/pinky_finger/joint_names.xacro"/>
+  <xacro:include filename="$(find val_description)/robots/common/pinky_finger/joint_axes.xacro"/>
+  <xacro:include filename="$(find val_description)/robots/common/pinky_finger/actuator_names.xacro"/>
+  <xacro:include filename="$(find val_description)/robots/common/pinky_finger/link_names.xacro"/>
+  <xacro:include filename="$(find val_description)/robots/common/pinky_finger/joint_limits.xacro"/>
+  <xacro:include filename="$(find val_description)/robots/common/pinky_finger/frame_parameters.xacro"/>
+  <xacro:include filename="$(find val_description)/robots/common/pinky_finger/mass_parameters.xacro"/>
 
   <xacro:macro name="make_pinky_finger" params="prefix reflect pinky_finger_root_link">
 

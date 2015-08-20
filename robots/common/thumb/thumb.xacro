@@ -1,13 +1,13 @@
 <?xml version="1.0" ?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="thumb">
   
-  <xacro:include filename="$(find val_description)/robots/valkyrie_A/xacro/thumb/joint_names.xacro"/>
-  <xacro:include filename="$(find val_description)/robots/valkyrie_A/xacro/thumb/joint_axes.xacro"/>
-  <xacro:include filename="$(find val_description)/robots/valkyrie_A/xacro/thumb/actuator_names.xacro"/>
-  <xacro:include filename="$(find val_description)/robots/valkyrie_A/xacro/thumb/link_names.xacro"/>
-  <xacro:include filename="$(find val_description)/robots/valkyrie_A/xacro/thumb/joint_limits.xacro"/>
-  <xacro:include filename="$(find val_description)/robots/valkyrie_A/xacro/thumb/frame_parameters.xacro"/>
-  <xacro:include filename="$(find val_description)/robots/valkyrie_A/xacro/thumb/mass_parameters.xacro"/>
+  <xacro:include filename="$(find val_description)/robots/common/thumb/joint_names.xacro"/>
+  <xacro:include filename="$(find val_description)/robots/common/thumb/joint_axes.xacro"/>
+  <xacro:include filename="$(find val_description)/robots/common/thumb/actuator_names.xacro"/>
+  <xacro:include filename="$(find val_description)/robots/common/thumb/link_names.xacro"/>
+  <xacro:include filename="$(find val_description)/robots/common/thumb/joint_limits.xacro"/>
+  <xacro:include filename="$(find val_description)/robots/common/thumb/frame_parameters.xacro"/>
+  <xacro:include filename="$(find val_description)/robots/common/thumb/mass_parameters.xacro"/>
 
   <xacro:macro name="make_thumb" params="prefix reflect thumb_root_link">
     <xacro:standard_link name="${ThumbRollLinkName}"

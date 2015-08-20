@@ -1,12 +1,12 @@
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="head">
 
-  <xacro:include filename="$(find val_description)/robots/valkyrie_A/xacro/head/joint_names.xacro"/>
-  <xacro:include filename="$(find val_description)/robots/valkyrie_A/xacro/head/actuator_names.xacro"/>
-  <xacro:include filename="$(find val_description)/robots/valkyrie_A/xacro/head/joint_axes.xacro"/>
-  <xacro:include filename="$(find val_description)/robots/valkyrie_A/xacro/head/link_names.xacro"/>
-  <xacro:include filename="$(find val_description)/robots/valkyrie_A/xacro/head/joint_limits.xacro"/>
-  <xacro:include filename="$(find val_description)/robots/valkyrie_A/xacro/head/frame_parameters.xacro"/>
-  <xacro:include filename="$(find val_description)/robots/valkyrie_A/xacro/head/mass_parameters.xacro"/>
+  <xacro:include filename="$(find val_description)/robots/common/head/joint_names.xacro"/>
+  <xacro:include filename="$(find val_description)/robots/common/head/actuator_names.xacro"/>
+  <xacro:include filename="$(find val_description)/robots/common/head/joint_axes.xacro"/>
+  <xacro:include filename="$(find val_description)/robots/common/head/link_names.xacro"/>
+  <xacro:include filename="$(find val_description)/robots/common/head/joint_limits.xacro"/>
+  <xacro:include filename="$(find val_description)/robots/common/head/frame_parameters.xacro"/>
+  <xacro:include filename="$(find val_description)/robots/common/head/mass_parameters.xacro"/>
   
   <xacro:property name="NJ3_Link_Radius" value="0.139"/>
 
