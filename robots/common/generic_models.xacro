@@ -198,6 +198,18 @@
       <joint name="${jointName}">
         <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
       </joint>
+      <actuator name="${actuatorName}">
+      </actuator>
+    </transmission>
+  </xacro:macro>
+
+
+  <xacro:macro name="simple_transmission_position_controlled_joint" params="jointName actuatorName">
+    <transmission name="${jointName}Transmission">
+      <type>transmission_interface/SimpleTransmission</type>
+      <joint name="${jointName}">
+        <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+      </joint>
       <actuator name="${actuatorName}"/>
     </transmission>
   </xacro:macro>
@@ -211,6 +223,10 @@
       <joint name="${joint1Name}">
         <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
       </joint>
+       <actuator name="${actuator1Name}">
+      </actuator>
+      <actuator name="${actuator2Name}">
+      </actuator>
     </transmission>
   </xacro:macro>
 

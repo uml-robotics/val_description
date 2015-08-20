@@ -36,7 +36,7 @@
     <xacro:make_pinky_finger prefix="Left" reflect="1" pinky_finger_root_link="LeftPalm"/>
 
     <xacro:make_leg prefix="Right" reflect="-1" leg_root_link="${Pelvis_Link_Name}" />
-
+    <xacro:leg_transmissions prefix="Right"/>
     <xacro:v1_leg_sensors prefix="Right" reflect="-1" />
 
     <xacro:make_leg prefix="Left" reflect="1" leg_root_link="${Pelvis_Link_Name}" />
