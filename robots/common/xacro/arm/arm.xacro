@@ -1,13 +1,13 @@
 <?xml version="1.0" ?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="arm">
 
-  <xacro:include filename="$(find val_description)/robots/common/arm/joint_names.xacro"/>
-  <xacro:include filename="$(find val_description)/robots/common/arm/actuator_names.xacro"/>
-  <xacro:include filename="$(find val_description)/robots/common/arm/joint_axes.xacro"/>
-  <xacro:include filename="$(find val_description)/robots/common/arm/link_names.xacro"/>
-  <xacro:include filename="$(find val_description)/robots/common/arm/joint_limits.xacro"/>
-  <xacro:include filename="$(find val_description)/robots/common/arm/frame_parameters.xacro"/>
-  <xacro:include filename="$(find val_description)/robots/common/arm/mass_parameters.xacro"/>
+  <xacro:include filename="$(find val_description)/robots/common/xacro/arm/joint_names.xacro"/>
+  <xacro:include filename="$(find val_description)/robots/common/xacro/arm/actuator_names.xacro"/>
+  <xacro:include filename="$(find val_description)/robots/common/xacro/arm/joint_axes.xacro"/>
+  <xacro:include filename="$(find val_description)/robots/common/xacro/arm/link_names.xacro"/>
+  <xacro:include filename="$(find val_description)/robots/common/xacro/arm/joint_limits.xacro"/>
+  <xacro:include filename="$(find val_description)/robots/common/xacro/arm/frame_parameters.xacro"/>
+  <xacro:include filename="$(find val_description)/robots/common/xacro/arm/mass_parameters.xacro"/>
 
   <xacro:macro name="make_upper_arm" params="prefix reflect upper_arm_root_link">
 

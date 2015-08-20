@@ -1,8 +1,8 @@
 <robot xmlns:xacro="http://ros.org/wiki/xacro" name="valkyrie">
 
-    <xacro:include filename="$(find val_description)/robots/common/generic_models.xacro" />
+    <xacro:include filename="$(find val_description)/robots/common/xacro/generic_models.xacro" />
     <xacro:include filename="$(find val_description)/materials/materials.xacro" />
-    <xacro:include filename="$(find val_description)/robots/common/common_bodies.xacro" />
+    <xacro:include filename="$(find val_description)/robots/common/xacro/common_bodies.xacro" />
     <xacro:include filename="$(find val_description)/robots/valkyrie_A/xacro/leg/leg.xacro" />
 
     <xacro:make_pelvis />

@@ -1,13 +1,13 @@
 <?xml version="1.0" ?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="middle_finger">
 
-  <xacro:include filename="$(find val_description)/robots/common/middle_finger/joint_names.xacro"/>
-  <xacro:include filename="$(find val_description)/robots/common/middle_finger/joint_axes.xacro"/>
-  <xacro:include filename="$(find val_description)/robots/common/middle_finger/actuator_names.xacro"/>
-  <xacro:include filename="$(find val_description)/robots/common/middle_finger/link_names.xacro"/>
-  <xacro:include filename="$(find val_description)/robots/common/middle_finger/joint_limits.xacro"/>
-  <xacro:include filename="$(find val_description)/robots/common/middle_finger/frame_parameters.xacro"/>
-  <xacro:include filename="$(find val_description)/robots/common/middle_finger/mass_parameters.xacro"/>
+  <xacro:include filename="$(find val_description)/robots/common/xacro/middle_finger/joint_names.xacro"/>
+  <xacro:include filename="$(find val_description)/robots/common/xacro/middle_finger/joint_axes.xacro"/>
+  <xacro:include filename="$(find val_description)/robots/common/xacro/middle_finger/actuator_names.xacro"/>
+  <xacro:include filename="$(find val_description)/robots/common/xacro/middle_finger/link_names.xacro"/>
+  <xacro:include filename="$(find val_description)/robots/common/xacro/middle_finger/joint_limits.xacro"/>
+  <xacro:include filename="$(find val_description)/robots/common/xacro/middle_finger/frame_parameters.xacro"/>
+  <xacro:include filename="$(find val_description)/robots/common/xacro/middle_finger/mass_parameters.xacro"/>
 
   <xacro:macro name="make_middle_finger" params="prefix reflect middle_finger_root_link">
 
