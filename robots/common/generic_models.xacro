@@ -141,21 +141,6 @@
     </gazebo>
   </xacro:macro>
 
-  <xacro:macro name="revolute_joint_damped" params="jointName parent child origin_xyz origin_rpy axis damping friction *limits">
-    <joint name="${jointName}" type="revolute">
-      <origin rpy="${origin_rpy}" xyz="${origin_xyz}"/>
-      <axis xyz="${axis}"/>
-      <parent link="${parent}"/>
-      <child link="${child}"/>
-      <dynamics damping="${damping}" friction="${friction}"/>
-      <xacro:insert_block name="limits" />
-    </joint>
-    <gazebo reference="${jointName}">
-      <provideFeedback>1</provideFeedback>
-      <implicitSpringDamper>1</implicitSpringDamper>
-    </gazebo>
-  </xacro:macro>
-
   <xacro:macro name="revolute_joint_ex" params="jointName parent child origin_xyz origin_rpy axis damping friction *limits *controller_gains">
     <joint name="${jointName}" type="revolute">
       <origin rpy="${origin_rpy}" xyz="${origin_xyz}"/>
@@ -205,6 +190,60 @@
                        parent="${parentLink}" child="${name}_Frame"
                        origin_rpy="${origin_rpy}"
                        origin_xyz="${origin_xyz}"/>
+  </xacro:macro>
+
+  <xacro:macro name="simple_transmission_force_controlled_joint" params="jointName actuatorName">
+    <transmission name="${jointName}Transmission">
+      <type>transmission_interface/SimpleTransmission</type>
+      <joint name="${jointName}">
+        <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      </joint>
+      <actuator name="${actuatorName}">
+      </actuator>
+    </transmission>
+  </xacro:macro>
+
+
+  <xacro:macro name="simple_transmission_position_controlled_joint" params="jointName actuatorName">
+    <transmission name="${jointName}Transmission">
+      <type>transmission_interface/SimpleTransmission</type>
+      <joint name="${jointName}">
+        <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+      </joint>
+      <actuator name="${actuatorName}"/>
+    </transmission>
+  </xacro:macro>
+
+  <xacro:macro name="pushrod_transmission_force_controlled_joints" params="transmissionName joint1Name joint2Name actuator1Name actuator2Name">
+    <transmission name="${transmissionName}">
+      <type>transmission_interface/PushrodTransmission</type>
+      <joint name="${joint1Name}">
+        <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      </joint>
+      <joint name="${joint2Name}">
+        <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      </joint>
+       <actuator name="${actuator1Name}">
+      </actuator>
+      <actuator name="${actuator2Name}">
+      </actuator>
+    </transmission>
+  </xacro:macro>
+
+  <xacro:macro name="pushrod_transmission_position_controlled_joints" params="transmissionName joint1Name joint2Name actuator1Name actuator2Name">
+    <transmission name="${transmissionName}">
+      <type>transmission_interface/PushrodTransmission</type>
+      <joint name="${joint1Name}">
+        <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+      </joint>
+      <joint name="${joint2Name}">
+        <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+      </joint>
+       <actuator name="${actuator1Name}">
+      </actuator>
+      <actuator name="${actuator2Name}">
+      </actuator>
+    </transmission>
   </xacro:macro>
 
 </robot>
