@@ -220,7 +220,7 @@
       <joint name="${joint1Name}">
         <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
       </joint>
-      <joint name="${joint1Name}">
+      <joint name="${joint2Name}">
         <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
       </joint>
        <actuator name="${actuator1Name}">
@@ -234,10 +234,10 @@
     <transmission name="${transmissionName}">
       <type>transmission_interface/PushrodTransmission</type>
       <joint name="${joint1Name}">
-        <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
       </joint>
-      <joint name="${joint1Name}">
-        <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      <joint name="${joint2Name}">
+        <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
       </joint>
        <actuator name="${actuator1Name}">
       </actuator>

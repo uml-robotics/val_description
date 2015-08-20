@@ -184,8 +184,8 @@
     <xacro:simple_transmission_force_controlled_joint jointName="${ShoulderRollJointName}" actuatorName="${ShoulderRollActuatorName}"/>
     <xacro:simple_transmission_force_controlled_joint jointName="${ShoulderYawJointName}" actuatorName="${ShoulderYawActuatorName}"/>
     <xacro:simple_transmission_force_controlled_joint jointName="${ElbowPitchJointName}" actuatorName="${ElbowPitchActuatorName}"/> 
-    <xacro:simple_transmission_position_controlled_joint jointName="${ForearmYawActuatorName}" actuatorName="${ForearmYawActuatorName}"/> 
-    <xacro:pushrod_transmission_position_controlled_joints transmissionName="${prefix}WristTransmission" joint1Name="${AnklePitchJointName}" joint2Name="${AnkleRollJointName}" actuator1Name="${AnkleInsideActuatorName}" actuator2Name="${AnkleOutsideActuatorName}" />
+    <xacro:simple_transmission_force_controlled_joint jointName="${ForearmYawActuatorName}" actuatorName="${ForearmYawActuatorName}"/> 
+    <xacro:pushrod_transmission_position_controlled_joints transmissionName="${prefix}WristTransmission" joint1Name="${WristPitchJointName}" joint2Name="${WristRollJointName}" actuator1Name="${WristTopActuatorName}" actuator2Name="${WristBottomActuatorName}" />
   </xacro:macro>
 
 </robot>
