@@ -170,6 +170,6 @@
     <xacro:simple_transmission_force_controlled_joint jointName="${HipRollJointName}" actuatorName="${HipRollActuatorName}"/>
     <xacro:simple_transmission_force_controlled_joint jointName="${HipPitchJointName}" actuatorName="${HipPitchActuatorName}"/>
     <xacro:simple_transmission_force_controlled_joint jointName="${KneePitchJointName}" actuatorName="${KneePitchActuatorName}"/> 
-    <xacro:pushrod_transmission transmissionName="${prefix}AnkleTransmission" joint1Name="${AnklePitchJointName}" joint2Name="${AnkleRollJointName}" actuator1Name="${AnkleInsideActuatorName}" actuator2Name="${AnkleOutsideActuatorName}" />
+    <xacro:pushrod_transmission_force_controlled_joints transmissionName="${prefix}AnkleTransmission" joint1Name="${AnklePitchJointName}" joint2Name="${AnkleRollJointName}" actuator1Name="${AnkleInsideActuatorName}" actuator2Name="${AnkleOutsideActuatorName}" />
   </xacro:macro>
 </robot>

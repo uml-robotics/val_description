@@ -2,6 +2,7 @@
 
   <!-- Properties -->
   <xacro:include filename="$(find val_description)/robots/valkyrie_A/xacro/waist/joint_names.xacro"/>
+  <xacro:include filename="$(find val_description)/robots/valkyrie_A/xacro/waist/actuator_names.xacro"/>
   <xacro:include filename="$(find val_description)/robots/valkyrie_A/xacro/waist/joint_axes.xacro"/>
   <xacro:include filename="$(find val_description)/robots/valkyrie_A/xacro/waist/joint_axes.xacro"/>
   <xacro:include filename="$(find val_description)/robots/valkyrie_A/xacro/waist/link_names.xacro"/>
@@ -109,5 +110,10 @@
                         origin_rpy="1.57 0.0 1.57"
                         imageFormat="R8G8B8"
                         frameRate="60"/>
+   </xacro:macro>
+
+   <xacro:macro name="waist_transmissions">
+    <xacro:simple_transmission_force_controlled_joint jointName="${TorsoYawJointName}" actuatorName="${TorsoYawActuatorName}"/> 
+    <xacro:pushrod_transmission_position_controlled_joints transmissionName="WaistTransmission" joint1Name="${TorsoPitchJointName}" joint2Name="${TorsoRollJointName}" actuator1Name="${WaistLeftActuatorName}" actuator2Name="${WaistRightActuatorName}" />
    </xacro:macro>
 </robot>

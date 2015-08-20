@@ -214,7 +214,23 @@
     </transmission>
   </xacro:macro>
 
-  <xacro:macro name="pushrod_transmission" params="transmissionName joint1Name joint2Name actuator1Name actuator2Name">
+  <xacro:macro name="pushrod_transmission_force_controlled_joints" params="transmissionName joint1Name joint2Name actuator1Name actuator2Name">
+    <transmission name="${transmissionName}">
+      <type>transmission_interface/PushrodTransmission</type>
+      <joint name="${joint1Name}">
+        <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      </joint>
+      <joint name="${joint1Name}">
+        <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      </joint>
+       <actuator name="${actuator1Name}">
+      </actuator>
+      <actuator name="${actuator2Name}">
+      </actuator>
+    </transmission>
+  </xacro:macro>
+
+  <xacro:macro name="pushrod_transmission_position_controlled_joints" params="transmissionName joint1Name joint2Name actuator1Name actuator2Name">
     <transmission name="${transmissionName}">
       <type>transmission_interface/PushrodTransmission</type>
       <joint name="${joint1Name}">
