@@ -10,15 +10,18 @@ find_package(catkin REQUIRED COMPONENTS
 
 set(urdf_files "")
 
+
+set(PATH_TO_ROBOTS_MODEL ${CMAKE_CURRENT_SOURCE_DIR}/model/robots)
+set(PATH_TO_ROBOTS_INSTANCE ${CMAKE_CURRENT_SOURCE_DIR}/instance/instances/robots)
 # Xacro files
-file(GLOB model_xacro_files ${CMAKE_CURRENT_SOURCE_DIR}/robots/common/*/*.xacro ${CMAKE_CURRENT_SOURCE_DIR}/robots/valkyrie_A/*/*.xacro ${CMAKE_CURRENT_SOURCE_DIR}/robots/valkyrie_B/*/*.xacro)
-file(GLOB instance_xacro_files ${CMAKE_CURRENT_SOURCE_DIR}/robots/common/*/*.xacro ${CMAKE_CURRENT_SOURCE_DIR}/robots/valkyrie_A/*/*.xacro ${CMAKE_CURRENT_SOURCE_DIR}/robots/valkyrie_B/*/*.xacro)
+file(GLOB model_xacro_files ${PATH_TO_ROBOTS_MODEL}/common/*/*.xacro ${PATH_TO_ROBOTS_MODEL}/valkyrie_A/*/*.xacro ${PATH_TO_ROBOTS_MODEL}/valkyrie_B/*/*.xacro)
+# file(GLOB instance_xacro_files ${PATH_TO_ROBOTS_INSTANCE}/xacro/*/*.xacro)
 
 # Robot files
-file(GLOB urdf_xacro_files ${CMAKE_CURRENT_SOURCE_DIR}/robots/*.xacro)
+file(GLOB urdf_xacro_files ${PATH_TO_ROBOTS_MODEL}/*.xacro)
 
 # Create urdf dir
-file(MAKE_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/urdf)
+file(MAKE_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/model/urdf)
 
 foreach(it ${urdf_xacro_files})
   get_filename_component(basepath ${it} PATH)
@@ -26,7 +29,7 @@ foreach(it ${urdf_xacro_files})
 
   message("processing urdf file :" ${basepath}/${basename})
 
-  set(expanded_file "${CMAKE_CURRENT_SOURCE_DIR}/urdf/${basename}.urdf")
+  set(expanded_file "${CMAKE_CURRENT_SOURCE_DIR}/model/urdf/${basename}.urdf")
   message("produce expanded file :" ${expanded_file})
 
   xacro_add_xacro_file(${it} ${expanded_file})

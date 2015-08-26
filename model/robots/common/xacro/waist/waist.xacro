@@ -1,15 +1,15 @@
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="waist">
 
-  <xacro:include filename="$(find val_description)/robots/common/xacro/waist/joint_names.xacro"/>
-  <xacro:include filename="$(find val_description)/robots/common/xacro/waist/actuator_names.xacro"/>
-  <xacro:include filename="$(find val_description)/robots/common/xacro/waist/joint_axes.xacro"/>
-  <xacro:include filename="$(find val_description)/robots/common/xacro/waist/joint_axes.xacro"/>
-  <xacro:include filename="$(find val_description)/robots/common/xacro/waist/link_names.xacro"/>
-  <xacro:include filename="$(find val_description)/robots/common/xacro/waist/joint_limits.xacro"/>
-  <xacro:include filename="$(find val_description)/robots/common/xacro/waist/frame_parameters.xacro"/>
-  <xacro:include filename="$(find val_description)/robots/common/xacro/waist/mass_parameters.xacro"/>
-  <xacro:include filename="$(find val_description)/robots/common/xacro/sensors/microstrain.xacro"/>
-  <xacro:include filename="$(find val_description)/robots/common/xacro/sensors/flea.xacro"/>
+  <xacro:include filename="$(find val_description)/model/robots/common/xacro/waist/joint_names.xacro"/>
+  <xacro:include filename="$(find val_description)/model/robots/common/xacro/waist/actuator_names.xacro"/>
+  <xacro:include filename="$(find val_description)/model/robots/common/xacro/waist/joint_axes.xacro"/>
+  <xacro:include filename="$(find val_description)/model/robots/common/xacro/waist/joint_axes.xacro"/>
+  <xacro:include filename="$(find val_description)/model/robots/common/xacro/waist/link_names.xacro"/>
+  <xacro:include filename="$(find val_description)/model/robots/common/xacro/waist/joint_limits.xacro"/>
+  <xacro:include filename="$(find val_description)/model/robots/common/xacro/waist/frame_parameters.xacro"/>
+  <xacro:include filename="$(find val_description)/model/robots/common/xacro/waist/mass_parameters.xacro"/>
+  <xacro:include filename="$(find val_description)/model/robots/common/xacro/sensors/microstrain.xacro"/>
+  <xacro:include filename="$(find val_description)/model/robots/common/xacro/sensors/flea.xacro"/>
 
   <xacro:macro name="make_waist_common" params="waist_root_link">
 
