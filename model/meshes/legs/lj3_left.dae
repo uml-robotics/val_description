@@ -15,7 +15,7 @@
       <init_from>lj3Mask.png</init_from>
     </image>
     <image id="lj3_Right_png" name="lj3_Right_png">
-      <init_from>lj3_Right.png</init_from>
+      <init_from>lj3_right.png</init_from>
     </image>
   </library_images>
   <library_effects>

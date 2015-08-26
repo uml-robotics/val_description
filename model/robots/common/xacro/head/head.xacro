@@ -88,8 +88,8 @@
     </xacro:macro>
 
     <xacro:macro name="neck_transmissions">
-      <xacro:simple_transmission_position_controlled_joint jointName="${LowerNeckPitchJointName}" actuatorName="${LowerNeckPitchActuatorName}" nodeName="nodeNode"/>
-      <xacro:simple_transmission_position_controlled_joint jointName="${NeckYawJointName}" actuatorName="${NeckYawActuatorName}" nodeName="nodeNode"/>
-      <xacro:simple_transmission_position_controlled_joint jointName="${UpperNeckPitchJointName}" actuatorName="${UpperNeckPitchActuatorName}" nodeName="nodeNode"/>
+      <xacro:simple_transmission_position_controlled_joint jointName="${LowerNeckPitchJointName}" actuatorName="${LowerNeckPitchActuatorName}" nodeName="${LowerNeckPitchNode}"/>
+      <xacro:simple_transmission_position_controlled_joint jointName="${NeckYawJointName}" actuatorName="${NeckYawActuatorName}" nodeName="${NeckYawNode}"/>
+      <xacro:simple_transmission_position_controlled_joint jointName="${UpperNeckPitchJointName}" actuatorName="${UpperNeckPitchActuatorName}" nodeName="${UpperNeckPitchNode}"/>
     </xacro:macro>
 </robot>

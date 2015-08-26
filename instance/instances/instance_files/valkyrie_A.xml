@@ -165,11 +165,11 @@
 	</Joint>
       <Actuator id="waist_actuator0">
         <SerialNumber id="v_e_005"/>
-        <Node id="/trunk/waist/actuator0"/>
+        <Node id="/trunk/waist/left_actuator"/>
       </Actuator>
       <Actuator id="waist_actuator1">
         <SerialNumber id="v_e_006"/>
-        <Node id="/trunk/waist/actuator1"/>
+        <Node id="/trunk/waist/right_actuator"/>
       </Actuator>
     </Mechanism>
   </Mechanisms>

@@ -4,8 +4,8 @@
 	<xacro:property name="HipRollNode" value="/${prefix}_leg/j2" />
 	<xacro:property name="HipPitchNode" value="/${prefix}_leg/j3" />
 	<xacro:property name="KneePitchNode" value="/${prefix}_leg/j4" />
-	<xacro:property name="AnkleInsideActuatorNode" value="/${prefix}_leg/ankle/actuator0" />
-	<xacro:property name="AnkleOutsideActuatorNode" value="/${prefix}_leg/ankle/actuator1" />
+	<xacro:property name="AnkleInsideActuatorNode" value="/${prefix}_leg/ankle/left_actuator" />
+	<xacro:property name="AnkleOutsideActuatorNode" value="/${prefix}_leg/ankle/right_actuator" />
 
 	<xacro:property name="ShoulderPitchNode" value="/${prefix}_arm/j1" />
 	<xacro:property name="ShoulderRollNode" value="/${prefix}_arm/j2" />
@@ -15,13 +15,13 @@
 	<xacro:property name="WristTopActuatorNode" value="/${prefix}_arm/wrist/top_actautor" />
 	<xacro:property name="WristBottomActuatorNode" value="/${prefix}_arm/wrist/bottom_actuator" />
 
-	<xacro:property name="neckJ1Node" value="/neck/j1" />
-	<xacro:property name="neckJ2Node" value="/neck/j2" />
-	<xacro:property name="neckJ3Node" value="/neck/j3" />
+	<xacro:property name="LowerNeckPitchNode" value="/neck/j1" />
+	<xacro:property name="NeckYawNode" value="/neck/j2" />
+	<xacro:property name="UpperNeckPitchNode" value="/neck/j3" />
 
-	<xacro:property name="trunkNode" value="/trunk/j1" />
-	<xacro:property name="waistActuator0Node" value="/trunk/waist/actuator0" />
-	<xacro:property name="waistActuator1Node" value="/trunk/waist/actuator1" />
+	<xacro:property name="TrunkYawNode" value="/trunk/j1" />
+	<xacro:property name="WaistLeftActuatorNode" value="/trunk/waist/left_actuator" />
+	<xacro:property name="WaistRightActuatorNode" value="/trunk/waist/right_actuator" />
 
 	<xacro:property name="pelvis_imu1_node" value="/pelvis/sensors/imu1" />
 	<xacro:property name="pelvis_imu2_node" value="/pelvis/sensors/imu2" />
