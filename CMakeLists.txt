@@ -11,7 +11,7 @@ find_package(catkin REQUIRED COMPONENTS
 set(urdf_files "")
 
 # Xacro files
-file(GLOB model_xacro_files ${CMAKE_CURRENT_SOURCE_DIR}/robots/xacro/*/*.xacro)
+file(GLOB model_xacro_files ${CMAKE_CURRENT_SOURCE_DIR}/robots/common/*/*.xacro ${CMAKE_CURRENT_SOURCE_DIR}/robots/valkyrie_A/*/*.xacro ${CMAKE_CURRENT_SOURCE_DIR}/robots/valkyrie_B/*/*.xacro)
 
 # Robot files
 file(GLOB urdf_xacro_files ${CMAKE_CURRENT_SOURCE_DIR}/robots/*.xacro)
