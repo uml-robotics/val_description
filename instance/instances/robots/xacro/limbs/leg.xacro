@@ -1,6 +1,6 @@
 <robot xmlns:xacro="http://ros.org/wiki/xacro" name="leg">
 
-    <xacro:include filename="$(find nasa_val_config_files)/instances/robots/xacro/mechanisms/mechanisms.xacro"/>
+    <xacro:include filename="$(find val_description)/instance/instances/robots/xacro/mechanisms/mechanisms.xacro"/>
 
     <xacro:macro name="leg" params="side j1_serial_number j2_serial_number j3_serial_number j4_serial_number ankle_actuator0_serial ankle_actuator1_serial j1_node j2_node j3_node j4_node ankle_actuator0_node ankle_actuator1_node" >
     	<xacro:simple_mechanism name="${side}_hip_yaw" serial_number="${j1_serial_number}" node="${j1_node}"/>

@@ -1,14 +1,13 @@
 <robot xmlns:xacro="http://ros.org/wiki/xacro" name="valkyrie_template">
 
-	<xacro:include filename="$(find nasa_val_config_files)/instances/robots/xacro/serial_numbers/valkyrie_A_serials.xacro" />
-	<xacro:include filename="$(find nasa_val_config_files)/instances/robots/xacro/nodes/valkyrie_nodes.xacro" />
-
-	<xacro:include filename="$(find nasa_val_config_files)/instances/robots/xacro/limbs/leg.xacro" />
-	<xacro:include filename="$(find nasa_val_config_files)/instances/robots/xacro/limbs/arm.xacro" />
-	<xacro:include filename="$(find nasa_val_config_files)/instances/robots/xacro/limbs/neck.xacro" />
-	<xacro:include filename="$(find nasa_val_config_files)/instances/robots/xacro/limbs/waist.xacro" />
-	<xacro:include filename="$(find nasa_val_config_files)/instances/robots/xacro/sensors/imu.xacro" />
-	<xacro:include filename="$(find nasa_val_config_files)/instances/robots/xacro/sensors/ati_force_torque.xacro" />
+	<xacro:include filename="$(find val_description)/instance/instances/robots/xacro/serial_numbers/valkyrie_A_serials.xacro" />
+	<xacro:include filename="$(find val_description)/instance/instances/robots/xacro/nodes/valkyrie_nodes.xacro" />
+	<xacro:include filename="$(find val_description)/instance/instances/robots/xacro/limbs/leg.xacro" />
+	<xacro:include filename="$(find val_description)/instance/instances/robots/xacro/limbs/arm.xacro" />
+	<xacro:include filename="$(find val_description)/instance/instances/robots/xacro/limbs/neck.xacro" />
+	<xacro:include filename="$(find val_description)/instance/instances/robots/xacro/limbs/waist.xacro" />
+	<xacro:include filename="$(find val_description)/instance/instances/robots/xacro/sensors/imu.xacro" />
+	<xacro:include filename="$(find val_description)/instance/instances/robots/xacro/sensors/ati_force_torque.xacro" />
 
 	<RobotInstance id="valkyrie_A" />
 
