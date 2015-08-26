@@ -1,0 +1,40 @@
+<robot xmlns:xacro="http://ros.org/wiki/xacro" name="valkyrie_template">
+
+	<xacro:include filename="$(find nasa_val_config_files)/instances/robots/xacro/serial_numbers/valkyrie_A_serials.xacro" />
+	<xacro:include filename="$(find nasa_val_config_files)/instances/robots/xacro/nodes/valkyrie_nodes.xacro" />
+
+	<xacro:include filename="$(find nasa_val_config_files)/instances/robots/xacro/limbs/leg.xacro" />
+	<xacro:include filename="$(find nasa_val_config_files)/instances/robots/xacro/limbs/arm.xacro" />
+	<xacro:include filename="$(find nasa_val_config_files)/instances/robots/xacro/limbs/neck.xacro" />
+	<xacro:include filename="$(find nasa_val_config_files)/instances/robots/xacro/limbs/waist.xacro" />
+	<xacro:include filename="$(find nasa_val_config_files)/instances/robots/xacro/sensors/imu.xacro" />
+	<xacro:include filename="$(find nasa_val_config_files)/instances/robots/xacro/sensors/ati_force_torque.xacro" />
+
+	<RobotInstance id="valkyrie_A" />
+
+	<xacro:all_channels/>
+
+	<Mechanisms>
+		<xacro:leg side="left" j1_serial_number="${leftLegJ1SerialNumber}" j2_serial_number="${leftLegJ2SerialNumber}" j3_serial_number="${leftLegJ3SerialNumber}" j4_serial_number="${leftLegJ4SerialNumber}" ankle_actuator0_serial="${leftAnkleActuator0SerialNumber}" ankle_actuator1_serial="${leftAnkleActuator1SerialNumber}" j1_node="${leftLegJ1Node}" j2_node="${leftLegJ2Node}" j3_node="${leftLegJ3Node}" j4_node="${leftLegJ4Node}" ankle_actuator0_node="${leftAnkleActuator0Node}" ankle_actuator1_node="${leftAnkleActuator1Node}" />
+
+		<xacro:leg side="right" j1_serial_number="${rightLegJ1SerialNumber}" j2_serial_number="${rightLegJ2SerialNumber}" j3_serial_number="${rightLegJ3SerialNumber}" j4_serial_number="${rightLegJ4SerialNumber}" ankle_actuator0_serial="${rightAnkleActuator0SerialNumber}" ankle_actuator1_serial="${rightAnkleActuator1SerialNumber}" j1_node="${rightLegJ1Node}" j2_node="${rightLegJ2Node}" j3_node="${rightLegJ3Node}" j4_node="${rightLegJ4Node}" ankle_actuator0_node="${rightAnkleActuator0Node}" ankle_actuator1_node="${rightAnkleActuator1Node}" />
+
+		<xacro:arm side="left" j1_serial_number="${leftArmJ1SerialNumber}" j2_serial_number="${leftArmJ2SerialNumber}" j3_serial_number="${leftArmJ3SerialNumber}" j4_serial_number="${leftArmJ4SerialNumber}" j5_serial_number="${leftArmJ5SerialNumber}" wrist_actuator0_serial="${leftAnkleActuator0SerialNumber}" wrist_actuator1_serial="${leftAnkleActuator1SerialNumber}" j1_node="${leftArmJ1Node}" j2_node="${leftArmJ2Node}" j3_node="${leftArmJ3Node}" j4_node="${leftArmJ4Node}" j5_node="${leftArmJ4Node}" wrist_actuator0_node="${leftAnkleActuator0Node}" wrist_actuator1_node="${leftAnkleActuator1Node}" />
+
+		<xacro:arm side="right" j1_serial_number="${rightArmJ1SerialNumber}" j2_serial_number="${rightArmJ2SerialNumber}" j3_serial_number="${rightArmJ3SerialNumber}" j4_serial_number="${rightArmJ4SerialNumber}" j5_serial_number="${rightArmJ5SerialNumber}" wrist_actuator0_serial="${rightAnkleActuator0SerialNumber}" wrist_actuator1_serial="${rightAnkleActuator1SerialNumber}" j1_node="${rightArmJ1Node}" j2_node="${rightArmJ2Node}" j3_node="${rightArmJ3Node}" j4_node="${rightArmJ4Node}" j5_node="${rightArmJ4Node}" wrist_actuator0_node="${rightAnkleActuator0Node}" wrist_actuator1_node="${rightAnkleActuator1Node}" />
+
+		<xacro:neck j1_serial_number="${neckJ1SerialNumber}" j2_serial_number="${neckJ1SerialNumber}" j3_serial_number="${neckJ1SerialNumber}" j1_node="${neckJ1Node}" j2_node="${neckJ2Node}" j3_node="${neckJ3Node}" />
+
+		<xacro:waist j1_serial_number="${trunkSerialNumber}" waist_actuator0_serial="${waistActuator0SerialNumber}" waist_actuator1_serial="${waistActuator1SerialNumber}" j1_node="${trunkNode}" waist_actuator0_node="${waistActuator0Node}" waist_actuator1_node="${waistActuator1Node}" />
+	</Mechanisms>
+
+	<Devices>
+		<xacro:microstrain_imu name="pelvis_imu1" serial_number="${pelvis_imu1_serial}" node="${pelvis_imu1_node}" />
+		<xacro:microstrain_imu name="pelvis_imu2" serial_number="${pelvis_imu2_serial}" node="${pelvis_imu2_node}" />
+		<xacro:microstrain_imu name="torso_imu1" serial_number="${torso_imu1_serial}" node="${torso_imu1_node}" />
+		<xacro:microstrain_imu name="torso_imu2" serial_number="${torso_imu2_serial}" node="${torso_imu2_node}" />
+		<xacro:ati_force_torque name="left_foot_force_torque" serial_number="${left_foot_ATI_serial}" node="${left_foot_ATI_node}"/>
+		<xacro:ati_force_torque name="right_foot_force_torque" serial_number="${right_foot_ATI_serial}" node="${right_foot_ATI_node}"/>
+	</Devices>
+    
+</robot>

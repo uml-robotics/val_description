@@ -12,6 +12,7 @@ set(urdf_files "")
 
 # Xacro files
 file(GLOB model_xacro_files ${CMAKE_CURRENT_SOURCE_DIR}/robots/common/*/*.xacro ${CMAKE_CURRENT_SOURCE_DIR}/robots/valkyrie_A/*/*.xacro ${CMAKE_CURRENT_SOURCE_DIR}/robots/valkyrie_B/*/*.xacro)
+file(GLOB instance_xacro_files ${CMAKE_CURRENT_SOURCE_DIR}/robots/common/*/*.xacro ${CMAKE_CURRENT_SOURCE_DIR}/robots/valkyrie_A/*/*.xacro ${CMAKE_CURRENT_SOURCE_DIR}/robots/valkyrie_B/*/*.xacro)
 
 # Robot files
 file(GLOB urdf_xacro_files ${CMAKE_CURRENT_SOURCE_DIR}/robots/*.xacro)
@@ -32,6 +33,28 @@ foreach(it ${urdf_xacro_files})
   
   set(urdf_files ${urdf_files} ${expanded_file})
 endforeach(it)
+
+# file(GLOB xacro_files ${CMAKE_CURRENT_SOURCE_DIR}/instances/robots/xacro/*/*.xacro)
+
+# # Robot files
+# file(GLOB instance_xacro_files ${CMAKE_CURRENT_SOURCE_DIR}/instances/robots/*.xacro)
+
+# # Create urdf dir
+# file(MAKE_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/instances/instance_files)
+
+# foreach(it ${instance_xacro_files})
+#   get_filename_component(basepath ${it} PATH)
+#   get_filename_component(basename ${it} NAME_WE)
+
+#   message("processing xml file :" ${basepath}/${basename})
+
+#   set(expanded_file "${CMAKE_CURRENT_SOURCE_DIR}/instances/instance_files/${basename}.xml")
+#   message("produce expanded file :" ${expanded_file})
+
+#   xacro_add_xacro_file(${it} ${expanded_file})
+  
+#   set(instance_files ${instance_files} ${expanded_file})
+# endforeach(it)
 
 ###################################
 ## catkin specific configuration ##
