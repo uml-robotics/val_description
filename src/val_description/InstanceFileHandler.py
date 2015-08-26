@@ -2,8 +2,10 @@ import os
 import xml.etree.ElementTree as xmlParser
 import rospkg
 
+
 class InstanceFileHandler():
-    def __init__(self,instanceXmlFile):
+
+    def __init__(self, instanceXmlFile):
         self.instanceFile = xmlParser.parse(instanceXmlFile)
         self.instanceFileRoot = self.instanceFile.getroot()
         self.robotChildren = []
@@ -11,7 +13,8 @@ class InstanceFileHandler():
             self.robotChildren.append(child)
 
         # Setup paths to the various coeff files
-        self.coeffFileRootPath = rospkg.RosPack().get_path('nasa_val_config_files') + '/coefficients'
+        self.coeffFileRootPath = rospkg.RosPack().get_path(
+            'val_description') + '/instance/coefficients'
         self.actuatorFileCoeffPath = self.coeffFileRootPath + '/actuators'
         self.calibrationFileCoeffPath = self.coeffFileRootPath + '/calibration'
         self.classFileCoeffPath = self.coeffFileRootPath + '/class'
@@ -45,10 +48,12 @@ class InstanceFileHandler():
 
         for mechanism in self.mechanisms:
             if mechanism.get('type') == 'simple':
-                self.serialNumbers.append(mechanism.find('SerialNumber').get('id'))
+                self.serialNumbers.append(
+                    mechanism.find('SerialNumber').get('id'))
             elif mechanism.get('type') == 'complex':
                 for actuator in mechanism.findall('Actuator'):
-                    self.serialNumbers.append(actuator.find('SerialNumber').get('id'))
+                    self.serialNumbers.append(
+                        actuator.find('SerialNumber').get('id'))
             else:
                 raise Exception('Invalid mechanism type in instance file!')
 
@@ -66,60 +71,80 @@ class InstanceFileHandler():
         for mechanism in self.mechanisms:
             if mechanism.get('type') == 'simple':
                 node = mechanism.find('Node').get('id')
-                actuatorCoeffFile = mechanism.find('SerialNumber').get('id') + ".xml"
+                actuatorCoeffFile = mechanism.find(
+                    'SerialNumber').get('id') + ".xml"
             elif mechanism.get('type') == 'complex':
                 for actuator in mechanism.findall('Actuator'):
                     node = actuator.find('Node').get('id')
-                    actuatorCoeffFile = actuator.find('SerialNumber').get('id') + ".xml"
+                    actuatorCoeffFile = actuator.find(
+                        'SerialNumber').get('id') + ".xml"
             else:
                 raise Exception('Invalid mechanism type')
 
             try:
-                actuatorFullFilePath = self.actuatorFileCoeffPath + "/" + actuatorCoeffFile
+                actuatorFullFilePath = self.actuatorFileCoeffPath + \
+                    "/" + actuatorCoeffFile
                 actuatorXmlCoeffFile = xmlParser.parse(actuatorFullFilePath)
             except IOError:
                 print 'Actuator coeff file %s does not exist' % (actuatorFullFilePath)
                 continue
             except xmlParser.ParseError:
-                raise Exception('Invalid XML in file %s' % (actuatorFullFilePath))
+                raise Exception('Invalid XML in file %s' %
+                                (actuatorFullFilePath))
 
             self.configDictionary[node] = {}
             self.configDictionary[node]['configFiles'] = []
 
             try:
-                actuatorClassFile = actuatorXmlCoeffFile.find('ClassFile').get('id')
+                actuatorClassFile = actuatorXmlCoeffFile.find(
+                    'ClassFile').get('id')
             except AttributeError:
-                raise Exception('ClassFile tag does not exist or is misspelled in actuator coeff file!')
+                raise Exception(
+                    'ClassFile tag does not exist or is misspelled in actuator coeff file!')
 
             try:
-                actuatorControllerFile = actuatorXmlCoeffFile.find('ControllerFile').get('id')
+                actuatorControllerFile = actuatorXmlCoeffFile.find(
+                    'ControllerFile').get('id')
             except AttributeError:
-                raise Exception('ControllerFile tag does not exist or is misspelled in actuator coeff file!')
+                raise Exception(
+                    'ControllerFile tag does not exist or is misspelled in actuator coeff file!')
 
             try:
-                actuatorSensorsFile = actuatorXmlCoeffFile.find('SensorsFile').get('id')
+                actuatorSensorsFile = actuatorXmlCoeffFile.find(
+                    'SensorsFile').get('id')
             except AttributeError:
-                raise Exception('SensorFile tag does not exist or is misspelled in actuator coeff file!')
+                raise Exception(
+                    'SensorFile tag does not exist or is misspelled in actuator coeff file!')
 
             try:
-                actuatorSafetyFile = actuatorXmlCoeffFile.find('SafetyFile').get('id')
+                actuatorSafetyFile = actuatorXmlCoeffFile.find(
+                    'SafetyFile').get('id')
             except AttributeError:
-                raise Exception('SafetyFile tag does not exist or is misspelled in actuator coeff file!')
+                raise Exception(
+                    'SafetyFile tag does not exist or is misspelled in actuator coeff file!')
 
             try:
-                actuatorModeFile = actuatorXmlCoeffFile.find('ModeFile').get('id')
+                actuatorModeFile = actuatorXmlCoeffFile.find(
+                    'ModeFile').get('id')
             except AttributeError:
-                raise Exception('ModeFile tag does not exist or is misspelled in actuator coeff file!')
+                raise Exception(
+                    'ModeFile tag does not exist or is misspelled in actuator coeff file!')
 
-            self.configDictionary[node]['configFiles'].append(actuatorCoeffFile)
-            self.configDictionary[node]['configFiles'].append(actuatorClassFile)
-            self.configDictionary[node]['configFiles'].append(actuatorControllerFile)
-            self.configDictionary[node]['configFiles'].append(actuatorSensorsFile)
-            self.configDictionary[node]['configFiles'].append(actuatorSafetyFile)
+            self.configDictionary[node][
+                'configFiles'].append(actuatorCoeffFile)
+            self.configDictionary[node][
+                'configFiles'].append(actuatorClassFile)
+            self.configDictionary[node][
+                'configFiles'].append(actuatorControllerFile)
+            self.configDictionary[node][
+                'configFiles'].append(actuatorSensorsFile)
+            self.configDictionary[node][
+                'configFiles'].append(actuatorSafetyFile)
             self.configDictionary[node]['configFiles'].append(actuatorModeFile)
 
             try:
-                classFullFilePath = self.classFileCoeffPath + "/" + actuatorClassFile
+                classFullFilePath = self.classFileCoeffPath + \
+                    "/" + actuatorClassFile
                 classXmlCoeffFile = xmlParser.parse(classFullFilePath)
             except IOError:
                 print 'Class coeff file %s does not exist' % (classFullFilePath)
@@ -127,10 +152,11 @@ class InstanceFileHandler():
             except xmlParser.ParseError:
                 raise Exception('Invalid XML in file %s' % (classFullFilePath))
 
-            self.configDictionary[node]['firmware'] = classXmlCoeffFile.find('Processor').get('id')
-            self.configDictionary[node]['type'] = classXmlCoeffFile.find('Type').get('id')
+            self.configDictionary[node][
+                'firmware'] = classXmlCoeffFile.find('Processor').get('id')
+            self.configDictionary[node][
+                'type'] = classXmlCoeffFile.find('Type').get('id')
             self.configDictionary[node]['location'] = node
-
 
     def getInstanceRoot(self):
         return self.instanceFileRoot
@@ -167,10 +193,10 @@ class InstanceFileHandler():
     def getType(self, target):
         return self.configDictionary[target]['type']
 
-    def getFirmwareType(self,nodeName):
+    def getFirmwareType(self, nodeName):
         return self.configDictionary[nodeName]['firmware']
 
-    def getNodeType(self,nodeName):
+    def getNodeType(self, nodeName):
         return self.configDictionary[nodeName]['type']
 
     def getActuatorSerialNumberByNode(self, nodeName):
@@ -195,24 +221,24 @@ class InstanceFileHandler():
             try:
                 filetype = os.path.splitext(f)[1].lower()
                 if filetype == '.xml':
-                    cfgs.append( self.loadXMLCoeffs(f) )
+                    cfgs.append(self.loadXMLCoeffs(f))
                 elif filetype == '.json' or filetype == '.yaml':
                     with open(f, 'r') as fs:
-                        cfgs.append( yaml.load(fs) )
+                        cfgs.append(yaml.load(fs))
                 else:
-                   print('Unsupported coeff format {}'.format(filetype))
+                    print('Unsupported coeff format {}'.format(filetype))
             except IOError as e:
                 print('Could not open xml file: {}'.format(e))
             except xmlParser.ParseError as e:
                 print('Could not parse xml file: {}'.format(e))
         if not cfgs:
             raise Exception('No config values found!')
-        cfgs.reverse() # makes sure precedence works in next operation
-        retCfg = reduce(lambda x,y: dict(x.items() + y.items()), cfgs)
+        cfgs.reverse()  # makes sure precedence works in next operation
+        retCfg = reduce(lambda x, y: dict(x.items() + y.items()), cfgs)
         # return dictionary of key,values: {'Coeff_x': value}
         coeffs = {}
         disabled = []
-        for k,v in retCfg.iteritems():
+        for k, v in retCfg.iteritems():
             if type(v) == dict:
                 if not v.get('disabled', False):
                     coeffs[k] = v['value']
@@ -221,7 +247,8 @@ class InstanceFileHandler():
             else:
                 coeffs[k] = v
         if disabled:
-            print('Bypassing disabled coeffs: ' + ', '.join([coeff for coeff in disabled]))
+            print('Bypassing disabled coeffs: ' +
+                  ', '.join([coeff for coeff in disabled]))
         return coeffs
 
     def loadXMLCoeffs(self, fname):
@@ -244,6 +271,6 @@ class InstanceFileHandler():
                 if coeff.get('disabled').lower() == 'true':
                     coeffs[coeffName]['disabled'] = True
                 else:
-                    coeffs[coeffName]['disabled'] = False            
+                    coeffs[coeffName]['disabled'] = False
 
         return coeffs

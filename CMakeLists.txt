@@ -63,6 +63,10 @@ catkin_package(
 #  DEPENDS system_lib
 )
 
+catkin_python_setup()
+
+catkin_add_nosetests(test)
+
 add_custom_target(val_description_media_files ALL DEPENDS ${urdf_files} ${instance_files})
 
 # install urdf and xacro files
