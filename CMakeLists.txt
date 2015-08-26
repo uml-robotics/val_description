@@ -56,15 +56,6 @@ foreach(it ${instance_xacro_files})
   set(instance_files ${instance_files} ${expanded_file})
 endforeach(it)
 
-###################################
-## catkin specific configuration ##
-###################################
-## The catkin_package macro generates cmake config files for your package
-## Declare things to be passed to dependent projects
-## INCLUDE_DIRS: uncomment this if you package contains header files
-## LIBRARIES: libraries you create in this project that dependent projects also need
-## CATKIN_DEPENDS: catkin_packages dependent projects also need
-## DEPENDS: system dependencies of this project that dependent projects also need
 catkin_package(
 #  INCLUDE_DIRS include
 #  LIBRARIES val_description
@@ -75,15 +66,18 @@ catkin_package(
 add_custom_target(val_description_media_files ALL DEPENDS ${urdf_files} ${instance_files})
 
 # install urdf and xacro files
-install(DIRECTORY materials/
+install(DIRECTORY model/materials/
   DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/materials
 )
-install(DIRECTORY meshes/
+install(DIRECTORY model/meshes/
   DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/meshes
 )
-install(DIRECTORY robots/
+install(DIRECTORY model/robots/
   DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/robots
 )
-install(DIRECTORY urdf/
+install(DIRECTORY model/urdf/
   DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/urdf
 )
+
+install(DIRECTORY instance/instances/instance_files 
+  DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/instance_files)
