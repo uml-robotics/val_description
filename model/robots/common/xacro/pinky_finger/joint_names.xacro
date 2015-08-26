@@ -1,9 +1,0 @@
-<?xml version="1.0" ?>
-<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="v1/pinky_finger/mass_parameters">
-  
-  <xacro:property name="PinkyPitch1JointName" value="${prefix}PinkyPitch1" />
-  <xacro:property name="PinkyPitch2JointName" value="${prefix}PinkyPitch2" />
-  <xacro:property name="PinkyPitch3JointName" value="${prefix}PinkyPitch3" />
-  <xacro:property name="PinkyPitch4JointName" value="${prefix}PinkyPitch4" />
-
-</robot>

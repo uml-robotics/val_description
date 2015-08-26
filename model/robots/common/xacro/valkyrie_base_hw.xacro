@@ -3,29 +3,29 @@
     <xacro:make_pelvis />
     <xacro:make_waist waist_root_link="${Pelvis_Link_Name}" />
     <xacro:make_head head_root_link="${TorsoRollLinkName}" />
-    <xacro:make_arm prefix="Right" reflect="-1" arm_root_link="${TorsoRollLinkName}" />
-    <xacro:make_thumb prefix="Right" reflect="-1" thumb_root_link="RightPalm"/>
-    <xacro:make_index_finger prefix="Right" reflect="-1" index_finger_root_link="RightPalm"/>
-    <xacro:make_middle_finger prefix="Right" reflect="-1" middle_finger_root_link="RightPalm"/>
-    <xacro:make_pinky_finger prefix="Right" reflect="-1" pinky_finger_root_link="RightPalm"/>
-    <xacro:make_arm prefix="Left" reflect="1" arm_root_link="${TorsoRollLinkName}" />
-    <xacro:make_thumb prefix="Left" reflect="1" thumb_root_link="LeftPalm"/>
-    <xacro:make_index_finger prefix="Left" reflect="1" index_finger_root_link="LeftPalm"/>
-    <xacro:make_middle_finger prefix="Left" reflect="1" middle_finger_root_link="LeftPalm"/>
-    <xacro:make_pinky_finger prefix="Left" reflect="1" pinky_finger_root_link="LeftPalm"/>
-    <xacro:make_leg prefix="Right" reflect="-1" leg_root_link="${Pelvis_Link_Name}" />
-    <xacro:make_leg prefix="Left" reflect="1" leg_root_link="${Pelvis_Link_Name}" />
+    <xacro:make_arm prefix="right" reflect="-1" arm_root_link="${TorsoRollLinkName}" />
+    <xacro:make_thumb prefix="right" reflect="-1" thumb_root_link="rightPalm"/>
+    <xacro:make_index_finger prefix="right" reflect="-1" index_finger_root_link="rightPalm"/>
+    <xacro:make_middle_finger prefix="right" reflect="-1" middle_finger_root_link="rightPalm"/>
+    <xacro:make_pinky_finger prefix="right" reflect="-1" pinky_finger_root_link="rightPalm"/>
+    <xacro:make_arm prefix="left" reflect="1" arm_root_link="${TorsoRollLinkName}" />
+    <xacro:make_thumb prefix="left" reflect="1" thumb_root_link="leftPalm"/>
+    <xacro:make_index_finger prefix="left" reflect="1" index_finger_root_link="leftPalm"/>
+    <xacro:make_middle_finger prefix="left" reflect="1" middle_finger_root_link="leftPalm"/>
+    <xacro:make_pinky_finger prefix="left" reflect="1" pinky_finger_root_link="leftPalm"/>
+    <xacro:make_leg prefix="right" reflect="-1" leg_root_link="${Pelvis_Link_Name}" />
+    <xacro:make_leg prefix="left" reflect="1" leg_root_link="${Pelvis_Link_Name}" />
 
     <xacro:v1_trunk_sensors/>
-    <xacro:v1_leg_sensors prefix="Left" reflect="1" />
-    <xacro:v1_leg_sensors prefix="Right" reflect="-1" />
+    <xacro:v1_leg_sensors prefix="left" reflect="1" />
+    <xacro:v1_leg_sensors prefix="right" reflect="-1" />
     <xacro:include_multisense_hw />
     <xacro:v1_pelvis_sensors/>
 
     <xacro:waist_transmissions />
-    <xacro:leg_transmissions prefix="Left"/>
-    <xacro:leg_transmissions prefix="Right"/>
-    <xacro:arm_transmissions prefix="Left"/>
-    <xacro:arm_transmissions prefix="Right"/>
+    <xacro:leg_transmissions prefix="left"/>
+    <xacro:leg_transmissions prefix="right"/>
+    <xacro:arm_transmissions prefix="left"/>
+    <xacro:arm_transmissions prefix="right"/>
     <xacro:neck_transmissions />
 </robot>

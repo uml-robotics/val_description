@@ -1,32 +1,19 @@
 <robot xmlns:xacro="http://ros.org/wiki/xacro" name="valkyrie_nodes">
 
-	<xacro:property name="leftLegJ1Node" value="/left_leg/j1" />
-	<xacro:property name="leftLegJ2Node" value="/left_leg/j2" />
-	<xacro:property name="leftLegJ3Node" value="/left_leg/j3" />
-	<xacro:property name="leftLegJ4Node" value="/left_leg/j4" />
-	<xacro:property name="leftAnkleActuator0Node" value="/left_leg/ankle/actuator0" />
-	<xacro:property name="leftAnkleActuator1Node" value="/left_leg/ankle/actuator1" />
+	<xacro:property name="HipYawNode" value="/${prefix}_leg/j1" />
+	<xacro:property name="HipRollNode" value="/${prefix}_leg/j2" />
+	<xacro:property name="HipPitchNode" value="/${prefix}_leg/j3" />
+	<xacro:property name="KneePitchNode" value="/${prefix}_leg/j4" />
+	<xacro:property name="AnkleInsideActuatorNode" value="/${prefix}_leg/ankle/actuator0" />
+	<xacro:property name="AnkleOutsideActuatorNode" value="/${prefix}_leg/ankle/actuator1" />
 
-	<xacro:property name="rightLegJ1Node" value="/right_leg/j1" />
-	<xacro:property name="rightLegJ2Node" value="/right_leg/j2" />
-	<xacro:property name="rightLegJ3Node" value="/right_leg/j3" />
-	<xacro:property name="rightLegJ4Node" value="/right_leg/j4" />
-	<xacro:property name="rightAnkleActuator0Node" value="/right_leg/ankle/actuator0" />
-	<xacro:property name="rightAnkleActuator1Node" value="/right_leg/ankle/actuator1" />
-
-	<xacro:property name="leftArmJ1Node" value="/left_arm/j1" />
-	<xacro:property name="leftArmJ2Node" value="/left_arm/j2" />
-	<xacro:property name="leftArmJ3Node" value="/left_arm/j3" />
-	<xacro:property name="leftArmJ4Node" value="/left_arm/j4" />
-	<xacro:property name="leftWristActuator0Node" value="/left_arm/wrist/actuator0" />
-	<xacro:property name="leftWristActuator1Node" value="/left_arm/wrist/actuator1" />
-
-	<xacro:property name="rightArmJ1Node" value="/right_arm/j1" />
-	<xacro:property name="rightArmJ2Node" value="/right_arm/j2" />
-	<xacro:property name="rightArmJ3Node" value="/right_arm/j3" />
-	<xacro:property name="rightArmJ4Node" value="/right_arm/j4" />
-	<xacro:property name="rightWristActuator0Node" value="/right_arm/wrist/actuator0" />
-	<xacro:property name="rightWristActuator1Node" value="/right_arm/wrist/actuator1" />
+	<xacro:property name="ShoulderPitchNode" value="/${prefix}_arm/j1" />
+	<xacro:property name="ShoulderRollNode" value="/${prefix}_arm/j2" />
+	<xacro:property name="ShoulderYawNode" value="/${prefix}_arm/j3" />
+	<xacro:property name="ElbowPitchNode" value="/${prefix}_arm/j4" />
+	<xacro:property name="ForearmYawNode" value="/${prefix}_arm/j5" />
+	<xacro:property name="WristTopActuatorNode" value="/${prefix}_arm/wrist/top_actautor" />
+	<xacro:property name="WristBottomActuatorNode" value="/${prefix}_arm/wrist/bottom_actuator" />
 
 	<xacro:property name="neckJ1Node" value="/neck/j1" />
 	<xacro:property name="neckJ2Node" value="/neck/j2" />

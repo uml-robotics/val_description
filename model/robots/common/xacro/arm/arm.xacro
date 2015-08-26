@@ -1,8 +1,9 @@
 <?xml version="1.0" ?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="arm">
 
-  <xacro:include filename="$(find val_description)/model/robots/common/xacro/arm/joint_names.xacro"/>
-  <xacro:include filename="$(find val_description)/model/robots/common/xacro/arm/actuator_names.xacro"/>
+  <xacro:include filename="$(find val_description)/common/xacro/joint_names/valkyrie_joint_names.xacro"/>
+  <xacro:include filename="$(find val_description)/common/xacro/actuator_names/valkyrie_actuator_names.xacro"/>
+  <xacro:include filename="$(find val_description)/common/xacro/nodes/valkyrie_nodes.xacro"/>
   <xacro:include filename="$(find val_description)/model/robots/common/xacro/arm/joint_axes.xacro"/>
   <xacro:include filename="$(find val_description)/model/robots/common/xacro/arm/link_names.xacro"/>
   <xacro:include filename="$(find val_description)/model/robots/common/xacro/arm/joint_limits.xacro"/>
@@ -180,12 +181,12 @@
   </xacro:macro>
 
   <xacro:macro name="arm_transmissions" params="prefix">
-    <xacro:simple_transmission_force_controlled_joint jointName="${ShoulderPitchJointName}" actuatorName="${ShoulderPitchActuatorName}"/>
-    <xacro:simple_transmission_force_controlled_joint jointName="${ShoulderRollJointName}" actuatorName="${ShoulderRollActuatorName}"/>
-    <xacro:simple_transmission_force_controlled_joint jointName="${ShoulderYawJointName}" actuatorName="${ShoulderYawActuatorName}"/>
-    <xacro:simple_transmission_force_controlled_joint jointName="${ElbowPitchJointName}" actuatorName="${ElbowPitchActuatorName}"/> 
-    <xacro:simple_transmission_force_controlled_joint jointName="${ForearmYawActuatorName}" actuatorName="${ForearmYawActuatorName}"/> 
-    <xacro:pushrod_transmission_position_controlled_joints transmissionName="${prefix}WristTransmission" joint1Name="${WristPitchJointName}" joint2Name="${WristRollJointName}" actuator1Name="${WristTopActuatorName}" actuator2Name="${WristBottomActuatorName}" />
+    <xacro:simple_transmission_force_controlled_joint jointName="${ShoulderPitchJointName}" actuatorName="${ShoulderPitchActuatorName}" nodeName="nodeNode"/>
+    <xacro:simple_transmission_force_controlled_joint jointName="${ShoulderRollJointName}" actuatorName="${ShoulderRollActuatorName}" nodeName="nodeNode"/>
+    <xacro:simple_transmission_force_controlled_joint jointName="${ShoulderYawJointName}" actuatorName="${ShoulderYawActuatorName}" nodeName="nodeNode"/>
+    <xacro:simple_transmission_force_controlled_joint jointName="${ElbowPitchJointName}" actuatorName="${ElbowPitchActuatorName}" nodeName="nodeNode"/> 
+    <xacro:simple_transmission_force_controlled_joint jointName="${ForearmYawActuatorName}" actuatorName="${ForearmYawActuatorName}" nodeName="nodeNode"/> 
+    <xacro:pushrod_transmission_position_controlled_joints transmissionName="${prefix}WristTransmission" joint1Name="${WristPitchJointName}" joint2Name="${WristRollJointName}" actuator1Name="${WristTopActuatorName}" actuator2Name="${WristBottomActuatorName}" actuator1Node="nodeNode" actuator2Node="nodeNode"/>
   </xacro:macro>
 
 </robot>
