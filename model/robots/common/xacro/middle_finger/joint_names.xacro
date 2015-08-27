@@ -1,8 +1,0 @@
-<?xml version="1.0" ?>
-<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="v1/middle_finger/mass_parameters">
-  
-  <xacro:property name="MiddleFingerPitch1JointName" value="${prefix}MiddleFingerPitch1" />
-  <xacro:property name="MiddleFingerPitch2JointName" value="${prefix}MiddleFingerPitch2" />
-  <xacro:property name="MiddleFingerPitch3JointName" value="${prefix}MiddleFingerPitch3" />
-
-</robot>

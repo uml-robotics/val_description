@@ -14,143 +14,143 @@
     <Channel id="/trunk"/>
   </Channels>
   <Mechanisms>
-    <Mechanism id="left_hip_yaw" type="simple">
+    <Mechanism id="leftHipYaw" type="simple">
       <SerialNumber id="v_a_001"/>
       <Node id="/left_leg/j1"/>
     </Mechanism>
-    <Mechanism id="left_hip_roll" type="simple">
+    <Mechanism id="leftHipRoll" type="simple">
       <SerialNumber id="v_b_001"/>
       <Node id="/left_leg/j2"/>
     </Mechanism>
-    <Mechanism id="left_hip_pitch" type="simple">
+    <Mechanism id="leftHipPitch" type="simple">
       <SerialNumber id="v_c_001"/>
       <Node id="/left_leg/j3"/>
     </Mechanism>
-    <Mechanism id="left_knee_pitch" type="simple">
+    <Mechanism id="leftKneePitch" type="simple">
       <SerialNumber id="v_d_001"/>
       <Node id="/left_leg/j4"/>
     </Mechanism>
-    <Mechanism id="left_ankle" type="complex">
-      <Joint id="pitch" type="active">
+    <Mechanism id="leftAnkle" type="complex">
+      <Joint id="leftAnklePitch" type="active">
 	</Joint>
-      <Joint id="roll" type="active">
+      <Joint id="leftAnkleRoll" type="active">
 	</Joint>
-      <Actuator id="left_ankle_actuator0">
+      <Actuator id="leftAnkle_actuator0">
         <SerialNumber id="v_e_001"/>
         <Node id="/left_leg/ankle/actuator0"/>
       </Actuator>
-      <Actuator id="left_ankle_actuator1">
+      <Actuator id="leftAnkle_actuator1">
         <SerialNumber id="v_e_002"/>
         <Node id="/left_leg/ankle/actuator1"/>
       </Actuator>
     </Mechanism>
-    <Mechanism id="right_hip_yaw" type="simple">
+    <Mechanism id="rightHipYaw" type="simple">
       <SerialNumber id="v_a_002"/>
       <Node id="/right_leg/j1"/>
     </Mechanism>
-    <Mechanism id="right_hip_roll" type="simple">
+    <Mechanism id="rightHipRoll" type="simple">
       <SerialNumber id="v_b_002"/>
       <Node id="/right_leg/j2"/>
     </Mechanism>
-    <Mechanism id="right_hip_pitch" type="simple">
+    <Mechanism id="rightHipPitch" type="simple">
       <SerialNumber id="v_c_002"/>
       <Node id="/right_leg/j3"/>
     </Mechanism>
-    <Mechanism id="right_knee_pitch" type="simple">
+    <Mechanism id="rightKneePitch" type="simple">
       <SerialNumber id="v_d_002"/>
       <Node id="/right_leg/j4"/>
     </Mechanism>
-    <Mechanism id="right_ankle" type="complex">
-      <Joint id="pitch" type="active">
+    <Mechanism id="rightAnkle" type="complex">
+      <Joint id="rightAnklePitch" type="active">
 	</Joint>
-      <Joint id="roll" type="active">
+      <Joint id="rightAnkleRoll" type="active">
 	</Joint>
-      <Actuator id="right_ankle_actuator0">
+      <Actuator id="rightAnkle_actuator0">
         <SerialNumber id="v_e_003"/>
         <Node id="/right_leg/ankle/actuator0"/>
       </Actuator>
-      <Actuator id="right_ankle_actuator1">
+      <Actuator id="rightAnkle_actuator1">
         <SerialNumber id="v_e_004"/>
         <Node id="/right_leg/ankle/actuator1"/>
       </Actuator>
     </Mechanism>
-    <Mechanism id="left_shoulder_pitch" type="simple">
+    <Mechanism id="leftShoulderPitch" type="simple">
       <SerialNumber id="v_a_003"/>
-      <Node id="/left_arm/j1"/>
+      <Node id="/left_arm/j3"/>
     </Mechanism>
-    <Mechanism id="left_shoulder_roll" type="simple">
+    <Mechanism id="leftShoulderRoll" type="simple">
       <SerialNumber id="v_b_003"/>
       <Node id="/left_arm/j2"/>
     </Mechanism>
-    <Mechanism id="left_shoulder_yaw" type="simple">
+    <Mechanism id="leftShoulderYaw" type="simple">
       <SerialNumber id="v_f_001"/>
       <Node id="/left_arm/j3"/>
     </Mechanism>
-    <Mechanism id="left_elbow_pitch" type="simple">
+    <Mechanism id="leftElbowPitch" type="simple">
       <SerialNumber id="v_f_001"/>
       <Node id="/left_arm/j4"/>
     </Mechanism>
-    <Mechanism id="left_forearm_yaw" type="simple">
+    <Mechanism id="leftForearmYaw" type="simple">
       <SerialNumber id="v_g_001"/>
-      <Node id="/left_arm/j4"/>
+      <Node id="/left_arm/j5"/>
     </Mechanism>
-    <Mechanism id="left_wrist" type="complex">
-      <Joint id="pitch" type="active">
+    <Mechanism id="leftWrist" type="complex">
+      <Joint id="leftWristPitch" type="active">
 	</Joint>
-      <Joint id="roll" type="active">
+      <Joint id="leftWristRoll" type="active">
 	</Joint>
-      <Actuator id="left_wrist_actuator0">
+      <Actuator id="leftWrist_actuator0">
         <SerialNumber id="v_e_001"/>
-        <Node id="/left_leg/ankle/actuator0"/>
+        <Node id="/left_arm/wrist/top_actautor"/>
       </Actuator>
-      <Actuator id="left_wrist_actuator1">
+      <Actuator id="leftWrist_actuator1">
         <SerialNumber id="v_e_002"/>
-        <Node id="/left_leg/ankle/actuator1"/>
+        <Node id="/left_arm/wrist/bottom_actuator"/>
       </Actuator>
     </Mechanism>
-    <Mechanism id="right_shoulder_pitch" type="simple">
+    <Mechanism id="rightShoulderPitch" type="simple">
       <SerialNumber id="v_a_004"/>
-      <Node id="/right_arm/j1"/>
+      <Node id="/right_arm/j3"/>
     </Mechanism>
-    <Mechanism id="right_shoulder_roll" type="simple">
+    <Mechanism id="rightShoulderRoll" type="simple">
       <SerialNumber id="v_b_004"/>
       <Node id="/right_arm/j2"/>
     </Mechanism>
-    <Mechanism id="right_shoulder_yaw" type="simple">
+    <Mechanism id="rightShoulderYaw" type="simple">
       <SerialNumber id="v_f_002"/>
       <Node id="/right_arm/j3"/>
     </Mechanism>
-    <Mechanism id="right_elbow_pitch" type="simple">
+    <Mechanism id="rightElbowPitch" type="simple">
       <SerialNumber id="v_f_002"/>
       <Node id="/right_arm/j4"/>
     </Mechanism>
-    <Mechanism id="right_forearm_yaw" type="simple">
+    <Mechanism id="rightForearmYaw" type="simple">
       <SerialNumber id="v_g_002"/>
-      <Node id="/right_arm/j4"/>
+      <Node id="/right_arm/j5"/>
     </Mechanism>
-    <Mechanism id="right_wrist" type="complex">
-      <Joint id="pitch" type="active">
+    <Mechanism id="rightWrist" type="complex">
+      <Joint id="rightWristPitch" type="active">
 	</Joint>
-      <Joint id="roll" type="active">
+      <Joint id="rightWristRoll" type="active">
 	</Joint>
-      <Actuator id="right_wrist_actuator0">
+      <Actuator id="rightWrist_actuator0">
         <SerialNumber id="v_e_003"/>
-        <Node id="/right_leg/ankle/actuator0"/>
+        <Node id="/right_arm/wrist/top_actautor"/>
       </Actuator>
-      <Actuator id="right_wrist_actuator1">
+      <Actuator id="rightWrist_actuator1">
         <SerialNumber id="v_e_004"/>
-        <Node id="/right_leg/ankle/actuator1"/>
+        <Node id="/right_arm/wrist/bottom_actuator"/>
       </Actuator>
     </Mechanism>
-    <Mechanism id="lower_neck_pitch" type="simple">
+    <Mechanism id="lowerNeckPitch" type="simple">
       <SerialNumber id="v_g_001"/>
       <Node id="/neck/j1"/>
     </Mechanism>
-    <Mechanism id="neck_yaw" type="simple">
+    <Mechanism id="neckYaw" type="simple">
       <SerialNumber id="v_g_001"/>
       <Node id="/neck/j2"/>
     </Mechanism>
-    <Mechanism id="upper_neck_pitch" type="simple">
+    <Mechanism id="upperNeckPitch" type="simple">
       <SerialNumber id="v_g_001"/>
       <Node id="/neck/j3"/>
     </Mechanism>
@@ -165,11 +165,11 @@
 	</Joint>
       <Actuator id="waist_actuator0">
         <SerialNumber id="v_e_005"/>
-        <Node id="/trunk/waist/actuator0"/>
+        <Node id="/trunk/waist/left_actuator"/>
       </Actuator>
       <Actuator id="waist_actuator1">
         <SerialNumber id="v_e_006"/>
-        <Node id="/trunk/waist/actuator1"/>
+        <Node id="/trunk/waist/right_actuator"/>
       </Actuator>
     </Mechanism>
   </Mechanisms>

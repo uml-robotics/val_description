@@ -1,19 +1,20 @@
 <robot xmlns:xacro="http://ros.org/wiki/xacro" name="arm">
 
     <xacro:include filename="$(find val_description)/instance/instances/robots/xacro/mechanisms/mechanisms.xacro"/>
+    <xacro:include filename="$(find val_description)/common/xacro/joint_names/valkyrie_joint_names.xacro"/>
 
-    <xacro:macro name="arm" params="side j1_serial_number j2_serial_number j3_serial_number j4_serial_number j5_serial_number wrist_actuator0_serial wrist_actuator1_serial j1_node j2_node j3_node j4_node j5_node wrist_actuator0_node wrist_actuator1_node" >
-    	<xacro:simple_mechanism name="${side}_shoulder_pitch" serial_number="${j1_serial_number}" node="${j1_node}"/>
+    <xacro:macro name="arm" params="prefix j1_serial_number j2_serial_number j3_serial_number j4_serial_number j5_serial_number wrist_actuator0_serial wrist_actuator1_serial" >
+    	<xacro:simple_mechanism name="${ShoulderPitchJointName}" serial_number="${j1_serial_number}" node="${ShoulderYawNode}"/>
 
-    	<xacro:simple_mechanism name="${side}_shoulder_roll" serial_number="${j2_serial_number}" node="${j2_node}"/>
+    	<xacro:simple_mechanism name="${ShoulderRollJointName}" serial_number="${j2_serial_number}" node="${ShoulderRollNode}"/>
 
-    	<xacro:simple_mechanism name="${side}_shoulder_yaw" serial_number="${j3_serial_number}" node="${j3_node}"/>
+    	<xacro:simple_mechanism name="${ShoulderYawJointName}" serial_number="${j3_serial_number}" node="${ShoulderYawNode}"/>
 
-    	<xacro:simple_mechanism name="${side}_elbow_pitch" serial_number="${j4_serial_number}" node="${j4_node}"/>
+    	<xacro:simple_mechanism name="${ElbowPitchJointName}" serial_number="${j4_serial_number}" node="${ElbowPitchNode}"/>
 
-    	<xacro:simple_mechanism name="${side}_forearm_yaw" serial_number="${j5_serial_number}" node="${j5_node}"/>
+    	<xacro:simple_mechanism name="${ForearmYawJointName}" serial_number="${j5_serial_number}" node="${ForearmYawNode}"/>
 
-    	<xacro:two_active_joint_mechanism mechanism_name="${side}_wrist" joint0_name="pitch" joint1_name="roll" actuator0_serial="${wrist_actuator0_serial}" actuator1_serial="${wrist_actuator1_serial}" actuator0_node="${wrist_actuator0_node}" actuator1_node="${wrist_actuator1_node}" />
+    	<xacro:two_active_joint_mechanism mechanism_name="${prefix}Wrist" joint0_name="${WristPitchJointName}" joint1_name="${WristRollJointName}" actuator0_serial="${wrist_actuator0_serial}" actuator1_serial="${wrist_actuator1_serial}" actuator0_node="${WristTopActuatorNode}" actuator1_node="${WristBottomActuatorNode}" />
     </xacro:macro>
 
 </robot>

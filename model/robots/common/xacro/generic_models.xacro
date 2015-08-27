@@ -192,29 +192,32 @@
                        origin_xyz="${origin_xyz}"/>
   </xacro:macro>
 
-  <xacro:macro name="simple_transmission_force_controlled_joint" params="jointName actuatorName">
+  <xacro:macro name="simple_transmission_force_controlled_joint" params="jointName actuatorName nodeName">
     <transmission name="${jointName}Transmission">
       <type>transmission_interface/SimpleTransmission</type>
       <joint name="${jointName}">
         <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
       </joint>
       <actuator name="${actuatorName}">
+        <node name="${nodeName}"/>
       </actuator>
     </transmission>
   </xacro:macro>
 
 
-  <xacro:macro name="simple_transmission_position_controlled_joint" params="jointName actuatorName">
+  <xacro:macro name="simple_transmission_position_controlled_joint" params="jointName actuatorName nodeName">
     <transmission name="${jointName}Transmission">
       <type>transmission_interface/SimpleTransmission</type>
       <joint name="${jointName}">
         <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
       </joint>
-      <actuator name="${actuatorName}"/>
+      <actuator name="${actuatorName}">
+        <node name="${nodeName}"/>
+    </actuator>
     </transmission>
   </xacro:macro>
 
-  <xacro:macro name="pushrod_transmission_force_controlled_joints" params="transmissionName joint1Name joint2Name actuator1Name actuator2Name">
+  <xacro:macro name="pushrod_transmission_force_controlled_joints" params="transmissionName joint1Name joint2Name actuator1Name actuator2Name actuator1Node actuator2Node">
     <transmission name="${transmissionName}">
       <type>transmission_interface/PushrodTransmission</type>
       <joint name="${joint1Name}">
@@ -224,13 +227,15 @@
         <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
       </joint>
        <actuator name="${actuator1Name}">
+        <node name="${actuator1Node}"/>
       </actuator>
       <actuator name="${actuator2Name}">
+        <node name="${actuator2Node}"/>
       </actuator>
     </transmission>
   </xacro:macro>
 
-  <xacro:macro name="pushrod_transmission_position_controlled_joints" params="transmissionName joint1Name joint2Name actuator1Name actuator2Name">
+  <xacro:macro name="pushrod_transmission_position_controlled_joints" params="transmissionName joint1Name joint2Name actuator1Name actuator2Name actuator1Node actuator2Node">
     <transmission name="${transmissionName}">
       <type>transmission_interface/PushrodTransmission</type>
       <joint name="${joint1Name}">
@@ -240,8 +245,10 @@
         <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
       </joint>
        <actuator name="${actuator1Name}">
+        <node name="${actuator1Node}"/>
       </actuator>
       <actuator name="${actuator2Name}">
+        <node name="${actuator2Node}"/>
       </actuator>
     </transmission>
   </xacro:macro>

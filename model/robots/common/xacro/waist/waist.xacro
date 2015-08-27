@@ -1,7 +1,8 @@
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="waist">
 
-  <xacro:include filename="$(find val_description)/model/robots/common/xacro/waist/joint_names.xacro"/>
-  <xacro:include filename="$(find val_description)/model/robots/common/xacro/waist/actuator_names.xacro"/>
+  <xacro:include filename="$(find val_description)/common/xacro/joint_names/valkyrie_joint_names.xacro"/>
+  <xacro:include filename="$(find val_description)/common/xacro/actuator_names/valkyrie_actuator_names.xacro"/>
+  <xacro:include filename="$(find val_description)/common/xacro/nodes/valkyrie_nodes.xacro"/>
   <xacro:include filename="$(find val_description)/model/robots/common/xacro/waist/joint_axes.xacro"/>
   <xacro:include filename="$(find val_description)/model/robots/common/xacro/waist/joint_axes.xacro"/>
   <xacro:include filename="$(find val_description)/model/robots/common/xacro/waist/link_names.xacro"/>
@@ -112,7 +113,7 @@
    </xacro:macro>
 
    <xacro:macro name="waist_transmissions">
-    <xacro:simple_transmission_force_controlled_joint jointName="${TorsoYawJointName}" actuatorName="${TorsoYawActuatorName}"/> 
-    <xacro:pushrod_transmission_position_controlled_joints transmissionName="WaistTransmission" joint1Name="${TorsoPitchJointName}" joint2Name="${TorsoRollJointName}" actuator1Name="${WaistLeftActuatorName}" actuator2Name="${WaistRightActuatorName}" />
+    <xacro:simple_transmission_force_controlled_joint jointName="${TorsoYawJointName}" actuatorName="${TorsoYawActuatorName}" nodeName="${TrunkYawNode}"/> 
+    <xacro:pushrod_transmission_position_controlled_joints transmissionName="WaistTransmission" joint1Name="${TorsoPitchJointName}" joint2Name="${TorsoRollJointName}" actuator1Name="${WaistLeftActuatorName}" actuator2Name="${WaistRightActuatorName}" actuator1Node="${WaistLeftActuatorNode}" actuator2Node="${WaistRightActuatorNode}"/>
    </xacro:macro>
 </robot>

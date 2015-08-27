@@ -1,8 +1,0 @@
-<?xml version="1.0" ?>
-<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="v1/head/joint_names">
-
-  <xacro:property name="LowerNeckPitchJointName" value="LowerNeckPitch" />
-  <xacro:property name="NeckYawJointName" value="NeckYaw" />
-  <xacro:property name="UpperNeckPitchJointName" value="UpperNeckPitch" />
-
-</robot>
