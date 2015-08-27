@@ -4,7 +4,6 @@
     <xacro:include filename="$(find val_description)/model/robots/common/xacro/generic_models.xacro" />
     <xacro:include filename="$(find val_description)/model/materials/materials.xacro" />
     <xacro:include filename="$(find val_description)/model/robots/common/xacro/common_bodies.xacro" />
-    <xacro:include filename="$(find val_description)/model/robots/valkyrie_A/xacro/leg/leg.xacro" />
     <xacro:include filename="$(find val_description)/model/robots/common/xacro/valkyrie_base_sim.xacro"/>
     <xacro:include filename="$(find val_description)/model/urdf/multisense_sl.urdf" />
 

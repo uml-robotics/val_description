@@ -114,6 +114,6 @@
 
    <xacro:macro name="waist_transmissions">
     <xacro:simple_transmission_force_controlled_joint jointName="${TorsoYawJointName}" actuatorName="${TorsoYawActuatorName}" nodeName="${TrunkYawNode}"/> 
-    <xacro:pushrod_transmission_position_controlled_joints transmissionName="WaistTransmission" joint1Name="${TorsoPitchJointName}" joint2Name="${TorsoRollJointName}" actuator1Name="${WaistLeftActuatorName}" actuator2Name="${WaistRightActuatorName}" actuator1Node="${WaistLeftActuatorNode}" actuator2Node="${WaistRightActuatorNode}"/>
+    <!-- <xacro:pushrod_transmission_force_controlled_joints transmissionName="WaistTransmission" joint1Name="${TorsoPitchJointName}" joint2Name="${TorsoRollJointName}" actuator1Name="${WaistLeftActuatorName}" actuator2Name="${WaistRightActuatorName}" actuator1Node="${WaistLeftActuatorNode}" actuator2Node="${WaistRightActuatorNode}" joint1Role="pitch" joint2Roll="roll" actuator1Roll="leftActuator" actuator2Roll="rightActuator"/> -->
    </xacro:macro>
 </robot>

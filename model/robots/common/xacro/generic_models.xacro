@@ -197,9 +197,11 @@
       <type>transmission_interface/SimpleTransmission</type>
       <joint name="${jointName}">
         <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        <interface name="JointToActuatorPositionInterface"/>
       </joint>
       <actuator name="${actuatorName}">
         <node name="${nodeName}"/>
+        <interface name="ActuatorToJointPositionInterface"/>
       </actuator>
     </transmission>
   </xacro:macro>
@@ -210,27 +212,37 @@
       <type>transmission_interface/SimpleTransmission</type>
       <joint name="${jointName}">
         <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+        <interface name="JointToActuatorPositionInterface"/>
       </joint>
       <actuator name="${actuatorName}">
         <node name="${nodeName}"/>
+        <interface name="ActuatorToJointPositionInterface"/>
     </actuator>
     </transmission>
   </xacro:macro>
 
-  <xacro:macro name="pushrod_transmission_force_controlled_joints" params="transmissionName joint1Name joint2Name actuator1Name actuator2Name actuator1Node actuator2Node">
+  <xacro:macro name="pushrod_transmission_force_controlled_joints" params="transmissionName joint1Name joint2Name actuator1Name actuator2Name actuator1Node actuator2Node joint1Role joint2Role actuator1Role actuator2Role">
     <transmission name="${transmissionName}">
       <type>transmission_interface/PushrodTransmission</type>
       <joint name="${joint1Name}">
         <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        <interface name="JointToActuatorEffortInterface"/>
+        <role>${joint1Role}</role>
       </joint>
       <joint name="${joint2Name}">
         <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        <interface name="JointToActuatorEffortInterface"/>
+        <role>${joint2Role}</role>
       </joint>
        <actuator name="${actuator1Name}">
         <node name="${actuator1Node}"/>
+        <interface name="ActuatorToJointEffortInterface"/>
+        <role>${actuator1Role}</role>
       </actuator>
       <actuator name="${actuator2Name}">
         <node name="${actuator2Node}"/>
+        <interface name="ActuatorToJointEffortInterface"/>
+        <role>${actuator2Role}</role>
       </actuator>
     </transmission>
   </xacro:macro>
@@ -240,15 +252,19 @@
       <type>transmission_interface/PushrodTransmission</type>
       <joint name="${joint1Name}">
         <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+        <interface name="JointToActuatorPositionInterface"/>
       </joint>
       <joint name="${joint2Name}">
         <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+        <interface name="JointToActuatorPositionInterface"/>
       </joint>
        <actuator name="${actuator1Name}">
         <node name="${actuator1Node}"/>
+        <interface name="ActuatorToJointPositionInterface"/>
       </actuator>
       <actuator name="${actuator2Name}">
         <node name="${actuator2Node}"/>
+        <interface name="ActuatorToJointPositionInterface"/>
       </actuator>
     </transmission>
   </xacro:macro>

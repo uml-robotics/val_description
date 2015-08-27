@@ -3,11 +3,11 @@
     <xacro:include filename="$(find val_description)/common/xacro/joint_names/valkyrie_joint_names.xacro"/>
   <xacro:include filename="$(find val_description)/common/xacro/actuator_names/valkyrie_actuator_names.xacro"/>
   <xacro:include filename="$(find val_description)/common/xacro/nodes/valkyrie_nodes.xacro"/>
-  <xacro:include filename="$(find val_description)/model/robots/valkyrie_A/xacro/leg/joint_axes.xacro"/>
-  <xacro:include filename="$(find val_description)/model/robots/valkyrie_A/xacro/leg/link_names.xacro"/>
-  <xacro:include filename="$(find val_description)/model/robots/valkyrie_A/xacro/leg/joint_limits.xacro"/>
-  <xacro:include filename="$(find val_description)/model/robots/valkyrie_A/xacro/leg/frame_parameters.xacro"/>
-  <xacro:include filename="$(find val_description)/model/robots/valkyrie_A/xacro/leg/mass_parameters.xacro"/>
+  <xacro:include filename="$(find val_description)/model/robots/common/xacro/leg/joint_axes.xacro"/>
+  <xacro:include filename="$(find val_description)/model/robots/common/xacro/leg/link_names.xacro"/>
+  <xacro:include filename="$(find val_description)/model/robots/common/xacro/leg/joint_limits.xacro"/>
+  <xacro:include filename="$(find val_description)/model/robots/common/xacro/leg/frame_parameters.xacro"/>
+  <xacro:include filename="$(find val_description)/model/robots/common/xacro/leg/mass_parameters.xacro"/>
   <xacro:include filename="$(find val_description)/model/robots/common/xacro/sensors/ati_force_torque.xacro"/>
 
   <xacro:macro name="make_leg_links" params="prefix reflect leg_root_link">
@@ -171,6 +171,6 @@
     <xacro:simple_transmission_force_controlled_joint jointName="${HipRollJointName}" actuatorName="${HipRollActuatorName}" nodeName="${HipRollNode}"/>
     <xacro:simple_transmission_force_controlled_joint jointName="${HipPitchJointName}" actuatorName="${HipPitchActuatorName}" nodeName="${HipPitchNode}"/>
     <xacro:simple_transmission_force_controlled_joint jointName="${KneePitchJointName}" actuatorName="${KneePitchActuatorName}" nodeName="${KneePitchNode}"/> 
-    <xacro:pushrod_transmission_force_controlled_joints transmissionName="${prefix}AnkleTransmission" joint1Name="${AnklePitchJointName}" joint2Name="${AnkleRollJointName}" actuator1Name="${AnkleInsideActuatorName}" actuator2Name="${AnkleOutsideActuatorName}" actuator1Node="${AnkleInsideActuatorNode}" actuator2Node="${AnkleOutsideActuatorNode}"/>
+    <xacro:pushrod_transmission_force_controlled_joints transmissionName="${prefix}AnkleTransmission" joint1Name="${AnklePitchJointName}" joint2Name="${AnkleRollJointName}" actuator1Name="${AnkleInsideActuatorName}" actuator2Name="${AnkleOutsideActuatorName}" actuator1Node="${AnkleInsideActuatorNode}" actuator2Node="${AnkleOutsideActuatorNode}" joint1Role="pitch" joint2Role="roll" actuator1Role="insideActuator" actuator2Role="outsideActuator"/>
   </xacro:macro>
 </robot>
