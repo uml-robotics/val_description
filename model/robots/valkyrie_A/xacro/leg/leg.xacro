@@ -69,7 +69,7 @@
                     visual_mesh="${mesh_root}/legs/foot_${prefix}.dae"
                     material="White"
                     width="0.27"
-                    height="0.15"
+                    height="0.16"
                     depth="0.064"
                     box_xyz="0.06 0 -0.06"
                     box_rpy="0 0.1309 0.0" />
