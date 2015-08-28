@@ -1,0 +1,11 @@
+<?xml version="1.0" ?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="v1/arm/joint_names">
+
+  <xacro:property name="ShoulderPitchActuatorName" value="${prefix}ShoulderPitchActuator" />
+  <xacro:property name="ShoulderRollActuatorName" value="${prefix}ShoulderRollActuator" />
+  <xacro:property name="ShoulderYawActuatorName" value="${prefix}ShoulderYawActuator" />
+  <xacro:property name="ElbowPitchActuatorName" value="${prefix}ElbowPitchActuator" />
+  <xacro:property name="ForearmYawActuatorName" value="${prefix}ForearmYawActuator" />
+  <xacro:property name="WristTopActuatorName" value="${prefix}WristTopActuator" />
+  <xacro:property name="WristBottomActuatorName" value="$prefix}WristBottomActuator" />
+</robot>

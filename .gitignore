@@ -5,3 +5,5 @@ valkyrie*.sdf
 *.bak
 *.pdf
 *.gv
+*.orig
+*.pyc
