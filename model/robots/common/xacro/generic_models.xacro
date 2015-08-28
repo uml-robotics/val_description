@@ -202,6 +202,7 @@
       <actuator name="${actuatorName}">
         <node name="${nodeName}"/>
         <interface name="ActuatorToJointPositionInterface"/>
+        <mechanicalReduction>1</mechanicalReduction>
       </actuator>
     </transmission>
   </xacro:macro>
@@ -217,6 +218,7 @@
       <actuator name="${actuatorName}">
         <node name="${nodeName}"/>
         <interface name="ActuatorToJointPositionInterface"/>
+        <mechanicalReduction>1</mechanicalReduction>
     </actuator>
     </transmission>
   </xacro:macro>
@@ -238,11 +240,13 @@
         <node name="${actuator1Node}"/>
         <interface name="ActuatorToJointEffortInterface"/>
         <role>${actuator1Role}</role>
+        <mechanicalReduction>1</mechanicalReduction>
       </actuator>
       <actuator name="${actuator2Name}">
         <node name="${actuator2Node}"/>
         <interface name="ActuatorToJointEffortInterface"/>
         <role>${actuator2Role}</role>
+        <mechanicalReduction>1</mechanicalReduction>
       </actuator>
     </transmission>
   </xacro:macro>
@@ -261,10 +265,12 @@
        <actuator name="${actuator1Name}">
         <node name="${actuator1Node}"/>
         <interface name="ActuatorToJointPositionInterface"/>
+        <mechanicalReduction>1</mechanicalReduction>
       </actuator>
       <actuator name="${actuator2Name}">
         <node name="${actuator2Node}"/>
         <interface name="ActuatorToJointPositionInterface"/>
+        <mechanicalReduction>1</mechanicalReduction>
       </actuator>
     </transmission>
   </xacro:macro>
