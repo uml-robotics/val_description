@@ -55,6 +55,32 @@
     </link>
   </xacro:macro>
 
+  <xacro:macro name="link_box_collision_mesh_visual"
+          params="name width height depth mass inertial_xyz inertial_rpy ixx ixy ixz iyy iyz izz visual_mesh material box_xyz box_rpy">
+    <link name="${name}">
+      <inertial>
+        <mass value="${mass}" />
+        <origin rpy="${inertial_rpy}" xyz="${inertial_xyz}"/>
+        <inertia ixx="${ixx}"  ixy="${ixy}" ixz="${ixz}"
+                 iyy="${iyy}" iyz="${iyz}"
+                 izz="${izz}" />
+      </inertial>
+      <visual>
+        <geometry>
+          <mesh filename="${visual_mesh}"/>
+        </geometry>
+        <origin rpy="0 0 0" xyz="0 0 0"/>
+        <material name="${material}"/>
+      </visual>
+      <collision>
+        <geometry>
+          <box size="${width} ${height} ${depth}"/>
+        </geometry>
+        <origin rpy="${box_rpy}" xyz="${box_xyz}"/>
+      </collision>
+    </link>
+  </xacro:macro>
+
   <xacro:property name="virtual_link_mass" value="0.1"/>
   <xacro:property name="virtual_link_radius" value="0.05"/>
   <xacro:property name="virtual_link_height" value="0.05"/>
