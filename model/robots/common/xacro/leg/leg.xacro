@@ -66,9 +66,9 @@
                     ixx="${FootInertia_IXX}" ixy="${FootInertia_IXY}" ixz="${FootInertia_IXZ}" 
                     iyy="${FootInertia_IYY}" iyz="${FootInertia_IYZ}" izz="${FootInertia_IZZ}"
                     origin_rpy="0 0 0"
-                    visual_mesh="${mesh_root}/legs/foot_${prefix}.dae"
+                    visual_mesh="${mesh_root}/legs/foot.dae"
                     material="White"
-                    collision_mesh="${mesh_root}/legs/foot_${prefix}.dae" />
+                    collision_mesh="${mesh_root}/legs/foot.dae" />
 
   </xacro:macro>
 
