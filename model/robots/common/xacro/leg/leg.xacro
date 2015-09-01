@@ -66,9 +66,9 @@
                     ixx="${FootInertia_IXX}" ixy="${FootInertia_IXY}" ixz="${FootInertia_IXZ}" 
                     iyy="${FootInertia_IYY}" iyz="${FootInertia_IYZ}" izz="${FootInertia_IZZ}"
                     origin_rpy="0 0 0"
-                    visual_mesh="${mesh_root}/legs/foot_${prefix}.dae"
+                    visual_mesh="${mesh_root}/legs/foot.dae"
                     material="White"
-                    collision_mesh="${mesh_root}/legs/foot_${prefix}.dae" />
+                    collision_mesh="${mesh_root}/legs/foot.dae" />
 
   </xacro:macro>
 
@@ -162,7 +162,7 @@
 
     <xacro:ati_force_torque_sensor sensorName="${prefix}FootSixAxis"
                         parentLink="${AnkleRollLinkName}"
-                        origin_xyz="0.0215594 0.0 -0.0585488"
+                        origin_xyz="0.0215646 0.0 -0.051054"
                         origin_rpy="3.14 0.0 -1.047"/>
   </xacro:macro>
 

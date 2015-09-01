@@ -98,16 +98,4 @@
     </xacro:revolute_joint>
   </xacro:macro>
 
-  <xacro:macro name="right_thumb_actuators" params="prefix api">
-    <xacro:v1_actuator name="${RTA1_Actuator_Name}" api="${api}" />
-    <xacro:v1_actuator name="${RTA2_Actuator_Name}" api="${api}" />
-    <xacro:v1_actuator name="${RTA3_Actuator_Name}" api="${api}" />
-  </xacro:macro>
-
-  <xacro:macro name="left_thumb_actuators" params="prefix api">
-    <xacro:v1_actuator name="${LTA1_Actuator_Name}" api="${api}" />
-    <xacro:v1_actuator name="${LTA2_Actuator_Name}" api="${api}" />
-    <xacro:v1_actuator name="${LTA3_Actuator_Name}" api="${api}" />
-  </xacro:macro>
-
 </robot>
