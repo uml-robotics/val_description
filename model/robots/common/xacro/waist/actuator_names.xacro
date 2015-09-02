@@ -1,7 +1,0 @@
-<?xml version="1.0" ?>
-<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="neck_names">
-
-  <xacro:property name="TorsoYawActuatorName" value="TorsoYawActuator" />
-  <xacro:property name="WaistLeftActuatorName" value="WaistLeftActuator" />
-  <xacro:property name="WaistRightActuatorName" value="WaistRightActuator" />
-</robot>

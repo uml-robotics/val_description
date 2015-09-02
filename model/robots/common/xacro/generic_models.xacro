@@ -192,85 +192,39 @@
                        origin_xyz="${origin_xyz}"/>
   </xacro:macro>
 
-  <xacro:macro name="simple_transmission_force_controlled_joint" params="jointName actuatorName nodeName">
+  <xacro:macro name="simple_transmission" params="jointName actuatorName nodeName apiType">
     <transmission name="${jointName}Transmission">
       <type>transmission_interface/SimpleTransmission</type>
       <joint name="${jointName}">
-        <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
-        <interface name="JointToActuatorPositionInterface"/>
       </joint>
       <actuator name="${actuatorName}">
         <node name="${nodeName}"/>
-        <interface name="ActuatorToJointPositionInterface"/>
         <mechanicalReduction>1</mechanicalReduction>
+        <api name="${apiType}" />
       </actuator>
     </transmission>
   </xacro:macro>
 
-
-  <xacro:macro name="simple_transmission_position_controlled_joint" params="jointName actuatorName nodeName">
-    <transmission name="${jointName}Transmission">
-      <type>transmission_interface/SimpleTransmission</type>
-      <joint name="${jointName}">
-        <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
-        <interface name="JointToActuatorPositionInterface"/>
-      </joint>
-      <actuator name="${actuatorName}">
-        <node name="${nodeName}"/>
-        <interface name="ActuatorToJointPositionInterface"/>
-        <mechanicalReduction>1</mechanicalReduction>
-    </actuator>
-    </transmission>
-  </xacro:macro>
-
-  <xacro:macro name="pushrod_transmission_force_controlled_joints" params="transmissionName joint1Name joint2Name actuator1Name actuator2Name actuator1Node actuator2Node joint1Role joint2Role actuator1Role actuator2Role">
+  <xacro:macro name="pushrod_transmission" params="transmissionName joint1Name joint2Name actuator1Name actuator2Name actuator1Node actuator2Node joint1Role joint2Role actuator1Role actuator2Role api1Type api2Type">
     <transmission name="${transmissionName}">
       <type>transmission_interface/PushrodTransmission</type>
       <joint name="${joint1Name}">
-        <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
-        <interface name="JointToActuatorEffortInterface"/>
         <role>${joint1Role}</role>
       </joint>
       <joint name="${joint2Name}">
-        <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
-        <interface name="JointToActuatorEffortInterface"/>
         <role>${joint2Role}</role>
       </joint>
        <actuator name="${actuator1Name}">
         <node name="${actuator1Node}"/>
-        <interface name="ActuatorToJointEffortInterface"/>
         <role>${actuator1Role}</role>
         <mechanicalReduction>1</mechanicalReduction>
+        <api name="${api1Type}"/>
       </actuator>
       <actuator name="${actuator2Name}">
         <node name="${actuator2Node}"/>
-        <interface name="ActuatorToJointEffortInterface"/>
         <role>${actuator2Role}</role>
         <mechanicalReduction>1</mechanicalReduction>
-      </actuator>
-    </transmission>
-  </xacro:macro>
-
-  <xacro:macro name="pushrod_transmission_position_controlled_joints" params="transmissionName joint1Name joint2Name actuator1Name actuator2Name actuator1Node actuator2Node">
-    <transmission name="${transmissionName}">
-      <type>transmission_interface/PushrodTransmission</type>
-      <joint name="${joint1Name}">
-        <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
-        <interface name="JointToActuatorPositionInterface"/>
-      </joint>
-      <joint name="${joint2Name}">
-        <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
-        <interface name="JointToActuatorPositionInterface"/>
-      </joint>
-       <actuator name="${actuator1Name}">
-        <node name="${actuator1Node}"/>
-        <interface name="ActuatorToJointPositionInterface"/>
-        <mechanicalReduction>1</mechanicalReduction>
-      </actuator>
-      <actuator name="${actuator2Name}">
-        <node name="${actuator2Node}"/>
-        <interface name="ActuatorToJointPositionInterface"/>
-        <mechanicalReduction>1</mechanicalReduction>
+        <api name="${api2Type}"/>
       </actuator>
     </transmission>
   </xacro:macro>

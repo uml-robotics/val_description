@@ -3,7 +3,6 @@
   
   <xacro:include filename="$(find val_description)/common/xacro/joint_names/valkyrie_joint_names.xacro"/>
   <xacro:include filename="$(find val_description)/model/robots/common/xacro/thumb/joint_axes.xacro"/>
-  <xacro:include filename="$(find val_description)/model/robots/common/xacro/thumb/actuator_names.xacro"/>
   <xacro:include filename="$(find val_description)/model/robots/common/xacro/thumb/link_names.xacro"/>
   <xacro:include filename="$(find val_description)/model/robots/common/xacro/thumb/joint_limits.xacro"/>
   <xacro:include filename="$(find val_description)/model/robots/common/xacro/thumb/frame_parameters.xacro"/>
