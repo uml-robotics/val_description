@@ -22,10 +22,10 @@
     <xacro:include_multisense_hw />
     <xacro:v1_pelvis_sensors/>
 
-    <xacro:waist_transmissions />
-    <xacro:leg_transmissions prefix="left"/>
-    <xacro:leg_transmissions prefix="right"/>
-    <xacro:arm_transmissions prefix="left"/>
-    <xacro:arm_transmissions prefix="right"/>
-    <xacro:neck_transmissions />
+    <xacro:waist_transmissions_hw />
+    <xacro:leg_transmissions_hw prefix="left"/>
+    <xacro:leg_transmissions_hw prefix="right"/>
+    <xacro:arm_transmissions_hw prefix="left"/>
+    <xacro:arm_transmissions_hw prefix="right"/>
+    <xacro:neck_transmissions_hw />
 </robot>

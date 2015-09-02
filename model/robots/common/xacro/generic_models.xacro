@@ -192,7 +192,7 @@
                        origin_xyz="${origin_xyz}"/>
   </xacro:macro>
 
-  <xacro:macro name="simple_transmission" params="jointName actuatorName nodeName apiType">
+  <xacro:macro name="simple_transmission" params="jointName actuatorName nodeName actuatorApi">
     <transmission name="${jointName}Transmission">
       <type>transmission_interface/SimpleTransmission</type>
       <joint name="${jointName}">
@@ -200,12 +200,12 @@
       <actuator name="${actuatorName}">
         <node name="${nodeName}"/>
         <mechanicalReduction>1</mechanicalReduction>
-        <api name="${apiType}" />
+        <api name="${actuatorApi}" />
       </actuator>
     </transmission>
   </xacro:macro>
 
-  <xacro:macro name="pushrod_transmission" params="transmissionName joint1Name joint2Name actuator1Name actuator2Name actuator1Node actuator2Node joint1Role joint2Role actuator1Role actuator2Role api1Type api2Type">
+  <xacro:macro name="pushrod_transmission" params="transmissionName joint1Name joint2Name actuator1Name actuator2Name actuator1Node actuator2Node joint1Role joint2Role actuator1Role actuator2Role actuator1Api actuator2Api">
     <transmission name="${transmissionName}">
       <type>transmission_interface/PushrodTransmission</type>
       <joint name="${joint1Name}">
@@ -218,13 +218,13 @@
         <node name="${actuator1Node}"/>
         <role>${actuator1Role}</role>
         <mechanicalReduction>1</mechanicalReduction>
-        <api name="${api1Type}"/>
+        <api name="${actuator1Api}"/>
       </actuator>
       <actuator name="${actuator2Name}">
         <node name="${actuator2Node}"/>
         <role>${actuator2Role}</role>
         <mechanicalReduction>1</mechanicalReduction>
-        <api name="${api2Type}"/>
+        <api name="${actuator2Api}"/>
       </actuator>
     </transmission>
   </xacro:macro>

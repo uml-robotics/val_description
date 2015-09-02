@@ -21,4 +21,11 @@
     <xacro:v1_leg_sensors prefix="right" reflect="-1" />
     <xacro:include_multisense_sim />
     <xacro:v1_trunk_sensors/>
+
+    <xacro:waist_transmissions_sim />
+    <xacro:leg_transmissions_sim prefix="left"/>
+    <xacro:leg_transmissions_sim prefix="right"/>
+    <xacro:arm_transmissions_sim prefix="left"/>
+    <xacro:arm_transmissions_sim prefix="right"/>
+    <xacro:neck_transmissions_sim />
 </robot>

@@ -4,6 +4,7 @@
   <xacro:include filename="$(find val_description)/common/xacro/joint_names/valkyrie_joint_names.xacro"/>
   <xacro:include filename="$(find val_description)/common/xacro/actuator_names/valkyrie_actuator_names.xacro"/>
   <xacro:include filename="$(find val_description)/common/xacro/nodes/valkyrie_nodes.xacro"/>
+  <xacro:include filename="$(find val_description)/common/xacro/api/valkyrie_api.xacro"/>
   <xacro:include filename="$(find val_description)/model/robots/common/xacro/arm/joint_axes.xacro"/>
   <xacro:include filename="$(find val_description)/model/robots/common/xacro/arm/link_names.xacro"/>
   <xacro:include filename="$(find val_description)/model/robots/common/xacro/arm/joint_limits.xacro"/>
@@ -180,13 +181,23 @@
     <xacro:make_lower_arm prefix="${prefix}" reflect="${reflect}" lower_arm_root_link="${ElbowPitchLinkName}" />
   </xacro:macro>
 
-  <xacro:macro name="arm_transmissions" params="prefix">
-    <xacro:simple_transmission jointName="${ShoulderPitchJointName}" actuatorName="${ShoulderPitchActuatorName}" nodeName="${ShoulderPitchNode}"/>
-    <xacro:simple_transmission jointName="${ShoulderRollJointName}" actuatorName="${ShoulderRollActuatorName}" nodeName="${ShoulderRollNode}"/>
-    <xacro:simple_transmission jointName="${ShoulderYawJointName}" actuatorName="${ShoulderYawActuatorName}" nodeName="${ShoulderYawNode}"/>
-    <xacro:simple_transmission jointName="${ElbowPitchJointName}" actuatorName="${ElbowPitchActuatorName}" nodeName="${ElbowPitchNode}"/> 
-    <xacro:simple_transmission jointName="${ForearmYawActuatorName}" actuatorName="${ForearmYawActuatorName}" nodeName="${ForearmYawNode}"/> 
-    <xacro:pushrod_transmission transmissionName="${prefix}WristTransmission" joint1Name="${WristPitchJointName}" joint2Name="${WristRollJointName}" actuator1Name="${WristTopActuatorName}" actuator2Name="${WristBottomActuatorName}" actuator1Node="${WristTopActuatorNode}" actuator2Node="${WristBottomActuatorNode}"/>
+  <xacro:macro name="arm_transmissions_hw" params="prefix">
+    <xacro:simple_transmission jointName="${ShoulderPitchJointName}" actuatorName="${ShoulderPitchActuatorName}" nodeName="${ShoulderPitchNode}" actuatorApi="${ShoulderPitchApi}"/>
+    <xacro:simple_transmission jointName="${ShoulderRollJointName}" actuatorName="${ShoulderRollActuatorName}" nodeName="${ShoulderRollNode}" actuatorApi="${ShoulderRollApi}"/>
+    <xacro:simple_transmission jointName="${ShoulderYawJointName}" actuatorName="${ShoulderYawActuatorName}" nodeName="${ShoulderYawNode}" actuatorApi="${ShoulderYawApi}"/>
+    <xacro:simple_transmission jointName="${ElbowPitchJointName}" actuatorName="${ElbowPitchActuatorName}" nodeName="${ElbowPitchNode}" actuatorApi="${ElbowPitchApi}"/> 
+    <xacro:simple_transmission jointName="${ForearmYawActuatorName}" actuatorName="${ForearmYawActuatorName}" nodeName="${ForearmYawNode}" actuatorApi="${ForearmYawApi}"/> 
+    <xacro:pushrod_transmission transmissionName="${prefix}WristTransmission" joint1Name="${WristPitchJointName}" joint2Name="${WristRollJointName}" actuator1Name="${WristTopActuatorName}" actuator2Name="${WristBottomActuatorName}" actuator1Node="${WristTopActuatorNode}" actuator2Node="${WristBottomActuatorNode}" joint1Role="roll" joint2Role="pitch" actuator1Role="actuator1" actuator2Role="actuator2" actuator1Api="WristTopActuatorApi" actuator2Api="${WristBottomActuatorApi}"/>
+  </xacro:macro>
+
+  <xacro:macro name="arm_transmissions_sim" params="prefix">
+    <xacro:simple_transmission jointName="${ShoulderPitchJointName}" actuatorName="${ShoulderPitchActuatorName}" nodeName="${ShoulderPitchNode}" actuatorApi="${SimApi}"/>
+    <xacro:simple_transmission jointName="${ShoulderRollJointName}" actuatorName="${ShoulderRollActuatorName}" nodeName="${ShoulderRollNode}" actuatorApi="${SimApi}"/>
+    <xacro:simple_transmission jointName="${ShoulderYawJointName}" actuatorName="${ShoulderYawActuatorName}" nodeName="${ShoulderYawNode}" actuatorApi="${SimApi}"/>
+    <xacro:simple_transmission jointName="${ElbowPitchJointName}" actuatorName="${ElbowPitchActuatorName}" nodeName="${ElbowPitchNode}" actuatorApi="${SimApi}"/> 
+    <xacro:simple_transmission jointName="${ForearmYawActuatorName}" actuatorName="${ForearmYawActuatorName}" nodeName="${ForearmYawNode}" actuatorApi="${SimApi}"/> 
+    <xacro:simple_transmission jointName="${WristRollJointName}" actuatorName="${WristTopActuatorName}" nodeName="${WristTopActuatorNode}" actuatorApi="${SimApi}"/> 
+    <xacro:simple_transmission jointName="${WristPitchJointName}" actuatorName="${WristBottomActuatorName}" nodeName="${WristBottomActuatorNode}" actuatorApi="${SimApi}"/> 
   </xacro:macro>
 
 </robot>

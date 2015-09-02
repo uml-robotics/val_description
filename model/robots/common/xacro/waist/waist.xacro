@@ -3,6 +3,7 @@
   <xacro:include filename="$(find val_description)/common/xacro/joint_names/valkyrie_joint_names.xacro"/>
   <xacro:include filename="$(find val_description)/common/xacro/actuator_names/valkyrie_actuator_names.xacro"/>
   <xacro:include filename="$(find val_description)/common/xacro/nodes/valkyrie_nodes.xacro"/>
+  <xacro:include filename="$(find val_description)/common/xacro/api/valkyrie_api.xacro"/>
   <xacro:include filename="$(find val_description)/model/robots/common/xacro/waist/joint_axes.xacro"/>
   <xacro:include filename="$(find val_description)/model/robots/common/xacro/waist/joint_axes.xacro"/>
   <xacro:include filename="$(find val_description)/model/robots/common/xacro/waist/link_names.xacro"/>
@@ -112,8 +113,14 @@
                         frameRate="60"/>
    </xacro:macro>
 
-   <xacro:macro name="waist_transmissions">
-    <xacro:simple_transmission jointName="${TorsoYawJointName}" actuatorName="${TorsoYawActuatorName}" nodeName="${TrunkYawNode}"/> 
-    <xacro:pushrod_transmission transmissionName="WaistTransmission" joint1Name="${TorsoPitchJointName}" joint2Name="${TorsoRollJointName}" actuator1Name="${WaistLeftActuatorName}" actuator2Name="${WaistRightActuatorName}" actuator1Node="${WaistLeftActuatorNode}" actuator2Node="${WaistRightActuatorNode}" joint1Role="pitch" joint2Role="roll" actuator1Role="leftActuator" actuator2Role="rightActuator"/>
+   <xacro:macro name="waist_transmissions_hw">
+    <xacro:simple_transmission jointName="${TorsoYawJointName}" actuatorName="${TorsoYawActuatorName}" nodeName="${TrunkYawNode}" actuatorApi="${TrunkYawApi}"/> 
+    <xacro:pushrod_transmission transmissionName="WaistTransmission" joint1Name="${TorsoPitchJointName}" joint2Name="${TorsoRollJointName}" actuator1Name="${WaistLeftActuatorName}" actuator2Name="${WaistRightActuatorName}" actuator1Node="${WaistLeftActuatorNode}" actuator2Node="${WaistRightActuatorNode}" joint1Role="pitch" joint2Role="roll" actuator1Role="leftActuator" actuator2Role="rightActuator" actuator1Api="${WaistLeftActuatorApi}" actuator2Api="${WaistRightActuatorApi}"/>
+   </xacro:macro>
+
+   <xacro:macro name="waist_transmissions_sim">
+    <xacro:simple_transmission jointName="${TorsoYawJointName}" actuatorName="${TorsoYawActuatorName}" nodeName="${TrunkYawNode}" actuatorApi="${SimApi}"/> 
+    <xacro:simple_transmission jointName="${TorsoPitchJointName}" actuatorName="${WaistLeftActuatorName}" nodeName="${WaistLeftActuatorNode}" actuatorApi="${SimApi}"/> 
+    <xacro:simple_transmission jointName="${TorsoRollJointName}" actuatorName="${WaistRightActuatorName}" nodeName="${WaistRightActuatorNode}" actuatorApi="${SimApi}"/> 
    </xacro:macro>
 </robot>
