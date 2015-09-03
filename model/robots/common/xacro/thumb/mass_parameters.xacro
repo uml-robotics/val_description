@@ -3,12 +3,12 @@
 
   <xacro:property name="ThumbRollLinkMass" value="0.017" />
   <xacro:property name="ThumbRollLinkComPosition" value="0 ${reflect*0} 0.01" />
-  <xacro:property name="ThumbRollLinkInertia_IXX" value="-0.002386850" />
-  <xacro:property name="ThumbRollLinkInertia_IXY" value="0.0" />
-  <xacro:property name="ThumbRollLinkInertia_IXZ" value="${reflect*0.0}" />
-  <xacro:property name="ThumbRollLinkInertia_IYY" value="-0.002386065" />
-  <xacro:property name="ThumbRollLinkInertia_IYZ" value="${reflect*0.0}" />
-  <xacro:property name="ThumbRollLinkInertia_IZZ" value="0.000001285" />
+  <xacro:property name="ThumbRollLinkInertia_IXX" value="2.7778767e-6" />
+  <xacro:property name="ThumbRollLinkInertia_IXY" value="5.6718533e-9" />
+  <xacro:property name="ThumbRollLinkInertia_IXZ" value="${reflect*9.5523207e-8}" />
+  <xacro:property name="ThumbRollLinkInertia_IYY" value="3.5462642e-6" />
+  <xacro:property name="ThumbRollLinkInertia_IYZ" value="${reflect*-3.663718e-8}" />
+  <xacro:property name="ThumbRollLinkInertia_IZZ" value="1.3553297e-6" />
 
   <xacro:property name="ThumbPitch1LinkMass" value="0.02" />
   <xacro:property name="ThumbPitch1LinkComPosition" value="0.0 ${reflect*0.005} 0.02" />
