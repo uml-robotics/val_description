@@ -1,40 +1,40 @@
 <robot xmlns:xacro="http://ros.org/wiki/xacro" name="valkyrie_A_serials">
 
-	<xacro:property name="leftLegJ1SerialNumber" value="v_a_001" />
-	<xacro:property name="leftLegJ2SerialNumber" value="v_b_001" />
-	<xacro:property name="leftLegJ3SerialNumber" value="v_c_001" />
+	<xacro:property name="leftLegJ1SerialNumber" value="v_a_006" />
+	<xacro:property name="leftLegJ2SerialNumber" value="v_b_002" />
+	<xacro:property name="leftLegJ3SerialNumber" value="v_c_002" />
 	<xacro:property name="leftLegJ4SerialNumber" value="v_d_001" />
 	<xacro:property name="leftAnkleActuator0SerialNumber" value="v_e_001" />
 	<xacro:property name="leftAnkleActuator1SerialNumber" value="v_e_002" />
 
-	<xacro:property name="rightLegJ1SerialNumber" value="v_a_002" />
-	<xacro:property name="rightLegJ2SerialNumber" value="v_b_002" />
-	<xacro:property name="rightLegJ3SerialNumber" value="v_c_002" />
-	<xacro:property name="rightLegJ4SerialNumber" value="v_d_002" />
+	<xacro:property name="rightLegJ1SerialNumber" value="v_a_003" />
+	<xacro:property name="rightLegJ2SerialNumber" value="v_b_001" />
+	<xacro:property name="rightLegJ3SerialNumber" value="v_c_001" />
+	<xacro:property name="rightLegJ4SerialNumber" value="v_d_004" />
 	<xacro:property name="rightAnkleActuator0SerialNumber" value="v_e_003" />
 	<xacro:property name="rightAnkleActuator1SerialNumber" value="v_e_004" />
 
-	<xacro:property name="leftArmJ1SerialNumber" value="v_a_003" />
-	<xacro:property name="leftArmJ2SerialNumber" value="v_b_003" />
-	<xacro:property name="leftArmJ3SerialNumber" value="v_f_001" />
-	<xacro:property name="leftArmJ4SerialNumber" value="v_f_001" />
-	<xacro:property name="leftArmJ5SerialNumber" value="v_g_001" />
+	<xacro:property name="leftArmJ1SerialNumber" value="v_a_005" />
+	<xacro:property name="leftArmJ2SerialNumber" value="v_b_004" />
+	<xacro:property name="leftArmJ3SerialNumber" value="v_f_005" />
+	<xacro:property name="leftArmJ4SerialNumber" value="v_f_002" />
+	<xacro:property name="leftArmJ5SerialNumber" value="v_g_005" />
 	<xacro:property name="leftWristActuator0SerialNumber" value="v_h_001" />
 	<xacro:property name="leftWristActuator1SerialNumber" value="v_h_002" />
 
-	<xacro:property name="rightArmJ1SerialNumber" value="v_a_004" />
-	<xacro:property name="rightArmJ2SerialNumber" value="v_b_004" />
-	<xacro:property name="rightArmJ3SerialNumber" value="v_f_002" />
-	<xacro:property name="rightArmJ4SerialNumber" value="v_f_002" />
-	<xacro:property name="rightArmJ5SerialNumber" value="v_g_002" />
+	<xacro:property name="rightArmJ1SerialNumber" value="v_a_001" />
+	<xacro:property name="rightArmJ2SerialNumber" value="v_b_003" />
+	<xacro:property name="rightArmJ3SerialNumber" value="v_f_004" />
+	<xacro:property name="rightArmJ4SerialNumber" value="v_f_003" />
+	<xacro:property name="rightArmJ5SerialNumber" value="v_g_003" />
 	<xacro:property name="rightWristActuator0SerialNumber" value="v_h_003" />
 	<xacro:property name="rightWristActuator1SerialNumber" value="v_h_004" />
 
-	<xacro:property name="neckJ1SerialNumber" value="v_g_001" />
-	<xacro:property name="neckJ2SerialNumber" value="v_g_002" />
-	<xacro:property name="neckJ3SerialNumber" value="v_g_003" />
+	<xacro:property name="neckJ1SerialNumber" value="v_g_006" />
+	<xacro:property name="neckJ2SerialNumber" value="v_g_007" />
+	<xacro:property name="neckJ3SerialNumber" value="v_g_008" />
 
-	<xacro:property name="trunkSerialNumber" value="v_a_005" />
+	<xacro:property name="trunkSerialNumber" value="v_a_004" />
 	<xacro:property name="waistActuator0SerialNumber" value="v_e_005" />
 	<xacro:property name="waistActuator1SerialNumber" value="v_e_006" />
 
