@@ -6,6 +6,7 @@ project(val_description)
 ## is used, also find other catkin packages
 find_package(catkin REQUIRED COMPONENTS
   xacro 
+  rospy
 )
 
 set(urdf_files "")
@@ -59,7 +60,7 @@ endforeach(it)
 catkin_package(
 #  INCLUDE_DIRS include
 #  LIBRARIES val_description
-#  CATKIN_DEPENDS xacro
+ CATKIN_DEPENDS xacro rospy
 #  DEPENDS system_lib
 )
 
