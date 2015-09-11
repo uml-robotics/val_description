@@ -1,6 +1,5 @@
 <robot xmlns:xacro="http://ros.org/wiki/xacro" name="valkyrie_template">
 
-	<xacro:include filename="$(find val_description)/instance/instances/robots/xacro/serial_numbers/valkyrie_A_serials.xacro" />
 	<xacro:include filename="$(find val_description)/common/xacro/nodes/valkyrie_nodes.xacro" />
 	<xacro:include filename="$(find val_description)/instance/instances/robots/xacro/limbs/leg.xacro" />
 	<xacro:include filename="$(find val_description)/instance/instances/robots/xacro/limbs/arm.xacro" />
@@ -14,9 +13,9 @@
 	<xacro:all_channels/>
 
 	<Mechanisms>
-		<xacro:leg prefix="left" j1_serial_number="${leftLegJ1SerialNumber}" j2_serial_number="${leftLegJ2SerialNumber}" j3_serial_number="${leftLegJ3SerialNumber}" j4_serial_number="${leftLegJ4SerialNumber}" ankle_actuator0_serial="${leftAnkleActuator0SerialNumber}" ankle_actuator1_serial="${leftAnkleActuator1SerialNumber}"/>
+		<xacro:leg prefix="left" j1_serial_number="${leftLegJ1SerialNumber}" j2_serial_number="${leftLegJ2SerialNumber}" j3_serial_number="${leftLegJ3SerialNumber}" j4_serial_number="${leftLegJ4SerialNumber}" ankle_left_actuator_serial="${leftAnkleActuator0SerialNumber}" ankle_right_actuator_serial="${leftAnkleActuator1SerialNumber}"/>
 
-		<xacro:leg prefix="right" j1_serial_number="${rightLegJ1SerialNumber}" j2_serial_number="${rightLegJ2SerialNumber}" j3_serial_number="${rightLegJ3SerialNumber}" j4_serial_number="${rightLegJ4SerialNumber}" ankle_actuator0_serial="${rightAnkleActuator0SerialNumber}" ankle_actuator1_serial="${rightAnkleActuator1SerialNumber}" />
+		<xacro:leg prefix="right" j1_serial_number="${rightLegJ1SerialNumber}" j2_serial_number="${rightLegJ2SerialNumber}" j3_serial_number="${rightLegJ3SerialNumber}" j4_serial_number="${rightLegJ4SerialNumber}" ankle_left_actuator_serial="${rightAnkleActuator0SerialNumber}" ankle_right_actuator_serial="${rightAnkleActuator1SerialNumber}" />
 
 		<xacro:arm prefix="left" j1_serial_number="${leftArmJ1SerialNumber}" j2_serial_number="${leftArmJ2SerialNumber}" j3_serial_number="${leftArmJ3SerialNumber}" j4_serial_number="${leftArmJ4SerialNumber}" j5_serial_number="${leftArmJ5SerialNumber}" wrist_actuator0_serial="${leftAnkleActuator0SerialNumber}" wrist_actuator1_serial="${leftAnkleActuator1SerialNumber}" />
 
@@ -24,7 +23,7 @@
 
 		<xacro:neck j1_serial_number="${neckJ1SerialNumber}" j2_serial_number="${neckJ1SerialNumber}" j3_serial_number="${neckJ1SerialNumber}" />
 
-		<xacro:waist j1_serial_number="${trunkSerialNumber}" waist_actuator0_serial="${waistActuator0SerialNumber}" waist_actuator1_serial="${waistActuator1SerialNumber}"/>
+		<xacro:waist j1_serial_number="${trunkSerialNumber}" waist_left_actuator_serial="${waistLeftActuatorSerialNumber}" waist_right_actuator_serial="${waistRightActuatorSerialNumber}"/>
 	</Mechanisms>
 
 	<Devices>
