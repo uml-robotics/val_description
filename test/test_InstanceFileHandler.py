@@ -314,7 +314,11 @@ class instanceFileHandlerTests(unittest.TestCase):
     def testLoadAnkleInstanceFile(self):
         sampleInstanceFile = self.testDirectory + '/test_files/ankle_instance.xml'
         instanceFileHandler = InstanceFileHandler(sampleInstanceFile)
-        print instanceFileHandler.getNodes()
+
+        nodesToCheck = instanceFileHandler.getNodes()
+
+        assert '/left_leg/ankle/left_actuator' in nodesToCheck
+        assert '/left_leg/ankle/right_actuator' in nodesToCheck
 
 if __name__ == '__main__':
     unittest.main()
