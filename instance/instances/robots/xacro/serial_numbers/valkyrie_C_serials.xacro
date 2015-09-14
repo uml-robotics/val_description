@@ -4,31 +4,31 @@
 	<xacro:property name="leftLegJ2SerialNumber" value="UNKNOWN" />
 	<xacro:property name="leftLegJ3SerialNumber" value="UNKNOWN" />
 	<xacro:property name="leftLegJ4SerialNumber" value="UNKNOWN" />
-	<xacro:property name="leftAnkleActuator0SerialNumber" value="UNKNOWN" />
-	<xacro:property name="leftAnkleActuator1SerialNumber" value="UNKNOWN" />
+	<xacro:property name="leftAnkleLeftActuatorSerialNumber" value="UNKNOWN" />
+	<xacro:property name="leftAnkleRightActuatorSerialNumber" value="UNKNOWN" />
 
 	<xacro:property name="rightLegJ1SerialNumber" value="v_a_014" />
 	<xacro:property name="rightLegJ2SerialNumber" value="UNKNOWN" />
 	<xacro:property name="rightLegJ3SerialNumber" value="UNKNOWN" />
 	<xacro:property name="rightLegJ4SerialNumber" value="UNKNOWN" />
-	<xacro:property name="rightAnkleActuator0SerialNumber" value="UNKNOWN" />
-	<xacro:property name="rightAnkleActuator1SerialNumber" value="UNKNOWN" />
+	<xacro:property name="rightAnkleLeftActuatorSerialNumber" value="UNKNOWN" />
+	<xacro:property name="rightAnkleRightActuatorSerialNumber" value="UNKNOWN" />
 
 	<xacro:property name="leftArmJ1SerialNumber" value="v_a_013" />
 	<xacro:property name="leftArmJ2SerialNumber" value="v_b_009" />
 	<xacro:property name="leftArmJ3SerialNumber" value="v_f_012" />
 	<xacro:property name="leftArmJ4SerialNumber" value="v_f_011" />
 	<xacro:property name="leftArmJ5SerialNumber" value="UNKNOWN" />
-	<xacro:property name="leftWristActuator0SerialNumber" value="UNKNOWN" />
-	<xacro:property name="leftWristActuator1SerialNumber" value="UNKNOWN" />
+	<xacro:property name="leftWristTopActuatorSerialNumber" value="UNKNOWN" />
+	<xacro:property name="leftWristBottomActuatorSerialNumber" value="UNKNOWN" />
 
 	<xacro:property name="rightArmJ1SerialNumber" value="v_a_012" />
 	<xacro:property name="rightArmJ2SerialNumber" value="v_b_012" />
 	<xacro:property name="rightArmJ3SerialNumber" value="v_f_013" />
 	<xacro:property name="rightArmJ4SerialNumber" value="v_f_014" />
 	<xacro:property name="rightArmJ5SerialNumber" value="UNKNOWN" />
-	<xacro:property name="rightWristActuator0SerialNumber" value="UNKNOWN" />
-	<xacro:property name="rightWristActuator1SerialNumber" value="UNKNOWN" />
+	<xacro:property name="rightWristTopActuatorSerialNumber" value="UNKNOWN" />
+	<xacro:property name="rightWristBottomActuatorSerialNumber" value="UNKNOWN" />
 
 	<xacro:property name="neckJ1SerialNumber" value="UNKNOWN" />
 	<xacro:property name="neckJ2SerialNumber" value="UNKNOWN" />

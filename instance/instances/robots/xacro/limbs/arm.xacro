@@ -14,7 +14,7 @@
 
     	<xacro:simple_mechanism name="${ForearmYawJointName}" serial_number="${j5_serial_number}" node="${ForearmYawNode}"/>
 
-    	<xacro:two_active_joint_mechanism mechanism_name="wrist" actuator0_name="${prefix}WristTopActuator" actuator1_name="${prefix}WristBottomActuator" joint0_name="${WristPitchJointName}" joint1_name="${WristRollJointName}" actuator0_serial="${wrist_actuator0_serial}" actuator1_serial="${wrist_actuator1_serial}" actuator0_node="${WristTopActuatorNode}" actuator1_node="${WristBottomActuatorNode}" />
+    	<xacro:two_active_joint_mechanism mechanism_name="${prefix}Wrist" actuator0_name="${prefix}WristTopActuator" actuator1_name="${prefix}WristBottomActuator" joint0_name="${WristPitchJointName}" joint1_name="${WristRollJointName}" actuator0_serial="${wrist_actuator0_serial}" actuator1_serial="${wrist_actuator1_serial}" actuator0_node="${WristTopActuatorNode}" actuator1_node="${WristBottomActuatorNode}" />
     </xacro:macro>
 
 </robot>
