@@ -100,11 +100,11 @@
       <Joint id="leftWristRoll" type="active">
 	</Joint>
       <Actuator id="leftWristTopActuator">
-        <SerialNumber id="v_e_001"/>
+        <SerialNumber id="UNKNOWN"/>
         <Node id="/left_arm/wrist/top_actautor"/>
       </Actuator>
       <Actuator id="leftWristBottomActuator">
-        <SerialNumber id="v_e_002"/>
+        <SerialNumber id="UNKNOWN"/>
         <Node id="/left_arm/wrist/bottom_actuator"/>
       </Actuator>
     </Mechanism>
@@ -134,11 +134,11 @@
       <Joint id="rightWristRoll" type="active">
 	</Joint>
       <Actuator id="rightWristTopActuator">
-        <SerialNumber id="v_e_003"/>
+        <SerialNumber id="UNKNOWN"/>
         <Node id="/right_arm/wrist/top_actautor"/>
       </Actuator>
       <Actuator id="rightWristBottomActuator">
-        <SerialNumber id="v_e_004"/>
+        <SerialNumber id="UNKNOWN"/>
         <Node id="/right_arm/wrist/bottom_actuator"/>
       </Actuator>
     </Mechanism>
