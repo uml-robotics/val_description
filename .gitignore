@@ -7,3 +7,5 @@ valkyrie*.sdf
 *.gv
 *.orig
 *.pyc
+.*.*.swp
+*.*.swp
