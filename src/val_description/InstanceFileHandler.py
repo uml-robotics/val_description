@@ -13,7 +13,6 @@ class InstanceFileHandler():
 
         # Setup paths to the various coeff files
         self.thisFilePath = os.path.dirname(os.path.abspath(__file__))
-        print self.thisFilePath
         self.coeffFileRootPath = self.thisFilePath + \
             '/../../instance/coefficients'
         self.actuatorFileCoeffPath = self.coeffFileRootPath + '/actuators'
@@ -218,39 +217,45 @@ class InstanceFileHandler():
         ''' Given a list of coeff files resolve them to a single dictionary '''
         cfgs = []
 
-        for f in self.configDictionary[target]['configFiles']:
-            try:
-                filetype = os.path.splitext(f)[1].lower()
-                if filetype == '.xml':
-                    cfgs.append(self.loadXMLCoeffs(f))
-                elif filetype == '.json' or filetype == '.yaml':
-                    with open(f, 'r') as fs:
-                        cfgs.append(yaml.load(fs))
+        if target in self.configDictionary.keys():
+            for f in self.configDictionary[target]['configFiles']:
+                try:
+                    filetype = os.path.splitext(f)[1].lower()
+                    if filetype == '.xml':
+                        cfgs.append(self.loadXMLCoeffs(f))
+                    elif filetype == '.json' or filetype == '.yaml':
+                        with open(f, 'r') as fs:
+                            cfgs.append(yaml.load(fs))
+                    else:
+                        print('Unsupported coeff format {}'.format(filetype))
+                except IOError as e:
+                    print('Could not open xml file: {}'.format(e))
+                except xmlParser.ParseError as e:
+                    print('Could not parse xml file: {}'.format(e))
+            if not cfgs:
+                raise Exception('No config values found!')
+            cfgs.reverse()  # makes sure precedence works in next operation
+            retCfg = reduce(lambda x, y: dict(x.items() + y.items()), cfgs)
+            # return dictionary of key,values: {'Coeff_x': value}
+            coeffs = {}
+            disabled = []
+            for k, v in retCfg.iteritems():
+                if type(v) == dict:
+                    if not v.get('disabled', False):
+                        coeffs[k] = v['value']
+                    else:
+                        disabled.append(k)
                 else:
-                    print('Unsupported coeff format {}'.format(filetype))
-            except IOError as e:
-                print('Could not open xml file: {}'.format(e))
-            except xmlParser.ParseError as e:
-                print('Could not parse xml file: {}'.format(e))
-        if not cfgs:
-            raise Exception('No config values found!')
-        cfgs.reverse()  # makes sure precedence works in next operation
-        retCfg = reduce(lambda x, y: dict(x.items() + y.items()), cfgs)
-        # return dictionary of key,values: {'Coeff_x': value}
-        coeffs = {}
-        disabled = []
-        for k, v in retCfg.iteritems():
-            if type(v) == dict:
-                if not v.get('disabled', False):
-                    coeffs[k] = v['value']
-                else:
-                    disabled.append(k)
-            else:
-                coeffs[k] = v
-        if disabled:
-            print('Bypassing disabled coeffs: ' +
-                  ', '.join([coeff for coeff in disabled]))
-        return coeffs
+                    coeffs[k] = v
+            if disabled:
+                print('Bypassing disabled coeffs: ' +
+                      ', '.join([coeff for coeff in disabled]))
+
+            return coeffs
+        else:
+            print "\n Target {} doesn't exist, skipping! \n ".format(target)
+            dictionary = dict()
+            return dictionary
 
     def loadXMLCoeffs(self, fname):
         ''' Parse XML file and return name:value dict of coeffs'''
