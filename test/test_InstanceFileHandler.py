@@ -171,6 +171,14 @@ class instanceFileHandlerTests(unittest.TestCase):
 
         assert cmp(coeffs, expectedCoeffs) == 0
 
+    def testGatherCoeffsHandleKeyError(self):
+        sampleInstanceFile = self.testDirectory + \
+            '/test_files/sample_instance.xml'
+        instanceFileHandler = InstanceFileHandler(sampleInstanceFile)
+
+        # This next line should NOT raise a key error!
+        coeffs = instanceFileHandler.gatherCoeffs("/bum_leg/j1")
+
     def testLoadXMLCoeffs(self):
         sampleInstanceFile = self.testDirectory + \
             '/test_files/sample_instance.xml'
