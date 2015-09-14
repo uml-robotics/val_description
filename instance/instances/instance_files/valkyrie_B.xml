@@ -30,7 +30,7 @@
       <SerialNumber id="v_d_003"/>
       <Node id="/left_leg/j4"/>
     </Mechanism>
-    <Mechanism id="ankle" type="complex">
+    <Mechanism id="leftAnkle" type="complex">
       <Joint id="leftAnklePitch" type="active">
 	</Joint>
       <Joint id="leftAnkleRoll" type="active">
@@ -60,7 +60,7 @@
       <SerialNumber id="v_d_002"/>
       <Node id="/right_leg/j4"/>
     </Mechanism>
-    <Mechanism id="ankle" type="complex">
+    <Mechanism id="rightAnkle" type="complex">
       <Joint id="rightAnklePitch" type="active">
 	</Joint>
       <Joint id="rightAnkleRoll" type="active">
@@ -94,7 +94,7 @@
       <SerialNumber id="UNKNOWN"/>
       <Node id="/left_arm/j5"/>
     </Mechanism>
-    <Mechanism id="wrist" type="complex">
+    <Mechanism id="leftWrist" type="complex">
       <Joint id="leftWristPitch" type="active">
 	</Joint>
       <Joint id="leftWristRoll" type="active">
@@ -128,7 +128,7 @@
       <SerialNumber id="UNKNOWN"/>
       <Node id="/right_arm/j5"/>
     </Mechanism>
-    <Mechanism id="wrist" type="complex">
+    <Mechanism id="rightWrist" type="complex">
       <Joint id="rightWristPitch" type="active">
 	</Joint>
       <Joint id="rightWristRoll" type="active">
