@@ -5,8 +5,7 @@ project(val_description)
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
 ## is used, also find other catkin packages
 find_package(catkin REQUIRED COMPONENTS
-  xacro 
-  rospy
+  xacro
 )
 
 set(urdf_files "")
@@ -60,7 +59,7 @@ endforeach(it)
 catkin_package(
 #  INCLUDE_DIRS include
 #  LIBRARIES val_description
- CATKIN_DEPENDS xacro rospy
+ CATKIN_DEPENDS xacro
 #  DEPENDS system_lib
 )
 
