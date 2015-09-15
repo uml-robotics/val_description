@@ -1,17 +1,17 @@
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="waist">
 
-  <xacro:include filename="$(find val_description)/common/xacro/joint_names/valkyrie_joint_names.xacro"/>
-  <xacro:include filename="$(find val_description)/common/xacro/actuator_names/valkyrie_actuator_names.xacro"/>
-  <xacro:include filename="$(find val_description)/common/xacro/nodes/valkyrie_nodes.xacro"/>
-  <xacro:include filename="$(find val_description)/common/xacro/api/valkyrie_api.xacro"/>
-  <xacro:include filename="$(find val_description)/model/robots/common/xacro/waist/joint_axes.xacro"/>
-  <xacro:include filename="$(find val_description)/model/robots/common/xacro/waist/joint_axes.xacro"/>
-  <xacro:include filename="$(find val_description)/model/robots/common/xacro/waist/link_names.xacro"/>
-  <xacro:include filename="$(find val_description)/model/robots/common/xacro/waist/joint_limits.xacro"/>
-  <xacro:include filename="$(find val_description)/model/robots/common/xacro/waist/frame_parameters.xacro"/>
-  <xacro:include filename="$(find val_description)/model/robots/common/xacro/waist/mass_parameters.xacro"/>
-  <xacro:include filename="$(find val_description)/model/robots/common/xacro/sensors/microstrain.xacro"/>
-  <xacro:include filename="$(find val_description)/model/robots/common/xacro/sensors/flea.xacro"/>
+  <xacro:include filename="../../common/xacro/joint_names/valkyrie_joint_names.xacro"/>
+  <xacro:include filename="../../common/xacro/actuator_names/valkyrie_actuator_names.xacro"/>
+  <xacro:include filename="../../common/xacro/nodes/valkyrie_nodes.xacro"/>
+  <xacro:include filename="../../common/xacro/api/valkyrie_api.xacro"/>
+  <xacro:include filename="common/xacro/waist/joint_axes.xacro"/>
+  <xacro:include filename="common/xacro/waist/joint_axes.xacro"/>
+  <xacro:include filename="common/xacro/waist/link_names.xacro"/>
+  <xacro:include filename="common/xacro/waist/joint_limits.xacro"/>
+  <xacro:include filename="common/xacro/waist/frame_parameters.xacro"/>
+  <xacro:include filename="common/xacro/waist/mass_parameters.xacro"/>
+  <xacro:include filename="common/xacro/sensors/microstrain.xacro"/>
+  <xacro:include filename="common/xacro/sensors/flea.xacro"/>
 
   <xacro:macro name="make_waist_common" params="waist_root_link">
 
