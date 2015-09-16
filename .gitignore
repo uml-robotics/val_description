@@ -2,6 +2,7 @@
 *.md~
 val*.urdf
 valkyrie*.sdf
+valkyrie*.xml
 *.bak
 *.pdf
 *.gv

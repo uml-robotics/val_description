@@ -23,6 +23,8 @@ file(GLOB urdf_xacro_files ${PATH_TO_ROBOTS_MODEL}/*.xacro)
 file(GLOB instance_xacro_files ${PATH_TO_ROBOTS_INSTANCE}/*.xacro)
 
 # Create output directories
+file(MAKE_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}/model/urdf)
+file(MAKE_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}/instance/instances/instance_files)
 file(MAKE_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/model/urdf)
 file(MAKE_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/instance/instances/instance_files)
 
@@ -33,7 +35,7 @@ foreach(it ${urdf_xacro_files})
 
   message("processing urdf file :" ${basepath}/${basename})
 
-  set(expanded_file "${CMAKE_CURRENT_SOURCE_DIR}/model/urdf/${basename}.urdf")
+  set(expanded_file "${CMAKE_CURRENT_BINARY_DIR}/model/urdf/${basename}.urdf")
   message("produce expanded file :" ${expanded_file})
 
   xacro_add_xacro_file(${it} ${expanded_file})
@@ -48,7 +50,7 @@ foreach(it ${instance_xacro_files})
 
   message("processing xml file :" ${basepath}/${basename})
 
-  set(expanded_file "${CMAKE_CURRENT_SOURCE_DIR}/instance/instances/instance_files/${basename}.xml")
+  set(expanded_file "${CMAKE_CURRENT_BINARY_DIR}/instance/instances/instance_files/${basename}.xml")
   message("produce expanded file :" ${expanded_file})
 
   xacro_add_xacro_file(${it} ${expanded_file})
