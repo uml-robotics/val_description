@@ -4,8 +4,8 @@
 	<xacro:property name="HipRollNode" value="/${prefix}_leg/j2" />
 	<xacro:property name="HipPitchNode" value="/${prefix}_leg/j3" />
 	<xacro:property name="KneePitchNode" value="/${prefix}_leg/j4" />
-	<xacro:property name="AnkleInsideActuatorNode" value="/${prefix}_leg/ankle/left_actuator" />
-	<xacro:property name="AnkleOutsideActuatorNode" value="/${prefix}_leg/ankle/right_actuator" />
+	<xacro:property name="AnkleInsideActuatorNode" value="/${prefix}_leg/left_actuator" />
+	<xacro:property name="AnkleOutsideActuatorNode" value="/${prefix}_leg/right_actuator" />
 
 	<xacro:property name="ShoulderPitchNode" value="/${prefix}_arm/j1" />
 	<xacro:property name="ShoulderRollNode" value="/${prefix}_arm/j2" />

@@ -4,7 +4,7 @@
         <FileGenDate date="2013-11-15" time="09:57:38.068696"/>
     </Properties>
     <ClassFile id="e.xml"/>
-    <ControllerFile id="e_sv.xml"/>
+    <ControllerFile id="e_dh.xml"/>
     <SensorsFile id="sensors.xml"/>
     <SafetyFile id="safety.xml"/>
     <ModeFile id="mode.xml"/>

@@ -20,12 +20,12 @@
         <Coeff id="ForceControl_b" value="10000.0"/>
 
         <!-- FF -->
-        <Coeff id="ForceControl_Current2MotorTorque" value="0.0375"/>
+        <Coeff id="ForceControl_Current2MotorForce" value="0.0375"/>
         <Coeff id="ForceControl_enableFF" value="1.0"/>
 
         <!-- PID -->
         <Coeff id="ForceControl_enablePID" value="1.0"/>
-        <Coeff id="ForceControl_Kp" value="0.001"/>
+        <Coeff id="ForceControl_Kp" value="0.035"/>
         <Coeff id="ForceControl_PD_damp" value="0.95"/>
         <Coeff id="ForceControl_autoKd" value="1.0"/>
         <Coeff id="ForceControl_Kd_fc_Hz" value="50.0"/>
@@ -33,7 +33,7 @@
         <!-- DOB -->
         <Coeff id="ForceControl_dobWindupLimit_N" value="1000.0"/>
         <Coeff id="ForceControl_dob_fc_Hz" value="50.0"/>
-        <Coeff id="ForceControl_enableDOB" value="1.0"/>
+        <Coeff id="ForceControl_enableDOB" value="0.0"/>
 
         <!-- DynFF -->
         <Coeff id="ForceControl_FFd_fc_Hz" value="20.0"/>
