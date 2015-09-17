@@ -88,24 +88,24 @@
   </xacro:macro>
 
   <xacro:macro name="v1_trunk_sensors">
-    <xacro:microstrain_sensor sensorName="RightTorsoIMU"
+    <xacro:microstrain_sensor sensorName="rightTorsoIMU"
                               parentLink="${TorsoRollLinkName}"
                               origin_xyz="-0.047 -0.134 0.363"
                               origin_rpy="-1.57 0.0 3.14" />
 
-    <xacro:microstrain_sensor sensorName="LeftTorsoIMU"
+    <xacro:microstrain_sensor sensorName="leftTorsoIMU"
                               parentLink="${TorsoRollLinkName}"
                               origin_xyz="-0.047 0.134 0.363"
                               origin_rpy="1.57 0.0 3.14" />
 
-    <xacro:flea3_camera sensorName="RightHazardCamera"
+    <xacro:flea3_camera sensorName="rightHazardCamera"
                         parentLink="${TorsoRollLinkName}"
                         origin_xyz="0.0345 -0.0406 0.1135"
                         origin_rpy="1.57 0.0 1.57"
                         imageFormat="R8G8B8"
                         frameRate="60"/>
 
-    <xacro:flea3_camera sensorName="LeftHazardCamera"
+    <xacro:flea3_camera sensorName="leftHazardCamera"
                         parentLink="${TorsoRollLinkName}"
                         origin_xyz="0.0345 0.0406 0.1135"
                         origin_rpy="1.57 0.0 1.57"
