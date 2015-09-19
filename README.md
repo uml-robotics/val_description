@@ -11,27 +11,11 @@ catkin_make
 ```
 The URDF will be in the directory <val_description>/urdf
 
-After generating the URDF, you may generate an SDF file by executing the following command from the top level package directory:
-```bash
-gzsdf print valkyrie_A.urdf
-```
-
-You can visualize the frames in RVIZ by:
-```bash
-cd test
-roslaunch VisualizeFramesInRviz.launch
-```
-
-To see Valkyrie in Gazebo, execute the following command from the top level package directory:
-```bash
-cd test
-roslaunch ValkyrieInEmptyWorld.launch
-```
-
 #Credits
 - Johnson Space Center - ER4 - Valkyrie Team
 - IHMC humanoids group
 - Maurice Fallon and his group
+- Open Source Robotics Foundation(OSRF)
 
 #License
 NASA 1.3
