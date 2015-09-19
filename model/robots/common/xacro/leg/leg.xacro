@@ -77,12 +77,12 @@
                     ixx="${FootInertia_IXX}" ixy="${FootInertia_IXY}" ixz="${FootInertia_IXZ}"
                     iyy="${FootInertia_IYY}" iyz="${FootInertia_IYZ}" izz="${FootInertia_IZZ}"
                     inertial_rpy="0 0 0"
-                    visual_mesh="${mesh_root}/legs/foot_${prefix}.dae"
+                    visual_mesh="${mesh_root}/legs/foot.dae"
                     material="White"
                     width="0.27"
                     height="0.16"
                     depth="0.064"
-                    box_xyz="0.06 0.0 -0.06"
+                    box_xyz="0.066 0.0 -0.056"
                     box_rpy="0.0 0.0 0.0" />
 
   </xacro:macro>
