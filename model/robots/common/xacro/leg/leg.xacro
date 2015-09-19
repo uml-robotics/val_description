@@ -61,16 +61,6 @@
                     material="White"
                     collision_mesh="${mesh_root}/legs/lj5.dae"/>
 
-    <!-- <xacro:standard_link name="${AnkleRollLinkName}"
-                    mass="${FootMass}"
-                    origin_xyz="${FootComPosition}" 
-                    ixx="${FootInertia_IXX}" ixy="${FootInertia_IXY}" ixz="${FootInertia_IXZ}" 
-                    iyy="${FootInertia_IYY}" iyz="${FootInertia_IYZ}" izz="${FootInertia_IZZ}"
-                    origin_rpy="0 0 0"
-                    visual_mesh="${mesh_root}/legs/foot.dae"
-                    material="White"
-                    collision_mesh="${mesh_root}/legs/foot.dae" /> -->
-
     <xacro:link_box_collision_mesh_visual name="${AnkleRollLinkName}"
                     mass="${FootMass}"
                     inertial_xyz="${FootComPosition}"
