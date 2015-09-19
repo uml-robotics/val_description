@@ -38,7 +38,7 @@
   <xacro:property name="KneePitchLinkInertia_IZZ" value="0.013722874" />
 
   <xacro:property name="AnklePitchLinkMass" value="0.06" />
-  <xacro:property name="AnklePitchLinkComPosition" value="-0.001269 0.00009 -0.006013" />
+  <xacro:property name="AnklePitchLinkComPosition" value="0.0 0.0 0.0" />
   <xacro:property name="AnklePitchLinkInertia_IXX" value="0.000011226" />
   <xacro:property name="AnklePitchLinkInertia_IXY" value="0.000000000" />
   <xacro:property name="AnklePitchLinkInertia_IXZ" value="0.000002735" />
@@ -48,7 +48,7 @@
 
 
   <xacro:property name="FootMass" value="3.2550" />
-  <xacro:property name="FootComPosition" value="0.040004 -0.00381 -0.049558" />
+  <xacro:property name="FootComPosition" value="0.037702 0.005161 -0.047634" />
   <xacro:property name="FootInertia_IXX" value="0.008966273" />
   <xacro:property name="FootInertia_IXY" value="-0.000086029" />
   <xacro:property name="FootInertia_IXZ" value="0.003944774" />
