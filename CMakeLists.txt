@@ -59,10 +59,7 @@ foreach(it ${instance_xacro_files})
 endforeach(it)
 
 catkin_package(
-#  INCLUDE_DIRS include
-#  LIBRARIES val_description
  CATKIN_DEPENDS xacro
-#  DEPENDS system_lib
 )
 
 catkin_python_setup()
@@ -81,9 +78,9 @@ install(DIRECTORY model/meshes/
 install(DIRECTORY model/robots/
   DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/robots
 )
-install(DIRECTORY model/urdf/
+install(DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}/model/urdf/
   DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/urdf
 )
 
-install(DIRECTORY instance/instances/instance_files 
+install(DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}/instance/instances/instance_files 
   DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/instance_files)
