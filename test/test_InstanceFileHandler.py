@@ -23,12 +23,34 @@ class instanceFileHandlerTests(unittest.TestCase):
         sampleInstanceFile = self.testDirectory + '/test_files/valkyrie_A.xml'
         instanceFileHandler = InstanceFileHandler(sampleInstanceFile)
         mechanisms = instanceFileHandler.getMechanisms()
-        mechanism_ids = ['left_hip_yaw', 'left_hip_roll', 'left_hip_pitch', 'left_knee_pitch', 'left_ankle',
-                         'right_hip_yaw', 'right_hip_roll', 'right_hip_pitch', 'right_knee_pitch', 'right_ankle',
-                         'left_shoulder_pitch', 'left_shoulder_roll', 'left_shoulder_yaw', 'left_elbow_pitch',
-                         'left_forearm_yaw', 'left_wrist', 'right_shoulder_pitch', 'right_shoulder_roll',
-                         'right_shoulder_yaw', 'right_elbow_pitch', 'right_forearm_yaw', 'right_wrist',
-                         'lower_neck_pitch', 'neck_yaw', 'upper_neck_pitch', 'torso_yaw', 'waist']
+        mechanism_ids = ['leftHipYaw',
+                         'leftHipRoll',
+                         'leftHipPitch',
+                         'leftKneePitch',
+                         'leftAnkle',
+                         'rightHipYaw',
+                         'rightHipRoll',
+                         'rightHipPitch',
+                         'rightKneePitch',
+                         'rightAnkle',
+                         'leftShoulderPitch',
+                         'leftShoulderRoll',
+                         'leftShoulderYaw',
+                         'leftElbowPitch',
+                         'leftForearmYaw',
+                         'leftWrist',
+                         'rightShoulderPitch',
+                         'rightShoulderRoll',
+                         'rightShoulderYaw',
+                         'rightElbowPitch',
+                         'rightForearmYaw',
+                         'rightWrist',
+                         'lowerNeckPitch',
+                         'neckYaw',
+                         'upperNeckPitch',
+                         'torso_yaw',
+                         'waist']
+
         for mechanism in mechanisms:
             assert mechanism.tag == 'Mechanism'
             assert mechanism.get('id') in mechanism_ids
@@ -57,10 +79,38 @@ class instanceFileHandlerTests(unittest.TestCase):
         sampleInstanceFile = self.testDirectory + '/test_files/valkyrie_A.xml'
         instanceFileHandler = InstanceFileHandler(sampleInstanceFile)
         serialNumbers = instanceFileHandler.getSerialNumbers()
-        serialNumbersToCheck = ['v_a_001', 'v_b_001', 'v_c_001', 'v_d_001', 'v_e_001', 'v_e_002', 'v_a_002', 'v_b_002', 'v_c_002',
-                                'v_d_002', 'v_e_003', 'v_e_004', 'v_a_003', 'v_b_003', 'v_f_001', 'v_f_001', 'v_g_001', 'v_e_001',
-                                'v_e_002', 'v_a_004', 'v_b_004', 'v_f_002', 'v_f_002', 'v_g_002', 'v_e_003', 'v_e_004', 'v_g_001',
-                                'v_g_001', 'v_g_001', 'v_a_005', 'v_e_005', 'v_e_006']
+        serialNumbersToCheck = ['v_a_006',
+                                'v_b_002',
+                                'v_c_002',
+                                'v_d_001',
+                                'v_e_001',
+                                'v_e_002',
+                                'v_a_003',
+                                'v_b_001',
+                                'v_c_001',
+                                'v_d_004',
+                                'v_e_003',
+                                'v_e_004',
+                                'v_a_005',
+                                'v_b_004',
+                                'v_f_005',
+                                'v_f_002',
+                                'v_g_005',
+                                'UNKNOWN',
+                                'UNKNOWN',
+                                'v_a_001',
+                                'v_b_003',
+                                'v_f_004',
+                                'v_f_003',
+                                'v_g_003',
+                                'UNKNOWN',
+                                'UNKNOWN',
+                                'v_g_006',
+                                'v_g_006',
+                                'v_g_006',
+                                'v_a_004',
+                                'v_e_006',
+                                'v_e_005']
 
         for serialNumber in serialNumbers:
             assert serialNumber in serialNumbersToCheck
@@ -69,11 +119,38 @@ class instanceFileHandlerTests(unittest.TestCase):
         sampleInstanceFile = self.testDirectory + '/test_files/valkyrie_A.xml'
         instanceFileHandler = InstanceFileHandler(sampleInstanceFile)
         coeffFiles = instanceFileHandler.getActuatorCoeffFiles()
-        coeffFilesToCheck = ['v_a_001.xml', 'v_b_001.xml', 'v_c_001.xml', 'v_d_001.xml', 'v_e_001.xml', 'v_e_002.xml', 'v_a_002.xml', 'v_b_002.xml', 'v_c_002.xml',
-                             'v_d_002.xml', 'v_e_003.xml', 'v_e_004.xml', 'v_a_003.xml', 'v_b_003.xml', 'v_f_001.xml', 'v_f_001.xml', 'v_g_001.xml', 'v_e_001.xml',
-                             'v_e_002.xml', 'v_a_004.xml', 'v_b_004.xml', 'v_f_002.xml', 'v_f_002.xml', 'v_g_002.xml', 'v_e_003.xml', 'v_e_004.xml', 'v_g_001.xml',
-                             'v_g_001.xml', 'v_g_001.xml', 'v_a_005.xml', 'v_e_005.xml', 'v_e_006.xml']
-
+        coeffFilesToCheck = ['v_a_006.xml',
+                             'v_b_002.xml',
+                             'v_c_002.xml',
+                             'v_d_001.xml',
+                             'v_e_001.xml',
+                             'v_e_002.xml',
+                             'v_a_003.xml',
+                             'v_b_001.xml',
+                             'v_c_001.xml',
+                             'v_d_004.xml',
+                             'v_e_003.xml',
+                             'v_e_004.xml',
+                             'v_a_005.xml',
+                             'v_b_004.xml',
+                             'v_f_005.xml',
+                             'v_f_002.xml',
+                             'v_g_005.xml',
+                             'UNKNOWN.xml',
+                             'UNKNOWN.xml',
+                             'v_a_001.xml',
+                             'v_b_003.xml',
+                             'v_f_004.xml',
+                             'v_f_003.xml',
+                             'v_g_003.xml',
+                             'UNKNOWN.xml',
+                             'UNKNOWN.xml',
+                             'v_g_006.xml',
+                             'v_g_006.xml',
+                             'v_g_006.xml',
+                             'v_a_004.xml',
+                             'v_e_006.xml',
+                             'v_e_005.xml']
         for coeffFile in coeffFiles:
             assert coeffFile in coeffFilesToCheck
 
@@ -86,7 +163,7 @@ class instanceFileHandlerTests(unittest.TestCase):
 
         assert serialNumber == serialNumberToCheck
 
-        node = '/left_leg/ankle/actuator0'
+        node = '/left_leg/ankle/left_actuator'
         serialNumberToCheck = 'v_e_001'
         serialNumber = instanceFileHandler.getActuatorSerialNumberByNode(node)
 
@@ -96,14 +173,38 @@ class instanceFileHandlerTests(unittest.TestCase):
         sampleInstanceFile = self.testDirectory + '/test_files/valkyrie_A.xml'
         instanceFileHandler = InstanceFileHandler(sampleInstanceFile)
         nodes = instanceFileHandler.getNodes()
-        nodesToCheck = ['/left_leg/j1', '/left_leg/j2', '/left_leg/j3', '/left_leg/j4',
-                        '/left_leg/ankle/actuator0', '/left_leg/ankle/actuator1', '/right_leg/j1', '/right_leg/j2',
-                        '/right_leg/j3', '/right_leg/j4', '/right_leg/ankle/actuator0', '/right_leg/ankle/actuator1',
-                        '/left_arm/j1', '/left_arm/j2', '/left_arm/j3', '/left_arm/j4', '/left_arm/j4',
-                        '/left_leg/ankle/actuator0', '/left_leg/ankle/actuator1', '/right_arm/j1', '/right_arm/j2',
-                        '/right_arm/j3', '/right_arm/j4', '/right_arm/j4', '/right_leg/ankle/actuator0',
-                        '/right_leg/ankle/actuator1', '/neck/j1', '/neck/j2', '/neck/j3', '/trunk/j1',
-                        '/trunk/waist/actuator0', '/trunk/waist/actuator1']
+        nodesToCheck = ['/left_leg/j1',
+                        '/left_leg/j2',
+                        '/left_leg/j3',
+                        '/left_leg/j4',
+                        '/left_leg/ankle/left_actuator',
+                        '/left_leg/ankle/right_actuator',
+                        '/right_leg/j1',
+                        '/right_leg/j2',
+                        '/right_leg/j3',
+                        '/right_leg/j4',
+                        '/right_leg/ankle/left_actuator',
+                        '/right_leg/ankle/right_actuator',
+                        '/left_arm/j3',
+                        '/left_arm/j2',
+                        '/left_arm/j3',
+                        '/left_arm/j4',
+                        '/left_arm/j5',
+                        '/left_arm/wrist/top_actautor',
+                        '/left_arm/wrist/bottom_actuator',
+                        '/right_arm/j3',
+                        '/right_arm/j2',
+                        '/right_arm/j3',
+                        '/right_arm/j4',
+                        '/right_arm/j5',
+                        '/right_arm/wrist/top_actautor',
+                        '/right_arm/wrist/bottom_actuator',
+                        '/neck/j1',
+                        '/neck/j2',
+                        '/neck/j3',
+                        '/trunk/j1',
+                        '/trunk/waist/left_actuator',
+                        '/trunk/waist/right_actuator']
 
         for node in nodes:
             assert node in nodesToCheck
@@ -113,14 +214,14 @@ class instanceFileHandlerTests(unittest.TestCase):
             '/test_files/sample_instance.xml'
         instanceFileHandler = InstanceFileHandler(sampleInstanceFile)
 
-        expectedConfigDictionary = {'/left_leg/j1': {'configFiles': ['v_a_001.xml', 'a.xml', 'a_sv.xml',
-                                                                     'sensors.xml', 'safety.xml', 'mode.xml'], 'firmware': 'rotary/turbo_bootloader.bin', 'type': 'turbodriver',
-                                                     'location': '/left_leg/j1'}, '/left_leg/ankle/actuator1': {'configFiles': ['v_e_002.xml', 'e.xml',
-                                                                                                                                'e_sv.xml', 'sensors.xml', 'safety.xml', 'mode.xml'], 'firmware': 'linear/turbo_bootloader.bin',
-                                                                                                                'type': 'turbodriver', 'location': '/left_leg/ankle/actuator1'}}
+        expectedConfigDictionary = {'/left_leg/ankle/actuator0': {'configFiles': ['v_e_001.xml', 'e.xml', 'e_sv.xml',
+                                                                                  'sensors.xml', 'safety.xml', 'mode.xml'], 'firmware': 'linear/turbo_bootloader.bin', 'type': 'turbodriver', 'location': '/left_leg/ankle/actuator0'}, '/left_leg/j1':
+                                    {'configFiles': ['v_a_001.xml', 'a.xml', 'a_sv.xml', 'sensors.xml', 'safety.xml', 'mode.xml'], 'firmware':
+                                     'rotary/turbo_bootloader.bin', 'type': 'turbodriver', 'location': '/left_leg/j1'}, '/left_leg/ankle/actuator1': {'configFiles':
+                                                                                                                                                      ['v_e_002.xml', 'e.xml', 'e_sv.xml', 'sensors.xml', 'safety.xml', 'mode.xml'],
+                                                                                                                                                      'firmware': 'linear/turbo_bootloader.bin', 'type': 'turbodriver', 'location': '/left_leg/ankle/actuator1'}}
 
         instanceConfig = instanceFileHandler.getInstanceConfig()
-
         assert cmp(instanceConfig, expectedConfigDictionary) == 0
 
     def testGetFirmwareType(self):
@@ -171,6 +272,14 @@ class instanceFileHandlerTests(unittest.TestCase):
 
         assert cmp(coeffs, expectedCoeffs) == 0
 
+    def testGatherCoeffsHandleKeyError(self):
+        sampleInstanceFile = self.testDirectory + \
+            '/test_files/sample_instance.xml'
+        instanceFileHandler = InstanceFileHandler(sampleInstanceFile)
+
+      # This next line should NOT raise a key error!
+        coeffs = instanceFileHandler.gatherCoeffs("/bum_leg/j1")
+
     def testLoadXMLCoeffs(self):
         sampleInstanceFile = self.testDirectory + \
             '/test_files/sample_instance.xml'
@@ -199,9 +308,17 @@ class instanceFileHandlerTests(unittest.TestCase):
                           'JointSafety_LimitZone_Rad': {'source': 'v_a_001.xml', 'value': 0.07},
                           'PositionControl_Input_fc_Hz': {'source': 'v_a_001.xml', 'value': 30.0}}
 
-        # print instanceFileHandler.loadXMLCoeffs('v_a_001.xml')
         assert cmp(instanceFileHandler.loadXMLCoeffs(
             'v_a_001.xml'), expectedCoeffs) == 0
+
+    def testLoadAnkleInstanceFile(self):
+        sampleInstanceFile = self.testDirectory + '/test_files/ankle_instance.xml'
+        instanceFileHandler = InstanceFileHandler(sampleInstanceFile)
+
+        nodesToCheck = instanceFileHandler.getNodes()
+
+        assert '/left_leg/ankle/left_actuator' in nodesToCheck
+        assert '/left_leg/ankle/right_actuator' in nodesToCheck
 
 if __name__ == '__main__':
     unittest.main()

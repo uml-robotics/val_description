@@ -1,5 +1,5 @@
 <robot xmlns:xacro="http://ros.org/wiki/xacro" name="Pelvis">
-    <xacro:property name="Pelvis_Link_Name" value="Pelvis" />
+    <xacro:property name="Pelvis_Link_Name" value="pelvis" />
 
     <xacro:macro name="make_pelvis">
         <xacro:standard_link name="${Pelvis_Link_Name}"
@@ -13,12 +13,12 @@
     </xacro:macro>
 
     <xacro:macro name="v1_pelvis_sensors">
-        <xacro:microstrain_sensor sensorName="RightPelvisIMU"
+        <xacro:microstrain_sensor sensorName="rightPelvisIMU"
                                   parentLink="${Pelvis_Link_Name}"
                                   origin_xyz="0.0515 -0.115 -0.042"
                                   origin_rpy="-1.57 0.0 1.274" />
 
-        <xacro:microstrain_sensor sensorName="LeftPelvisIMU"
+        <xacro:microstrain_sensor sensorName="leftPelvisIMU"
                                   parentLink="${Pelvis_Link_Name}"
                                   origin_xyz="0.0515 0.115 -0.042"
                                   origin_rpy="1.57 0 -1.274" />

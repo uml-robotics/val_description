@@ -1,17 +1,17 @@
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="waist">
 
-  <xacro:include filename="$(find val_description)/common/xacro/joint_names/valkyrie_joint_names.xacro"/>
-  <xacro:include filename="$(find val_description)/common/xacro/actuator_names/valkyrie_actuator_names.xacro"/>
-  <xacro:include filename="$(find val_description)/common/xacro/nodes/valkyrie_nodes.xacro"/>
-  <xacro:include filename="$(find val_description)/common/xacro/api/valkyrie_api.xacro"/>
-  <xacro:include filename="$(find val_description)/model/robots/common/xacro/waist/joint_axes.xacro"/>
-  <xacro:include filename="$(find val_description)/model/robots/common/xacro/waist/joint_axes.xacro"/>
-  <xacro:include filename="$(find val_description)/model/robots/common/xacro/waist/link_names.xacro"/>
-  <xacro:include filename="$(find val_description)/model/robots/common/xacro/waist/joint_limits.xacro"/>
-  <xacro:include filename="$(find val_description)/model/robots/common/xacro/waist/frame_parameters.xacro"/>
-  <xacro:include filename="$(find val_description)/model/robots/common/xacro/waist/mass_parameters.xacro"/>
-  <xacro:include filename="$(find val_description)/model/robots/common/xacro/sensors/microstrain.xacro"/>
-  <xacro:include filename="$(find val_description)/model/robots/common/xacro/sensors/flea.xacro"/>
+  <xacro:include filename="../../common/xacro/joint_names/valkyrie_joint_names.xacro"/>
+  <xacro:include filename="../../common/xacro/actuator_names/valkyrie_actuator_names.xacro"/>
+  <xacro:include filename="../../common/xacro/nodes/valkyrie_nodes.xacro"/>
+  <xacro:include filename="../../common/xacro/api/valkyrie_api.xacro"/>
+  <xacro:include filename="common/xacro/waist/joint_axes.xacro"/>
+  <xacro:include filename="common/xacro/waist/joint_axes.xacro"/>
+  <xacro:include filename="common/xacro/waist/link_names.xacro"/>
+  <xacro:include filename="common/xacro/waist/joint_limits.xacro"/>
+  <xacro:include filename="common/xacro/waist/frame_parameters.xacro"/>
+  <xacro:include filename="common/xacro/waist/mass_parameters.xacro"/>
+  <xacro:include filename="common/xacro/sensors/microstrain.xacro"/>
+  <xacro:include filename="common/xacro/sensors/flea.xacro"/>
 
   <xacro:macro name="make_waist_common" params="waist_root_link">
 
@@ -88,24 +88,24 @@
   </xacro:macro>
 
   <xacro:macro name="v1_trunk_sensors">
-    <xacro:microstrain_sensor sensorName="RightTorsoIMU"
+    <xacro:microstrain_sensor sensorName="rightTorsoIMU"
                               parentLink="${TorsoRollLinkName}"
                               origin_xyz="-0.047 -0.134 0.363"
                               origin_rpy="-1.57 0.0 3.14" />
 
-    <xacro:microstrain_sensor sensorName="LeftTorsoIMU"
+    <xacro:microstrain_sensor sensorName="leftTorsoIMU"
                               parentLink="${TorsoRollLinkName}"
                               origin_xyz="-0.047 0.134 0.363"
                               origin_rpy="1.57 0.0 3.14" />
 
-    <xacro:flea3_camera sensorName="RightHazardCamera"
+    <xacro:flea3_camera sensorName="rightHazardCamera"
                         parentLink="${TorsoRollLinkName}"
                         origin_xyz="0.0345 -0.0406 0.1135"
                         origin_rpy="1.57 0.0 1.57"
                         imageFormat="R8G8B8"
                         frameRate="60"/>
 
-    <xacro:flea3_camera sensorName="LeftHazardCamera"
+    <xacro:flea3_camera sensorName="leftHazardCamera"
                         parentLink="${TorsoRollLinkName}"
                         origin_xyz="0.0345 0.0406 0.1135"
                         origin_rpy="1.57 0.0 1.57"

@@ -1,12 +1,12 @@
 <?xml version="1.0" ?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="v1/index_finger">
 
-  <xacro:include filename="$(find val_description)/common/xacro/joint_names/valkyrie_joint_names.xacro"/>
-  <xacro:include filename="$(find val_description)/model/robots/common/xacro/index_finger/joint_axes.xacro"/>
-  <xacro:include filename="$(find val_description)/model/robots/common/xacro/index_finger/link_names.xacro"/>
-  <xacro:include filename="$(find val_description)/model/robots/common/xacro/index_finger/joint_limits.xacro"/>
-  <xacro:include filename="$(find val_description)/model/robots/common/xacro/index_finger/frame_parameters.xacro"/>
-  <xacro:include filename="$(find val_description)/model/robots/common/xacro/index_finger/mass_parameters.xacro"/>
+  <xacro:include filename="../../common/xacro/joint_names/valkyrie_joint_names.xacro"/>
+  <xacro:include filename="common/xacro/index_finger/joint_axes.xacro"/>
+  <xacro:include filename="common/xacro/index_finger/link_names.xacro"/>
+  <xacro:include filename="common/xacro/index_finger/joint_limits.xacro"/>
+  <xacro:include filename="common/xacro/index_finger/frame_parameters.xacro"/>
+  <xacro:include filename="common/xacro/index_finger/mass_parameters.xacro"/>
 
   <xacro:macro name="make_index_finger" params="prefix reflect index_finger_root_link">
     
