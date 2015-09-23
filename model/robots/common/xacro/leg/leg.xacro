@@ -163,7 +163,7 @@
     <xacro:virtual_fixed_frame_offset name="${prefix}COP"
                        parentLink="${AnkleRollLinkName}"
                        origin_xyz="0.0189 0.0 -0.0783"
-                       origin_rpy="0.0 0.13 0.0"/>
+                       origin_rpy="0.0 0.0 0.0"/>
 
     <xacro:ati_force_torque_sensor sensorName="${prefix}FootSixAxis"
                         parentLink="${AnkleRollLinkName}"
