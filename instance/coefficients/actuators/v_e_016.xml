@@ -11,7 +11,7 @@
     <Coeffs>
         <Coeff id="APS1_BiasComp_Enable" value="0.0"/>
         <Coeff id="EncMountingDir" value="1.0"/>
-        <Coeff id="EncoderIndexOffset" value="0.4319"/>
+        <Coeff id="EncoderIndexOffset" value="0.609"/>
         <Coeff id="ForceControl_MotorForceDirection" value="1.0"/>
         <Coeff id="ForceOffset_N" value="0.0"/>
         <Coeff id="JointForceLimit_N" value="2500.0"/>

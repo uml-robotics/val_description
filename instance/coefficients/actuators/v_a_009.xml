@@ -23,7 +23,7 @@
         <Coeff id="JointSafety_LowerLimit_Rad" value="-2.6"/>
         <Coeff id="JointSafety_UpperLimit_Rad" value="2.6"/>
         <Coeff id="PositionControl_MotorTorqueDirection" value="1.0"/>
-        <Coeff id="SpringAPS_BitOffset" value="593162900.0"/>
+        <Coeff id="SpringAPS_BitOffset" value="57038667.0"/>
         <Coeff id="TorqueControl_MotorTorqueDirection" value="1.0"/>
         <Coeff id="TorqueOffset_Nm" value="0.0"/>
         <Coeff id="PositionOffset_Rad" value="-1.48335931302"/>
