@@ -158,7 +158,7 @@
     <xacro:make_ankle_joints prefix="${prefix}" reflect="${reflect}" leg_root_link="${leg_root_link}" />
   </xacro:macro>
 
-  <xacro:macro name="v1_leg_sensors" params="prefix reflect">
+  <xacro:macro name="v1_leg_sensors" params="prefix reflect ATI_serial_number">
 
     <xacro:virtual_fixed_frame_offset name="${prefix}COP"
                        parentLink="${AnkleRollLinkName}"
@@ -168,7 +168,8 @@
     <xacro:ati_force_torque_sensor sensorName="${prefix}FootSixAxis"
                         parentLink="${AnkleRollLinkName}"
                         origin_xyz="0.0215646 0.0 -0.051054"
-                        origin_rpy="3.14 0.0 -1.047"/>
+                        origin_rpy="3.14 0.0 -1.047"
+                        sensor_number="${ATI_serial_number}"/>
   </xacro:macro>
 
   <xacro:macro name="leg_transmissions_hw" params="prefix">
