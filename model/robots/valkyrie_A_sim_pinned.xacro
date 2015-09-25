@@ -6,6 +6,7 @@
     <xacro:include filename="$(find val_description)/model/robots/common/xacro/common_bodies.xacro" />
     <xacro:include filename="$(find val_description)/model/robots/common/xacro/valkyrie_base_sim.xacro"/>
     <xacro:include filename="$(find val_description)/model/urdf/multisense_sl.urdf" />
+    <xacro:include filename="../../common/xacro/serial_numbers/valkyrie_A_serials.xacro"/>
 
 
 	<!-- ros_control plugin -->
