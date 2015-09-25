@@ -222,7 +222,6 @@
     <transmission name="${jointName}Transmission">
       <type>transmission_interface/SimpleTransmission</type>
       <joint name="${jointName}">
-        <hardwareInterface>EffortJointInterface</hardwareInterface>
       </joint>
       <actuator name="${actuatorName}">
         <node name="${nodeName}"/>
