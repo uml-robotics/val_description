@@ -37,11 +37,11 @@
 	</Joint>
       <Actuator id="leftAnkleLeftActuator">
         <SerialNumber id="v_e_001"/>
-        <Node id="/left_leg/left_actuator"/>
+        <Node id="/left_leg/ankle/left_actuator"/>
       </Actuator>
       <Actuator id="leftAnkleRightActuator">
         <SerialNumber id="v_e_002"/>
-        <Node id="/left_leg/right_actuator"/>
+        <Node id="/left_leg/ankle/right_actuator"/>
       </Actuator>
     </Mechanism>
     <Mechanism id="rightHipYaw" type="simple">
@@ -67,11 +67,11 @@
 	</Joint>
       <Actuator id="rightAnkleLeftActuator">
         <SerialNumber id="v_e_003"/>
-        <Node id="/right_leg/left_actuator"/>
+        <Node id="/right_leg/ankle/left_actuator"/>
       </Actuator>
       <Actuator id="rightAnkleRightActuator">
         <SerialNumber id="v_e_004"/>
-        <Node id="/right_leg/right_actuator"/>
+        <Node id="/right_leg/ankle/right_actuator"/>
       </Actuator>
     </Mechanism>
     <Mechanism id="leftShoulderPitch" type="simple">

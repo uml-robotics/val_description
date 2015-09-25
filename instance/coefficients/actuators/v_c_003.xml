@@ -4,7 +4,7 @@
         <FileGenDate date="2013-12-13" time="16:39:20.897247"/>
     </Properties>
     <ClassFile id="c.xml"/>
-    <ControllerFile id="c_dh.xml"/>
+    <ControllerFile id="c_sv.xml"/>
     <LocationFile id="testbench.xml"/>
     <SensorsFile id="sensors.xml"/>
     <SafetyFile id="safety.xml"/>
@@ -19,7 +19,7 @@
         <Coeff id="JointSafety_LowerLimit_Rad" value="-3.05"/>
         <Coeff id="JointSafety_UpperLimit_Rad" value="3.087"/>
         <Coeff id="JointSensors_MotorPosition" value="1.0"/>
-        <Coeff id="JointSensors_OutputForce" value="0.0"/>
+        <Coeff id="JointSensors_OutputForce" value="2.0"/>
         <Coeff id="JointSensors_OutputPosition" value="2.0"/>
         <Coeff id="JointSensors_OutputVelocity" value="3.0"/>
         <Coeff id="JointTorqueLimit_Nm" value="350.0"/>
