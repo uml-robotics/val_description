@@ -19,6 +19,7 @@ class InstanceFileHandler():
         self.calibrationFileCoeffPath = self.coeffFileRootPath + '/calibration'
         self.classFileCoeffPath = self.coeffFileRootPath + '/class'
         self.controllerFileCoeffPath = self.coeffFileRootPath + '/controllers'
+        self.locationFileCoeffPath = self.coeffFileRootPath + '/location'
         self.modeFileCoeffPath = self.coeffFileRootPath + '/modes'
         self.safetyFileCoeffPath = self.coeffFileRootPath + '/safety'
         self.sensorFileCoeffPath = self.coeffFileRootPath + '/sensors'
@@ -113,6 +114,11 @@ class InstanceFileHandler():
                     raise Exception('ControllerFile tag does not exist or is misspelled in actuator coeff file!')
 
                 try:
+                    actuatorLocationFile = actuatorXmlCoeffFile.find('LocationFile').get('id')
+                except AttributeError:
+                    raise Exception('LocationFile tag does not exist or is misspelled in actuator coeff file!')
+
+                try:
                     actuatorSensorsFile = actuatorXmlCoeffFile.find('SensorsFile').get('id')
                 except AttributeError:
                     raise Exception('SensorFile tag does not exist or is misspelled in actuator coeff file!')
@@ -137,6 +143,8 @@ class InstanceFileHandler():
                     'configFiles'].append(actuatorClassFile)
                 self.configDictionary[node][
                     'configFiles'].append(actuatorControllerFile)
+                self.configDictionary[node][
+                    'configFiles'].append(actuatorLocationFile)
                 self.configDictionary[node][
                     'configFiles'].append(actuatorSensorsFile)
                 self.configDictionary[node][
