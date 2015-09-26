@@ -55,7 +55,6 @@
                     ixx="${TorsoYawLinkInertia_IXX}" ixy="${TorsoYawLinkInertia_IXY}" ixz="${TorsoYawLinkInertia_IXZ}"
                     iyy="${TorsoYawLinkInertia_IYY}" iyz="${TorsoYawLinkInertia_IYZ}" izz="${TorsoYawLinkInertia_IZZ}"
                     visual_mesh="${mesh_root}/torso/torsoyaw.dae"
-                    material="White"
                     collision_mesh="${mesh_root}/torso/torsoyaw.dae" />
 
     <xacro:standard_link name="${TorsoPitchLinkName}"
@@ -65,7 +64,6 @@
                     ixx="${TorsoPitchLinkInertia_IXX}" ixy="${TorsoPitchLinkInertia_IXY}" ixz="${TorsoPitchLinkInertia_IXZ}"
                     iyy="${TorsoPitchLinkInertia_IYY}" iyz="${TorsoPitchLinkInertia_IYZ}" izz="${TorsoPitchLinkInertia_IZZ}"
                     visual_mesh="${mesh_root}/torso/torsopitch.dae"
-                    material="White"
                     collision_mesh="${mesh_root}/torso/torsopitch.dae" />
 
     <xacro:standard_link name="${TorsoRollLinkName}"
@@ -75,7 +73,6 @@
                     origin_rpy="0 0 0"
                     origin_xyz="${TorsoRollLinkComPosition}"
                     visual_mesh="${mesh_root}/torso/torso.dae"
-                    material="White"
                     collision_mesh="${mesh_root}/torso/torso.dae" />
 
     <xacro:make_waist_common waist_root_link="${waist_root_link}"/>

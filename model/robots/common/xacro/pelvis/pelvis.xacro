@@ -8,7 +8,7 @@
                         ixx="0.11866378" ixy="-0.000143482" ixz="0.003271293"
                         iyy="0.097963425" iyz="0.002159545" izz="0.083854638"
                         origin_rpy="0 0 0"
-                        visual_mesh="${mesh_root}/pelvis/pelvis.dae" material="White"
+                        visual_mesh="${mesh_root}/pelvis/pelvis.dae"
                         collision_mesh="${mesh_root}/pelvis/pelvis.dae"/>
     </xacro:macro>
 

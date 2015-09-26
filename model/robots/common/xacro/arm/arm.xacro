@@ -19,7 +19,6 @@
                     ixx="${ShoulderPitchLinkInertia_IXX}" ixy="${ShoulderPitchLinkInertia_IXY}" ixz="${ShoulderPitchLinkInertia_IXZ}"
                     iyy="${ShoulderPitchLinkInertia_IYY}" iyz="${ShoulderPitchLinkInertia_IYZ}" izz="${ShoulderPitchLinkInertia_IZZ}"
                     visual_mesh="${mesh_root}/arms/aj1_${prefix}.dae"
-                    material="Gold"
                     collision_mesh="${mesh_root}/arms/aj1_${prefix}.dae" />
 
     <xacro:standard_link name="${ShoulderRollLinkName}"
@@ -29,7 +28,6 @@
                     iyy="${ShoulderRollLinkInertia_IYY}" iyz="${ShoulderRollLinkInertia_IYZ}" izz="${ShoulderRollLinkInertia_IZZ}"
                     origin_rpy="0 0 0"
                     visual_mesh="${mesh_root}/arms/aj2_${prefix}.dae"
-                    material="White"
                     collision_mesh="${mesh_root}/arms/aj2_${prefix}.dae" />
 
     <xacro:standard_link name="${ShoulderYawLinkName}"
@@ -39,7 +37,6 @@
                     iyy="${ShoulderYawLinkInertia_IYY}" iyz="${ShoulderYawLinkInertia_IYZ}" izz="${ShoulderYawLinkInertia_IZZ}"
                     origin_rpy="0 0 0"
                     visual_mesh="${mesh_root}/arms/aj3_${prefix}.dae"
-                    material="White"
                     collision_mesh="${mesh_root}/arms/aj3_${prefix}.dae" />
 
     <xacro:standard_link name="${ElbowPitchLinkName}"
@@ -49,7 +46,6 @@
                     iyy="${ElbowPitchLinkInertia_IYY}" iyz="${ElbowPitchLinkInertia_IYZ}" izz="${ElbowPitchLinkInertia_IZZ}"
                     origin_rpy="0 0 0"
                     visual_mesh="${mesh_root}/arms/aj4_${prefix}.dae"
-                    material="Gold"
                     collision_mesh="${mesh_root}/arms/aj4_${prefix}.dae" />
 
     <xacro:revolute_joint_ex jointName="${ShoulderPitchJointName}"
@@ -112,7 +108,6 @@
                     iyy="${ForearmYawLinkInertia_IYY}" iyz="${ForearmYawLinkInertia_IYZ}" izz="${ForearmYawLinkInertia_IZZ}"
                     origin_rpy="0 0 0"
                     visual_mesh="${mesh_root}/arms/aj5_${prefix}.dae"
-                    material="White"
                     collision_mesh="${mesh_root}/arms/aj5_${prefix}.dae" />
 
     <xacro:standard_link name="${WristRollLinkName}"
@@ -122,7 +117,6 @@
                     iyy="${WristRollLinkInertia_IYY}" iyz="${WristRollLinkInertia_IYZ}" izz="${WristRollLinkInertia_IZZ}"
                     origin_rpy="0 0 0"
                     visual_mesh="${mesh_root}/arms/aj6_${prefix}.dae"
-                    material="White"
                     collision_mesh="${mesh_root}/arms/aj6_${prefix}.dae" />
 
     <xacro:standard_link name="${WristPitchLinkName}"
@@ -132,7 +126,6 @@
                     iyy="${PalmInertia_IYY}" iyz="${PalmInertia_IYZ}" izz="${PalmInertia_IZZ}"
                     origin_rpy="0 0 0"
                     visual_mesh="${mesh_root}/arms/palm_${prefix}.dae"
-                    material="Gold"
                     collision_mesh="${mesh_root}/arms/palm_${prefix}.dae"/>
 
     <xacro:revolute_joint_ex jointName="${ForearmYawJointName}"

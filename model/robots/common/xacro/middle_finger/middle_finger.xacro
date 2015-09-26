@@ -17,7 +17,6 @@
                     iyy="${MiddleFingerPitch1LinkInertia_IYY}" iyz="${MiddleFingerPitch1LinkInertia_IYZ}" izz="${MiddleFingerPitch1LinkInertia_IZZ}"
                     origin_rpy="0 0 0" 
                     visual_mesh="${mesh_root}/fingers/middlej1_${prefix}.dae"
-                    material="Gold"
                     collision_mesh="${mesh_root}/fingers/middlej1_${prefix}.dae"/>
 
     <xacro:standard_link name="${MiddleFingerPitch2LinkName}" 
@@ -27,7 +26,6 @@
                     iyy="${MiddleFingerPitch2LinkInertia_IYY}" iyz="${MiddleFingerPitch2LinkInertia_IYZ}" izz="${MiddleFingerPitch2LinkInertia_IZZ}"
                     origin_rpy="0 0 0" 
                     visual_mesh="${mesh_root}/fingers/middlej2_${prefix}.dae"
-                    material="Gold"
                     collision_mesh="${mesh_root}/fingers/middlej2_${prefix}.dae"/>
 
     <xacro:standard_link name="${MiddleFingerPitch3LinkName}" 
@@ -37,7 +35,6 @@
                     iyy="${MiddleFingerPitch3LinkInertia_IYY}" iyz="${MiddleFingerPitch3LinkInertia_IYZ}" izz="${MiddleFingerPitch3LinkInertia_IZZ}"
                     origin_rpy="0 0 0" 
                     visual_mesh="${mesh_root}/fingers/middlej3_${prefix}.dae"
-                    material="Gold"
                     collision_mesh="${mesh_root}/fingers/middlej3_${prefix}.dae"/>
 
     <xacro:revolute_joint jointName="${MiddleFingerPitch1JointName}" 
