@@ -5,7 +5,7 @@
     </Properties>
     <ClassFile id="f.xml"/>
     <ControllerFile id="f_sv.xml"/>
-    <LocationFile id="elbow_pitch.xml"/>
+    <LocationFile id="elbow_pitch_left.xml"/>
     <SensorsFile id="sensors.xml"/>
     <SafetyFile id="safety.xml"/>
     <ModeFile id="mode.xml"/>
