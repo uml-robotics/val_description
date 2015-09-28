@@ -4,7 +4,7 @@
     </Properties>
     <ClassFile id="a.xml"/>
     <ControllerFile id="a_sv.xml"/>
-    <LocationFile id="testbench.xml"/>
+    <LocationFile id="hip_yaw.xml"/>
     <SensorsFile id="sensors.xml"/>
     <SafetyFile id="safety.xml"/>
     <ModeFile id="mode.xml"/>
@@ -27,7 +27,7 @@
         <Coeff id="SpringAPS_BitOffset" value="57038667.0"/>
         <Coeff id="TorqueControl_MotorTorqueDirection" value="1.0"/>
         <Coeff id="TorqueOffset_Nm" value="0.0"/>
-        <Coeff id="PositionOffset_Rad" value="-1.48335931302"/>
+        <Coeff id="PositionOffset_Rad" value="0.6596"/>
         <Coeff id="JointTorqueLimit_Nm" value="190.0"/>
     </Coeffs>
 </CoeffData>
