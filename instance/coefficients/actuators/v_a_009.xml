@@ -21,13 +21,10 @@
         <Coeff id="JointMaxValue" value="3.14159265359"/>
         <Coeff id="JointMinValue" value="-3.14159265359"/>
         <Coeff id="JointSafety_LimitZone_Rad" value="0.07"/>
-        <Coeff id="JointSafety_LowerLimit_Rad" value="-2.6"/>
-        <Coeff id="JointSafety_UpperLimit_Rad" value="2.6"/>
         <Coeff id="PositionControl_MotorTorqueDirection" value="1.0"/>
         <Coeff id="SpringAPS_BitOffset" value="57038667.0"/>
         <Coeff id="TorqueControl_MotorTorqueDirection" value="1.0"/>
         <Coeff id="TorqueOffset_Nm" value="0.0"/>
         <Coeff id="PositionOffset_Rad" value="0.6596"/>
-        <Coeff id="JointTorqueLimit_Nm" value="190.0"/>
     </Coeffs>
 </CoeffData>
