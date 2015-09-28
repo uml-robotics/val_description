@@ -18,7 +18,6 @@
                     ixx="${HipYawLinkInertia_IXX}" ixy="${HipYawLinkInertia_IXY}" ixz="${HipYawLinkInertia_IXZ}"
                     iyy="${HipYawLinkInertia_IYY}" iyz="${HipYawLinkInertia_IYZ}" izz="${HipYawLinkInertia_IZZ}"
                     visual_mesh="${mesh_root}/legs/lj1_${prefix}.dae"
-                    material="Gold"
                     collision_mesh="${mesh_root}/legs/lj1_${prefix}.dae"/>
 
     <xacro:standard_link name="${HipRollLinkName}"
@@ -28,7 +27,6 @@
                     iyy="${HipRollLinkInertia_IYY}" iyz="${HipRollLinkInertia_IYZ}" izz="${HipRollLinkInertia_IZZ}"
                     origin_rpy="0 0 0"
                     visual_mesh="${mesh_root}/legs/lj2_${prefix}.dae"
-                    material="White"
                     collision_mesh="${mesh_root}/legs/lj2_${prefix}.dae"/>
 
     <xacro:standard_link name="${HipPitchLinkName}"
@@ -38,7 +36,6 @@
                     iyy="${HipPitchLinkInertia_IYY}" iyz="${HipPitchLinkInertia_IYZ}" izz="${HipPitchLinkInertia_IZZ}"
                     origin_rpy="0 0 0"
                     visual_mesh="${mesh_root}/legs/lj3_${prefix}.dae"
-                    material="White"
                     collision_mesh="${mesh_root}/legs/lj3_${prefix}.dae"/>
 
     <xacro:standard_link name="${KneePitchLinkName}"
@@ -48,7 +45,6 @@
                     iyy="${KneePitchLinkInertia_IYY}" iyz="${KneePitchLinkInertia_IYZ}" izz="${KneePitchLinkInertia_IZZ}"
                     origin_rpy="0 0 0"
                     visual_mesh="${mesh_root}/legs/lj4_${prefix}.dae"
-                    material="White"
                     collision_mesh="${mesh_root}/legs/lj4_${prefix}.dae"/>
 
     <xacro:standard_link name="${AnklePitchLinkName}"
@@ -58,7 +54,6 @@
                     iyy="${AnklePitchLinkInertia_IYY}" iyz="${AnklePitchLinkInertia_IYZ}" izz="${AnklePitchLinkInertia_IZZ}"
                     origin_rpy="0 0 0"
                     visual_mesh="${mesh_root}/legs/lj5.dae"
-                    material="White"
                     collision_mesh="${mesh_root}/legs/lj5.dae"/>
 
     <xacro:link_box_collision_mesh_visual name="${AnkleRollLinkName}"
@@ -68,7 +63,6 @@
                     iyy="${FootInertia_IYY}" iyz="${FootInertia_IYZ}" izz="${FootInertia_IZZ}"
                     inertial_rpy="0 0 0"
                     visual_mesh="${mesh_root}/legs/foot.dae"
-                    material="White"
                     width="0.27"
                     height="0.16"
                     depth="0.064"
