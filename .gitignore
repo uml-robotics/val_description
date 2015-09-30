@@ -9,3 +9,6 @@ valkyrie*.xml
 *.orig
 *.pyc
 *.swp
+.*.*.swp
+*.*.swp
+instance/instances/instance_files/*
