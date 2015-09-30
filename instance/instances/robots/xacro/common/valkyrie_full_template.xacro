@@ -21,7 +21,7 @@
 
 		<xacro:arm prefix="right" j1_serial_number="${rightArmJ1SerialNumber}" j2_serial_number="${rightArmJ2SerialNumber}" j3_serial_number="${rightArmJ3SerialNumber}" j4_serial_number="${rightArmJ4SerialNumber}" j5_serial_number="${rightArmJ5SerialNumber}" wrist_actuator0_serial="${rightWristTopActuatorSerialNumber}" wrist_actuator1_serial="${rightWristBottomActuatorSerialNumber}" />
 
-		<xacro:neck j1_serial_number="${neckJ1SerialNumber}" j2_serial_number="${neckJ1SerialNumber}" j3_serial_number="${neckJ1SerialNumber}" />
+		<xacro:neck j1_serial_number="${neckJ1SerialNumber}" j2_serial_number="${neckJ2SerialNumber}" j3_serial_number="${neckJ3SerialNumber}" />
 
 		<xacro:waist j1_serial_number="${trunkSerialNumber}" waist_left_actuator_serial="${waistLeftActuatorSerialNumber}" waist_right_actuator_serial="${waistRightActuatorSerialNumber}"/>
 	</Mechanisms>
