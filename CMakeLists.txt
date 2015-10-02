@@ -5,11 +5,12 @@ project(val_description)
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
 ## is used, also find other catkin packages
 find_package(catkin REQUIRED COMPONENTS
-  xacro
+  xacro 
+  rospy
 )
 
 catkin_package(
- CATKIN_DEPENDS xacro
+ CATKIN_DEPENDS xacro rospy
 )
 
 set(urdf_files "")
@@ -82,6 +83,9 @@ install(DIRECTORY model/meshes/
 )
 install(DIRECTORY model/robots/
   DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/robots
+)
+install(DIRECTORY instance/coefficients/
+  DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/instance/coefficients
 )
 install(DIRECTORY ${URDF_OUTPUT_PATH}
   DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}

@@ -218,7 +218,8 @@ class instanceFileHandlerTests(unittest.TestCase):
                                                                                   'sensors.xml', 'safety.xml', 'mode.xml'], 'firmware': 'linear/turbo_bootloader.bin', 'type': 'turbodriver', 'location': '/left_leg/ankle/actuator0'}, '/left_leg/j1':
                                     {'configFiles': ['v_a_001.xml', 'a.xml', 'a_sv.xml', 'testbench.xml', 'sensors.xml', 'safety.xml', 'mode.xml'], 'firmware':
                                      'rotary/turbo_bootloader.bin', 'type': 'turbodriver', 'location': '/left_leg/j1'}, '/left_leg/ankle/actuator1': {'configFiles':
-                                                                                                                                                      ['v_e_002.xml', 'e.xml', 'e_sv.xml', 'testbench.xml', 'sensors.xml', 'safety.xml', 'mode.xml'],
+                                                                                                                                                      ['v_e_002.xml', 'e.xml', 'e_sv.xml', 'testbench.xml',
+                                                                                                                                                          'sensors.xml', 'safety.xml', 'mode.xml'],
                                                                                                                                                       'firmware': 'linear/turbo_bootloader.bin', 'type': 'turbodriver', 'location': '/left_leg/ankle/actuator1'}}
 
         instanceConfig = instanceFileHandler.getInstanceConfig()
@@ -269,7 +270,7 @@ class instanceFileHandlerTests(unittest.TestCase):
                           'TorqueControl_Kp': 3.351, 'SpringAPS_BitOffset': 115108200.0, 'JointSensors_MotorPosition': 1.0, 'JointSafety_LimitZone_Rad': 0.07,
                           'TorqueControl_enableDynFF': 0.0, 'TorqueControl_autoKd': 0.0, 'JointSensors_OutputForce': 2.0, 'PositionControl_enableInLPF': 1.0,
                           'Commutation_Select': 2.0, 'JointMaxValue': 3.14159265359, 'CurrVelFilter_fc_Hz': 200.0, 'TorqueControl_ParallelDamping': 0.0, 'JointSafety_UpperLimit_Rad': 3.15,
-                          'EncoderCPR': 544.0, 'SpaceVector_CurrentToSV': 1.0, 'CurrentSafeLimit': 13.0, 'EffortControl_Alpha': 0.0, 'EffortControl_AlphaDot':0.5}
+                          'EncoderCPR': 544.0, 'SpaceVector_CurrentToSV': 1.0, 'CurrentSafeLimit': 13.0, 'EffortControl_Alpha': 0.0, 'EffortControl_AlphaDot': 0.5}
         import difflib
         a = '\n'.join(['%s:%s' % (key, value) for (key, value) in sorted(coeffs.items())])
         b = '\n'.join(['%s:%s' % (key, value) for (key, value) in sorted(expectedCoeffs.items())])
@@ -282,7 +283,7 @@ class instanceFileHandlerTests(unittest.TestCase):
             '/test_files/sample_instance.xml'
         instanceFileHandler = InstanceFileHandler(sampleInstanceFile)
 
-      # This next line should NOT raise a key error!
+    # This next line should NOT raise a key error!
         coeffs = instanceFileHandler.gatherCoeffs("/bum_leg/j1")
 
     def testLoadXMLCoeffs(self):

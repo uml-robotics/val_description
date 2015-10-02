@@ -1,5 +1,6 @@
 import os
 import xml.etree.ElementTree as xmlParser
+import rospkg
 
 
 class InstanceFileHandler():
@@ -12,9 +13,10 @@ class InstanceFileHandler():
             self.robotChildren.append(child)
 
         # Setup paths to the various coeff files
-        self.thisFilePath = os.path.dirname(os.path.abspath(__file__))
-        self.coeffFileRootPath = self.thisFilePath + \
-            '/../../instance/coefficients'
+        rospack = rospkg.RosPack()
+        self.valDescriptionPackagePath = rospack.get_path('val_description')
+        self.coeffFileRootPath = self.valDescriptionPackagePath + '/instance/coefficients'
+
         self.actuatorFileCoeffPath = self.coeffFileRootPath + '/actuators'
         self.calibrationFileCoeffPath = self.coeffFileRootPath + '/calibration'
         self.classFileCoeffPath = self.coeffFileRootPath + '/class'
