@@ -178,7 +178,7 @@ class InstanceFileHandler():
     def getChannels(self):
         return self.channels
 
-    def getNodes(self):
+    def getNodeNames(self):
         return self.nodes
 
     def getDevices(self):
@@ -204,7 +204,7 @@ class InstanceFileHandler():
     def getType(self, target):
         return self.configDictionary[target]['type']
 
-    def getFirmwareType(self, nodeName):
+    def getFirmware(self, nodeName):
         return self.configDictionary[nodeName]['firmware']
 
     def getNodeType(self, nodeName):
