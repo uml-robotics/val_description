@@ -181,6 +181,9 @@ class InstanceFileHandler():
     def getNodes(self):
         return self.nodes
 
+    def getNodeNames(self):
+        return self.nodes
+
     def getDevices(self):
         return self.devices
 
