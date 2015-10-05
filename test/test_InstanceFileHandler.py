@@ -172,7 +172,7 @@ class instanceFileHandlerTests(unittest.TestCase):
     def testGetNodes(self):
         sampleInstanceFile = self.testDirectory + '/test_files/valkyrie_A.xml'
         instanceFileHandler = InstanceFileHandler(sampleInstanceFile)
-        nodes = instanceFileHandler.getNodes()
+        nodes = instanceFileHandler.getNodeNames()
         nodesToCheck = ['/left_leg/j1',
                         '/left_leg/j2',
                         '/left_leg/j3',
@@ -231,7 +231,7 @@ class instanceFileHandlerTests(unittest.TestCase):
         instanceFileHandler = InstanceFileHandler(sampleInstanceFile)
 
         expectedFirmwareType = 'rotary/turbo_bootloader.bin'
-        firmwareType = instanceFileHandler.getFirmwareType('/left_leg/j1')
+        firmwareType = instanceFileHandler.getFirmware('/left_leg/j1')
 
         assert firmwareType == expectedFirmwareType
 
@@ -318,7 +318,7 @@ class instanceFileHandlerTests(unittest.TestCase):
         sampleInstanceFile = self.testDirectory + '/test_files/ankle_instance.xml'
         instanceFileHandler = InstanceFileHandler(sampleInstanceFile)
 
-        nodesToCheck = instanceFileHandler.getNodes()
+        nodesToCheck = instanceFileHandler.getNodeNames()
 
         assert '/left_leg/ankle/left_actuator' in nodesToCheck
         assert '/left_leg/ankle/right_actuator' in nodesToCheck
