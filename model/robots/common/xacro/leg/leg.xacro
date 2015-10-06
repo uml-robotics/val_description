@@ -171,7 +171,7 @@
     <xacro:simple_transmission jointName="${HipRollJointName}" actuatorName="${HipRollActuatorName}" nodeName="${HipRollNode}" actuatorApi="${HipRollApi}"/>
     <xacro:simple_transmission jointName="${HipPitchJointName}" actuatorName="${HipPitchActuatorName}" nodeName="${HipPitchNode}" actuatorApi="${HipPitchApi}"/>
     <xacro:simple_transmission jointName="${KneePitchJointName}" actuatorName="${KneePitchActuatorName}" nodeName="${KneePitchNode}" actuatorApi="${KneePitchApi}"/> 
-    <xacro:pushrod_transmission transmissionName="${prefix}AnkleTransmission" joint1Name="${AnklePitchJointName}" joint2Name="${AnkleRollJointName}" actuator1Name="${AnkleInsideActuatorName}" actuator2Name="${AnkleOutsideActuatorName}" actuator1Node="${AnkleInsideActuatorNode}" actuator2Node="${AnkleOutsideActuatorNode}" joint1Role="pitch" joint2Role="roll" actuator1Role="insideActuator" actuator2Role="outsideActuator" actuator1Api="${AnkleInsideActuatorApi}" actuator2Api="${AnkleOutsideActuatorApi}"/>
+    <xacro:pushrod_transmission transmissionName="${prefix}AnkleTransmission" transmissionType="AnklePushrodTransmission" joint1Name="${AnklePitchJointName}" joint2Name="${AnkleRollJointName}" actuator1Name="${AnkleLeftActuatorName}" actuator2Name="${AnkleRightActuatorName}" actuator1Node="${AnkleLeftActuatorNode}" actuator2Node="${AnkleRightActuatorNode}" actuator1Api="${AnkleLeftActuatorApi}" actuator2Api="${AnkleRightActuatorApi}"/>
   </xacro:macro>
 
   <xacro:macro name="leg_transmissions_sim" params="prefix">
@@ -179,7 +179,7 @@
     <xacro:simple_transmission jointName="${HipRollJointName}" actuatorName="${HipRollActuatorName}" nodeName="${HipRollNode}" actuatorApi="${SimApi}"/>
     <xacro:simple_transmission jointName="${HipPitchJointName}" actuatorName="${HipPitchActuatorName}" nodeName="${HipPitchNode}" actuatorApi="${SimApi}"/>
     <xacro:simple_transmission jointName="${KneePitchJointName}" actuatorName="${KneePitchActuatorName}" nodeName="${KneePitchNode}" actuatorApi="${SimApi}"/> 
-    <xacro:simple_transmission jointName="${AnklePitchJointName}" actuatorName="${AnkleInsideActuatorName}" nodeName="${AnkleInsideActuatorNode}" actuatorApi="${SimApi}"/> 
-    <xacro:simple_transmission jointName="${AnkleRollJointName}" actuatorName="${AnkleOutsideActuatorName}" nodeName="${AnkleOutsideActuatorNode}" actuatorApi="${SimApi}"/> 
+    <xacro:simple_transmission jointName="${AnklePitchJointName}" actuatorName="${AnkleLeftActuatorName}" nodeName="${AnkleLeftActuatorNode}" actuatorApi="${SimApi}"/> 
+    <xacro:simple_transmission jointName="${AnkleRollJointName}" actuatorName="${AnkleRightActuatorName}" nodeName="${AnkleRightActuatorNode}" actuatorApi="${SimApi}"/> 
   </xacro:macro>
 </robot>

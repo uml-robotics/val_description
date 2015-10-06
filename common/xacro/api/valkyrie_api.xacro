@@ -4,8 +4,8 @@
 	<xacro:property name="HipRollApi" value="robot_hardware_interface/TurbodriverAPI_DRCv4" />
 	<xacro:property name="HipPitchApi" value="robot_hardware_interface/TurbodriverAPI_DRCv4" />
 	<xacro:property name="KneePitchApi" value="robot_hardware_interface/TurbodriverAPI_DRCv4" />
-	<xacro:property name="AnkleInsideActuatorApi" value="robot_hardware_interface/TurbodriverAPI_DRCv4_linear" />
-	<xacro:property name="AnkleOutsideActuatorApi" value="robot_hardware_interface/TurbodriverAPI_DRCv4_linear" />
+	<xacro:property name="AnkleRightActuatorApi" value="robot_hardware_interface/TurbodriverAPI_DRCv4_linear" />
+	<xacro:property name="AnkleLeftActuatorApi" value="robot_hardware_interface/TurbodriverAPI_DRCv4_linear" />
 
 	<xacro:property name="ShoulderPitchApi" value="robot_hardware_interface/TurbodriverAPI_DRCv4" />
 	<xacro:property name="ShoulderRollApi" value="robot_hardware_interface/TurbodriverAPI_DRCv4" />
