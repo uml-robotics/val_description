@@ -4,8 +4,8 @@
 	<xacro:property name="HipRollNode" value="/${prefix}_leg/j2" />
 	<xacro:property name="HipPitchNode" value="/${prefix}_leg/j3" />
 	<xacro:property name="KneePitchNode" value="/${prefix}_leg/j4" />
-	<xacro:property name="AnkleLeftActuatorNode" value="/${prefix}_leg/left_actuator" />
-	<xacro:property name="AnkleRightActuatorNode" value="/${prefix}_leg/right_actuator" />
+	<xacro:property name="AnkleLeftActuatorNode" value="/${prefix}_leg/ankle/left_actuator" />
+	<xacro:property name="AnkleRightActuatorNode" value="/${prefix}_leg/ankle/right_actuator" />
 
 	<xacro:property name="ShoulderPitchNode" value="/trunk/${prefix}_arm_j1" />
 	<xacro:property name="ShoulderRollNode" value="/${prefix}_arm/j2" />
@@ -28,8 +28,8 @@
 	<xacro:property name="torso_imu1_node" value="/torso/sensors/imu1" />
 	<xacro:property name="torso_imu2_node" value="/torso/sensors/imu2" />
 
-	<xacro:property name="left_foot_ATI_node" value="/left_leg/j6" />
-	<xacro:property name="right_foot_ATI_node" value="/right_leg/j6" />
+	<xacro:property name="left_foot_ATI_node" value="/left_leg/ankle/left_actuator" />
+	<xacro:property name="right_foot_ATI_node" value="/right_leg/ankle/left_actuator" />
 
 	<xacro:macro name="all_channels" >
 		<Channels>
