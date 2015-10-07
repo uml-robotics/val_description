@@ -28,8 +28,8 @@
 	<xacro:property name="torso_imu1_node" value="/torso/sensors/imu1" />
 	<xacro:property name="torso_imu2_node" value="/torso/sensors/imu2" />
 
-	<xacro:property name="left_foot_ATI_node" value="/sensors/left_leg/force_torque" />
-	<xacro:property name="right_foot_ATI_node" value="/sensors/right_leg/force_torque" />
+	<xacro:property name="left_foot_ATI_node" value="/left_leg/j6" />
+	<xacro:property name="right_foot_ATI_node" value="/right_leg/j6" />
 
 	<xacro:macro name="all_channels" >
 		<Channels>
