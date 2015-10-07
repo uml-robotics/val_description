@@ -1,6 +1,6 @@
 <?xml version="1.0" ?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="ati_force_torque_sensor">
-  <xacro:macro name="ati_force_torque_sensor" params="sensorName parentLink origin_xyz origin_rpy sensor_number">
+  <xacro:macro name="ati_force_torque_sensor" params="sensorName parentLink origin_xyz origin_rpy sensor_number sensor_node">
 	
 	<xacro:massless_virtual_link name="${sensorName}_Frame" 
                     origin_rpy="0 0 0" 
@@ -15,6 +15,7 @@
       <sensor name="${sensorName}" type="force_torque">
         <frame>child</frame>
         <sensor_number id="${sensor_number}" />
+        <!-- <sensor_node ide="${sensor_node}" /> -->
     	</sensor>
     </gazebo>
 
