@@ -165,7 +165,8 @@
                         origin_xyz="0.0215646 0.0 -0.051054"
                         origin_rpy="3.14 0.0 -1.047"
                         sensor_number="${ATI_serial_number}" 
-                        sensor_node="${ATI_node}"/>
+                        sensor_node="${ATI_node}"
+                        sensor_api="${AtiSensorApi}" />
   </xacro:macro>
 
   <xacro:macro name="leg_transmissions_hw" params="prefix">
