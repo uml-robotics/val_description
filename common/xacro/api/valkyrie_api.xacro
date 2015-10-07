@@ -23,6 +23,8 @@
 	<xacro:property name="WaistLeftActuatorApi" value="robot_hardware_interface/TurbodriverAPI_DRCv4_linear" />
 	<xacro:property name="WaistRightActuatorApi" value="robot_hardware_interface/TurbodriverAPI_DRCv4_linear" />
 
+	<xacro:property name="AtiSensorApi" value="TurbodriverForceTorqueSensor_v1.xml" />
+
 	<xacro:property name="SimApi" value="robot_hardware_interface/TurboDriverSimApiDRC_v4" />
 
     
