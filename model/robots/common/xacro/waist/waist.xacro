@@ -112,7 +112,7 @@
 
    <xacro:macro name="waist_transmissions_hw">
     <xacro:simple_transmission jointName="${TorsoYawJointName}" actuatorName="${TorsoYawActuatorName}" nodeName="${TrunkYawNode}" actuatorApi="${TrunkYawApi}"/> 
-    <xacro:pushrod_transmission transmissionName="WaistTransmission" transmissionType="TorsoPushrodTransmission" joint1Name="${TorsoPitchJointName}" joint2Name="${TorsoRollJointName}" actuator1Name="${WaistLeftActuatorName}" actuator2Name="${WaistRightActuatorName}" actuator1Node="${WaistLeftActuatorNode}" actuator2Node="${WaistRightActuatorNode}" actuator1Api="${WaistLeftActuatorApi}" actuator2Api="${WaistRightActuatorApi}"/>
+    <xacro:pushrod_transmission transmissionName="WaistTransmission" transmissionType="TorsoPushrodTransmission" joint1Name="${TorsoPitchJointName}" joint2Name="${TorsoRollJointName}" actuator1Name="${WaistRightActuatorName}" actuator2Name="${WaistLeftActuatorName}" actuator1Node="${WaistRightActuatorNode}" actuator2Node="${WaistLeftActuatorNode}" actuator1Api="${WaistRightActuatorApi}" actuator2Api="${WaistLeftActuatorApi}"/>
    </xacro:macro>
 
    <xacro:macro name="waist_transmissions_sim">
