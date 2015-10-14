@@ -180,7 +180,7 @@
     <xacro:simple_transmission jointName="${ShoulderYawJointName}" actuatorName="${ShoulderYawActuatorName}" nodeName="${ShoulderYawNode}" actuatorApi="${ShoulderYawApi}"/>
     <xacro:simple_transmission jointName="${ElbowPitchJointName}" actuatorName="${ElbowPitchActuatorName}" nodeName="${ElbowPitchNode}" actuatorApi="${ElbowPitchApi}"/> 
     <xacro:simple_transmission jointName="${ForearmYawActuatorName}" actuatorName="${ForearmYawActuatorName}" nodeName="${ForearmYawNode}" actuatorApi="${ForearmYawApi}"/> 
-    <xacro:pushrod_transmission transmissionName="${prefix}WristTransmission" transmissionType="WristPushrodTransmission" joint1Name="${WristPitchJointName}" joint2Name="${WristRollJointName}" actuator1Name="${WristTopActuatorName}" actuator2Name="${WristBottomActuatorName}" actuator1Node="${WristTopActuatorNode}" actuator2Node="${WristBottomActuatorNode}" actuator1Api="WristTopActuatorApi" actuator2Api="${WristBottomActuatorApi}"/>
+    <xacro:pushrod_transmission transmissionName="${prefix}WristTransmission" transmissionType="WristPushrodTransmission" joint1Name="${WristPitchJointName}" joint2Name="${WristRollJointName}" actuator1Name="${WristTopActuatorName}" actuator2Name="${WristBottomActuatorName}" actuator1Node="${WristTopActuatorNode}" actuator2Node="${WristBottomActuatorNode}" actuator1Api="${WristTopActuatorApi}" actuator2Api="${WristBottomActuatorApi}"/>
   </xacro:macro>
 
   <xacro:macro name="arm_transmissions_sim" params="prefix">
