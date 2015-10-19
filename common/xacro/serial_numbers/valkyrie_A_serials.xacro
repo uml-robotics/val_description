@@ -45,5 +45,7 @@
 
 	<xacro:property name="left_foot_ATI_serial" value="FT14020" />
 	<xacro:property name="right_foot_ATI_serial" value="FT16592" />
+
+	<xacro:property name="sim_ATI_serial" value="FT001SIM" />
     
 </robot>
