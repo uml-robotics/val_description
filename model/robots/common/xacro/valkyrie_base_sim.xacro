@@ -1,5 +1,12 @@
 <robot xmlns:xacro="http://ros.org/wiki/xacro" name="valkyrie">
-    
+
+
+    <gazebo>
+      <plugin filename="libval_gazebo.so" name="SharedMemorySimInterfacePlugin">
+        <robotNamespace>/rrbot</robotNamespace>
+      </plugin>
+    </gazebo>
+
     <xacro:make_pelvis />
     <xacro:make_waist waist_root_link="${Pelvis_Link_Name}" />
     <xacro:make_head head_root_link="${TorsoRollLinkName}" />
@@ -28,4 +35,5 @@
     <xacro:arm_transmissions_sim prefix="left"/>
     <xacro:arm_transmissions_sim prefix="right"/>
     <xacro:neck_transmissions_sim />
+
 </robot>
