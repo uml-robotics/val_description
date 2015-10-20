@@ -27,8 +27,8 @@ file(GLOB instance_xacro_files ${PATH_TO_ROBOTS_INSTANCE}/xacro/*/*.xacro)
 file(GLOB urdf_xacro_files ${PATH_TO_ROBOTS_MODEL}/*.xacro)
 file(GLOB instance_xacro_files ${PATH_TO_ROBOTS_INSTANCE}/*.xacro)
 
-set(URDF_OUTPUT_PATH ${CATKIN_DEVEL_PREFIX}/${CATKIN_PACKAGE_SHARE_DESTINATION}/urdf)
-set(INSTANCE_OUTPUT_PATH ${CATKIN_DEVEL_PREFIX}/${CATKIN_PACKAGE_SHARE_DESTINATION}/instance_files)
+set(URDF_OUTPUT_PATH ${CATKIN_DEVEL_PREFIX}/${CATKIN_PACKAGE_SHARE_DESTINATION}/model/urdf)
+set(INSTANCE_OUTPUT_PATH ${CATKIN_DEVEL_PREFIX}/${CATKIN_PACKAGE_SHARE_DESTINATION}/instance/instances/instance_files)
 
 message(${CATKIN_PACKAGE_SHARE_DESTINATION})
 
@@ -76,13 +76,13 @@ add_custom_target(val_description_media_files ALL DEPENDS ${urdf_files} ${instan
 
 # install urdf and xacro files
 install(DIRECTORY model/materials/
-  DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/materials
+  DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/model/materials
 )
 install(DIRECTORY model/meshes/
-  DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/meshes
+  DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/model/meshes
 )
 install(DIRECTORY model/robots/
-  DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/robots
+  DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/model/robots
 )
 install(DIRECTORY instance/coefficients/
   DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/instance/coefficients
