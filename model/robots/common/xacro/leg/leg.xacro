@@ -169,6 +169,23 @@
                         sensor_api="${AtiSensorApi}" />
   </xacro:macro>
 
+    <xacro:macro name="v1_leg_sensors" params="prefix reflect ATI_serial_number ATI_node">
+
+    <xacro:virtual_fixed_frame_offset name="${prefix}COP"
+                       parentLink="${AnkleRollLinkName}"
+                       origin_xyz="0.0189 0.0 -0.0783"
+                       origin_rpy="0.0 0.0 0.0"/>
+
+    <xacro:ati_force_torque_sensor sensorName="${prefix}FootSixAxis"
+                        parentLink="${AnkleRollLinkName}"
+                        joint_to_attach_sensor_to="${AnkleRollJointName}"
+                        origin_xyz="0.0215646 0.0 -0.051054"
+                        origin_rpy="3.14 0.0 -1.047"
+                        sensor_number="${ATI_serial_number}" 
+                        sensor_node="${ATI_node}"
+                        sensor_api="${AtiSensorApi}" />
+  </xacro:macro>
+
   <xacro:macro name="leg_transmissions_hw" params="prefix">
     <xacro:simple_transmission jointName="${HipYawJointName}" actuatorName="${HipYawActuatorName}" nodeName="${HipYawNode}" actuatorApi="${HipYawApi}"/>
     <xacro:simple_transmission jointName="${HipRollJointName}" actuatorName="${HipRollActuatorName}" nodeName="${HipRollNode}" actuatorApi="${HipRollApi}"/>
@@ -182,7 +199,7 @@
     <xacro:simple_transmission jointName="${HipRollJointName}" actuatorName="${HipRollActuatorName}" nodeName="${HipRollNode}" actuatorApi="${SimApi}"/>
     <xacro:simple_transmission jointName="${HipPitchJointName}" actuatorName="${HipPitchActuatorName}" nodeName="${HipPitchNode}" actuatorApi="${SimApi}"/>
     <xacro:simple_transmission jointName="${KneePitchJointName}" actuatorName="${KneePitchActuatorName}" nodeName="${KneePitchNode}" actuatorApi="${SimApi}"/> 
-    <xacro:simple_transmission jointName="${AnklePitchJointName}" actuatorName="${AnkleLeftActuatorName}" nodeName="${AnkleLeftActuatorNode}" actuatorApi="${SimApi}"/> 
-    <xacro:simple_transmission jointName="${AnkleRollJointName}" actuatorName="${AnkleRightActuatorName}" nodeName="${AnkleRightActuatorNode}" actuatorApi="${SimApi}"/> 
+    <xacro:simple_transmission jointName="${AnklePitchJointName}" actuatorName="${AnklePitchActuatorSimName}" nodeName="${AnklePitchActuatorSimNode}" actuatorApi="${SimApi}"/> 
+    <xacro:simple_transmission jointName="${AnkleRollJointName}" actuatorName="${AnkleRollActuatorSimName}" nodeName="${AnkleRollActuatorSimNode}" actuatorApi="${SimApi}"/> 
   </xacro:macro>
 </robot>

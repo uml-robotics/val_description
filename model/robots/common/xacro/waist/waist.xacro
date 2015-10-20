@@ -112,7 +112,7 @@
 
    <xacro:macro name="waist_transmissions_sim">
     <xacro:simple_transmission jointName="${TorsoYawJointName}" actuatorName="${TorsoYawActuatorName}" nodeName="${TrunkYawNode}" actuatorApi="${SimApi}"/> 
-    <xacro:simple_transmission jointName="${TorsoPitchJointName}" actuatorName="${WaistLeftActuatorName}" nodeName="${WaistLeftActuatorNode}" actuatorApi="${SimApi}"/> 
-    <xacro:simple_transmission jointName="${TorsoRollJointName}" actuatorName="${WaistRightActuatorName}" nodeName="${WaistRightActuatorNode}" actuatorApi="${SimApi}"/> 
+    <xacro:simple_transmission jointName="${TorsoPitchJointName}" actuatorName="${WaistPitchActuatorSimName}" nodeName="${WaistPitchActuatorSimNode}" actuatorApi="${SimApi}"/> 
+    <xacro:simple_transmission jointName="${TorsoRollJointName}" actuatorName="${WaistRollActuatorSimName}" nodeName="${WaistRollActuatorSimNode}" actuatorApi="${SimApi}"/> 
    </xacro:macro>
 </robot>
