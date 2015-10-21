@@ -25,7 +25,7 @@
 
 	<xacro:property name="AtiSensorApi" value="TurbodriverForceTorqueSensor_v1" />
 
-	<xacro:property name="SimApi" value="robot_hardware_interface/TurboDriverSimApiDRC_v4" />
+	<xacro:property name="SimApi" value="robot_hardware_interface/TurbodriverSimAPI_DRCv4" />
 
     
 </robot>
