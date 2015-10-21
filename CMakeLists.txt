@@ -35,8 +35,6 @@ message(${CATKIN_PACKAGE_SHARE_DESTINATION})
 # Create output directories
 file(MAKE_DIRECTORY ${URDF_OUTPUT_PATH})
 file(MAKE_DIRECTORY ${INSTANCE_OUTPUT_PATH})
-file(MAKE_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/model/urdf)
-file(MAKE_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/instance/instances/instance_files)
 
 # Generate urdf's and put them in the /model/urdf directory
 foreach(it ${urdf_xacro_files})
@@ -75,25 +73,17 @@ catkin_add_nosetests(test)
 add_custom_target(val_description_media_files ALL DEPENDS ${urdf_files} ${instance_files})
 
 # install urdf and xacro files
-install(DIRECTORY model/materials/
-  DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/model/materials
+install(DIRECTORY model
+  DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
 )
-install(DIRECTORY model/meshes/
-  DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/model/meshes
+
+install(DIRECTORY instance
+  DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
 )
-install(DIRECTORY model/robots/
-  DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/model/robots
-)
-install(DIRECTORY instance/coefficients/
-  DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/instance/coefficients
-)
+
 install(DIRECTORY ${URDF_OUTPUT_PATH}
-  DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
+  DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/model
 )
-# Install multisense_sl urdf
-install(DIRECTORY model/urdf/ 
-  DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
-  )
 
 install(DIRECTORY ${INSTANCE_OUTPUT_PATH}
-  DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION})
+  DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/instance/instances)
