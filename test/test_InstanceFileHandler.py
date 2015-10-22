@@ -19,6 +19,17 @@ class instanceFileHandlerTests(unittest.TestCase):
         instanceFileHandler = InstanceFileHandler(sampleInstanceFile)
         assert instanceFileHandler.getInstanceRoot().tag == 'robot'
 
+    def testGetActuatorCoeffFromNodeName(self):
+        sampleInstanceFile = self.testDirectory + '/test_files/sample_instance.xml'
+        instanceFileHandler = InstanceFileHandler(sampleInstanceFile)
+
+        keys = ['/left_leg/j1', '/left_leg/ankle/actuator0', '/left_leg/ankle/actuator1']
+        testFiles = ['v_a_001.xml', 'v_e_001.xml', 'v_e_002.xml']
+
+        assert instanceFileHandler.getActuatorCoeffFileByNode(keys[0]) == testFiles[0]
+        assert instanceFileHandler.getActuatorCoeffFileByNode(keys[1]) == testFiles[1]
+        assert instanceFileHandler.getActuatorCoeffFileByNode(keys[2]) == testFiles[2]
+
     def testGetMechanisms(self):
         sampleInstanceFile = self.testDirectory + '/test_files/valkyrie_A.xml'
         instanceFileHandler = InstanceFileHandler(sampleInstanceFile)
