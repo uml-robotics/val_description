@@ -262,7 +262,7 @@ class instanceFileHandlerTests(unittest.TestCase):
         instanceFileHandler = InstanceFileHandler(sampleInstanceFile)
 
         coeffs = instanceFileHandler.gatherCoeffs("/left_leg/j1")
-        print coeffs
+
         expectedCoeffs = {'TemperatureSensor_SensorLoc2': 2.0, 'TemperatureSensor_SensorLoc1': 1.0, 'JointSensors_OutputPosition': 2.0,
                           'IGainAmpsPerBit': 0.018928, 'DeltaAPSSafeLimit': 9999.0, 'TorqueControl_enablePID': 1.0,
                           'TorqueControl_FFd_fc_Hz': 25.0, 'APS1DriftSafeLimit': 9999.0, 'PositionControl_MotorTorqueDirection': 1.0,

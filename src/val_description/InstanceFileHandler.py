@@ -6,7 +6,7 @@ import rospkg
 class InstanceFileHandler():
 
     def __init__(self, instanceXmlFile):
-        print instanceXmlFile
+
         self.instanceFile = xmlParser.parse(instanceXmlFile)
         self.instanceFileRoot = self.instanceFile.getroot()
         self.robotChildren = []
@@ -200,7 +200,6 @@ class InstanceFileHandler():
         return self.nodeCoeffFileDictionary
 
     def getActuatorCoeffFileByNode(self, nodeName):
-        print self.nodeCoeffFileDictionary
         try:
             actuatorCoeffFile = self.nodeCoeffFileDictionary[nodeName]
         except:
