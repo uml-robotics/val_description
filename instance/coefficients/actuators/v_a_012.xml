@@ -6,14 +6,11 @@
     </Properties>
     <ClassFile id="a.xml" />
     <ControllerFile id="a_dh.xml" />
-    <LocationFile id="testbench.xml" />
+    <LocationFile id="shoulder_pitch.xml" />
     <SensorsFile id="sensors.xml" />
     <SafetyFile id="safety.xml" />
     <ModeFile id="mode.xml" />
     <Coeffs>
-        <Coeff description="" id="JointSafety_LowerLimit_Rad" value="-3.14" />
-        <Coeff description="" id="JointSafety_UpperLimit_Rad" value="3.14" />
-        <Coeff description="" id="JointTorqueLimit_Nm" value="150" />
         <Coeff description="" id="JointMaxValue" value="3.14" />
         <Coeff description="" id="JointMinValue" value="-3.14" />
         <Coeff description="" id="JointKinematicDir" value="-1.0" />
