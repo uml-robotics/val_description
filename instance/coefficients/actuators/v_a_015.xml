@@ -6,7 +6,7 @@
     </Properties>
     <ClassFile id="a.xml" />
     <ControllerFile id="a_sv.xml" />
-    <LocationFile id="hip_yaw_right.xml" />
+    <LocationFile id="hip_yaw_left.xml" />
     <SensorsFile id="sensors.xml" />
     <SafetyFile id="safety.xml" />
     <ModeFile id="mode.xml" />
@@ -14,7 +14,7 @@
         <Coeff description="" id="JointMaxValue" value="3.14" />
         <Coeff description="" id="JointMinValue" value="-3.14" />
         <Coeff description="" id="JointKinematicDir" value="1" />
-        <Coeff description="" id="PositionOffset_Rad" value="-0.589048612117" />
+        <Coeff description="" id="PositionOffset_Rad" value="-2.82635962168" />
         <Coeff description="" id="TorqueOffset_Nm" value="0.0" />
         <Coeff description="" id="JointSensors_MotorPosition" value="1" />
         <Coeff description="" id="JointSensors_OutputForce" value="2.0" />
@@ -31,6 +31,6 @@
         <Coeff description="" id="CurrVelFilter_fc_Hz" value="200" />
         <Coeff description="" id="TorqueControl_MotorTorqueDirection" value="1" />
         <Coeff description="" id="PositionControl_MotorTorqueDirection" value="1" />
-        <Coeff description="" id="SpringAPS_BitOffset" value="531265700" />
+        <Coeff description="" id="SpringAPS_BitOffset" value="414587188" />
     </Coeffs>
 </CoeffData>

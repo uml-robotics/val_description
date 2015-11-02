@@ -6,6 +6,7 @@ import rospkg
 class InstanceFileHandler():
 
     def __init__(self, instanceXmlFile):
+
         self.instanceFile = xmlParser.parse(instanceXmlFile)
         self.instanceFileRoot = self.instanceFile.getroot()
         self.robotChildren = []
@@ -71,14 +72,14 @@ class InstanceFileHandler():
 
     def buildConfigFileDictionary(self):
         self.configDictionary = {}
+        self.nodeCoeffFileDictionary = {}
         for mechanism in self.mechanisms:
-            nodeCoeffFileDictionary = {}
             if mechanism.get('type') == 'simple':
                 tmpNode = mechanism.find('Node').get('id')
                 tmpActuatorCoeffFile = mechanism.find(
                     'SerialNumber').get('id') + ".xml"
 
-                nodeCoeffFileDictionary[tmpNode] = tmpActuatorCoeffFile
+                self.nodeCoeffFileDictionary[tmpNode] = tmpActuatorCoeffFile
 
             elif mechanism.get('type') == 'complex':
                 for actuator in mechanism.findall('Actuator'):
@@ -86,12 +87,12 @@ class InstanceFileHandler():
                     tmpActuatorCoeffFile = actuator.find(
                         'SerialNumber').get('id') + ".xml"
 
-                    nodeCoeffFileDictionary[tmpNode] = tmpActuatorCoeffFile
+                    self.nodeCoeffFileDictionary[tmpNode] = tmpActuatorCoeffFile
             else:
                 raise Exception('Invalid mechanism type')
 
-            for node in nodeCoeffFileDictionary:
-                actuatorCoeffFile = nodeCoeffFileDictionary[node]
+            for node in self.nodeCoeffFileDictionary:
+                actuatorCoeffFile = self.nodeCoeffFileDictionary[node]
                 try:
                     actuatorFullFilePath = self.actuatorFileCoeffPath + \
                         "/" + actuatorCoeffFile
@@ -194,6 +195,17 @@ class InstanceFileHandler():
             coeffFiles.append(serialNumber + '.xml')
 
         return coeffFiles
+
+    def getNodeActuatorCoeffFileDictionary(self):
+        return self.nodeCoeffFileDictionary
+
+    def getActuatorCoeffFileByNode(self, nodeName):
+        try:
+            actuatorCoeffFile = self.nodeCoeffFileDictionary[nodeName]
+        except:
+            raise Exception('Node name ' + nodeName + 'not found in instance file!')
+
+        return actuatorCoeffFile
 
     def getInstanceConfig(self):
         return self.configDictionary
