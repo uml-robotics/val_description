@@ -20,7 +20,7 @@
   <xacro:property name="ShoulderRollLinkInertia_IZZ" value="0.011454772" />
 
   <xacro:property name="ShoulderYawLinkMass" value="3.085000" />
-  <xacro:property name="ShoulderYawLinkComPosition" value="-0.004304	${reflect*0.209832}	-0.007295" />
+  <xacro:property name="ShoulderYawLinkComPosition" value="-0.004304	${reflect*0.209832}	${reflect*0.007295}" />
   <xacro:property name="ShoulderYawLinkInertia_IXX" value="0.039355177" />
   <xacro:property name="ShoulderYawLinkInertia_IXY" value="0.007827077" />
   <xacro:property name="ShoulderYawLinkInertia_IXZ" value="${reflect*-0.000753947}" />
