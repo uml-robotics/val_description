@@ -29,13 +29,13 @@
   <xacro:property name="ShoulderYawLinkInertia_IZZ" value="0.041879481" />
 
   <xacro:property name="ElbowPitchLinkMass" value="1.830000" />
-  <xacro:property name="ElbowPitchLinkComPosition" value="-0.020344	${reflect*0.014722} -0.022300" />
-  <xacro:property name="ElbowPitchLinkInertia_IXX" value="0.004285137" />
-  <xacro:property name="ElbowPitchLinkInertia_IXY" value="${reflect*-0.000408334}" />
-  <xacro:property name="ElbowPitchLinkInertia_IXZ" value="${reflect*0.003326627}" />
-  <xacro:property name="ElbowPitchLinkInertia_IYY" value="0.008440601" />
-  <xacro:property name="ElbowPitchLinkInertia_IYZ" value="0.000140731" />
-  <xacro:property name="ElbowPitchLinkInertia_IZZ" value="0.007469454" />
+  <xacro:property name="ElbowPitchLinkComPosition" value="-0.020344	${reflect*0.014722} ${reflect*0.022300}" />
+  <xacro:property name="ElbowPitchLinkInertia_IXX" value="0.003314516" />
+  <xacro:property name="ElbowPitchLinkInertia_IXY" value="${reflect*0.000535099}" />
+  <xacro:property name="ElbowPitchLinkInertia_IXZ" value="${reflect*0.000728077}" />
+  <xacro:property name="ElbowPitchLinkInertia_IYY" value="0.003505669" />
+  <xacro:property name="ElbowPitchLinkInertia_IYZ" value="-0.000423865" />
+  <xacro:property name="ElbowPitchLinkInertia_IZZ" value="0.003011283" />
 
   <xacro:property name="ForearmYawLinkMass" value="2.476" />
   <xacro:property name="ForearmYawLinkComPosition" value="0.015000	${reflect*0.13} 0.019564" />
