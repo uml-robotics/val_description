@@ -13,14 +13,14 @@
     </xacro:macro>
 
     <xacro:macro name="v1_pelvis_sensors">
-        <xacro:microstrain_sensor sensorName="rightPelvisIMU"
+        <xacro:microstrain_sensor sensorName="pelvisRearImu"
                                   parentLink="${Pelvis_Link_Name}"
-                                  origin_xyz="0.06474460 -0.074041 -0.06324854"
-                                  origin_rpy="0 -1.57 0" />
+                                  origin_xyz="-0.087238724 0.0 -0.11693711"
+                                  origin_rpy="3.14159 -0.476467416 0.0" />
 
-        <xacro:microstrain_sensor sensorName="leftPelvisIMU"
+        <xacro:microstrain_sensor sensorName="pelvisMiddleImu"
                                   parentLink="${Pelvis_Link_Name}"
-                                  origin_xyz="0.0647446 0.075311 -0.06324854"
-                                  origin_rpy="0 -1.57 0" />
+                                  origin_xyz="0.0 0.0 -0.108184035"
+                                  origin_rpy="3.14159 0.0 0.0" />
     </xacro:macro>
 </robot>
