@@ -39,11 +39,11 @@
 
   <xacro:property name="ForearmYawLinkMass" value="2.476" />
   <xacro:property name="ForearmYawLinkComPosition" value="0.015000	${reflect*0.13} 0.019564" />
-  <xacro:property name="ForearmYawLinkInertia_IXX" value="0.015011" />
+  <xacro:property name="ForearmYawLinkInertia_IXX" value="0.011755430" />
   <xacro:property name="ForearmYawLinkInertia_IXY" value="${reflect*0.001300853}" />
-  <xacro:property name="ForearmYawLinkInertia_IXZ" value="${reflect*0.000727141}" />
+  <xacro:property name="ForearmYawLinkInertia_IXZ" value="-0.000727141" />
   <xacro:property name="ForearmYawLinkInertia_IYY" value="0.005071567" />
-  <xacro:property name="ForearmYawLinkInertia_IYZ" value="-0.001695416" />
+  <xacro:property name="ForearmYawLinkInertia_IYZ" value="${reflect*0.001695416}" />
   <xacro:property name="ForearmYawLinkInertia_IZZ" value="0.011365657" />
 
   <xacro:property name="WristRollLinkMass" value="0.14" />
