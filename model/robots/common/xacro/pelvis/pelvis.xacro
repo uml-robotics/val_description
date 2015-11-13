@@ -15,8 +15,8 @@
     <xacro:macro name="v1_pelvis_sensors">
         <xacro:microstrain_sensor sensorName="pelvisRearImu"
                                   parentLink="${Pelvis_Link_Name}"
-                                  origin_xyz="-0.087238724 0.0 -0.11693711"
-                                  origin_rpy="3.14159 -0.476467416 0.0" />
+                                  origin_xyz="-0.075844901 0.0 -0.111056426"
+                                  origin_rpy="-3.14159 0.476467 -3.14159" />
 
         <xacro:microstrain_sensor sensorName="pelvisMiddleImu"
                                   parentLink="${Pelvis_Link_Name}"
