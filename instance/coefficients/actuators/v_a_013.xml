@@ -17,7 +17,7 @@
         <Coeff description="" id="PositionOffset_Rad" value="1.54383440018" />
         <Coeff description="" id="TorqueOffset_Nm" value="0.0" />
         <Coeff description="" id="JointSensors_MotorPosition" value="1" />
-        <Coeff description="" id="JointSensors_OutputForce" value="0.0" />
+        <Coeff description="" id="JointSensors_OutputForce" value="2.0" />
         <Coeff description="" id="JointSensors_OutputPosition" value="2.0" />
         <Coeff description="" id="JointSensors_OutputVelocity" value="3.0" />
         <Coeff description="Encoder Mounting Direction" id="EncMountingDir" value="1" />
