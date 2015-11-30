@@ -11,8 +11,8 @@
     <SafetyFile id="safety.xml" />
     <ModeFile id="mode.xml" />
     <Coeffs>
-        <Coeff description="" id="JointMaxValue" value="3.14" />
-        <Coeff description="" id="JointMinValue" value="-3.14" />
+        <!-- <Coeff description="" id="JointMaxValue" value="3.14" />
+        <Coeff description="" id="JointMinValue" value="-3.14" /> -->
         <Coeff description="" id="JointKinematicDir" value="-1.0" />
         <Coeff description="" id="PositionOffset_Rad" value="-2.8232916514" />
         <Coeff description="" id="TorqueOffset_Nm" value="0.0" />
