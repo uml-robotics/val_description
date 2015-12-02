@@ -1,0 +1,5 @@
+<robot xmlns:xacro="http://ros.org/wiki/xacro" name="valkyrie_B_ports">
+
+	<xacro:property name="pelvis_imu1_port" value="/dev/ttyACM0" />
+
+</robot>
