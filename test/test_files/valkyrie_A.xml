@@ -176,11 +176,11 @@
   <Devices>
     <Device id="pelvis_middle_imu" type="imu">
       <SerialNumber id="UNKNOWN"/>
-      <Node id="/sensors/leftPelvisIMU"/>
+      <Node id="/sensors/middlePelvisIMU"/>
     </Device>
     <Device id="pelvis_rear_imu" type="imu">
       <SerialNumber id="UNKNOWN"/>
-      <Node id="/sensors/rightPelvisIMU"/>
+      <Node id="/sensors/rearPelvisIMU"/>
     </Device>
     <Device id="torso_left_imu" type="imu">
       <SerialNumber id="UNKNOWN"/>
