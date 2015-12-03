@@ -12,7 +12,7 @@
     <Coeffs>
         <Coeff id="APS1_BiasComp_Enable" value="0.0" />
         <Coeff id="EncMountingDir" value="1.0" />
-        <Coeff id="EncoderIndexOffset" value="2.91" />
+        <Coeff id="EncoderIndexOffset" value="1.4" />
         <Coeff id="ForceControl_MotorForceDirection" value="1.0" />
         <Coeff id="ForceOffset_N" value="0.0" />
         <Coeff id="JointForceLimit_N" value="2500.0" />
@@ -26,7 +26,7 @@
         <Coeff id="JointSensors_OutputForce" value="0.0" />
         <Coeff id="JointSensors_OutputPosition" value="3.0" />
         <Coeff id="JointSensors_OutputVelocity" value="1.0" />
-        <Coeff id="LoadCell_MountingGain" value="-1.0" />
+        <Coeff id="LoadCell_MountingGain" value="1.0" />
         <Coeff id="LoadCell_OffsetBits" value="32950.0" />
         <Coeff id="PositionOffset_Rad" value="-2.77496634215" />
         <Coeff id="JointOutputAPS_MountingGain" value="-1.0" />
