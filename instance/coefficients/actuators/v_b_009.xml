@@ -19,7 +19,7 @@
         <Coeff description="Incremental Encoder Enabled" id="JointSensors_MotorPosition" value="1" />
         <Coeff description="V1 actuator magnetic aps" id="JointSensors_OutputPosition" value="2.0" />
         <Coeff description="" id="JointSensors_OutputForce" value="2.0" />
-        <Coeff description="1: position sensor derivative, 2: inc enc and sprnig def derivative" id="JointSensors_OutputVelocity" value="2.0" />
+        <Coeff description="1: position sensor derivative, 2: inc enc and sprnig def derivative" id="JointSensors_OutputVelocity" value="4.0" />
         <Coeff description="Encoder Mounting Direction" id="EncMountingDir" value="-1" />
         <Coeff description="Electrical angle offset from Index pulse of Encoder" id="EncoderIndexOffset" value="0.2286" />
         <Coeff description="CPR*gearRatio*2 - Enough for 2 mech revs" id="Encoder_MaxTicks" value="98560.0" />
