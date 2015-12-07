@@ -1,0 +1,7 @@
+<?xml version="1.0" ?>
+<ForceOffsets>
+    <Joint name="leftHipRoll" value="12.2"/>
+    <Joint name="rightHipYaw" value="1.2"/>
+    <Joint name="leftShoulderPitch" value="-32.2"/>
+    <Joint name="rightShoulderBeepity" value="10"/>
+</ForceOffsets>

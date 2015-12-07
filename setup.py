@@ -7,6 +7,7 @@ from catkin_pkg.python_setup import generate_distutils_setup
 setup_args = generate_distutils_setup(
     packages=['val_description'],
     package_dir={'': 'src'},
+    scripts=['scripts/set_actuator_force_offsets', ]
 )
 
 setup(**setup_args)
