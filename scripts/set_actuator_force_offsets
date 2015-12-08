@@ -54,6 +54,8 @@ if __name__ == "__main__":
                         help="Full file path of the xml file containing the force offsets to be appliced")
     parser.add_argument("-i", "--instance-file", type=str,
                         help="Full file path to the instance file for the robot containing the actuators to which the offsets will be applied")
+    parser.add_argument("-r", "--reset-offset", action='store_true',
+                        help="Reset all the current torque offsets to zero")
 
     args = parser.parse_args()
 
@@ -79,9 +81,9 @@ if __name__ == "__main__":
     root = offsetsFile.getroot()
 
     for joint in root:
-        jointTorqueOffsetsDictionary[joint.get('name')] = joint.get('offset')
+        jointTorqueOffsetsDictionary[joint.get('name')] = joint.get('torqueOffset')
 
-        if joint.get('position') == None:
+        if joint.get('type') == None:
             try:
                 actuatorSerialNumberDictionary[joint.get('name')] = actuatorCoeffFilePath + instanceFileHandler.getSerialNumberByActuatorName(joint.get('name'))
             except Exception as e:
@@ -91,7 +93,12 @@ if __name__ == "__main__":
                 continue
 
             currentOffset = getXmlValueAsFloat(actuatorSerialNumberDictionary[joint.get('name')], 'TorqueOffset_Nm')
-            setXmlValueFromFloat(actuatorSerialNumberDictionary[joint.get('name')], 'TorqueOffset_Nm', currentOffset + float(jointTorqueOffsetsDictionary[joint.get('name')]))
+            jointKinematicDirection = getXmlValueAsFloat(actuatorSerialNumberDictionary[joint.get('name')], "JointKinematicDir")
+            if (args.reset_offset):
+                setXmlValueFromFloat(actuatorSerialNumberDictionary[joint.get('name')], 'TorqueOffset_Nm', 0.0)
+            else:
+                ihmcTorqueOffset = float(jointTorqueOffsetsDictionary[joint.get('name')])
+                setXmlValueFromFloat(actuatorSerialNumberDictionary[joint.get('name')], 'TorqueOffset_Nm', currentOffset + jointKinematicDirection * ihmcTorqueOffset)
 
         else:
             msg = "Joint " + joint.get('name') + " must be a complex joint. These are not currently supported in actuator force offset setter!"
