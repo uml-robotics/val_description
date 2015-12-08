@@ -49,7 +49,13 @@ class InstanceFileHandler():
         for channel in channelsRoot.findall('Channel'):
             self.channels.append(channel)
 
-        devicesRoot = self.instanceFileRoot.find('Devices')
+        try:
+            devicesRoot = self.instanceFileRoot.find('Devices')
+        except AttributeError as e:
+            msg = "Instance file doesn't contain the Devices tag or it is misspelled!"
+            print msg
+            self.logger.error(msg)
+
         for device in devicesRoot.findall('Device'):
             self.devices.append(device)
 
@@ -80,6 +86,7 @@ class InstanceFileHandler():
     def buildConfigFileDictionary(self):
         self.configDictionary = {}
         self.nodeCoeffFileDictionary = {}
+        self.actuatorNameCoeffFileDictionary = {}
         for mechanism in self.mechanisms:
             if mechanism.get('type') == 'simple':
                 tmpNode = mechanism.find('Node').get('id')
@@ -87,6 +94,7 @@ class InstanceFileHandler():
                     'SerialNumber').get('id') + ".xml"
 
                 self.nodeCoeffFileDictionary[tmpNode] = tmpActuatorCoeffFile
+                self.actuatorNameCoeffFileDictionary[mechanism.get('id')] = tmpActuatorCoeffFile
 
             elif mechanism.get('type') == 'complex':
                 for actuator in mechanism.findall('Actuator'):
@@ -95,6 +103,8 @@ class InstanceFileHandler():
                         'SerialNumber').get('id') + ".xml"
 
                     self.nodeCoeffFileDictionary[tmpNode] = tmpActuatorCoeffFile
+                    self.actuatorNameCoeffFileDictionary[actuator.get('id')] = tmpActuatorCoeffFile
+
             else:
                 msg = 'Invalid mechanism type'
                 self.logger.error(msg)
@@ -211,6 +221,15 @@ class InstanceFileHandler():
 
     def getSerialNumbers(self):
         return self.serialNumbers
+
+    def getSerialNumberByActuatorName(self, actuatorName):
+        try:
+            coeffFile = self.actuatorNameCoeffFileDictionary[actuatorName]
+            return coeffFile
+        except KeyError as e:
+            msg = 'Actuator ' + actuatorName + ' not found in instance file!'
+            self.logger.error(msg)
+            raise Exception(msg)
 
     def getActuatorCoeffFiles(self):
         serialNumbers = self.getSerialNumbers()
