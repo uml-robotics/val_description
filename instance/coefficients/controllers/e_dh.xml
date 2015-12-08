@@ -28,8 +28,8 @@
 
         <!-- PID -->
         <Coeff id="ForceControl_enablePID" value="1.0"/>
-        <Coeff id="ForceControl_Kp" value="0.01"/>
-        <Coeff id="ForceControl_Kd" value="0.00002"/>
+        <Coeff id="ForceControl_Kp" value="0.04"/>
+        <Coeff id="ForceControl_Kd" value="0.0000"/>
         <Coeff id="ForceControl_PD_damp" value="0.95"/>
         <Coeff id="ForceControl_autoKd" value="0.0"/>
         <Coeff id="ForceControl_Kd_fc_Hz" value="50.0"/>
