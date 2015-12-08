@@ -45,4 +45,6 @@
       </Actuator>
     </Mechanism>
   </Mechanisms>
+  <Devices>
+  </Devices>
 </robot>

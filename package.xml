@@ -12,6 +12,7 @@
   <depend>xacro</depend>
   <depend>rospy</depend>
   <depend>nasa_common_cmake</depend>
+  <depend>nasa_common_logging</depend>
 
   <export>
 

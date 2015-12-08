@@ -7,7 +7,8 @@ project(val_description)
 find_package(catkin REQUIRED COMPONENTS
   xacro 
   rospy 
-  nasa_common_cmake
+  nasa_common_cmake 
+  nasa_common_logging
 )
 
 catkin_package(
