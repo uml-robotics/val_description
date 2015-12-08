@@ -24,8 +24,8 @@
     <Coeff description="Encoder Mounting Direction" id="EncMountingDir" value="1"/>
     <Coeff description="Electrical angle offset from encoder index pulse" id="EncoderIndexOffset" value="4.51912550819"/>
     <Coeff description="mounting direction of RLS" id="JointOutputAPS_MountingGain" value="-1.0"/>
-    <Coeff description="Renishaw" id="JointSensors_OutputForce" value="2.0"/>
+    <Coeff description="Renishaw" id="JointSensors_OutputForce" value="0.0"/>
     <Coeff description="Direction the sensor is mounted in" id="SpringAPS_MountingGain" value="1.0"/>
-    <Coeff description="Renishaw offset in bits" id="SpringAPS_BitOffset" value="914873394"/>
+    <Coeff description="Renishaw offset in bits" id="SpringAPS_BitOffset" value="527336449"/>
   </Coeffs>
 </CoeffData>
