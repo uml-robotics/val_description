@@ -3,4 +3,5 @@
 <Joints>
   <Joint name="leftHipRoll" offset="30"/>
   <Joint name="leftHipPitch" offset="10"/>
+  <Joint name="DoesntExist" offset="2"/>
 </Joints>

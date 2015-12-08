@@ -88,6 +88,7 @@ if __name__ == "__main__":
                 msg = 'Exception encountered trying to get serial number for actuator ' + joint.get('name') + ' , skipping this actuator! Make sure it exists in instance file!'
                 print msg
                 logger.warn(msg)
+                continue
 
             currentOffset = getXmlValueAsFloat(actuatorSerialNumberDictionary[joint.get('name')], 'TorqueOffset_Nm')
             setXmlValueFromFloat(actuatorSerialNumberDictionary[joint.get('name')], 'TorqueOffset_Nm', currentOffset + float(jointTorqueOffsetsDictionary[joint.get('name')]))
