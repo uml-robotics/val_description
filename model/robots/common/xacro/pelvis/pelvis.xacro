@@ -32,7 +32,7 @@
 
         <xacro:usb_microstrain_sensor sensorName="pelvisMiddleImu"
                                   parentLink="${Pelvis_Link_Name}"
-                                  origin_xyz="0.012 0.0 -0.108184035"
+                                  origin_xyz="0.0 0.0 -0.108184035"
                                   origin_rpy="3.14159 0.0 -3.14159"
                                   sensor_node="${sensor_node_tag}"
                                   sensor_api="${sensor_api_tag}"
