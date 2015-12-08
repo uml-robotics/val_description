@@ -305,7 +305,7 @@ class InstanceFileHandler():
 
             return coeffs
         else:
-            self.logger.warn("\n Target {} doesn't exist, skipping! \n ".format(target))
+            self.logger.warn("Target {} doesn't exist, skipping!".format(target))
             dictionary = dict()
             return dictionary
 
