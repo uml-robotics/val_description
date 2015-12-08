@@ -225,14 +225,13 @@ class InstanceFileHandler():
         return self.serialNumbers
 
     def getSerialNumberByActuatorName(self, actuatorName):
-        print self.actuatorNameCoeffFileDictionary
-        # try:
-        #     coeffFile = self.actuatorNameCoeffFileDictionary[actuatorName]
-        #     return coeffFile
-        # except KeyError as e:
-        #     msg = 'Actuator ' + actuatorName + ' not found in instance file!'
-        #     self.logger.error(msg)
-        #     raise Exception(msg)
+        try:
+            coeffFile = self.actuatorNameCoeffFileDictionary[actuatorName]
+            return coeffFile
+        except KeyError as e:
+            msg = 'Actuator ' + actuatorName + ' not found in instance file!'
+            self.logger.error(msg)
+            raise Exception(msg)
 
     def getActuatorCoeffFiles(self):
         serialNumbers = self.getSerialNumbers()
