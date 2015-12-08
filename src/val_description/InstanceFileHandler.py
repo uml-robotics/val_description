@@ -1,11 +1,14 @@
 import os
 import xml.etree.ElementTree as xmlParser
 import rospkg
+import logging
 
 
 class InstanceFileHandler():
 
     def __init__(self, instanceXmlFile):
+
+        self.logger = logging.getLogger(__name__)
 
         self.instanceFile = xmlParser.parse(instanceXmlFile)
         self.instanceFileRoot = self.instanceFile.getroot()
@@ -59,7 +62,9 @@ class InstanceFileHandler():
                     self.serialNumbers.append(
                         actuator.find('SerialNumber').get('id'))
             else:
-                raise Exception('Invalid mechanism type in instance file!')
+                msg = 'Invalid mechanism type in instance file!'
+                self.logger.error(msg)
+                raise Exception(msg)
 
         for mechanism in self.mechanisms:
             if mechanism.get('type') == 'simple':
@@ -68,7 +73,9 @@ class InstanceFileHandler():
                 for actuator in mechanism.findall('Actuator'):
                     self.nodes.append(actuator.find('Node').get('id'))
             else:
-                raise Exception('Invalid mechanism type in instance file!')
+                msg = 'Invalid mechanism type in instance file!'
+                self.logger.error(msg)
+                raise Exception(msg)
 
     def buildConfigFileDictionary(self):
         self.configDictionary = {}
@@ -89,7 +96,9 @@ class InstanceFileHandler():
 
                     self.nodeCoeffFileDictionary[tmpNode] = tmpActuatorCoeffFile
             else:
-                raise Exception('Invalid mechanism type')
+                msg = 'Invalid mechanism type'
+                self.logger.error(msg)
+                raise Exception(msg)
 
             for node in self.nodeCoeffFileDictionary:
                 actuatorCoeffFile = self.nodeCoeffFileDictionary[node]
@@ -98,10 +107,13 @@ class InstanceFileHandler():
                         "/" + actuatorCoeffFile
                     actuatorXmlCoeffFile = xmlParser.parse(actuatorFullFilePath)
                 except IOError:
-                    print 'Actuator coeff file %s does not exist' % (actuatorFullFilePath)
+                    msg = 'Actuator coeff file %s does not exist' % (actuatorFullFilePath)
+                    self.logger.warn(msg)
                     continue
                 except xmlParser.ParseError:
-                    raise Exception('Invalid XML in file %s' % (actuatorFullFilePath))
+                    msg = 'Invalid XML in file %s' % (actuatorFullFilePath)
+                    self.logger.error(msg)
+                    raise Exception(msg)
 
                 self.configDictionary[node] = {}
                 self.configDictionary[node]['configFiles'] = []
@@ -109,36 +121,46 @@ class InstanceFileHandler():
                 try:
                     actuatorClassFile = actuatorXmlCoeffFile.find('ClassFile').get('id')
                 except AttributeError:
-                    raise Exception('ClassFile tag does not exist or is misspelled in actuator coeff file!')
+                    msg = 'ClassFile tag does not exist or is misspelled in actuator coeff file!'
+                    self.logger.error(msg)
+                    raise Exception(msg)
 
                 try:
                     actuatorControllerFile = actuatorXmlCoeffFile.find('ControllerFile').get('id')
                 except AttributeError:
-                    raise Exception('ControllerFile tag does not exist or is misspelled in actuator coeff file!')
+                    msg = 'ControllerFile tag does not exist or is misspelled in actuator coeff file!'
+                    self.logger.error(msg)
+                    raise Exception(msg)
 
                 try:
                     actuatorLocationFile = actuatorXmlCoeffFile.find('LocationFile').get('id')
                 except AttributeError:
-                    raise Exception('LocationFile tag does not exist or is misspelled in actuator coeff file!')
+                    msg = 'LocationFile tag does not exist or is misspelled in actuator coeff file!'
+                    self.logger.error(msg)
+                    raise Exception(msg)
 
                 try:
                     actuatorSensorsFile = actuatorXmlCoeffFile.find('SensorsFile').get('id')
                 except AttributeError:
-                    raise Exception('SensorFile tag does not exist or is misspelled in actuator coeff file!')
+                    msg = 'SensorFile tag does not exist or is misspelled in actuator coeff file!'
+                    self.logger.error(msg)
+                    raise Exception(msg)
 
                 try:
                     actuatorSafetyFile = actuatorXmlCoeffFile.find(
                         'SafetyFile').get('id')
                 except AttributeError:
-                    raise Exception(
-                        'SafetyFile tag does not exist or is misspelled in actuator coeff file!')
+                    msg = 'SafetyFile tag does not exist or is misspelled in actuator coeff file!'
+                    self.logger.error(msg)
+                    raise Exception(msg)
 
                 try:
                     actuatorModeFile = actuatorXmlCoeffFile.find(
                         'ModeFile').get('id')
                 except AttributeError:
-                    raise Exception(
-                        'ModeFile tag does not exist or is misspelled in actuator coeff file!')
+                    msg = 'ModeFile tag does not exist or is misspelled in actuator coeff file!'
+                    self.logger.error(msg)
+                    raise Exception(msg)
 
                 self.configDictionary[node][
                     'configFiles'].append(actuatorCoeffFile)
@@ -159,10 +181,12 @@ class InstanceFileHandler():
                         "/" + actuatorClassFile
                     classXmlCoeffFile = xmlParser.parse(classFullFilePath)
                 except IOError:
-                    print 'Class coeff file %s does not exist' % (classFullFilePath)
+                    self.logger.warn('Class coeff file %s does not exist' % (classFullFilePath))
                     continue
                 except xmlParser.ParseError:
-                    raise Exception('Invalid XML in file %s' % (classFullFilePath))
+                    msg = 'Invalid XML in file %s' % (classFullFilePath)
+                    self.logger.error(msg)
+                    raise Exception(msg)
 
                 self.configDictionary[node][
                     'firmware'] = classXmlCoeffFile.find('Processor').get('id')
@@ -203,7 +227,9 @@ class InstanceFileHandler():
         try:
             actuatorCoeffFile = self.nodeCoeffFileDictionary[nodeName]
         except:
-            raise Exception('Node name ' + nodeName + 'not found in instance file!')
+            msg = 'Node name ' + nodeName + 'not found in instance file!'
+            self.logger.error(msg)
+            raise Exception(msg)
 
         return actuatorCoeffFile
 
@@ -252,11 +278,14 @@ class InstanceFileHandler():
                     else:
                         print('Unsupported coeff format {}'.format(filetype))
                 except IOError as e:
-                    print('Could not open xml file: {}'.format(e))
+                    self.logger.warn('Could not open xml file: {}'.format(e))
                 except xmlParser.ParseError as e:
-                    print('Could not parse xml file: {}'.format(e))
+                    msg = 'Could not parse xml file: {}'.format(e)
+                    self.logger.warn(msg)
             if not cfgs:
-                raise Exception('No config values found!')
+                msg = 'No config values found!'
+                self.logger.error(msg)
+                raise Exception(msg)
             cfgs.reverse()  # makes sure precedence works in next operation
             retCfg = reduce(lambda x, y: dict(x.items() + y.items()), cfgs)
             # return dictionary of key,values: {'Coeff_x': value}
@@ -276,7 +305,7 @@ class InstanceFileHandler():
 
             return coeffs
         else:
-            print "\n Target {} doesn't exist, skipping! \n ".format(target)
+            self.logger.warn("\n Target {} doesn't exist, skipping! \n ".format(target))
             dictionary = dict()
             return dictionary
 
