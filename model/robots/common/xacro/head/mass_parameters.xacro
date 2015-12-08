@@ -19,7 +19,7 @@
   <xacro:property name="NeckYawLinkInertia_IYZ" value="0.000246467" />
   <xacro:property name="NeckYawLinkInertia_IZZ" value="0.002119751" />
 
-  <xacro:property name="UpperNeckPitchLinkMass" value="4.59" />
+  <xacro:property name="UpperNeckPitchLinkMass" value="3.89" />
   <xacro:property name="UpperNeckPitchLinkComPosition" value="0.100912 0.005783 0.034787" />
   <xacro:property name="UpperNeckPitchLinkInertia_IXX" value="0.039847525" />
   <xacro:property name="UpperNeckPitchLinkInertia_IXY" value="-0.000470418" />
