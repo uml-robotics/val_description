@@ -104,3 +104,6 @@ if __name__ == "__main__":
             msg = "Joint " + joint.get('name') + " must be a complex joint. These are not currently supported in actuator force offset setter!"
             logger.warn(msg)
             print msg
+
+    # To make sure we don't continuously reuse the same offsets(since they accumulate), rename the file to filename.bak so we know we already ran that file.
+    os.rename(args.offsets_file,args.offsets_file+'.bak')
