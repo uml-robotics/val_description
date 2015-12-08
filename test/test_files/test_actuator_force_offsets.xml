@@ -4,4 +4,8 @@
   <Joint name="leftHipRoll" offset="30"/>
   <Joint name="leftHipPitch" offset="10"/>
   <Joint name="DoesntExist" offset="2"/>
+  <Joint name="leftAnklePitch" offset="3.2" position="0.32" type="ankle"/>
+  <Joint name="leftAnkleRoll" offset="-2.3" position="0.2" type="ankle"/>
+  <Joint name="torsoPitch" offset="-13.33" position="-0.1" type="waist"/>
+  <Joint name="torsoRoll" offset="1.3" position="-0.32" type="waist"/>
 </Joints>
