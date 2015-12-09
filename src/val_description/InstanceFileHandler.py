@@ -299,7 +299,7 @@ class InstanceFileHandler():
                 except IOError as e:
                     self.logger.warn('Could not open xml file: {}'.format(e))
                 except xmlParser.ParseError as e:
-                    msg = 'Could not parse xml file: {}'.format(e)
+                    msg = 'Could not parse xml file {}: {}'.format(f,e)
                     self.logger.warn(msg)
             if not cfgs:
                 msg = 'No config values found!'
