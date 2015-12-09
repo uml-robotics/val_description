@@ -89,10 +89,3 @@ install(DIRECTORY ${URDF_OUTPUT_PATH}
 
 install(DIRECTORY ${INSTANCE_OUTPUT_PATH}
   DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/instance/instances)
-
-# Create install directory for smtcore symlink. 
-# This symlink is created because we need to be able to rosrun smtcore for 
-# unit testing purposes.
-install(DIRECTORY DESTINATION ${CMAKE_INSTALL_PREFIX}/${CATKIN_PACKAGE_BIN_DESTINATION})
-include(InstallSymlink)
-InstallSymlink(${CMAKE_INSTALL_PREFIX}/bin/set_actuator_force_offsets ${CMAKE_INSTALL_PREFIX}/${CATKIN_PACKAGE_BIN_DESTINATION}/set_actuator_force_offsets)
