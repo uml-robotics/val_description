@@ -9,6 +9,7 @@ class InstanceFileHandler():
     def __init__(self, instanceXmlFile):
 
         self.logger = logging.getLogger(__name__)
+
         self.instanceFile = xmlParser.parse(instanceXmlFile)
         self.instanceFileRoot = self.instanceFile.getroot()
         self.robotChildren = []
@@ -117,7 +118,6 @@ class InstanceFileHandler():
                     actuatorXmlCoeffFile = xmlParser.parse(actuatorFullFilePath)
                 except IOError:
                     msg = 'Actuator coeff file %s does not exist' % (actuatorFullFilePath)
-                    print msg
                     self.logger.warn(msg)
                     continue
                 except xmlParser.ParseError:
@@ -191,9 +191,7 @@ class InstanceFileHandler():
                         "/" + actuatorClassFile
                     classXmlCoeffFile = xmlParser.parse(classFullFilePath)
                 except IOError:
-                    msg = 'Class coeff file %s does not exist' % (classFullFilePath)
-                    self.logger.warn(msg)
-                    print msg
+                    self.logger.warn('Class coeff file %s does not exist' % (classFullFilePath))
                     continue
                 except xmlParser.ParseError:
                     msg = 'Invalid XML in file %s' % (classFullFilePath)
@@ -245,7 +243,6 @@ class InstanceFileHandler():
         return self.nodeCoeffFileDictionary
 
     def getActuatorCoeffFileByNode(self, nodeName):
-        print self.nodeCoeffFileDictionary
         try:
             actuatorCoeffFile = self.nodeCoeffFileDictionary[nodeName]
         except:
@@ -300,11 +297,14 @@ class InstanceFileHandler():
                     else:
                         print('Unsupported coeff format {}'.format(filetype))
                 except IOError as e:
-                    print('Could not open xml file: {}'.format(e))
+                    self.logger.warn('Could not open xml file: {}'.format(e))
                 except xmlParser.ParseError as e:
-                    print('Could not parse xml file: {}'.format(e))
+                    msg = 'Could not parse xml file {}: {}'.format(f,e)
+                    self.logger.warn(msg)
             if not cfgs:
-                raise Exception('No config values found!')
+                msg = 'No config values found!'
+                self.logger.error(msg)
+                raise Exception(msg)
             cfgs.reverse()  # makes sure precedence works in next operation
             retCfg = reduce(lambda x, y: dict(x.items() + y.items()), cfgs)
             # return dictionary of key,values: {'Coeff_x': value}
@@ -324,9 +324,7 @@ class InstanceFileHandler():
 
             return coeffs
         else:
-            msg = "\n Target {} doesn't exist, skipping! \n ".format(target)
-            self.logger.warn(msg)
-            print msg
+            self.logger.warn("Target {} doesn't exist, skipping!".format(target))
             dictionary = dict()
             return dictionary
 
