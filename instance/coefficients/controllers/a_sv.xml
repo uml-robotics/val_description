@@ -34,5 +34,6 @@
     <Coeff id="TorqueControl_m" value="1.2"/>
     <Coeff id="EffortControl_Alpha" value="0.0"/>
     <Coeff id="EffortControl_AlphaDot" value="0.5"/>
+    <Coeff id="EffortControl_OnlineTuning" value="0.0"/>
   </Coeffs>
 </CoeffData>
