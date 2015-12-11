@@ -19,7 +19,7 @@
         <Coeff id="JointSensors_MotorPosition" value="1.0" />
         <Coeff id="JointSensors_OutputForce" value="2.0" />
         <Coeff id="JointSensors_OutputPosition" value="2.0" />
-        <Coeff id="JointSensors_OutputVelocity" value="3.0" />
+        <Coeff id="JointSensors_OutputVelocity" value="4.0" />
         <Coeff id="JointTorqueLimit_Nm" value="350.0" />
         <Coeff id="PositionControl_Input_fc_Hz" value="30.0" />
         <Coeff id="PositionControl_MotorTorqueDirection" value="1.0" />
