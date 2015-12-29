@@ -1,5 +1,7 @@
 <robot xmlns:xacro="http://ros.org/wiki/xacro" name="valkyrie_nodes">
 
-	<xacro:property name="testbench_node" value="/right_leg/j1" />
+	<xacro:property name="testbench_node1" value="/left_arm/j1" />
+	<xacro:property name="testbench_node2" value="/left_arm/j2" />
+	<xacro:property name="testbench_node3" value="/left_arm/j3" />
     
 </robot>
