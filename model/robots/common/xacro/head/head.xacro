@@ -86,9 +86,9 @@
     </xacro:macro>
 
     <xacro:macro name="neck_transmissions_hw">
-      <xacro:simple_transmission jointName="${LowerNeckPitchJointName}" actuatorName="${LowerNeckPitchActuatorName}" nodeName="${LowerNeckPitchNode}" actuatorApi="${LowerNeckPitchApi}"/>
-      <xacro:simple_transmission jointName="${NeckYawJointName}" actuatorName="${NeckYawActuatorName}" nodeName="${NeckYawNode}" actuatorApi="${NeckYawApi}"/>
-      <xacro:simple_transmission jointName="${UpperNeckPitchJointName}" actuatorName="${UpperNeckPitchActuatorName}" nodeName="${UpperNeckPitchNode}" actuatorApi="${UpperNeckPitchApi}"/>
+      <xacro:simple_position_transmission jointName="${LowerNeckPitchJointName}" actuatorName="${LowerNeckPitchActuatorName}" nodeName="${LowerNeckPitchNode}" actuatorApi="${LowerNeckPitchApi}"/>
+      <xacro:simple_position_transmission jointName="${NeckYawJointName}" actuatorName="${NeckYawActuatorName}" nodeName="${NeckYawNode}" actuatorApi="${NeckYawApi}"/>
+      <xacro:simple_position_transmission jointName="${UpperNeckPitchJointName}" actuatorName="${UpperNeckPitchActuatorName}" nodeName="${UpperNeckPitchNode}" actuatorApi="${UpperNeckPitchApi}"/>
     </xacro:macro>
 
     <xacro:macro name="neck_transmissions_sim">
