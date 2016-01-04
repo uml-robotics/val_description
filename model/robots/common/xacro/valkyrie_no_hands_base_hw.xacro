@@ -12,7 +12,7 @@
     <xacro:v1_leg_sensors prefix="left" reflect="1" ATI_serial_number="${left_foot_ATI_serial}" ATI_node="${left_foot_ATI_node}"/>
     <xacro:v1_leg_sensors prefix="right" reflect="-1" ATI_serial_number="${right_foot_ATI_serial}" ATI_node="${right_foot_ATI_node}"/>
     <xacro:include_multisense_hw />
-    <xacro:v1_pelvis_sensors_usb sensor_node_tag="${pelvis_middle_imu_node}" sensor_api_tag="${ImuSensorHardwareApi}" sensor_port_tag="${pelvis_middle_imu_port}"/>
+    <xacro:v1_pelvis_sensors />
 
     <xacro:waist_transmissions_hw />
     <xacro:leg_transmissions_hw prefix="left"/>
