@@ -32,7 +32,6 @@
 	<xacro:property name="pelvis_middle_imu_node" value="/sensors/middlePelvisIMU" />
 	<xacro:property name="pelvis_rear_imu_node" value="/sensors/rearPelvisIMU" />
 	<xacro:property name="torso_left_imu_node" value="/sensors/leftTorsoIMU" />
-	<xacro:property name="torso_right_imu_node" value="/sensors/rightTorsoIMU" />
 
 	<xacro:property name="left_foot_ATI_node" value="/left_leg/ankle/left_actuator" />
 	<xacro:property name="left_foot_Sim_ATI_node" value="/sensors/leftFootSixAxis" />

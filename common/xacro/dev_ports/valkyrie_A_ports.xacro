@@ -2,4 +2,8 @@
 
 	<xacro:property name="pelvis_middle_imu_port" value="/dev/ttyACM0" />
 
+	<xacro:property name="pelvis_rear_imu_port" value="/dev/ttyACM0" />
+
+	<xacro:property name="torso_left_imu_port" value="/dev/ttyACM0" />
+
 </robot>
