@@ -25,6 +25,6 @@
         <Coeff id="SpringAPS_BitOffset" value="57038667.0" />
         <Coeff id="TorqueControl_MotorTorqueDirection" value="1.0" />
         <Coeff id="TorqueOffset_Nm" value="0.0" />
-        <Coeff id="PositionOffset_Rad" value="0.649641732788" />
+        <Coeff id="PositionOffset_Rad" value="0.620496015167" />
     </Coeffs>
 </CoeffData>
