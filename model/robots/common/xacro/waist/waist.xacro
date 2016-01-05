@@ -85,7 +85,7 @@
   </xacro:macro>
 
   <xacro:macro name="v1_trunk_sensors">
-    <xacro:microstrain_sensor sensorName="leftTorsoIMU"
+    <xacro:microstrain_sensor sensorName="leftTorsoImu"
                               parentLink="${TorsoRollLinkName}"
                               origin_xyz="-0.046863 0.134239 0.3630676"
                               origin_rpy="1.57 0 3.14" />
