@@ -30,7 +30,6 @@
 		<xacro:microstrain_imu name="pelvis_middle_imu" serial_number="${pelvis_middle_imu_serial}" node="${pelvis_middle_imu_node}" />
 		<xacro:microstrain_imu name="pelvis_rear_imu" serial_number="${pelvis_rear_imu_serial}" node="${pelvis_rear_imu_node}" />
 		<xacro:microstrain_imu name="torso_left_imu" serial_number="${torso_left_imu_serial}" node="${torso_left_imu_node}" />
-		<xacro:microstrain_imu name="torso_right_imu" serial_number="${torso_right_imu_serial}" node="${torso_right_imu_node}" />
 		<xacro:ati_force_torque name="left_foot_force_torque" serial_number="${left_foot_ATI_serial}" node="${left_foot_ATI_node}"/>
 		<xacro:ati_force_torque name="right_foot_force_torque" serial_number="${right_foot_ATI_serial}" node="${right_foot_ATI_node}"/>
 	</Devices>
