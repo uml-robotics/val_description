@@ -8,7 +8,7 @@
 	<xacro:include filename="$(find val_description)/instance/instances/robots/xacro/sensors/imu.xacro" />
 	<xacro:include filename="$(find val_description)/instance/instances/robots/xacro/sensors/ati_force_torque.xacro" />
 
-	<RobotInstance id="valkyrie_A" />
+	<RobotInstance id="${instance}" />
 
 	<xacro:all_channels/>
 
