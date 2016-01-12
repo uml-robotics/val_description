@@ -10,6 +10,7 @@
   <xacro:include filename="$(find val_description)/model/robots/common/xacro/arm/joint_limits.xacro"/>
   <xacro:include filename="$(find val_description)/model/robots/common/xacro/arm/frame_parameters.xacro"/>
   <xacro:include filename="$(find val_description)/model/robots/common/xacro/arm/mass_parameters.xacro"/>
+  <xacro:include filename="$(find val_description)/model/robots/common/xacro/gains.xacro"/>
 
   <xacro:macro name="make_upper_arm" params="prefix reflect upper_arm_root_link">
 
@@ -55,7 +56,7 @@
                           axis="${ShoulderPitchRotationAxis}"
                           damping="0.1" friction="0.0">
         <limit effort="${ShoulderPitchTorqueLimit}" lower="${ShoulderPitchPositionLimit_Lower}" upper="${ShoulderPitchPositionLimit_Upper}" velocity="${ShoulderPitchVelocityLimit}"/>
-        <controller_gains Kp="20000" Kd="400"/>
+        <controller_gains Kp="0.0" Kd="0.0"/>
     </xacro:revolute_joint_ex>
 
     <xacro:revolute_joint_ex jointName="${ShoulderRollJointName}"
@@ -70,7 +71,7 @@
         <xacro:if value="${(-reflect+1)/2}">
         <limit effort="${ShoulderRollTorqueLimit}" lower="${reflect * ShoulderRollPositionLimit_Upper}" upper="${reflect * ShoulderRollPositionLimit_Lower}" velocity="${ShoulderRollVelocityLimit}"/>
         </xacro:if>
-        <controller_gains Kp="20000" Kd="400"/>
+        <controller_gains Kp="0.0" Kd="0.0"/>
     </xacro:revolute_joint_ex>
 
     <xacro:revolute_joint_ex jointName="${ShoulderYawJointName}"
@@ -80,7 +81,7 @@
                           axis="${ShoulderYawRotationAxis}"
                           damping="0.1" friction="0.0">
         <limit effort="${ShoulderYawTorqueLimit}" lower="${ShoulderYawPositionLimit_Lower}" upper="${ShoulderYawPositionLimit_Upper}" velocity="${ShoulderYawVelocityLimit}"/>
-        <controller_gains Kp="20000" Kd="400"/>
+        <controller_gains Kp="0.0" Kd="0.0"/>
     </xacro:revolute_joint_ex>
 
     <xacro:revolute_joint_ex jointName="${ElbowPitchJointName}"
@@ -95,7 +96,7 @@
         <xacro:if value="${(-reflect+1)/2}">
         <limit effort="${ElbowPitchTorqueLimit}" lower="${reflect * ElbowPitchPositionLimit_Upper}" upper="${reflect * ElbowPitchPositionLimit_Lower}" velocity="${ElbowPitchVelocityLimit}"/>
         </xacro:if>
-        <controller_gains Kp="20000" Kd="400"/>
+        <controller_gains Kp="0.0" Kd="0.0"/>
     </xacro:revolute_joint_ex>
   </xacro:macro>
 
@@ -135,7 +136,7 @@
                           axis="${ForearmYawRotationAxis}"
                           damping="0.1" friction="0.0">
         <limit effort="${ForearmYawTorqueLimit}" lower="${ForearmYawPositionLimit_Lower}" upper="${ForearmYawPositionLimit_Upper}" velocity="${ForearmYawVelocityLimit}"/>
-        <controller_gains Kp="20000" Kd="0"/>
+        <controller_gains Kp="0.0" Kd="0"/>
     </xacro:revolute_joint_ex>
 
     <xacro:revolute_joint_ex jointName="${WristRollJointName}"
@@ -150,7 +151,7 @@
         <xacro:if value="${(-reflect+1)/2}">
         <limit effort="${WristRollTorqueLimit}" lower="${reflect * WristRollPositionLimit_Upper}" upper="${reflect * WristRollPositionLimit_Lower}" velocity="${WristRollVelocityLimit}"/>
         </xacro:if>
-        <controller_gains Kp="20000" Kd="400"/>
+        <controller_gains Kp="${WristRollKp}" Kd="${WristRollKd}" Ki="${WristRollKi}"/>
     </xacro:revolute_joint_ex>
 
     <xacro:revolute_joint_ex jointName="${WristPitchJointName}"
@@ -165,7 +166,7 @@
         <xacro:if value="${(-reflect+1)/2}">
         <limit effort="${WristRollTorqueLimit}" lower="${reflect * WristPitchPositionLimit_Upper}" upper="${reflect * WristPitchPositionLimit_Lower}" velocity="${WristRollVelocityLimit}"/>
         </xacro:if>
-        <controller_gains Kp="20000" Kd="400"/>
+        <controller_gains Kp="${WristPitchKp}" Kd="${WristPitchKd}" Ki="${WristPitchKi}"/>
     </xacro:revolute_joint_ex>
   </xacro:macro>
 

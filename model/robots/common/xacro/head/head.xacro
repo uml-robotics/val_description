@@ -9,6 +9,7 @@
   <xacro:include filename="$(find val_description)/model/robots/common/xacro/head/joint_limits.xacro"/>
   <xacro:include filename="$(find val_description)/model/robots/common/xacro/head/frame_parameters.xacro"/>
   <xacro:include filename="$(find val_description)/model/robots/common/xacro/head/mass_parameters.xacro"/>
+  <xacro:include filename="$(find val_description)/model/robots/common/xacro/gains.xacro"/>
   
   <xacro:property name="NJ3_Link_Radius" value="0.139"/>
 
@@ -51,7 +52,7 @@
                           axis="${LowerNeckPitchRotationAxis}"
                           damping="0.1" friction="0.0">
       <limit effort="${LowerNeckPitchTorqueLimit}" lower="${LowerNeckPitchPositionLimit_Lower}" upper="${LowerNeckPitchPositionLimit_Upper}" velocity="${LowerNeckPitchVelocityLimit}"/>
-      <controller_gains Kp="20000" Kd="0"/>
+      <controller_gains Kp="${LowerNeckPitchKd}" Kd="${LowerNeckPitchKd}" Ki="${LowerNeckPitchKi}"/>
     </xacro:revolute_joint_ex>
 
     <xacro:revolute_joint_ex jointName="${NeckYawJointName}"
@@ -61,7 +62,7 @@
                           axis="${NeckYawRotationAxis}"
                           damping="0.1" friction="0.0">
       <limit effort="${NeckYawTorqueLimit}" lower="${NeckYawPositionLimit_Lower}" upper="${NeckYawPositionLimit_Upper}" velocity="${NeckYawVelocityLimit}"/>
-      <controller_gains Kp="20000" Kd="0"/>
+      <controller_gains Kp="${NeckYawKd}" Kd="${NeckYawKd}" Ki="${NeckYawKi}"/>
     </xacro:revolute_joint_ex>
 
     <xacro:revolute_joint_ex jointName="${UpperNeckPitchJointName}"
@@ -71,7 +72,7 @@
                           axis="${UpperNeckPitchRotationAxis}"
                           damping="0.1" friction="0.0">
       <limit effort="${UpperNeckPitchTorqueLimit}" lower="${UpperNeckPitchPositionLimit_Lower}" upper="${UpperNeckPitchPositionLimit_Upper}" velocity="${UpperNeckPitchVelocityLimit}"/>
-      <controller_gains Kp="20000" Kd="0"/>
+      <controller_gains Kp="${UpperNeckPitchKd}" Kd="${UpperNeckPitchKd}" Ki="${UpperNeckPitchKi}"/>
     </xacro:revolute_joint_ex>
   </xacro:macro>
 
