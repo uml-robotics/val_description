@@ -8,11 +8,11 @@
 	<xacro:property name="leftAnkleRightActuatorSerialNumber" value="v_e_010" />
 
 	<xacro:property name="rightLegJ1SerialNumber" value="v_a_014" />
-	<xacro:property name="rightLegJ2SerialNumber" value="v_b_015" />
-	<xacro:property name="rightLegJ3SerialNumber" value="v_c_009" />
-	<xacro:property name="rightLegJ4SerialNumber" value="v_d_005" />
-	<xacro:property name="rightAnkleLeftActuatorSerialNumber" value="v_e_021" />
-	<xacro:property name="rightAnkleRightActuatorSerialNumber" value="v_e_022" />
+	<xacro:property name="rightLegJ2SerialNumber" value="v_b_007" />
+	<xacro:property name="rightLegJ3SerialNumber" value="v_c_003" />
+	<xacro:property name="rightLegJ4SerialNumber" value="v_d_002" />
+	<xacro:property name="rightAnkleLeftActuatorSerialNumber" value="v_e_018" />
+	<xacro:property name="rightAnkleRightActuatorSerialNumber" value="v_e_017" />
 
 	<xacro:property name="leftArmJ1SerialNumber" value="v_a_013" />
 	<xacro:property name="leftArmJ2SerialNumber" value="v_b_009" />
