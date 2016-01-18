@@ -12,7 +12,7 @@
   <ModeFile id="mode.xml" />
   <Coeffs>
     <Coeff description="Kinematic direction of joint" id="JointKinematicDir" value="-1.0" />
-    <Coeff description="Angle offset used for calibrating joint angle" id="PositionOffset_Rad" value="-1.30268421561" />
+    <Coeff description="Angle offset used for calibrating joint angle" id="PositionOffset_Rad" value="-2.39718004541" />
     <Coeff description="hard limit, radians" id="JointMaxValue" value="3.14159265359" />
     <Coeff description="hard limit, radians" id="JointMinValue" value="-3.14159265359" />
     <Coeff description="Lower joint limit" id="JointSafety_LowerLimit_Rad" value="-3.14159265359" />

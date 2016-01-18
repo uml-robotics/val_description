@@ -10,7 +10,7 @@
     <SafetyFile id="safety.xml" />
     <ModeFile id="mode.xml" />
     <Coeffs>
-        <Coeff description="" id="JointKinematicDir" value="1" />
+        <Coeff description="" id="JointKinematicDir" value="-1.0" />
         <Coeff description="" id="JointMaxValue" value="3.14159265359" />
         <Coeff description="" id="JointMinValue" value="-3.14159265359" />
         <Coeff description="" id="TorqueOffset_Nm" value="0.0" />
