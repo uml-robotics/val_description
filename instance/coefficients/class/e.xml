@@ -22,7 +22,7 @@
     <Coeff id="PositionControl_Input_fc_Hz" value="10.0"/>
     <Coeff id="PositionControl_enableInLPF" value="1.0"/>
     <Coeff id="Renishaw_CountsToM" value="4e-09"/>
-    <Coeff id="SpringStiffness" value="603000.0"/>
+    <Coeff id="SpringStiffness" value="1.6085e6"/>
     <Coeff id="WindingResistance" value="1.7014"/>
   </Coeffs>
 </CoeffData>
