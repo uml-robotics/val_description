@@ -77,12 +77,4 @@
     </xacro:revolute_joint>
   </xacro:macro>
 
-  <xacro:macro name="v1_right_middle_finger_actuators" params="prefix api">
-    <xacro:v1_actuator name="${RMFA_Actuator_Name}" api="${api}" />
-  </xacro:macro>
-
-  <xacro:macro name="v1_left_middle_finger_actuators" params="prefix api">
-    <xacro:v1_actuator name="${LMFA_Actuator_Name}" api="${api}" />
-  </xacro:macro>
-
 </robot>

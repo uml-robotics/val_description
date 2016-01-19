@@ -77,13 +77,5 @@
     </xacro:revolute_joint>
 
   </xacro:macro>
-
-  <xacro:macro name="v1_right_pinky_finger_actuators" params="prefix api">
-    <xacro:v1_actuator name="${RLFA_Actuator_Name}" api="${api}" />
-  </xacro:macro>
-
-  <xacro:macro name="v1_left_pinky_finger_actuators" params="prefix api">
-    <xacro:v1_actuator name="${LLFA_Actuator_Name}" api="${api}" />
-  </xacro:macro>
   
 </robot>

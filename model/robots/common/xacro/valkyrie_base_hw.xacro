@@ -28,4 +28,12 @@
     <xacro:arm_transmissions_hw prefix="left"/>
     <xacro:arm_transmissions_hw prefix="right"/>
     <xacro:neck_transmissions_hw />
+    <xacro:thumb_transmissions prefix="left"/>
+    <xacro:thumb_transmissions prefix="right"/>
+    <xacro:index_finger_transmissions prefix="left"/>
+    <xacro:index_finger_transmissions prefix="right"/>
+    <xacro:middle_finger_transmissions prefix="left"/>
+    <xacro:middle_finger_transmissions prefix="right"/>
+    <xacro:pinky_finger_transmissions prefix="left"/>
+    <xacro:pinky_finger_transmissions prefix="right"/>
 </robot>

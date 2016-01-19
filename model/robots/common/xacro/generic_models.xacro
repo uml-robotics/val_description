@@ -1,10 +1,6 @@
 <?xml version="1.0" ?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="generic_models">
 
-  <xacro:macro name="v1_actuator" params="name api">
-    <actuator name="${name}" type="${api}"/>
-  </xacro:macro>
-
   <xacro:macro name="standard_link" params="name mass origin_rpy origin_xyz ixx ixy ixz iyy iyz izz visual_mesh collision_mesh">
     <link name="${name}">
       <inertial>
@@ -296,8 +292,24 @@
     </transmission>
   </xacro:macro>
 
-  <xacro:macro name="finger_transmission" params="transmissionName transmissionType joint1Name joint2Name joint3Name joint1Role joint2Role joint3Role actuator1Name actuator2Name actuator3Name actuator1Api actuator1Role actuator2Role actuator3Role">
-
+  <xacro:macro name="athena1_transmission" params="prefix">
+    <type>robot_transmission_interface/athena1_transmission</type>
+    <joint name="wristPitch">
+      <role>wristPitch</role>
+    </joint>
+    <joint name="wristRoll">
+      <role>wristRoll</role>
+    </joint>
+    <actuator name="wristTopActuator">
+      <role>="wristTopActuator"</role>
+      <mechanicalReduction>1</mechanicalReduction>
+      <hardwareInterface>PositionJointInterface</hardwareInterface>
+    </actuator>
+    <actuator name="wristBottomActuator">
+      <role>="wristBottomActuator"</role>
+      <mechanicalReduction>1</mechanicalReduction>
+      <hardwareInterface>PositionJointInterface</hardwareInterface>
+    </actuator>
   </xacro:macro>
 
 </robot>
