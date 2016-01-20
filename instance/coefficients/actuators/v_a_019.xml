@@ -28,6 +28,6 @@
         <Coeff description="" id="CurrVelFilter_fc_Hz" value="200" />
         <Coeff description="" id="TorqueControl_MotorTorqueDirection" value="1" />
         <Coeff description="" id="PositionControl_MotorTorqueDirection" value="1" />
-        <Coeff description="" id="SpringAPS_BitOffset" value="4786488" />
+        <Coeff description="" id="SpringAPS_BitOffset" value="178767268" />
     </Coeffs>
 </CoeffData>
