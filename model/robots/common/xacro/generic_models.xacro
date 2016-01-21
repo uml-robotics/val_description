@@ -294,7 +294,7 @@
 
   <xacro:macro name="athena1_transmission" params="prefix transmissionName">
     <transmission name="${transmissionName}">
-      <type>robot_transmission_interface/athena1_transmission</type>
+      <type>robot_transmission_interface/AthenaForearmTransmission</type>
       <joint name="${prefix}WristPitch">
         <role>wristPitch</role>
       </joint>
@@ -317,7 +317,7 @@
 
   <xacro:macro name="athena2_transmission" params="prefix transmissionName">
     <transmission name="${transmissionName}">
-      <type>robot_transmission_interface/athena2_transmission</type>
+      <type>robot_transmission_interface/AthenaFingerTransmission</type>
       <joint name="${prefix}ThumbPitch2">
         <role>thumbPitch2</role>
       </joint>
