@@ -230,6 +230,20 @@
     </transmission>
   </xacro:macro>
 
+  <xacro:macro name="simple_position_transmission" params="jointName actuatorName nodeName actuatorApi">
+    <transmission name="${jointName}Transmission">
+      <type>transmission_interface/SimpleTransmission</type>
+      <joint name="${jointName}">
+        <hardwareInterface>PositionJointInterface</hardwareInterface>
+      </joint>
+      <actuator name="${actuatorName}">
+        <node name="${nodeName}"/>
+        <mechanicalReduction>1</mechanicalReduction>
+        <api name="${actuatorApi}" />
+      </actuator>
+    </transmission>
+  </xacro:macro>
+
   <xacro:macro name="pushrod_transmission" params="transmissionName transmissionType joint1Name joint2Name joint1Role joint2Role actuator1Name actuator2Name actuator1Node actuator2Node actuator1Api actuator2Api actuator1Role actuator2Role">
     <transmission name="${transmissionName}">
       <type>robot_transmission_interface/${transmissionType}</type>
