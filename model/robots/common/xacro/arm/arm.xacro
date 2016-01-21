@@ -185,8 +185,8 @@
     <xacro:simple_transmission jointName="${ShoulderYawJointName}" actuatorName="${ShoulderYawActuatorName}" nodeName="${ShoulderYawNode}" actuatorApi="${ShoulderYawApi}"/>
     <xacro:simple_transmission jointName="${ElbowPitchJointName}" actuatorName="${ElbowPitchActuatorName}" nodeName="${ElbowPitchNode}" actuatorApi="${ElbowPitchApi}"/> 
     <xacro:simple_transmission jointName="${ForearmYawActuatorName}" actuatorName="${ForearmYawActuatorName}" nodeName="${ForearmYawNode}" actuatorApi="${ForearmYawApi}"/> 
-    <xacro:athena1_transmission prefix="${prefix}"/>
-    <xacro:athena2_transmission prefix="${prefix}"/>
+    <xacro:athena1_transmission prefix="${prefix}" transmissionName="${prefix}ArmAthena1Transmission"/>
+    <xacro:athena2_transmission prefix="${prefix}" transmissionName="${prefix}ArmAthena2Transmission"/>
   </xacro:macro>
 
   <xacro:macro name="arm_transmissions_no_hands" params="prefix">

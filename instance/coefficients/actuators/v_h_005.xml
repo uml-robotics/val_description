@@ -1,4 +1,4 @@
 <CoeffData>
-    <Athena1File id="v_h_005_athena1.xml"/>
-    <Athena2File id="v_h_005_athena2.xml"/>
+    <Athena1 id="v_h_005_athena1.xml"/>
+    <Athena2 id="v_h_005_athena2.xml"/>
 </CoeffData>

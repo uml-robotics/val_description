@@ -292,46 +292,50 @@
     </transmission>
   </xacro:macro>
 
-  <xacro:macro name="athena1_transmission" params="prefix">
-    <type>robot_transmission_interface/athena1_transmission</type>
-    <joint name="${prefix}WristPitch">
-      <role>wristPitch</role>
-    </joint>
-    <joint name="${prefix}WristRoll">
-      <role>wristRoll</role>
-    </joint>
-    <joint name="${prefix}ThumbRoll">
-      <role>thumbRoll</role>
-    </joint>
-    <joint name="${prefix}ThumbPitch1">
-      <role>thumbPitch1</role>
-    </joint>
-    <actuator name="${prefix}Athena1Actuator">
-      <role>athena1Actuator</role>
-      <mechanicalReduction>1</mechanicalReduction>
-      <hardwareInterface>PositionJointInterface</hardwareInterface>
-    </actuator>
+  <xacro:macro name="athena1_transmission" params="prefix transmissionName">
+    <transmission name="${transmissionName}">
+      <type>robot_transmission_interface/athena1_transmission</type>
+      <joint name="${prefix}WristPitch">
+        <role>wristPitch</role>
+      </joint>
+      <joint name="${prefix}WristRoll">
+        <role>wristRoll</role>
+      </joint>
+      <joint name="${prefix}ThumbRoll">
+        <role>thumbRoll</role>
+      </joint>
+      <joint name="${prefix}ThumbPitch1">
+        <role>thumbPitch1</role>
+      </joint>
+      <actuator name="${prefix}Athena1Actuator">
+        <role>athena1Actuator</role>
+        <mechanicalReduction>1</mechanicalReduction>
+        <hardwareInterface>PositionJointInterface</hardwareInterface>
+      </actuator>
+    </transmission>
   </xacro:macro>
 
-  <xacro:macro name="athena2_transmission" params="prefix">
-    <type>robot_transmission_interface/athena2_transmission</type>
-    <joint name="${prefix}ThumbPitch2">
-      <role>thumbPitch2</role>
-    </joint>
-    <joint name="${prefix}IndexFingerPitch1">
-      <role>indexFingerPitch1</role>
-    </joint>
-    <joint name="${prefix}MiddleFingerPitch1">
-      <role>middleFingerPitch1</role>
-    </joint>
-    <joint name="${prefix}PinkyPitch1">
-      <role>pinkyPitch1</role>
-    </joint>
-    <actuator name="${prefix}Athena2Actuator">
-      <role>athena2Actuator</role>
-      <mechanicalReduction>1</mechanicalReduction>
-      <hardwareInterface>PositionJointInterface</hardwareInterface>
-    </actuator>
+  <xacro:macro name="athena2_transmission" params="prefix transmissionName">
+    <transmission name="${transmissionName}">
+      <type>robot_transmission_interface/athena2_transmission</type>
+      <joint name="${prefix}ThumbPitch2">
+        <role>thumbPitch2</role>
+      </joint>
+      <joint name="${prefix}IndexFingerPitch1">
+        <role>indexFingerPitch1</role>
+      </joint>
+      <joint name="${prefix}MiddleFingerPitch1">
+        <role>middleFingerPitch1</role>
+      </joint>
+      <joint name="${prefix}PinkyPitch1">
+        <role>pinkyPitch1</role>
+      </joint>
+      <actuator name="${prefix}Athena2Actuator">
+        <role>athena2Actuator</role>
+        <mechanicalReduction>1</mechanicalReduction>
+        <hardwareInterface>PositionJointInterface</hardwareInterface>
+      </actuator>
+    </transmission>
   </xacro:macro>
 
 </robot>

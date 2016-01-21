@@ -29,13 +29,8 @@
 	<xacro:property name="WaistPitchActuatorSimNode" value="/trunk/pitch_actuator" /> <!--pitch-->
 	<xacro:property name="WaistRollActuatorSimNode" value="/trunk/roll_actuator" /> <!--roll-->
 
-	<xacro:property name="ThumbRollNode" value="/forearmDriver1"/>
-	<xacro:property name="ThumbPitch1Node" value="/forearmDriver1"/>
-	<xacro:property name="ThumbPitch2Node" value="/forearmDriver1"/>
-
-	<xacro:property name="IndexFingerNode" value="/forearmDriver2"/>
-	<xacro:property name="MiddleFingerNode" value="/forearmDriver2"/>
-	<xacro:property name="PinkyNode" value="/forearmDriver2"/>
+	<xacro:property name="Athena1Node" value="/${prefix}_arm/athena1"/>
+	<xacro:property name="Athena2Node" value="/${prefix}_arm/athena2"/>
 
 	<xacro:property name="pelvis_middle_imu_node" value="/sensors/middlePelvisIMU" />
 	<xacro:property name="pelvis_rear_imu_node" value="/sensors/rearPelvisIMU" />
