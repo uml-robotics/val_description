@@ -218,7 +218,7 @@
 
   <xacro:macro name="simple_transmission" params="jointName actuatorName nodeName actuatorApi">
     <transmission name="${jointName}Transmission">
-      <type>robot_transmission_interface/SimpleTransmissionWithDamping</type>
+      <type>transmission_interface/SimpleTransmission</type>
       <joint name="${jointName}">
         <hardwareInterface>EffortJointInterface</hardwareInterface>
       </joint>
@@ -232,7 +232,7 @@
 
   <xacro:macro name="simple_position_transmission" params="jointName actuatorName nodeName actuatorApi">
     <transmission name="${jointName}Transmission">
-      <type>robot_transmission_interface/SimpleTransmissionWithDamping</type>
+      <type>transmission_interface/SimpleTransmission</type>
       <joint name="${jointName}">
         <hardwareInterface>PositionJointInterface</hardwareInterface>
       </joint>
