@@ -93,4 +93,10 @@
     </xacro:revolute_joint>
   </xacro:macro>
 
+  <xacro:macro name="thumb_transmissions" params="prefix">
+    <xacro:simple_position_transmission jointName="${ThumbRollJointName}" actuatorName="${ThumbRollActuatorName}" nodeName="${ThumbRollNode}" actuatorApi="${ThumbRollApi}"/>
+    <xacro:simple_position_transmission jointName="${ThumbPitch1JointName}" actuatorName="${ThumbPitch1ActuatorName}" nodeName="${ThumbPitch1Node}" actuatorApi="${ThumbPitch1Api}"/>
+    <xacro:simple_position_transmission jointName="${ThumbPitch2JointName}" actuatorName="${ThumbPitch2ActuatorName}" nodeName="${ThumbPitch2Node}" actuatorApi="${ThumbPitch2Api}"/>
+  </xacro:macro>
+
 </robot>

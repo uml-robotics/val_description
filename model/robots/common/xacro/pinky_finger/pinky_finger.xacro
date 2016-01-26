@@ -8,7 +8,7 @@
   <xacro:include filename="$(find val_description)/model/robots/common/xacro/pinky_finger/frame_parameters.xacro"/>
   <xacro:include filename="$(find val_description)/model/robots/common/xacro/pinky_finger/mass_parameters.xacro"/>
 
-  <xacro:macro name="make_pinky_finger" params="prefix reflect pinky_finger_root_link">
+  <xacro:macro name="make_pinky" params="prefix reflect pinky_finger_root_link">
 
     <xacro:standard_link name="${PinkyPitch1LinkName}"
                     mass="${PinkyPitch1LinkMass}"
@@ -78,12 +78,9 @@
 
   </xacro:macro>
 
-  <xacro:macro name="v1_right_pinky_finger_actuators" params="prefix api">
-    <xacro:v1_actuator name="${RLFA_Actuator_Name}" api="${api}" />
+  <xacro:macro name="pinky_transmissions" params="prefix">
+    <xacro:simple_position_transmission jointName="${PinkyPitch1JointName}" actuatorName="${PinkyPitch1ActuatorName}" nodeName="${PinkyPitch1Node}" actuatorApi="${PinkyPitch1Api}"/>
   </xacro:macro>
-
-  <xacro:macro name="v1_left_pinky_finger_actuators" params="prefix api">
-    <xacro:v1_actuator name="${LLFA_Actuator_Name}" api="${api}" />
-  </xacro:macro>
+  
   
 </robot>

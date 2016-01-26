@@ -23,6 +23,14 @@
 	<xacro:property name="WaistLeftActuatorApi" value="robot_hardware_interface/TurbodriverAPI_DRCv4_linear" />
 	<xacro:property name="WaistRightActuatorApi" value="robot_hardware_interface/TurbodriverAPI_DRCv4_linear" />
 
+	<xacro:property name="ThumbRollApi" value="robot_hardware_interface/TurbodriverAPI_DRCv4" />
+	<xacro:property name="ThumbPitch1Api" value="robot_hardware_interface/TurbodriverAPI_DRCv4" />
+	<xacro:property name="ThumbPitch2Api" value="robot_hardware_interface/TurbodriverAPI_DRCv4" />
+	
+	<xacro:property name="IndexFingerPitch1Api" value="robot_hardware_interface/TurbodriverAPI_DRCv4" />
+	<xacro:property name="MiddleFingerPitch1Api" value="robot_hardware_interface/TurbodriverAPI_DRCv4" />
+	<xacro:property name="PinkyPitch1Api" value="robot_hardware_interface/TurbodriverAPI_DRCv4" />
+
 	<xacro:property name="AtiSensorApi" value="TurbodriverForceTorqueSensor_v1" />
 	<xacro:property name="ImuSensorHardwareApi" value="val_imu_3dm_gx4_15_interface/Imu3dmGx415Interface" />
 	<xacro:property name="ImuSensorSimApi" value="val_imu_gazebo_interface/ImuGazeboInterface" />

@@ -1,0 +1,30 @@
+<robot xmlns:xacro="http://ros.org/wiki/xacro" name="valkyrie">
+
+    <xacro:property name="mesh_root" value="package://val_description/model/meshes"/>
+    <xacro:include filename="$(find val_description)/model/robots/common/xacro/generic_models.xacro" />
+    <xacro:include filename="$(find val_description)/model/robots/common/xacro/common_bodies.xacro" />
+    
+    <xacro:property name="prefix" value="left"/>
+    <xacro:property name="reflect" value="1"/>
+
+    <link name="world"/>
+
+    <joint name="fixed" type="fixed">
+        <parent link="world"/>
+        <child link="${prefix}ForearmLink"/>
+    </joint>
+
+    <xacro:make_lower_arm prefix="${prefix}" reflect="${reflect}" lower_arm_root_link="world"/>
+
+    <xacro:make_thumb prefix="${prefix}" reflect="${reflect}" thumb_root_link="${WristPitchLinkName}"/>    
+    <xacro:make_index_finger prefix="${prefix}" reflect="${reflect}" index_finger_root_link="${WristPitchLinkName}"/>    
+    <xacro:make_middle_finger prefix="${prefix}" reflect="${reflect}" middle_finger_root_link="${WristPitchLinkName}"/>    
+    <xacro:make_pinky prefix="${prefix}" reflect="${reflect}" pinky_finger_root_link="${WristPitchLinkName}"/>    
+
+    <xacro:pushrod_transmission_position transmissionName="${prefix}WristTransmission" transmissionType="WristPushrodTransmission" joint1Name="${WristPitchJointName}" joint2Name="${WristRollJointName}" joint1Role="roll" joint2Role="pitch" actuator1Name="${WristTopActuatorName}" actuator2Name="${WristBottomActuatorName}" actuator1Node="${WristTopActuatorNode}" actuator2Node="${WristBottomActuatorNode}" actuator1Api="${WristTopActuatorApi}" actuator2Api="${WristBottomActuatorApi}" actuator1Role="top" actuator2Role="bottom"/>
+    <xacro:thumb_transmissions prefix="${prefix}"/>
+    <xacro:index_finger_transmissions prefix="${prefix}"/>
+    <xacro:middle_finger_transmissions prefix="${prefix}"/>
+    <xacro:pinky_transmissions prefix="${prefix}"/>
+
+</robot>
