@@ -10,7 +10,6 @@
     <SafetyFile id="safety.xml"/>
     <ModeFile id="mode.xml"/>
     <Coeffs>
-        <Coeff description="40 N*m maximum torque before fault" id="JointTorqueLimit_Nm" value="45"/>
         <Coeff description="Kinematic direction of joint" id="JointKinematicDir" value="1"/>
         <Coeff description="hard limit, radians" id="JointMaxValue" value="3.14159265359"/>
         <Coeff description="hard limit, radians" id="JointMinValue" value="-3.14159265359"/>

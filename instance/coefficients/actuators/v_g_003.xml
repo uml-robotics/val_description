@@ -18,6 +18,5 @@
         <Coeff description="" id="JointSensors_MotorPosition" value="1"/>
         <Coeff description="" id="JointSensors_OutputForce" value="3"/>
         <Coeff description="" id="JointSensors_OutputPosition" value="2.0"/>
-        <Coeff description="" id="JointTorqueLimit_Nm" value="100.0"/>
     </Coeffs>
 </CoeffData>

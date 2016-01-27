@@ -20,7 +20,6 @@
         <Coeff id="JointSensors_OutputForce" value="0.0"/>
         <Coeff id="JointSensors_OutputPosition" value="2.0"/>
         <Coeff id="JointSensors_OutputVelocity" value="3.0"/>
-        <Coeff id="JointTorqueLimit_Nm" value="99999.0"/>
         <Coeff id="PositionOffset_Rad" value="1.77021372318"/>
     </Coeffs>
 </CoeffData>
