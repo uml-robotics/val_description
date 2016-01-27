@@ -11,8 +11,6 @@
     <ModeFile id="mode.xml" />
     <Coeffs>
         <Coeff description="Kinematic direction of joint" id="JointKinematicDir" value="-1.0" />
-        <Coeff description="hard limit, radians" id="JointMaxValue" value="3.14159265359" />
-        <Coeff description="hard limit, radians" id="JointMinValue" value="-3.14159265359" />
         <Coeff description="" id="TorqueOffset_Nm" value="2.50706818752" />
         <Coeff description="" id="PositionOffset_Rad" value="-1.7571748373" />
         <Coeff description="Incremental Encoder Enabled" id="JointSensors_MotorPosition" value="1" />

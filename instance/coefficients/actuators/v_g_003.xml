@@ -13,8 +13,6 @@
         <Coeff description="" id="EncMountingDir" value="1.0"/>
         <Coeff description="" id="EncoderIndexOffset" value="3.21578736244"/>
         <Coeff description="" id="JointKinematicDir" value="1"/>
-        <Coeff description="" id="JointMaxValue" value="3.14159274101"/>
-        <Coeff description="" id="JointMinValue" value="-3.14159274101"/>
         <Coeff description="" id="JointSensors_MotorPosition" value="1"/>
         <Coeff description="" id="JointSensors_OutputForce" value="3"/>
         <Coeff description="" id="JointSensors_OutputPosition" value="2.0"/>
