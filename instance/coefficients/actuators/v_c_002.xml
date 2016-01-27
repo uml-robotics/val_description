@@ -26,17 +26,10 @@
         <Coeff id="JointSensors_OutputVelocity" value="1.0"/>
         <Coeff id="JointTorqueLimit_Nm" value="225.0"/>
         <Coeff id="PositionControl_MotorTorqueDirection" value="1.0"/>
-        <Coeff id="PositionOffset_Rad" value="-1.5262">
-            <notes>Was -1.5326
-Was -1.52554
-Was -1.54472</notes>
-        </Coeff>
+        <Coeff id="PositionOffset_Rad" value="-1.5262"/>
         <Coeff id="SpringAPS_BitOffset" value="803799845.0"/>
         <Coeff id="SpringAPS_MountingGain" value="1.0"/>
         <Coeff id="TorqueControl_MotorTorqueDirection" value="1.0"/>
-        <Coeff id="TorqueOffset_Nm" value="-9.068">
-            <notes>Was -7.08
-Was -7.0</notes>
-        </Coeff>
+        <Coeff id="TorqueOffset_Nm" value="-9.068"/>
     </Coeffs>
 </CoeffData>

@@ -1,6 +1,7 @@
 <CoeffData>
     <Properties>
-        <FileGenDate>1424836854.03</FileGenDate>
+        <CalibrationDate/>
+        <FileGenDate date="2014-09-15" time="10:35:17" />
     </Properties>
     <ClassFile id="a.xml" />
     <ControllerFile id="a_sv.xml" />
