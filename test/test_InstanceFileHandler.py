@@ -311,7 +311,6 @@ class instanceFileHandlerTests(unittest.TestCase):
                           'TorqueOffset_Nm': {'source': 'v_a_001.xml', 'value': -9.39},
                           'EncoderIndexOffset': {'source': 'v_a_001.xml', 'value': 1.16973095726},
                           'JointKinematicDir': {'source': 'v_a_001.xml', 'value': -1.0},
-                          'TorqueControl_MotorTorqueDirection': {'source': 'v_a_001.xml', 'value': 1.0},
                           'EncMountingDir': {'source': 'v_a_001.xml', 'value': 1.0},
                           'JointMaxValue': {'source': 'v_a_001.xml', 'value': 3.14159265359},
                           'JointSensors_OutputForce': {'source': 'v_a_001.xml', 'value': 2.0},
