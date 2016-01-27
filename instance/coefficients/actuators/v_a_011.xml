@@ -35,8 +35,5 @@
         <Coeff description="" id="CurrVelFilter_fc_Hz" value="200" />
         <Coeff description="" id="TorqueControl_MotorTorqueDirection" value="1" />
         <Coeff description="" id="PositionControl_MotorTorqueDirection" value="1" />
-    <Coeff id="EffortControl_AlphaDot" value="0.0"/>
-    <Coeff id="TorqueControl_Kd" value="0.04"/>
-    <Coeff id="TorqueControl_Kp" value="2.0"/>
     </Coeffs>
 </CoeffData>
