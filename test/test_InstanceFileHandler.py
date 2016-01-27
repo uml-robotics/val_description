@@ -303,25 +303,22 @@ class instanceFileHandlerTests(unittest.TestCase):
             '/test_files/sample_instance.xml'
         instanceFileHandler = InstanceFileHandler(sampleInstanceFile)
 
-        expectedCoeffs = {'JointSensors_OutputPosition': {'source': 'test_v_a_001.xml', 'value': 2.0},
-                          'PositionControl_MotorTorqueDirection': {'source': 'test_v_a_001.xml', 'value': 1.0},
-                          'JointOutputAPS_MountingGain': {'source': 'test_v_a_001.xml', 'value': 1.0},
-                          'SpringAPS_MountingGain': {'source': 'test_v_a_001.xml', 'value': -1.0},
-                          'PositionControl_enableInLPF': {'source': 'test_v_a_001.xml', 'value': 1.0},
-                          'PositionOffset_Rad': {'source': 'test_v_a_001.xml', 'value': -1.6651},
-                          'JointSensors_OutputVelocity': {'source': 'test_v_a_001.xml', 'value': 1.0},
-                          'TorqueOffset_Nm': {'source': 'test_v_a_001.xml', 'value': -9.39},
-                          'EncoderIndexOffset': {'source': 'test_v_a_001.xml', 'value': 1.16973095726},
-                          'JointKinematicDir': {'source': 'test_v_a_001.xml', 'value': -1.0},
-                          'TorqueControl_MotorTorqueDirection': {'source': 'test_v_a_001.xml', 'value': 1.0},
-                          'EncMountingDir': {'source': 'test_v_a_001.xml', 'value': 1.0},
-                          'JointMaxValue': {'source': 'test_v_a_001.xml', 'value': 3.14159265359},
-                          'JointSensors_OutputForce': {'source': 'test_v_a_001.xml', 'value': 2.0},
-                          'JointMinValue': {'source': 'test_v_a_001.xml', 'value': -3.14159265359},
-                          'SpringAPS_BitOffset': {'source': 'test_v_a_001.xml', 'value': 115108200.0},
-                          'JointSensors_MotorPosition': {'source': 'test_v_a_001.xml', 'value': 1.0},
-                          'JointSafety_LimitZone_Rad': {'source': 'test_v_a_001.xml', 'value': 0.07},
-                          'PositionControl_Input_fc_Hz': {'source': 'test_v_a_001.xml', 'value': 30.0}}
+        expectedCoeffs = {'JointSensors_OutputPosition': {'source': 'v_a_001.xml', 'value': 2.0},
+                          'JointOutputAPS_MountingGain': {'source': 'v_a_001.xml', 'value': 1.0},
+                          'SpringAPS_MountingGain': {'source': 'v_a_001.xml', 'value': -1.0},
+                          'PositionOffset_Rad': {'source': 'v_a_001.xml', 'value': -1.6651},
+                          'JointSensors_OutputVelocity': {'source': 'v_a_001.xml', 'value': 1.0},
+                          'TorqueOffset_Nm': {'source': 'v_a_001.xml', 'value': -9.39},
+                          'EncoderIndexOffset': {'source': 'v_a_001.xml', 'value': 1.16973095726},
+                          'JointKinematicDir': {'source': 'v_a_001.xml', 'value': -1.0},
+                          'TorqueControl_MotorTorqueDirection': {'source': 'v_a_001.xml', 'value': 1.0},
+                          'EncMountingDir': {'source': 'v_a_001.xml', 'value': 1.0},
+                          'JointMaxValue': {'source': 'v_a_001.xml', 'value': 3.14159265359},
+                          'JointSensors_OutputForce': {'source': 'v_a_001.xml', 'value': 2.0},
+                          'JointMinValue': {'source': 'v_a_001.xml', 'value': -3.14159265359},
+                          'SpringAPS_BitOffset': {'source': 'v_a_001.xml', 'value': 115108200.0},
+                          'JointSensors_MotorPosition': {'source': 'v_a_001.xml', 'value': 1.0},
+                          'JointSafety_LimitZone_Rad': {'source': 'v_a_001.xml', 'value': 0.07}}
 
         assert cmp(instanceFileHandler.loadXMLCoeffs('test_v_a_001.xml'), expectedCoeffs) == 0
 
