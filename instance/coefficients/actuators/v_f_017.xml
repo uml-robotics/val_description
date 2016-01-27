@@ -24,6 +24,5 @@
         <Coeff description="" id="JointOutputAPS_MountingGain" value="1.0" />
         <Coeff description="" id="SpringAPS_BitOffset" value="534928657" />
         <Coeff description="" id="SpringAPS_MountingGain" value="-1.0" />
-        <Coeff description="" id="CurrVelFilter_fc_Hz" value="200" />
     </Coeffs>
 </CoeffData>

@@ -25,7 +25,5 @@
         <Coeff description="" id="JointOutputAPS_MountingGain" value="1.0" />
         <Coeff description="" id="SpringAPS_BitOffset" value="55685715" />
         <Coeff description="" id="SpringAPS_MountingGain" value="-1" />
-        <Coeff description="" id="TorqueControl_MotorTorqueDirection" value="1.0" />
-        <Coeff description="" id="PositionControl_MotorTorqueDirection" value="1.0" />
     </Coeffs>
 </CoeffData>

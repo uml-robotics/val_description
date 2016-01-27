@@ -14,10 +14,8 @@
     <SafetyFile id="safety.xml" />
     <ModeFile id="mode.xml" />
     <Coeffs>
-        <Coeff id="APS1_BiasComp_Enable" value="0.0" />
         <Coeff id="EncMountingDir" value="1.0" />
         <Coeff id="EncoderIndexOffset" value="1.4269" />
-        <Coeff id="ForceControl_MotorForceDirection" value="1.0" />
         <Coeff id="ForceOffset_N" value="-500.774414062" />
         <Coeff id="JointKinematicDir" value="-1.0" />
         <Coeff id="JointMaxValue" value="3.14159" />
