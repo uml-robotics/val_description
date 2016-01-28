@@ -1,3 +1,4 @@
+<!-- This file is for unit testing only -->
 <CoeffData>
   <Type id="turbodriver" />
   <Processor id="linear/turbo_bootloader.bin" />
@@ -10,7 +11,7 @@
     <Coeff id="FluxLinkage" value="0.0"/>
     <Coeff id="Inductance_DAxis" value="0.0009"/>
     <Coeff id="Inductance_QAxis" value="0.00139"/>
-    <Coeff id="JointForceLimit_N" value="3250.0"/>
+    <Coeff id="JointForceLimit_N" value="600000.0"/>
     <Coeff id="JointForceLowerLimit_N" value="-500000.0"/>
     <Coeff id="JointForceUpperLimit_N" value="500000.0"/>
     <Coeff id="JointForce_AsymLimits" value="0.0"/>
