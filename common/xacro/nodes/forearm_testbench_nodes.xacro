@@ -1,0 +1,6 @@
+<robot xmlns:xacro="http://ros.org/wiki/xacro" name="test_bench_nodes">
+
+	<xacro:property name="Athena1Node" value="/forearm/forearm_driver1" />
+	<xacro:property name="Athena2Node" value="/forearm/forearm_driver2" />
+    
+</robot>

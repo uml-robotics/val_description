@@ -333,5 +333,26 @@ class instanceFileHandlerTests(unittest.TestCase):
         assert '/left_leg/ankle/left_actuator' in nodesToCheck
         assert '/left_leg/ankle/right_actuator' in nodesToCheck
 
+    def testForearmCoeffs(self):
+        sampleInstanceFile = self.testDirectory + "/test_files/test_forearm.xml"
+        instanceFileHandler = InstanceFileHandler(sampleInstanceFile)
+
+        node1 = '/forearm/forearm_driver1'
+        node2 = '/forearm/forearm_driver2'
+
+        nodeNames = instanceFileHandler.getNodeNames()
+
+        assert(node1 in nodeNames)
+        assert(node2 in nodeNames)
+
+        forearmCoeffDictionary = instanceFileHandler.getForearmCoeffDictionary()
+
+        expectedAthenaDictionary = {}
+        expectedAthenaDictionary[node1] = {'Pitch_offset': -2331,'Yaw_offset':1596,'Pitch_hilmt':1500,'Pitch-lolmt':-1500,'Pitch_cnvtrad':-0.000767}
+        expectedAthenaDictionary[node2] = {'Fing1_elecoffset':0,'Fing1_locmdlmt':100,'Fing1_hicmdlmt':5214,'Fing1_posKP':1,'Fing1_posKD':0}
+
+        assert cmp(forearmCoeffDictionary[node1],expectedAthenaDictionary[node1])
+        assert cmp(forearmCoeffDictionary[node2],expectedAthenaDictionary[node2])
+
 if __name__ == '__main__':
     unittest.main()

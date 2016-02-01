@@ -31,13 +31,11 @@
 
 <xacro:macro name="forearm" params="mechanism_name serial_number athena1_node athena2_node">
     <Mechanism id="${mechanism_name}" type="forearm">
-        <Nodes>
             <SerialNumber id="${serial_number}"/>
             <Nodes>
                 <Athena1 id="${athena1_node}"/>
                 <Athena2 id="${athena2_node}"/>
             </Nodes>
-        </Nodes>
     </Mechanism>
 </xacro:macro>
 
