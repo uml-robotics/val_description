@@ -7,8 +7,16 @@
     <xacro:include filename="$(find val_description)/instance/instances/robots/xacro/mechanisms/mechanisms.xacro"/>
     <xacro:include filename="$(find val_description)/common/xacro/joint_names/valkyrie_joint_names.xacro"/>
 
+    <Channels>
+
+    </Channels>
+
     <Mechanisms>
     <xacro:forearm mechanism_name="${prefix}Forearm" serial_number="${forearm_serial_number}" athena1_node="${Athena1Node}" athena2_node="${Athena2Node}" />
 	</Mechanisms>
+
+	<Devices>
+
+	</Devices>
 
 </robot>
