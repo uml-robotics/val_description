@@ -15,3 +15,4 @@ test_bench*.xml
 instance/instances/instance_files/*
 *.save
 *.old
+*.swo
