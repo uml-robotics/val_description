@@ -30,9 +30,9 @@
     <xacro:property name="rightWristTopActuatorSerialNumber" value="UNKNOWN" />
     <xacro:property name="rightWristBottomActuatorSerialNumber" value="UNKNOWN" />
 
-    <xacro:property name="neckJ1SerialNumber" value="v_g_012" />
+    <xacro:property name="neckJ1SerialNumber" value="v_g_014" />
     <xacro:property name="neckJ2SerialNumber" value="v_g_013" />
-    <xacro:property name="neckJ3SerialNumber" value="v_g_014" />
+    <xacro:property name="neckJ3SerialNumber" value="v_g_015" />
 
     <xacro:property name="trunkSerialNumber" value="v_a_020" />
     <xacro:property name="waistRightActuatorSerialNumber" value="v_e_023" />
