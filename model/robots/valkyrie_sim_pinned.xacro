@@ -13,7 +13,7 @@
 
     <joint name="fixed" type="fixed">
     	<parent link="world"/>
-    	<child link="${Pelvis_Link_Name}"/>
+    	<child link="${TorsoRollLinkName}"/>
   	</joint>
 
 </robot>
