@@ -102,8 +102,8 @@
   <xacro:macro name="v1_trunk_sensors_usb" params="sensor_node_tag sensor_api_tag sensor_port_tag">
     <xacro:usb_microstrain_sensor sensorName="leftTorsoImu"
                               parentLink="${TorsoRollLinkName}"
-                              origin_xyz="-0.046863 0.134239 0.3630676"
-                              origin_rpy="1.57 0 3.14"
+                              origin_xyz="-0.0627634 0.134239 0.3630676"
+                              origin_rpy="-1.5707 0.0 0.0"
                               sensor_node="${sensor_node_tag}"
                               sensor_api="${sensor_api_tag}"
                               sensor_port="${sensor_port_tag}" />
