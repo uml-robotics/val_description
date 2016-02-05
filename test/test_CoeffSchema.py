@@ -2,7 +2,7 @@
 
 import unittest
 import glob, os
-import CoeffSchemaDefinitions
+import CoeffSchemaDefinitions as csd
 from lxml import etree as xmlParser
 import lxml
 import logging
@@ -11,26 +11,68 @@ class coeffFileTests(unittest.TestCase):
 
     def setUp(self):
         self.testDirectory = os.path.dirname(os.path.abspath(__file__))
+
+        # Define the directories that coeffs live in
+        self.actuatorCoeffDirectory = self.testDirectory + '/../instance/coefficients/actuators'
+        self.classCoeffDirectory = self.testDirectory + '/../instance/coefficients/class'
+        self.controllerCoeffDirectory = self.testDirectory + '/../instance/coefficients/controllers'
+        self.locationCoeffDirectory = self.testDirectory + '/../instance/coefficients/location'
+        self.modesCoeffDirectory = self.testDirectory + '/../instance/coefficients/modes'
+        self.safetyCoeffDirectory = self.testDirectory + '/../instance/coefficients/safety'
+        self.sensorCoeffDirectory = self.testDirectory + '/../instance/coefficients/sensors'
+
         self.log = logging.getLogger("Coeff Test Logger")
+        self.correctFiles = []
+        self.incorrectFiles = []
 
     def tearDown(self):
         pass
 
-    def testActuatorCoeffsValidSchema(self):
-        schema_root = xmlParser.XML(CoeffSchemaDefinitions.std_coeff)
+    def getSchemaParser(self, schema_definition):
+        schema_root = xmlParser.XML(schema_definition)
         schema = xmlParser.XMLSchema(schema_root)
-        parser = xmlParser.XMLParser(schema = schema)
-        coeffFileDirectory = self.testDirectory + '/../instance/coefficients/actuators'
-        os.chdir(coeffFileDirectory)
-        correctFiles = []
-        incorrectFiles = []
+        return xmlParser.XMLParser(schema = schema)
+
+    def testActuatorCoeffsValidSchema(self):
+        # Assemble the schema
+        schema = csd.schema_header + csd.actuator_coeffs_definition + csd.header_coeff_definition + csd.actuator_coeff_files_definition + csd.coeff_definition + csd.footer_coeff_definition
+        parser = self.getSchemaParser(schema)
+        os.chdir(self.actuatorCoeffDirectory)
         for coeffFile in glob.glob("*.xml"):
             try:
                 root = xmlParser.parse(coeffFile, parser)
-                correctFiles.append(coeffFile)
+                self.correctFiles.append(coeffFile)
             except xmlParser.XMLSyntaxError:
                 self.log.error(coeffFile + " has coeffs that are not in the schema")
-                incorrectFiles.append(coeffFile)
-        assert len(incorrectFiles) == 0
+                self.incorrectFiles.append(coeffFile)
+        assert len(self.incorrectFiles) == 0
 
 
+    def testClassCoeffsValidSchema(self):
+        # Assemble the schema
+        schema = csd.schema_header + csd.class_coeffs_definition + csd.header_coeff_definition + csd.coeff_definition + csd.footer_coeff_definition
+        parser = self.getSchemaParser(schema)
+        os.chdir(self.classCoeffDirectory)
+        for coeffFile in glob.glob("*.xml"):
+            try:
+                root = xmlParser.parse(coeffFile, parser)
+                self.correctFiles.append(coeffFile)
+            except xmlParser.XMLSyntaxError as e:
+                self.log.error(coeffFile + " has coeffs that are not in the schema" + e.msg)
+                self.incorrectFiles.append(coeffFile)
+        assert len(self.incorrectFiles) == 0
+
+    def testControllerCoeffsValidSchema(self):
+        pass
+
+    def testLocationCoeffsValidSchema(self):
+        pass
+
+    def testModesCoeffsValidSchema(self):
+        pass
+
+    def testSafetyCoeffsValidSchema(self):
+        pass
+
+    def testSensorCoeffsValidSchema(self):
+        pass
