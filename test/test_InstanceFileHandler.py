@@ -24,7 +24,7 @@ class instanceFileHandlerTests(unittest.TestCase):
         instanceFileHandler = InstanceFileHandler(sampleInstanceFile)
 
         keys = ['/left_leg/j1', '/left_leg/ankle/actuator0', '/left_leg/ankle/actuator1']
-        testFiles = ['v_a_001.xml', 'v_e_001.xml', 'v_e_002.xml']
+        testFiles = ['test_v_a_001.xml', 'test_v_e_001.xml', 'test_v_e_002.xml']
 
         assert instanceFileHandler.getActuatorCoeffFileByNode(keys[0]) == testFiles[0]
         assert instanceFileHandler.getActuatorCoeffFileByNode(keys[1]) == testFiles[1]
@@ -225,15 +225,16 @@ class instanceFileHandlerTests(unittest.TestCase):
             '/test_files/sample_instance.xml'
         instanceFileHandler = InstanceFileHandler(sampleInstanceFile)
 
-        expectedConfigDictionary = {'/left_leg/ankle/actuator0': {'configFiles': ['v_e_001.xml', 'e.xml', 'e_sv.xml', 'testbench.xml',
+        expectedConfigDictionary = {'/left_leg/ankle/actuator0': {'configFiles': ['test_v_e_001.xml', 'test_e.xml', 'test_e_sv.xml', 'testbench.xml',
                                                                                   'sensors.xml', 'safety.xml', 'mode.xml'], 'firmware': 'linear/turbo_bootloader.bin', 'type': 'turbodriver', 'location': '/left_leg/ankle/actuator0'}, '/left_leg/j1':
-                                    {'configFiles': ['v_a_001.xml', 'a.xml', 'a_sv.xml', 'testbench.xml', 'sensors.xml', 'safety.xml', 'mode.xml'], 'firmware':
+                                    {'configFiles': ['test_v_a_001.xml', 'test_a.xml', 'test_a_sv.xml', 'testbench.xml', 'sensors.xml', 'safety.xml', 'mode.xml'], 'firmware':
                                      'rotary/turbo_bootloader.bin', 'type': 'turbodriver', 'location': '/left_leg/j1'}, '/left_leg/ankle/actuator1': {'configFiles':
-                                                                                                                                                      ['v_e_002.xml', 'e.xml', 'e_sv.xml', 'testbench.xml',
+                                                                                                                                                      ['test_v_e_002.xml', 'test_e.xml', 'test_e_sv.xml', 'testbench.xml',
                                                                                                                                                           'sensors.xml', 'safety.xml', 'mode.xml'],
                                                                                                                                                       'firmware': 'linear/turbo_bootloader.bin', 'type': 'turbodriver', 'location': '/left_leg/ankle/actuator1'}}
 
         instanceConfig = instanceFileHandler.getInstanceConfig()
+        print instanceConfig
         assert cmp(instanceConfig, expectedConfigDictionary) == 0
 
     def testGetFirmwareType(self):
@@ -286,7 +287,7 @@ class instanceFileHandlerTests(unittest.TestCase):
         a = '\n'.join(['%s:%s' % (key, value) for (key, value) in sorted(coeffs.items())])
         b = '\n'.join(['%s:%s' % (key, value) for (key, value) in sorted(expectedCoeffs.items())])
         for coeff in coeffs:
-            assert not coeff==None
+            assert not coeff == None
 
     def testGatherCoeffsHandleKeyError(self):
         sampleInstanceFile = self.testDirectory + \
@@ -301,28 +302,28 @@ class instanceFileHandlerTests(unittest.TestCase):
             '/test_files/sample_instance.xml'
         instanceFileHandler = InstanceFileHandler(sampleInstanceFile)
 
-        expectedCoeffs = {'JointSensors_OutputPosition': {'source': 'v_a_001.xml', 'value': 2.0},
-                          'PositionControl_MotorTorqueDirection': {'source': 'v_a_001.xml', 'value': 1.0},
-                          'JointOutputAPS_MountingGain': {'source': 'v_a_001.xml', 'value': 1.0},
-                          'SpringAPS_MountingGain': {'source': 'v_a_001.xml', 'value': -1.0},
-                          'PositionControl_enableInLPF': {'source': 'v_a_001.xml', 'value': 1.0},
-                          'PositionOffset_Rad': {'source': 'v_a_001.xml', 'value': -1.6651},
-                          'JointSensors_OutputVelocity': {'source': 'v_a_001.xml', 'value': 1.0},
-                          'TorqueOffset_Nm': {'source': 'v_a_001.xml', 'value': -9.39},
-                          'EncoderIndexOffset': {'source': 'v_a_001.xml', 'value': 1.16973095726},
-                          'JointKinematicDir': {'source': 'v_a_001.xml', 'value': -1.0},
-                          'TorqueControl_MotorTorqueDirection': {'source': 'v_a_001.xml', 'value': 1.0},
-                          'EncMountingDir': {'source': 'v_a_001.xml', 'value': 1.0},
-                          'JointMaxValue': {'source': 'v_a_001.xml', 'value': 3.14159265359},
-                          'JointSensors_OutputForce': {'source': 'v_a_001.xml', 'value': 2.0},
-                          'JointMinValue': {'source': 'v_a_001.xml', 'value': -3.14159265359},
-                          'SpringAPS_BitOffset': {'source': 'v_a_001.xml', 'value': 115108200.0},
-                          'JointSensors_MotorPosition': {'source': 'v_a_001.xml', 'value': 1.0},
-                          'JointSafety_LimitZone_Rad': {'source': 'v_a_001.xml', 'value': 0.07},
-                          'PositionControl_Input_fc_Hz': {'source': 'v_a_001.xml', 'value': 30.0}}
+        expectedCoeffs = {'JointSensors_OutputPosition': {'source': 'test_v_a_001.xml', 'value': 2.0},
+                          'PositionControl_MotorTorqueDirection': {'source': 'test_v_a_001.xml', 'value': 1.0},
+                          'JointOutputAPS_MountingGain': {'source': 'test_v_a_001.xml', 'value': 1.0},
+                          'SpringAPS_MountingGain': {'source': 'test_v_a_001.xml', 'value': -1.0},
+                          'PositionControl_enableInLPF': {'source': 'test_v_a_001.xml', 'value': 1.0},
+                          'PositionOffset_Rad': {'source': 'test_v_a_001.xml', 'value': -1.6651},
+                          'JointSensors_OutputVelocity': {'source': 'test_v_a_001.xml', 'value': 1.0},
+                          'TorqueOffset_Nm': {'source': 'test_v_a_001.xml', 'value': -9.39},
+                          'EncoderIndexOffset': {'source': 'test_v_a_001.xml', 'value': 1.16973095726},
+                          'JointKinematicDir': {'source': 'test_v_a_001.xml', 'value': -1.0},
+                          'TorqueControl_MotorTorqueDirection': {'source': 'test_v_a_001.xml', 'value': 1.0},
+                          'EncMountingDir': {'source': 'test_v_a_001.xml', 'value': 1.0},
+                          'JointMaxValue': {'source': 'test_v_a_001.xml', 'value': 3.14159265359},
+                          'JointSensors_OutputForce': {'source': 'test_v_a_001.xml', 'value': 2.0},
+                          'JointMinValue': {'source': 'test_v_a_001.xml', 'value': -3.14159265359},
+                          'SpringAPS_BitOffset': {'source': 'test_v_a_001.xml', 'value': 115108200.0},
+                          'JointSensors_MotorPosition': {'source': 'test_v_a_001.xml', 'value': 1.0},
+                          'JointSafety_LimitZone_Rad': {'source': 'test_v_a_001.xml', 'value': 0.07},
+                          'PositionControl_Input_fc_Hz': {'source': 'test_v_a_001.xml', 'value': 30.0}}
 
         assert cmp(instanceFileHandler.loadXMLCoeffs(
-            'v_a_001.xml'), expectedCoeffs) == 0
+            'test_v_a_001.xml'), expectedCoeffs) == 0
 
     def testLoadAnkleInstanceFile(self):
         sampleInstanceFile = self.testDirectory + '/test_files/ankle_instance.xml'

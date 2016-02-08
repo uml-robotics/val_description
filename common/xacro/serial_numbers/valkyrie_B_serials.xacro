@@ -37,8 +37,8 @@
 	<xacro:property name="leftForearmSerialNumber" value="v_h_003"/>
     <xacro:property name="rightForearmSerialNumber" value="v_h_004"/>
 
-	<xacro:property name="left_foot_ATI_serial" value="FT17219" />
-	<xacro:property name="right_foot_ATI_serial" value="FT14019" />
+	<xacro:property name="left_foot_ATI_serial" value="FT17218" />
+	<xacro:property name="right_foot_ATI_serial" value="FT16590" />
     
     <xacro:property name="sim_ATI_serial" value="FT001SIM" />
 
