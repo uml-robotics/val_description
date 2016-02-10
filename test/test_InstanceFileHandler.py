@@ -349,11 +349,12 @@ class instanceFileHandlerTests(unittest.TestCase):
         forearmCoeffDictionary = instanceFileHandler.getForearmCoeffDictionary()
 
         expectedAthenaDictionary = {}
-        expectedAthenaDictionary[node1] = {'Pitch_offset': -2331,'Yaw_offset':1596,'Pitch_hilmt':1500,'Pitch-lolmt':-1500,'Pitch_cnvtrad':-0.000767}
-        expectedAthenaDictionary[node2] = {'Fing1_elecoffset':0,'Fing1_locmdlmt':100,'Fing1_hicmdlmt':5214,'Fing1_posKP':1,'Fing1_posKD':0}
+        expectedAthenaDictionary[node1] = {'Pitch_offset': -2331, 'Yaw_offset': 1596, 'Pitch_hilmt': 1500, 'Pitch-lolmt': -1500, 'Pitch_cnvtrad': -0.000767}
+        expectedAthenaDictionary[node2] = {'Fing1_elecoffset': 0.0, 'Fing1_locmdlmt': 100.0, 'Fing1_hicmdlmt': 5214.0, 'Fing1_posKP': 1.0, 'Fing1_posKD': 0.0}
 
-        assert cmp(forearmCoeffDictionary[node1],expectedAthenaDictionary[node1])
-        assert cmp(forearmCoeffDictionary[node2],expectedAthenaDictionary[node2])
+        assert cmp(forearmCoeffDictionary[node1], expectedAthenaDictionary[node1])
+        for key, value in forearmCoeffDictionary[node2].iteritems():
+            assert(forearmCoeffDictionary[node2][key] - value == 0)
 
 if __name__ == '__main__':
     unittest.main()
