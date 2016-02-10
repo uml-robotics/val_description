@@ -1,0 +1,22 @@
+<robot xmlns:xacro="http://ros.org/wiki/xacro" name="valkyrie">
+
+    <xacro:property name="mesh_root" value="package://val_description/model/meshes"/>
+    <xacro:include filename="$(find val_description)/model/robots/common/xacro/generic_models.xacro" />
+    <xacro:include filename="$(find val_description)/model/robots/common/xacro/common_bodies.xacro" />
+    
+    <xacro:property name="prefix" value="left"/>
+    <xacro:property name="reflect" value="1"/>
+
+    <link name="world"/>
+
+    <joint name="fixed" type="fixed">
+        <parent link="world"/>
+        <child link="${prefix}ForearmLink"/>
+    </joint>
+
+    <xacro:make_lower_arm prefix="${prefix}" reflect="${reflect}" lower_arm_root_link="world"/>
+
+    <xacro:athena1_transmission prefix="${prefix}" transmissionName="${prefix}ArmAthena1Transmission"/>
+    <xacro:athena2_transmission prefix="${prefix}" transmissionName="${prefix}ArmAthena2Transmission"/>
+
+</robot>
