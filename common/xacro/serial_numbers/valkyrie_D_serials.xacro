@@ -38,7 +38,7 @@
     <xacro:property name="waistRightActuatorSerialNumber" value="v_e_023" />
     <xacro:property name="waistLeftActuatorSerialNumber" value="v_e_024" />
 
-    <xacro:property name="left_foot_ATI_serial" value="FT14182" />
+    <xacro:property name="left_foot_ATI_serial" value="FT17212" />
     <xacro:property name="right_foot_ATI_serial" value="FT16590" />
 
     <xacro:property name="sim_ATI_serial" value="FT001SIM" />
