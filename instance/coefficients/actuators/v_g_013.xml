@@ -10,8 +10,8 @@
     <SafetyFile id="safety.xml" />
     <ModeFile id="mode.xml" />
     <Coeffs>
-        <Coeff id="EncMountingDir" value="1" />
-        <Coeff id="EncoderIndexOffset" value="2.9636" />
+        <Coeff id="EncMountingDir" value="-1" />
+        <Coeff id="EncoderIndexOffset" value="6.0" />
         <Coeff id="JointKinematicDir" value="-1.0" />
         <Coeff id="JointMaxValue" value="3.14159265359" />
         <Coeff id="JointMinValue" value="-3.14159265359" />
