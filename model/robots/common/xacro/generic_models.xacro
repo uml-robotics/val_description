@@ -292,7 +292,7 @@
     </transmission>
   </xacro:macro>
 
-  <xacro:macro name="athena1_transmission" params="prefix transmissionName">
+  <xacro:macro name="athena1_transmission" params="prefix transmissionName actuatorApi nodeName">
     <transmission name="${transmissionName}">
       <type>robot_transmission_interface/AthenaForearmTransmission</type>
       <joint name="${prefix}WristPitch">
@@ -309,13 +309,15 @@
       </joint>
       <actuator name="${prefix}Athena1Actuator">
         <role>athena1Actuator</role>
+        <node name="${nodeName}"/>
         <mechanicalReduction>1</mechanicalReduction>
         <hardwareInterface>PositionJointInterface</hardwareInterface>
+        <api name="${actuatorApi}"/>
       </actuator>
     </transmission>
   </xacro:macro>
 
-  <xacro:macro name="athena2_transmission" params="prefix transmissionName">
+  <xacro:macro name="athena2_transmission" params="prefix transmissionName actuatorApi nodeName">
     <transmission name="${transmissionName}">
       <type>robot_transmission_interface/AthenaFingerTransmission</type>
       <joint name="${prefix}ThumbPitch2">
@@ -332,8 +334,10 @@
       </joint>
       <actuator name="${prefix}Athena2Actuator">
         <role>athena2Actuator</role>
+        <node name="${nodeName}"/>
         <mechanicalReduction>1</mechanicalReduction>
         <hardwareInterface>PositionJointInterface</hardwareInterface>
+        <api name="${actuatorApi}"/>
       </actuator>
     </transmission>
   </xacro:macro>

@@ -37,5 +37,8 @@
 
 	<xacro:property name="SimApi" value="robot_hardware_interface/TurbodriverSimAPI" />
 
+	<xacro:property name="Athena1Api" value="robot_hardware_interface/AthenaForearmAPI" />
+	<xacro:property name="Athena2Api" value="robot_hardware_interface/AthenaFingerAPI" />
+
     
 </robot>
