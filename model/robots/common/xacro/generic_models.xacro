@@ -297,15 +297,19 @@
       <type>robot_transmission_interface/AthenaForearmTransmission</type>
       <joint name="${prefix}WristPitch">
         <role>wristPitch</role>
+        <hardwareInterface>PositionJointInterface</hardwareInterface>
       </joint>
       <joint name="${prefix}WristRoll">
         <role>wristRoll</role>
+        <hardwareInterface>PositionJointInterface</hardwareInterface>
       </joint>
       <joint name="${prefix}ThumbRoll">
         <role>thumbRoll</role>
+        <hardwareInterface>PositionJointInterface</hardwareInterface>
       </joint>
       <joint name="${prefix}ThumbPitch1">
         <role>thumbPitch1</role>
+        <hardwareInterface>PositionJointInterface</hardwareInterface>
       </joint>
       <actuator name="${prefix}Athena1Actuator">
         <role>athena1Actuator</role>
@@ -322,15 +326,19 @@
       <type>robot_transmission_interface/AthenaFingerTransmission</type>
       <joint name="${prefix}ThumbPitch2">
         <role>thumbPitch2</role>
+        <hardwareInterface>PositionJointInterface</hardwareInterface>
       </joint>
       <joint name="${prefix}IndexFingerPitch1">
         <role>indexFingerPitch1</role>
+        <hardwareInterface>PositionJointInterface</hardwareInterface>
       </joint>
       <joint name="${prefix}MiddleFingerPitch1">
         <role>middleFingerPitch1</role>
+        <hardwareInterface>PositionJointInterface</hardwareInterface>
       </joint>
       <joint name="${prefix}PinkyPitch1">
         <role>pinkyPitch1</role>
+        <hardwareInterface>PositionJointInterface</hardwareInterface>
       </joint>
       <actuator name="${prefix}Athena2Actuator">
         <role>athena2Actuator</role>
