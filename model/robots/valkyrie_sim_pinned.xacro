@@ -9,11 +9,18 @@
     <xacro:include filename="$(find val_description)/common/xacro/serial_numbers/valkyrie_A_serials.xacro"/>
     <xacro:include filename="$(find val_description)/common/xacro/dev_ports/valkyrie_gazebo_ports.xacro"/>
 
-    <link name="world"/>
-
-    <joint name="fixed" type="fixed">
-    	<parent link="world"/>
-    	<child link="${TorsoRollLinkName}"/>
-  	</joint>
-
+    <gazebo>
+      <joint name="fixed" type="revolute">
+        <parent>world</parent>
+        <child>torso</child>
+        <axis>
+          <xyz>0 0 1</xyz>
+          <use_parent_model_frame>true</use_parent_model_frame>
+          <limit>
+            <upper>0</upper>
+            <lower>0</lower>
+          </limit>
+        </axis>
+      </joint>
+    </gazebo>
 </robot>
