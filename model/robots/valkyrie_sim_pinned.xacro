@@ -12,7 +12,7 @@
     <gazebo>
       <joint name="fixed" type="revolute">
         <parent>world</parent>
-        <child>torso</child>
+        <child>${TorsoRollLinkName}</child>
         <axis>
           <xyz>0 0 1</xyz>
           <use_parent_model_frame>true</use_parent_model_frame>
