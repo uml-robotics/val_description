@@ -14,7 +14,7 @@
         <Coeff id="EncMountingDir" value="1.0" />
         <Coeff id="EncoderIndexOffset" value="4.96" />
         <Coeff id="ForceControl_MotorForceDirection" value="1.0" />
-        <Coeff id="ForceOffset_N" value="7.83449983597" />
+        <Coeff id="ForceOffset_N" value="-51.9807830811" />
         <Coeff id="JointKinematicDir" value="-1.0" />
         <Coeff id="JointMaxValue" value="3.14159" />
         <Coeff id="JointMinValue" value="-3.14159" />
@@ -22,7 +22,7 @@
         <Coeff id="JointSensors_LinearPosition" value="2.0" />
         <Coeff id="JointSensors_LinearVelocity" value="2.0" />
         <Coeff id="JointSensors_MotorPosition" value="1.0" />
-        <Coeff id="JointSensors_OutputForce" value="2.0" />
+        <Coeff id="JointSensors_OutputForce" value="0.0" />
         <Coeff id="JointSensors_OutputPosition" value="3.0" />
         <Coeff id="JointSensors_OutputVelocity" value="1.0" />
         <Coeff id="LoadCell_MountingGain" value="1.0" />
