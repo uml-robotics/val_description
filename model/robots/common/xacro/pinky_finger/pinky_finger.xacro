@@ -77,5 +77,11 @@
     </xacro:revolute_joint>
 
   </xacro:macro>
+
+  <xacro:macro name="pinky_finger_transmissions_hw" params="prefix">
+    <xacro:simple_position_transmission jointName="${PinkyPitch1JointName}" actuatorName="${prefix}PinkyPitch1Actuator" nodeName="${PinkyPitch1Node}" actuatorApi="${PinkyApi}"/>
+    <xacro:simple_position_transmission jointName="${PinkyPitch2JointName}" actuatorName="${prefix}PinkyPitch2Actuator" nodeName="${PinkyPitch2Node}" actuatorApi="${PinkyApi}"/>
+    <xacro:simple_position_transmission jointName="${PinkyPitch3JointName}" actuatorName="${prefix}PinkyPitch3Actuator" nodeName="${PinkyPitch3Node}" actuatorApi="${PinkyApi}"/>
+  </xacro:macro>
   
 </robot>
