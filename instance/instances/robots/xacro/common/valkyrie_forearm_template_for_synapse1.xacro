@@ -1,0 +1,21 @@
+<robot xmlns:xacro="http://ros.org/wiki/xacro" name="forearm_testbench">
+
+    <xacro:include filename="$(find val_description)/common/xacro/nodes/valkyrie_nodes.xacro" />
+    <xacro:include filename="$(find val_description)/instance/instances/robots/xacro/mechanisms/mechanisms.xacro"/>
+    <xacro:include filename="$(find val_description)/instance/instances/robots/xacro/limbs/forearm.xacro" />
+    <xacro:include filename="$(find val_description)/common/xacro/joint_names/valkyrie_joint_names.xacro"/>
+
+    <RobotInstance id="${instance}" />
+
+    <xacro:all_channels/>
+
+    <Mechanisms>
+	<xacro:forearmMake prefix="left" forearm_serial_number="${leftForearmSerialNumber}" />
+	<xacro:forearmMake prefix="right" forearm_serial_number="${rightForearmSerialNumber}" />
+    </Mechanisms>
+
+        <Devices>
+
+        </Devices>
+
+</robot>
