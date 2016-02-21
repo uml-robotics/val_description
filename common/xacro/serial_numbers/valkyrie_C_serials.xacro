@@ -34,6 +34,9 @@
 	<xacro:property name="waistRightActuatorSerialNumber" value="v_e_014" />
 	<xacro:property name="waistLeftActuatorSerialNumber" value="v_e_013" />
 
+	<xacro:property name="leftForearmSerialNumber" value="UNKNOWN"/>
+        <xacro:property name="rightForearmSerialNumber" value="UNKNOWN"/>
+
 	<xacro:property name="left_foot_ATI_serial" value="FT14182" />
 	<xacro:property name="right_foot_ATI_serial" value="FT17214" />
 
