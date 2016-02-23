@@ -28,7 +28,15 @@
 	<xacro:property name="ImuVectorNavHardwareApi" value="val_imu_vectornav_vn100_interface/ImuVecotNavInterface" />
 	<xacro:property name="ImuSensorSimApi" value="val_imu_gazebo_interface/ImuGazeboInterface" />
 
+	<xacro:property name="ThumbFingerApi" value="midas_finger_interface/MidasFingerAPI" />
+	<xacro:property name="IndexFingerApi" value="midas_finger_interface/MidasFingerAPI"/>
+	<xacro:property name="MiddleFingerApi" value="midas_finger_interface/MidasFingerAPI"/>
+	<xacro:property name="PinkyApi" value="midas_finger_interface/MidasFingerAPI"/>
+
 	<xacro:property name="SimApi" value="robot_hardware_interface/TurbodriverSimAPI" />
+
+	<xacro:property name="Athena1Api" value="athena_forearm_interface/AthenaForearmAPI" />
+	<xacro:property name="Athena2Api" value="athena_finger_interface/AthenaFingerAPI" />
 
     
 </robot>

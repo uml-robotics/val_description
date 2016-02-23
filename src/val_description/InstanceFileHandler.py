@@ -60,7 +60,7 @@ class InstanceFileHandler():
             self.devices.append(device)
 
         for mechanism in self.mechanisms:
-            if mechanism.get('type') == 'simple':
+            if mechanism.get('type') == 'simple' or mechanism.get('type') == 'forearm':
                 self.serialNumbers.append(
                     mechanism.find('SerialNumber').get('id'))
             elif mechanism.get('type') == 'complex':
@@ -78,6 +78,11 @@ class InstanceFileHandler():
             elif mechanism.get('type') == 'complex':
                 for actuator in mechanism.findall('Actuator'):
                     self.nodes.append(actuator.find('Node').get('id'))
+            elif mechanism.get('type') == 'forearm':
+                athenaNodesRoot = mechanism.find('Nodes')
+                self.nodes.append(athenaNodesRoot.find('Athena1').get('id'))
+                self.nodes.append(athenaNodesRoot.find('Athena2').get('id'))
+
             else:
                 msg = 'Invalid mechanism type in instance file!'
                 self.logger.error(msg)
@@ -87,6 +92,7 @@ class InstanceFileHandler():
         self.configDictionary = {}
         self.nodeCoeffFileDictionary = {}
         self.actuatorNameCoeffFileDictionary = {}
+        self.forearmCoeffDictionary = {}
         for mechanism in self.mechanisms:
             if mechanism.get('type') == 'simple':
                 tmpNode = mechanism.find('Node').get('id')
@@ -104,6 +110,24 @@ class InstanceFileHandler():
 
                     self.nodeCoeffFileDictionary[tmpNode] = tmpActuatorCoeffFile
                     self.actuatorNameCoeffFileDictionary[actuator.get('id')] = tmpActuatorCoeffFile
+
+            elif mechanism.get('type') == 'forearm':
+                athenaSerialNumber = mechanism.find(
+                    'SerialNumber').get('id')
+
+                athena1CoeffFile = athenaSerialNumber + "_athena1.xml"
+                athena2CoeffFile = athenaSerialNumber + "_athena2.xml"
+
+                athena1CoeffDictionary = self.loadXMLCoeffs(athena1CoeffFile)
+                athena2CoeffDictionary = self.loadXMLCoeffs(athena2CoeffFile)
+
+                self.forearmCoeffDictionary[mechanism.find('Nodes').find('Athena1').get('id')] = {}
+                for coeff,coeffDictionary in athena1CoeffDictionary.iteritems():
+                    self.forearmCoeffDictionary[mechanism.find('Nodes').find('Athena1').get('id')][coeff] = coeffDictionary['value']
+
+                self.forearmCoeffDictionary[mechanism.find('Nodes').find('Athena2').get('id')] = {}
+                for coeff,coeffDictionary in athena2CoeffDictionary.iteritems():
+                    self.forearmCoeffDictionary[mechanism.find('Nodes').find('Athena2').get('id')][coeff] = coeffDictionary['value']
 
             else:
                 msg = 'Invalid mechanism type'
@@ -204,8 +228,12 @@ class InstanceFileHandler():
                 'type'] = classXmlCoeffFile.find('Type').get('id')
             self.configDictionary[node]['location'] = node
 
+
     def getInstanceRoot(self):
         return self.instanceFileRoot
+
+    def getForearmCoeffDictionary(self):
+        return self.forearmCoeffDictionary
 
     def getMechanisms(self):
         return self.mechanisms

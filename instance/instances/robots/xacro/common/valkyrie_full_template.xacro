@@ -17,9 +17,9 @@
 
 		<xacro:leg prefix="right" j1_serial_number="${rightLegJ1SerialNumber}" j2_serial_number="${rightLegJ2SerialNumber}" j3_serial_number="${rightLegJ3SerialNumber}" j4_serial_number="${rightLegJ4SerialNumber}" ankle_left_actuator_serial="${rightAnkleLeftActuatorSerialNumber}" ankle_right_actuator_serial="${rightAnkleRightActuatorSerialNumber}" />
 
-		<xacro:arm prefix="left" j1_serial_number="${leftArmJ1SerialNumber}" j2_serial_number="${leftArmJ2SerialNumber}" j3_serial_number="${leftArmJ3SerialNumber}" j4_serial_number="${leftArmJ4SerialNumber}" j5_serial_number="${leftArmJ5SerialNumber}" wrist_actuator0_serial="${leftWristTopActuatorSerialNumber}" wrist_actuator1_serial="${leftWristBottomActuatorSerialNumber}" />
+		<xacro:arm prefix="left" j1_serial_number="${leftArmJ1SerialNumber}" j2_serial_number="${leftArmJ2SerialNumber}" j3_serial_number="${leftArmJ3SerialNumber}" j4_serial_number="${leftArmJ4SerialNumber}" j5_serial_number="${leftArmJ5SerialNumber}" forearm_serial_number="${leftForearmSerialNumber}" />
 
-		<xacro:arm prefix="right" j1_serial_number="${rightArmJ1SerialNumber}" j2_serial_number="${rightArmJ2SerialNumber}" j3_serial_number="${rightArmJ3SerialNumber}" j4_serial_number="${rightArmJ4SerialNumber}" j5_serial_number="${rightArmJ5SerialNumber}" wrist_actuator0_serial="${rightWristTopActuatorSerialNumber}" wrist_actuator1_serial="${rightWristBottomActuatorSerialNumber}" />
+		<xacro:arm prefix="right" j1_serial_number="${rightArmJ1SerialNumber}" j2_serial_number="${rightArmJ2SerialNumber}" j3_serial_number="${rightArmJ3SerialNumber}" j4_serial_number="${rightArmJ4SerialNumber}" j5_serial_number="${rightArmJ5SerialNumber}" forearm_serial_number="${rightForearmSerialNumber}" />
 
 		<xacro:neck j1_serial_number="${neckJ1SerialNumber}" j2_serial_number="${neckJ2SerialNumber}" j3_serial_number="${neckJ3SerialNumber}" />
 
