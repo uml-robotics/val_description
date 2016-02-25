@@ -6,7 +6,7 @@
     </Properties>
     <ClassFile id="b.xml" />
     <ControllerFile id="b_sv.xml" />
-    <LocationFile id="shoulder_roll_right.xml" />
+    <LocationFile id="hip_roll_left.xml" />
     <SensorsFile id="sensors.xml" />
     <SafetyFile id="safety.xml" />
     <ModeFile id="mode.xml" />
@@ -14,7 +14,7 @@
         <Coeff description="Kinematic direction of joint" id="JointKinematicDir" value="-1.0" />
         <Coeff description="hard limit, radians" id="JointMaxValue" value="3.14159265359" />
         <Coeff description="hard limit, radians" id="JointMinValue" value="-3.14159265359" />
-        <Coeff description="" id="TorqueOffset_Nm" value="-2.27331227812" />
+        <Coeff description="" id="TorqueOffset_Nm" value="2.50706818752" />
         <Coeff description="" id="PositionOffset_Rad" value="-1.7571748373" />
         <Coeff description="Incremental Encoder Enabled" id="JointSensors_MotorPosition" value="1" />
         <Coeff description="V1 actuator magnetic aps" id="JointSensors_OutputPosition" value="2.0" />
@@ -30,7 +30,6 @@
         <Coeff description="" id="LoadCell_OffsetBits" value="32810" />
         <Coeff description="" id="CurrVelFilter_fc_Hz" value="100" />
         <Coeff description="" id="TorqueControl_MotorTorqueDirection" value="1.0" />
-        <Coeff description="" id="TorqueControl_Ki" value="0.0" />
         <Coeff description="" id="PositionControl_MotorTorqueDirection" value="1.0" />
     </Coeffs>
 </CoeffData>
