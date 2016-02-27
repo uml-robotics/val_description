@@ -1,7 +1,7 @@
 <robot xmlns:xacro="http://ros.org/wiki/xacro" name="forearm_testbench">
 
 	<xacro:property name="instance" value="forearm_testbench" />
-	<xacro:property name="prefix" value="right" />
+	<xacro:property name="prefix" value="left" />
 	<xacro:include filename="$(find val_description)/common/xacro/nodes/forearm_testbench_nodes.xacro" />
 	<xacro:include filename="$(find val_description)/common/xacro/serial_numbers/forearm_testbench_serials.xacro" />
     <xacro:include filename="$(find val_description)/instance/instances/robots/xacro/mechanisms/mechanisms.xacro"/>

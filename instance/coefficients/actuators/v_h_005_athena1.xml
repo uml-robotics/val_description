@@ -9,7 +9,7 @@
     <Coeff description="" value="0.000767" id="Pitch_cnvtrad"/>
     <Coeff description="" value="-0.000767" id="Yaw_cnvtrad"/>
     <Coeff description="" value="-45" id="Fing3_elecoffset"/>
-    <Coeff description="" value="-7914" id="Fing3_APSoffset"/>
+    <Coeff description="" value="-7993" id="Fing3_APSoffset"/>
     <Coeff description="" value="1000" id="Pitch_hilmt"/>
     <Coeff description="" value="-1000" id="Pitch_lolmt"/>
     <Coeff description="" value="1000" id="Yaw_hilmt"/>
