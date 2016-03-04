@@ -16,7 +16,7 @@
         <Coeff description="Kinematic direction of joint" id="JointKinematicDir" value="-1.0" />
         <Coeff description="hard limit, radians" id="JointMaxValue" value="3.14159265359" />
         <Coeff description="hard limit, radians" id="JointMinValue" value="-3.14159265359" />
-        <Coeff description="" id="TorqueOffset_Nm" value="33.4089773991" />
+        <Coeff description="" id="TorqueOffset_Nm" value="30.2799612503" />
         <Coeff id="JointSafety_LimitZone_Rad" value="0.07" />
         <Coeff description="" id="PositionOffset_Rad" value="0.384262561798" />
         <Coeff description="Incremental Encoder Enabled" id="JointSensors_MotorPosition" value="1" />

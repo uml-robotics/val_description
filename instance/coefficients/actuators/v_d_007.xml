@@ -11,7 +11,7 @@
   <SafetyFile id="safety.xml" />
   <ModeFile id="mode.xml" />
   <Coeffs>
-    <Coeff description="" id="TorqueOffset_Nm" value="-8.20250527771" />
+    <Coeff description="" id="TorqueOffset_Nm" value="-8.91375092899" />
     <Coeff description="Kinematic direction of joint" id="JointKinematicDir" value="-1.0" />
     <Coeff description="Angle offset used for calibrating joint angle" id="PositionOffset_Rad" value="-1.30115075445" />
     <Coeff description="hard limit, radians" id="JointMaxValue" value="3.14159265359" />
