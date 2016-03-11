@@ -4,7 +4,7 @@
     <xacro:include filename="$(find val_description)/model/robots/common/xacro/generic_models.xacro" />
     <xacro:include filename="$(find val_description)/model/robots/common/xacro/common_bodies.xacro" />
     
-    <xacro:property name="prefix" value="left"/>
+    <xacro:property name="prefix" value="right"/>
     <xacro:property name="reflect" value="1"/>
 
     <link name="world"/>
