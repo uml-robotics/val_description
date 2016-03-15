@@ -3,7 +3,9 @@
         <CalibrationDate />
         <FileGenDate date="2013-11-15" time="09:57:38.068696" />
     </Properties>
-    <ClassFile id="e.xml" />
+    <ClassFile id="e.xml">
+        <SubClassFile id="ankle_linear.xml"/>
+    </ClassFile>
     <ControllerFile id="e_dh.xml" />
     <LocationFile id="ankle.xml" />
     <SensorsFile id="sensors.xml" />
