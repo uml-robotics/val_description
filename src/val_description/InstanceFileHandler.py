@@ -165,8 +165,9 @@ class InstanceFileHandler():
                     actuatorSubClassFile = actuatorXmlCoeffFile.find('ClassFile').find('SubClassFile').get('id')
                 except AttributeError:
                     # Coeffs are not required to specify a subclass
+                    msg = 'SubClassFile tag does not exist or is misspelled in actuator coeff file!'
+                    self.logger.warn(msg)
                     actuatorSubClassFile = None
-                    pass
             except AttributeError:
                 msg = 'ClassFile tag does not exist or is misspelled in actuator coeff file!'
                 self.logger.error(msg)
@@ -379,10 +380,12 @@ class InstanceFileHandler():
             if fname in files:
                 result = os.path.join(root, fname)
 
+        coeffs = {}
+
         if result=="":
             self.logger.error('Coeff file name {} was not found, skipping! Check that the file exists!'.format(fname))
-            return
-        coeffs = {}
+            return coeffs
+
         xmlCoeffObject = xmlParser.parse(result)
         for coeff in xmlCoeffObject.iter('Coeff'):
             coeffName = coeff.get('id')
