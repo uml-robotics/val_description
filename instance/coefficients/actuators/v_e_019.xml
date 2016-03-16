@@ -7,7 +7,7 @@
         <SubClassFile id="ankle_linear.xml"/>
     </ClassFile>
     <ControllerFile id="e_dh.xml" >
-        <SubControllerFild id="e_futek_dh.xml"/>
+        <SubControllerFile id="e_futek_dh.xml"/>
     </ControllerFile>
     <LocationFile id="ankle.xml" />
     <SensorsFile id="sensors.xml" />

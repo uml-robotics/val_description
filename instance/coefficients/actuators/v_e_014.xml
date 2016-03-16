@@ -7,7 +7,7 @@
         <SubClassFile id="trunk_linear.xml"/>
     </ClassFile>
     <ControllerFile id="e_dh.xml" >
-        <SubControllerFild id="e_renishaw_dh.xml"/>
+        <SubControllerFile id="e_renishaw_dh.xml"/>
     </ControllerFile>
     <LocationFile id="trunk.xml" />
     <SensorsFile id="sensors.xml" />
