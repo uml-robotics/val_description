@@ -118,8 +118,15 @@ class InstanceFileHandler():
                 athena1CoeffFile = athenaSerialNumber + "_athena1.xml"
                 athena2CoeffFile = athenaSerialNumber + "_athena2.xml"
 
+                athena1CoeffDictionary = {}
+                athena2CoeffDictionary = {}                
+
                 athena1CoeffDictionary = self.loadXMLCoeffs(athena1CoeffFile)
                 athena2CoeffDictionary = self.loadXMLCoeffs(athena2CoeffFile)
+
+                if not athena1CoeffDictionary or not athena2CoeffDictionary:
+                    self.logger.error('Skipping athenas because coeff dictionaries are empty, check your instance file and coeff files!')
+                    continue
 
                 self.forearmCoeffDictionary[mechanism.find('Nodes').find('Athena1').get('id')] = {}
                 for coeff,coeffDictionary in athena1CoeffDictionary.iteritems():
@@ -154,6 +161,13 @@ class InstanceFileHandler():
 
             try:
                 actuatorClassFile = actuatorXmlCoeffFile.find('ClassFile').get('id')
+                try:
+                    actuatorSubClassFile = actuatorXmlCoeffFile.find('ClassFile').find('SubClassFile').get('id')
+                except AttributeError:
+                    # Coeffs are not required to specify a subclass
+                    msg = 'SubClassFile tag does not exist or is misspelled in actuator coeff file!'
+                    self.logger.warn(msg)
+                    actuatorSubClassFile = None
             except AttributeError:
                 msg = 'ClassFile tag does not exist or is misspelled in actuator coeff file!'
                 self.logger.error(msg)
@@ -161,6 +175,13 @@ class InstanceFileHandler():
 
             try:
                 actuatorControllerFile = actuatorXmlCoeffFile.find('ControllerFile').get('id')
+                try:
+                    actuatorSubControllerFile = actuatorXmlCoeffFile.find('ControllerFile').find('SubControllerFile').get('id')
+                except AttributeError:
+                    # Coeffs are not required to specify a subclass
+                    msg = 'SubControllerFile tag does not exist or is misspelled in actuator coeff file!'
+                    self.logger.warn(msg)
+                    actuatorSubControllerFile = None
             except AttributeError:
                 msg = 'ControllerFile tag does not exist or is misspelled in actuator coeff file!'
                 self.logger.error(msg)
@@ -200,8 +221,14 @@ class InstanceFileHandler():
                 'configFiles'].append(actuatorCoeffFile)
             self.configDictionary[node][
                 'configFiles'].append(actuatorClassFile)
+            if actuatorSubClassFile:
+                self.configDictionary[node][
+                    'configFiles'].append(actuatorSubClassFile)
             self.configDictionary[node][
                 'configFiles'].append(actuatorControllerFile)
+            if actuatorSubControllerFile:
+                self.configDictionary[node][
+                    'configFiles'].append(actuatorSubControllerFile)
             self.configDictionary[node][
                 'configFiles'].append(actuatorLocationFile)
             self.configDictionary[node][
@@ -364,6 +391,11 @@ class InstanceFileHandler():
                 result = os.path.join(root, fname)
 
         coeffs = {}
+
+        if result=="":
+            self.logger.error('Coeff file name {} was not found, skipping! Check that the file exists!'.format(fname))
+            return coeffs
+
         xmlCoeffObject = xmlParser.parse(result)
         for coeff in xmlCoeffObject.iter('Coeff'):
             coeffName = coeff.get('id')

@@ -234,7 +234,6 @@ class instanceFileHandlerTests(unittest.TestCase):
                                                                                                                                                       'firmware': 'linear/turbo_bootloader.bin', 'type': 'turbodriver', 'location': '/left_leg/ankle/actuator1'}}
 
         instanceConfig = instanceFileHandler.getInstanceConfig()
-        print instanceConfig
         assert cmp(instanceConfig, expectedConfigDictionary) == 0
 
     def testGetFirmwareType(self):
