@@ -34,7 +34,7 @@
         <Coeff id="ForceControl_ParallelDamping" value="0.0"/>
 
         <!-- Sensor Feedback -->
-        <Coeff id="ForceControl_SensorFeedback" value="1.0"/>
+        <Coeff id="ForceControl_SensorFeedback" value="0.0"/>
     <!-- end Torque Controller -->
     
   </Coeffs>
