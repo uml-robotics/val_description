@@ -225,16 +225,18 @@ class instanceFileHandlerTests(unittest.TestCase):
             '/test_files/sample_instance.xml'
         instanceFileHandler = InstanceFileHandler(sampleInstanceFile)
 
-        expectedConfigDictionary = {'/left_leg/ankle/actuator0': {'configFiles': ['test_v_e_001.xml', 'test_e.xml', 'test_e_sv.xml', 'testbench.xml',
-                                                                                  'sensors.xml', 'safety.xml', 'mode.xml'], 'firmware': 'linear/turbo_bootloader.bin', 'type': 'turbodriver', 'location': '/left_leg/ankle/actuator0'}, '/left_leg/j1':
-                                    {'configFiles': ['test_v_a_001.xml', 'test_a.xml', 'test_a_sv.xml', 'testbench.xml', 'sensors.xml', 'safety.xml', 'mode.xml'], 'firmware':
-                                     'rotary/turbo_bootloader.bin', 'type': 'turbodriver', 'location': '/left_leg/j1'}, '/left_leg/ankle/actuator1': {'configFiles':
-                                                                                                                                                      ['test_v_e_002.xml', 'test_e.xml', 'test_e_sv.xml', 'testbench.xml',
-                                                                                                                                                          'sensors.xml', 'safety.xml', 'mode.xml'],
-                                                                                                                                                      'firmware': 'linear/turbo_bootloader.bin', 'type': 'turbodriver', 'location': '/left_leg/ankle/actuator1'}}
-
         instanceConfig = instanceFileHandler.getInstanceConfig()
-        assert cmp(instanceConfig, expectedConfigDictionary) == 0
+
+        # Check some of them, to many to check them all though.
+        assert('test_v_e_001.xml' in instanceConfig['/left_leg/ankle/actuator0']['configFiles'])
+        assert('test_e_futek_dh.xml' in instanceConfig['/left_leg/ankle/actuator0']['configFiles'])
+        assert('test_ankle_linear.xml' in instanceConfig['/left_leg/ankle/actuator0']['configFiles'])
+
+        assert('test_v_e_003.xml' in instanceConfig['/trunk/left_actuator']['configFiles'])
+        assert('test_e_renishaw_dh.xml' in instanceConfig['/trunk/left_actuator']['configFiles'])
+        assert('test_trunk_linear.xml' in instanceConfig['/trunk/left_actuator']['configFiles'])
+
+        assert('test_v_a_001.xml' in instanceConfig['/left_leg/j1']['configFiles'])
 
     def testGetFirmwareType(self):
         sampleInstanceFile = self.testDirectory + \
@@ -321,8 +323,7 @@ class instanceFileHandlerTests(unittest.TestCase):
                           'JointSafety_LimitZone_Rad': {'source': 'test_v_a_001.xml', 'value': 0.07},
                           'PositionControl_Input_fc_Hz': {'source': 'test_v_a_001.xml', 'value': 30.0}}
 
-        assert cmp(instanceFileHandler.loadXMLCoeffs(
-            'test_v_a_001.xml'), expectedCoeffs) == 0
+        assert cmp(instanceFileHandler.loadXMLCoeffs('test_v_a_001.xml'), expectedCoeffs) == 0
 
     def testLoadAnkleInstanceFile(self):
         sampleInstanceFile = self.testDirectory + '/test_files/ankle_instance.xml'
@@ -354,6 +355,33 @@ class instanceFileHandlerTests(unittest.TestCase):
         assert cmp(forearmCoeffDictionary[node1], expectedAthenaDictionary[node1])
         for key, value in forearmCoeffDictionary[node2].iteritems():
             assert(forearmCoeffDictionary[node2][key] - value == 0)
+
+    def testSubclassFiles(self):
+        sampleInstanceFile = self.testDirectory + '/test_files/sample_instance.xml'
+        instanceFileHandler = InstanceFileHandler(sampleInstanceFile)
+
+        ankleLinearCoeffs = instanceFileHandler.gatherCoeffs('/left_leg/ankle/actuator0')
+        torsoLinearCoeffs = instanceFileHandler.gatherCoeffs('/trunk/left_actuator')
+
+        assert(torsoLinearCoeffs['ForceControl_SensorFeedback'] == 0)
+        assert(ankleLinearCoeffs['ForceControl_SensorFeedback'] == 1)
+
+        assert(torsoLinearCoeffs['ForceControl_Kp'] == 1)
+        assert(torsoLinearCoeffs['ForceControl_Kd'] == 2)
+
+        assert(ankleLinearCoeffs['ForceControl_Kp'] == 3)
+        assert(ankleLinearCoeffs['ForceControl_Kd'] == 4)
+
+        assert(torsoLinearCoeffs['EffortControl_Alpha'] == 0.99)
+        assert(torsoLinearCoeffs['EffortControl_AlphaDot'] == 0.9)
+
+        assert(ankleLinearCoeffs['EffortControl_Alpha'] == 0.93)
+        assert(ankleLinearCoeffs['EffortControl_AlphaDot'] == 0.45)
+
+        assert(torsoLinearCoeffs['SpringStiffness'] == 714000.0)
+
+        assert(ankleLinearCoeffs['SpringStiffness'] == 1.6085e6)
+
 
 if __name__ == '__main__':
     unittest.main()
