@@ -1,8 +1,4 @@
 <CoeffData>
-  <Properties>
-    <CalibrationDate/>
-    <FileGenDate date="2013-11-14" time="16:10:35.857047"/>
-  </Properties>
   <Type id="turbodriver" />
   <Processor id="" />
   <ScheduleFile id="turbo_linear.yaml" />
@@ -13,8 +9,8 @@
     <Coeff id="FluxLinkage" value="0.0148"/>
     <Coeff id="EncoderCPR" value="1251.0"/>
     <Coeff id="JointGearRatio" value="100.0"/>
-    <Coeff description="" id="JointMaxValue" value="3.14159265359"/>
-    <Coeff description="" id="JointMinValue" value="-3.14159265359"/>
+    <Coeff id="JointMaxValue" value="3.14159265359"/>
+    <Coeff id="JointMinValue" value="-3.14159265359"/>
     <Coeff id="MotorWindingType" value="0.0"/>
     <Coeff id="NumberOfPoles" value="6.0"/>
     <Coeff id="CurrentSafeLimit" value="4.4"/>

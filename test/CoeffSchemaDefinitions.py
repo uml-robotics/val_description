@@ -45,13 +45,70 @@ class_coeffs_definition = \
         <xs:enumeration value="JointMaxValue"/>
         <xs:enumeration value="JointMinValue"/>
         <xs:enumeration value="JointOutputAPS_CountsToRad"/>
+        <xs:enumeration value="JointRadToLinear"/>
+        <xs:enumeration value="LoadCell_NPerCount"/>
         <xs:enumeration value="MotorWindingType"/>
         <xs:enumeration value="NumberOfPoles"/>
         <xs:enumeration value="Renishaw_CountsToRad"/>
+        <xs:enumeration value="Renishaw_CountsToM"/>
         <xs:enumeration value="SpringStiffness"/>
         <xs:enumeration value="WindingResistance"/>
     </xs:restriction>
 </xs:simpleType>
+'''
+
+controller_coeffs_definition = \
+'''
+<xs:simpleType name="ValidCoeffs">
+  <xs:restriction base="xs:string">
+    <xs:enumeration value="Commutation_Select"/>
+    <xs:enumeration value="CurrVelFilter_fc_Hz"/>
+    <xs:enumeration value="DeadTimeCompensation"/>
+    <xs:enumeration value="JointVelFilter_fc_Hz"/>
+    <xs:enumeration value="MotorAccFilter_fc_Hz"/>
+    <xs:enumeration value="MotorVelFilter_fc_Hz"/>
+    <xs:enumeration value="PositionControl_Kd"/>
+    <xs:enumeration value="PositionControl_Kp"/>
+    <xs:enumeration value="PositionControl_SensorFeedback"/>
+    <xs:enumeration value="TorqueControl_Current2MotorTorque"/>
+    <xs:enumeration value="TorqueControl_FFd_fc_Hz"/>
+    <xs:enumeration value="TorqueControl_Kd"/>
+    <xs:enumeration value="TorqueControl_Kd_fc_Hz"/>
+    <xs:enumeration value="TorqueControl_Kp"/>
+    <xs:enumeration value="TorqueControl_PD_damp"/>
+    <xs:enumeration value="TorqueControl_ParallelDamping"/>
+    <xs:enumeration value="TorqueControl_TdobWindupLimit_Nm"/>
+    <xs:enumeration value="TorqueControl_Tdob_fc_Hz"/>
+    <xs:enumeration value="TorqueControl_autoKd"/>
+    <xs:enumeration value="TorqueControl_b"/>
+    <xs:enumeration value="TorqueControl_enableDOB"/>
+    <xs:enumeration value="TorqueControl_enableDynFF"/>
+    <xs:enumeration value="TorqueControl_enableFF"/>
+    <xs:enumeration value="TorqueControl_enablePID"/>
+    <xs:enumeration value="TorqueControl_m"/>
+    <xs:enumeration value="EffortControl_Alpha"/>
+    <xs:enumeration value="EffortControl_AlphaDot"/>
+  </xs:restriction>
+</xs:simpleType>
+'''
+
+actuator_class_info_definition = \
+'''
+<xs:element name="Type">
+      <xs:complexType>
+            <xs:attribute name="id" type="xs:string"></xs:attribute>
+      </xs:complexType>
+</xs:element>
+<xs:element name="Processor">
+      <xs:complexType>
+            <xs:attribute name="id" type="xs:string"></xs:attribute>
+      </xs:complexType>
+</xs:element>
+<xs:element name="ScheduleFile">
+      <xs:complexType>
+            <xs:attribute name="id" type="xs:string"></xs:attribute>
+      </xs:complexType>
+</xs:element>
 '''
 
 actuator_coeff_files_definition = \
@@ -93,6 +150,10 @@ header_coeff_definition = \
     <xs:element name="CoeffData">
         <xs:complexType>
         <xs:sequence>
+'''
+
+properties_coeff_definition = \
+'''
             <xs:element name="Properties">
                 <xs:complexType>
                 <xs:sequence>

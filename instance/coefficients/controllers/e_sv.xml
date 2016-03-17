@@ -1,8 +1,4 @@
 <CoeffData>
-  <Properties>
-    <CalibrationDate/>
-    <FileGenDate date="2013-10-25" time="21:34:25.472638"/>
-  </Properties>
   <Coeffs>
     <Coeff id="Commutation_Select" value="2.0"/>
     <Coeff id="DeadTimeCompensation" value="0.02"/>

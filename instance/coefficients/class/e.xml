@@ -4,8 +4,6 @@
   <ScheduleFile id="turbo_linear.yaml" />
   <Coeffs>
     <Coeff id="CurrentSafeLimit" value="17.0"/>
-    <Coeff id="DisableSpringSafeLimit" value="1.0"/>
-    <Coeff id="EnLoadCellSafeLimit" value="0.0"/>
     <Coeff id="EncoderCPR" value="442.0"/>
     <Coeff id="FluxLinkage" value="0.0"/>
     <Coeff id="Inductance_DAxis" value="0.0009"/>
@@ -21,8 +19,6 @@
     <Coeff id="LoadCell_NPerCount" value="0.74"/>
     <Coeff id="MotorWindingType" value="0.0"/>
     <Coeff id="NumberOfPoles" value="8.0"/>
-    <Coeff id="PositionControl_Input_fc_Hz" value="10.0"/>
-    <Coeff id="PositionControl_enableInLPF" value="1.0"/>
     <Coeff id="Renishaw_CountsToM" value="4e-09"/>
     <Coeff id="WindingResistance" value="1.7014"/>
   </Coeffs>
