@@ -3,5 +3,6 @@
 
 	<xacro:property name="testbench_serial_number" value="v_g_016" />
 	<xacro:property name="forearm_serial_number" value="v_h_005" />
+	<xacro:property name="j5_serial_number" value="v_g_016" />
     
 </robot>
