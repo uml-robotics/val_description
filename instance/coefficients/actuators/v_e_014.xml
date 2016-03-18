@@ -4,10 +4,10 @@
         <FileGenDate date="2013-11-15" time="09:57:38.068696" />
     </Properties>
     <ClassFile id="e.xml">
-        <SubClassFile id="trunk_linear.xml"/>
+        <SubClassFile id="trunk_linear.xml" />
     </ClassFile>
-    <ControllerFile id="e_dh.xml" >
-        <SubControllerFile id="e_renishaw_dh.xml"/>
+    <ControllerFile id="e_dh.xml">
+        <SubControllerFile id="e_renishaw_dh.xml" />
     </ControllerFile>
     <LocationFile id="trunk.xml" />
     <SensorsFile id="sensors.xml" />
@@ -18,7 +18,7 @@
         <Coeff id="EncMountingDir" value="1.0" />
         <Coeff id="EncoderIndexOffset" value="1.8047" />
         <Coeff id="ForceControl_MotorForceDirection" value="1.0" />
-        <Coeff id="ForceOffset_N" value="16.7253513336" />
+        <Coeff id="ForceOffset_N" value="42.9603462219" />
         <Coeff id="JointKinematicDir" value="-1.0" />
         <Coeff id="JointMaxValue" value="3.14159" />
         <Coeff id="JointMinValue" value="-3.14159" />
