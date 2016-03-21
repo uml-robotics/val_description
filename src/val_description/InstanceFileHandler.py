@@ -119,7 +119,7 @@ class InstanceFileHandler():
                 athena2CoeffFile = athenaSerialNumber + "_athena2.xml"
 
                 athena1CoeffDictionary = {}
-                athena2CoeffDictionary = {}                
+                athena2CoeffDictionary = {}
 
                 athena1CoeffDictionary = self.loadXMLCoeffs(athena1CoeffFile)
                 athena2CoeffDictionary = self.loadXMLCoeffs(athena2CoeffFile)
@@ -129,11 +129,11 @@ class InstanceFileHandler():
                     continue
 
                 self.forearmCoeffDictionary[mechanism.find('Nodes').find('Athena1').get('id')] = {}
-                for coeff,coeffDictionary in athena1CoeffDictionary.iteritems():
+                for coeff, coeffDictionary in athena1CoeffDictionary.iteritems():
                     self.forearmCoeffDictionary[mechanism.find('Nodes').find('Athena1').get('id')][coeff] = coeffDictionary['value']
 
                 self.forearmCoeffDictionary[mechanism.find('Nodes').find('Athena2').get('id')] = {}
-                for coeff,coeffDictionary in athena2CoeffDictionary.iteritems():
+                for coeff, coeffDictionary in athena2CoeffDictionary.iteritems():
                     self.forearmCoeffDictionary[mechanism.find('Nodes').find('Athena2').get('id')][coeff] = coeffDictionary['value']
 
             else:
@@ -254,7 +254,6 @@ class InstanceFileHandler():
             self.configDictionary[node][
                 'type'] = classXmlCoeffFile.find('Type').get('id')
             self.configDictionary[node]['location'] = node
-
 
     def getInstanceRoot(self):
         return self.instanceFileRoot
@@ -392,7 +391,7 @@ class InstanceFileHandler():
 
         coeffs = {}
 
-        if result=="":
+        if result == "":
             self.logger.error('Coeff file name {} was not found, skipping! Check that the file exists!'.format(fname))
             return coeffs
 
