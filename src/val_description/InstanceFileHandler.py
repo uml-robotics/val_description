@@ -163,11 +163,12 @@ class InstanceFileHandler():
                 actuatorClassFile = actuatorXmlCoeffFile.find('ClassFile').get('id')
                 try:
                     actuatorSubClassFile = actuatorXmlCoeffFile.find('ClassFile').find('SubClassFile').get('id')
+                    msg = 'Found SubClassFile ' + actuatorSubClassFile + '!'
+                    self.logger.info(msg)
                 except AttributeError:
-                    # Coeffs are not required to specify a subclass
-                    msg = 'SubClassFile tag does not exist or is misspelled in actuator coeff file!'
-                    self.logger.warn(msg)
                     actuatorSubClassFile = None
+                    # Coeffs are not required to specify a subclass
+                    
             except AttributeError:
                 msg = 'ClassFile tag does not exist or is misspelled in actuator coeff file!'
                 self.logger.error(msg)
@@ -177,10 +178,10 @@ class InstanceFileHandler():
                 actuatorControllerFile = actuatorXmlCoeffFile.find('ControllerFile').get('id')
                 try:
                     actuatorSubControllerFile = actuatorXmlCoeffFile.find('ControllerFile').find('SubControllerFile').get('id')
+                    msg = 'Found SubControllerFile ' + actuatorSubControllerFile + '!'
+                    self.logger.info(msg)
                 except AttributeError:
                     # Coeffs are not required to specify a subclass
-                    msg = 'SubControllerFile tag does not exist or is misspelled in actuator coeff file!'
-                    self.logger.warn(msg)
                     actuatorSubControllerFile = None
             except AttributeError:
                 msg = 'ControllerFile tag does not exist or is misspelled in actuator coeff file!'
