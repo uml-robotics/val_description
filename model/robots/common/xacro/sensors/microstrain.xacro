@@ -50,7 +50,7 @@
   </xacro:macro>
   
 
-  <xacro:macro name="usb_microstrain_sensor" params="sensorName parentLink origin_xyz origin_rpy sensor_node sensor_api sensor_port">
+  <xacro:macro name="usb_microstrain_sensor" params="sensorName parentLink origin_xyz origin_rpy sensor_node sensor_api sensor_port sensor_number">
     
     <xacro:massless_virtual_link name="${sensorName}_Frame"
                     origin_rpy="0 0 0"
@@ -79,6 +79,7 @@
         <node name="${sensor_node}" />
         <api name="${sensor_api}" />
         <port name="${sensor_port}" />
+        <sensor_number id="${sensor_number}"/>
         <imu>
            <noise>
                <type>gaussian</type>

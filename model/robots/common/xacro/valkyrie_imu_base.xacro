@@ -3,6 +3,6 @@
     <xacro:make_pelvis />
 
     <xacro:include_multisense_hw />
-    <xacro:v1_pelvis_middle_sensors_usb sensor_node_tag="${pelvis_middle_imu_node}" sensor_api_tag="${KVHHardwareApi}"  sensor_port_tag="${pelvis_middle_imu_port}"/>
+    <xacro:v1_pelvis_middle_sensors_usb sensor_node_tag="${pelvis_middle_imu_node}" sensor_api_tag="${KVHHardwareApi}"  sensor_port_tag="${pelvis_middle_imu_port}" sensor_number_tag="3dmConfigTest"/>
 
 </robot>

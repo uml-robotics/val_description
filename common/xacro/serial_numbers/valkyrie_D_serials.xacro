@@ -40,6 +40,9 @@
     <xacro:property name="left_foot_ATI_serial" value="FT17212" />
     <xacro:property name="right_foot_ATI_serial" value="FT16590" />
 
+    <xacro:property name="rear_pelvis_IMU_serial" value="UNKNOWN" />
+    <xacro:property name="left_torso_IMU_serial" value="UNKNOWN" />
+
     <xacro:property name="sim_ATI_serial" value="FT001SIM" />
     
 </robot>

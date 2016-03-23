@@ -99,14 +99,15 @@
                         frameRate="60"/>
    </xacro:macro>
 
-  <xacro:macro name="v1_trunk_sensors_usb" params="sensor_node_tag sensor_api_tag sensor_port_tag">
+  <xacro:macro name="v1_trunk_sensors_usb" params="sensor_node_tag sensor_api_tag sensor_port_tag sensor_number_tag">
     <xacro:usb_microstrain_sensor sensorName="leftTorsoImu"
                               parentLink="${TorsoRollLinkName}"
                               origin_xyz="-0.0627634 0.134239 0.3630676"
                               origin_rpy="-1.5707 0.0 0.0"
                               sensor_node="${sensor_node_tag}"
                               sensor_api="${sensor_api_tag}"
-                              sensor_port="${sensor_port_tag}" />
+                              sensor_port="${sensor_port_tag}"
+                              sensor_number="${sensor_number_tag}" />
 
     <xacro:flea3_camera sensorName="rightHazardCamera"
                         parentLink="${TorsoRollLinkName}"
