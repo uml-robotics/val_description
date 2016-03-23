@@ -41,7 +41,7 @@
 	<xacro:property name="right_foot_ATI_serial" value="FT17214" />
 
 	<xacro:property name="rear_pelvis_IMU_serial" value="47251" />
-	<xacro:property name="left_torso_IMU_serial" value="47251" />
+	<xacro:property name="left_torso_IMU_serial" value="47099" />
 
 	<xacro:property name="sim_ATI_serial" value="FT001SIM" />
     
