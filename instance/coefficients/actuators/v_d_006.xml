@@ -6,7 +6,7 @@
   </Properties>
   <ClassFile id="d.xml" />
   <ControllerFile id="d_sv.xml" />
-    <LocationFile id="knee_pitch.xml" />
+  <LocationFile id="knee_pitch.xml" />
   <SensorsFile id="sensors.xml" />
   <SafetyFile id="safety.xml" />
   <ModeFile id="mode.xml" />

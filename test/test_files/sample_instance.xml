@@ -35,6 +35,20 @@
         <Node id="/left_leg/ankle/actuator1"/>
       </Actuator>
     </Mechanism>
+    <Mechanism id="waist" type="complex">
+      <Joint id="pitch" type="active">
+      </Joint>
+      <Joint id="roll" type="active">
+      </Joint>
+      <Actuator id="waist_left_actuator">
+        <SerialNumber id="test_v_e_003"/>
+        <Node id="/trunk/left_actuator"/>
+      </Actuator>
+      <Actuator id="left_ankle_actuator1">
+        <SerialNumber id="test_v_e_004"/>
+        <Node id="/trunk/right_actuator"/>
+      </Actuator>
+    </Mechanism>
   </Mechanisms>
   <Devices>
   </Devices>
