@@ -4,12 +4,12 @@
     <FileGenDate date="2013-10-04" time="19:23:42.085597"/>
   </Properties>
   <Coeffs>
-    <Coeff description="" value="256" id="Fing1_elecoffset"/>
-    <Coeff description="" value="0" id="Fing1_APSoffset"/>
+    <Coeff description="" value="0" id="Fing1_elecoffset"/>
+    <Coeff description="" value="4970" id="Fing1_APSoffset"/>
     <Coeff description="" value="768" id="Fing2_elecoffset"/>
     <Coeff description="" value="28" id="Fing2_APSoffset"/>
-    <Coeff description="" value="512" id="Fing3_elecoffset"/>
-    <Coeff description="" value="6932" id="Fing3_APSoffset"/>
+    <Coeff description="" value="96" id="Fing3_elecoffset"/>
+    <Coeff description="" value="7610" id="Fing3_APSoffset"/>
     <Coeff description="" value="768" id="Fing4_elecoffset"/>
     <Coeff description="" value="7802" id="Fing4_APSoffset"/>
     <Coeff description="" value="100" id="Fing1_locmdlmt"/>
