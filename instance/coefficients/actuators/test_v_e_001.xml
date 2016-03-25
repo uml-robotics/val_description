@@ -4,8 +4,12 @@
         <CalibrationDate/>
         <FileGenDate date="2014-12-19" time="11:13:39.491436"/>
     </Properties>
-    <ClassFile id="test_e.xml"/>
-    <ControllerFile id="test_e_sv.xml"/>
+    <ClassFile id="test_e.xml">
+        <SubClassFile id="test_ankle_linear.xml"/>
+    </ClassFile>
+    <ControllerFile id="test_e_dh.xml" >
+        <SubControllerFile id="test_e_futek_dh.xml"/>
+    </ControllerFile>
     <LocationFile id="testbench.xml"/>
     <SensorsFile id="sensors.xml"/>
     <SafetyFile id="safety.xml"/>
