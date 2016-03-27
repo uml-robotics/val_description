@@ -1,5 +1,7 @@
 <robot xmlns:xacro="http://ros.org/wiki/xacro" name="valkyrie">
 
+    <xacro:property name="KVHHardwareApi" value="val_imu_kvh_1750_interface/ImuKVHInterface" />
+
     <xacro:make_pelvis />
 
     <xacro:include_multisense_hw />
