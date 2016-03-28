@@ -51,7 +51,6 @@ class coeffFileTests(unittest.TestCase):
     def testClassCoeffsValidSchema(self):
         # Assemble the schema
         schema = csd.schema_header + csd.class_coeffs_definition + csd.header_coeff_definition + csd.actuator_class_info_definition + csd.coeff_definition + csd.footer_coeff_definition
-        print schema
         parser = self.getSchemaParser(schema)
         os.chdir(self.classCoeffDirectory)
         for coeffFile in glob.glob("*.xml"):
@@ -66,7 +65,6 @@ class coeffFileTests(unittest.TestCase):
     def testControllerCoeffsValidSchema(self):
         # Assemble the schema
         schema = csd.schema_header + csd.controller_coeffs_definition + csd.header_coeff_definition + csd.coeff_definition + csd.footer_coeff_definition
-        print schema
         parser = self.getSchemaParser(schema)
         os.chdir(self.controllerCoeffDirectory)
         for coeffFile in glob.glob("*.xml"):
@@ -74,7 +72,7 @@ class coeffFileTests(unittest.TestCase):
                 root = xmlParser.parse(coeffFile, parser)
                 self.correctFiles.append(coeffFile)
             except xmlParser.XMLSyntaxError as e:
-                self.log.error(coeffFile + " has coeffs that are not in the schema" + e.msg)
+                self.log.error(coeffFile + " has coeffs that are not in the schema")
                 self.incorrectFiles.append(coeffFile)
         assert len(self.incorrectFiles) == 0
 
