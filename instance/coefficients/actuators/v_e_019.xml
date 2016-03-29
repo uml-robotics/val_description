@@ -18,7 +18,7 @@
         <Coeff id="EncMountingDir" value="1.0" />
         <Coeff id="EncoderIndexOffset" value="3.41502380371" />
         <Coeff id="ForceControl_MotorForceDirection" value="1.0" />
-        <Coeff id="ForceOffset_N" value="-39.0664834976" />
+        <Coeff id="ForceOffset_N" value="17.6873998642" />
         <Coeff id="JointKinematicDir" value="-1.0" />
         <Coeff id="JointMaxValue" value="3.14159" />
         <Coeff id="JointMinValue" value="-3.14159" />
