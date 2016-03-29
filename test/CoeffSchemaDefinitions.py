@@ -115,11 +115,25 @@ actuator_coeff_files_definition = \
 '''
 <xs:element name="ClassFile">
       <xs:complexType>
+      <xs:sequence>
+            <xs:element name="SubClassFile" minOccurs="0">
+                  <xs:complexType>
+                      <xs:attribute name="id" type="xs:string"></xs:attribute>
+                  </xs:complexType>
+            </xs:element>
+      </xs:sequence>
             <xs:attribute name="id" type="xs:string"></xs:attribute>
       </xs:complexType>
 </xs:element>
 <xs:element name="ControllerFile">
       <xs:complexType>
+      <xs:sequence>
+            <xs:element name="SubControllerFile" minOccurs="0">
+                  <xs:complexType>
+                      <xs:attribute name="id" type="xs:string"></xs:attribute>
+                  </xs:complexType>
+            </xs:element>
+      </xs:sequence>
             <xs:attribute name="id" type="xs:string"></xs:attribute>
       </xs:complexType>
 </xs:element>

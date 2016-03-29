@@ -3,6 +3,7 @@
 import unittest
 import glob, os
 import CoeffSchemaDefinitions as csd
+import CoeffCollectionDefinitions as ccd
 from lxml import etree as xmlParser
 import lxml
 import logging
@@ -47,6 +48,38 @@ class coeffFileTests(unittest.TestCase):
                 self.incorrectFiles.append(coeffFile)
         assert len(self.incorrectFiles) == 0
 
+    def testActuatorNoDuplicateCoeffs(self):
+        # Assemble the schema
+        os.chdir(self.actuatorCoeffDirectory)
+        for coeffFile in glob.glob("*.xml"):
+            try:
+                xmlCoeffObject = xmlParser.parse(coeffFile)
+                coeffNames = []
+                for coeff in xmlCoeffObject.iter('Coeff'):
+                    coeffNames.append(coeff.get('id'))
+                if len(coeffNames) != len(set(coeffNames)):
+                    raise Exception
+            except Exception:
+                self.log.error(coeffFile + " has duplicate coeffs")
+                self.incorrectFiles.append(coeffFile)
+        assert len(self.incorrectFiles) == 0
+
+    def testActuatorEssentialCoeffs(self):
+        # Assemble the schema
+        os.chdir(self.actuatorCoeffDirectory)
+        for coeffFile in glob.glob("*.xml"):
+            try:
+                xmlCoeffObject = xmlParser.parse(coeffFile)
+                coeffNames = []
+                for coeff in xmlCoeffObject.iter('Coeff'):
+                    coeffNames.append(coeff.get('id'))
+                for coeff in ccd.ActuatorNeededCoeffs:
+                    if coeff not in coeffNames:
+                        raise Exception
+            except Exception:
+                self.log.error(coeffFile + " is missing a needed coeff " + coeff)
+                self.incorrectFiles.append(coeffFile)
+        assert len(self.incorrectFiles) == 0
 
     def testClassCoeffsValidSchema(self):
         # Assemble the schema
@@ -58,7 +91,7 @@ class coeffFileTests(unittest.TestCase):
                 root = xmlParser.parse(coeffFile, parser)
                 self.correctFiles.append(coeffFile)
             except xmlParser.XMLSyntaxError as e:
-                self.log.error(coeffFile + " has coeffs that are not in the schema" + e.msg)
+                self.log.error(coeffFile + " has coeffs that are not in the schema")
                 self.incorrectFiles.append(coeffFile)
         assert len(self.incorrectFiles) == 0
 
