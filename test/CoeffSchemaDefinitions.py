@@ -92,6 +92,63 @@ controller_coeffs_definition = \
 </xs:simpleType>
 '''
 
+location_coeffs_definition = \
+'''
+<xs:simpleType name="ValidCoeffs">
+  <xs:restriction base="xs:string">
+    <xs:enumeration value="JointTorqueLimit_Nm"/>
+    <xs:enumeration value="JointForceLimit_N"/>
+    <xs:enumeration value="JointSafety_LowerLimit_Rad"/>
+    <xs:enumeration value="JointSafety_UpperLimit_Rad"/>
+    <xs:enumeration value="JointSafety_LowerLimit_m"/>
+    <xs:enumeration value="JointSafety_UpperLimit_m"/>
+  </xs:restriction>
+</xs:simpleType>
+'''
+
+modes_coeffs_definition = \
+'''
+<xs:simpleType name="ValidCoeffs">
+  <xs:restriction base="xs:string">
+    <xs:enumeration value="Commutation_Select"/>
+  </xs:restriction>
+</xs:simpleType>
+'''
+
+safety_coeffs_definition = \
+'''
+<xs:simpleType name="ValidCoeffs">
+  <xs:restriction base="xs:string">
+    <xs:enumeration value="APS1DriftSafeLimit"/>
+    <xs:enumeration value="CommTimeoutMs"/>
+    <xs:enumeration value="DeltaAPSSafeLimit"/>
+    <xs:enumeration value="EncDriftSafeLimit"/>
+    <xs:enumeration value="JerkSafeLimit"/>
+    <xs:enumeration value="TemperatureSensor_MaxTemp1"/>
+    <xs:enumeration value="TemperatureSensor_MaxTemp2"/>
+    <xs:enumeration value="TemperatureSensor_SensorLoc1"/>
+    <xs:enumeration value="TemperatureSensor_SensorLoc2"/>
+    <xs:enumeration value="VelocitySafeLimit"/>
+  </xs:restriction>
+</xs:simpleType>
+'''
+
+sensor_coeffs_definition = \
+'''
+<xs:simpleType name="ValidCoeffs">
+  <xs:restriction base="xs:string">
+    <xs:enumeration value="BusVoltage_BitOffset"/>
+    <xs:enumeration value="BusVoltage_SensorGain"/>
+    <xs:enumeration value="IGainAmpsPerBit"/>
+    <xs:enumeration value="PhaseACurOffset"/>
+    <xs:enumeration value="PhaseBCurOffset"/>
+    <xs:enumeration value="PhaseCCurOffset"/>
+    <xs:enumeration value="Position_Alpha"/>
+    <xs:enumeration value="Velocity_Alpha"/>
+  </xs:restriction>
+</xs:simpleType>
+'''
+
 actuator_class_info_definition = \
 '''
 <xs:element name="Type">

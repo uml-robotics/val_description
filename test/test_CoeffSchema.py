@@ -52,7 +52,7 @@ class coeffFileTests(unittest.TestCase):
 
     def checkForNeeded(self, directory, neededCoeffs):
         # Assemble the schema
-        os.chdir(self.actuatorCoeffDirectory)
+        os.chdir(directory)
         for coeffFile in glob.glob("*.xml"):
             try:
                 xmlCoeffObject = xmlParser.parse(coeffFile)
@@ -114,13 +114,45 @@ class coeffFileTests(unittest.TestCase):
         self.checkForNeeded(self.controllerCoeffDirectory, ccd.ControllerNeededCoeffs)
 
     def testLocationCoeffsValidSchema(self):
-        pass
+        # Assemble the schema
+        schema = csd.schema_header + csd.location_coeffs_definition + csd.header_coeff_definition + csd.coeff_definition + csd.footer_coeff_definition
+        self.checkValidSchema(schema, self.controllerCoeffDirectory)
+
+    def testLocationNoDuplicateCoeffs(self):
+        self.checkForDuplicates(self.locationCoeffDirectory)
+
+    def testLocationEssentialCoeffs(self):
+        self.checkForNeeded(self.locationCoeffDirectory, ccd.LocationNeededCoeffs)
 
     def testModesCoeffsValidSchema(self):
-        pass
+        # Assemble the schema
+        schema = csd.schema_header + csd.modes_coeffs_definition + csd.header_coeff_definition + csd.coeff_definition + csd.footer_coeff_definition
+        self.checkValidSchema(schema, self.controllerCoeffDirectory)
+
+    def testModeNoDuplicateCoeffs(self):
+        self.checkForDuplicates(self.modesCoeffDirectory)
+
+    def testModeEssentialCoeffs(self):
+        self.checkForNeeded(self.modesCoeffDirectory, ccd.ModesNeededCoeffs)
 
     def testSafetyCoeffsValidSchema(self):
-        pass
+        # Assemble the schema
+        schema = csd.schema_header + csd.safety_coeffs_definition + csd.header_coeff_definition + csd.coeff_definition + csd.footer_coeff_definition
+        self.checkValidSchema(schema, self.controllerCoeffDirectory)
+
+    def testSafetyNoDuplicateCoeffs(self):
+        self.checkForDuplicates(self.safetyCoeffDirectory)
+
+    def testSafetyEssentialCoeffs(self):
+        self.checkForNeeded(self.safetyCoeffDirectory, ccd.SafetyNeededCoeffs)
 
     def testSensorCoeffsValidSchema(self):
-        pass
+        # Assemble the schema
+        schema = csd.schema_header + csd.sensor_coeffs_definition + csd.header_coeff_definition + csd.coeff_definition + csd.footer_coeff_definition
+        self.checkValidSchema(schema, self.controllerCoeffDirectory)
+
+    def testSensorNoDuplicateCoeffs(self):
+        self.checkForDuplicates(self.sensorCoeffDirectory)
+
+    def testSensorEssentialCoeffs(self):
+        self.checkForNeeded(self.sensorCoeffDirectory, ccd.SensorNeededCoeffs)

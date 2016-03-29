@@ -19,3 +19,23 @@ ClassNeededCoeffs   = ["CurrentSafeLimit",
                        "WindingResistance"]
 
 ControllerNeededCoeffs = ["Commutation_Select"]
+
+LocationNeededCoeffs = []
+
+ModesNeededCoeffs = []
+
+SafetyNeededCoeffs = ["CommTimeoutMs",
+                      "TemperatureSensor_MaxTemp1",
+                      "TemperatureSensor_MaxTemp2",
+                      "TemperatureSensor_SensorLoc1",
+                      "TemperatureSensor_SensorLoc2"]
+
+SensorNeededCoeffs = ["BusVoltage_BitOffset",
+                      "BusVoltage_SensorGain",
+                      "IGainAmpsPerBit",
+                      "PhaseACurOffset",
+                      "PhaseBCurOffset",
+                      "PhaseCCurOffset",
+                      "Position_Alpha",
+                      "Velocity_Alpha"]
+
