@@ -6,3 +6,15 @@ ActuatorNeededCoeffs = ["EncMountingDir",
                         "JointSensors_OutputVelocity",
                         "JointSensors_OutputForce",
                         "PositionOffset_Rad"]
+
+ClassNeededCoeffs   = ["CurrentSafeLimit",
+                       "EncoderCPR",
+                       "FluxLinkage",
+                       "Inductance_DAxis",
+                       "Inductance_QAxis",
+                       "JointMaxValue",
+                       "JointMinValue",
+                       "MotorWindingType",
+                       "NumberOfPoles",
+                       "WindingResistance"]
+
