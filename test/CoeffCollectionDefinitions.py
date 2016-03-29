@@ -18,3 +18,4 @@ ClassNeededCoeffs   = ["CurrentSafeLimit",
                        "NumberOfPoles",
                        "WindingResistance"]
 
+ControllerNeededCoeffs = ["Commutation_Select"]
