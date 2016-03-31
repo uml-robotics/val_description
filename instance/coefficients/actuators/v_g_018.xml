@@ -11,7 +11,7 @@
     <ModeFile id="mode.xml" />
     <Coeffs>
         <Coeff id="EncMountingDir" value="-1" />
-        <Coeff id="EncoderIndexOffset" value="2.64673948288" />
+        <Coeff id="EncoderIndexOffset" value="0.47" />
         <Coeff id="JointKinematicDir" value="-1.0" />
         <Coeff id="JointMaxValue" value="3.14159265359" />
         <Coeff id="JointMinValue" value="-3.14159265359" />
@@ -20,7 +20,7 @@
         <Coeff id="JointSensors_OutputPosition" value="2.0" />
         <Coeff id="JointSensors_OutputForce" value="0.0" />
         <Coeff id="JointSensors_OutputVelocity" value="1.0" />
-        <Coeff id="PositionOffset_Rad" value="0.0" />
+        <Coeff id="PositionOffset_Rad" value="0.596719" />
         <Coeff id="TemperatureSensor_SensorLoc1" value="2.0" />
         <Coeff id="TemperatureSensor_SensorLoc2" value="2.0" />
     </Coeffs>
