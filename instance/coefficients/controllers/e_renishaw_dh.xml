@@ -2,8 +2,8 @@
   <Coeffs>
     <!-- Torque Controller -->
         <Coeff id="EffortControl_OnlineTuning" value="0.0"/>
-        <Coeff id="EffortControl_Alpha" value="0.93"/>
-        <Coeff id="EffortControl_AlphaDot" value="0.45"/>
+        <Coeff id="EffortControl_Alpha" value="0.0"/>
+        <Coeff id="EffortControl_AlphaDot" value="0.95"/>
 
         <!-- Model -->
         <Coeff id="ForceControl_m" value="275.0"/>
@@ -15,8 +15,8 @@
 
         <!-- PID -->
         <Coeff id="ForceControl_enablePID" value="1.0"/>
-        <Coeff id="ForceControl_Kp" value="0.07"/>
-        <Coeff id="ForceControl_Kd" value="0.0005"/>
+        <Coeff id="ForceControl_Kp" value="0.15"/>
+        <Coeff id="ForceControl_Kd" value="0.0003"/>
         <Coeff id="ForceControl_PD_damp" value="0.95"/>
         <Coeff id="ForceControl_autoKd" value="0.0"/>
         <Coeff id="ForceControl_Kd_fc_Hz" value="50.0"/>
