@@ -77,10 +77,10 @@
     </xacro:revolute_joint>
   </xacro:macro>
 
-  <xacro:macro name="middle_finger_transmissions_hw" params="prefix">
-    <xacro:simple_position_transmission jointName="${MiddleFingerPitch1JointName}" actuatorName="${prefix}MiddlePitch1Actuator" nodeName="${MiddleFingerPitch1Node}" actuatorApi="${MiddleFingerApi}"/>
-    <xacro:simple_position_transmission jointName="${MiddleFingerPitch2JointName}" actuatorName="${prefix}MiddlePitch2Actuator" nodeName="${MiddleFingerPitch2Node}" actuatorApi="${MiddleFingerApi}"/>
-    <xacro:simple_position_transmission jointName="${MiddleFingerPitch3JointName}" actuatorName="${prefix}MiddlePitch3Actuator" nodeName="${MiddleFingerPitch3Node}" actuatorApi="${MiddleFingerApi}"/>
+  <xacro:macro name="middle_finger_transmissions_hw" params="prefix reflect">
+    <xacro:simple_forearm_position_transmission jointName="${MiddleFingerPitch1JointName}" actuatorName="${prefix}MiddlePitch1Actuator" nodeName="${MiddleFingerPitch1Node}" actuatorApi="${MiddleFingerApi}" reflect="${reflect}"/>
+    <xacro:simple_forearm_position_transmission jointName="${MiddleFingerPitch2JointName}" actuatorName="${prefix}MiddlePitch2Actuator" nodeName="${MiddleFingerPitch2Node}" actuatorApi="${MiddleFingerApi}" reflect="${reflect}"/>
+    <xacro:simple_forearm_position_transmission jointName="${MiddleFingerPitch3JointName}" actuatorName="${prefix}MiddlePitch3Actuator" nodeName="${MiddleFingerPitch3Node}" actuatorApi="${MiddleFingerApi}" reflect="${reflect}"/>
   </xacro:macro>
 
 </robot>
