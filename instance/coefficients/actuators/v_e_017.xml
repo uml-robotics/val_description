@@ -7,7 +7,7 @@
         <SubClassFile id="ankle_linear.xml" />
     </ClassFile>
     <ControllerFile id="e_dh.xml">
-        <SubControllerFile id="e_renishaw_dh.xml" />
+        <SubControllerFile id="e_futek_dh.xml" />
     </ControllerFile>
     <LocationFile id="ankle.xml" />
     <SensorsFile id="sensors.xml" />
@@ -18,7 +18,7 @@
         <Coeff id="EncMountingDir" value="1.0" />
         <Coeff id="EncoderIndexOffset" value="6.14" />
         <Coeff id="ForceControl_MotorForceDirection" value="1.0" />
-        <Coeff id="ForceOffset_N" value="398.997531891" />
+        <Coeff id="ForceOffset_N" value="-29.3723716735" />
         <Coeff id="JointKinematicDir" value="-1.0" />
         <Coeff id="JointMaxValue" value="3.14159" />
         <Coeff id="JointMinValue" value="-3.14159" />
