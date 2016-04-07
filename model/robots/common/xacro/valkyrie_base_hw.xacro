@@ -25,15 +25,15 @@
     <xacro:waist_transmissions_hw />
     <xacro:leg_transmissions_hw prefix="left"/>
     <xacro:leg_transmissions_hw prefix="right"/>
-    <xacro:arm_transmissions_hw prefix="left"/>
-    <xacro:arm_transmissions_hw prefix="right"/>
+    <xacro:arm_transmissions_hw prefix="left" reflect="1"/>
+    <xacro:arm_transmissions_hw prefix="right" reflect="-1"/>
     <xacro:neck_transmissions_hw />
-    <xacro:index_finger_transmissions_hw prefix="left" />
-    <xacro:middle_finger_transmissions_hw prefix="left" />
-    <xacro:pinky_finger_transmissions_hw prefix="left" />
-    <xacro:thumb_transmissions_hw prefix="left" />
-    <xacro:index_finger_transmissions_hw prefix="right" />
-    <xacro:middle_finger_transmissions_hw prefix="right" />
-    <xacro:pinky_finger_transmissions_hw prefix="right" />
-    <xacro:thumb_transmissions_hw prefix="right" />
+    <xacro:index_finger_transmissions_hw prefix="left" reflect="1" />
+    <xacro:middle_finger_transmissions_hw prefix="left" reflect="1"/>
+    <xacro:pinky_finger_transmissions_hw prefix="left" reflect="1"/>
+    <xacro:thumb_transmissions_hw prefix="left" reflect="1"/>
+    <xacro:index_finger_transmissions_hw prefix="right" reflect="-1"/>
+    <xacro:middle_finger_transmissions_hw prefix="right" reflect="-1"/>
+    <xacro:pinky_finger_transmissions_hw prefix="right" reflect="-1"/>
+    <xacro:thumb_transmissions_hw prefix="right" reflect="-1"/>
 </robot>
