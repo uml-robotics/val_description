@@ -1,7 +1,8 @@
 <CoeffData>
     <Properties>
-        <CalibrationDate/>
-        <FileGenDate date="2013-07-22" time="19:00:28" />
+        <CalibrationDate>
+            <FileGenDate date="2013-07-22" time="19:00:28" />
+        </CalibrationDate>
     </Properties>
     <ClassFile id="b.xml" />
     <ControllerFile id="b_sv.xml" />
@@ -11,7 +12,7 @@
     <ModeFile id="mode.xml" />
     <Coeffs>
         <Coeff description="Kinematic direction of joint" id="JointKinematicDir" value="1" />
-        <Coeff description="" id="TorqueOffset_Nm" value="-1.10059362722" />
+        <Coeff description="" id="TorqueOffset_Nm" value="-2.32301516781" />
         <Coeff description="" id="PositionOffset_Rad" value="-3.2609905993" />
         <Coeff description="Incremental Encoder Enabled" id="JointSensors_MotorPosition" value="1" />
         <Coeff description="V1 actuator magnetic aps" id="JointSensors_OutputPosition" value="2.0" />

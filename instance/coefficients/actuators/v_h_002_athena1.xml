@@ -12,7 +12,7 @@
     <Coeff description="" value="1000" id="Yaw_hilmt"/>
     <Coeff description="" value="-1000" id="Yaw_lolmt"/>
     <Coeff description="" value="-0.000767" id="Yaw_cnvtrad"/>
-    <Coeff description="" value="1.75" id="thumb_hicmdlmt"/>
+    <Coeff description="" value="1.570796" id="thumb_hicmdlmt"/>
     <Coeff description="" value="-0.087266" id="thumb_locmdlmt"/>
     <Coeff description="" value="-230" id="thumb_posKP"/>
     <Coeff description="" value="150" id="thumb_posKD"/>

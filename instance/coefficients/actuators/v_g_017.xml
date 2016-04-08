@@ -5,7 +5,7 @@
     </Properties>
     <ClassFile id="g.xml" />
     <ControllerFile id="g_sv.xml" />
-    <LocationFile id="testbench.xml" />
+    <LocationFile id="forearm_yaw.xml" />
     <SensorsFile id="sensors_leonidas.xml" />
     <SafetyFile id="safety.xml" />
     <ModeFile id="mode.xml" />
