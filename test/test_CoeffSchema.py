@@ -71,12 +71,14 @@ class coeffFileTests(unittest.TestCase):
         parser = self.getSchemaParser(schema)
         os.chdir(directory)
         for coeffFile in glob.glob("*.xml"):
-            try:
-                root = xmlParser.parse(coeffFile, parser)
-                self.correctFiles.append(coeffFile)
-            except xmlParser.XMLSyntaxError:
-                self.log.error(coeffFile + " has coeffs that are not in the schema")
-                self.incorrectFiles.append(coeffFile)
+            if 'test' not in coeffFile: # Don't check the test files
+                try:
+                    root = xmlParser.parse(coeffFile, parser)
+                    self.correctFiles.append(coeffFile)
+                except xmlParser.XMLSyntaxError:
+                    self.log.error(coeffFile + " has coeffs that are not in the schema")
+                    self.incorrectFiles.append(coeffFile)
+
         assert len(self.incorrectFiles) == 0
 
     ####################################################################################
