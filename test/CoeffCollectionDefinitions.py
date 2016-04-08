@@ -24,7 +24,7 @@ LocationNeededCoeffs = []
 
 ModesNeededCoeffs = []
 
-SafetyNeededCoeffs = ["CommTimeoutMs",
+SafetyNeededCoeffs = ["CommTimeouts",
                       "TemperatureSensor_MaxTemp1",
                       "TemperatureSensor_MaxTemp2",
                       "TemperatureSensor_SensorLoc1",

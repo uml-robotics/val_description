@@ -84,8 +84,7 @@ class coeffFileTests(unittest.TestCase):
     ####################################################################################
     def testActuatorCoeffsValidSchema(self):
         # Assemble the schema
-        schema = coeffSchemaDefinitions.schema_header + coeffSchemaDefinitions.actuator_coeffs_definition + coeffSchemaDefinitions.header_coeff_definition + coeffSchemaDefinitions.properties_coeff_definition + coeffSchemaDefinitions.actuator_coeff_files_definition + coeffSchemaDefinitions.coeff_definition + coeffSchemaDefinitions.footer_coeff_definition
-        
+        schema = coeffSchemaDefinitions.schema_header + coeffSchemaDefinitions.actuator_coeffs_definition + coeffSchemaDefinitions.header_coeff_definition + coeffSchemaDefinitions.actuator_coeff_files_definition + coeffSchemaDefinitions.coeff_definition + coeffSchemaDefinitions.footer_coeff_definition        
         self.checkValidSchema(schema, self.actuatorCoeffDirectory)
 
     # ####################################################################################

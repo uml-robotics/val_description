@@ -223,23 +223,6 @@ header_coeff_definition = \
         <xs:sequence>
 '''
 
-properties_coeff_definition = \
-'''
-            <xs:element name="Properties">
-                <xs:complexType>
-                <xs:sequence>
-                    <xs:element name="CalibrationDate"></xs:element>
-                    <xs:element name="FileGenDate">
-                        <xs:complexType>
-                            <xs:attribute name="date" type="xs:date"></xs:attribute>
-                            <xs:attribute name="time" type="xs:string"></xs:attribute>
-                        </xs:complexType>
-                    </xs:element>
-                </xs:sequence>
-                </xs:complexType>
-            </xs:element>
-'''
-
 footer_coeff_definition = \
 '''
              </xs:element>

@@ -1,8 +1,4 @@
 <CoeffData>
-    <Properties>
-        <CalibrationDate />
-        <FileGenDate date="2013-07-22" time="19:00:28" />
-    </Properties>
     <ClassFile id="a.xml" />
     <ControllerFile id="a_sv.xml" />
     <LocationFile id="torso_yaw.xml" />

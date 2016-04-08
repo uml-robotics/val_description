@@ -1,8 +1,4 @@
 <CoeffData>
-    <Properties>
-        <CalibrationDate />
-        <FileGenDate date="2013-06-22" time="13:53:57.940420" />
-    </Properties>
     <ClassFile id="g.xml" />
     <ControllerFile id="g_sv.xml" />
     <LocationFile id="neck_lower.xml" />
