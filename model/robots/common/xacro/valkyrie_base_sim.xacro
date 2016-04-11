@@ -1,6 +1,5 @@
 <robot xmlns:xacro="http://ros.org/wiki/xacro" name="valkyrie">
 
-
     <gazebo>
       <plugin filename="libval_gazebo.so" name="SharedMemorySimInterfacePlugin">
       <robotNamespace>/val</robotNamespace>

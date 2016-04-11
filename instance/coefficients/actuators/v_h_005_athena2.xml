@@ -9,7 +9,7 @@
     <Coeff description="" value="512" id="Fing2_elecoffset"/>
     <Coeff description="" value="0" id="Fing2_APSoffset"/>
     <Coeff description="" value="1024" id="Fing3_elecoffset"/>
-    <Coeff description="" value="1716" id="Fing3_APSoffset"/>
+    <Coeff description="" value="1550" id="Fing3_APSoffset"/>
     <Coeff description="" value="0" id="Fing4_elecoffset"/>
     <Coeff description="" value="783" id="Fing4_APSoffset"/>
     <Coeff description="" value="100" id="Fing1_locmdlmt"/>
