@@ -3,7 +3,7 @@ schema_header = '''
 '''
 
 actuator_coeffs_definition = \
-'''
+    '''
 <xs:simpleType name="ValidCoeffs">
     <xs:restriction base="xs:string">
         <xs:enumeration value="AltVel_MountingGain"/>
@@ -26,6 +26,7 @@ actuator_coeffs_definition = \
         <xs:enumeration value="LoadCell_OffsetBits"/>
         <xs:enumeration value="LoadCell_NmPerCount"/>
         <xs:enumeration value="TemperatureSensor_SensorLoc1"/>
+        <xs:enumeration value="TemperatureSensor_SensorLoc2"/>
         <xs:enumeration value="TorqueOffset_Nm"/>
         <xs:enumeration value="ForceOffset_N"/>
     </xs:restriction>
@@ -33,7 +34,7 @@ actuator_coeffs_definition = \
 '''
 
 class_coeffs_definition = \
-'''
+    '''
 <xs:simpleType name="ValidCoeffs">
     <xs:restriction base="xs:string">
         <xs:enumeration value="CurrentSafeLimit"/>
@@ -58,7 +59,7 @@ class_coeffs_definition = \
 '''
 
 controller_coeffs_definition = \
-'''
+    '''
 <xs:simpleType name="ValidCoeffs">
   <xs:restriction base="xs:string">
     <xs:enumeration value="Commutation_Select"/>
@@ -93,7 +94,7 @@ controller_coeffs_definition = \
 '''
 
 location_coeffs_definition = \
-'''
+    '''
 <xs:simpleType name="ValidCoeffs">
   <xs:restriction base="xs:string">
     <xs:enumeration value="JointTorqueLimit_Nm"/>
@@ -107,7 +108,7 @@ location_coeffs_definition = \
 '''
 
 modes_coeffs_definition = \
-'''
+    '''
 <xs:simpleType name="ValidCoeffs">
   <xs:restriction base="xs:string">
     <xs:enumeration value="Commutation_Select"/>
@@ -116,7 +117,7 @@ modes_coeffs_definition = \
 '''
 
 safety_coeffs_definition = \
-'''
+    '''
 <xs:simpleType name="ValidCoeffs">
   <xs:restriction base="xs:string">
     <xs:enumeration value="APS1DriftSafeLimit"/>
@@ -134,7 +135,7 @@ safety_coeffs_definition = \
 '''
 
 sensor_coeffs_definition = \
-'''
+    '''
 <xs:simpleType name="ValidCoeffs">
   <xs:restriction base="xs:string">
     <xs:enumeration value="BusVoltage_BitOffset"/>
@@ -150,7 +151,7 @@ sensor_coeffs_definition = \
 '''
 
 actuator_class_info_definition = \
-'''
+    '''
 <xs:element name="Type">
       <xs:complexType>
             <xs:attribute name="id" type="xs:string"></xs:attribute>
@@ -169,7 +170,7 @@ actuator_class_info_definition = \
 '''
 
 actuator_coeff_files_definition = \
-'''
+    '''
 <xs:element name="ClassFile">
       <xs:complexType>
       <xs:sequence>
@@ -217,14 +218,14 @@ actuator_coeff_files_definition = \
 '''
 
 header_coeff_definition = \
-'''
+    '''
     <xs:element name="CoeffData">
         <xs:complexType>
         <xs:sequence>
 '''
 
 footer_coeff_definition = \
-'''
+    '''
              </xs:element>
         </xs:sequence>
         </xs:complexType>
@@ -233,7 +234,7 @@ footer_coeff_definition = \
 '''
 
 coeff_definition = \
-'''
+    '''
                   <xs:element name="Coeffs">
                   <xs:complexType>
                   <xs:sequence>
