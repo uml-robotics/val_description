@@ -183,7 +183,7 @@
     <xacro:simple_transmission jointName="${ShoulderRollJointName}" actuatorName="${ShoulderRollActuatorName}" nodeName="${ShoulderRollNode}" actuatorApi="${ShoulderRollApi}"/>
     <xacro:simple_transmission jointName="${ShoulderYawJointName}" actuatorName="${ShoulderYawActuatorName}" nodeName="${ShoulderYawNode}" actuatorApi="${ShoulderYawApi}"/>
     <xacro:simple_transmission jointName="${ElbowPitchJointName}" actuatorName="${ElbowPitchActuatorName}" nodeName="${ElbowPitchNode}" actuatorApi="${ElbowPitchApi}"/> 
-    <xacro:simple_forearm_position_transmission jointName="${ForearmYawActuatorName}" actuatorName="${ForearmYawActuatorName}" nodeName="${ForearmYawNode}" actuatorApi="${ForearmYawApi}" reflect="${reflect}"/> 
+    <xacro:simple_position_transmission jointName="${ForearmYawActuatorName}" actuatorName="${ForearmYawActuatorName}" nodeName="${ForearmYawNode}" actuatorApi="${ForearmYawApi}"/> 
     <xacro:athena1_transmission prefix="${prefix}" transmissionName="${prefix}ArmAthena1Transmission" actuatorApi="${Athena1Api}" nodeName="${Athena1Node}"/>
     <xacro:athena2_transmission prefix="${prefix}" transmissionName="${prefix}ArmAthena2Transmission" actuatorApi="${Athena2Api}" nodeName="${Athena2Node}"/>
   </xacro:macro>
