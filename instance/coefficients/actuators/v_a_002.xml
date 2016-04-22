@@ -29,5 +29,5 @@
         <Coeff id="TorqueOffset_Nm" value="9.46523587312" />
         <Coeff id="PositionControl_enableInLPF" value="1" />
         <Coeff id="PositionControl_Input_fc_Hz" value="30" />
-    </Coeffs>
+	</Coeffs>
 </CoeffData>
